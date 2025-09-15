@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run type-check:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run build:*)",
+      "Bash(find:*)",
+      "Bash(for:*)",
+      "Bash(do sed -i 's/mb-16 mt-20/mb-12 mt-16/g' \"$file\")",
+      "Bash(done)",
+      "Bash(npm run dev:*)",
+      "Bash(npx next build:*)",
+      "Bash(npm audit:*)",
+      "Bash(npx eslint:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next lint:*)",
+      "Bash(tree:*)",
+      "Read(//c/Users/konia/**)",
+      "Bash(dir \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\HIT\\hulpmetit-nextgen\\public\\images\")",
+      "Bash(dir)",
+      "Bash(powershell:*)",
+      "WebFetch(domain:favicon.io)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

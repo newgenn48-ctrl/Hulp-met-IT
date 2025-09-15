@@ -1,0 +1,683 @@
+import { NextRequest, NextResponse } from 'next/server'
+import nodemailer from 'nodemailer'
+
+// Type definitions
+interface AppointmentFormData {
+  firstName: string
+  lastName: string
+  email: string
+  phone: string
+  address: string
+  postalCode: string
+  city: string
+  serviceType: string
+  urgency: string
+  preferredDate: string
+  preferredTime: string
+  problemDescription: string
+  deviceType: string
+  previousAttempts: string
+}
+
+// Service type mapping
+const serviceTypeLabels: Record<string, string> = {
+  'computerhulp': 'Computerhulp - Computer problemen oplossen',
+  'printerhulp': 'Printerhulp - Printer installatie & reparatie',
+  'internet-wifi': 'Internet & WiFi - Netwerk problemen',
+  'tablet-smartphone': 'Tablet & Smartphone hulp',
+  'uitleg-les': 'Uitleg & Les - Computer training',
+  'email-problemen': 'E-mail problemen oplossen',
+  'windows-11-overstap': 'Windows 11 Overstap Service',
+  'student-aan-huis': 'Student Aan Huis - Algemene IT hulp',
+  'anders': 'Anders - Zie beschrijving'
+}
+
+// Urgency level mapping
+const urgencyLabels: Record<string, { label: string; priority: string }> = {
+  'low': { label: 'Niet urgent - Binnen een week', priority: 'Laag' },
+  'normal': { label: 'Normaal - Binnen 2-3 dagen', priority: 'Normaal' },
+  'high': { label: 'Urgent - Binnen 24 uur', priority: 'Hoog' },
+  'critical': { label: 'Zeer urgent - Zelfde dag', priority: 'KRITIEK' }
+}
+
+// Create email transporter
+function createTransporter() {
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'mail.hulpmetit.nl', // Je mail server
+    port: parseInt(process.env.SMTP_PORT || '587'),
+    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+    auth: {
+      user: process.env.SMTP_USER || 'info@hulpmetit.nl',
+      pass: process.env.SMTP_PASS!
+    },
+    tls: {
+      rejectUnauthorized: false // For self-signed certificates
+    }
+  })
+}
+
+// Format date and time for Dutch locale
+function formatDateTime(date: string, time: string): string {
+  const dateObj = new Date(date)
+  const options: Intl.DateTimeFormatOptions = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  }
+  const formattedDate = dateObj.toLocaleDateString('nl-NL', options)
+  return `${formattedDate} om ${time}`
+}
+
+// Generate appointment reference number
+function generateReference(): string {
+  const timestamp = Date.now().toString().slice(-6)
+  const random = Math.random().toString(36).substring(2, 5).toUpperCase()
+  return `HIT-${timestamp}-${random}`
+}
+
+// Customer confirmation email template
+function getCustomerEmailTemplate(data: AppointmentFormData, reference: string): string {
+  const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
+  const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
+  const appointmentDateTime = formatDateTime(data.preferredDate, data.preferredTime)
+
+  return `
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afspraak Bevestiging - Hulp met IT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+      line-height: 1.6; 
+      color: #1f2937; 
+      background-color: #f9fafb;
+    }
+    .email-container { 
+      max-width: 600px; 
+      margin: 0 auto; 
+      background-color: #ffffff;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .header { 
+      background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #6366f1 100%); 
+      color: white; 
+      padding: 40px 30px; 
+      text-align: center; 
+    }
+    .header h1 { 
+      font-size: 28px; 
+      font-weight: 700; 
+      margin-bottom: 8px; 
+      letter-spacing: -0.025em;
+    }
+    .header p { 
+      font-size: 16px; 
+      opacity: 0.9; 
+      margin: 0;
+    }
+    .content { 
+      padding: 40px 30px; 
+      background: #ffffff;
+    }
+    .greeting { 
+      font-size: 18px; 
+      font-weight: 600; 
+      color: #1f2937; 
+      margin-bottom: 20px;
+    }
+    .intro { 
+      font-size: 16px; 
+      color: #4b5563; 
+      margin-bottom: 30px; 
+      line-height: 1.7;
+    }
+    .info-card { 
+      background: #f8fafc; 
+      border: 1px solid #e5e7eb; 
+      border-left: 4px solid #3b82f6; 
+      border-radius: 8px; 
+      padding: 24px; 
+      margin: 24px 0; 
+    }
+    .info-card.priority-high { border-left-color: #f59e0b; }
+    .info-card.priority-critical { border-left-color: #ef4444; }
+    .info-card h3 { 
+      font-size: 18px; 
+      font-weight: 600; 
+      color: #1f2937; 
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+    }
+    .info-card p { 
+      margin-bottom: 8px; 
+      font-size: 15px; 
+      color: #374151;
+    }
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card strong { font-weight: 600; color: #1f2937; }
+    .steps-list { 
+      list-style: none; 
+      padding: 0; 
+    }
+    .steps-list li { 
+      padding: 8px 0; 
+      font-size: 15px; 
+      color: #374151;
+      display: flex;
+      align-items: center;
+    }
+    .steps-list li::before {
+      content: "✓";
+      color: #10b981;
+      font-weight: bold;
+      margin-right: 12px;
+      font-size: 16px;
+    }
+    .contact-section { 
+      background: #f0f9ff; 
+      border: 1px solid #e0f2fe; 
+      border-radius: 8px; 
+      padding: 24px; 
+      margin: 30px 0; 
+      text-align: center;
+    }
+    .contact-section p { 
+      margin-bottom: 20px; 
+      font-size: 15px; 
+      color: #374151;
+    }
+    .cta-button { 
+      display: inline-block; 
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8); 
+      color: white; 
+      padding: 14px 28px; 
+      text-decoration: none; 
+      border-radius: 6px; 
+      font-weight: 600; 
+      font-size: 15px;
+      transition: all 0.2s;
+      box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+    }
+    .reference { 
+      background: #eff6ff; 
+      border: 1px solid #dbeafe; 
+      border-radius: 6px; 
+      padding: 12px 16px; 
+      font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; 
+      font-size: 14px; 
+      font-weight: 600; 
+      color: #1e40af; 
+      text-align: center; 
+      margin: 20px 0;
+    }
+    .footer { 
+      background: #f9fafb; 
+      border-top: 1px solid #e5e7eb; 
+      padding: 30px; 
+      text-align: center; 
+    }
+    .company-info { 
+      font-size: 14px; 
+      color: #6b7280; 
+      margin-bottom: 16px;
+    }
+    .company-info strong { color: #374151; }
+    .footer-links { 
+      font-size: 13px; 
+      color: #9ca3af; 
+    }
+    .footer-links a { 
+      color: #3b82f6; 
+      text-decoration: none; 
+    }
+    @media (max-width: 480px) {
+      .email-container { margin: 0; }
+      .header, .content, .footer { padding: 24px 20px; }
+      .header h1 { font-size: 24px; }
+      .info-card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <h1>Afspraak Bevestiging</h1>
+      <p>Professionele IT-ondersteuning aan huis</p>
+    </div>
+    
+    <div class="content">
+      <div class="greeting">Beste ${data.firstName} ${data.lastName},</div>
+      
+      <div class="intro">
+        Hartelijk dank voor uw vertrouwen in Hulp met IT. Wij hebben uw afspraakaanvraag in goede orde ontvangen en zullen binnen 2 werkuren telefonisch contact met u opnemen om de afspraak definitief te bevestigen.
+      </div>
+
+      <div class="reference">
+        Referentienummer: <strong>${reference}</strong>
+      </div>
+      
+      <div class="info-card ${data.urgency === 'high' ? 'priority-high' : data.urgency === 'critical' ? 'priority-critical' : ''}">
+        <h3>📋 Afspraakgegevens</h3>
+        <p><strong>Service:</strong> ${serviceLabel}</p>
+        <p><strong>Gewenste datum & tijd:</strong> ${appointmentDateTime}</p>
+        <p><strong>Prioriteit:</strong> ${urgencyInfo.label}</p>
+        <p><strong>Locatie:</strong> ${data.address}, ${data.postalCode} ${data.city}</p>
+      </div>
+      
+      <div class="info-card">
+        <h3>💭 Probleem beschrijving</h3>
+        <p>${data.problemDescription}</p>
+      </div>
+      
+      <div class="info-card">
+        <h3>🔄 Vervolgstappen</h3>
+        <ul class="steps-list">
+          <li>Uw aanvraag is geregistreerd in ons systeem</li>
+          <li>Wij nemen binnen 2 werkuren telefonisch contact op</li>
+          <li>Datum en tijdstip worden definitief bevestigd</li>
+          <li>Onze gecertificeerde IT-specialist komt naar u toe</li>
+          <li>Uw IT-probleem wordt professioneel opgelost</li>
+        </ul>
+      </div>
+      
+      <div class="contact-section">
+        <p><strong>Dringende vragen of wijzigingen?</strong><br>
+        Neem direct contact met ons op via onderstaande knop of bel ons op 06-42827860.</p>
+        
+        <a href="tel:+31642827860" class="cta-button" style="display: inline-block; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px;">📞 Direct Contact</a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="company-info">
+        <strong>Hulp met IT</strong><br>
+        Professionele IT-ondersteuning aan huis<br>
+        Telefoon: 06-42827860 | E-mail: info@hulpmetit.nl
+      </div>
+      
+      <div class="footer-links">
+        Website: <a href="https://www.hulpmetit.nl">www.hulpmetit.nl</a><br>
+        © ${new Date().getFullYear()} Hulp met IT. Alle rechten voorbehouden.
+      </div>
+    </div>
+  </div>
+</body>
+</html>`
+}
+
+// Admin notification email template
+function getAdminEmailTemplate(data: AppointmentFormData, reference: string): string {
+  const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
+  const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
+  const appointmentDateTime = formatDateTime(data.preferredDate, data.preferredTime)
+  const currentTime = new Date().toLocaleString('nl-NL', { 
+    timeZone: 'Europe/Amsterdam',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit'
+  })
+
+  return `
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nieuwe Afspraak Aanvraag - ${reference}</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; 
+      line-height: 1.5; 
+      color: #111827; 
+      background-color: #f9fafb;
+    }
+    .email-container { 
+      max-width: 700px; 
+      margin: 0 auto; 
+      background-color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    .header { 
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%); 
+      color: white; 
+      padding: 30px; 
+      text-align: center; 
+    }
+    .header.urgent { background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%); }
+    .header.critical { background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #7f1d1d 100%); }
+    .header h1 { 
+      font-size: 24px; 
+      font-weight: 700; 
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .header .reference { 
+      font-size: 16px; 
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-top: 8px;
+    }
+    .header .timestamp { 
+      font-size: 14px; 
+      opacity: 0.9; 
+      margin-top: 8px;
+    }
+    .content { 
+      padding: 30px; 
+    }
+    .priority-alert { 
+      border-radius: 8px; 
+      padding: 16px; 
+      margin-bottom: 24px; 
+      text-align: center; 
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .priority-alert.high { 
+      background: #fef3c7; 
+      border: 2px solid #f59e0b; 
+      color: #92400e;
+    }
+    .priority-alert.critical { 
+      background: #fee2e2; 
+      border: 2px solid #dc2626; 
+      color: #991b1b;
+    }
+    .info-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 20px; 
+      margin: 24px 0; 
+    }
+    .info-card { 
+      background: #f8fafc; 
+      border: 1px solid #e5e7eb; 
+      border-left: 4px solid #3b82f6; 
+      border-radius: 8px; 
+      padding: 20px; 
+    }
+    .info-card.customer { border-left-color: #10b981; }
+    .info-card.location { border-left-color: #8b5cf6; }
+    .info-card h3 { 
+      font-size: 16px; 
+      font-weight: 700; 
+      color: #111827; 
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+    .info-card p { 
+      margin-bottom: 6px; 
+      font-size: 14px; 
+      color: #374151;
+    }
+    .info-card p:last-child { margin-bottom: 0; }
+    .info-card strong { font-weight: 600; color: #111827; }
+    .info-card a { color: #3b82f6; text-decoration: none; }
+    .info-card a:hover { text-decoration: underline; }
+    .service-card { 
+      background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); 
+      border: 1px solid #93c5fd; 
+      border-radius: 8px; 
+      padding: 20px; 
+      margin: 20px 0;
+    }
+    .service-card h3 { 
+      color: #1e40af; 
+      font-size: 18px; 
+      font-weight: 700; 
+      margin-bottom: 16px;
+    }
+    .service-details { 
+      display: grid; 
+      gap: 8px;
+    }
+    .service-details p { 
+      font-size: 15px; 
+      color: #1e40af;
+    }
+    .problem-card { 
+      background: #fffbeb; 
+      border: 1px solid #fde68a; 
+      border-radius: 8px; 
+      padding: 20px; 
+      margin: 20px 0;
+    }
+    .problem-card h3 { 
+      color: #92400e; 
+      font-size: 16px; 
+      font-weight: 700; 
+      margin-bottom: 12px;
+    }
+    .problem-description { 
+      background: white; 
+      border: 1px solid #d1d5db; 
+      border-radius: 6px; 
+      padding: 12px; 
+      font-style: italic; 
+      color: #374151;
+    }
+    .action-card { 
+      background: #ecfdf5; 
+      border: 1px solid #86efac; 
+      border-radius: 8px; 
+      padding: 20px; 
+      margin: 20px 0;
+    }
+    .action-card h3 { 
+      color: #065f46; 
+      font-size: 16px; 
+      font-weight: 700; 
+      margin-bottom: 16px;
+    }
+    .action-list { 
+      list-style: none; 
+      padding: 0;
+    }
+    .action-list li { 
+      padding: 8px 0; 
+      font-size: 14px; 
+      color: #065f46;
+      border-bottom: 1px solid #d1fae5;
+    }
+    .action-list li:last-child { border-bottom: none; }
+    .action-list strong { color: #047857; }
+    .cta-section { 
+      text-align: center; 
+      background: #fef2f2; 
+      border: 2px solid #fca5a5; 
+      border-radius: 8px; 
+      padding: 24px; 
+      margin: 24px 0;
+    }
+    .cta-button { 
+      display: inline-block; 
+      background: linear-gradient(135deg, #dc2626, #b91c1c); 
+      color: white; 
+      padding: 16px 32px; 
+      text-decoration: none; 
+      border-radius: 8px; 
+      font-weight: 700; 
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s;
+    }
+    .secondary-actions { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 12px; 
+      margin-top: 16px;
+    }
+    .secondary-btn { 
+      padding: 10px 16px; 
+      border: 2px solid #3b82f6; 
+      border-radius: 6px; 
+      color: #3b82f6; 
+      text-decoration: none; 
+      text-align: center; 
+      font-weight: 600; 
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      .email-container { margin: 0; }
+      .header, .content { padding: 20px; }
+      .info-grid { grid-template-columns: 1fr; }
+      .secondary-actions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header ${data.urgency === 'high' ? 'urgent' : data.urgency === 'critical' ? 'critical' : ''}">
+      <h1>⚡ Nieuwe Afspraak Aanvraag</h1>
+      <div class="reference">${reference}</div>
+      <div class="timestamp">Ontvangen: ${currentTime}</div>
+    </div>
+    
+    <div class="content">
+      ${data.urgency === 'critical' ? 
+        '<div class="priority-alert critical">🚨 KRITIEKE URGENTIE - ONMIDDELLIJK CONTACT VEREIST!</div>' : 
+        data.urgency === 'high' ? 
+        '<div class="priority-alert high">⚠️ HOGE URGENTIE - CONTACT BINNEN 24 UUR</div>' : ''
+      }
+      
+      <div class="info-grid">
+        <div class="info-card customer">
+          <h3>👤 Klantinformatie</h3>
+          <p><strong>Naam:</strong> ${data.firstName} ${data.lastName}</p>
+          <p><strong>E-mail:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
+          <p><strong>Telefoon:</strong> <a href="tel:${data.phone}">${data.phone}</a></p>
+        </div>
+        
+        <div class="info-card location">
+          <h3>📍 Locatie gegevens</h3>
+          <p><strong>Adres:</strong> ${data.address}</p>
+          <p><strong>Postcode:</strong> ${data.postalCode}</p>
+          <p><strong>Plaats:</strong> ${data.city}</p>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <h3>🔧 Service & Planning Details</h3>
+        <div class="service-details">
+          <p><strong>Gevraagde service:</strong> ${serviceLabel}</p>
+          <p><strong>Gewenste datum & tijd:</strong> ${appointmentDateTime}</p>
+          <p><strong>Urgentie niveau:</strong> ${urgencyInfo.label} (${urgencyInfo.priority})</p>
+        </div>
+      </div>
+      
+      <div class="problem-card">
+        <h3>💭 Probleem beschrijving</h3>
+        <div class="problem-description">
+          "${data.problemDescription}"
+        </div>
+      </div>
+      
+      <div class="action-card">
+        <h3>✅ Vereiste acties</h3>
+        <ul class="action-list">
+          <li><strong>Stap 1:</strong> Bel klant binnen 2 werkuren op ${data.phone}</li>
+          <li><strong>Stap 2:</strong> Bevestig of herplan datum/tijd afspraak</li>
+          <li><strong>Stap 3:</strong> Voeg afspraak toe aan agenda systeem</li>
+          <li><strong>Stap 4:</strong> Verstuur definitieve bevestiging naar klant</li>
+          <li><strong>Stap 5:</strong> Bereid technicus voor met probleemdetails</li>
+        </ul>
+      </div>
+      
+      <div class="cta-section">
+        <p style="margin-bottom: 16px; font-weight: 600; color: #991b1b;">
+          Direct actie vereist - neem contact op met klant
+        </p>
+        
+        <a href="tel:${data.phone}" class="cta-button">
+          📞 Bel klant nu
+        </a>
+        
+        <div class="secondary-actions">
+          <a href="mailto:${data.email}" class="secondary-btn">📧 E-mail sturen</a>
+          <a href="sms:${data.phone}" class="secondary-btn">💬 SMS sturen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const data: AppointmentFormData = await request.json()
+    
+    // Validation
+    const requiredFields: (keyof AppointmentFormData)[] = ['firstName', 'lastName', 'email', 'phone', 'address', 'postalCode', 'city', 'serviceType', 'preferredDate', 'preferredTime', 'problemDescription']
+    const missingFields = requiredFields.filter(field => !data[field])
+    
+    if (missingFields.length > 0) {
+      return NextResponse.json(
+        { message: `Ontbrekende velden: ${missingFields.join(', ')}` },
+        { status: 400 }
+      )
+    }
+
+    // Generate reference number
+    const reference = generateReference()
+    
+    // Create email transporter
+    const transporter = createTransporter()
+    
+    // Customer confirmation email
+    const customerMailOptions = {
+      from: '"Hulp met IT" <info@hulpmetit.nl>',
+      to: data.email,
+      subject: `Afspraak Bevestiging - ${reference}`,
+      html: getCustomerEmailTemplate(data, reference)
+    }
+    
+    // Admin notification email
+    const adminMailOptions = {
+      from: '"Afspraak Systeem" <info@hulpmetit.nl>',
+      to: 'info@hulpmetit.nl',
+      subject: `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
+      html: getAdminEmailTemplate(data, reference)
+    }
+    
+    // Send emails
+    await Promise.all([
+      transporter.sendMail(customerMailOptions),
+      transporter.sendMail(adminMailOptions)
+    ])
+    
+    return NextResponse.json({
+      message: 'Afspraak succesvol aangevraagd',
+      reference,
+      status: 'success'
+    })
+    
+  } catch (error) {
+    // Log error securely without exposing details
+    if (process.env.NODE_ENV === 'development') {
+      console.error('Error processing appointment:', error)
+    }
+
+    return NextResponse.json(
+      { message: 'Er is een fout opgetreden bij het verwerken van uw afspraak. Probeer het opnieuw of bel ons direct.' },
+      { status: 500 }
+    )
+  }
+}

@@ -1,0 +1,42 @@
+# .github/workflows/ci.yml
+name: Continuous Integration
+
+# Dit zorgt ervoor dat de workflow draait bij elke push en pull request naar de 'main' branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    # Draai deze job op de laatste versie van Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      # Stap 1: Kloon de repository zodat de workflow toegang heeft tot de code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Stap 2: Zet de juiste versie van Node.js op
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Gebruik een LTS-versie
+          cache: 'npm' # Cache de npm dependencies voor snellere builds
+
+      # Stap 3: Installeer alle project-afhankelijkheden
+      - name: Install dependencies
+        run: npm ci # 'ci' is een snellere, striktere versie van 'install' voor CI/CD
+
+      # Stap 4: Draai de linter om de code-stijl te controleren
+      - name: Run linter
+        run: npm run lint
+
+      # Stap 5: Draai de TypeScript compiler om types te controleren
+      - name: Run type check
+        run: npm run type-check
+
+      # Stap 6: Voer de Jest-tests uit
+      - name: Run tests
+        run: npm test

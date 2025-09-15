@@ -1,0 +1,464 @@
+[
+  {
+    "name": "Amsterdam",
+    "slug": "amsterdam",
+    "population": "872.000",
+    "region": "Noord-Holland",
+    "description": "De bruisende hoofdstad van Nederland waar wij dagelijks IT-hulp aan huis bieden",
+    "longDescription": "In Amsterdam en omstreken helpen onze ervaren IT-studenten dagelijks inwoners met alle computerproblemen. Van de Jordaan tot Amsterdam-Noord, van Oost tot Zuid - wij zijn er voor u. Onze lokale kennis en snelle service maken ons de voorkeurskeuze voor Amsterdamse IT-hulp aan huis.",
+    "serviceAreas": [
+      "Amsterdam Centrum",
+      "Amsterdam Noord",
+      "Amsterdam Oost", 
+      "Amsterdam West",
+      "Amsterdam Zuid",
+      "Amsterdam Zuidoost",
+      "Amsterdam Nieuw-West",
+      "Amstelveen",
+      "Diemen",
+      "Ouder-Amstel"
+    ],
+    "keywords": [
+      "computerhulp Amsterdam",
+      "IT service Amsterdam", 
+      "laptop reparatie Amsterdam",
+      "computer problemen Amsterdam",
+      "IT hulp aan huis Amsterdam",
+      "technische ondersteuning Amsterdam",
+      "computer specialist Amsterdam"
+    ],
+    "coordinates": {
+      "lat": 52.3676,
+      "lng": 4.9041
+    }
+  },
+  {
+    "name": "Haarlem",
+    "slug": "haarlem",
+    "population": "162.000",
+    "region": "Noord-Holland",
+    "description": "De bloemenstad met persoonlijke IT-service en vakkundige ondersteuning",
+    "longDescription": "Haarlem, de hoofdstad van Noord-Holland, verdient IT-service van topkwaliteit. Onze specialisten kennen de stad goed - van het historische centrum tot Schalkwijk. Wij bieden betrouwbare en vriendelijke computerhulp aan alle Haarlemmers.",
+    "serviceAreas": [
+      "Haarlem Centrum",
+      "Haarlem Noord",
+      "Haarlem Oost",
+      "Haarlem Zuid",
+      "Schalkwijk",
+      "Botermarkt",
+      "Grote Markt gebied",
+      "Spaarndam",
+      "Bloemendaal",
+      "Heemstede"
+    ],
+    "keywords": [
+      "computerhulp Haarlem",
+      "IT service Haarlem",
+      "laptop reparatie Haarlem",
+      "computer problemen Haarlem",
+      "IT hulp aan huis Haarlem",
+      "technische ondersteuning Haarlem",
+      "computer specialist Haarlem"
+    ],
+    "coordinates": {
+      "lat": 52.3874,
+      "lng": 4.6462
+    }
+  },
+  {
+    "name": "Rotterdam",
+    "slug": "rotterdam",
+    "population": "650.000",
+    "region": "Zuid-Holland",
+    "description": "De moderne havenstad waar technologie en innovatie centraal staan",
+    "longDescription": "Rotterdam, de grootste haven van Europa, verdient de beste IT-service. Onze IT-specialisten kennen Rotterdam door en door - van het centrum tot de buitenwijken. Wij bieden snelle, betrouwbare computerhulp aan alle Rotterdammers, van Kralingseplas tot Pernis.",
+    "serviceAreas": [
+      "Rotterdam Centrum",
+      "Rotterdam Noord",
+      "Rotterdam Oost",
+      "Rotterdam West", 
+      "Rotterdam Zuid",
+      "Kralingen-Crooswijk",
+      "Hillegersberg-Schiebroek",
+      "Hoek van Holland",
+      "Capelle aan den IJssel",
+      "Schiedam"
+    ],
+    "keywords": [
+      "computerhulp Rotterdam",
+      "IT service Rotterdam",
+      "laptop reparatie Rotterdam", 
+      "computer problemen Rotterdam",
+      "IT hulp aan huis Rotterdam",
+      "technische ondersteuning Rotterdam",
+      "computer specialist Rotterdam"
+    ],
+    "coordinates": {
+      "lat": 51.9244,
+      "lng": 4.4777
+    }
+  },
+  {
+    "name": "Den Haag",
+    "slug": "den-haag",
+    "population": "545.000", 
+    "region": "Zuid-Holland",
+    "description": "De hofstad waar bestuur en technologie samenkomen",
+    "longDescription": "In Den Haag, de zetel van de regering, zorgen wij voor betrouwbare IT-ondersteuning. Van Scheveningen tot Leidschenveen, van het centrum tot Ypenburg - onze IT-experts staan klaar om alle computerproblemen op te lossen met de discretie en professionaliteit die past bij de hofstad.",
+    "serviceAreas": [
+      "Den Haag Centrum",
+      "Scheveningen",
+      "Benoordenhout", 
+      "Haagse Bos",
+      "Laak",
+      "Escamp",
+      "Segbroek",
+      "Leidschenveen-Ypenburg",
+      "Loosduinen",
+      "Voorburg"
+    ],
+    "keywords": [
+      "computerhulp Den Haag",
+      "IT service Den Haag",
+      "laptop reparatie Den Haag",
+      "computer problemen Den Haag", 
+      "IT hulp aan huis Den Haag",
+      "technische ondersteuning Den Haag",
+      "computer specialist Den Haag"
+    ],
+    "coordinates": {
+      "lat": 52.0705,
+      "lng": 4.3007
+    }
+  },
+  {
+    "name": "Leiden",
+    "slug": "leiden",
+    "population": "125.000",
+    "region": "Zuid-Holland",
+    "description": "De historische universiteitsstad met moderne IT-ondersteuning",
+    "longDescription": "Leiden, de stad van wetenschap en geschiedenis, krijgt van ons deskundige IT-service. Onze specialisten begrijpen de behoeften van deze academische gemeenschap. Van de binnenstad tot de Leidse Hout, van Merenwijk tot Stevenshof - wij bieden kwalitatieve computerhulp.",
+    "serviceAreas": [
+      "Leiden Centrum",
+      "Leiden Noord",
+      "Leiden Oost",
+      "Leiden West",
+      "Leiden Zuid",
+      "Leidse Hout",
+      "Merenwijk",
+      "Stevenshof",
+      "Roomburg",
+      "Oegstgeest"
+    ],
+    "keywords": [
+      "computerhulp Leiden",
+      "IT service Leiden",
+      "laptop reparatie Leiden",
+      "computer problemen Leiden",
+      "IT hulp aan huis Leiden",
+      "technische ondersteuning Leiden",
+      "computer specialist Leiden"
+    ],
+    "coordinates": {
+      "lat": 52.1601,
+      "lng": 4.4970
+    }
+  },
+  {
+    "name": "Utrecht",
+    "slug": "utrecht",
+    "population": "360.000",
+    "region": "Utrecht", 
+    "description": "Het kloppend hart van Nederland met uitstekende IT-service",
+    "longDescription": "Utrecht, centraal gelegen en goed bereikbaar, is een perfecte uitvalsbasis voor onze IT-diensten. Van de historische binnenstad tot Leidsche Rijn, van Overvecht tot Hoograven - wij kennen Utrecht als onze broekzak en bieden topkwaliteit computerhulp aan alle Utrechters.",
+    "serviceAreas": [
+      "Utrecht Centrum",
+      "Utrecht Noord", 
+      "Utrecht Oost",
+      "Utrecht West",
+      "Utrecht Zuid",
+      "Leidsche Rijn",
+      "Overvecht",
+      "Kanaleneiland",
+      "Nieuwegein",
+      "IJsselstein"
+    ],
+    "keywords": [
+      "computerhulp Utrecht",
+      "IT service Utrecht",
+      "laptop reparatie Utrecht",
+      "computer problemen Utrecht",
+      "IT hulp aan huis Utrecht", 
+      "technische ondersteuning Utrecht",
+      "computer specialist Utrecht"
+    ],
+    "coordinates": {
+      "lat": 52.0907,
+      "lng": 5.1214
+    }
+  },
+  {
+    "name": "Amersfoort",
+    "slug": "amersfoort",
+    "population": "158.000",
+    "region": "Utrecht",
+    "description": "De keistad met betrouwbare IT-ondersteuning voor alle inwoners",
+    "longDescription": "Amersfoort, de charmante keistad, krijgt van ons persoonlijke IT-service. Onze specialisten kennen de stad goed - van het historische centrum tot de nieuwere wijken. Van Vathorst tot Soesterberg, van Hoogland tot Leusden - wij zorgen voor vakkundige computerhulp.",
+    "serviceAreas": [
+      "Amersfoort Centrum",
+      "Amersfoort Noord",
+      "Amersfoort Oost", 
+      "Amersfoort West",
+      "Amersfoort Zuid",
+      "Vathorst",
+      "Kruiskamp",
+      "Schothorst",
+      "Hoogland",
+      "Leusden"
+    ],
+    "keywords": [
+      "computerhulp Amersfoort",
+      "IT service Amersfoort",
+      "laptop reparatie Amersfoort",
+      "computer problemen Amersfoort",
+      "IT hulp aan huis Amersfoort",
+      "technische ondersteuning Amersfoort", 
+      "computer specialist Amersfoort"
+    ],
+    "coordinates": {
+      "lat": 52.1561,
+      "lng": 5.3878
+    }
+  },
+  {
+    "name": "Middelburg",
+    "slug": "middelburg",
+    "population": "48.000",
+    "region": "Zeeland",
+    "description": "De Zeeuwse hoofdstad met moderne IT-service en persoonlijke aandacht",
+    "longDescription": "Middelburg, de historische hoofdstad van Zeeland, verdient IT-ondersteuning van hoge kwaliteit. Onze specialisten begrijpen de unieke behoeften van Walcheren. Van het centrum tot de buitenwijken, van Vlissingen tot Veere - wij bieden betrouwbare computerhulp.",
+    "serviceAreas": [
+      "Middelburg Centrum",
+      "Middelburg Noord",
+      "Middelburg Oost",
+      "Middelburg West",
+      "Middelburg Zuid",
+      "Vlissingen",
+      "Veere",
+      "Koudekerke",
+      "Arnemuiden",
+      "Goes"
+    ],
+    "keywords": [
+      "computerhulp Middelburg",
+      "IT service Middelburg",
+      "laptop reparatie Middelburg",
+      "computer problemen Middelburg",
+      "IT hulp aan huis Middelburg",
+      "technische ondersteuning Middelburg",
+      "computer specialist Middelburg"
+    ],
+    "coordinates": {
+      "lat": 51.4988,
+      "lng": 3.6145
+    }
+  },
+  {
+    "name": "Eindhoven",
+    "slug": "eindhoven",
+    "population": "235.000",
+    "region": "Noord-Brabant",
+    "description": "De technologiestad van Nederland met innovatieve IT-oplossingen", 
+    "longDescription": "Eindhoven, de technologiehoofdstad van Nederland, verdient geavanceerde IT-ondersteuning. Onze specialisten begrijpen de hoge tech-standaarden van de Lichtstad. Van het centrum tot Veldhoven, van Woensel tot Stratum - wij bieden cutting-edge computerhulp die past bij Eindhoven's innovatieve geest.",
+    "serviceAreas": [
+      "Eindhoven Centrum",
+      "Woensel Noord",
+      "Woensel Zuid",
+      "Stratum", 
+      "Gestel",
+      "Strijp",
+      "Tongelre",
+      "Veldhoven",
+      "Geldrop",
+      "Nuenen"
+    ],
+    "keywords": [
+      "computerhulp Eindhoven",
+      "IT service Eindhoven",
+      "laptop reparatie Eindhoven",
+      "computer problemen Eindhoven",
+      "IT hulp aan huis Eindhoven",
+      "technische ondersteuning Eindhoven", 
+      "computer specialist Eindhoven"
+    ],
+    "coordinates": {
+      "lat": 51.4416,
+      "lng": 5.4697
+    }
+  },
+  {
+    "name": "Tilburg",
+    "slug": "tilburg",
+    "population": "220.000",
+    "region": "Noord-Brabant",
+    "description": "De warme Brabantse stad met persoonlijke IT-service",
+    "longDescription": "In Tilburg combineren wij Brabantse warmte met professionele IT-service. Onze specialisten kennen de stad goed en bieden persoonlijke aandacht. Van het centrum tot Reeshof, van Noord tot Berkel-Enschot - wij staan klaar met vriendelijke en vakkundige computerhulp.",
+    "serviceAreas": [
+      "Tilburg Centrum",
+      "Tilburg Noord", 
+      "Tilburg Oost",
+      "Tilburg West",
+      "Tilburg Zuid",
+      "Reeshof",
+      "Stokhasselt",
+      "Berkel-Enschot",
+      "Udenhout",
+      "Goirle"
+    ],
+    "keywords": [
+      "computerhulp Tilburg",
+      "IT service Tilburg",
+      "laptop reparatie Tilburg",
+      "computer problemen Tilburg", 
+      "IT hulp aan huis Tilburg",
+      "technische ondersteuning Tilburg",
+      "computer specialist Tilburg"
+    ],
+    "coordinates": {
+      "lat": 51.5656,
+      "lng": 5.0913
+    }
+  },
+  {
+    "name": "Breda",
+    "slug": "breda",
+    "population": "185.000",
+    "region": "Noord-Brabant", 
+    "description": "De parel van Brabant met eersteklas IT-service",
+    "longDescription": "Breda, een prachtige stad met rijke geschiedenis, verdient IT-service van topkwaliteit. Onze experts combineren traditionele Brabantse gastvrijheid met moderne technische kennis. Van de binnenstad tot Oosterhout, van Prinsenbeek tot Teteringen - wij zorgen voor uitstekende computerhulp.",
+    "serviceAreas": [
+      "Breda Centrum",
+      "Breda Noord",
+      "Breda Oost", 
+      "Breda West",
+      "Breda Zuid",
+      "Prinsenbeek",
+      "Teteringen",
+      "Oosterhout",
+      "Etten-Leur",
+      "Zundert"
+    ],
+    "keywords": [
+      "computerhulp Breda",
+      "IT service Breda",
+      "laptop reparatie Breda",
+      "computer problemen Breda",
+      "IT hulp aan huis Breda", 
+      "technische ondersteuning Breda",
+      "computer specialist Breda"
+    ],
+    "coordinates": {
+      "lat": 51.5719,
+      "lng": 4.7683
+    }
+  },
+  {
+    "name": "Den Bosch",
+    "slug": "den-bosch",
+    "population": "155.000",
+    "region": "Noord-Brabant",
+    "description": "De Brabantse hoofdstad met betrouwbare IT-ondersteuning",
+    "longDescription": "Den Bosch, de hoofdstad van Noord-Brabant, krijgt van ons professionele IT-service. Onze specialisten kennen deze historische stad goed. Van het centrum tot de Maaspoort, van Rosmalen tot Vught - wij bieden kwalitatieve en vriendelijke computerhulp.",
+    "serviceAreas": [
+      "Den Bosch Centrum",
+      "Den Bosch Noord",
+      "Den Bosch Oost",
+      "Den Bosch West",
+      "Den Bosch Zuid",
+      "Maaspoort",
+      "Rosmalen",
+      "Vught",
+      "Sint-Michielsgestel",
+      "Boxtel"
+    ],
+    "keywords": [
+      "computerhulp Den Bosch",
+      "IT service Den Bosch",
+      "laptop reparatie Den Bosch",
+      "computer problemen Den Bosch",
+      "IT hulp aan huis Den Bosch",
+      "technische ondersteuning Den Bosch",
+      "computer specialist Den Bosch"
+    ],
+    "coordinates": {
+      "lat": 51.6978,
+      "lng": 5.3037
+    }
+  },
+  {
+    "name": "Nijmegen",
+    "slug": "nijmegen",
+    "population": "180.000",
+    "region": "Gelderland", 
+    "description": "De oudste stad van Nederland met de nieuwste IT-technologie",
+    "longDescription": "Nijmegen, de oudste stad van Nederland, combineren wij met de nieuwste IT-technologieën. Onze specialisten waarderen de rijke geschiedenis en levendige cultuur van deze Gelderse stad. Van de binnenstad tot Waalsprong, van Dukenburg tot Lindenholt - wij bieden hoogwaardige computerhulp.",
+    "serviceAreas": [
+      "Nijmegen Centrum",
+      "Nijmegen Noord", 
+      "Nijmegen Oost",
+      "Nijmegen West",
+      "Nijmegen Zuid",
+      "Waalsprong",
+      "Dukenburg",
+      "Lindenholt",
+      "Wijchen",
+      "Beuningen"
+    ],
+    "keywords": [
+      "computerhulp Nijmegen",
+      "IT service Nijmegen",
+      "laptop reparatie Nijmegen",
+      "computer problemen Nijmegen", 
+      "IT hulp aan huis Nijmegen",
+      "technische ondersteuning Nijmegen",
+      "computer specialist Nijmegen"
+    ],
+    "coordinates": {
+      "lat": 51.8426,
+      "lng": 5.8529
+    }
+  },
+  {
+    "name": "Arnhem",
+    "slug": "arnhem",
+    "population": "161.000",
+    "region": "Gelderland",
+    "description": "De groene hoofdstad van Gelderland met duurzame IT-oplossingen",
+    "longDescription": "Arnhem, de hoofdstad van Gelderland, verdient IT-service die past bij haar groene karakter. Onze specialisten combineren technische expertise met oog voor duurzaamheid. Van Presikhaaf tot Malburgen, van het centrum tot Schuytgraaf - wij bieden betrouwbare computerhulp.",
+    "serviceAreas": [
+      "Arnhem Centrum",
+      "Arnhem Noord",
+      "Arnhem Oost",
+      "Arnhem West",
+      "Arnhem Zuid",
+      "Presikhaaf",
+      "Malburgen",
+      "Schuytgraaf",
+      "Klarendal",
+      "Velp"
+    ],
+    "keywords": [
+      "computerhulp Arnhem",
+      "IT service Arnhem",
+      "laptop reparatie Arnhem",
+      "computer problemen Arnhem",
+      "IT hulp aan huis Arnhem",
+      "technische ondersteuning Arnhem",
+      "computer specialist Arnhem"
+    ],
+    "coordinates": {
+      "lat": 51.9851,
+      "lng": 5.8987
+    }
+  }
+]

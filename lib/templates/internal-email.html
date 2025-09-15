@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nieuwe Afspraak - Hulp met IT</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .header {
+            background: linear-gradient(135deg, #dc2626, #ea580c);
+            color: white;
+            padding: 32px;
+            text-align: center;
+        }
+        .content {
+            padding: 32px;
+        }
+        .urgent-card {
+            background-color: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+        .client-info {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .highlight {
+            color: #dc2626;
+            font-weight: 600;
+        }
+        .urgent {
+            background-color: #dc2626;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚨 NIEUWE AFSPRAAK AANVRAAG</h1>
+            <p>Hulp met IT - Interne Notificatie</p>
+        </div>
+
+        <div class="content">
+            <div class="urgent-card">
+                <h2>📋 Afspraak Details</h2>
+                <p><strong>Referentie:</strong> <span class="highlight">{{reference}}</span></p>
+                <p><strong>Aangevraagd op:</strong> {{timestamp}}</p>
+                <p><strong>Urgentie:</strong>
+                    {{#isUrgent}}
+                    <span class="urgent">{{urgencyLabel}}</span>
+                    {{/isUrgent}}
+                    {{^isUrgent}}
+                    {{urgencyLabel}}
+                    {{/isUrgent}}
+                </p>
+                <p><strong>Service type:</strong> {{serviceLabel}}</p>
+            </div>
+
+            <div class="client-info">
+                <h3>👤 Klant Informatie</h3>
+                <p><strong>Naam:</strong> {{customerName}}</p>
+                <p><strong>E-mail:</strong> <a href="mailto:{{email}}">{{email}}</a></p>
+                <p><strong>Telefoon:</strong> <a href="tel:{{phone}}">{{phone}}</a></p>
+            </div>
+
+            <div class="client-info">
+                <h3>📍 Locatie & Planning</h3>
+                <p><strong>Adres:</strong> {{address}}</p>
+                <p><strong>Stad:</strong> {{city}}</p>
+                <p><strong>Gewenste datum:</strong> {{appointmentDateTime}}</p>
+            </div>
+
+            {{#problem}}
+            <div class="client-info">
+                <h3>🔧 Probleem Beschrijving</h3>
+                <p>{{problem}}</p>
+            </div>
+            {{/problem}}
+
+            <div class="urgent-card">
+                <h3>⚡ Actie Vereist</h3>
+                <ol>
+                    <li><strong>Binnen 2 uur</strong> contact opnemen met klant</li>
+                    <li>Afspraak bevestigen en plannen</li>
+                    <li>Specialist toewijzen en informeren</li>
+                    <li>Follow-up na afspraak</li>
+                </ol>
+            </div>
+
+            <p><strong>Direct contact opnemen:</strong></p>
+            <p>📞 <a href="tel:{{phone}}">{{phone}}</a></p>
+            <p>📧 <a href="mailto:{{email}}">{{email}}</a></p>
+        </div>
+    </div>
+</body>
+</html>

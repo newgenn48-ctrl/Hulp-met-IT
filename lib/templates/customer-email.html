@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afspraak Bevestiging - Hulp met IT</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .header {
+            background: linear-gradient(135deg, #0ea5e9, #d946ef);
+            color: white;
+            padding: 32px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .content {
+            padding: 32px;
+        }
+        .appointment-card {
+            background-color: #f1f5f9;
+            border-left: 4px solid #0ea5e9;
+            padding: 24px;
+            margin: 24px 0;
+            border-radius: 8px;
+        }
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0ea5e9, #d946ef);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 16px 0;
+        }
+        .footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .contact-info {
+            background-color: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .highlight {
+            color: #0ea5e9;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">🚀 Hulp met IT</div>
+            <p>Betrouwbare Computerhulp aan Huis</p>
+        </div>
+
+        <div class="content">
+            <h1>Bedankt voor uw afspraak!</h1>
+
+            <p>Beste {{customerName}},</p>
+
+            <p>Hartelijk dank voor uw vertrouwen in Hulp met IT! We hebben uw afspraak in goede orde ontvangen.</p>
+
+            <div class="appointment-card">
+                <h3>📅 Uw Afspraak Details</h3>
+                <p><strong>Referentienummer:</strong> <span class="highlight">{{reference}}</span></p>
+                <p><strong>Service:</strong> {{serviceLabel}}</p>
+                <p><strong>Urgentie:</strong> {{urgencyLabel}} ({{urgencyPriority}})</p>
+                <p><strong>Gewenste datum & tijd:</strong> {{appointmentDateTime}}</p>
+                <p><strong>Locatie:</strong> {{address}}, {{city}}</p>
+                {{#problem}}
+                <p><strong>Probleem beschrijving:</strong><br>{{problem}}</p>
+                {{/problem}}
+            </div>
+
+            <h3>⏰ Wat gebeurt er nu?</h3>
+            <ol>
+                <li><strong>Binnen 2 uur</strong> nemen wij contact met u op om de afspraak te bevestigen</li>
+                <li>We bespreken uw probleem en plannen de beste oplossing</li>
+                <li>Onze specialist komt op de afgesproken tijd naar u toe</li>
+                <li>We lossen uw probleem op en geven duidelijke uitleg</li>
+            </ol>
+
+            <div class="contact-info">
+                <h3>📞 Contact & Noodgevallen</h3>
+                <p><strong>Directe hulp nodig?</strong> Bel ons op: <span class="highlight">06-42827860</span></p>
+                <p><strong>WhatsApp:</strong> <a href="https://wa.me/31642827860">06-42827860</a></p>
+                <p><strong>E-mail:</strong> info@hulpmetit.nl</p>
+            </div>
+
+            <h3>💡 Handige Tips</h3>
+            <ul>
+                <li>Zorg ervoor dat uw computer/apparaat toegankelijk is</li>
+                <li>Noteer eventuele foutmeldingen die u ziet</li>
+                <li>Houd belangrijke wachtwoorden bij de hand</li>
+                <li>Maak een backup van belangrijke bestanden (indien mogelijk)</li>
+            </ul>
+
+            <a href="tel:+31642827860" class="button">📞 Bel Ons Nu</a>
+
+            <p>Met vriendelijke groet,<br>
+            <strong>Het team van Hulp met IT</strong><br>
+            Uw betrouwbare computerhulp specialist</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Hulp met IT</strong> | Betrouwbare Computerhulp aan Huis</p>
+            <p>📧 info@hulpmetit.nl | 📱 06-42827860</p>
+            <p>💻 www.hulpmetit.nl</p>
+            <br>
+            <p style="font-size: 12px; color: #94a3b8;">
+                Deze e-mail is verstuurd omdat u een afspraak heeft aangevraagd bij Hulp met IT.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
