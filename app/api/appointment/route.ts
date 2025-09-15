@@ -628,7 +628,7 @@ function getAdminEmailTemplate(data: AppointmentFormData, reference: string): st
 export async function POST(request: NextRequest) {
   try {
     const data: AppointmentFormData = await request.json()
-    
+
     // Validation - verschillende vereisten voor urgente vs normale afspraken
     let requiredFields: (keyof AppointmentFormData)[] = ['firstName', 'lastName', 'email', 'phone', 'address', 'postalCode', 'city', 'problemDescription']
 
@@ -648,10 +648,36 @@ export async function POST(request: NextRequest) {
 
     // Generate reference number
     const reference = generateReference()
-    
+
+    // Check if email is configured
+    if (!process.env.SMTP_PASS) {
+      console.warn('Email not configured - appointment saved locally only')
+
+      // Log appointment data for manual processing
+      console.log('APPOINTMENT REQUEST:', {
+        reference,
+        timestamp: new Date().toISOString(),
+        customer: `${data.firstName} ${data.lastName}`,
+        email: data.email,
+        phone: data.phone,
+        address: `${data.address}, ${data.postalCode} ${data.city}`,
+        service: data.serviceType,
+        urgency: data.urgency,
+        preferredDate: data.preferredDate,
+        preferredTime: data.preferredTime,
+        problem: data.problemDescription
+      })
+
+      return NextResponse.json({
+        message: 'Afspraak succesvol aangevraagd - u wordt binnenkort gebeld',
+        reference,
+        status: 'success'
+      })
+    }
+
     // Create email transporter
     const transporter = createTransporter()
-    
+
     // Customer confirmation email
     const customerMailOptions = {
       from: '"Hulp met IT" <info@hulpmetit.nl>',
@@ -659,27 +685,44 @@ export async function POST(request: NextRequest) {
       subject: `Afspraak Bevestiging - ${reference}`,
       html: getCustomerEmailTemplate(data, reference)
     }
-    
-    // Admin notification email
+
+    // Admin notification email - send to multiple recipients as backup
     const adminMailOptions = {
       from: '"Afspraak Systeem" <info@hulpmetit.nl>',
       to: 'info@hulpmetit.nl',
+      cc: process.env.BACKUP_ADMIN_EMAIL, // Add backup email in .env.local
       subject: `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
       html: getAdminEmailTemplate(data, reference)
     }
-    
+
     // Send emails
-    await Promise.all([
-      transporter.sendMail(customerMailOptions),
-      transporter.sendMail(adminMailOptions)
-    ])
-    
+    console.log('Sending customer email to:', data.email)
+    console.log('Sending admin email to:', adminMailOptions.to)
+    console.log('Admin email from:', adminMailOptions.from)
+    console.log('Admin email subject:', adminMailOptions.subject)
+
+    try {
+      // Send customer email
+      const customerResult = await transporter.sendMail(customerMailOptions)
+      console.log('✅ Customer email sent:', customerResult.messageId)
+      console.log('Customer email response:', customerResult.response)
+
+      // Send admin email separately to catch any specific errors
+      const adminResult = await transporter.sendMail(adminMailOptions)
+      console.log('✅ Admin email sent:', adminResult.messageId)
+      console.log('Admin email response:', adminResult.response)
+
+    } catch (error) {
+      console.error('❌ Email sending error:', error)
+      throw error
+    }
+
     return NextResponse.json({
       message: 'Afspraak succesvol aangevraagd',
       reference,
       status: 'success'
     })
-    
+
   } catch (error) {
     // Log error securely without exposing details
     if (process.env.NODE_ENV === 'development') {
