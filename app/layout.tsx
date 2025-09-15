@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   title: 'Hulp met IT - Computerhulp aan Huis | Specialist binnen 24u',
   description: 'Snelle, betrouwbare computerhulp aan huis door gekwalificeerde IT-specialisten. Standaard of spoed service, transparante tarieven, 5-sterren beoordeeld. Bel nu!',
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/Hulpmetit.png',
+    shortcut: '/Hulpmetit.png',
+    apple: '/Hulpmetit.png',
   },
   keywords: [
     'computerhulp aan huis',

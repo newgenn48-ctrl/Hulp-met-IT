@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(del \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\HIT\\hulpmetit-nextgen\\public\\favicon.ico\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
