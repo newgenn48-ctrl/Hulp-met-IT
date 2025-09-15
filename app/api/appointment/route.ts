@@ -35,7 +35,8 @@ const serviceTypeLabels: Record<string, string> = {
 // Urgency level mapping
 const urgencyLabels: Record<string, { label: string; priority: string }> = {
   'low': { label: 'Niet urgent - Binnen een week', priority: 'Laag' },
-  'normal': { label: 'Normaal - Binnen 2-3 dagen', priority: 'Normaal' },
+  'normal': { label: 'Zonder spoed - Vanaf 2 dagen', priority: 'Normaal' },
+  'urgent': { label: 'Met spoed - Binnen 24 uur', priority: 'Hoog' },
   'high': { label: 'Urgent - Binnen 24 uur', priority: 'Hoog' },
   'critical': { label: 'Zeer urgent - Zelfde dag', priority: 'KRITIEK' }
 }
@@ -80,7 +81,9 @@ function generateReference(): string {
 function getCustomerEmailTemplate(data: AppointmentFormData, reference: string): string {
   const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
   const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
-  const appointmentDateTime = formatDateTime(data.preferredDate, data.preferredTime)
+  const appointmentDateTime = data.preferredDate && data.preferredTime
+    ? formatDateTime(data.preferredDate, data.preferredTime)
+    : 'Wordt telefonisch afgesproken'
 
   return `
 <!DOCTYPE html>
@@ -262,7 +265,7 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
         Referentienummer: <strong>${reference}</strong>
       </div>
       
-      <div class="info-card ${data.urgency === 'high' ? 'priority-high' : data.urgency === 'critical' ? 'priority-critical' : ''}">
+      <div class="info-card ${data.urgency === 'urgent' || data.urgency === 'high' ? 'priority-high' : data.urgency === 'critical' ? 'priority-critical' : ''}">
         <h3>📋 Afspraakgegevens</h3>
         <p><strong>Service:</strong> ${serviceLabel}</p>
         <p><strong>Gewenste datum & tijd:</strong> ${appointmentDateTime}</p>
@@ -315,7 +318,9 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
 function getAdminEmailTemplate(data: AppointmentFormData, reference: string): string {
   const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
   const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
-  const appointmentDateTime = formatDateTime(data.preferredDate, data.preferredTime)
+  const appointmentDateTime = data.preferredDate && data.preferredTime
+    ? formatDateTime(data.preferredDate, data.preferredTime)
+    : 'SPOED - Datum/tijd wordt telefonisch afgesproken'
   const currentTime = new Date().toLocaleString('nl-NL', { 
     timeZone: 'Europe/Amsterdam',
     weekday: 'long',
@@ -544,7 +549,7 @@ function getAdminEmailTemplate(data: AppointmentFormData, reference: string): st
 </head>
 <body>
   <div class="email-container">
-    <div class="header ${data.urgency === 'high' ? 'urgent' : data.urgency === 'critical' ? 'critical' : ''}">
+    <div class="header ${data.urgency === 'urgent' || data.urgency === 'high' ? 'urgent' : data.urgency === 'critical' ? 'critical' : ''}">
       <h1>⚡ Nieuwe Afspraak Aanvraag</h1>
       <div class="reference">${reference}</div>
       <div class="timestamp">Ontvangen: ${currentTime}</div>
@@ -553,7 +558,7 @@ function getAdminEmailTemplate(data: AppointmentFormData, reference: string): st
     <div class="content">
       ${data.urgency === 'critical' ? 
         '<div class="priority-alert critical">🚨 KRITIEKE URGENTIE - ONMIDDELLIJK CONTACT VEREIST!</div>' : 
-        data.urgency === 'high' ? 
+        data.urgency === 'urgent' || data.urgency === 'high' ? 
         '<div class="priority-alert high">⚠️ HOGE URGENTIE - CONTACT BINNEN 24 UUR</div>' : ''
       }
       
@@ -624,10 +629,16 @@ export async function POST(request: NextRequest) {
   try {
     const data: AppointmentFormData = await request.json()
     
-    // Validation
-    const requiredFields: (keyof AppointmentFormData)[] = ['firstName', 'lastName', 'email', 'phone', 'address', 'postalCode', 'city', 'serviceType', 'preferredDate', 'preferredTime', 'problemDescription']
+    // Validation - verschillende vereisten voor urgente vs normale afspraken
+    let requiredFields: (keyof AppointmentFormData)[] = ['firstName', 'lastName', 'email', 'phone', 'address', 'postalCode', 'city', 'problemDescription']
+
+    // Voor urgente afspraken zijn datum/tijd optioneel
+    if (data.urgency !== 'urgent') {
+      requiredFields.push('preferredDate', 'preferredTime')
+    }
+
     const missingFields = requiredFields.filter(field => !data[field])
-    
+
     if (missingFields.length > 0) {
       return NextResponse.json(
         { message: `Ontbrekende velden: ${missingFields.join(', ')}` },
