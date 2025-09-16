@@ -1,22 +1,21 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, verifyRecaptcha } from '@/lib/validation'
+import { headers } from 'next/headers'
+import DOMPurify from 'dompurify'
+import { JSDOM } from 'jsdom'
 
-// Type definitions
-interface AppointmentFormData {
-  firstName: string
-  lastName: string
-  email: string
-  phone: string
-  address: string
-  postalCode: string
-  city: string
-  serviceType: string
-  urgency: string
-  preferredDate: string
-  preferredTime: string
-  problemDescription: string
-  deviceType: string
-  previousAttempts: string
+// Create DOMPurify instance for server-side sanitization
+const window = new JSDOM('').window
+const purify = DOMPurify(window as any)
+
+// Security headers
+const securityHeaders = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'X-XSS-Protection': '1; mode=block',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
 }
 
 // Service type mapping
@@ -315,7 +314,7 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
 }
 
 // Admin notification email template
-function getAdminEmailTemplate(data: AppointmentFormData, reference: string): string {
+function getAdminEmailTemplate(data: any, reference: string, security?: { ip: string; userAgent: string }): string {
   const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
   const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
   const appointmentDateTime = data.preferredDate && data.preferredTime
@@ -604,6 +603,18 @@ function getAdminEmailTemplate(data: AppointmentFormData, reference: string): st
           <li><strong>Stap 5:</strong> Bereid technicus voor met probleemdetails</li>
         </ul>
       </div>
+
+      ${security ? `
+      <div class="info-card" style="background: #fef3c7; border-left-color: #f59e0b;">
+        <h3>🔒 Security & Tracking Info</h3>
+        <p><strong>IP Address:</strong> ${security.ip}</p>
+        <p><strong>User Agent:</strong> ${security.userAgent}</p>
+        <p><strong>Submission Time:</strong> ${currentTime}</p>
+        <p style="font-size: 12px; color: #6b7280; margin-top: 8px;">
+          Deze informatie wordt bewaard voor beveiligingsdoeleinden
+        </p>
+      </div>
+      ` : ''}
       
       <div class="cta-section">
         <p style="margin-bottom: 16px; font-weight: 600; color: #991b1b;">
@@ -626,24 +637,112 @@ function getAdminEmailTemplate(data: AppointmentFormData, reference: string): st
 }
 
 export async function POST(request: NextRequest) {
+  const headersList = headers()
+  const ip = headersList.get('x-forwarded-for') || headersList.get('x-real-ip') || 'unknown'
+  const userAgent = headersList.get('user-agent') || 'unknown'
+
   try {
-    const data: AppointmentFormData = await request.json()
-
-    // Validation - verschillende vereisten voor urgente vs normale afspraken
-    let requiredFields: (keyof AppointmentFormData)[] = ['firstName', 'lastName', 'email', 'phone', 'address', 'postalCode', 'city', 'problemDescription']
-
-    // Voor urgente afspraken zijn datum/tijd optioneel
-    if (data.urgency !== 'urgent') {
-      requiredFields.push('preferredDate', 'preferredTime')
+    // Rate limiting check
+    if (!checkRateLimit(ip, 3, 15 * 60 * 1000)) {
+      logSecurityEvent('RATE_LIMIT_EXCEEDED', { userAgent }, ip)
+      return NextResponse.json(
+        { message: 'Te veel aanvragen. Probeer het over 15 minuten opnieuw.' },
+        {
+          status: 429,
+          headers: securityHeaders
+        }
+      )
     }
 
-    const missingFields = requiredFields.filter(field => !data[field])
+    // Parse and validate request body
+    const rawData = await request.json()
 
-    if (missingFields.length > 0) {
+    // Log suspicious activity
+    if (Object.keys(rawData).length > 20) {
+      logSecurityEvent('SUSPICIOUS_REQUEST_SIZE', { fieldCount: Object.keys(rawData).length, userAgent }, ip)
+    }
+
+    // Validate with Zod schema
+    const validationResult = appointmentSchema.safeParse(rawData)
+
+    if (!validationResult.success) {
+      console.log('VALIDATION ERROR OBJECT:', validationResult.error)
+      console.log('VALIDATION ISSUES:', validationResult.error.issues)
+
+      logSecurityEvent('VALIDATION_FAILED', {
+        errors: validationResult.error.issues,
+        userAgent
+      }, ip)
+
       return NextResponse.json(
-        { message: `Ontbrekende velden: ${missingFields.join(', ')}` },
-        { status: 400 }
+        {
+          message: 'Ongeldige gegevens ingevoerd',
+          errors: validationResult.error.issues?.map(err => ({
+            field: err.path.join('.'),
+            message: err.message
+          })) || []
+        },
+        {
+          status: 400,
+          headers: securityHeaders
+        }
       )
+    }
+
+    const data = validationResult.data
+
+    // Verify reCAPTCHA in production
+    if (process.env.NODE_ENV === 'production' && data.recaptchaToken) {
+      const isValidCaptcha = await verifyRecaptcha(data.recaptchaToken)
+      if (!isValidCaptcha) {
+        logSecurityEvent('RECAPTCHA_VERIFICATION_FAILED', {
+          userAgent,
+          hasToken: !!data.recaptchaToken
+        }, ip)
+
+        return NextResponse.json(
+          { message: 'reCAPTCHA verificatie mislukt. Probeer het opnieuw.' },
+          {
+            status: 400,
+            headers: securityHeaders
+          }
+        )
+      }
+    } else if (process.env.NODE_ENV === 'production' && !data.recaptchaToken) {
+      logSecurityEvent('MISSING_RECAPTCHA_TOKEN', { userAgent }, ip)
+
+      return NextResponse.json(
+        { message: 'reCAPTCHA verificatie is verplicht.' },
+        {
+          status: 400,
+          headers: securityHeaders
+        }
+      )
+    }
+
+    // Additional business logic validation
+    if (data.urgency !== 'urgent' && data.urgency !== 'critical') {
+      if (!data.preferredDate || !data.preferredTime) {
+        return NextResponse.json(
+          { message: 'Datum en tijd zijn verplicht voor niet-urgente afspraken' },
+          {
+            status: 400,
+            headers: securityHeaders
+          }
+        )
+      }
+    }
+
+    // Sanitize all text inputs
+    const sanitizedData = {
+      ...data,
+      firstName: sanitizeInput(data.firstName),
+      lastName: sanitizeInput(data.lastName),
+      address: sanitizeInput(data.address),
+      city: sanitizeInput(data.city),
+      problemDescription: purify.sanitize(data.problemDescription),
+      deviceType: data.deviceType ? sanitizeInput(data.deviceType) : '',
+      previousAttempts: data.previousAttempts ? purify.sanitize(data.previousAttempts) : ''
     }
 
     // Generate reference number
@@ -651,27 +750,30 @@ export async function POST(request: NextRequest) {
 
     // Check if email is configured
     if (!process.env.SMTP_PASS) {
+      logSecurityEvent('EMAIL_NOT_CONFIGURED', { reference }, ip)
       console.warn('Email not configured - appointment saved locally only')
 
       // Log appointment data for manual processing
       console.log('APPOINTMENT REQUEST:', {
         reference,
         timestamp: new Date().toISOString(),
-        customer: `${data.firstName} ${data.lastName}`,
+        customer: `${sanitizedData.firstName} ${sanitizedData.lastName}`,
         email: data.email,
         phone: data.phone,
-        address: `${data.address}, ${data.postalCode} ${data.city}`,
+        address: `${sanitizedData.address}, ${data.postalCode} ${sanitizedData.city}`,
         service: data.serviceType,
         urgency: data.urgency,
         preferredDate: data.preferredDate,
         preferredTime: data.preferredTime,
-        problem: data.problemDescription
+        problem: sanitizedData.problemDescription
       })
 
       return NextResponse.json({
         message: 'Afspraak succesvol aangevraagd - u wordt binnenkort gebeld',
         reference,
         status: 'success'
+      }, {
+        headers: securityHeaders
       })
     }
 
@@ -683,16 +785,16 @@ export async function POST(request: NextRequest) {
       from: '"Hulp met IT" <info@hulpmetit.nl>',
       to: data.email,
       subject: `Afspraak Bevestiging - ${reference}`,
-      html: getCustomerEmailTemplate(data, reference)
+      html: getCustomerEmailTemplate(sanitizedData, reference)
     }
 
     // Admin notification email - send to multiple recipients as backup
     const adminMailOptions = {
       from: '"Afspraak Systeem" <info@hulpmetit.nl>',
       to: 'info@hulpmetit.nl',
-      cc: process.env.BACKUP_ADMIN_EMAIL, // Add backup email in .env.local
+      cc: process.env.BACKUP_ADMIN_EMAIL,
       subject: `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
-      html: getAdminEmailTemplate(data, reference)
+      html: getAdminEmailTemplate(sanitizedData, reference, { ip, userAgent })
     }
 
     // Send emails
@@ -702,17 +804,30 @@ export async function POST(request: NextRequest) {
     console.log('Admin email subject:', adminMailOptions.subject)
 
     try {
-      // Send customer email
-      const customerResult = await transporter.sendMail(customerMailOptions)
+      // Send both emails in parallel for faster response
+      const [customerResult, adminResult] = await Promise.all([
+        transporter.sendMail(customerMailOptions),
+        transporter.sendMail(adminMailOptions)
+      ])
+
       console.log('✅ Customer email sent:', customerResult.messageId)
       console.log('Customer email response:', customerResult.response)
-
-      // Send admin email separately to catch any specific errors
-      const adminResult = await transporter.sendMail(adminMailOptions)
       console.log('✅ Admin email sent:', adminResult.messageId)
       console.log('Admin email response:', adminResult.response)
 
+      // Log successful appointment creation
+      logSecurityEvent('APPOINTMENT_CREATED', {
+        reference,
+        customerEmail: data.email,
+        urgency: data.urgency,
+        serviceType: data.serviceType
+      }, ip)
+
     } catch (error) {
+      logSecurityEvent('EMAIL_SENDING_ERROR', {
+        error: error instanceof Error ? error.message : 'Unknown error',
+        reference
+      }, ip)
       console.error('❌ Email sending error:', error)
       throw error
     }
@@ -721,17 +836,27 @@ export async function POST(request: NextRequest) {
       message: 'Afspraak succesvol aangevraagd',
       reference,
       status: 'success'
+    }, {
+      headers: securityHeaders
     })
 
   } catch (error) {
     // Log error securely without exposing details
+    logSecurityEvent('APPOINTMENT_PROCESSING_ERROR', {
+      error: error instanceof Error ? error.message : 'Unknown error',
+      stack: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.stack : undefined) : undefined
+    }, ip)
+
     if (process.env.NODE_ENV === 'development') {
       console.error('Error processing appointment:', error)
     }
 
     return NextResponse.json(
       { message: 'Er is een fout opgetreden bij het verwerken van uw afspraak. Probeer het opnieuw of bel ons direct.' },
-      { status: 500 }
+      {
+        status: 500,
+        headers: securityHeaders
+      }
     )
   }
 }

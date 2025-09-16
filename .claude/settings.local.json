@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(dir:*)",
-      "Bash(del \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\HIT\\hulpmetit-nextgen\\public\\favicon.ico\")"
+      "Bash(del \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\HIT\\hulpmetit-nextgen\\public\\favicon.ico\")",
+      "Bash(if [ -z \"$SMTP_PASS\" ])",
+      "Bash(then echo \"SMTP_PASS is NOT set\")",
+      "Bash(else echo \"SMTP_PASS is set\")",
+      "Bash(fi)",
+      "Bash(echo:*)",
+      "Bash(echo \"SMTP_USER: $SMTP_USER\")",
+      "Bash(if [ -n \"$SMTP_PASS\" ])",
+      "Bash(then echo \"SMTP_PASS: [SET]\")",
+      "Bash(else echo \"SMTP_PASS: [NOT SET]\")",
+      "Bash(npm run dev:*)",
+      "Bash(npm install:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []
