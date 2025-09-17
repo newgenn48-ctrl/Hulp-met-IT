@@ -7,7 +7,7 @@ export function WebVitals() {
     // Only load Web Vitals in production
     if (process.env.NODE_ENV !== 'production') return
 
-    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+    import('web-vitals').then(({ onCLS, onINP, onFCP, onLCP, onTTFB }) => {
       function sendToAnalytics(metric: any) {
         // Send to Google Analytics 4
         if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -20,11 +20,11 @@ export function WebVitals() {
         }
       }
 
-      getCLS(sendToAnalytics)
-      getFID(sendToAnalytics)
-      getFCP(sendToAnalytics)
-      getLCP(sendToAnalytics)
-      getTTFB(sendToAnalytics)
+      onCLS(sendToAnalytics)
+      onINP(sendToAnalytics)
+      onFCP(sendToAnalytics)
+      onLCP(sendToAnalytics)
+      onTTFB(sendToAnalytics)
     })
   }, [])
 

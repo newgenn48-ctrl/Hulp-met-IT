@@ -8,7 +8,6 @@ import {
 } from 'lucide-react'
 import { Metadata } from 'next'
 import services from '@/lib/data/services.json'
-import { StructuredData } from '@/components/seo/StructuredData'
 
 const service = services.find(s => s.slug === 'computerhulp')!
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useRecaptcha, RecaptchaEnterprise } from './Recaptcha'
 import { appointmentSchema, type AppointmentFormData } from '@/lib/validation'
 import Script from 'next/script'
@@ -82,7 +82,7 @@ export default function AppointmentFormSecure() {
     }
   }
 
-  const validateStep = (step: number): boolean => {
+  const validateStep = useCallback((step: number): boolean => {
     switch (step) {
       case 1:
         return !!(
@@ -108,7 +108,7 @@ export default function AppointmentFormSecure() {
       default:
         return true
     }
-  }
+  }, [formData])
 
   const nextStep = () => {
     if (validateStep(currentStep)) {
@@ -126,7 +126,7 @@ export default function AppointmentFormSecure() {
   // Check form validity on form data changes
   useEffect(() => {
     setIsFormValid(validateStep(currentStep))
-  }, [formData, currentStep])
+  }, [formData, currentStep, validateStep])
 
   const handleRecaptchaToken = async (token: string) => {
     // Form is being submitted via reCAPTCHA Enterprise
