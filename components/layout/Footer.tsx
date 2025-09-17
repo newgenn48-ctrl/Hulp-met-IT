@@ -97,6 +97,16 @@ export function Footer() {
                   Privacy beleid
                 </Link>
               </li>
+              <li>
+                <Link href="/sitemap.xml" className="text-neural-400 hover:text-primary-300 transition-colors text-sm">
+                  Sitemap
+                </Link>
+              </li>
+              <li>
+                <Link href="/regios" className="text-neural-400 hover:text-primary-300 transition-colors text-sm">
+                  Alle regio's
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

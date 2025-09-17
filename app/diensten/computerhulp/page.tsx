@@ -1,17 +1,14 @@
 import { FloatingElements } from '@/components/three/FloatingElements'
 import { ClientWrapper } from '@/components/ClientWrapper'
 import Link from 'next/link'
-import { 
-  Monitor, 
-  Clock, 
-  Euro,
+import {
   CheckCircle,
   ArrowRight,
-  Phone,
-  Shield
+  Phone
 } from 'lucide-react'
 import { Metadata } from 'next'
 import services from '@/lib/data/services.json'
+import { StructuredData } from '@/components/seo/StructuredData'
 
 const service = services.find(s => s.slug === 'computerhulp')!
 
@@ -22,7 +19,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${service.name} - Hulp met IT`,
     description: service.longDescription,
-    images: [`/images/${service.slug}-og.webp`],
+    images: ['/og-image.webp'],
+    type: 'website',
+    locale: 'nl_NL',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${service.name} - Hulp met IT`,
+    description: service.longDescription,
+    images: ['/og-image.webp'],
   },
 }
 

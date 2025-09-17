@@ -4,8 +4,8 @@ import { FloatingElements } from '@/components/three/FloatingElements'
 import { ClientWrapper } from '@/components/ClientWrapper'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
-import { 
-  Phone, 
+import {
+  Phone,
   Calendar,
   Shield,
   Clock,
@@ -13,10 +13,7 @@ import {
   AlertTriangle,
   Download,
   Settings,
-  FileText,
-  Users,
-  Zap,
-  Star
+  FileText
 } from 'lucide-react'
 
 const urgencyPoints = [

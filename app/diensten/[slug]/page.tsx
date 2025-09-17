@@ -1,4 +1,3 @@
-import { Card } from '@/components/ui/Card'
 import { FloatingElements } from '@/components/three/FloatingElements'
 import { MetaTags } from '@/components/seo/MetaTags'
 import Link from 'next/link'

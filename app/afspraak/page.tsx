@@ -1,8 +1,18 @@
 import { FloatingElements } from '@/components/three/FloatingElements'
 import { ClientWrapper } from '@/components/ClientWrapper'
-import { AppointmentForm } from '@/components/forms/AppointmentForm'
 import { NoSSR } from '@/components/NoSSR'
 import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
+
+// Dynamically import the form to reduce initial bundle size
+const AppointmentForm = dynamic(() => import('@/components/forms/AppointmentForm').then(mod => ({ default: mod.AppointmentForm })), {
+  loading: () => (
+    <div className="w-full h-[500px] bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 animate-pulse flex items-center justify-center">
+      <div className="text-neutral-400">Formulier wordt geladen...</div>
+    </div>
+  ),
+  ssr: false
+})
 
 export const metadata: Metadata = {
   title: 'Afspraak Maken - Direct Online Plannen | Hulp met IT',
@@ -44,9 +54,7 @@ export default function AfspraakPage() {
             </div>
 
             <div className="max-w-2xl mx-auto">
-              <NoSSR fallback={<div className="w-full h-[500px] bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 animate-pulse flex items-center justify-center"><div className="text-neutral-400">Formulier wordt geladen...</div></div>}>
-                <AppointmentForm />
-              </NoSSR>
+              <AppointmentForm />
             </div>
           </div>
         </section>

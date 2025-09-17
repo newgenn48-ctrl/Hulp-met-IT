@@ -1,5 +1,5 @@
 // components/forms/__tests__/AppointmentForm.test.tsx
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { AppointmentForm } from '../AppointmentForm'
 import userEvent from '@testing-library/user-event'
 
@@ -80,7 +80,7 @@ describe('AppointmentForm', () => {
     // Vul datum, tijd en probleem in
     const futureDate = new Date()
     futureDate.setDate(futureDate.getDate() + 3)
-    await userEvent.type(dateInput, futureDate.toISOString().split('T')[0])
+    await userEvent.type(dateInput, futureDate.toISOString().split('T')[0]!)
     await userEvent.selectOptions(timeSelect, 'Tussen 10:00 en 12:00 uur')
     await userEvent.type(problemTextarea, 'Ik heb hulp nodig met computer installatie.')
 

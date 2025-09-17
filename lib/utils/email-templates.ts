@@ -10,17 +10,17 @@ function renderTemplate(template: string, data: TemplateData): string {
   let rendered = template
 
   // Replace simple variables {{variable}}
-  rendered = rendered.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+  rendered = rendered.replace(/\{\{(\w+)\}\}/g, (_match, key) => {
     return data[key] || ''
   })
 
   // Handle conditional blocks {{#variable}} content {{/variable}}
-  rendered = rendered.replace(/\{\{#(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (match, key, content) => {
+  rendered = rendered.replace(/\{\{#(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_match, key, content) => {
     return data[key] ? content : ''
   })
 
   // Handle negative conditional blocks {{^variable}} content {{/variable}}
-  rendered = rendered.replace(/\{\{\^(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (match, key, content) => {
+  rendered = rendered.replace(/\{\{\^(\w+)\}\}([\s\S]*?)\{\{\/\1\}\}/g, (_match, key, content) => {
     return !data[key] ? content : ''
   })
 

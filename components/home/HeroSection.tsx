@@ -1,6 +1,5 @@
 'use client'
 
-import { Button } from '@/components/ui/Button'
 import { FloatingElements } from '@/components/three/FloatingElements'
 import Link from 'next/link'
 import { Calendar, Phone, Star, Clock, CheckCircle } from 'lucide-react'
@@ -24,7 +23,7 @@ export function HeroSection() {
           <span className="text-white">aan Huis</span>
         </h1>
         
-        <p className="text-xl lg:text-2xl text-neural-300 max-w-4xl mx-auto mb-6 leading-relaxed">
+        <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">
           Computer, tablet, smartphone of printer problemen? Onze vriendelijke specialisten komen <span className="text-primary-300 font-semibold">binnen 24 uur (spoed)</span> of <span className="text-primary-300 font-semibold">vanaf overmorgen (standaard)</span> naar u toe!
         </p>
 
@@ -34,7 +33,7 @@ export function HeroSection() {
             return (
               <div
                 key={index}
-                className="flex items-center space-x-3 text-lg text-neural-300"
+                className="flex items-center space-x-3 text-lg text-white"
               >
                 <IconComponent className="w-6 h-6 text-primary-400" />
                 <span>{benefit.text}</span>

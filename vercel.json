@@ -5,10 +5,7 @@
   "framework": "nextjs",
   "regions": ["fra1"],
   "functions": {
-    "app/api/contact/route.ts": {
-      "maxDuration": 10
-    },
-    "app/api/afspraak/route.ts": {
+    "app/api/appointment/route.ts": {
       "maxDuration": 10
     }
   },
@@ -25,8 +22,37 @@
           "value": "DENY"
         },
         {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        },
+        {
           "key": "Strict-Transport-Security",
           "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://c.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://c.clarity.ms; frame-src https://www.google.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
         }
       ]
     }

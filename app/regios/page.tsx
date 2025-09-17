@@ -1,10 +1,9 @@
 import { ParticleField } from '@/components/three/ParticleField'
 import { ClientWrapper } from '@/components/ClientWrapper'
 import Link from 'next/link'
-import { 
-  MapPin, 
-  Users, 
-  Clock, 
+import {
+  MapPin,
+  Clock,
   Star,
   ArrowRight,
   Phone,

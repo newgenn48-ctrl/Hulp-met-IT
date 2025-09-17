@@ -3,10 +3,13 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StructuredData } from '@/components/seo/StructuredData'
 import { ClarityAnalytics } from '@/components/seo/ClarityAnalytics'
+import { WebVitals } from '@/components/seo/WebVitals'
+import { CookieConsent } from '@/components/privacy/CookieConsent'
 import { StickyContactButtons } from '@/components/ui/StickyContactButtons'
 import { Metadata, Viewport } from 'next'
 import { inter, spaceGrotesk } from '@/lib/fonts'
 import { NoSSR } from '@/components/NoSSR'
+import Script from 'next/script'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -19,11 +22,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Hulp met IT - Computerhulp aan Huis | Specialist binnen 24u',
   description: 'Snelle, betrouwbare computerhulp aan huis door gekwalificeerde IT-specialisten. Standaard of spoed service, transparante tarieven, 5-sterren beoordeeld. Bel nu!',
-  icons: {
-    icon: '/Hulpmetit.png',
-    shortcut: '/Hulpmetit.png',
-    apple: '/Hulpmetit.png',
-  },
+  icons: [
+    { rel: 'icon', url: '/icon', type: 'image/png', sizes: '32x32' },
+    { rel: 'apple-touch-icon', url: '/icon', sizes: '32x32' }
+  ],
   keywords: [
     'computerhulp aan huis',
     'IT hulp',
@@ -90,42 +92,56 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WWZVT98T'
   return (
     <html lang="nl" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WWZVT98T');`,
-          }}
-        />
+        {/* Preload critical resources */}
+        <link rel="preload" href="/og-image.webp" as="image" type="image/webp" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="//www.google.com" />
       </head>
       <body className={`${inter.className} antialiased`}>
+        {/* Skip link for screen readers */}
+        <a href="#main-content" className="skip-link">
+          Ga naar hoofdinhoud
+        </a>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-WWZVT98T"
+            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
             height="0"
             width="0"
             style={{display: 'none', visibility: 'hidden'}}
           />
         </noscript>
+        {/* Google Tag Manager Script */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmId}');`,
+          }}
+        />
         <NoSSR>
           <ClarityAnalytics />
+          <WebVitals />
         </NoSSR>
         <div className="min-h-screen bg-gradient-to-br from-neural-900 via-neural-800 to-primary-900">
           <Header />
-          <main className="relative">
+          <main id="main-content" className="relative">
             {children}
           </main>
           <Footer />
         </div>
         <NoSSR>
           <StickyContactButtons />
+          <CookieConsent />
         </NoSSR>
         <StructuredData />
       </body>

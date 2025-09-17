@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { Card } from '@/components/ui/Card'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
@@ -108,6 +107,11 @@ export function TestimonialsSection() {
   }, [])
 
   const currentTestimonial = testimonials[currentIndex]
+
+  // Early return if no testimonial is available
+  if (!currentTestimonial) {
+    return null
+  }
 
   return (
     <section className="section-spacing">

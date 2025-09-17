@@ -33,8 +33,20 @@ body {
   }
 }
 
+/* Enhanced accessibility focus ring with better contrast */
 .focus-ring {
-  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-neutral-900;
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-neutral-900;
+}
+
+/* Skip link for screen readers */
+.skip-link {
+  @apply absolute -top-10 left-2 z-50 bg-primary-600 text-white px-4 py-2 rounded-md font-medium transition-all duration-200;
+  transform: translateY(-100%);
+}
+
+.skip-link:focus {
+  @apply top-2;
+  transform: translateY(0);
 }
 
 .glass-effect {
@@ -141,13 +153,19 @@ body {
   animation: fade-in 0.3s ease-out;
 }
 
+/* Enhanced CTA button with better accessibility */
 .btn-cta {
   @apply relative inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-primary-600 to-accent-600 rounded-lg shadow-lg transition-all duration-300 hover:from-primary-500 hover:to-accent-500 hover:shadow-xl hover:-translate-y-1 focus-ring;
   animation: pulse-glow 3s ease-in-out infinite;
+  min-height: 44px; /* WCAG touch target size */
+  min-width: 44px;
 }
 
+/* Enhanced secondary button with better accessibility */
 .btn-secondary {
-  @apply inline-flex items-center px-6 py-3 text-base font-medium text-primary-100 bg-white/10 border border-white/20 rounded-lg backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/30 focus-ring;
+  @apply inline-flex items-center px-6 py-3 text-base font-medium text-white bg-white/10 border border-white/20 rounded-lg backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/30 focus-ring;
+  min-height: 44px; /* WCAG touch target size */
+  min-width: 44px;
 }
 
 .card-3d {

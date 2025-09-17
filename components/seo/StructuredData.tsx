@@ -4,7 +4,7 @@ interface StructuredDataProps {
   serviceName?: string
 }
 
-export function StructuredData({ page = 'home', breadcrumbs = [], serviceName }: StructuredDataProps = {}) {
+export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _serviceName }: StructuredDataProps = {}) {
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -14,11 +14,12 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName }:
     "url": "https://hulpmetit.nl",
     "telephone": "+31642827860",
     "email": "info@hulpmetit.nl",
-    "sameAs": [
-      "https://www.facebook.com/hulpmetit",
-      "https://www.instagram.com/hulpmetit",
-      "https://nl.linkedin.com/company/hulpmetit"
-    ],
+    // Social media links worden toegevoegd zodra accounts actief zijn
+    // "sameAs": [
+    //   "https://www.facebook.com/hulpmetit",
+    //   "https://www.instagram.com/hulpmetit",
+    //   "https://nl.linkedin.com/company/hulpmetit"
+    // ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "IT Hulp Services",
@@ -58,9 +59,36 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName }:
         }
       ]
     },
-    "serviceArea": {
-      "@type": "Country",
-      "name": "Nederland"
+    "serviceArea": [
+      {
+        "@type": "Country",
+        "name": "Nederland"
+      },
+      {
+        "@type": "City",
+        "name": "Amsterdam"
+      },
+      {
+        "@type": "City",
+        "name": "Rotterdam"
+      },
+      {
+        "@type": "City",
+        "name": "Den Haag"
+      },
+      {
+        "@type": "City",
+        "name": "Utrecht"
+      },
+      {
+        "@type": "City",
+        "name": "Eindhoven"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NL",
+      "addressRegion": "Nederland"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -123,6 +151,27 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName }:
     ]
   }
 
+  // Organization schema for better brand recognition
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hulp met IT",
+    "url": "https://hulpmetit.nl",
+    "logo": "https://hulpmetit.nl/og-image.webp",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+31-6-42827860",
+      "contactType": "customer service",
+      "availableLanguage": "Dutch"
+    },
+    // Social media links worden toegevoegd zodra accounts actief zijn
+    // "sameAs": [
+    //   "https://www.facebook.com/hulpmetit",
+    //   "https://www.instagram.com/hulpmetit",
+    //   "https://nl.linkedin.com/company/hulpmetit"
+    // ]
+  }
+
   const breadcrumbData = breadcrumbs.length > 0 ? {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -134,7 +183,7 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName }:
     }))
   } : null
 
-  const schemas: any[] = [localBusinessData]
+  const schemas: any[] = [localBusinessData, organizationData]
   if (page === 'faq' || page === 'home') {
     schemas.push(faqData)
   }

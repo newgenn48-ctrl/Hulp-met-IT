@@ -32,17 +32,6 @@ const initialFormData: AppointmentFormData = {
   problemDescription: ''
 }
 
-const serviceTypes = [
-  { value: 'computerhulp', label: 'Computerhulp - Computer problemen oplossen' },
-  { value: 'printerhulp', label: 'Printerhulp - Printer installatie & reparatie' },
-  { value: 'internet-wifi', label: 'Internet & WiFi - Netwerk problemen' },
-  { value: 'tablet-smartphone', label: 'Tablet & Smartphone hulp' },
-  { value: 'uitleg-les', label: 'Uitleg & Les - Computer training' },
-  { value: 'email-problemen', label: 'E-mail problemen oplossen' },
-  { value: 'windows-11-overstap', label: 'Windows 11 Overstap Service' },
-  { value: 'student-aan-huis', label: 'Student Aan Huis - Algemene IT hulp' },
-  { value: 'anders', label: 'Anders - Beschrijf in opmerkingen' }
-]
 
 const urgencyLevels = [
   { value: 'normal', label: 'Zonder spoed - Vanaf 2 dagen', color: 'text-blue-400' },
@@ -58,9 +47,6 @@ const timeSlots = [
   'Tussen 19:00 en 21:00 uur'
 ]
 
-const cities = [
-  'Amsterdam', 'Rotterdam', 'Utrecht', 'Den Haag', 'Eindhoven', 'Tilburg', 'Groningen', 'Almere', 'Breda', 'Nijmegen', 'Haarlem', 'Arnhem', 'Amersfoort', 'Zaanstad', 'Apeldoorn'
-]
 
 // Validation functions
 const validatePostalCode = (postalCode: string): boolean => {
@@ -84,12 +70,12 @@ const getMinDateForUrgency = (urgency: string): string => {
   const today = new Date()
   switch (urgency) {
     case 'urgent':
-      return today.toISOString().split('T')[0] // Today (maar wordt niet gebruikt)
+      return today.toISOString().split('T')[0]! // Today (maar wordt niet gebruikt)
     case 'normal':
       const twoDaysFromNow = new Date(today.getTime() + (2 * 24 * 60 * 60 * 1000))
-      return twoDaysFromNow.toISOString().split('T')[0]
+      return twoDaysFromNow.toISOString().split('T')[0]!
     default:
-      return today.toISOString().split('T')[0]
+      return today.toISOString().split('T')[0]!
   }
 }
 
@@ -99,7 +85,6 @@ export function AppointmentForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({})
 
   const handleInputChange = (field: keyof AppointmentFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))

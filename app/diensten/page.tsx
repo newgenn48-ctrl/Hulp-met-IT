@@ -1,8 +1,6 @@
-import { Card } from '@/components/ui/Card'
 import { InteractiveOrb } from '@/components/three/InteractiveOrb'
 import { MetaTags } from '@/components/seo/MetaTags'
 import Link from 'next/link'
-import Image from 'next/image'
 import { 
   Monitor, 
   Wifi, 
@@ -73,7 +71,7 @@ export default function DienstenPage() {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 mb-8">
-              {services.map((service, index) => {
+              {services.map((service, _index) => {
                 const IconComponent = iconMap[service.icon as keyof typeof iconMap]
                 
                 return (

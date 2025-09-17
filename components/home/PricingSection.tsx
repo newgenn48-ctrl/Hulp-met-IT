@@ -2,7 +2,6 @@
 
 import { PricingCard } from '@/components/ui/PricingCard'
 import Link from 'next/link'
-import { Button } from '@/components/ui/Button'
 import { ArrowRight, Phone } from 'lucide-react'
 
 export function PricingSection() {

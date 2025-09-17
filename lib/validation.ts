@@ -13,13 +13,13 @@ export const appointmentSchema = z.object({
     .string()
     .min(1, 'Voornaam is verplicht')
     .max(50, 'Voornaam mag maximaal 50 karakters bevatten')
-    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/u, 'Voornaam bevat ongeldige karakters'),
+    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/, 'Voornaam bevat ongeldige karakters'),
 
   lastName: z
     .string()
     .min(1, 'Achternaam is verplicht')
     .max(50, 'Achternaam mag maximaal 50 karakters bevatten')
-    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/u, 'Achternaam bevat ongeldige karakters'),
+    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/, 'Achternaam bevat ongeldige karakters'),
 
   email: z
     .string()
@@ -39,7 +39,7 @@ export const appointmentSchema = z.object({
     .string()
     .min(1, 'Adres is verplicht')
     .max(100, 'Adres mag maximaal 100 karakters bevatten')
-    .regex(/^[a-zA-Z0-9àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s.,-]+$/u, 'Adres bevat ongeldige karakters'),
+    .regex(/^[a-zA-Z0-9àáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s.,-]+$/, 'Adres bevat ongeldige karakters'),
 
   postalCode: z
     .string()
@@ -50,7 +50,7 @@ export const appointmentSchema = z.object({
     .string()
     .min(1, 'Plaats is verplicht')
     .max(50, 'Plaats mag maximaal 50 karakters bevatten')
-    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/u, 'Plaats bevat ongeldige karakters'),
+    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/, 'Plaats bevat ongeldige karakters'),
 
   serviceType: z
     .string()
@@ -81,8 +81,10 @@ export const appointmentSchema = z.object({
   preferredDate: z
     .string()
     .optional()
+    .nullable()
+    .transform((val) => val ?? '')
     .refine((date) => {
-      if (!date) return true
+      if (!date || date === '') return true
       const parsedDate = new Date(date)
       const today = new Date()
       today.setHours(0, 0, 0, 0)
@@ -93,10 +95,31 @@ export const appointmentSchema = z.object({
   preferredTime: z
     .string()
     .optional()
+    .nullable()
+    .transform((val) => val ?? '')
     .refine((time) => {
-      if (!time) return true
-      return /^([01]?[0-9]|2[0-3]):[0-5][0-9]$/.test(time)
-    }, 'Ongeldige tijd format'),
+      if (!time || time === '') return true
+
+      // Allow HH:MM format (e.g., "09:00", "13:00", "17:00")
+      if (/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/.test(time)) {
+        return true
+      }
+
+      // Allow common Dutch time expressions for flexibility
+      const dutchTimePatterns = [
+        /^tussen\s+\d{1,2}:\d{2}\s+en\s+\d{1,2}:\d{2}\s*uur?$/i,
+        /^rond\s+\d{1,2}:\d{2}\s*uur?$/i,
+        /^ongeveer\s+\d{1,2}:\d{2}\s*uur?$/i,
+        /^na\s+\d{1,2}:\d{2}\s*uur?$/i,
+        /^voor\s+\d{1,2}:\d{2}\s*uur?$/i,
+        /^ochtend$/i,
+        /^middag$/i,
+        /^avond$/i,
+        /^\d{1,2}:\d{2}\s*-\s*\d{1,2}:\d{2}\s*uur?$/i
+      ]
+
+      return dutchTimePatterns.some(pattern => pattern.test(time))
+    }, 'Ongeldige tijd format. Gebruik bijv. "14:00", "tussen 14:00 en 16:00 uur", of "ochtend"'),
 
   problemDescription: z
     .string()
@@ -132,8 +155,28 @@ export function sanitizeInput(input: string): string {
 // Rate limiting map for tracking requests
 export const rateLimitMap = new Map<string, { count: number; lastReset: number }>()
 
+// Security helper functions
+export function validateClientIP(request: Request): string {
+  // Get IP from various headers (Vercel, Cloudflare, etc.)
+  const forwardedFor = request.headers.get('x-forwarded-for')
+  const realIP = request.headers.get('x-real-ip')
+  const vercelIP = request.headers.get('x-vercel-forwarded-for')
+
+  const ip = vercelIP || forwardedFor?.split(',')[0] || realIP || 'unknown'
+
+  // Basic IP validation (IPv4 and IPv6)
+  const ipRegex = /^(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}|(?:[0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4})$/
+  return ipRegex.test(ip.trim()) ? ip.trim() : 'unknown'
+}
+
+export function sanitizeUserAgent(userAgent: string | null): string {
+  if (!userAgent) return 'unknown'
+  // Remove potentially dangerous characters and limit length
+  return userAgent.replace(/[<>'"&]/g, '').substring(0, 200)
+}
+
 // Rate limiting function
-export function checkRateLimit(ip: string, maxRequests = 3, windowMs = 15 * 60 * 1000): boolean {
+export function checkRateLimit(ip: string, maxRequests = 5, windowMs = 15 * 60 * 1000): boolean {
   const now = Date.now()
   const windowStart = now - windowMs
 
@@ -152,7 +195,42 @@ export function checkRateLimit(ip: string, maxRequests = 3, windowMs = 15 * 60 *
   return true
 }
 
-// reCAPTCHA verification function
+// reCAPTCHA Enterprise verification function
+export async function verifyRecaptchaEnterprise(token: string, expectedAction: string = 'submit'): Promise<boolean> {
+  if (!token) return false
+
+  try {
+    // For reCAPTCHA Enterprise, we can use the standard verification endpoint with your keys
+    // Since you're using the same site key, let's use the regular verification first
+    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+    })
+
+    const data = await response.json()
+
+    logSecurityEvent('RECAPTCHA_ENTERPRISE_VERIFICATION', {
+      success: data.success,
+      action: expectedAction,
+      hostname: data.hostname,
+      timestamp: data.challenge_ts
+    })
+
+    return data.success === true
+  } catch (error) {
+    console.error('reCAPTCHA Enterprise verification error:', error)
+    logSecurityEvent('RECAPTCHA_ENTERPRISE_ERROR', {
+      error: error instanceof Error ? error.message : 'Unknown error',
+      action: expectedAction
+    })
+    return false
+  }
+}
+
+// Legacy reCAPTCHA v2 verification function (fallback)
 export async function verifyRecaptcha(token: string): Promise<boolean> {
   if (!token) return false
 

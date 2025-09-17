@@ -38,7 +38,7 @@ export function AboutPreview() {
           </div>
 
           <div className="grid grid-cols-2 gap-6">
-            {stats.map((stat, index) => {
+            {stats.map((stat, _index) => {
               const IconComponent = stat.icon
               return (
                 <div key={stat.label}>

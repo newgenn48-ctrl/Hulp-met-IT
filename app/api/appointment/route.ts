@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
-import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, verifyRecaptcha } from '@/lib/validation'
+import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, verifyRecaptchaEnterprise, verifyRecaptcha, validateClientIP, sanitizeUserAgent, type AppointmentFormData } from '@/lib/validation'
 import { headers } from 'next/headers'
 import DOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
@@ -8,6 +8,8 @@ import { JSDOM } from 'jsdom'
 // Create DOMPurify instance for server-side sanitization
 const window = new JSDOM('').window
 const purify = DOMPurify(window as any)
+
+// Types for better type safety (EmailStatus removed as it's not used)
 
 // Security headers
 const securityHeaders = {
@@ -17,6 +19,16 @@ const securityHeaders = {
   'Referrer-Policy': 'strict-origin-when-cross-origin',
   'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'",
 }
+
+// Email configuration constants
+const EMAIL_CONFIG = {
+  FROM_ADDRESS: 'info@hulpmetit.nl',
+  FROM_NAME: 'Hulp met IT',
+  ADMIN_FROM_NAME: 'Afspraak Systeem',
+  DOMAIN: 'hulpmetit.nl',
+  PHONE: '06-42827860',
+  WEBSITE: 'www.hulpmetit.nl'
+} as const
 
 // Service type mapping
 const serviceTypeLabels: Record<string, string> = {
@@ -40,33 +52,54 @@ const urgencyLabels: Record<string, { label: string; priority: string }> = {
   'critical': { label: 'Zeer urgent - Zelfde dag', priority: 'KRITIEK' }
 }
 
-// Create email transporter
+// Create email transporter with optimized settings
 function createTransporter() {
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'mail.hulpmetit.nl', // Je mail server
+    host: process.env.SMTP_HOST || 'mail.hulpmetit.nl',
     port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
-      user: process.env.SMTP_USER || 'info@hulpmetit.nl',
+      user: process.env.SMTP_USER || EMAIL_CONFIG.FROM_ADDRESS,
       pass: process.env.SMTP_PASS!
     },
     tls: {
-      rejectUnauthorized: false // For self-signed certificates
-    }
+      rejectUnauthorized: false
+    },
+    // Optimized settings for TransIP
+    pool: true,
+    maxConnections: 1,
+    rateDelta: 1000,
+    rateLimit: 1,
+    connectionTimeout: 30000,
+    greetingTimeout: 30000,
+    socketTimeout: 30000
   })
 }
 
 // Format date and time for Dutch locale
 function formatDateTime(date: string, time: string): string {
   const dateObj = new Date(date)
-  const options: Intl.DateTimeFormatOptions = { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
+  const options: Intl.DateTimeFormatOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
   }
   const formattedDate = dateObj.toLocaleDateString('nl-NL', options)
   return `${formattedDate} om ${time}`
+}
+
+// Format phone number for tel: links (converts Dutch format to international)
+function formatPhoneForTel(phone: string): string {
+  // Remove all spaces and dashes
+  const cleaned = phone.replace(/[-\s]/g, '')
+  // Convert Dutch format (06-xxx or 010-xxx) to international (+31xxx)
+  if (cleaned.startsWith('06')) {
+    return `+31${cleaned.substring(1)}`
+  } else if (cleaned.startsWith('0')) {
+    return `+31${cleaned.substring(1)}`
+  }
+  return cleaned
 }
 
 // Generate appointment reference number
@@ -74,6 +107,38 @@ function generateReference(): string {
   const timestamp = Date.now().toString().slice(-6)
   const random = Math.random().toString(36).substring(2, 5).toUpperCase()
   return `HIT-${timestamp}-${random}`
+}
+
+// Create standardized email headers
+function createEmailHeaders(reference: string): Record<string, string> {
+  return {
+    'X-Mailer': 'Hulp met IT Afspraak Systeem',
+    'X-Priority': '3',
+    'X-MSMail-Priority': 'Normal',
+    'List-Unsubscribe': `<mailto:${EMAIL_CONFIG.FROM_ADDRESS}?subject=Unsubscribe>`,
+    'Message-ID': `<${reference}-${Date.now()}@${EMAIL_CONFIG.DOMAIN}>`,
+    'Organization': EMAIL_CONFIG.FROM_NAME,
+    'X-Auto-Response-Suppress': 'OOF, DR, RN, NRN, AutoReply',
+    'Return-Path': `<${EMAIL_CONFIG.FROM_ADDRESS}>`
+  }
+}
+
+// Create email options with proper authentication setup
+function createEmailOptions(to: string, subject: string, html: string, text: string, reference: string, isAdmin = false) {
+  return {
+    from: `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
+    to,
+    replyTo: EMAIL_CONFIG.FROM_ADDRESS,
+    returnPath: EMAIL_CONFIG.FROM_ADDRESS,
+    envelope: {
+      from: EMAIL_CONFIG.FROM_ADDRESS,
+      to
+    },
+    subject,
+    html,
+    text,
+    headers: createEmailHeaders(reference)
+  }
 }
 
 // Customer confirmation email template
@@ -290,9 +355,9 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
       
       <div class="contact-section">
         <p><strong>Dringende vragen of wijzigingen?</strong><br>
-        Neem direct contact met ons op via onderstaande knop of bel ons op 06-42827860.</p>
+        Neem direct contact met ons op via onderstaande knop of bel ons op ${EMAIL_CONFIG.PHONE}.</p>
         
-        <a href="tel:+31642827860" class="cta-button" style="display: inline-block; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px;">📞 Direct Contact</a>
+        <a href="tel:${formatPhoneForTel(EMAIL_CONFIG.PHONE)}" class="cta-button" style="display: inline-block; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 15px;">📞 Direct Contact</a>
       </div>
     </div>
     
@@ -300,17 +365,66 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
       <div class="company-info">
         <strong>Hulp met IT</strong><br>
         Professionele IT-ondersteuning aan huis<br>
-        Telefoon: 06-42827860 | E-mail: info@hulpmetit.nl
+        Telefoon: ${EMAIL_CONFIG.PHONE} | E-mail: ${EMAIL_CONFIG.FROM_ADDRESS}
       </div>
       
       <div class="footer-links">
-        Website: <a href="https://www.hulpmetit.nl">www.hulpmetit.nl</a><br>
+        Website: <a href="https://${EMAIL_CONFIG.WEBSITE}">${EMAIL_CONFIG.WEBSITE}</a><br>
         © ${new Date().getFullYear()} Hulp met IT. Alle rechten voorbehouden.
       </div>
     </div>
   </div>
 </body>
 </html>`
+}
+
+// Customer confirmation email plain text template (for better deliverability)
+function getCustomerEmailTextTemplate(data: AppointmentFormData, reference: string): string {
+  const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
+  const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
+  const appointmentDateTime = data.preferredDate && data.preferredTime
+    ? formatDateTime(data.preferredDate, data.preferredTime)
+    : 'Wordt telefonisch afgesproken'
+
+  return `
+AFSPRAAK BEVESTIGING - HULP MET IT
+
+Beste ${data.firstName} ${data.lastName},
+
+Hartelijk dank voor uw vertrouwen in Hulp met IT. Wij hebben uw afspraakaanvraag in goede orde ontvangen en zullen binnen 2 werkuren telefonisch contact met u opnemen om de afspraak definitief te bevestigen.
+
+Referentienummer: ${reference}
+
+AFSPRAAKGEGEVENS:
+- Service: ${serviceLabel}
+- Gewenste datum & tijd: ${appointmentDateTime}
+- Prioriteit: ${urgencyInfo.label}
+- Locatie: ${data.address}, ${data.postalCode} ${data.city}
+
+PROBLEEM BESCHRIJVING:
+${data.problemDescription}
+
+VERVOLGSTAPPEN:
+1. Uw aanvraag is geregistreerd in ons systeem
+2. Wij nemen binnen 2 werkuren telefonisch contact op
+3. Datum en tijdstip worden definitief bevestigd
+4. Onze gecertificeerde IT-specialist komt naar u toe
+5. Uw IT-probleem wordt professioneel opgelost
+
+DRINGENDE VRAGEN?
+Neem direct contact met ons op:
+Telefoon: ${EMAIL_CONFIG.PHONE}
+E-mail: ${EMAIL_CONFIG.FROM_ADDRESS}
+
+---
+Hulp met IT
+Professionele IT-ondersteuning aan huis
+Website: ${EMAIL_CONFIG.WEBSITE}
+Telefoon: ${EMAIL_CONFIG.PHONE}
+E-mail: ${EMAIL_CONFIG.FROM_ADDRESS}
+
+© ${new Date().getFullYear()} Hulp met IT. Alle rechten voorbehouden.
+`
 }
 
 // Admin notification email template
@@ -566,7 +680,7 @@ function getAdminEmailTemplate(data: any, reference: string, security?: { ip: st
           <h3>👤 Klantinformatie</h3>
           <p><strong>Naam:</strong> ${data.firstName} ${data.lastName}</p>
           <p><strong>E-mail:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
-          <p><strong>Telefoon:</strong> <a href="tel:${data.phone}">${data.phone}</a></p>
+          <p><strong>Telefoon:</strong> <a href="tel:${formatPhoneForTel(data.phone)}">${data.phone}</a></p>
         </div>
         
         <div class="info-card location">
@@ -621,7 +735,7 @@ function getAdminEmailTemplate(data: any, reference: string, security?: { ip: st
           Direct actie vereist - neem contact op met klant
         </p>
         
-        <a href="tel:${data.phone}" class="cta-button">
+        <a href="tel:${formatPhoneForTel(data.phone)}" class="cta-button">
           📞 Bel klant nu
         </a>
         
@@ -668,9 +782,18 @@ export async function POST(request: NextRequest) {
     if (!validationResult.success) {
       console.log('VALIDATION ERROR OBJECT:', validationResult.error)
       console.log('VALIDATION ISSUES:', validationResult.error.issues)
+      console.log('RAW FORM DATA:', JSON.stringify(rawData, null, 2))
 
       logSecurityEvent('VALIDATION_FAILED', {
         errors: validationResult.error.issues,
+        rawData: {
+          urgency: rawData.urgency,
+          preferredDate: rawData.preferredDate,
+          preferredTime: rawData.preferredTime,
+          hasPreferredTime: !!rawData.preferredTime,
+          preferredTimeType: typeof rawData.preferredTime,
+          preferredTimeLength: rawData.preferredTime?.length || 0
+        },
         userAgent
       }, ip)
 
@@ -691,15 +814,35 @@ export async function POST(request: NextRequest) {
 
     const data = validationResult.data
 
-    // Verify reCAPTCHA in production
+    // Verify reCAPTCHA Enterprise in production
     if (process.env.NODE_ENV === 'production' && data.recaptchaToken) {
-      const isValidCaptcha = await verifyRecaptcha(data.recaptchaToken)
-      if (!isValidCaptcha) {
-        logSecurityEvent('RECAPTCHA_VERIFICATION_FAILED', {
-          userAgent,
-          hasToken: !!data.recaptchaToken
-        }, ip)
+      // Try reCAPTCHA Enterprise first, fallback to v2 if needed
+      const useEnterprise = process.env.RECAPTCHA_ENTERPRISE_API_KEY || process.env.RECAPTCHA_ENTERPRISE_PROJECT_ID
 
+      let isValidCaptcha = false
+      if (useEnterprise) {
+        isValidCaptcha = await verifyRecaptchaEnterprise(data.recaptchaToken, 'APPOINTMENT_SUBMIT')
+
+        if (!isValidCaptcha) {
+          logSecurityEvent('RECAPTCHA_ENTERPRISE_VERIFICATION_FAILED', {
+            userAgent,
+            hasToken: !!data.recaptchaToken,
+            action: 'APPOINTMENT_SUBMIT'
+          }, ip)
+        }
+      } else {
+        // Fallback to reCAPTCHA v2
+        isValidCaptcha = await verifyRecaptcha(data.recaptchaToken)
+
+        if (!isValidCaptcha) {
+          logSecurityEvent('RECAPTCHA_VERIFICATION_FAILED', {
+            userAgent,
+            hasToken: !!data.recaptchaToken
+          }, ip)
+        }
+      }
+
+      if (!isValidCaptcha) {
         return NextResponse.json(
           { message: 'reCAPTCHA verificatie mislukt. Probeer het opnieuw.' },
           {
@@ -722,7 +865,7 @@ export async function POST(request: NextRequest) {
 
     // Additional business logic validation
     if (data.urgency !== 'urgent' && data.urgency !== 'critical') {
-      if (!data.preferredDate || !data.preferredTime) {
+      if (!data.preferredDate || !data.preferredTime || data.preferredTime === '') {
         return NextResponse.json(
           { message: 'Datum en tijd zijn verplicht voor niet-urgente afspraken' },
           {
@@ -780,22 +923,29 @@ export async function POST(request: NextRequest) {
     // Create email transporter
     const transporter = createTransporter()
 
-    // Customer confirmation email
-    const customerMailOptions = {
-      from: '"Hulp met IT" <info@hulpmetit.nl>',
-      to: data.email,
-      subject: `Afspraak Bevestiging - ${reference}`,
-      html: getCustomerEmailTemplate(sanitizedData, reference)
-    }
+    // Email status tracking
+    let customerEmailSent = false
+    let adminEmailSent = false
 
-    // Admin notification email - send to multiple recipients as backup
-    const adminMailOptions = {
-      from: '"Afspraak Systeem" <info@hulpmetit.nl>',
-      to: 'info@hulpmetit.nl',
-      cc: process.env.BACKUP_ADMIN_EMAIL,
-      subject: `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
-      html: getAdminEmailTemplate(sanitizedData, reference, { ip, userAgent })
-    }
+    // Customer confirmation email
+    const customerMailOptions = createEmailOptions(
+      data.email,
+      `Bevestiging: Uw afspraak bij Hulp met IT (${reference})`,
+      getCustomerEmailTemplate(sanitizedData, reference),
+      getCustomerEmailTextTemplate(sanitizedData, reference),
+      reference,
+      false
+    )
+
+    // Admin notification email
+    const adminMailOptions = createEmailOptions(
+      EMAIL_CONFIG.FROM_ADDRESS,
+      `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
+      getAdminEmailTemplate(sanitizedData, reference, { ip, userAgent }),
+      '', // No text version needed for admin
+      reference,
+      true
+    )
 
     // Send emails
     console.log('Sending customer email to:', data.email)
@@ -804,38 +954,91 @@ export async function POST(request: NextRequest) {
     console.log('Admin email subject:', adminMailOptions.subject)
 
     try {
-      // Send both emails in parallel for faster response
-      const [customerResult, adminResult] = await Promise.all([
-        transporter.sendMail(customerMailOptions),
-        transporter.sendMail(adminMailOptions)
-      ])
+      // Send emails individually to handle failures gracefully
+      let customerError: any = null
+      let adminError: any = null
 
-      console.log('✅ Customer email sent:', customerResult.messageId)
-      console.log('Customer email response:', customerResult.response)
-      console.log('✅ Admin email sent:', adminResult.messageId)
-      console.log('Admin email response:', adminResult.response)
+      // Try to send customer email
+      try {
+        const customerResult = await transporter.sendMail(customerMailOptions)
+        console.log('✅ Customer email sent:', customerResult.messageId)
+        console.log('Customer email response:', customerResult.response)
+        customerEmailSent = true
+      } catch (error) {
+        customerError = error
+        console.error('❌ Customer email failed:', error)
+        logSecurityEvent('CUSTOMER_EMAIL_FAILED', {
+          error: error instanceof Error ? error.message : 'Unknown error',
+          customerEmail: data.email,
+          reference
+        }, ip)
+      }
 
-      // Log successful appointment creation
+      // Try to send admin email (always attempt, regardless of customer email result)
+      try {
+        const adminResult = await transporter.sendMail(adminMailOptions)
+        console.log('✅ Admin email sent:', adminResult.messageId)
+        console.log('Admin email response:', adminResult.response)
+        adminEmailSent = true
+      } catch (error) {
+        adminError = error
+        console.error('❌ Admin email failed:', error)
+        logSecurityEvent('ADMIN_EMAIL_FAILED', {
+          error: error instanceof Error ? error.message : 'Unknown error',
+          reference
+        }, ip)
+      }
+
+      // Log appointment creation with email status
       logSecurityEvent('APPOINTMENT_CREATED', {
         reference,
         customerEmail: data.email,
         urgency: data.urgency,
-        serviceType: data.serviceType
+        serviceType: data.serviceType,
+        customerEmailSent,
+        adminEmailSent,
+        emailErrors: {
+          customer: customerError ? (customerError instanceof Error ? customerError.message : 'Unknown error') : null,
+          admin: adminError ? (adminError instanceof Error ? adminError.message : 'Unknown error') : null
+        }
       }, ip)
 
+      // Only throw error if BOTH emails failed
+      if (!customerEmailSent && !adminEmailSent) {
+        throw new Error('Beide emails konden niet worden verzonden')
+      }
+
     } catch (error) {
-      logSecurityEvent('EMAIL_SENDING_ERROR', {
+      logSecurityEvent('EMAIL_SENDING_CRITICAL_ERROR', {
         error: error instanceof Error ? error.message : 'Unknown error',
         reference
       }, ip)
-      console.error('❌ Email sending error:', error)
+      console.error('❌ Critical email sending error:', error)
       throw error
     }
 
+    // Generate response message based on email delivery status
+    const getResponseMessage = (customerSent: boolean, adminSent: boolean): string => {
+      if (customerSent && adminSent) {
+        return 'Afspraak succesvol aangevraagd. U ontvangt een bevestigingsmail.'
+      } else if (!customerSent && adminSent) {
+        return 'Afspraak succesvol aangevraagd. We bellen u binnen 2 werkuren voor bevestiging.'
+      } else if (customerSent && !adminSent) {
+        return 'Afspraak succesvol aangevraagd. U ontvangt een bevestigingsmail.'
+      }
+      return 'Afspraak succesvol aangevraagd'
+    }
+
+    const responseMessage = getResponseMessage(customerEmailSent, adminEmailSent)
+
     return NextResponse.json({
-      message: 'Afspraak succesvol aangevraagd',
+      message: responseMessage,
       reference,
-      status: 'success'
+      status: 'success',
+      emailStatus: {
+        customerEmailSent,
+        adminEmailSent
+      }
     }, {
       headers: securityHeaders
     })

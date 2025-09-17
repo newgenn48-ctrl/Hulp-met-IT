@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useRef } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import { useState, useEffect } from 'react'
+import { useRecaptcha, RecaptchaEnterprise } from './Recaptcha'
 import { appointmentSchema, type AppointmentFormData } from '@/lib/validation'
+import Script from 'next/script'
 
 // Extended form data with security fields
 interface ExtendedFormData extends AppointmentFormData {
@@ -53,9 +54,8 @@ export default function AppointmentFormSecure() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({})
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
   const [rateLimitExceeded, setRateLimitExceeded] = useState(false)
-  const captchaRef = useRef<ReCAPTCHA>(null)
+  const { error: recaptchaError } = useRecaptcha()
 
   const handleInputChange = (field: keyof ExtendedFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -120,30 +120,16 @@ export default function AppointmentFormSecure() {
     setCurrentStep(prev => Math.max(prev - 1, 1))
   }
 
-  const handleCaptchaVerify = (token: string | null) => {
-    setCaptchaToken(token)
-    setFormData(prev => ({ ...prev, recaptchaToken: token || '' }))
-  }
+  // Store form validation state
+  const [isFormValid, setIsFormValid] = useState(false)
 
-  const handleCaptchaExpire = () => {
-    setCaptchaToken(null)
-    setFormData(prev => ({ ...prev, recaptchaToken: '' }))
-  }
+  // Check form validity on form data changes
+  useEffect(() => {
+    setIsFormValid(validateStep(currentStep))
+  }, [formData, currentStep])
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-
-    if (!validateStep(currentStep)) {
-      setErrorMessage('Vul alle verplichte velden correct in')
-      return
-    }
-
-    // Check if CAPTCHA is completed (skip in development)
-    if (process.env.NODE_ENV === 'production' && !captchaToken) {
-      setErrorMessage('Voltooi de CAPTCHA verificatie')
-      return
-    }
-
+  const handleRecaptchaToken = async (token: string) => {
+    // Form is being submitted via reCAPTCHA Enterprise
     setIsLoading(true)
     setSubmitStatus('idle')
     setErrorMessage('')
@@ -151,11 +137,21 @@ export default function AppointmentFormSecure() {
     setRateLimitExceeded(false)
 
     try {
+
+      // Clean form data before validation
+      const cleanedFormData = {
+        ...formData,
+        recaptchaToken: token,
+        // Ensure empty strings are handled properly
+        preferredTime: formData.preferredTime?.trim() || '',
+        preferredDate: formData.preferredDate?.trim() || ''
+      }
+
       // Client-side validation with Zod
-      const validationResult = appointmentSchema.safeParse(formData)
+      const validationResult = appointmentSchema.safeParse(cleanedFormData)
       if (!validationResult.success) {
         const fieldErrors: Record<string, string> = {}
-        validationResult.error.errors.forEach(err => {
+        validationResult.error.issues.forEach((err: any) => {
           if (err.path.length > 0) {
             fieldErrors[err.path[0] as string] = err.message
           }
@@ -170,7 +166,7 @@ export default function AppointmentFormSecure() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(cleanedFormData),
       })
 
       const result = await response.json()
@@ -179,8 +175,6 @@ export default function AppointmentFormSecure() {
         setSubmitStatus('success')
         setFormData(initialFormData)
         setCurrentStep(1)
-        setCaptchaToken(null)
-        captchaRef.current?.resetCaptcha()
       } else {
         if (response.status === 429) {
           setRateLimitExceeded(true)
@@ -198,18 +192,25 @@ export default function AppointmentFormSecure() {
           setErrorMessage(result.message || 'Er is een fout opgetreden')
         }
 
-        // Reset CAPTCHA on error
-        setCaptchaToken(null)
-        captchaRef.current?.resetCaptcha()
+        // reCAPTCHA Enterprise wordt automatisch gereset
       }
     } catch (error) {
       setSubmitStatus('error')
       setErrorMessage('Netwerkfout. Controleer uw internetverbinding.')
-      setCaptchaToken(null)
-      captchaRef.current?.resetCaptcha()
+      // reCAPTCHA Enterprise error handling
     } finally {
       setIsLoading(false)
     }
+  }
+
+  const handleRecaptchaError = (error: Error) => {
+    setErrorMessage(`reCAPTCHA Enterprise fout: ${error.message}`)
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    // Form validation is handled by the reCAPTCHA Enterprise button
+    // This function is kept for form element compatibility
   }
 
   if (submitStatus === 'success') {
@@ -249,7 +250,14 @@ export default function AppointmentFormSecure() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto p-8">
+    <>
+      {/* reCAPTCHA Enterprise Script - alleen geladen voor dit formulier */}
+      <Script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6Lcd3csrAAAAAABxp2Fe0zZ8rR7gfG4M3VGwZKAy"
+        strategy="afterInteractive"
+      />
+
+      <div className="max-w-2xl mx-auto p-8">
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
         {/* Progress indicator */}
         <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6">
@@ -299,14 +307,14 @@ export default function AppointmentFormSecure() {
                       }
                     }}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      validationErrors.firstName ? 'border-red-500' : 'border-gray-300'
+                      validationErrors['firstName'] ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Bijv. Jan"
                     maxLength={50}
                     required
                   />
-                  {validationErrors.firstName && (
-                    <p className="mt-1 text-sm text-red-600">{validationErrors.firstName}</p>
+                  {validationErrors['firstName'] && (
+                    <p className="mt-1 text-sm text-red-600">{validationErrors['firstName']}</p>
                   )}
                 </div>
 
@@ -326,14 +334,14 @@ export default function AppointmentFormSecure() {
                       }
                     }}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      validationErrors.lastName ? 'border-red-500' : 'border-gray-300'
+                      validationErrors['lastName'] ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="Bijv. de Vries"
                     maxLength={50}
                     required
                   />
-                  {validationErrors.lastName && (
-                    <p className="mt-1 text-sm text-red-600">{validationErrors.lastName}</p>
+                  {validationErrors['lastName'] && (
+                    <p className="mt-1 text-sm text-red-600">{validationErrors['lastName']}</p>
                   )}
                 </div>
               </div>
@@ -355,14 +363,14 @@ export default function AppointmentFormSecure() {
                       }
                     }}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      validationErrors.email ? 'border-red-500' : 'border-gray-300'
+                      validationErrors['email'] ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="bijv. jan@example.com"
                     maxLength={254}
                     required
                   />
-                  {validationErrors.email && (
-                    <p className="mt-1 text-sm text-red-600">{validationErrors.email}</p>
+                  {validationErrors['email'] && (
+                    <p className="mt-1 text-sm text-red-600">{validationErrors['email']}</p>
                   )}
                 </div>
 
@@ -382,13 +390,13 @@ export default function AppointmentFormSecure() {
                       }
                     }}
                     className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
-                      validationErrors.phone ? 'border-red-500' : 'border-gray-300'
+                      validationErrors['phone'] ? 'border-red-500' : 'border-gray-300'
                     }`}
                     placeholder="06-12345678 of 010-1234567"
                     required
                   />
-                  {validationErrors.phone && (
-                    <p className="mt-1 text-sm text-red-600">{validationErrors.phone}</p>
+                  {validationErrors['phone'] && (
+                    <p className="mt-1 text-sm text-red-600">{validationErrors['phone']}</p>
                   )}
                 </div>
               </div>
@@ -527,23 +535,61 @@ export default function AppointmentFormSecure() {
                     <label htmlFor="preferredTime" className="block text-sm font-medium text-gray-700 mb-2">
                       Gewenste tijd *
                     </label>
-                    <select
-                      id="preferredTime"
-                      value={formData.preferredTime}
-                      onChange={(e) => handleInputChange('preferredTime', e.target.value)}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                      required
-                    >
-                      <option value="">Selecteer een tijd</option>
-                      <option value="09:00">09:00</option>
-                      <option value="10:00">10:00</option>
-                      <option value="11:00">11:00</option>
-                      <option value="13:00">13:00</option>
-                      <option value="14:00">14:00</option>
-                      <option value="15:00">15:00</option>
-                      <option value="16:00">16:00</option>
-                      <option value="17:00">17:00</option>
-                    </select>
+                    <div className="space-y-2">
+                      <select
+                        id="preferredTime"
+                        value={formData.preferredTime}
+                        onChange={(e) => handleInputChange('preferredTime', e.target.value)}
+                        onBlur={(e) => {
+                          const error = validateField('preferredTime', e.target.value)
+                          if (error) {
+                            setValidationErrors(prev => ({ ...prev, preferredTime: error }))
+                          }
+                        }}
+                        className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                          validationErrors['preferredTime'] ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                        required
+                      >
+                        <option value="">Selecteer een tijd of typ hieronder</option>
+                        <option value="09:00">09:00 (Ochtend)</option>
+                        <option value="10:00">10:00 (Ochtend)</option>
+                        <option value="11:00">11:00 (Ochtend)</option>
+                        <option value="13:00">13:00 (Middag)</option>
+                        <option value="14:00">14:00 (Middag)</option>
+                        <option value="15:00">15:00 (Middag)</option>
+                        <option value="16:00">16:00 (Middag)</option>
+                        <option value="17:00">17:00 (Avond)</option>
+                        <option value="custom">Anders - typ hieronder</option>
+                      </select>
+
+                      {(formData.preferredTime === 'custom' || (formData.preferredTime && !['09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16:00', '17:00'].includes(formData.preferredTime))) && (
+                        <input
+                          type="text"
+                          placeholder="Bijv. tussen 14:00 en 16:00 uur, rond 15:00, ochtend"
+                          value={formData.preferredTime === 'custom' ? '' : formData.preferredTime}
+                          onChange={(e) => handleInputChange('preferredTime', e.target.value)}
+                          onBlur={(e) => {
+                            const error = validateField('preferredTime', e.target.value)
+                            if (error) {
+                              setValidationErrors(prev => ({ ...prev, preferredTime: error }))
+                            }
+                          }}
+                          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors ${
+                            validationErrors['preferredTime'] ? 'border-red-500' : 'border-gray-300'
+                          }`}
+                          maxLength={50}
+                        />
+                      )}
+
+                      {validationErrors['preferredTime'] && (
+                        <p className="text-sm text-red-600">{validationErrors['preferredTime']}</p>
+                      )}
+
+                      <p className="text-xs text-gray-500">
+                        Voorbeelden: "14:00", "tussen 14:00 en 16:00 uur", "ochtend", "rond 15:00"
+                      </p>
+                    </div>
                   </div>
                 </div>
               )}
@@ -564,34 +610,35 @@ export default function AppointmentFormSecure() {
                   }}
                   rows={4}
                   className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors resize-none ${
-                    validationErrors.problemDescription ? 'border-red-500' : 'border-gray-300'
+                    validationErrors['problemDescription'] ? 'border-red-500' : 'border-gray-300'
                   }`}
                   placeholder="Beschrijf zo duidelijk mogelijk wat het probleem is... (minimaal 10 karakters)"
                   maxLength={1000}
                   required
                 />
                 <div className="flex justify-between text-sm text-gray-500 mt-1">
-                  <span>{validationErrors.problemDescription && (
-                    <span className="text-red-600">{validationErrors.problemDescription}</span>
+                  <span>{validationErrors['problemDescription'] && (
+                    <span className="text-red-600">{validationErrors['problemDescription']}</span>
                   )}</span>
                   <span>{formData.problemDescription.length}/1000</span>
                 </div>
               </div>
 
-              {/* CAPTCHA - only in production */}
+              {/* reCAPTCHA Enterprise info - invisible but active */}
               {process.env.NODE_ENV === 'production' && (
-                <div className="mb-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Veiligheidsverificatie *
-                  </label>
-                  <ReCAPTCHA
-                    ref={captchaRef}
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                    onChange={handleCaptchaVerify}
-                    onExpired={handleCaptchaExpire}
-                  />
-                  {!captchaToken && process.env.NODE_ENV === 'production' && (
-                    <p className="mt-1 text-sm text-red-600">Voltooi de verificatie om door te gaan</p>
+                <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                  <div className="flex items-center">
+                    <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-blue-800 text-sm">
+                      Dit formulier is beveiligd met reCAPTCHA. Uw privacy is beschermd.
+                    </span>
+                  </div>
+                  {recaptchaError && (
+                    <p className="mt-2 text-sm text-red-600">
+                      reCAPTCHA fout: {recaptchaError.message}
+                    </p>
                   )}
                 </div>
               )}
@@ -633,30 +680,55 @@ export default function AppointmentFormSecure() {
                   <span>Vorige</span>
                 </button>
 
-                <button
-                  type="submit"
-                  disabled={isLoading || !validateStep(currentStep) || (process.env.NODE_ENV === 'production' && !captchaToken) || rateLimitExceeded}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
-                >
-                  {isLoading ? (
-                    <>
-                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
-                      <span>Verwerken...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Afspraak Aanvragen</span>
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </>
-                  )}
-                </button>
+                {process.env.NODE_ENV === 'production' ? (
+                  <RecaptchaEnterprise
+                    action="APPOINTMENT_SUBMIT"
+                    onToken={handleRecaptchaToken}
+                    onError={handleRecaptchaError}
+                    className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                        <span>Verwerken...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Afspraak Aanvragen</span>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </>
+                    )}
+                  </RecaptchaEnterprise>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => handleRecaptchaToken('development-bypass')}
+                    disabled={isLoading || !isFormValid || rateLimitExceeded}
+                    className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                        <span>Verwerken...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Afspraak Aanvragen (Dev)</span>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
+                )}
               </div>
             </div>
           )}
         </form>
       </div>
     </div>
+    </>
   )
 }

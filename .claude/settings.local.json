@@ -14,7 +14,14 @@
       "Bash(else echo \"SMTP_PASS: [NOT SET]\")",
       "Bash(npm run dev:*)",
       "Bash(npm install:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run type-check:*)",
+      "Read(//c/Users/konia/OneDrive/**)",
+      "Bash(npm uninstall:*)",
+      "Bash(node:*)",
+      "Bash(then echo \"SMTP_PASS: [CONFIGURED]\")"
     ],
     "deny": [],
     "ask": []

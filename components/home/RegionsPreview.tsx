@@ -27,7 +27,7 @@ export function RegionsPreview() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {featuredCities.map((city, index) => (
+          {featuredCities.map((city, _index) => (
             <div key={city.slug}>
               <Card className="h-full group hover:scale-105 transition-transform duration-300">
                 <div className="text-center p-8">

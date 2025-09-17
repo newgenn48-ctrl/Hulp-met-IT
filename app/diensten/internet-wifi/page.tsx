@@ -1,14 +1,10 @@
 import { FloatingElements } from '@/components/three/FloatingElements'
 import { ClientWrapper } from '@/components/ClientWrapper'
 import Link from 'next/link'
-import { 
-  Wifi, 
-  Clock, 
-  Euro,
+import {
   CheckCircle,
   ArrowRight,
-  Phone,
-  Shield
+  Phone
 } from 'lucide-react'
 import { Metadata } from 'next'
 import services from '@/lib/data/services.json'
