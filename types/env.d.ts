@@ -8,9 +8,6 @@ declare namespace NodeJS {
     SMTP_USER: string
     SMTP_PASS: string
 
-    // Email Service Configuration
-    RESEND_API_KEY: string
-
 
     // Analytics
     NEXT_PUBLIC_CLARITY_PROJECT_ID?: string

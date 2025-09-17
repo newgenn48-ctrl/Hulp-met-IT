@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, clearRateLimit, type AppointmentFormData } from '@/lib/validation'
 import { headers } from 'next/headers'
 import DOMPurify from 'dompurify'
@@ -52,8 +52,16 @@ const urgencyLabels: Record<string, { label: string; priority: string }> = {
   'critical': { label: 'Zeer urgent - Zelfde dag', priority: 'KRITIEK' }
 }
 
-// Initialize Resend with API key (fallback for build)
-const resend = new Resend(process.env.RESEND_API_KEY || 'fallback-key-for-build')
+// Initialize SMTP transporter
+const transporter = nodemailer.createTransport({
+  host: process.env.SMTP_HOST,
+  port: parseInt(process.env.SMTP_PORT || '465'),
+  secure: process.env.SMTP_SECURE === 'true',
+  auth: {
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+  },
+})
 
 // Format date and time for Dutch locale
 function formatDateTime(date: string, time: string): string {
@@ -88,30 +96,32 @@ function generateReference(): string {
   return `HIT-${timestamp}-${random}`
 }
 
-// Send email using Resend - reliable delivery with proper authentication
+// Send email using SMTP
 async function sendEmail(to: string, subject: string, html: string, reference: string, isAdmin = false) {
-  // Check if we have a valid API key
-  if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'fallback-key-for-build') {
-    console.warn('⚠️  Resend API key not configured, email will not be sent')
+  // Check if we have SMTP configuration
+  if (!process.env.SMTP_PASS) {
+    console.warn('⚠️  SMTP not configured, email will not be sent')
     return {
       success: false,
-      error: new Error('Resend API key not configured. Please set RESEND_API_KEY environment variable.')
+      error: new Error('SMTP not configured. Please set SMTP environment variables.')
     }
   }
 
   try {
-    const result = await resend.emails.send({
+    const mailOptions = {
       from: `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
-      to: [to],
+      to,
       subject,
       html,
+      replyTo: EMAIL_CONFIG.FROM_ADDRESS,
       headers: {
         'X-Entity-Ref-ID': reference,
         'X-Mailer': 'Hulp met IT Afspraak Systeem'
-      },
-      replyTo: EMAIL_CONFIG.FROM_ADDRESS
-    })
-    return { success: true, messageId: result.data?.id, result }
+      }
+    }
+
+    const result = await transporter.sendMail(mailOptions)
+    return { success: true, messageId: result.messageId, result }
   } catch (error) {
     return { success: false, error }
   }
