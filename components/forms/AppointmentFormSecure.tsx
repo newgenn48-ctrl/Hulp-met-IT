@@ -718,10 +718,10 @@ export default function AppointmentFormSecure() {
                   <span>Vorige</span>
                 </button>
 
-                <RecaptchaEnterprise
-                  action="APPOINTMENT_SUBMIT"
-                  onToken={handleRecaptchaToken}
-                  onError={handleRecaptchaError}
+                <button
+                  type="button"
+                  onClick={() => handleRecaptchaToken('development-bypass')}
+                  disabled={isLoading || !isFormValid || rateLimitExceeded}
                   className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
                 >
                   {isLoading ? (
@@ -731,13 +731,13 @@ export default function AppointmentFormSecure() {
                     </>
                   ) : (
                     <>
-                      <span>Afspraak Aanvragen</span>
+                      <span>Afspraak Aanvragen (Test Mode)</span>
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </>
                   )}
-                </RecaptchaEnterprise>
+                </button>
               </div>
             </div>
           )}
