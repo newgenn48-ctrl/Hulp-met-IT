@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
-import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, verifyRecaptchaEnterprise, verifyRecaptcha, type AppointmentFormData } from '@/lib/validation'
+import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, verifyRecaptchaEnterprise, verifyRecaptcha, clearRateLimit, type AppointmentFormData } from '@/lib/validation'
 import { headers } from 'next/headers'
 import DOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
@@ -756,6 +756,14 @@ export async function POST(request: NextRequest) {
   const userAgent = headersList.get('user-agent') || 'unknown'
 
   try {
+    // Development: Clear rate limit if it's a fresh request
+    if (process.env.NODE_ENV === 'development') {
+      const url = new URL(request.url)
+      if (url.searchParams.get('clearRate') === 'true') {
+        clearRateLimit(ip)
+      }
+    }
+
     // Rate limiting check
     if (!checkRateLimit(ip, 3, 15 * 60 * 1000)) {
       logSecurityEvent('RATE_LIMIT_EXCEEDED', { userAgent }, ip)

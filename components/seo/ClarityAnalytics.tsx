@@ -18,6 +18,7 @@ export function ClarityAnalytics() {
     }
   }, [pathname, searchParams, projectId])
 
+  // Disable in development to avoid CSP conflicts during testing
   if (process.env.NODE_ENV !== 'production' || !projectId) {
     return null
   }

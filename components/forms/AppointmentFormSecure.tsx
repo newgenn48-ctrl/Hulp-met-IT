@@ -151,13 +151,33 @@ export default function AppointmentFormSecure() {
       const validationResult = appointmentSchema.safeParse(cleanedFormData)
       if (!validationResult.success) {
         const fieldErrors: Record<string, string> = {}
+        let hasStep1Errors = false
+        let hasStep2Errors = false
+
         validationResult.error.issues.forEach((err: any) => {
           if (err.path.length > 0) {
-            fieldErrors[err.path[0] as string] = err.message
+            const fieldName = err.path[0] as string
+            fieldErrors[fieldName] = err.message
+
+            // Check which step has errors
+            if (['firstName', 'lastName', 'email', 'phone', 'address', 'postalCode', 'city', 'serviceType'].includes(fieldName)) {
+              hasStep1Errors = true
+            } else if (['preferredDate', 'preferredTime', 'problemDescription', 'urgency'].includes(fieldName)) {
+              hasStep2Errors = true
+            }
           }
         })
+
         setValidationErrors(fieldErrors)
         setErrorMessage('Corrigeer de fouten in het formulier')
+
+        // Navigate to the first step with errors
+        if (hasStep1Errors) {
+          setCurrentStep(1)
+        } else if (hasStep2Errors) {
+          setCurrentStep(2)
+        }
+
         return
       }
 
@@ -182,11 +202,29 @@ export default function AppointmentFormSecure() {
         } else if (response.status === 400 && result.errors) {
           // Handle validation errors from server
           const fieldErrors: Record<string, string> = {}
+          let hasStep1Errors = false
+          let hasStep2Errors = false
+
           result.errors.forEach((err: { field: string; message: string }) => {
             fieldErrors[err.field] = err.message
+
+            // Check which step has errors
+            if (['firstName', 'lastName', 'email', 'phone', 'address', 'postalCode', 'city', 'serviceType'].includes(err.field)) {
+              hasStep1Errors = true
+            } else if (['preferredDate', 'preferredTime', 'problemDescription', 'urgency'].includes(err.field)) {
+              hasStep2Errors = true
+            }
           })
+
           setValidationErrors(fieldErrors)
           setErrorMessage('Corrigeer de fouten in het formulier')
+
+          // Navigate to the first step with errors
+          if (hasStep1Errors) {
+            setCurrentStep(1)
+          } else if (hasStep2Errors) {
+            setCurrentStep(2)
+          }
         } else {
           setSubmitStatus('error')
           setErrorMessage(result.message || 'Er is een fout opgetreden')
@@ -680,49 +718,26 @@ export default function AppointmentFormSecure() {
                   <span>Vorige</span>
                 </button>
 
-                {process.env.NODE_ENV === 'production' ? (
-                  <RecaptchaEnterprise
-                    action="APPOINTMENT_SUBMIT"
-                    onToken={handleRecaptchaToken}
-                    onError={handleRecaptchaError}
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
-                  >
-                    {isLoading ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
-                        <span>Verwerken...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Afspraak Aanvragen</span>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </>
-                    )}
-                  </RecaptchaEnterprise>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={() => handleRecaptchaToken('development-bypass')}
-                    disabled={isLoading || !isFormValid || rateLimitExceeded}
-                    className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
-                  >
-                    {isLoading ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
-                        <span>Verwerken...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Afspraak Aanvragen (Dev)</span>
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </>
-                    )}
-                  </button>
-                )}
+                <RecaptchaEnterprise
+                  action="APPOINTMENT_SUBMIT"
+                  onToken={handleRecaptchaToken}
+                  onError={handleRecaptchaError}
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                      <span>Verwerken...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Afspraak Aanvragen</span>
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </>
+                  )}
+                </RecaptchaEnterprise>
               </div>
             </div>
           )}

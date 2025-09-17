@@ -1,8 +1,8 @@
 import { z } from 'zod'
 import validator from 'validator'
 
-// Dutch phone number regex (mobile and landline)
-const DUTCH_PHONE_REGEX = /^(?:\+31|0031|0)[6-7]\d{8}$|^(?:\+31|0031|0)[1-5]\d{8}$/
+// Dutch phone number regex (mobile and landline) - More flexible
+const DUTCH_PHONE_REGEX = /^(?:\+31|0031|0)?[1-9]\d{7,9}$/
 
 // Dutch postal code regex
 const DUTCH_POSTCODE_REGEX = /^[1-9][0-9]{3} ?[A-Z]{2}$/i
@@ -155,6 +155,17 @@ export function sanitizeInput(input: string): string {
 // Rate limiting map for tracking requests
 export const rateLimitMap = new Map<string, { count: number; lastReset: number }>()
 
+// Helper function to clear rate limit for development testing
+export function clearRateLimit(ip?: string): void {
+  if (process.env.NODE_ENV === 'development') {
+    if (ip) {
+      rateLimitMap.delete(ip)
+    } else {
+      rateLimitMap.clear()
+    }
+  }
+}
+
 // Security helper functions
 export function validateClientIP(request: Request): string {
   // Get IP from various headers (Vercel, Cloudflare, etc.)
@@ -177,6 +188,12 @@ export function sanitizeUserAgent(userAgent: string | null): string {
 
 // Rate limiting function
 export function checkRateLimit(ip: string, maxRequests = 5, windowMs = 15 * 60 * 1000): boolean {
+  // In development, be more lenient with rate limiting
+  if (process.env.NODE_ENV === 'development') {
+    maxRequests = 20  // Allow more requests in development
+    windowMs = 5 * 60 * 1000  // Shorter window (5 minutes instead of 15)
+  }
+
   const now = Date.now()
   const windowStart = now - windowMs
 
