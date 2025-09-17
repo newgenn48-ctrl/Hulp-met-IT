@@ -52,8 +52,8 @@ const urgencyLabels: Record<string, { label: string; priority: string }> = {
   'critical': { label: 'Zeer urgent - Zelfde dag', priority: 'KRITIEK' }
 }
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Initialize Resend with API key (fallback for build)
+const resend = new Resend(process.env.RESEND_API_KEY || 'fallback-key-for-build')
 
 // Format date and time for Dutch locale
 function formatDateTime(date: string, time: string): string {
@@ -90,6 +90,15 @@ function generateReference(): string {
 
 // Send email using Resend - reliable delivery with proper authentication
 async function sendEmail(to: string, subject: string, html: string, reference: string, isAdmin = false) {
+  // Check if we have a valid API key
+  if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === 'fallback-key-for-build') {
+    console.warn('⚠️  Resend API key not configured, email will not be sent')
+    return {
+      success: false,
+      error: new Error('Resend API key not configured. Please set RESEND_API_KEY environment variable.')
+    }
+  }
+
   try {
     const result = await resend.emails.send({
       from: `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
