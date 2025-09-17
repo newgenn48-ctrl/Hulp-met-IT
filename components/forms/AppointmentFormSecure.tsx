@@ -1,15 +1,12 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import { useRecaptcha, RecaptchaEnterprise } from './Recaptcha'
+import { useState, useCallback } from 'react'
 import { appointmentSchema, type AppointmentFormData } from '@/lib/validation'
-import Script from 'next/script'
 
 // Extended form data with security fields
 interface ExtendedFormData extends AppointmentFormData {
   deviceType?: string
   previousAttempts?: string
-  recaptchaToken?: string
 }
 
 const initialFormData: ExtendedFormData = {
@@ -26,8 +23,7 @@ const initialFormData: ExtendedFormData = {
   preferredTime: '',
   problemDescription: '',
   deviceType: '',
-  previousAttempts: '',
-  recaptchaToken: ''
+  previousAttempts: ''
 }
 
 const serviceTypes = [
@@ -55,7 +51,6 @@ export default function AppointmentFormSecure() {
   const [errorMessage, setErrorMessage] = useState('')
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({})
   const [rateLimitExceeded, setRateLimitExceeded] = useState(false)
-  const { error: recaptchaError } = useRecaptcha()
 
   const handleInputChange = (field: keyof ExtendedFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -120,16 +115,9 @@ export default function AppointmentFormSecure() {
     setCurrentStep(prev => Math.max(prev - 1, 1))
   }
 
-  // Store form validation state
-  const [isFormValid, setIsFormValid] = useState(false)
 
-  // Check form validity on form data changes
-  useEffect(() => {
-    setIsFormValid(validateStep(currentStep))
-  }, [formData, currentStep, validateStep])
-
-  const handleRecaptchaToken = async (token: string) => {
-    // Form is being submitted via reCAPTCHA Enterprise
+  const handleSubmit = async () => {
+    // Form is being submitted
     setIsLoading(true)
     setSubmitStatus('idle')
     setErrorMessage('')
@@ -141,7 +129,6 @@ export default function AppointmentFormSecure() {
       // Clean form data before validation
       const cleanedFormData = {
         ...formData,
-        recaptchaToken: token,
         // Ensure empty strings are handled properly
         preferredTime: formData.preferredTime?.trim() || '',
         preferredDate: formData.preferredDate?.trim() || ''
@@ -241,13 +228,8 @@ export default function AppointmentFormSecure() {
     }
   }
 
-  const handleRecaptchaError = (error: Error) => {
-    setErrorMessage(`reCAPTCHA Enterprise fout: ${error.message}`)
-  }
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Form validation is handled by the reCAPTCHA Enterprise button
     // This function is kept for form element compatibility
   }
 
@@ -289,11 +271,6 @@ export default function AppointmentFormSecure() {
 
   return (
     <>
-      {/* reCAPTCHA Enterprise Script - alleen geladen voor dit formulier */}
-      <Script
-        src="https://www.google.com/recaptcha/enterprise.js?render=6Lcd3csrAAAAAABxp2Fe0zZ8rR7gfG4M3VGwZKAy"
-        strategy="afterInteractive"
-      />
 
       <div className="max-w-2xl mx-auto p-8">
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
@@ -320,7 +297,7 @@ export default function AppointmentFormSecure() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-8 space-y-6">
+        <form onSubmit={handleFormSubmit} className="p-8 space-y-6">
           {currentStep === 1 && (
             <div className="space-y-6">
               <div>
@@ -662,24 +639,6 @@ export default function AppointmentFormSecure() {
                 </div>
               </div>
 
-              {/* reCAPTCHA Enterprise info - invisible but active */}
-              {process.env.NODE_ENV === 'production' && (
-                <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 text-blue-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-blue-800 text-sm">
-                      Dit formulier is beveiligd met reCAPTCHA. Uw privacy is beschermd.
-                    </span>
-                  </div>
-                  {recaptchaError && (
-                    <p className="mt-2 text-sm text-red-600">
-                      reCAPTCHA fout: {recaptchaError.message}
-                    </p>
-                  )}
-                </div>
-              )}
 
               {/* Rate limit warning */}
               {rateLimitExceeded && (
@@ -718,10 +677,10 @@ export default function AppointmentFormSecure() {
                   <span>Vorige</span>
                 </button>
 
-                <RecaptchaEnterprise
-                  action="APPOINTMENT_SUBMIT"
-                  onToken={handleRecaptchaToken}
-                  onError={handleRecaptchaError}
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={isLoading}
                   className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
                 >
                   {isLoading ? (
@@ -737,7 +696,7 @@ export default function AppointmentFormSecure() {
                       </svg>
                     </>
                   )}
-                </RecaptchaEnterprise>
+                </button>
               </div>
             </div>
           )}

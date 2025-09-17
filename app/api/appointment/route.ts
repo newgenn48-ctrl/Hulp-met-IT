@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, verifyRecaptchaEnterprise, verifyRecaptcha, clearRateLimit, type AppointmentFormData } from '@/lib/validation'
+import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, clearRateLimit, type AppointmentFormData } from '@/lib/validation'
 import { headers } from 'next/headers'
 import DOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
@@ -109,7 +109,7 @@ async function sendEmail(to: string, subject: string, html: string, reference: s
         'X-Entity-Ref-ID': reference,
         'X-Mailer': 'Hulp met IT Afspraak Systeem'
       },
-      reply_to: EMAIL_CONFIG.FROM_ADDRESS
+      replyTo: EMAIL_CONFIG.FROM_ADDRESS
     })
     return { success: true, messageId: result.data?.id, result }
   } catch (error) {
@@ -354,54 +354,6 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
 </html>`
 }
 
-// Customer confirmation email plain text template (for better deliverability)
-function getCustomerEmailTextTemplate(data: AppointmentFormData, reference: string): string {
-  const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
-  const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
-  const appointmentDateTime = data.preferredDate && data.preferredTime
-    ? formatDateTime(data.preferredDate, data.preferredTime)
-    : 'Wordt telefonisch afgesproken'
-
-  return `
-AFSPRAAK BEVESTIGING - HULP MET IT
-
-Beste ${data.firstName} ${data.lastName},
-
-Hartelijk dank voor uw vertrouwen in Hulp met IT. Wij hebben uw afspraakaanvraag in goede orde ontvangen en zullen binnen 2 werkuren telefonisch contact met u opnemen om de afspraak definitief te bevestigen.
-
-Referentienummer: ${reference}
-
-AFSPRAAKGEGEVENS:
-- Service: ${serviceLabel}
-- Gewenste datum & tijd: ${appointmentDateTime}
-- Prioriteit: ${urgencyInfo.label}
-- Locatie: ${data.address}, ${data.postalCode} ${data.city}
-
-PROBLEEM BESCHRIJVING:
-${data.problemDescription}
-
-VERVOLGSTAPPEN:
-1. Uw aanvraag is geregistreerd in ons systeem
-2. Wij nemen binnen 2 werkuren telefonisch contact op
-3. Datum en tijdstip worden definitief bevestigd
-4. Onze gecertificeerde IT-specialist komt naar u toe
-5. Uw IT-probleem wordt professioneel opgelost
-
-DRINGENDE VRAGEN?
-Neem direct contact met ons op:
-Telefoon: ${EMAIL_CONFIG.PHONE}
-E-mail: ${EMAIL_CONFIG.FROM_ADDRESS}
-
----
-Hulp met IT
-Professionele IT-ondersteuning aan huis
-Website: ${EMAIL_CONFIG.WEBSITE}
-Telefoon: ${EMAIL_CONFIG.PHONE}
-E-mail: ${EMAIL_CONFIG.FROM_ADDRESS}
-
-© ${new Date().getFullYear()} Hulp met IT. Alle rechten voorbehouden.
-`
-}
 
 // Admin notification email template
 function getAdminEmailTemplate(data: any, reference: string, security?: { ip: string; userAgent: string }): string {
@@ -798,54 +750,6 @@ export async function POST(request: NextRequest) {
 
     const data = validationResult.data
 
-    // Verify reCAPTCHA Enterprise in production
-    if (process.env.NODE_ENV === 'production' && data.recaptchaToken) {
-      // Try reCAPTCHA Enterprise first, fallback to v2 if needed
-      const useEnterprise = process.env.RECAPTCHA_ENTERPRISE_API_KEY || process.env.RECAPTCHA_ENTERPRISE_PROJECT_ID
-
-      let isValidCaptcha = false
-      if (useEnterprise) {
-        isValidCaptcha = await verifyRecaptchaEnterprise(data.recaptchaToken, 'APPOINTMENT_SUBMIT')
-
-        if (!isValidCaptcha) {
-          logSecurityEvent('RECAPTCHA_ENTERPRISE_VERIFICATION_FAILED', {
-            userAgent,
-            hasToken: !!data.recaptchaToken,
-            action: 'APPOINTMENT_SUBMIT'
-          }, ip)
-        }
-      } else {
-        // Fallback to reCAPTCHA v2
-        isValidCaptcha = await verifyRecaptcha(data.recaptchaToken)
-
-        if (!isValidCaptcha) {
-          logSecurityEvent('RECAPTCHA_VERIFICATION_FAILED', {
-            userAgent,
-            hasToken: !!data.recaptchaToken
-          }, ip)
-        }
-      }
-
-      if (!isValidCaptcha) {
-        return NextResponse.json(
-          { message: 'reCAPTCHA verificatie mislukt. Probeer het opnieuw.' },
-          {
-            status: 400,
-            headers: securityHeaders
-          }
-        )
-      }
-    } else if (process.env.NODE_ENV === 'production' && !data.recaptchaToken) {
-      logSecurityEvent('MISSING_RECAPTCHA_TOKEN', { userAgent }, ip)
-
-      return NextResponse.json(
-        { message: 'reCAPTCHA verificatie is verplicht.' },
-        {
-          status: 400,
-          headers: securityHeaders
-        }
-      )
-    }
 
     // Additional business logic validation
     if (data.urgency !== 'urgent' && data.urgency !== 'critical') {

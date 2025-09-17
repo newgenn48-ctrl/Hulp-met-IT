@@ -138,11 +138,6 @@ export const appointmentSchema = z.object({
     .optional()
     .or(z.literal('')),
 
-  // Security fields
-  recaptchaToken: z
-    .string()
-    .optional()
-    .or(z.literal('')), // Make optional in development
 })
 
 export type AppointmentFormData = z.infer<typeof appointmentSchema>
@@ -212,61 +207,6 @@ export function checkRateLimit(ip: string, maxRequests = 5, windowMs = 15 * 60 *
   return true
 }
 
-// reCAPTCHA Enterprise verification function
-export async function verifyRecaptchaEnterprise(token: string, expectedAction: string = 'submit'): Promise<boolean> {
-  if (!token) return false
-
-  try {
-    // For reCAPTCHA Enterprise, we can use the standard verification endpoint with your keys
-    // Since you're using the same site key, let's use the regular verification first
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-    })
-
-    const data = await response.json()
-
-    logSecurityEvent('RECAPTCHA_ENTERPRISE_VERIFICATION', {
-      success: data.success,
-      action: expectedAction,
-      hostname: data.hostname,
-      timestamp: data.challenge_ts
-    })
-
-    return data.success === true
-  } catch (error) {
-    console.error('reCAPTCHA Enterprise verification error:', error)
-    logSecurityEvent('RECAPTCHA_ENTERPRISE_ERROR', {
-      error: error instanceof Error ? error.message : 'Unknown error',
-      action: expectedAction
-    })
-    return false
-  }
-}
-
-// Legacy reCAPTCHA v2 verification function (fallback)
-export async function verifyRecaptcha(token: string): Promise<boolean> {
-  if (!token) return false
-
-  try {
-    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
-    })
-
-    const data = await response.json()
-    return data.success === true
-  } catch (error) {
-    console.error('reCAPTCHA verification error:', error)
-    return false
-  }
-}
 
 // Security logging function
 export function logSecurityEvent(event: string, details: any, ip?: string) {

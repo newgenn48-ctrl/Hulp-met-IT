@@ -11,11 +11,6 @@ declare namespace NodeJS {
     // Email Service Configuration
     RESEND_API_KEY: string
 
-    // reCAPTCHA Configuration
-    NEXT_PUBLIC_RECAPTCHA_SITE_KEY: string
-    RECAPTCHA_SECRET_KEY: string
-    RECAPTCHA_ENTERPRISE_API_KEY?: string
-    RECAPTCHA_ENTERPRISE_PROJECT_ID?: string
 
     // Analytics
     NEXT_PUBLIC_CLARITY_PROJECT_ID?: string
