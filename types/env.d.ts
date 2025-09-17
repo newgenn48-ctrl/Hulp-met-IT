@@ -8,6 +8,9 @@ declare namespace NodeJS {
     SMTP_USER: string
     SMTP_PASS: string
 
+    // Email Service Configuration
+    RESEND_API_KEY: string
+
     // reCAPTCHA Configuration
     NEXT_PUBLIC_RECAPTCHA_SITE_KEY: string
     RECAPTCHA_SECRET_KEY: string

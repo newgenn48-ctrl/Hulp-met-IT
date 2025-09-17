@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { Resend } from 'resend'
 import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, verifyRecaptchaEnterprise, verifyRecaptcha, clearRateLimit, type AppointmentFormData } from '@/lib/validation'
 import { headers } from 'next/headers'
 import DOMPurify from 'dompurify'
@@ -52,44 +52,8 @@ const urgencyLabels: Record<string, { label: string; priority: string }> = {
   'critical': { label: 'Zeer urgent - Zelfde dag', priority: 'KRITIEK' }
 }
 
-// Create email transporter with enhanced DKIM-friendly settings
-function createTransporter() {
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'mail.hulpmetit.nl',
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_SECURE === 'true',
-    auth: {
-      user: process.env.SMTP_USER || EMAIL_CONFIG.FROM_ADDRESS,
-      pass: process.env.SMTP_PASS!
-    },
-    tls: {
-      rejectUnauthorized: false
-    },
-    // Optimized settings for TransIP DKIM
-    pool: true,
-    maxConnections: 1,
-    rateDelta: 1000,
-    rateLimit: 1,
-    connectionTimeout: 30000,
-    greetingTimeout: 30000,
-    socketTimeout: 30000
-  })
-}
-
-// Create fallback transporter for customer emails (Gmail SMTP)
-function createFallbackTransporter() {
-  // Use Gmail SMTP as fallback if available
-  if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
-    return nodemailer.createTransporter({
-      service: 'gmail',
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD
-      }
-    })
-  }
-  return null
-}
+// Initialize Resend with API key
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 // Format date and time for Dutch locale
 function formatDateTime(date: string, time: string): string {
@@ -124,43 +88,23 @@ function generateReference(): string {
   return `HIT-${timestamp}-${random}`
 }
 
-// Create standardized email headers
-function createEmailHeaders(reference: string): Record<string, string> {
-  return {
-    'X-Mailer': 'Hulp met IT Afspraak Systeem',
-    'X-Priority': '3',
-    'X-MSMail-Priority': 'Normal',
-    'List-Unsubscribe': `<mailto:${EMAIL_CONFIG.FROM_ADDRESS}?subject=Unsubscribe>`,
-    'Message-ID': `<${reference}-${Date.now()}@${EMAIL_CONFIG.DOMAIN}>`,
-    'Organization': EMAIL_CONFIG.FROM_NAME,
-    'X-Auto-Response-Suppress': 'OOF, DR, RN, NRN, AutoReply',
-    'Return-Path': `<${EMAIL_CONFIG.FROM_ADDRESS}>`
-  }
-}
-
-// Create email options with enhanced DKIM-friendly setup
-function createEmailOptions(to: string, subject: string, html: string, text: string, reference: string, isAdmin = false) {
-  return {
-    from: `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
-    to,
-    replyTo: EMAIL_CONFIG.FROM_ADDRESS,
-    returnPath: EMAIL_CONFIG.FROM_ADDRESS,
-    envelope: {
-      from: EMAIL_CONFIG.FROM_ADDRESS,
-      to
-    },
-    subject,
-    html,
-    text,
-    headers: {
-      ...createEmailHeaders(reference),
-      // Enhanced headers for Gmail compliance
-      'From': `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
-      'Sender': EMAIL_CONFIG.FROM_ADDRESS,
-      'Reply-To': EMAIL_CONFIG.FROM_ADDRESS,
-      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
-      'List-Unsubscribe': `<mailto:unsubscribe@hulpmetit.nl?subject=Unsubscribe-${reference}>`,
-    }
+// Send email using Resend - reliable delivery with proper authentication
+async function sendEmail(to: string, subject: string, html: string, reference: string, isAdmin = false) {
+  try {
+    const result = await resend.emails.send({
+      from: `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
+      to: [to],
+      subject,
+      html,
+      headers: {
+        'X-Entity-Ref-ID': reference,
+        'X-Mailer': 'Hulp met IT Afspraak Systeem'
+      },
+      reply_to: EMAIL_CONFIG.FROM_ADDRESS
+    })
+    return { success: true, messageId: result.data?.id, result }
+  } catch (error) {
+    return { success: false, error }
   }
 }
 
@@ -731,18 +675,12 @@ function getAdminEmailTemplate(data: any, reference: string, security?: { ip: st
       </div>
       
       <div class="action-card">
-        <h3>⚠️ BELANGRIJK: Klant Email Probleem</h3>
-        <div style="background: #fee2e2; border: 1px solid #fca5a5; border-radius: 6px; padding: 12px; margin-bottom: 16px;">
-          <p style="color: #dc2626; font-weight: 600; margin-bottom: 8px;">🚨 Klant heeft geen bevestigingsmail ontvangen!</p>
-          <p style="color: #b91c1c; font-size: 13px;">Gmail blokkeert onze emails vanwege DKIM authenticatie problemen. <strong>Bel de klant direct</strong> om de afspraak te bevestigen!</p>
-        </div>
-
         <h3>✅ Vereiste acties</h3>
         <ul class="action-list">
-          <li><strong>Stap 1: 📞 BEL KLANT DIRECT</strong> op ${data.phone} (geen email ontvangen!)</li>
-          <li><strong>Stap 2:</strong> Vertel dat afspraak is ontvangen en bevestig details</li>
-          <li><strong>Stap 3:</strong> Bevestig of herplan datum/tijd afspraak</li>
-          <li><strong>Stap 4:</strong> Voeg afspraak toe aan agenda systeem</li>
+          <li><strong>Stap 1:</strong> Bel klant binnen 2 werkuren op ${data.phone}</li>
+          <li><strong>Stap 2:</strong> Bevestig of herplan datum/tijd afspraak</li>
+          <li><strong>Stap 3:</strong> Voeg afspraak toe aan agenda systeem</li>
+          <li><strong>Stap 4:</strong> Verstuur definitieve bevestiging naar klant</li>
           <li><strong>Stap 5:</strong> Bereid technicus voor met probleemdetails</li>
         </ul>
       </div>
@@ -851,8 +789,8 @@ export async function POST(request: NextRequest) {
 
     const data = validationResult.data
 
-    // Verify reCAPTCHA Enterprise in production (temporarily disabled for testing)
-    if (false && process.env.NODE_ENV === 'production' && data.recaptchaToken) {
+    // Verify reCAPTCHA Enterprise in production
+    if (process.env.NODE_ENV === 'production' && data.recaptchaToken) {
       // Try reCAPTCHA Enterprise first, fallback to v2 if needed
       const useEnterprise = process.env.RECAPTCHA_ENTERPRISE_API_KEY || process.env.RECAPTCHA_ENTERPRISE_PROJECT_ID
 
@@ -888,7 +826,7 @@ export async function POST(request: NextRequest) {
           }
         )
       }
-    } else if (false && process.env.NODE_ENV === 'production' && !data.recaptchaToken) {
+    } else if (process.env.NODE_ENV === 'production' && !data.recaptchaToken) {
       logSecurityEvent('MISSING_RECAPTCHA_TOKEN', { userAgent }, ip)
 
       return NextResponse.json(
@@ -957,62 +895,58 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // Create email transporter
-    const transporter = createTransporter()
-
     // Email status tracking
     let customerEmailSent = false
     let adminEmailSent = false
 
-    // Customer confirmation email
-    const customerMailOptions = createEmailOptions(
-      data.email,
-      `Bevestiging: Uw afspraak bij Hulp met IT (${reference})`,
-      getCustomerEmailTemplate(sanitizedData, reference),
-      getCustomerEmailTextTemplate(sanitizedData, reference),
-      reference,
-      false
-    )
-
-    // Admin notification email
-    const adminMailOptions = createEmailOptions(
-      EMAIL_CONFIG.FROM_ADDRESS,
-      `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
-      getAdminEmailTemplate(sanitizedData, reference, { ip, userAgent }),
-      '', // No text version needed for admin
-      reference,
-      true
-    )
-
-    // Send emails
+    // Send emails using Resend for reliable delivery
     console.log('Sending customer email to:', data.email)
-    console.log('Sending admin email to:', adminMailOptions.to)
-    console.log('Admin email from:', adminMailOptions.from)
-    console.log('Admin email subject:', adminMailOptions.subject)
+    console.log('Sending admin email to:', EMAIL_CONFIG.FROM_ADDRESS)
 
     try {
       // Send emails individually to handle failures gracefully
       let customerError: any = null
       let adminError: any = null
 
-      // Skip customer email for now due to Gmail authentication issues
-      // Instead, include customer contact info in admin email for manual follow-up
-      console.log('⚠️  Customer email temporarily disabled due to Gmail DKIM requirements')
-      console.log('📧 Customer contact info will be included in admin email for manual follow-up')
-      customerEmailSent = false // Will be handled manually via admin email
-      customerError = new Error('Customer email temporarily disabled - contact via admin email')
+      // Send customer confirmation email
+      const customerResult = await sendEmail(
+        data.email,
+        `Bevestiging: Uw afspraak bij Hulp met IT (${reference})`,
+        getCustomerEmailTemplate(sanitizedData, reference),
+        reference,
+        false
+      )
 
-      // Try to send admin email (always attempt, regardless of customer email result)
-      try {
-        const adminResult = await transporter.sendMail(adminMailOptions)
+      if (customerResult.success) {
+        console.log('✅ Customer email sent:', customerResult.messageId)
+        customerEmailSent = true
+      } else {
+        customerError = customerResult.error
+        console.error('❌ Customer email failed:', customerResult.error)
+        logSecurityEvent('CUSTOMER_EMAIL_FAILED', {
+          error: customerResult.error instanceof Error ? customerResult.error.message : 'Unknown error',
+          customerEmail: data.email,
+          reference
+        }, ip)
+      }
+
+      // Send admin notification email
+      const adminResult = await sendEmail(
+        EMAIL_CONFIG.FROM_ADDRESS,
+        `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
+        getAdminEmailTemplate(sanitizedData, reference, { ip, userAgent }),
+        reference,
+        true
+      )
+
+      if (adminResult.success) {
         console.log('✅ Admin email sent:', adminResult.messageId)
-        console.log('Admin email response:', adminResult.response)
         adminEmailSent = true
-      } catch (error) {
-        adminError = error
-        console.error('❌ Admin email failed:', error)
+      } else {
+        adminError = adminResult.error
+        console.error('❌ Admin email failed:', adminResult.error)
         logSecurityEvent('ADMIN_EMAIL_FAILED', {
-          error: error instanceof Error ? error.message : 'Unknown error',
+          error: adminResult.error instanceof Error ? adminResult.error.message : 'Unknown error',
           reference
         }, ip)
       }
