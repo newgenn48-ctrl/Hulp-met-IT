@@ -52,7 +52,7 @@ const urgencyLabels: Record<string, { label: string; priority: string }> = {
   'critical': { label: 'Zeer urgent - Zelfde dag', priority: 'KRITIEK' }
 }
 
-// Create email transporter with optimized settings
+// Create email transporter with enhanced DKIM-friendly settings
 function createTransporter() {
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'mail.hulpmetit.nl',
@@ -65,14 +65,20 @@ function createTransporter() {
     tls: {
       rejectUnauthorized: false
     },
-    // Optimized settings for TransIP
+    // Optimized settings for TransIP DKIM
     pool: true,
     maxConnections: 1,
     rateDelta: 1000,
     rateLimit: 1,
     connectionTimeout: 30000,
     greetingTimeout: 30000,
-    socketTimeout: 30000
+    socketTimeout: 30000,
+    // DKIM headers preservation
+    dkim: {
+      domainName: 'hulpmetit.nl',
+      keySelector: 'mail',
+      privateKey: false // Let TransIP handle DKIM signing
+    }
   })
 }
 
@@ -123,7 +129,7 @@ function createEmailHeaders(reference: string): Record<string, string> {
   }
 }
 
-// Create email options with proper authentication setup
+// Create email options with enhanced DKIM-friendly setup
 function createEmailOptions(to: string, subject: string, html: string, text: string, reference: string, isAdmin = false) {
   return {
     from: `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
@@ -137,7 +143,15 @@ function createEmailOptions(to: string, subject: string, html: string, text: str
     subject,
     html,
     text,
-    headers: createEmailHeaders(reference)
+    headers: {
+      ...createEmailHeaders(reference),
+      // Enhanced headers for Gmail compliance
+      'From': `"${isAdmin ? EMAIL_CONFIG.ADMIN_FROM_NAME : EMAIL_CONFIG.FROM_NAME}" <${EMAIL_CONFIG.FROM_ADDRESS}>`,
+      'Sender': EMAIL_CONFIG.FROM_ADDRESS,
+      'Reply-To': EMAIL_CONFIG.FROM_ADDRESS,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+      'List-Unsubscribe': `<mailto:unsubscribe@hulpmetit.nl?subject=Unsubscribe-${reference}>`,
+    }
   }
 }
 
