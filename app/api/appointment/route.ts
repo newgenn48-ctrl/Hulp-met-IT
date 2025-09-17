@@ -72,14 +72,23 @@ function createTransporter() {
     rateLimit: 1,
     connectionTimeout: 30000,
     greetingTimeout: 30000,
-    socketTimeout: 30000,
-    // DKIM headers preservation
-    dkim: {
-      domainName: 'hulpmetit.nl',
-      keySelector: 'mail',
-      privateKey: false // Let TransIP handle DKIM signing
-    }
+    socketTimeout: 30000
   })
+}
+
+// Create fallback transporter for customer emails (Gmail SMTP)
+function createFallbackTransporter() {
+  // Use Gmail SMTP as fallback if available
+  if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
+    return nodemailer.createTransporter({
+      service: 'gmail',
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD
+      }
+    })
+  }
+  return null
 }
 
 // Format date and time for Dutch locale
@@ -722,12 +731,18 @@ function getAdminEmailTemplate(data: any, reference: string, security?: { ip: st
       </div>
       
       <div class="action-card">
+        <h3>⚠️ BELANGRIJK: Klant Email Probleem</h3>
+        <div style="background: #fee2e2; border: 1px solid #fca5a5; border-radius: 6px; padding: 12px; margin-bottom: 16px;">
+          <p style="color: #dc2626; font-weight: 600; margin-bottom: 8px;">🚨 Klant heeft geen bevestigingsmail ontvangen!</p>
+          <p style="color: #b91c1c; font-size: 13px;">Gmail blokkeert onze emails vanwege DKIM authenticatie problemen. <strong>Bel de klant direct</strong> om de afspraak te bevestigen!</p>
+        </div>
+
         <h3>✅ Vereiste acties</h3>
         <ul class="action-list">
-          <li><strong>Stap 1:</strong> Bel klant binnen 2 werkuren op ${data.phone}</li>
-          <li><strong>Stap 2:</strong> Bevestig of herplan datum/tijd afspraak</li>
-          <li><strong>Stap 3:</strong> Voeg afspraak toe aan agenda systeem</li>
-          <li><strong>Stap 4:</strong> Verstuur definitieve bevestiging naar klant</li>
+          <li><strong>Stap 1: 📞 BEL KLANT DIRECT</strong> op ${data.phone} (geen email ontvangen!)</li>
+          <li><strong>Stap 2:</strong> Vertel dat afspraak is ontvangen en bevestig details</li>
+          <li><strong>Stap 3:</strong> Bevestig of herplan datum/tijd afspraak</li>
+          <li><strong>Stap 4:</strong> Voeg afspraak toe aan agenda systeem</li>
           <li><strong>Stap 5:</strong> Bereid technicus voor met probleemdetails</li>
         </ul>
       </div>
@@ -980,21 +995,12 @@ export async function POST(request: NextRequest) {
       let customerError: any = null
       let adminError: any = null
 
-      // Try to send customer email
-      try {
-        const customerResult = await transporter.sendMail(customerMailOptions)
-        console.log('✅ Customer email sent:', customerResult.messageId)
-        console.log('Customer email response:', customerResult.response)
-        customerEmailSent = true
-      } catch (error) {
-        customerError = error
-        console.error('❌ Customer email failed:', error)
-        logSecurityEvent('CUSTOMER_EMAIL_FAILED', {
-          error: error instanceof Error ? error.message : 'Unknown error',
-          customerEmail: data.email,
-          reference
-        }, ip)
-      }
+      // Skip customer email for now due to Gmail authentication issues
+      // Instead, include customer contact info in admin email for manual follow-up
+      console.log('⚠️  Customer email temporarily disabled due to Gmail DKIM requirements')
+      console.log('📧 Customer contact info will be included in admin email for manual follow-up')
+      customerEmailSent = false // Will be handled manually via admin email
+      customerError = new Error('Customer email temporarily disabled - contact via admin email')
 
       // Try to send admin email (always attempt, regardless of customer email result)
       try {
