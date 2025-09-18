@@ -17,21 +17,21 @@ import { Metadata } from 'next'
 import services from '@/lib/data/services.json'
 
 export const metadata: Metadata = {
-  title: 'Onze Diensten - Computerhulp & IT Service aan Huis | Hulp met IT',
-  description: 'Overzicht van al onze IT-diensten: computer reparatie, laptop service, internet problemen, virus verwijdering, software installatie en meer. Vaste tarieven, snelle service.',
+  title: 'Onze Diensten - Vriendelijke Computerhulp & IT Hulp aan Huis | Hulp met IT',
+  description: 'Overzicht van al onze IT-diensten: computer hulp, laptop ondersteuning, internet problemen, computer opschonen, software installatie en meer. Transparante tarieven, persoonlijke service.',
   keywords: [
     'IT diensten',
-    'computer reparatie',
-    'laptop service',
-    'virus verwijdering',
+    'computer hulp',
+    'laptop ondersteuning',
+    'computer opschonen',
     'software installatie',
     'internet problemen',
-    'hardware reparatie',
-    'data herstel'
+    'hardware hulp',
+    'data ondersteuning'
   ],
   openGraph: {
-    title: 'Onze IT-Diensten - Computerhulp aan Huis',
-    description: 'Professionele IT-diensten aan huis: reparatie, installatie, onderhoud en meer',
+    title: 'Onze IT-Diensten - Vriendelijke Computerhulp aan Huis',
+    description: 'Vriendelijke IT-diensten aan huis: hulp, installatie, onderhoud en meer',
     images: ['/images/services-og.webp'],
   },
 }
@@ -51,8 +51,8 @@ export default function DienstenPage() {
   return (
     <>
       <MetaTags
-        title="Onze Diensten - IT Service aan Huis"
-        description="Professionele IT-diensten aan huis door gekwalificeerde specialisten"
+        title="Onze Diensten - Vriendelijke IT Hulp aan Huis"
+        description="Vriendelijke IT-diensten aan huis door ervaren specialisten"
       />
       
       <div className="relative min-h-screen">
@@ -65,8 +65,8 @@ export default function DienstenPage() {
                 Onze Diensten
               </h1>
               <p className="text-xl text-neural-300 max-w-3xl mx-auto leading-relaxed">
-                Van eenvoudige software-installaties tot complexe netwerkproblemen - 
-                onze ervaren IT-specialisten helpen u met alle computergerelateerde vragen.
+                Van eenvoudige software-installaties tot complexe netwerkproblemen -
+                onze vriendelijke IT-specialisten helpen u persoonlijk met alle computergerelateerde vragen.
               </p>
             </div>
 

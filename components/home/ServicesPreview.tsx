@@ -16,43 +16,37 @@ const services = [
   {
     icon: Monitor,
     emoji: '💻',
-    title: 'Computerhulp',
-    description: 'Computer installatie, problemen oplossen, onderhoud en reparatie',
+    title: 'Computer',
     href: '/diensten/computerhulp'
   },
   {
     icon: Printer,
     emoji: '🖨️',
-    title: 'Printerhulp',
-    description: 'Printer werkt niet? Wij zorgen dat u weer kunt printen!',
+    title: 'Printer & Scanner',
     href: '/diensten/printerhulp'
   },
   {
     icon: Mail,
     emoji: '📧',
-    title: 'E-mail Problemen',
-    description: 'E-mail werkt niet? Wij zorgen dat u weer berichten kunt versturen!',
+    title: 'E-mail',
     href: '/diensten/email-problemen'
   },
   {
     icon: Wifi,
     emoji: '📶',
-    title: 'Internet & WiFi',
-    description: 'Internet traag? WiFi problemen? Wij helpen!',
+    title: 'Internet',
     href: '/diensten/internet-wifi'
   },
   {
     icon: Smartphone,
     emoji: '📱',
     title: 'Tablet & Smartphone',
-    description: 'Hulp met uw tablet of smartphone nodig?',
     href: '/diensten/tablet-smartphone'
   },
   {
     icon: GraduationCap,
     emoji: '🎓',
     title: 'Uitleg & Les',
-    description: 'Rustig en geduldig computerles aan huis',
     href: '/diensten/uitleg-les'
   },
 ]
@@ -65,18 +59,14 @@ export function ServicesPreview() {
           <h2 className="text-5xl lg:text-6xl font-bold text-gradient mb-6">
             Onze Diensten
           </h2>
-          <p className="text-xl text-neural-300 max-w-3xl mx-auto leading-relaxed">
-            Van het installeren van programma's tot internet problemen - 
-            onze vriendelijke specialisten helpen u met alle computer vragen. We leggen alles rustig uit.
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {services.map((service, _index) => {
             const IconComponent = service.icon
             return (
-              <div key={service.title}>
-                <Card className="h-full group hover:scale-105 transition-transform duration-300">
+              <Link key={service.title} href={service.href}>
+                <Card className="h-full group hover:scale-105 transition-all duration-300 cursor-pointer relative overflow-hidden">
                   <div className="text-center p-8">
                     <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                       <IconComponent className="w-8 h-8 text-white" />
@@ -84,16 +74,17 @@ export function ServicesPreview() {
                     <h3 className="text-xl font-semibold text-white mb-4">
                       {service.title}
                     </h3>
-                    <p className="text-neural-300 leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                    <Link href={service.href} className="btn-secondary">
-                      Meer info
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
+
+                    {/* Hover button */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-8">
+                      <div className="btn-secondary">
+                        Meer informatie
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </div>
+                    </div>
                   </div>
                 </Card>
-              </div>
+              </Link>
             )
           })}
         </div>

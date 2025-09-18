@@ -37,11 +37,11 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   return {
-    title: `${service.name} - IT Service aan Huis | Hulp met IT`,
-    description: `${service.description} ✓ Ervaren IT-specialisten ✓ Vaste tarieven €13,99 per kwartier ✓ Snelle service ✓ Direct online afspraak maken`,
+    title: `${service.name} - Vriendelijke IT Hulp aan Huis | Hulp met IT`,
+    description: `${service.description} ✓ Vriendelijke IT-specialisten ✓ Transparante tarieven €13,99 per kwartier ✓ Persoonlijke hulp ✓ Direct online afspraak maken`,
     keywords: service.keywords,
     openGraph: {
-      title: `${service.name} - IT Service aan Huis`,
+      title: `${service.name} - Vriendelijke IT Hulp aan Huis`,
       description: service.description,
       images: [`/images/services/${service.slug}.webp`],
     },
@@ -58,7 +58,7 @@ export default function ServicePage({ params }: ServicePageProps) {
   return (
     <>
       <MetaTags
-        title={`${service.name} - IT Service aan Huis`}
+        title={`${service.name} - Vriendelijke IT Hulp aan Huis`}
         description={service.description}
       />
       

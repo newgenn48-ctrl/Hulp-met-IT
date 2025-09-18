@@ -12,7 +12,7 @@ import services from '@/lib/data/services.json'
 const service = services.find(s => s.slug === 'printerhulp')!
 
 export const metadata: Metadata = {
-  title: `${service.name} - Professionele Printerhulp aan Huis | Hulp met IT`,
+  title: `${service.name} - Vriendelijke Printerhulp aan Huis | Hulp met IT`,
   description: service.longDescription,
   keywords: service.keywords,
   openGraph: {
@@ -124,7 +124,7 @@ export default function PrinterhulpPage() {
             <div className="text-center">
               <div className="card-3d max-w-2xl mx-auto">
                 <h2 className="text-3xl font-bold text-white mb-4">
-                  Klaar om uw printer te laten installeren?
+                  Klaar voor printerhulp aan huis?
                 </h2>
                 <p className="text-neural-300 mb-6">
                   Bel nu voor een snelle afspraak of bekijk onze andere diensten.

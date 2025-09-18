@@ -11,21 +11,21 @@ import { NoSSR } from '@/components/NoSSR'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hulp met IT - Computerhulp aan Huis | Specialist binnen 24-48u',
-  description: 'Computerproblemen? Onze vriendelijke specialisten komen binnen 24-48u aan huis! ✓ Vaste tarieven ✓ Ervaren experts ✓ Alle merken ✓ Direct online afspraak maken',
+  title: 'Hulp met IT - Vriendelijke Computerhulp aan Huis | Hulp binnen 24-48u',
+  description: 'Computer problemen? Onze vriendelijke specialisten komen binnen 24-48u aan huis voor persoonlijke computerhulp! ✓ Transparante tarieven ✓ Rustige uitleg ✓ Alle apparaten ✓ Direct afspraak maken',
   keywords: [
     'computerhulp aan huis',
-    'computer specialist Nederland',
-    'laptop reparatie',
-    'computer problemen',
-    'specialist aan huis',
-    'computer service',
-    'snelle hulp',
-    '24 uur service'
+    'computer hulp Nederland',
+    'laptop hulp',
+    'computer problemen oplossen',
+    'vriendelijke hulp aan huis',
+    'computer ondersteuning',
+    'persoonlijke computerhulp',
+    'computer uitleg'
   ],
   openGraph: {
-    title: 'Hulp met IT - Computerhulp aan Huis',
-    description: 'Computerproblemen? Onze vriendelijke specialisten komen binnen 24-48u aan huis!',
+    title: 'Hulp met IT - Vriendelijke Computerhulp aan Huis',
+    description: 'Computer problemen? Onze vriendelijke specialisten komen aan huis voor persoonlijke computerhulp en uitleg!',
     images: ['/og-image.webp'],
   },
 }

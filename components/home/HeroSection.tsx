@@ -18,13 +18,13 @@ export function HeroSection() {
       <div className="relative z-10 max-w-6xl mx-auto container-padding text-center">
         
         <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-          <span className="text-gradient">Betrouwbare Computerhulp</span>
+          <span className="text-gradient">Vriendelijke Computerhulp</span>
           <br />
           <span className="text-white">aan Huis</span>
         </h1>
         
         <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">
-          Computer, tablet, smartphone of printer problemen? Onze vriendelijke specialisten komen <span className="text-primary-300 font-semibold">binnen 24 uur (spoed)</span> of <span className="text-primary-300 font-semibold">vanaf overmorgen (standaard)</span> naar u toe!
+          Hulp nodig met uw computer, tablet, smartphone of printer? Onze vriendelijke IT-specialisten komen <span className="text-primary-300 font-semibold">binnen 24-48u</span> naar u toe en lossen het snel en vakkundig voor u op én zorgen dat u voortaan zelfverzekerd met uw apparaten kunt werken!
         </p>
 
         <div className="flex flex-wrap justify-center gap-6 mb-4">

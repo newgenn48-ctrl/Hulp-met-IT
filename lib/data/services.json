@@ -4,17 +4,17 @@
     "slug": "computerhulp",
     "icon": "Monitor",
     "emoji": "💻",
-    "description": "Computer installatie, problemen oplossen en onderhoud - wij maken uw computer weer perfect!",
-    "longDescription": "Heeft u problemen met uw computer? Of het nu gaat om installatie, problemen oplossen, schadelijke programma's verwijderen, of onderhoud - onze vriendelijke specialisten komen naar u toe en helpen u rustig verder. We leggen alles duidelijk uit en hebben ervaring met alle computer merken.",
+    "description": "Computer installatie, problemen oplossen en onderhoud - wij helpen u persoonlijk!",
+    "longDescription": "Heeft u problemen met uw computer? Of het nu gaat om installatie, problemen oplossen, ongewenste programma's opruimen, of onderhoud - onze vriendelijke specialisten komen naar u toe en helpen u rustig verder. We leggen alles duidelijk uit en hebben ervaring met alle computer merken.",
     "duration": "1-2 uur gemiddeld",
     "features": [
       "Windows updates en onderhoud",
-      "Schadelijke programma's verwijderen",
+      "Ongewenste programma's opruimen",
       "Computer opschonen en versnellen", 
       "Programma's installeren en uitleg",
       "Nieuwe computer gebruiksklaar maken",
       "Bestanden veilig bewaren",
-      "Computer onderdelen controleren"
+      "Computer hardware controleren"
     ],
     "process": [
       {
@@ -35,8 +35,8 @@
       }
     ],
     "commonIssues": [
-      "Computer installatie en setup",
-      "Schadelijke programma's op computer",
+      "Nieuwe computer hulp en setup",
+      "Ongewenste programma's op computer",
       "Windows start niet meer op",
       "Programma's crashen regelmatig",
       "Opslagruimte is vol",
@@ -44,8 +44,8 @@
     ],
     "keywords": [
       "computerhulp aan huis",
-      "computer reparatie",
-      "virus verwijderen",
+      "computer hulp",
+      "computer opschonen",
       "computer installatie",
       "Windows problemen",
       "IT hulp"
@@ -56,8 +56,8 @@
     "slug": "printerhulp",
     "icon": "Printer",
     "emoji": "🖨️",
-    "description": "Printer werkt niet? Wij zorgen dat u weer kunt printen!",
-    "longDescription": "Printer problemen kunnen heel vervelend zijn. Of het nu gaat om een nieuwe printer aansluiten, draadloos printen instellen, of een probleem oplossen - onze specialisten hebben ervaring met alle printer merken zoals HP, Canon, Epson en Brother.",
+    "description": "Printer werkt niet? Wij helpen u vriendelijk verder!",
+    "longDescription": "Printer problemen kunnen heel vervelend zijn. Of het nu gaat om een nieuwe printer aansluiten, draadloos printen instellen, of een probleem oplossen - onze vriendelijke specialisten helpen u persoonlijk en hebben ervaring met alle printer merken zoals HP, Canon, Epson en Brother.",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe printer installatie en setup",
@@ -78,7 +78,7 @@
         "description": "We stellen vast wat het exacte probleem is"
       },
       {
-        "title": "Installatie/Reparatie",
+        "title": "Installatie/Oplossing",
         "description": "We lossen het probleem op en testen uitgebreid"
       },
       {
@@ -96,7 +96,7 @@
     ],
     "keywords": [
       "printer installatie",
-      "printer reparatie",
+      "printer hulp",
       "draadloos printen",
       "printer problemen",
       "scanner installatie",

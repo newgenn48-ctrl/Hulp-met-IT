@@ -5,7 +5,10 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git pull:*)",
-      "Bash(del \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\HIT\\hulpmetit-nextgen\\components\\forms\\Recaptcha.tsx\")"
+      "Bash(del \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\HIT\\hulpmetit-nextgen\\components\\forms\\Recaptcha.tsx\")",
+      "WebFetch(domain:uwcomputerstudent.nl)",
+      "WebFetch(domain:www.studentaanhuis.nl)",
+      "WebFetch(domain:computerhulpzh.nl)"
     ],
     "deny": [],
     "ask": []
