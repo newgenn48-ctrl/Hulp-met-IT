@@ -58,8 +58,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/computerhulp-aan-huis`,
       lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/privacy`,
@@ -93,5 +93,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  return [...staticPages, ...servicePages, ...cityPages, ...studentAanHuisPages]
+  // Computerhulp Aan Huis city pages
+  const computerhulpAanHuisPages = cities.map(city => ({
+    url: `${baseUrl}/computerhulp-aan-huis-${city.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }))
+
+  return [...staticPages, ...servicePages, ...cityPages, ...studentAanHuisPages, ...computerhulpAanHuisPages]
 }

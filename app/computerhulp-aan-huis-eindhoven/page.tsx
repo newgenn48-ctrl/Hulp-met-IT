@@ -7,22 +7,22 @@ import Link from 'next/link'
 import {
   Phone,
   Calendar,
-  CheckCircle,
   Clock,
   Award,
-  Users
+  Users,
+  MapPin
 } from 'lucide-react'
 
 const benefits = [
   {
     icon: Clock,
-    title: 'Snelle Hulp',
-    description: 'Wij komen snel naar u toe wanneer u hulp nodig heeft'
+    title: 'Snelle Hulp Eindhoven',
+    description: 'Wij komen snel naar u toe in heel Eindhoven'
   },
   {
     icon: Award,
-    title: 'Ervaren Specialisten',
-    description: 'Vriendelijke experts die rustig uitleggen wat er gebeurt'
+    title: 'Vriendelijke Specialisten',
+    description: 'Ervaren helpers die rustig uitleggen wat er gebeurt'
   },
   {
     icon: Users,
@@ -35,12 +35,12 @@ const processSteps = [
   {
     step: '1',
     title: 'Afspraak Maken',
-    description: 'Bel ons of maak online een afspraak. Wij plannen een geschikt moment in'
+    description: 'Bel ons of maak online een afspraak. Wij plannen een geschikt moment in Eindhoven'
   },
   {
     step: '2',
     title: 'Specialist Komt Langs',
-    description: 'Onze vriendelijke specialist komt naar u toe en bekijkt rustig uw probleem'
+    description: 'Onze vriendelijke specialist komt naar u toe in Eindhoven en bekijkt rustig uw probleem'
   },
   {
     step: '3',
@@ -49,8 +49,7 @@ const processSteps = [
   }
 ]
 
-export default function ComputerhulpAanHuisLanding() {
-
+export default function ComputerhulpAanHuisEindhoven() {
   return (
     <>
       <script
@@ -59,82 +58,19 @@ export default function ComputerhulpAanHuisLanding() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Hulp met IT - Computerhulp aan Huis",
-            "description": "Professionele computerhulp aan huis door ervaren specialisten. Wij komen bij u thuis voor alle computerproblemen in heel Nederland.",
-            "url": "https://hulpmetit.nl/computerhulp-aan-huis",
+            "name": "Hulp met IT - Computerhulp aan Huis Eindhoven",
+            "description": "Professionele computerhulp aan huis in Eindhoven door ervaren specialisten",
+            "url": "https://hulpmetit.nl/computerhulp-aan-huis-eindhoven",
             "telephone": "+31642827860",
             "email": "info@hulpmetit.nl",
             "areaServed": {
-              "@type": "Country",
-              "name": "Nederland"
+              "@type": "City",
+              "name": "Eindhoven",
+              "addressRegion": "Noord-Brabant",
+              "addressCountry": "NL"
             },
-            "serviceType": "Computerhulp aan huis",
-            "priceRange": "€51,97 - €100",
-            "openingHours": "Mo-Su 08:00-21:00",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.7",
-              "reviewCount": "250"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Computerhulp aan Huis Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Computerhulp aan huis",
-                    "description": "Professionele computerhulp bij u thuis"
-                  },
-                  "price": "51.97",
-                  "priceCurrency": "EUR"
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Laptop reparatie aan huis",
-                    "description": "Laptop reparatie bij u thuis door specialist"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Virus verwijdering computer",
-                    "description": "Virus en malware verwijdering aan huis"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Windows problemen oplossen",
-                    "description": "Windows computerproblemen oplossen thuis"
-                  }
-                }
-              ]
-            },
-            "sameAs": [
-              "https://hulpmetit.nl/computerhulp-aan-huis",
-              "https://hulpmetit.nl/student-aan-huis"
-            ],
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://hulpmetit.nl/computerhulp-aan-huis"
-            },
-            "potentialAction": {
-              "@type": "ReserveAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://hulpmetit.nl/afspraak"
-              },
-              "result": {
-                "@type": "Reservation",
-                "name": "Computerhulp aan huis afspraak"
-              }
-            }
+            "serviceType": "Computerhulp aan huis Eindhoven",
+            "priceRange": "€51,97 - €100"
           })
         }}
       />
@@ -144,23 +80,22 @@ export default function ComputerhulpAanHuisLanding() {
           <FloatingElements />
         </ClientWrapper>
 
-        {/* Hero Section */}
         <section className="hero-section relative z-10 md:z-auto">
           <div className="max-w-7xl mx-auto container-padding">
             <div className="text-center mb-8">
               <div className="inline-flex items-center bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                Nu beschikbaar in heel Nederland
+                <MapPin className="w-4 h-4 mr-2" />
+                Computerhulp aan Huis Eindhoven
               </div>
 
               <h1 className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
                 Computerhulp aan Huis
                 <br />
-                <span className="text-white">Specialist komt bij u thuis</span>
+                <span className="text-white">Eindhoven</span>
               </h1>
 
               <p className="text-xl text-neural-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Computerhulp aan huis door ervaren specialisten. Wij komen naar u toe en helpen rustig bij uw computerproblemen.
+                Computerhulp aan huis door vriendelijke specialisten in Eindhoven. Wij komen naar u toe in heel Eindhoven en helpen rustig bij uw computerproblemen.
                 <span className="text-primary-300 font-semibold"> Transparante tarieven, geen verrassingen achteraf!</span>
               </p>
 
@@ -182,7 +117,7 @@ export default function ComputerhulpAanHuisLanding() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/afspraak" className="btn-cta">
                   <Calendar className="w-6 h-6 mr-3" />
-                  Afspraak Maken
+                  Afspraak Maken Eindhoven
                 </Link>
                 <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
                   <Phone className="w-6 h-6 mr-3" />
@@ -193,15 +128,13 @@ export default function ComputerhulpAanHuisLanding() {
           </div>
         </section>
 
-        {/* Services Section */}
         <ServicesPreview />
 
-        {/* Process Section */}
         <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Hoe Werkt Onze Computerhulp aan Huis?
+                Hoe Werkt Computerhulp aan Huis in Eindhoven?
               </h2>
               <p className="text-xl text-neural-300">
                 Eenvoudig en snel - van afspraak tot opgeloste computerproblemen
@@ -222,49 +155,42 @@ export default function ComputerhulpAanHuisLanding() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
         <TestimonialsSection />
-
-        {/* Pricing Section */}
         <PricingSection />
 
-        {/* SEO Content Section */}
         <section className="section-spacing bg-neural-900/50">
           <div className="max-w-4xl mx-auto container-padding">
             <h2 className="text-3xl font-bold text-white text-center mb-8">
-              Waarom Kiezen voor Onze Computerhulp aan Huis?
+              Computerhulp aan Huis in Heel Eindhoven
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="glass-effect rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">🔧 Alle Computer Reparaties</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">⚡ Eindhoven Wijken</h3>
                 <ul className="text-neural-300 space-y-2">
-                  <li>• Laptop reparatie aan huis</li>
-                  <li>• Desktop computer hulp thuis</li>
-                  <li>• Windows problemen oplossen</li>
-                  <li>• Computer traag maken sneller</li>
-                  <li>• Hardware installatie en reparatie</li>
+                  <li>• Computerhulp Eindhoven Centrum</li>
+                  <li>• Computerhulp Veldhoven</li>
+                  <li>• Computerhulp Helmond</li>
+                  <li>• Computerhulp Best</li>
+                  <li>• Computerhulp Geldrop</li>
                 </ul>
               </div>
 
               <div className="glass-effect rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">🛡️ Software & Beveiliging</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">💻 Onze Services Eindhoven</h3>
                 <ul className="text-neural-300 space-y-2">
-                  <li>• Virus verwijdering computer</li>
-                  <li>• Internet problemen oplossen</li>
-                  <li>• Software installatie thuis</li>
-                  <li>• Computer beveiliging verbeteren</li>
+                  <li>• Laptop reparatie Eindhoven</li>
+                  <li>• Virus verwijdering Eindhoven</li>
+                  <li>• Computer traag maken sneller</li>
                   <li>• E-mail en programma's instellen</li>
+                  <li>• Internet problemen oplossen</li>
                 </ul>
               </div>
             </div>
 
             <div className="text-center">
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                Computerhulp aan Huis door Heel Nederland
-              </h3>
               <p className="text-neural-300 text-lg leading-relaxed">
-                Hulp met IT biedt computerhulp aan huis in alle grote Nederlandse steden: Amsterdam, Rotterdam, Den Haag, Utrecht, Eindhoven, Groningen, Tilburg, Almere, Breda, Nijmegen en omliggende gebieden. Onze vriendelijke specialisten nemen rustig de tijd om uw computerproblemen op te lossen en uit te leggen hoe alles werkt.
+                Hulp met IT biedt computerhulp aan huis in heel Eindhoven. Van de Lichttoren tot Veldhoven, van Helmond tot Best - onze vriendelijke specialisten komen naar u toe en nemen rustig de tijd om uw computerproblemen op te lossen en uit te leggen hoe alles werkt.
               </p>
             </div>
           </div>

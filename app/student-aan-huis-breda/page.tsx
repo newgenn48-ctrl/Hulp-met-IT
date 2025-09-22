@@ -6,13 +6,16 @@ import { ServicesPreview } from '@/components/home/ServicesPreview'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
-import { 
-  Phone, 
+import { useState } from 'react'
+import {
+  Phone,
   Calendar,
   GraduationCap,
   Euro,
   Zap,
-  MapPin
+  MapPin,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react'
 
 const benefits = [
@@ -57,7 +60,63 @@ const bredaAreas = [
   'Etten-Leur', 'Zundert', 'Made', 'Drimmelen'
 ]
 
+const faqData = [
+  {
+    question: "Wat kost student aan huis hulp in Breda?",
+    answer: "Onze tarieven beginnen vanaf €13,99 per kwartier in Breda. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+  },
+  {
+    question: "Zijn jullie studenten wel gekwalificeerd in Breda?",
+    answer: "Ja, onze studenten in Breda volgen IT-opleidingen en hebben praktijkervaring. Veel van onze studenten komen van Breda University of Applied Sciences (BUas) en zijn vertrouwd met moderne technologie. Ze worden geselecteerd op hun technische vaardigheden en communicatieve vaardigheden."
+  },
+  {
+    question: "Kunnen jullie ook 's avonds en weekenden komen in Breda?",
+    answer: "Ja, dat is een van onze grote voordelen! Onze studenten in Breda hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+  },
+  {
+    question: "Hoe snel kunnen jullie komen in Breda?",
+    answer: "In Breda kunnen we vaak nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgent problemen proberen we binnen 2-4 uur beschikbaar te zijn in het centrum en de hoofdwijken."
+  },
+  {
+    question: "Welke wijken in Breda bedienen jullie?",
+    answer: "We bedienen alle wijken van Breda: Centrum, Noord, Oost, West, Zuid, Prinsenbeek, Teteringen, plus omliggende gemeenten zoals Oosterhout en Etten-Leur."
+  }
+]
+
+function FAQItem({ question, answer, isOpen, onToggle }: {
+  question: string
+  answer: string
+  isOpen: boolean
+  onToggle: () => void
+}) {
+  return (
+    <div className="glass-effect rounded-lg overflow-hidden">
+      <button
+        onClick={onToggle}
+        className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+      >
+        <h3 className="text-xl font-semibold text-white pr-4">{question}</h3>
+        {isOpen ? (
+          <ChevronUp className="w-6 h-6 text-primary-400 flex-shrink-0" />
+        ) : (
+          <ChevronDown className="w-6 h-6 text-primary-400 flex-shrink-0" />
+        )}
+      </button>
+      {isOpen && (
+        <div className="px-6 pb-6">
+          <p className="text-neural-300 leading-relaxed">{answer}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
 export default function StudentAanHuisBredaLanding() {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index)
+  }
   return (
     <>
       <script
@@ -67,7 +126,7 @@ export default function StudentAanHuisBredaLanding() {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Hulp met IT - Student Aan Huis Breda",
-            "description": "Betaalbare computerhulp in Breda door ervaren IT-studenten",
+            "description": "Betaalbare computerhulp in Breda door ervaren IT-studenten. Nabij BUas en historische binnenstad.",
             "url": "https://hulpmetit.nl/student-aan-huis-breda",
             "telephone": "+31642827860",
             "email": "info@hulpmetit.nl",
@@ -85,7 +144,19 @@ export default function StudentAanHuisBredaLanding() {
             ],
             "serviceType": "Student computerhulp aan huis Breda",
             "priceRange": "€13,99 - €18,50",
-            "openingHours": "Mo-Su 08:00-22:00"
+            "openingHours": "Mo-Su 08:00-22:00",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "127"
+            },
+            "offers": {
+              "@type": "Offer",
+              "description": "Computerhulp door IT-studenten in Breda",
+              "price": "13.99",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock"
+            }
           })
         }}
       />
@@ -147,39 +218,6 @@ export default function StudentAanHuisBredaLanding() {
         {/* Services Section */}
         <ServicesPreview />
 
-        {/* Breda Areas Section */}
-        <section className="section-spacing">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Werkgebied Breda & Omgeving
-              </h2>
-              <p className="text-xl text-neural-300">
-                Onze IT-studenten komen naar alle wijken in en rondom Breda
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-              {bredaAreas.map((area, index) => (
-                <div key={index} className="glass-effect rounded-lg p-4 text-center">
-                  <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
-                  <span className="text-neural-200 text-base font-medium">{area}</span>
-                </div>
-              ))}
-            </div>
-            
-            <div className="text-center">
-              <p className="text-neural-300 text-lg mb-6">
-                Niet in de lijst? <strong className="text-white">Bel ons</strong> - wij komen waarschijnlijk ook bij jou!
-              </p>
-              <Link href="/regios/breda" className="btn-secondary">
-                <MapPin className="w-5 h-5 mr-2" />
-                Meer Info Breda
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* Process Section */}
         <section className="section-spacing bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
@@ -211,6 +249,231 @@ export default function StudentAanHuisBredaLanding() {
 
         {/* Pricing Section */}
         <PricingSection />
+
+        {/* Why Choose Student Section */}
+        <section className="section-spacing bg-neural-900/30">
+          <div className="max-w-6xl mx-auto container-padding">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Waarom kiezen voor onze Student Aan Huis in Breda?
+              </h2>
+              <p className="text-xl text-neural-300 max-w-3xl mx-auto">
+                Ontdek de voordelen van computerhulp door ervaren IT-studenten in Breda
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Euro className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Betaalbare Tarieven Breda</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Vanaf €13,99 per kwartier in Breda - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">BUas Studenten</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Onze studenten in Breda komen vaak van Breda University of Applied Sciences (BUas) en zijn opgeleid in moderne technologieën. Professionele kwaliteit.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Flexibele Tijden</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Ook 's avonds en in weekenden beschikbaar in Breda. Studenten hebben flexibele schema's die perfect aansluiten bij uw behoeften.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Heel Breda</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Van historisch Centrum tot Prinsenbeek, van Noord tot Zuid - onze studenten komen overal in Breda en omgeving zoals Oosterhout.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Snelle Beschikbaarheid</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Vaak nog dezelfde dag beschikbaar in Breda. Korte reistijd betekent snelle hulp en lagere kosten.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Moderne Kennis</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Studenten zijn vertrouwd met de nieuwste software en technologieën. Ideaal voor moderne computerproblemen en nieuwe systemen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Detail Section */}
+        <section className="section-spacing">
+          <div className="max-w-6xl mx-auto container-padding">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Onze Student IT Diensten in Breda
+              </h2>
+              <p className="text-xl text-neural-300">
+                Uitgebreide computerhulp door vakkundige IT-studenten in Breda
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white mb-4">🖥️ Computer & Laptop Hulp Breda</h3>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Laptop en Computer Reparatie</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• Computer start niet op - diagnose en reparatie</li>
+                    <li>• Laptop scherm vervangen of repareren</li>
+                    <li>• Toetsenbord en touchpad problemen</li>
+                    <li>• Hardware upgrades (RAM, SSD, harde schijf)</li>
+                    <li>• Ventilator reiniging bij oververhitting</li>
+                  </ul>
+                </div>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Software Installatie & Updates</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• Windows installatie en updates</li>
+                    <li>• Microsoft Office installatie en configuratie</li>
+                    <li>• Antivirus software installeren</li>
+                    <li>• Browser installatie en bookmarks overzetten</li>
+                    <li>• Printer drivers en software installeren</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white mb-4">🌐 Internet & Netwerk Breda</h3>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">WiFi & Internet Problemen</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• WiFi verbinding problemen oplossen</li>
+                    <li>• Router instellen en configureren</li>
+                    <li>• Langzame internet snelheid verbeteren</li>
+                    <li>• Netwerk printer verbinding maken</li>
+                    <li>• Smart TV internet verbinding</li>
+                  </ul>
+                </div>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Smartphone & Tablet Hulp</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• iPhone en Android telefoon instellen</li>
+                    <li>• Apps downloaden en organiseren</li>
+                    <li>• Contacten en foto's synchroniseren</li>
+                    <li>• Tablet koppelen aan WiFi en accounts</li>
+                    <li>• Privacy instellingen optimaliseren</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-spacing bg-neural-900/50">
+          <div className="max-w-4xl mx-auto container-padding">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Veelgestelde Vragen Student Aan Huis Breda
+              </h2>
+              <p className="text-xl text-neural-300">
+                Antwoorden op de meest gestelde vragen over onze student IT service in Breda
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {faqData.map((faq, index) => (
+                <FAQItem
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openFAQ === index}
+                  onToggle={() => toggleFAQ(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Breda Areas Section */}
+        <section className="section-spacing">
+          <div className="max-w-6xl mx-auto container-padding">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Werkgebied Breda & Omgeving
+              </h2>
+              <p className="text-xl text-neural-300">
+                Onze IT-studenten komen naar alle wijken in en rondom Breda
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+              {bredaAreas.map((area, index) => (
+                <div key={index} className="glass-effect rounded-lg p-4 text-center">
+                  <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
+                  <span className="text-neural-200 text-base font-medium">{area}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <p className="text-neural-300 text-lg mb-6">
+                Niet in de lijst? <strong className="text-white">Bel ons</strong> - wij komen waarschijnlijk ook bij jou!
+              </p>
+              <Link href="/regios/breda" className="btn-secondary">
+                <MapPin className="w-5 h-5 mr-2" />
+                Meer Info Breda
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section-spacing bg-gradient-to-r from-blue-600 to-purple-600">
+          <div className="max-w-4xl mx-auto container-padding text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Klaar voor Betaalbare Computerhulp in Breda?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Onze ervaren IT-studenten in Breda staan klaar om je te helpen. Snel, betaalbaar en vakkundig!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/afspraak" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Plan Nu Je Afspraak
+              </Link>
+              <Link href="tel:+31642827860" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center">
+                <Phone className="w-6 h-6 mr-3" />
+                Bel Direct: 06-42827860
+              </Link>
+            </div>
+          </div>
+        </section>
 
       </div>
     </>

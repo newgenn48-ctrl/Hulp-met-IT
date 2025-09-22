@@ -15,6 +15,7 @@ Allow: /contact/
 Allow: /afspraak/
 Allow: /regios/
 Allow: /student-aan-huis-*/
+Allow: /computerhulp-aan-huis/
 Allow: /windows-11-overstap/
 
 # Sitemap location

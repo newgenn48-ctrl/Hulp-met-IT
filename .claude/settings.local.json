@@ -8,7 +8,16 @@
       "Bash(del \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\HIT\\hulpmetit-nextgen\\components\\forms\\Recaptcha.tsx\")",
       "WebFetch(domain:uwcomputerstudent.nl)",
       "WebFetch(domain:www.studentaanhuis.nl)",
-      "WebFetch(domain:computerhulpzh.nl)"
+      "WebFetch(domain:computerhulpzh.nl)",
+      "WebSearch",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(find:*)",
+      "Bash(for city in tilburg haarlem leiden nijmegen arnhem breda amersfoort den-bosch middelburg)",
+      "Bash(do echo \"=== $city ===\")",
+      "Bash(grep:*)",
+      "Bash(done)",
+      "Bash(for city in den-haag middelburg)"
     ],
     "deny": [],
     "ask": []

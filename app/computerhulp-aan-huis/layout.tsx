@@ -1,30 +1,37 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan Huis | Specialist komt binnen 24u naar u toe ✓',
-  description: 'Computerproblemen? Onze ervaren specialisten komen binnen 24-48u aan huis! ✓ Transparante tarieven €51,97 ✓ 10+ jaar ervaring ✓ Ruime expertise ✓ Bel nu!',
+  title: 'Computerhulp aan Huis | Hulp met IT | Specialist komt bij u thuis',
+  description: 'Computer reparatie aan huis in heel Nederland ✓ Laptop reparatie thuis ✓ Virus verwijdering ✓ PC hulp specialist komt bij u ✓ Transparante tarieven vanaf €51,97',
   keywords: [
     'computerhulp aan huis',
-    'computer specialist aan huis',
     'computer reparatie thuis',
-    'PC hulp aan huis',
     'laptop reparatie aan huis',
-    'computer service Nederland',
-    'thuisservice computer',
-    'computerhulp specialist',
-    'computer problemen oplossen',
-    'IT hulp aan huis'
+    'pc hulp thuis',
+    'computer specialist aan huis',
+    'virus verwijdering computer',
+    'windows problemen oplossen thuis',
+    'computer traag maken sneller',
+    'internet problemen oplossen aan huis',
+    'computer installatie thuis',
+    'hardware reparatie aan huis',
+    'software installatie thuis',
+    'computer beveiliging thuis',
+    'IT ondersteuning aan huis Nederland'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis - Specialist binnen 24u',
-    description: 'Computerproblemen? Specialist komt binnen 24-48u naar u toe! Transparante tarieven, 10+ jaar ervaring.',
+    title: 'Computer Reparatie aan Huis Nederland | PC Hulp Thuis',
+    description: 'Computer specialist komt bij u thuis ✓ Laptop reparatie ✓ Virus verwijdering ✓ Alle computerproblemen opgelost ✓ Heel Nederland',
     images: ['/images/computerhulp-landing-og.webp'],
     url: '/computerhulp-aan-huis',
+    type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis - Specialist binnen 24u',
-    description: 'Computerproblemen? Specialist komt binnen 24-48u naar u toe!',
+    title: 'Computer Reparatie aan Huis | PC Specialist komt bij u',
+    description: 'Laptop reparatie thuis ✓ Virus verwijdering ✓ Windows problemen ✓ Computer specialist Nederland',
   },
   robots: {
     index: true,

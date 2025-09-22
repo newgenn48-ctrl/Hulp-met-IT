@@ -23,7 +23,9 @@ const nextConfig = {
   generateEtags: true,
   swcMinify: true,
   experimental: {
-    optimizePackageImports: ['lucide-react']
+    optimizePackageImports: ['lucide-react'],
+    optimizeCss: true,
+    gzipSize: true
   },
   httpAgentOptions: {
     keepAlive: true
