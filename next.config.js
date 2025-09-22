@@ -24,7 +24,6 @@ const nextConfig = {
   swcMinify: true,
   experimental: {
     optimizePackageImports: ['lucide-react'],
-    optimizeCss: true,
     gzipSize: true
   },
   httpAgentOptions: {
