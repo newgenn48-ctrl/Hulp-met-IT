@@ -125,10 +125,10 @@ export default function RootLayout({
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            __html: `(function(gtmW,gtmD,gtmS,gtmL,gtmI){gtmW[gtmL]=gtmW[gtmL]||[];gtmW[gtmL].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var gtmF=gtmD.getElementsByTagName(gtmS)[0],
+gtmJ=gtmD.createElement(gtmS),gtmDl=gtmL!='dataLayer'?'&l='+gtmL:'';gtmJ.async=true;gtmJ.src=
+'https://www.googletagmanager.com/gtm.js?id='+gtmI+gtmDl;gtmF.parentNode.insertBefore(gtmJ,gtmF);
 })(window,document,'script','dataLayer','${gtmId}');`,
           }}
         />
