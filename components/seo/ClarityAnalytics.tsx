@@ -3,39 +3,32 @@
 
 import { useEffect } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
-import Script from 'next/script'
+import clarity from '@microsoft/clarity'
 
 export function ClarityAnalytics() {
-  const projectId = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID
+  const projectId = 't9cgdd8rlz' // Your Clarity project ID
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    // This effect will run when the route changes
-    if (process.env.NODE_ENV === 'production' && projectId && typeof window.clarity === 'function') {
-      const url = pathname + searchParams.toString()
-      window.clarity('set', 'page', url)
+    // Initialize Clarity
+    if (process.env.NODE_ENV === 'production' && projectId) {
+      clarity.init(projectId)
+    }
+  }, [projectId])
+
+  useEffect(() => {
+    // Track route changes
+    if (process.env.NODE_ENV === 'production' && projectId) {
+      const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : '')
+      clarity.setTag('page', url)
     }
   }, [pathname, searchParams, projectId])
 
-  // Disable in development to avoid CSP conflicts during testing
-  if (process.env.NODE_ENV !== 'production' || !projectId) {
+  // Only run in production
+  if (process.env.NODE_ENV !== 'production') {
     return null
   }
 
-  return (
-    <Script
-      id="clarity-script"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
-          (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "${projectId}");
-        `,
-      }}
-    />
-  )
+  return null // The npm package handles script injection automatically
 }
