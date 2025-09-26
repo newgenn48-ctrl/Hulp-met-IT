@@ -10,6 +10,8 @@ import { Metadata, Viewport } from 'next'
 import { inter, spaceGrotesk } from '@/lib/fonts'
 import { NoSSR } from '@/components/NoSSR'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -162,6 +164,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <CookieConsent />
         </NoSSR>
         <StructuredData />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
