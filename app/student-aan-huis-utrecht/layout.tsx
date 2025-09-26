@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Utrecht | Betaalbare Computerhulp door IT-Studenten ✓',
-  description: 'Betaalbare computerhulp in Utrecht door ervaren IT-studenten! ✓ Vanaf €13,99 per kwartier ✓ Geen reiskosten ✓ Ook avonden/weekenden ✓ Snel ter plaatse ✓ Bel nu!',
+  title: 'Student Aan Huis Utrecht | IT-Student Utrecht | Computerhulp Thuis','
+  description: 'Student aan huis Utrecht: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Ook avonden/weekenden. Bel 06-42827860!','
   keywords: [
     'student aan huis utrecht',
     'student computerhulp utrecht',
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     'laptop reparatie utrecht student'
   ],
   openGraph: {
-    title: 'Student Aan Huis Utrecht - Betaalbare Computerhulp door IT-Studenten',
-    description: 'Betaalbare computerhulp in Utrecht door IT-studenten vanaf €13,99 per kwartier!',
+    title: 'Student Aan Huis Utrecht - €13,99 per kwartier + €10 voorrijkosten',
+    description: 'Student aan huis Utrecht: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Bel 06-42827860!',
     images: ['/og-image.webp'],
     url: '/student-aan-huis-utrecht',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Utrecht - Betaalbare Computerhulp',
-    description: 'Betaalbare computerhulp in Utrecht door IT-studenten!',
+    title: 'Student Aan Huis Utrecht - €13,99 per kwartier + €10 voorrijkosten',
+    description: 'Student aan huis Utrecht: betaalbare computerhulp! €13,99 per kwartier + €10 voorrijkosten. Bel 06-42827860!',
   },
   robots: {
     index: true,

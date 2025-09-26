@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan Huis Utrecht | Specialist komt bij u | Hulp met IT',
+  title: 'Computerhulp Aan Huis Utrecht | IT-Specialist Utrecht | Computer Reparatie',
   description: 'Computerhulp aan huis in Utrecht ✓ Ervaren specialisten ✓ Heel Utrecht ✓ Van Centrum tot Nieuwegein ✓ Transparante tarieven ✓ Bel 06-42827860',
   keywords: [
     'computerhulp aan huis utrecht',

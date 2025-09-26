@@ -11,8 +11,8 @@ import { NoSSR } from '@/components/NoSSR'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hulp met IT - Vriendelijke Computerhulp aan Huis | Hulp binnen 24-48u',
-  description: 'Computer problemen? Onze vriendelijke specialisten komen binnen 24-48u aan huis voor persoonlijke computerhulp! ✓ Transparante tarieven ✓ Rustige uitleg ✓ Alle apparaten ✓ Direct afspraak maken',
+  title: 'Computerhulp Aan Huis | Vriendelijke IT-Specialisten | Hulp met IT | Nederland',
+  description: 'Computer problemen? Onze vriendelijke IT-specialisten komen aan huis! ✓ €13,99 per kwartier + €10 voorrijkosten ✓ Binnen 24-48u ✓ Rustige uitleg ✓ Heel Nederland ✓ Bel: 06-42827860',
   keywords: [
     'computerhulp aan huis',
     'computer hulp Nederland',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     'computer uitleg'
   ],
   openGraph: {
-    title: 'Hulp met IT - Vriendelijke Computerhulp aan Huis',
-    description: 'Computer problemen? Onze vriendelijke specialisten komen aan huis voor persoonlijke computerhulp en uitleg!',
+    title: 'Computerhulp Aan Huis Nederland | Vriendelijke IT-Specialisten',
+    description: 'Vriendelijke IT-specialisten komen aan huis! €13,99 per kwartier + €10 voorrijkosten. Bel nu: 06-42827860',
     images: ['/og-image.webp'],
   },
 }

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Tilburg | Betaalbare Computerhulp door IT-Studenten',
+  title: 'Student Aan Huis Tilburg | IT-Student Tilburg | Computerhulp Thuis',
   description: 'Computerproblemen in Tilburg? Onze IT-studenten komen naar je toe! Betaalbare hulp vanaf €13,99 per kwartier. Snel, vakkundig en lokaal.',
   keywords: [
     'computerhulp Tilburg',

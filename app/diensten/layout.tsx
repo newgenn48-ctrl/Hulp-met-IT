@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Diensten - Hulp met IT | Computerhulp aan Huis',
+  title: 'Diensten | Computerhulp Aan Huis | IT-Services | Hulp met IT',
   description: 'Ontdek onze IT-diensten: computerhulp, laptop reparatie, internet problemen, software installatie door gekwalificeerde studenten.',
 }
 

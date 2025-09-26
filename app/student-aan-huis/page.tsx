@@ -21,7 +21,7 @@ const benefits = [
   {
     icon: Euro,
     title: 'Betaalbare Tarieven',
-    description: 'Vanaf €13,99 per kwartier'
+    description: '€13,99 per kwartier + €10 voorrijkosten'
   },
   {
     icon: GraduationCap,
@@ -56,7 +56,7 @@ const processSteps = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp?",
-    answer: "Onze tarieven beginnen vanaf €13,99 per kwartier. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    answer: "Onze tarieven zijn €13,99 per kwartier plus €10 eenmalige voorrijkosten. Dit is veel voordeliger dan traditionele computerhulp services. Minimum 15 minuten (€23,99 totaal)."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd?",
@@ -135,8 +135,8 @@ export default function StudentAanHuisLanding() {
               "@type": "Country",
               "name": "Nederland"
             },
-            "serviceType": "Student computerhulp aan huis",
-            "priceRange": "€13,99 - €18,50",
+            "serviceType": "ComputerRepair",
+            "priceRange": "€23,99-€100",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {
               "@type": "AggregateRating",

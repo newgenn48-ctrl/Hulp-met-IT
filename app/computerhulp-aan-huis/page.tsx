@@ -1,56 +1,123 @@
+'use client'
+
 import { FloatingElements } from '@/components/three/FloatingElements'
 import { ClientWrapper } from '@/components/ClientWrapper'
-import { PricingSection } from '@/components/home/PricingSection'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
+import { PricingSection } from '@/components/home/PricingSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
+import { useState } from 'react'
 import {
   Phone,
   Calendar,
-  CheckCircle,
-  Clock,
-  Award,
-  Users
+  GraduationCap,
+  Euro,
+  Zap,
+  ChevronDown,
+  ChevronUp
 } from 'lucide-react'
 
 const benefits = [
   {
-    icon: Clock,
-    title: 'Snelle Hulp',
-    description: 'Wij komen snel naar u toe wanneer u hulp nodig heeft'
+    icon: Euro,
+    title: 'Betaalbare Tarieven',
+    description: '€13,99 per kwartier + €10 voorrijkosten'
   },
   {
-    icon: Award,
-    title: 'Ervaren Specialisten',
-    description: 'Vriendelijke experts die rustig uitleggen wat er gebeurt'
+    icon: GraduationCap,
+    title: 'IT-Specialist Aan Huis',
+    description: 'Ervaren specialist komt naar u toe'
   },
   {
-    icon: Users,
-    title: 'Persoonlijke Aanpak',
-    description: 'Geduldig en begripvol, we nemen de tijd voor u'
+    icon: Zap,
+    title: 'Snel & Flexibel',
+    description: 'Ook avonden en weekenden'
   }
 ]
 
 const processSteps = [
   {
     step: '1',
-    title: 'Afspraak Maken',
-    description: 'Bel ons of maak online een afspraak. Wij plannen een geschikt moment in'
+    title: 'Plan Afspraak',
+    description: 'Bel of plan online - ook \'s avonds en in weekenden mogelijk'
   },
   {
     step: '2',
     title: 'Specialist Komt Langs',
-    description: 'Onze vriendelijke specialist komt naar u toe en bekijkt rustig uw probleem'
+    description: 'Ervaren IT-specialist komt snel naar je toe met alle benodigde tools'
   },
   {
     step: '3',
     title: 'Probleem Opgelost',
-    description: 'Wij lossen het probleem op en leggen duidelijk uit wat er gebeurd is'
+    description: 'Vakkundige hulp tegen studententarief + uitleg hoe het werkt'
   }
 ]
 
-export default function ComputerhulpAanHuisLanding() {
+const faqData = [
+  {
+    question: "Wat kost computerhulp aan huis?",
+    answer: "Onze tarieven zijn €13,99 per kwartier plus €10 eenmalige voorrijkosten. Dit is veel voordeliger dan traditionele computerhulp services. Minimum 15 minuten (€23,99 totaal)."
+  },
+  {
+    question: "Zijn jullie specialisten wel gekwalificeerd?",
+    answer: "Ja, onze specialisten volgen IT-opleidingen en hebben praktijkervaring. Ze zijn vertrouwd met moderne technologie en worden geselecteerd op hun technische vaardigheden en communicatieve vaardigheden. Alle specialisten zijn gescreend en getraind."
+  },
+  {
+    question: "Kunnen jullie ook 's avonds en weekenden komen?",
+    answer: "Ja, dat is een van onze grote voordelen! Specialisten hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+  },
+  {
+    question: "Wat als het probleem niet opgelost kan worden?",
+    answer: "We zijn eerlijk over wat wel en niet mogelijk is. Als een probleem te complex is, verwijzen we door naar specialisten. Je betaalt alleen voor de tijd die besteed is aan diagnose en advies."
+  },
+  {
+    question: "Welke gebieden bedienen jullie?",
+    answer: "We hebben specialisten beschikbaar in alle grote steden van Nederland: Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven, Groningen, Tilburg en omliggende gebieden. Bekijk onze locatiepagina's voor specifieke beschikbaarheid."
+  },
+  {
+    question: "Hoe snel kunnen jullie komen?",
+    answer: "Vaak kunnen we nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgent problemen proberen we binnen 2-4 uur beschikbaar te zijn, afhankelijk van de locatie en beschikbaarheid."
+  },
+  {
+    question: "Nemen specialisten hun eigen gereedschap mee?",
+    answer: "Ja, onze specialisten komen volledig uitgerust. Ze brengen laptops, kabels, tools en software mee die nodig zijn voor de meeste reparaties en installaties. Voor specifieke hardware onderdelen overleggen we vooraf."
+  }
+]
 
+function FAQItem({ question, answer, isOpen, onToggle }: {
+  question: string
+  answer: string
+  isOpen: boolean
+  onToggle: () => void
+}) {
+  return (
+    <div className="glass-effect rounded-lg overflow-hidden">
+      <button
+        onClick={onToggle}
+        className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+      >
+        <h3 className="text-xl font-semibold text-white pr-4">{question}</h3>
+        {isOpen ? (
+          <ChevronUp className="w-6 h-6 text-primary-400 flex-shrink-0" />
+        ) : (
+          <ChevronDown className="w-6 h-6 text-primary-400 flex-shrink-0" />
+        )}
+      </button>
+      {isOpen && (
+        <div className="px-6 pb-6">
+          <p className="text-neural-300 leading-relaxed">{answer}</p>
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default function SpecialistAanHuisLanding() {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index)
+  }
   return (
     <>
       <script
@@ -58,9 +125,9 @@ export default function ComputerhulpAanHuisLanding() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Hulp met IT - Computerhulp aan Huis",
-            "description": "Professionele computerhulp aan huis door ervaren specialisten. Wij komen bij u thuis voor alle computerproblemen in heel Nederland.",
+            "@type": ["LocalBusiness", "Service"],
+            "name": "Hulp met IT - Computerhulp Aan Huis",
+            "description": "Betaalbare computerhulp aan huis door ervaren IT-specialisten in heel Nederland",
             "url": "https://hulpmetit.nl/computerhulp-aan-huis",
             "telephone": "+31642827860",
             "email": "info@hulpmetit.nl",
@@ -68,76 +135,64 @@ export default function ComputerhulpAanHuisLanding() {
               "@type": "Country",
               "name": "Nederland"
             },
-            "serviceType": "Computerhulp aan huis",
-            "priceRange": "€51,97 - €100",
-            "openingHours": "Mo-Su 08:00-21:00",
+            "serviceType": "ComputerRepair",
+            "priceRange": "€23,99-€100",
+            "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.7",
-              "reviewCount": "250"
+              "ratingValue": "4.8",
+              "reviewCount": "500",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "13.99",
+                "priceCurrency": "EUR",
+                "unitText": "per kwartier",
+                "additionalProperty": {
+                  "@type": "PropertyValue",
+                  "name": "Voorrijkosten",
+                  "value": "10.00",
+                  "unitCode": "EUR"
+                }
+              },
+              "availability": "https://schema.org/InStock"
             },
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Computerhulp aan Huis Services",
+              "name": "Computerhulp Aan Huis Services",
               "itemListElement": [
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Computerhulp aan huis",
-                    "description": "Professionele computerhulp bij u thuis"
-                  },
-                  "price": "51.97",
-                  "priceCurrency": "EUR"
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Laptop reparatie aan huis",
-                    "description": "Laptop reparatie bij u thuis door specialist"
+                    "name": "Laptop reparatie"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Virus verwijdering computer",
-                    "description": "Virus en malware verwijdering aan huis"
+                    "name": "Computer problemen oplossen"
                   }
                 },
                 {
                   "@type": "Offer",
                   "itemOffered": {
                     "@type": "Service",
-                    "name": "Windows problemen oplossen",
-                    "description": "Windows computerproblemen oplossen thuis"
+                    "name": "Software installatie"
                   }
                 }
               ]
-            },
-            "sameAs": [
-              "https://hulpmetit.nl/computerhulp-aan-huis",
-              "https://hulpmetit.nl/student-aan-huis"
-            ],
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://hulpmetit.nl/computerhulp-aan-huis"
-            },
-            "potentialAction": {
-              "@type": "ReserveAction",
-              "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://hulpmetit.nl/afspraak"
-              },
-              "result": {
-                "@type": "Reservation",
-                "name": "Computerhulp aan huis afspraak"
-              }
             }
           })
         }}
       />
+
 
       <div className="relative min-h-screen">
         <ClientWrapper>
@@ -145,31 +200,31 @@ export default function ComputerhulpAanHuisLanding() {
         </ClientWrapper>
 
         {/* Hero Section */}
-        <section className="hero-section relative z-10 md:z-auto">
+        <section className="hero-section relative z-10 md:z-auto" aria-labelledby="hero-heading">
           <div className="max-w-7xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                Nu beschikbaar in heel Nederland
+              <div className="inline-flex items-center bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6" role="banner">
+                <GraduationCap className="w-4 h-4 mr-2" aria-hidden="true" />
+                Computerhulp Aan Huis Service
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
-                Computerhulp aan Huis
+              <h1 id="hero-heading" className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
+                Computerhulp Aan Huis
                 <br />
-                <span className="text-white">Specialist komt bij u thuis</span>
+                <span className="text-white">Door Ervaren Specialisten</span>
               </h1>
 
               <p className="text-xl text-neural-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Computerhulp aan huis door ervaren specialisten. Wij komen naar u toe en helpen rustig bij uw computerproblemen.
-                <span className="text-primary-300 font-semibold"> Transparante tarieven, geen verrassingen achteraf!</span>
+                Computerproblemen? Onze IT-specialisten komen naar je toe! Krijg betaalbare hulp van ervaren specialisten.
+                <span className="text-primary-300 font-semibold"> Betaalbare tarieven - snel en vakkundig!</span>
               </p>
 
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="grid md:grid-cols-3 gap-4 mb-8" role="list" aria-label="Service voordelen">
                 {benefits.map((benefit, index) => {
                   const IconComponent = benefit.icon
                   return (
-                    <div key={index} className="glass-effect rounded-lg p-4 text-center">
-                      <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <div key={index} className="glass-effect rounded-lg p-4 text-center" role="listitem">
+                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-3" aria-hidden="true">
                         <IconComponent className="w-5 h-5 text-white" />
                       </div>
                       <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
@@ -179,15 +234,15 @@ export default function ComputerhulpAanHuisLanding() {
                 })}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/afspraak" className="btn-cta">
-                  <Calendar className="w-6 h-6 mr-3" />
+              <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Contact opties">
+                <Link href="/afspraak" className="btn-cta" aria-label="Maak een afspraak voor computerhulp aan huis">
+                  <Calendar className="w-6 h-6 mr-3" aria-hidden="true" />
                   Afspraak Maken
                 </Link>
-                <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
-                  <Phone className="w-6 h-6 mr-3" />
+                <Link href="tel:+31642827860" className="btn-secondary" aria-label="Bel nu voor directe hulp: 06-42827860">
+                  <Phone className="w-6 h-6 mr-3" aria-hidden="true" />
                   Bel Nu: 06-42827860
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -197,21 +252,21 @@ export default function ComputerhulpAanHuisLanding() {
         <ServicesPreview />
 
         {/* Process Section */}
-        <section className="section-spacing">
+        <section className="section-spacing" aria-labelledby="process-heading">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Hoe Werkt Onze Computerhulp aan Huis?
+              <h2 id="process-heading" className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Hoe Werkt Computerhulp Aan Huis?
               </h2>
               <p className="text-xl text-neural-300">
-                Eenvoudig en snel - van afspraak tot opgeloste computerproblemen
+                Snel, flexibel en betaalbaar - vakkundige hulp
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto" role="list" aria-label="Proces stappen">
               {processSteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
+                <div key={index} className="text-center" role="listitem">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white" aria-label={`Stap ${step.step}`}>
                     {step.step}
                   </div>
                   <h3 className="text-2xl font-semibold text-white mb-3">{step.title}</h3>
@@ -228,44 +283,216 @@ export default function ComputerhulpAanHuisLanding() {
         {/* Pricing Section */}
         <PricingSection />
 
-        {/* SEO Content Section */}
-        <section className="section-spacing bg-neural-900/50">
-          <div className="max-w-4xl mx-auto container-padding">
-            <h2 className="text-3xl font-bold text-white text-center mb-8">
-              Waarom Kiezen voor Onze Computerhulp aan Huis?
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="glass-effect rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">🔧 Alle Computer Reparaties</h3>
-                <ul className="text-neural-300 space-y-2">
-                  <li>• Laptop reparatie aan huis</li>
-                  <li>• Desktop computer hulp thuis</li>
-                  <li>• Windows problemen oplossen</li>
-                  <li>• Computer traag maken sneller</li>
-                  <li>• Hardware installatie en reparatie</li>
-                </ul>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">🛡️ Software & Beveiliging</h3>
-                <ul className="text-neural-300 space-y-2">
-                  <li>• Virus verwijdering computer</li>
-                  <li>• Internet problemen oplossen</li>
-                  <li>• Software installatie thuis</li>
-                  <li>• Computer beveiliging verbeteren</li>
-                  <li>• E-mail en programma's instellen</li>
-                </ul>
-              </div>
+        {/* Why Choose Specialist Section */}
+        <section className="section-spacing bg-neural-900/30">
+          <div className="max-w-6xl mx-auto container-padding">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Waarom kiezen voor onze Computerhulp Aan Huis?
+              </h2>
+              <p className="text-xl text-neural-300 max-w-3xl mx-auto">
+                Ontdek de voordelen van computerhulp aan huis door ervaren IT-specialisten
+              </p>
             </div>
 
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold text-white mb-4">
-                Computerhulp aan Huis door Heel Nederland
-              </h3>
-              <p className="text-neural-300 text-lg leading-relaxed">
-                Hulp met IT biedt computerhulp aan huis in alle grote Nederlandse steden: Amsterdam, Rotterdam, Den Haag, Utrecht, Eindhoven, Groningen, Tilburg, Almere, Breda, Nijmegen en omliggende gebieden. Onze vriendelijke specialisten nemen rustig de tijd om uw computerproblemen op te lossen en uit te leggen hoe alles werkt.
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Euro className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Betaalbare Tarieven</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Vanaf €13,99 per kwartier - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen specialistentarieven.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Ervaren IT-Specialisten</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Onze specialisten zijn opgeleid in de nieuwste technologieën en brengen frisse kennis mee. Up-to-date met moderne systemen.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Flexibele Tijden</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Ook 's avonds en in weekenden beschikbaar. Specialisten hebben flexibele schema's en kunnen zich aanpassen aan jouw agenda.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Phone className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Persoonlijke Benadering</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Geduldig en begripvol. Onze specialisten nemen de tijd om alles rustig uit te leggen en je te helpen begrijpen.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Snelle Beschikbaarheid</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Vaak nog dezelfde dag beschikbaar. Specialisten hebben meer flexibiliteit en kunnen snel inspringen bij urgent problemen.
+                </p>
+              </div>
+
+              <div className="glass-effect rounded-lg p-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">Moderne Kennis</h3>
+                <p className="text-neural-300 leading-relaxed">
+                  Specialisten zijn vertrouwd met de nieuwste software, apps en technologieën. Ideaal voor moderne computerproblemen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Detail Section */}
+        <section className="section-spacing">
+          <div className="max-w-6xl mx-auto container-padding">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Onze Computerhulp Aan Huis Diensten
+              </h2>
+              <p className="text-xl text-neural-300">
+                Uitgebreide computerhulp aan huis door vakkundige IT-specialisten
               </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white mb-4">🖥️ Computer & Laptop Hulp</h3>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Laptop en Computer Reparatie</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• Computer start niet op - diagnose en reparatie</li>
+                    <li>• Laptop scherm vervangen of repareren</li>
+                    <li>• Toetsenbord en touchpad problemen</li>
+                    <li>• Hardware upgrades (RAM, SSD, harde schijf)</li>
+                    <li>• Ventilator reiniging bij oververhitting</li>
+                  </ul>
+                </div>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Software Installatie & Updates</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• Windows installatie en updates</li>
+                    <li>• Microsoft Office installatie en configuratie</li>
+                    <li>• Antivirus software installeren</li>
+                    <li>• Browser installatie en bookmarks overzetten</li>
+                    <li>• Printer drivers en software installeren</li>
+                  </ul>
+                </div>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Data & Bestanden</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• Foto's en documenten overzetten naar nieuwe computer</li>
+                    <li>• Backup maken van belangrijke bestanden</li>
+                    <li>• Cloud storage instellen (Google Drive, OneDrive)</li>
+                    <li>• Verloren bestanden terughalen</li>
+                    <li>• Externe harde schijf configureren</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <h3 className="text-2xl font-semibold text-white mb-4">🌐 Internet & Netwerk</h3>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">WiFi & Internet Problemen</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• WiFi verbinding problemen oplossen</li>
+                    <li>• Router instellen en configureren</li>
+                    <li>• Langzame internet snelheid verbeteren</li>
+                    <li>• Netwerk printer verbinding maken</li>
+                    <li>• Smart TV internet verbinding</li>
+                  </ul>
+                </div>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">E-mail & Communicatie</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• E-mail accounts instellen (Gmail, Outlook)</li>
+                    <li>• WhatsApp Web en desktop apps</li>
+                    <li>• Zoom, Teams, Skype installeren</li>
+                    <li>• Contacten overzetten tussen apparaten</li>
+                    <li>• Sociale media accounts beveiligen</li>
+                  </ul>
+                </div>
+
+                <div className="glass-effect rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-white mb-3">Smartphone & Tablet Hulp</h4>
+                  <ul className="text-neural-300 space-y-2">
+                    <li>• iPhone en Android telefoon instellen</li>
+                    <li>• Apps downloaden en organiseren</li>
+                    <li>• Contacten en foto's synchroniseren</li>
+                    <li>• Tablet koppelen aan WiFi en accounts</li>
+                    <li>• Privacy instellingen optimaliseren</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="section-spacing bg-neural-900/50">
+          <div className="max-w-4xl mx-auto container-padding">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Veelgestelde Vragen Computerhulp Aan Huis
+              </h2>
+              <p className="text-xl text-neural-300">
+                Antwoorden op de meest gestelde vragen over onze computerhulp aan huis service
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {faqData.map((faq, index) => (
+                <FAQItem
+                  key={index}
+                  question={faq.question}
+                  answer={faq.answer}
+                  isOpen={openFAQ === index}
+                  onToggle={() => toggleFAQ(index)}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="section-spacing bg-gradient-to-r from-blue-600 to-purple-600">
+          <div className="max-w-4xl mx-auto container-padding text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              Klaar voor Computerhulp Aan Huis?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Onze ervaren specialisten komen naar je toe voor computerhulp aan huis. Snel, betaalbaar en vakkundig - precies wat je nodig hebt!
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/afspraak" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center">
+                <Calendar className="w-6 h-6 mr-3" />
+                Plan Nu Je Afspraak
+              </Link>
+              <Link href="tel:+31642827860" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center">
+                <Phone className="w-6 h-6 mr-3" />
+                Bel Direct: 06-42827860
+              </Link>
             </div>
           </div>
         </section>

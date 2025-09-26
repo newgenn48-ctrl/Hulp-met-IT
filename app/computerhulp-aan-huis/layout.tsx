@@ -1,37 +1,30 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan Huis | Hulp met IT | Specialist komt bij u thuis',
-  description: 'Computer reparatie aan huis in heel Nederland ✓ Laptop reparatie thuis ✓ Virus verwijdering ✓ PC hulp specialist komt bij u ✓ Transparante tarieven vanaf €51,97',
+  title: 'Computerhulp Aan Huis | IT-Specialisten | Hulp met IT | Nederland',
+  description: 'Computerhulp aan huis door ervaren IT-specialisten! ✓ €13,99 per kwartier + €10 voorrijkosten ✓ Heel Nederland ✓ Binnen 24-48u ✓ Alle computerproblemen ✓ Bel: 06-42827860',
   keywords: [
     'computerhulp aan huis',
-    'computer reparatie thuis',
-    'laptop reparatie aan huis',
+    'computer reparatie aan huis',
+    'laptop reparatie thuis',
+    'IT specialist aan huis',
+    'computerhulp thuis',
+    'computer service aan huis',
     'pc hulp thuis',
-    'computer specialist aan huis',
-    'virus verwijdering computer',
-    'windows problemen oplossen thuis',
-    'computer traag maken sneller',
-    'internet problemen oplossen aan huis',
-    'computer installatie thuis',
-    'hardware reparatie aan huis',
-    'software installatie thuis',
-    'computer beveiliging thuis',
-    'IT ondersteuning aan huis Nederland'
+    'computerhulp specialisten',
+    'computer hulp aan huis',
+    'IT ondersteuning thuis'
   ],
   openGraph: {
-    title: 'Computer Reparatie aan Huis Nederland | PC Hulp Thuis',
-    description: 'Computer specialist komt bij u thuis ✓ Laptop reparatie ✓ Virus verwijdering ✓ Alle computerproblemen opgelost ✓ Heel Nederland',
-    images: ['/images/computerhulp-landing-og.webp'],
+    title: 'Computerhulp Aan Huis Nederland | IT-Specialisten',
+    description: 'Computerhulp aan huis door ervaren IT-specialisten. €13,99 per kwartier + €10 voorrijkosten. Heel Nederland!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis',
-    type: 'website',
-    locale: 'nl_NL',
-    siteName: 'Hulp met IT'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computer Reparatie aan Huis | PC Specialist komt bij u',
-    description: 'Laptop reparatie thuis ✓ Virus verwijdering ✓ Windows problemen ✓ Computer specialist Nederland',
+    title: 'Computerhulp Aan Huis - Betaalbare Reparatie',
+    description: 'Computerhulp aan huis door IT-specialisten vanaf €13,99 per kwartier!',
   },
   robots: {
     index: true,
@@ -42,7 +35,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ComputerhulpAanHuisLayout({
+export default function SpecialistAanHuisLayout({
   children,
 }: {
   children: React.ReactNode

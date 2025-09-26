@@ -12,7 +12,7 @@ import services from '@/lib/data/services.json'
 const service = services.find(s => s.slug === 'printerhulp')!
 
 export const metadata: Metadata = {
-  title: `${service.name} - Vriendelijke Printerhulp aan Huis | Hulp met IT`,
+  title: 'Printerhulp | Printer Installatie & Reparatie | IT-Service | Hulp met IT',
   description: service.longDescription,
   keywords: service.keywords,
   openGraph: {

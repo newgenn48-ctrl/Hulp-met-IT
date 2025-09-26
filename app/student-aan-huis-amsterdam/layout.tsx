@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Amsterdam | Betaalbare Computerhulp door IT-Studenten ✓',
-  description: 'Betaalbare computerhulp in Amsterdam door ervaren IT-studenten! ✓ Vanaf €13,99 per kwartier ✓ Geen reiskosten ✓ Ook avonden/weekenden ✓ Snel ter plaatse ✓ Bel nu!',
+  title: 'Student Aan Huis Amsterdam | IT-Student Amsterdam | Computerhulp Thuis','
+  description: 'Student aan huis Amsterdam: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Ook avonden/weekenden. Bel 06-42827860!','
   keywords: [
     'student aan huis amsterdam',
     'student computerhulp amsterdam',
@@ -16,15 +16,15 @@ export const metadata: Metadata = {
     'laptop reparatie amsterdam student'
   ],
   openGraph: {
-    title: 'Student Aan Huis Amsterdam - Betaalbare Computerhulp door IT-Studenten',
-    description: 'Betaalbare computerhulp in Amsterdam door IT-studenten vanaf €13,99 per kwartier!',
+    title: 'Student Aan Huis Amsterdam | IT-Student Computerhulp',
+    description: 'Student aan huis Amsterdam: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Bel 06-42827860!',
     images: ['/og-image.webp'],
     url: '/student-aan-huis-amsterdam',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Amsterdam - Betaalbare Computerhulp',
-    description: 'Betaalbare computerhulp in Amsterdam door IT-studenten!',
+    title: 'Student Aan Huis Amsterdam | IT-Student Computerhulp',
+    description: 'Student aan huis Amsterdam: betaalbare computerhulp! €13,99 per kwartier + €10 voorrijkosten. Bel 06-42827860!',
   },
   robots: {
     index: true,

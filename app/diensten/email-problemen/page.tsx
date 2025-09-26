@@ -12,7 +12,7 @@ import services from '@/lib/data/services.json'
 const service = services.find(s => s.slug === 'email-problemen')!
 
 export const metadata: Metadata = {
-  title: `${service.name} - E-mail Installatie & Problemen Oplossen | Hulp met IT`,
+  title: 'Email Problemen | E-mail Installatie | Outlook Gmail Hulp | Hulp met IT',
   description: service.longDescription,
   keywords: service.keywords,
   openGraph: {

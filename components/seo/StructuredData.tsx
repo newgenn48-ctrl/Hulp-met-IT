@@ -1,3 +1,5 @@
+import { CONTACT_INFO, BUSINESS_INFO, PRICING, SERVICE_HOURS, SEO_DEFAULTS } from '@/lib/constants'
+
 interface StructuredDataProps {
   page?: 'home' | 'faq' | 'service'
   breadcrumbs?: Array<{ name: string; url: string }>
@@ -8,12 +10,12 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Hulp met IT",
-    "alternateName": "Hulp met IT - Computerhulp aan Huis",
-    "description": "Snelle en betrouwbare IT-ondersteuning aan huis door gekwalificeerde studenten in heel Nederland",
-    "url": "https://hulpmetit.nl",
-    "telephone": "+31642827860",
-    "email": "info@hulpmetit.nl",
+    "name": BUSINESS_INFO.NAME,
+    "alternateName": BUSINESS_INFO.FULL_NAME,
+    "description": BUSINESS_INFO.DESCRIPTION,
+    "url": BUSINESS_INFO.WEBSITE_URL,
+    "telephone": CONTACT_INFO.PHONE,
+    "email": CONTACT_INFO.EMAIL,
     // Social media links worden toegevoegd zodra accounts actief zijn
     // "sameAs": [
     //   "https://www.facebook.com/hulpmetit",
@@ -28,34 +30,64 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Computer reparatie aan huis",
-            "description": "Professionele computer reparatie door gekwalificeerde IT-specialisten",
-            "serviceType": "Computer Repair"
+            "name": "Computerhulp aan huis",
+            "description": "Betaalbare computerhulp door ervaren IT-specialisten - €13,99 per kwartier + €10 voorrijkosten",
+            "serviceType": "ComputerRepair"
           },
-          "price": "35",
-          "priceCurrency": "EUR"
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service", 
-            "name": "Laptop service aan huis",
-            "description": "Laptop reparatie en onderhoud door experts",
-            "serviceType": "Laptop Repair"
-          },
-          "price": "45", 
-          "priceCurrency": "EUR"
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "13.99",
+            "priceCurrency": "EUR",
+            "unitText": "per kwartier",
+            "additionalProperty": {
+              "@type": "PropertyValue",
+              "name": "Voorrijkosten",
+              "value": "10.00",
+              "unitCode": "EUR"
+            }
+          }
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Internet en WiFi problemen oplossen",
-            "description": "WiFi en internetproblemen snel en efficiënt opgelost",
-            "serviceType": "Network Support"
+            "name": "Laptop reparatie aan huis",
+            "description": "Laptop reparatie en onderhoud door specialisten - €13,99 per kwartier + €10 voorrijkosten",
+            "serviceType": "LaptopRepair"
           },
-          "price": "40",
-          "priceCurrency": "EUR"
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "13.99",
+            "priceCurrency": "EUR",
+            "unitText": "per kwartier",
+            "additionalProperty": {
+              "@type": "PropertyValue",
+              "name": "Voorrijkosten",
+              "value": "10.00",
+              "unitCode": "EUR"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "WiFi en internet problemen oplossen",
+            "description": "WiFi en internetproblemen snel opgelost - €13,99 per kwartier + €10 voorrijkosten",
+            "serviceType": "NetworkSupport"
+          },
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "13.99",
+            "priceCurrency": "EUR",
+            "unitText": "per kwartier",
+            "additionalProperty": {
+              "@type": "PropertyValue",
+              "name": "Voorrijkosten",
+              "value": "10.00",
+              "unitCode": "EUR"
+            }
+          }
         }
       ]
     },
@@ -97,11 +129,11 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
       "bestRating": "5",
       "worstRating": "1"
     },
-    "priceRange": "€35-€75",
+    "priceRange": PRICING.PRICE_RANGE,
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
-    "openingHours": "Mo-Su 08:00-22:00",
-    "foundingDate": "2020",
-    "slogan": "Snelle IT-hulp aan huis door studenten"
+    "openingHours": SERVICE_HOURS.OPENING_HOURS,
+    "foundingDate": BUSINESS_INFO.FOUNDED_YEAR,
+    "slogan": "Betaalbare computerhulp aan huis - €13,99 per kwartier + €10 voorrijkosten"
   }
 
   const faqData = {
@@ -113,7 +145,7 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
         "name": "Hoeveel kost jullie computerhulp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Een bezoek kost €41,97 voor 45 minuten (minimum) plus €10,- reiskosten. Totaal dus €51,97. Extra tijd is €13,99 per kwartier. We spreken altijd vooraf af wat het gaat kosten, zodat u geen verrassingen krijgt."
+          "text": "Onze tarieven zijn €13,99 per kwartier plus €10,- eenmalige voorrijkosten. Minimale duur is 15 minuten (€23,99 totaal). We spreken altijd vooraf af wat het gaat kosten, zodat u geen verrassingen krijgt."
         }
       },
       {

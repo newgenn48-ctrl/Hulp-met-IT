@@ -4,6 +4,7 @@ import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, cle
 import { headers } from 'next/headers'
 import DOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
+import { CONTACT_INFO, BUSINESS_INFO, PRICING } from '@/lib/constants'
 
 // Create DOMPurify instance for server-side sanitization
 const window = new JSDOM('').window
@@ -22,11 +23,11 @@ const securityHeaders = {
 
 // Email configuration constants
 const EMAIL_CONFIG = {
-  FROM_ADDRESS: 'info@hulpmetit.nl',
-  FROM_NAME: 'Hulp met IT',
+  FROM_ADDRESS: CONTACT_INFO.EMAIL,
+  FROM_NAME: BUSINESS_INFO.NAME,
   ADMIN_FROM_NAME: 'Afspraak Systeem',
   DOMAIN: 'hulpmetit.nl',
-  PHONE: '06-42827860',
+  PHONE: CONTACT_INFO.PHONE_DISPLAY,
   WEBSITE: 'www.hulpmetit.nl'
 } as const
 
@@ -366,7 +367,7 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
 
 
 // Admin notification email template
-function getAdminEmailTemplate(data: any, reference: string, security?: { ip: string; userAgent: string }): string {
+function getAdminEmailTemplate(data: AppointmentFormData, reference: string, security?: { ip: string; userAgent: string }): string {
   const serviceLabel = serviceTypeLabels[data.serviceType] || data.serviceType
   const urgencyInfo = urgencyLabels[data.urgency] || { label: data.urgency, priority: 'Normaal' }
   const appointmentDateTime = data.preferredDate && data.preferredTime
@@ -726,9 +727,11 @@ export async function POST(request: NextRequest) {
     const validationResult = appointmentSchema.safeParse(rawData)
 
     if (!validationResult.success) {
-      console.log('VALIDATION ERROR OBJECT:', validationResult.error)
-      console.log('VALIDATION ISSUES:', validationResult.error.issues)
-      console.log('RAW FORM DATA:', JSON.stringify(rawData, null, 2))
+      if (process.env.NODE_ENV === 'development') {
+        console.log('VALIDATION ERROR OBJECT:', validationResult.error)
+        console.log('VALIDATION ISSUES:', validationResult.error.issues)
+        console.log('RAW FORM DATA:', JSON.stringify(rawData, null, 2))
+      }
 
       logSecurityEvent('VALIDATION_FAILED', {
         errors: validationResult.error.issues,
@@ -795,7 +798,8 @@ export async function POST(request: NextRequest) {
       console.warn('Email not configured - appointment saved locally only')
 
       // Log appointment data for manual processing
-      console.log('APPOINTMENT REQUEST:', {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('APPOINTMENT REQUEST:', {
         reference,
         timestamp: new Date().toISOString(),
         customer: `${sanitizedData.firstName} ${sanitizedData.lastName}`,
@@ -823,13 +827,15 @@ export async function POST(request: NextRequest) {
     let adminEmailSent = false
 
     // Send emails using Resend for reliable delivery
-    console.log('Sending customer email to:', data.email)
-    console.log('Sending admin email to:', EMAIL_CONFIG.FROM_ADDRESS)
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Sending customer email to:', data.email)
+      console.log('Sending admin email to:', EMAIL_CONFIG.FROM_ADDRESS)
+    }
 
     try {
       // Send emails individually to handle failures gracefully
-      let customerError: any = null
-      let adminError: any = null
+      let customerError: Error | null = null
+      let adminError: Error | null = null
 
       // Send customer confirmation email
       const customerResult = await sendEmail(
@@ -841,7 +847,9 @@ export async function POST(request: NextRequest) {
       )
 
       if (customerResult.success) {
-        console.log('✅ Customer email sent:', customerResult.messageId)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('✅ Customer email sent:', customerResult.messageId)
+        }
         customerEmailSent = true
       } else {
         customerError = customerResult.error
@@ -863,7 +871,9 @@ export async function POST(request: NextRequest) {
       )
 
       if (adminResult.success) {
-        console.log('✅ Admin email sent:', adminResult.messageId)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('✅ Admin email sent:', adminResult.messageId)
+        }
         adminEmailSent = true
       } else {
         adminError = adminResult.error

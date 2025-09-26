@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student Aan Huis | Betaalbare Computerhulp door IT-Studenten ✓',
-  description: 'Betaalbare computerhulp door ervaren IT-studenten! ✓ Vanaf €13,99 per kwartier ✓ Studententarieven ✓ Snel ter plaatse ✓ Alle computerproblemen ✓ Bel nu!',
+  description: 'Betaalbare computerhulp door ervaren IT-studenten! ✓ €13,99 per kwartier + €10 voorrijkosten ✓ Studententarieven ✓ Heel Nederland ✓ Alle computerproblemen ✓ Bel: 06-42827860',
   keywords: [
     'student aan huis',
     'student computerhulp',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student Aan Huis - Betaalbare Computerhulp door IT-Studenten',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten vanaf €13,99 per kwartier!',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten. €13,99 per kwartier + €10 voorrijkosten. Heel Nederland!',
     images: ['/og-image.webp'],
     url: '/student-aan-huis',
   },

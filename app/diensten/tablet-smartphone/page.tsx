@@ -12,7 +12,7 @@ import services from '@/lib/data/services.json'
 const service = services.find(s => s.slug === 'tablet-smartphone')!
 
 export const metadata: Metadata = {
-  title: `${service.name} - Professionele Tablet & Smartphone Hulp | Hulp met IT`,
+  title: 'Tablet Smartphone Hulp | iPhone iPad Android | Mobile Hulp | Hulp met IT',
   description: service.longDescription,
   keywords: service.keywords,
   openGraph: {

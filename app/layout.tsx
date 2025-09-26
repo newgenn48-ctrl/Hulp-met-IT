@@ -20,8 +20,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Hulp met IT - Computerhulp aan Huis | Specialist binnen 24u',
-  description: 'Snelle, betrouwbare computerhulp aan huis door gekwalificeerde IT-specialisten. Standaard of spoed service, transparante tarieven, 5-sterren beoordeeld. Bel nu!',
+  title: 'Computerhulp Aan Huis Nederland | Hulp met IT | Specialist komt naar u toe',
+  description: 'Betaalbare computerhulp aan huis in heel Nederland ✓ €13,99 per kwartier + €10 voorrijkosten ✓ Ervaren IT-specialisten ✓ Binnen 24-48u ✓ Bel: 06-42827860',
   icons: [
     { rel: 'icon', url: '/icon', type: 'image/png', sizes: '32x32' },
     { rel: 'apple-touch-icon', url: '/icon', sizes: '32x32' }
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Hulp met IT - Computerhulp aan Huis',
-    description: 'Snelle, betrouwbare computerhulp aan huis door gekwalificeerde IT-specialisten',
+    title: 'Computerhulp Aan Huis Nederland | Hulp met IT',
+    description: 'Betaalbare computerhulp aan huis door ervaren IT-specialisten. €13,99 per kwartier + €10 voorrijkosten. Bel nu!',
     url: 'https://hulpmetit.nl',
     siteName: 'Hulp met IT',
     images: [

@@ -5,11 +5,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   typescript: {
-    // Skip type checking during build for faster builds
-    ignoreBuildErrors: true,
+    // Enable type checking during build for better code quality
+    ignoreBuildErrors: false,
   },
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   images: {
     formats: ['image/webp', 'image/avif'],

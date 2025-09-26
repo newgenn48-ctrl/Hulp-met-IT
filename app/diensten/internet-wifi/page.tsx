@@ -12,7 +12,7 @@ import services from '@/lib/data/services.json'
 const service = services.find(s => s.slug === 'internet-wifi')!
 
 export const metadata: Metadata = {
-  title: `${service.name} - Professionele Internet & WiFi Hulp | Hulp met IT`,
+  title: 'Internet WiFi Problemen | Router Installatie | Netwerk Hulp | Hulp met IT',
   description: service.longDescription,
   keywords: service.keywords,
   openGraph: {

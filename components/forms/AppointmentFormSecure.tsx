@@ -72,8 +72,9 @@ export default function AppointmentFormSecure() {
     try {
       fieldSchema.parse(value)
       return ''
-    } catch (error: any) {
-      return error.errors[0]?.message || 'Ongeldige waarde'
+    } catch (error: unknown) {
+      const zodError = error as { errors?: Array<{ message: string }> }
+      return zodError.errors?.[0]?.message || 'Ongeldige waarde'
     }
   }
 
@@ -141,7 +142,7 @@ export default function AppointmentFormSecure() {
         let hasStep1Errors = false
         let hasStep2Errors = false
 
-        validationResult.error.issues.forEach((err: any) => {
+        validationResult.error.issues.forEach((err: { path: string[]; message: string }) => {
           if (err.path.length > 0) {
             const fieldName = err.path[0] as string
             fieldErrors[fieldName] = err.message
