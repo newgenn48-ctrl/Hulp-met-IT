@@ -56,7 +56,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://c.clarity.ms https://www.clarity.ms; frame-src https://www.google.com https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms; script-src-elem 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://c.clarity.ms https://www.clarity.ms *.clarity.ms; frame-src https://www.google.com https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
           }
         ]
       },
