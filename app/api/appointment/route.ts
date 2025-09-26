@@ -4,7 +4,7 @@ import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, cle
 import { headers } from 'next/headers'
 import DOMPurify from 'dompurify'
 import { JSDOM } from 'jsdom'
-import { CONTACT_INFO, BUSINESS_INFO, PRICING } from '@/lib/constants'
+import { CONTACT_INFO, BUSINESS_INFO } from '@/lib/constants'
 
 // Create DOMPurify instance for server-side sanitization
 const window = new JSDOM('').window
@@ -800,18 +800,19 @@ export async function POST(request: NextRequest) {
       // Log appointment data for manual processing
       if (process.env.NODE_ENV === 'development') {
         console.log('APPOINTMENT REQUEST:', {
-        reference,
-        timestamp: new Date().toISOString(),
-        customer: `${sanitizedData.firstName} ${sanitizedData.lastName}`,
-        email: data.email,
-        phone: data.phone,
-        address: `${sanitizedData.address}, ${data.postalCode} ${sanitizedData.city}`,
-        service: data.serviceType,
-        urgency: data.urgency,
-        preferredDate: data.preferredDate,
-        preferredTime: data.preferredTime,
-        problem: sanitizedData.problemDescription
-      })
+          reference,
+          timestamp: new Date().toISOString(),
+          customer: `${sanitizedData.firstName} ${sanitizedData.lastName}`,
+          email: data.email,
+          phone: data.phone,
+          address: `${sanitizedData.address}, ${data.postalCode} ${sanitizedData.city}`,
+          service: data.serviceType,
+          urgency: data.urgency,
+          preferredDate: data.preferredDate,
+          preferredTime: data.preferredTime,
+          problem: sanitizedData.problemDescription
+        })
+      }
 
       return NextResponse.json({
         message: 'Afspraak succesvol aangevraagd - u wordt binnenkort gebeld',
@@ -852,7 +853,7 @@ export async function POST(request: NextRequest) {
         }
         customerEmailSent = true
       } else {
-        customerError = customerResult.error
+        customerError = customerResult.error as Error
         console.error('❌ Customer email failed:', customerResult.error)
         logSecurityEvent('CUSTOMER_EMAIL_FAILED', {
           error: customerResult.error instanceof Error ? customerResult.error.message : 'Unknown error',
@@ -876,7 +877,7 @@ export async function POST(request: NextRequest) {
         }
         adminEmailSent = true
       } else {
-        adminError = adminResult.error
+        adminError = adminResult.error as Error
         console.error('❌ Admin email failed:', adminResult.error)
         logSecurityEvent('ADMIN_EMAIL_FAILED', {
           error: adminResult.error instanceof Error ? adminResult.error.message : 'Unknown error',

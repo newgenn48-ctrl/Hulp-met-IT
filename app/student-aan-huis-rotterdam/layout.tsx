@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Rotterdam | IT-Student Rotterdam | Computerhulp Thuis','
-  description: 'Student aan huis Rotterdam: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Ook avonden/weekenden. Bel 06-42827860!','
+  title: 'Student Aan Huis Rotterdam | IT-Student Rotterdam | Computerhulp Thuis',
+  description: 'Student aan huis Rotterdam: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Ook avonden/weekenden. Bel 06-42827860!',
   keywords: [
     'student aan huis rotterdam',
     'student computerhulp rotterdam',

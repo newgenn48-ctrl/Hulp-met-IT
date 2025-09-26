@@ -1,4 +1,4 @@
-import { CONTACT_INFO, BUSINESS_INFO, PRICING, SERVICE_HOURS, SEO_DEFAULTS } from '@/lib/constants'
+import { CONTACT_INFO, BUSINESS_INFO, PRICING, SERVICE_HOURS } from '@/lib/constants'
 
 interface StructuredDataProps {
   page?: 'home' | 'faq' | 'service'

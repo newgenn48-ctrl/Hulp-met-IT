@@ -142,7 +142,7 @@ export default function AppointmentFormSecure() {
         let hasStep1Errors = false
         let hasStep2Errors = false
 
-        validationResult.error.issues.forEach((err: { path: string[]; message: string }) => {
+        validationResult.error.issues.forEach((err) => {
           if (err.path.length > 0) {
             const fieldName = err.path[0] as string
             fieldErrors[fieldName] = err.message
