@@ -30,20 +30,18 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Computerhulp aan huis",
-            "description": "Betaalbare computerhulp door ervaren IT-specialisten - €13,99 per kwartier + €10 voorrijkosten",
+            "name": "Standaard Computerhulp aan huis",
+            "description": "Professionele computerhulp aan huis - €10 voorrijkosten + €14,50 per kwartier daarna",
             "serviceType": "ComputerRepair"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "13.99",
+            "price": "53.50",
             "priceCurrency": "EUR",
-            "unitText": "per kwartier",
-            "additionalProperty": {
-              "@type": "PropertyValue",
-              "name": "Voorrijkosten",
-              "value": "10.00",
-              "unitCode": "EUR"
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": "3",
+              "unitText": "kwartier"
             }
           }
         },
@@ -51,20 +49,18 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Laptop reparatie aan huis",
-            "description": "Laptop reparatie en onderhoud door specialisten - €13,99 per kwartier + €10 voorrijkosten",
-            "serviceType": "LaptopRepair"
+            "name": "Spoedhulp Computerhulp",
+            "description": "Spoedservice binnen 24 uur - €10 voorrijkosten + €18,50 per kwartier daarna",
+            "serviceType": "ComputerRepair"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "13.99",
+            "price": "65.50",
             "priceCurrency": "EUR",
-            "unitText": "per kwartier",
-            "additionalProperty": {
-              "@type": "PropertyValue",
-              "name": "Voorrijkosten",
-              "value": "10.00",
-              "unitCode": "EUR"
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": "3",
+              "unitText": "kwartier"
             }
           }
         },
@@ -73,19 +69,17 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
           "itemOffered": {
             "@type": "Service",
             "name": "WiFi en internet problemen oplossen",
-            "description": "WiFi en internetproblemen snel opgelost - €13,99 per kwartier + €10 voorrijkosten",
+            "description": "WiFi en internetproblemen snel opgelost - vanaf €53,50",
             "serviceType": "NetworkSupport"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "13.99",
+            "price": "53.50",
             "priceCurrency": "EUR",
-            "unitText": "per kwartier",
-            "additionalProperty": {
-              "@type": "PropertyValue",
-              "name": "Voorrijkosten",
-              "value": "10.00",
-              "unitCode": "EUR"
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": "3",
+              "unitText": "kwartier"
             }
           }
         }
@@ -133,7 +127,7 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "openingHours": SERVICE_HOURS.OPENING_HOURS,
     "foundingDate": BUSINESS_INFO.FOUNDED_YEAR,
-    "slogan": "Betaalbare computerhulp aan huis - €13,99 per kwartier + €10 voorrijkosten"
+    "slogan": "Betaalbare computerhulp aan huis - vanaf €53,50 voor 3 kwartier"
   }
 
   const faqData = {
@@ -145,7 +139,7 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
         "name": "Hoeveel kost jullie computerhulp?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Onze tarieven zijn €13,99 per kwartier plus €10,- eenmalige voorrijkosten. Minimale duur is 15 minuten (€23,99 totaal). We spreken altijd vooraf af wat het gaat kosten, zodat u geen verrassingen krijgt."
+          "text": "Onze standaard tarieven zijn €53,50 voor de eerste 3 kwartier (inclusief €10 voorrijkosten). Daarna betaalt u €14,50 per extra kwartier. Voor spoedhulp binnen 24 uur is het €65,50 voor de eerste 3 kwartier en €18,50 per extra kwartier. We spreken altijd vooraf af wat het gaat kosten."
         }
       },
       {
