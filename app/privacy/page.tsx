@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-900 via-neutral-800 to-blue-800">
+    <div className="min-h-screen">
       <section className="hero-section relative z-10">
         <div className="max-w-4xl mx-auto container-padding">
           <div className="text-center mb-8">
@@ -23,7 +23,7 @@ export default function PrivacyPage() {
             </p>
           </div>
 
-          <div className="bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 p-8 space-y-8">
+          <div className="card-3d space-y-8">
 
             <section>
               <h2 className="text-2xl font-bold text-secondary-800 mb-4">1. Welke gegevens verzamelen we?</h2>

@@ -234,6 +234,8 @@ export function AppointmentForm() {
         title: 'Gegevens succesvol opgeslagen',
         message: 'U kunt nu naar de volgende stap.'
       })
+      // Scroll to top of form
+      formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     } else {
       const errorCount = Object.keys(fieldErrors).length
       showToast({
@@ -254,6 +256,8 @@ export function AppointmentForm() {
 
   const prevStep = () => {
     setCurrentStep(prev => Math.max(prev - 1, 1))
+    // Scroll to top of form
+    formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const handleSubmit = async () => {
@@ -345,20 +349,27 @@ export function AppointmentForm() {
   }
 
   if (submitStatus === 'success') {
+    // Add conversion tracking parameter to URL
+    if (typeof window !== 'undefined' && !window.location.search.includes('conversion=success')) {
+      const newUrl = `${window.location.pathname}?conversion=success`
+      window.history.replaceState({}, '', newUrl)
+    }
+
     return (
       <div ref={formRef} className="bg-white/5 backdrop-blur-lg rounded-xl p-8 text-center border border-white/10">
         <h3 className="text-3xl font-bold text-secondary-800 mb-4">Afspraak Aangevraagd!</h3>
         <p className="text-secondary-700 mb-6 max-w-md mx-auto">
-          Bedankt voor uw aanvraag. U ontvangt binnen enkele minuten een bevestiging per e-mail. 
-          Wij nemen binnen 2 uur contact met u op om de afspraak te bevestigen.
+          Bedankt voor uw aanvraag. U ontvangt binnen enkele minuten een bevestiging per e-mail.
+          {formData.urgency === 'urgent'
+            ? ' Wij nemen binnen 2 uur contact met u op om de afspraak te bevestigen.'
+            : ''}
         </p>
-        <button
-          type="button"
-          onClick={() => setSubmitStatus('idle')}
-          className="bg-gradient-to-r from-primary-500 to-accent-500 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+        <a
+          href="/"
+          className="inline-block bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
         >
-          Nieuwe Afspraak Maken
-        </button>
+          Terug naar Home
+        </a>
       </div>
     )
   }
