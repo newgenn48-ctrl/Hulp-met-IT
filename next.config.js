@@ -29,7 +29,6 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     gzipSize: true,
-    optimizeCss: true, // Optimize CSS loading
   },
   // Reduce JavaScript bundle size
   modularizeImports: {
