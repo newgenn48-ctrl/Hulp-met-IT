@@ -46,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^6.9.0",
     "@typescript-eslint/parser": "^6.9.0",
     "autoprefixer": "^10.4.0",
+    "critters": "^0.0.23",
     "dompurify": "^3.2.6",
     "eslint": "^8.52.0",
     "eslint-config-next": "^14.0.0",
