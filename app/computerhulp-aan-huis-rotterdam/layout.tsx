@@ -1,19 +1,19 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Aan Huis Rotterdam | IT-Specialist Rotterdam | Computer Reparatie',
-  description: 'Computerhulp aan huis in Rotterdam ✓ Ervaren specialisten ✓ Heel Rotterdam ✓ Van Centrum tot Hoogvliet ✓ Transparante tarieven ✓ Bel 06-42827860',
+  title: 'Computerhulp Rotterdam | Specialist komt naar u',
+  description: 'Computerhulp aan huis in Rotterdam ✓ Ervaren specialisten ✓ Heel Rotterdam ✓ Van Centrum tot Hoogvliet ✓ Transparante tarieven ✓ Bel ons',
   keywords: [
     'computerhulp aan huis rotterdam',
     'computer reparatie rotterdam',
     'laptop reparatie rotterdam',
     'pc hulp rotterdam',
-    'virus verwijdering rotterdam',
-    'computerhulp rotterdam centrum',
-    'computerhulp rotterdam noord',
-    'computerhulp rotterdam zuid',
+    'IT hulp rotterdam',
     'computer specialist rotterdam',
-    'IT hulp rotterdam'
+    'rotterdam computerhulp avond',
+    'rotterdam IT hulp weekend',
+    'computerhulp rotterdam spoed',
+    'betaalbare IT hulp rotterdam'
   ],
   openGraph: {
     title: 'Computerhulp aan Huis Rotterdam | Computer Specialist',

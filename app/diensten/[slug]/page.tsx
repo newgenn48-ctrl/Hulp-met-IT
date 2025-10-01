@@ -1,5 +1,4 @@
 import { FloatingElements } from '@/components/three/FloatingElements'
-import { MetaTags } from '@/components/seo/MetaTags'
 import Link from 'next/link'
 import { 
   ArrowLeft, 
@@ -38,7 +37,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   return {
     title: `${service.name} - Vriendelijke IT Hulp aan Huis | Hulp met IT`,
-    description: `${service.description} ✓ Vriendelijke IT-specialisten ✓ Transparante tarieven €13,99 per kwartier ✓ Persoonlijke hulp ✓ Direct online afspraak maken`,
+    description: `${service.description} ✓ Vriendelijke IT-specialisten ✓ Transparante tarieven €14,50 per kwartier ✓ Persoonlijke hulp ✓ Direct online afspraak maken`,
     keywords: service.keywords,
     openGraph: {
       title: `${service.name} - Vriendelijke IT Hulp aan Huis`,
@@ -57,10 +56,6 @@ export default function ServicePage({ params }: ServicePageProps) {
 
   return (
     <>
-      <MetaTags
-        title={`${service.name} - Vriendelijke IT Hulp aan Huis`}
-        description={service.description}
-      />
       
       <div className="relative min-h-screen">
         <FloatingElements />
@@ -80,16 +75,16 @@ export default function ServicePage({ params }: ServicePageProps) {
                   <h1 className="text-4xl lg:text-6xl font-bold text-gradient mb-4">
                     {service.name}
                   </h1>
-                  <p className="text-xl text-neural-300 leading-relaxed mb-6">
+                  <p className="text-xl text-secondary-700 leading-relaxed mb-6">
                     {service.description}
                   </p>
                 </div>
 
                 <div className="card-3d mb-8">
-                  <h2 className="text-2xl font-semibold text-white mb-4">
+                  <h2 className="text-2xl font-semibold text-secondary-800 mb-4">
                     Wat houdt deze service in?
                   </h2>
-                  <p className="text-neural-300 leading-relaxed mb-6">
+                  <p className="text-secondary-700 leading-relaxed mb-6">
                     {service.longDescription}
                   </p>
                   
@@ -97,27 +92,27 @@ export default function ServicePage({ params }: ServicePageProps) {
                     {service.features.map((feature, index) => (
                       <div key={index} className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-primary-400 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-neural-300">{feature}</span>
+                        <span className="text-secondary-700">{feature}</span>
                       </div>
                     ))}
                   </div>
                 </div>
 
                 <div className="card-3d mb-8">
-                  <h2 className="text-2xl font-semibold text-white mb-4">
+                  <h2 className="text-2xl font-semibold text-secondary-800 mb-4">
                     Hoe werkt het?
                   </h2>
                   <div className="grid gap-6">
                     {service.process.map((step, index) => (
                       <div key={index} className="flex items-start">
-                        <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                        <div className="w-8 h-8 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-secondary-800 font-bold mr-4 flex-shrink-0">
                           {index + 1}
                         </div>
                         <div>
-                          <h3 className="text-lg font-medium text-white mb-2">
+                          <h3 className="text-lg font-medium text-secondary-800 mb-2">
                             {step.title}
                           </h3>
-                          <p className="text-neural-300">
+                          <p className="text-secondary-700">
                             {step.description}
                           </p>
                         </div>
@@ -128,14 +123,14 @@ export default function ServicePage({ params }: ServicePageProps) {
 
                 {service.commonIssues && (
                   <div className="card-3d">
-                    <h2 className="text-2xl font-semibold text-white mb-4">
+                    <h2 className="text-2xl font-semibold text-secondary-800 mb-4">
                       Veelvoorkomende problemen
                     </h2>
                     <div className="grid gap-4">
                       {service.commonIssues.map((issue, index) => (
                         <div key={index} className="flex items-start">
                           <Wrench className="w-5 h-5 text-accent-400 mr-3 mt-0.5 flex-shrink-0" />
-                          <span className="text-neural-300">{issue}</span>
+                          <span className="text-secondary-700">{issue}</span>
                         </div>
                       ))}
                     </div>
@@ -160,30 +155,30 @@ export default function ServicePage({ params }: ServicePageProps) {
                   </div>
 
                   <div className="card-3d">
-                    <h3 className="text-lg font-semibold text-white mb-4">
+                    <h3 className="text-lg font-semibold text-secondary-800 mb-4">
                       Waarom kiezen voor ons?
                     </h3>
                     <div className="space-y-3 text-sm">
                       <div className="flex items-center">
                         <Star className="w-4 h-4 text-yellow-400 mr-2" />
-                        <span className="text-neural-300">5-sterren service</span>
+                        <span className="text-secondary-700">5-sterren service</span>
                       </div>
                       <div className="flex items-center">
                         <Shield className="w-4 h-4 text-green-400 mr-2" />
-                        <span className="text-neural-300">Volledig verzekerd</span>
+                        <span className="text-secondary-700">Volledig verzekerd</span>
                       </div>
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 text-blue-400 mr-2" />
-                        <span className="text-neural-300">24-48u service</span>
+                        <span className="text-secondary-700">24-48u service</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="card-3d">
-                    <h3 className="text-lg font-semibold text-white mb-4">
+                    <h3 className="text-lg font-semibold text-secondary-800 mb-4">
                       Vragen over deze service?
                     </h3>
-                    <p className="text-sm text-neural-300 mb-4">
+                    <p className="text-sm text-secondary-700 mb-4">
                       Heeft u specifieke vragen? Neem vrijblijvend contact met ons op.
                     </p>
                     <Link href="/contact" className="btn-secondary w-full text-sm px-4 py-2">

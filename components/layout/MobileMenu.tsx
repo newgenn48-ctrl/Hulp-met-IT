@@ -35,7 +35,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 'text-lg font-medium transition-colors duration-300',
                 pathname === item.href
                   ? 'text-primary-300'
-                  : 'text-neural-300 hover:text-white'
+                  : 'text-primary-700 hover:text-secondary-800'
               )}
             >
               {item.name}

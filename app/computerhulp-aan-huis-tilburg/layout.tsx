@@ -1,16 +1,19 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Aan Huis Tilburg | IT-Specialist Tilburg | Computer Reparatie',
-  description: 'Computerhulp aan huis in Tilburg ✓ Ervaren specialisten ✓ Heel Tilburg ✓ Transparante tarieven ✓ Bel 06-42827860',
+  title: 'Computerhulp Tilburg | Specialist komt naar u',
+  description: 'Computerhulp aan huis in Tilburg ✓ Ervaren specialisten ✓ Heel Tilburg ✓ Transparante tarieven ✓ Bel ons',
   keywords: [
     'computerhulp aan huis tilburg',
     'computer reparatie tilburg',
     'laptop reparatie tilburg',
     'pc hulp tilburg',
-    'virus verwijdering tilburg',
+    'IT hulp tilburg',
     'computer specialist tilburg',
-    'IT hulp tilburg'
+    'tilburg computerhulp avond',
+    'tilburg IT hulp weekend',
+    'computerhulp tilburg spoed',
+    'betaalbare IT hulp tilburg'
   ],
   robots: {
     index: true,

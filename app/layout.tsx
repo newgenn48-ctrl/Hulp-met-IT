@@ -6,6 +6,8 @@ import { ClarityAnalytics } from '@/components/seo/ClarityAnalytics'
 import { WebVitals } from '@/components/seo/WebVitals'
 import { CookieConsent } from '@/components/privacy/CookieConsent'
 import { StickyContactButtons } from '@/components/ui/StickyContactButtons'
+import { ErrorBoundary } from '@/components/ErrorBoundary'
+import { ToastProvider } from '@/components/ui/Toast'
 import { Metadata, Viewport } from 'next'
 import { inter, spaceGrotesk } from '@/lib/fonts'
 import { NoSSR } from '@/components/NoSSR'
@@ -16,14 +18,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  themeColor: '#0ea5e9',
+  themeColor: '#334155',
 }
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Aan Huis Nederland | Hulp met IT | Specialist komt naar u toe',
-  description: 'Betaalbare computerhulp aan huis in heel Nederland ✓ €13,99 per kwartier + €10 voorrijkosten ✓ Ervaren IT-specialisten ✓ Binnen 24-48u ✓ Bel: 06-42827860',
+  title: 'Hulp Met IT | Computerhulp aan Huis',
+  description: 'Betaalbare computerhulp aan huis in heel Nederland ✓ €14,50 per kwartier + €10 voorrijkosten ✓ Ervaren IT-specialisten ✓ Binnen 24-48u ✓ Bel ons',
   icons: [
     { rel: 'icon', url: '/icon', type: 'image/png', sizes: '32x32' },
     { rel: 'apple-touch-icon', url: '/icon', sizes: '32x32' }
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Computerhulp Aan Huis Nederland | Hulp met IT',
-    description: 'Betaalbare computerhulp aan huis door ervaren IT-specialisten. €13,99 per kwartier + €10 voorrijkosten. Bel nu!',
+    description: 'Betaalbare computerhulp aan huis door ervaren IT-specialisten. €14,50 per kwartier + €10 voorrijkosten. Bel nu!',
     url: 'https://hulpmetit.nl',
     siteName: 'Hulp met IT',
     images: [
@@ -118,6 +118,8 @@ export default function RootLayout({
             height="0"
             width="0"
             style={{display: 'none', visibility: 'hidden'}}
+            title="Google Tag Manager"
+            aria-hidden="true"
           />
         </noscript>
         {/* Google Tag Manager Script */}
@@ -153,13 +155,17 @@ gtmJ=gtmD.createElement(gtmS),gtmDl=gtmL!='dataLayer'?'&l='+gtmL:'';gtmJ.async=t
           <ClarityAnalytics />
           <WebVitals />
         </NoSSR>
-        <div className="min-h-screen bg-gradient-to-br from-neural-900 via-neural-800 to-primary-900">
-          <Header />
-          <main id="main-content" className="relative">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <ErrorBoundary>
+          <ToastProvider>
+            <div className="min-h-screen bg-white">
+              <Header />
+              <main id="main-content" className="relative">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </ToastProvider>
+        </ErrorBoundary>
         <NoSSR>
           <StickyContactButtons />
           <CookieConsent />
@@ -167,6 +173,40 @@ gtmJ=gtmD.createElement(gtmS),gtmDl=gtmL!='dataLayer'?'&l='+gtmL:'';gtmJ.async=t
         <StructuredData />
         <Analytics />
         <SpeedInsights />
+        {/* Fix accessibility for dynamically added iframes */}
+        <Script
+          id="iframe-accessibility-fix"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function fixIframes() {
+                  const iframes = document.querySelectorAll('iframe:not([title])');
+                  iframes.forEach(function(iframe) {
+                    if (!iframe.getAttribute('title')) {
+                      iframe.setAttribute('title', 'Third-party content');
+                      iframe.setAttribute('aria-hidden', 'true');
+                    }
+                  });
+                }
+
+                // Run on load and periodically check for new iframes
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', fixIframes);
+                } else {
+                  fixIframes();
+                }
+
+                // Use MutationObserver to catch dynamically added iframes
+                const observer = new MutationObserver(fixIframes);
+                observer.observe(document.documentElement, {
+                  childList: true,
+                  subtree: true
+                });
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   )

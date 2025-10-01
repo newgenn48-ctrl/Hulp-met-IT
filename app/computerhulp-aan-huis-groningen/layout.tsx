@@ -1,16 +1,19 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Aan Huis Groningen | IT-Specialist Groningen | Computer Reparatie',
-  description: 'Computerhulp aan huis in Groningen ✓ Ervaren specialisten ✓ Heel Groningen ✓ Transparante tarieven ✓ Bel 06-42827860',
+  title: 'Computerhulp Groningen | Specialist komt naar u',
+  description: 'Computerhulp aan huis in Groningen ✓ Ervaren specialisten ✓ Heel Groningen ✓ Transparante tarieven ✓ Bel ons',
   keywords: [
     'computerhulp aan huis groningen',
     'computer reparatie groningen',
     'laptop reparatie groningen',
     'pc hulp groningen',
-    'virus verwijdering groningen',
+    'IT hulp groningen',
     'computer specialist groningen',
-    'IT hulp groningen'
+    'groningen computerhulp avond',
+    'groningen IT hulp weekend',
+    'computerhulp groningen spoed',
+    'betaalbare IT hulp groningen'
   ],
   robots: {
     index: true,

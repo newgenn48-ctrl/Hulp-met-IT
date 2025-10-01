@@ -6,8 +6,11 @@ import Link from 'next/link'
 import { Phone, Calendar, MessageCircle } from 'lucide-react'
 
 export function StickyContactButtons() {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [showMobileButtons, setShowMobileButtons] = useState(true)
   const pathname = usePathname()
 
   // Hide on contact and appointment pages
@@ -19,83 +22,202 @@ export function StickyContactButtons() {
   }, [])
 
   useEffect(() => {
-    if (isMounted) {
-      setIsVisible(!shouldHide)
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      const shouldShow = scrollPosition > 300 // Show after scrolling 300px
+      setIsScrolled(shouldShow)
+
+      // Smart mobile button visibility (similar to header logic)
+      if (scrollPosition < lastScrollY || scrollPosition < 200) {
+        // Show when scrolling up or near top
+        setShowMobileButtons(true)
+      } else if (scrollPosition > lastScrollY && scrollPosition > 200) {
+        // Hide when scrolling down and past 200px for more content visibility
+        setShowMobileButtons(false)
+      }
+
+      setLastScrollY(scrollPosition)
     }
-  }, [shouldHide, isMounted])
+
+    if (isMounted) {
+      // Throttle scroll events for performance
+      let ticking = false
+      const throttledScroll = () => {
+        if (!ticking) {
+          requestAnimationFrame(() => {
+            handleScroll()
+            ticking = false
+          })
+          ticking = true
+        }
+      }
+
+      // Add scroll listener
+      window.addEventListener('scroll', throttledScroll)
+      // Check initial scroll position
+      handleScroll()
+
+      return () => window.removeEventListener('scroll', throttledScroll)
+    }
+
+    return undefined
+  }, [isMounted, lastScrollY])
+
+  useEffect(() => {
+    if (isMounted) {
+      setIsVisible(!shouldHide && isScrolled && showMobileButtons)
+    }
+  }, [shouldHide, isMounted, isScrolled, showMobileButtons])
 
   // Prevent hydration mismatch by not rendering until mounted
-  if (!isMounted || !isVisible) return null
+  if (!isMounted) return null
 
   return (
     <>
-      {/* Desktop - Right side floating buttons */}
-      <div className="hidden md:block fixed right-4 top-1/2 transform -translate-y-1/2 z-50 space-y-3">
-        <div className="group flex items-center bg-primary-600 text-white px-4 py-3 rounded-l-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1">
-          <Link href="/afspraak" className="flex items-center" aria-label="Maak een afspraak">
-            <Calendar className="w-5 h-5 mr-3" />
-            <span className="whitespace-nowrap">Afspraak Maken</span>
+      {/* Desktop/Laptop - Modern floating FAB */}
+      <div className={`hidden lg:block fixed right-6 bottom-6 z-50 transition-all duration-500 ease-in-out ${
+        isVisible
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-8 pointer-events-none'
+      }`}>
+        <div className="flex flex-col items-end space-y-4">
+          {/* Appointment button - PRIMARY ACTION */}
+          <Link
+            href="/afspraak"
+            className="group relative bg-gradient-to-r from-primary-500 to-accent-500 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            aria-label="Maak een afspraak"
+            style={{ minHeight: '60px', minWidth: '60px' }}
+          >
+            <Calendar className="w-7 h-7" />
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-secondary-800 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+              Afspraak maken
+            </div>
           </Link>
-        </div>
 
-        <div className="group flex items-center bg-green-600 text-white px-4 py-3 rounded-l-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1">
-          <a href="tel:+31642827860" className="flex items-center" aria-label="Bel ons: 06-42827860">
-            <Phone className="w-5 h-5 mr-3" />
-            <span className="whitespace-nowrap">06-42827860</span>
+          {/* Phone button */}
+          <a
+            href="tel:+31642827860"
+            className="group relative bg-secondary-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            aria-label="Bel ons: 06-42827860"
+            style={{ minHeight: '56px', minWidth: '56px' }}
+          >
+            <Phone className="w-6 h-6" />
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-secondary-800 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+              Bel ons direct
+            </div>
           </a>
-        </div>
 
-        <div className="group flex items-center bg-[#25D366] text-white px-4 py-3 rounded-l-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1">
+          {/* WhatsApp button */}
           <a
             href="https://wa.me/31642827860?text=Hallo%2C%20ik%20heb%20hulp%20nodig%20met%20mijn%20computer"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center"
+            className="group relative bg-green-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
             aria-label="WhatsApp ons"
+            style={{ minHeight: '56px', minWidth: '56px' }}
           >
-            <MessageCircle className="w-5 h-5 mr-3" />
-            <span className="whitespace-nowrap">WhatsApp</span>
+            <MessageCircle className="w-6 h-6" />
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-secondary-800 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+              WhatsApp
+            </div>
           </a>
         </div>
       </div>
 
-      {/* Mobile - Bottom floating bar */}
-      <div className="md:hidden fixed bottom-4 left-4 right-4 z-50">
-        <div className="glass-effect border border-white/20 rounded-2xl shadow-2xl p-3">
+      {/* Tablet - Senior-friendly side buttons */}
+      <div className={`hidden md:block lg:hidden fixed right-2 top-1/2 transform -translate-y-1/2 z-50 transition-all duration-500 ease-in-out ${
+        isVisible
+          ? 'opacity-100 translate-x-0'
+          : 'opacity-0 translate-x-8 pointer-events-none'
+      }`}>
+        <div className="flex flex-col space-y-3">
+          <Link
+            href="/afspraak"
+            className="bg-gradient-to-r from-primary-500 to-accent-500 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
+            aria-label="Afspraak maken"
+            style={{ minHeight: '52px', minWidth: '52px' }}
+          >
+            <Calendar className="w-6 h-6" />
+          </Link>
+
+          <a
+            href="tel:+31642827860"
+            className="bg-secondary-700 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
+            aria-label="Bel ons"
+            style={{ minHeight: '52px', minWidth: '52px' }}
+          >
+            <Phone className="w-6 h-6" />
+          </a>
+
+          <a
+            href="https://wa.me/31642827860?text=Hallo%2C%20ik%20heb%20hulp%20nodig%20met%20mijn%20computer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-600 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
+            aria-label="WhatsApp"
+            style={{ minHeight: '52px', minWidth: '52px' }}
+          >
+            <MessageCircle className="w-6 h-6" />
+          </a>
+        </div>
+      </div>
+
+      {/* Mobile - Smart adaptive buttons */}
+      <div className={`md:hidden fixed bottom-4 left-3 right-3 z-50 transition-all duration-500 ease-in-out ${
+        isVisible && showMobileButtons
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-8 pointer-events-none'
+      }`}>
+        <div className="bg-white/98 backdrop-blur-sm border-2 border-secondary-300 rounded-2xl shadow-xl p-3">
           <div className="grid grid-cols-3 gap-3">
-            {/* WhatsApp */}
             <a
               href="https://wa.me/31642827860?text=Hallo%2C%20ik%20heb%20hulp%20nodig%20met%20mijn%20computer"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center bg-gradient-to-br from-[#25D366] to-[#20b358] text-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+              className="flex flex-col items-center justify-center bg-green-600 text-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
               aria-label="WhatsApp ons"
+              style={{ minHeight: '68px' }}
             >
-              <MessageCircle className="w-6 h-6 mb-1" />
-              <span className="text-xs font-medium">WhatsApp</span>
+              <MessageCircle className="w-6 h-6 mb-2" />
+              <span className="text-sm font-semibold">WhatsApp</span>
             </a>
 
-            {/* Afspraak maken */}
             <Link
               href="/afspraak"
-              className="flex flex-col items-center justify-center bg-gradient-to-br from-primary-600 to-accent-600 text-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
-              aria-label="Maak een afspraak"
+              className="flex flex-col items-center justify-center bg-gradient-to-br from-primary-500 to-accent-500 text-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
+              aria-label="Afspraak maken"
+              style={{ minHeight: '68px' }}
             >
-              <Calendar className="w-6 h-6 mb-1" />
-              <span className="text-xs font-medium">Afspraak</span>
+              <Calendar className="w-6 h-6 mb-2" />
+              <span className="text-sm font-semibold">Afspraak</span>
             </Link>
 
-            {/* Bellen */}
             <a
               href="tel:+31642827860"
-              className="flex flex-col items-center justify-center bg-gradient-to-br from-green-600 to-green-500 text-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
-              aria-label="Bel ons: 06-42827860"
+              className="flex flex-col items-center justify-center bg-secondary-700 text-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
+              aria-label="Bel ons nu"
+              style={{ minHeight: '68px' }}
             >
-              <Phone className="w-6 h-6 mb-1" />
-              <span className="text-xs font-medium">Bellen</span>
+              <Phone className="w-6 h-6 mb-2" />
+              <span className="text-sm font-semibold">Bellen</span>
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Mobile - Compact FAB when main buttons are hidden */}
+      <div className={`md:hidden fixed bottom-6 right-6 z-50 transition-all duration-500 ease-in-out ${
+        isVisible && !showMobileButtons
+          ? 'opacity-100 scale-100'
+          : 'opacity-0 scale-75 pointer-events-none'
+      }`}>
+        <Link
+          href="tel:+31642827860"
+          className="flex items-center justify-center bg-gradient-to-r from-primary-500 to-accent-500 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
+          aria-label="Bel nu"
+        >
+          <Phone className="w-6 h-6" />
+        </Link>
       </div>
     </>
   )

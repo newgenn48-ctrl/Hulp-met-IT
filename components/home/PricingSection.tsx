@@ -6,17 +6,20 @@ import { ArrowRight, Phone } from 'lucide-react'
 
 export function PricingSection() {
   const standardFeatures = [
-    "Afspraak vanaf overmorgen",
-    "Minimaal 3 kwartier (€51,97)",
-    "Voorrijkosten €10,- (eenmalig)",
-    "Telefonische nazorg included"
+    "Voorrijkosten €10 inbegrepen",
+    "Daarna €14,50 per extra kwartier",
+    "Afspraak vanaf overmorgen mogelijk",
+    "Telefonische nazorg tot 1 week na bezoek",
+    "Uitgebreide uitleg en tips"
   ]
-  
+
   const urgentFeatures = [
-    "Binnen 24 uur bij u",
-    "Minimaal 3 kwartier (€66,85)", 
-    "Voorrijkosten €10,- (eenmalig)",
-    "Extra telefonische hulp"
+    "Voorrijkosten €10 inbegrepen",
+    "Daarna €18,50 per extra kwartier",
+    "Binnen 24 uur bij u thuis",
+    "Ook avonden en weekenden beschikbaar",
+    "Prioriteit bij acute problemen",
+    "Telefonische nazorg tot 1 week na bezoek"
   ]
 
   return (
@@ -24,25 +27,26 @@ export function PricingSection() {
       <div className="max-w-6xl mx-auto container-padding">
         <div className="text-center mb-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-gradient mb-6">
-            Duidelijke Prijzen
+            Transparante Prijzen
           </h2>
-          <p className="text-xl text-neural-300 max-w-3xl mx-auto leading-relaxed">
-            Alle kosten vooraf bekend, geen verrassingen achteraf. U weet precies waar u aan toe bent.
+          <p className="text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed">
+            Alle kosten vooraf bekend, geen verrassingen achteraf. Minimaal 3 kwartier per bezoek voor grondige hulp.
+            Meeste problemen zijn binnen deze tijd opgelost!
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
           <PricingCard
             title="Standaard Hulp"
-            price="€13,99"
-            period="per kwartier"
+            price="€53,50"
+            period="voor eerste 3 kwartier"
             features={standardFeatures}
           />
-          
+
           <PricingCard
             title="Spoedhulp"
-            price="€18,95"
-            period="per kwartier"
+            price="€65,50"
+            period="voor eerste 3 kwartier"
             features={urgentFeatures}
             popular={true}
           />
@@ -50,11 +54,11 @@ export function PricingSection() {
 
         <div className="text-center">
           <div className="card-3d max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-2xl font-bold text-secondary-800 mb-4">
               Klaar om uw IT-problemen op te lossen?
             </h3>
-            <p className="text-neural-300 mb-6">
-              Bel direct voor een vrijblijvend gesprek over uw situatie en de beste oplossing.
+            <p className="text-primary-700 mb-6">
+              Bel direct om uw probleem te bespreken. Wij adviseren u eerlijk over de beste oplossing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/afspraak" className="btn-cta">

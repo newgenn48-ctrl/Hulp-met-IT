@@ -1,29 +1,40 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Breda | IT-Student Breda | Computerhulp Thuis',
-  description: 'Computerproblemen in Breda? Onze IT-studenten komen naar je toe! Betaalbare hulp vanaf €13,99 per kwartier. Snel, vakkundig en lokaal.',
+  title: 'Student Breda | Betaalbare computerhulp thuis',
+  description: 'Computerproblemen in Breda? Onze IT-studenten komen naar je toe! Betaalbare hulp Snel, vakkundig en lokaal.',
   keywords: [
-    'computerhulp Breda',
-    'IT service Breda',
-    'laptop reparatie Breda',
-    'student aan huis Breda',
-    'IT hulp aan huis Breda',
-    'computer problemen Breda',
-    'technische ondersteuning Breda'
+    'student aan huis breda',
+    'student computerhulp breda',
+    'betaalbare computerhulp breda',
+    'IT student breda',
+    'computer reparatie breda student',
+    'betaalbare computer hulp breda',
+    'studenten computer service breda',
+    'breda student IT hulp',
+    'breda computerhulp avond',
+    'breda IT hulp weekend'
   ],
   openGraph: {
     title: 'Student Aan Huis Breda | Betaalbare Computerhulp',
     description: 'IT-studenten komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp.',
+    images: ['/og-image.webp'],
+    url: '/student-aan-huis-breda',
     type: 'website',
     locale: 'nl_NL',
+    siteName: 'Hulp met IT'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Student Aan Huis Breda | Betaalbare Computerhulp',
+    description: 'IT-studenten komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/student-aan-huis-breda'
+    canonical: '/student-aan-huis-breda'
   }
 }
 

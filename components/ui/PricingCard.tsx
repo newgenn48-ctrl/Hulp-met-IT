@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { CheckCircle, Star } from 'lucide-react'
 
 interface PricingCardProps {
@@ -11,7 +12,7 @@ interface PricingCardProps {
   className?: string
 }
 
-export function PricingCard({ title, price, period, features, popular, className = "" }: PricingCardProps) {
+export const PricingCard = React.memo(function PricingCard({ title, price, period, features, popular, className = "" }: PricingCardProps) {
   return (
     <div className={`card-3d relative ${className} ${popular ? 'border-2 border-primary-400' : ''}`}>
       {popular && (
@@ -24,22 +25,22 @@ export function PricingCard({ title, price, period, features, popular, className
       )}
       
       <div className="text-center p-8">
-        <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+        <h3 className="text-2xl font-bold text-secondary-800 mb-4">{title}</h3>
         
         <div className="mb-6">
           <div className="text-4xl font-bold text-gradient mb-1">{price}</div>
-          <div className="text-neural-400">{period}</div>
+          <div className="text-primary-600">{period}</div>
         </div>
         
         <div className="space-y-3 mb-8">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start">
-              <CheckCircle className="w-5 h-5 text-primary-400 mr-3 mt-0.5 flex-shrink-0" />
-              <span className="text-neural-300 text-left">{feature}</span>
+              <CheckCircle className="w-5 h-5 text-primary-700 mr-3 mt-0.5 flex-shrink-0" />
+              <span className="text-primary-700 text-left">{feature}</span>
             </div>
           ))}
         </div>
       </div>
     </div>
   )
-}
+})

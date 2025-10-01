@@ -1,39 +1,33 @@
 'use client'
 
-import { FloatingElements } from '@/components/three/FloatingElements'
-import { ClientWrapper } from '@/components/ClientWrapper'
+
+import { ServicesGrid } from '@/components/services/ServicesGrid'
+import { FloatingDevices } from '@/components/three/FloatingDevices'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
+import { TrustSignals } from '@/components/home/TrustSignals'
+import { Windows11UrgentSection } from '@/components/home/Windows11UrgentSection'
 import Link from 'next/link'
 import { useState } from 'react'
 import {
   Phone,
   Calendar,
+  Users,
+  MessageCircle,
+  CheckCircle,
   GraduationCap,
-  Euro,
   Zap,
+  Euro,
   MapPin,
   ChevronDown,
   ChevronUp
 } from 'lucide-react'
 
 const benefits = [
-  {
-    icon: Euro,
-    title: 'Betaalbare Tarieven',
-    description: 'Vanaf €13,99 per kwartier'
-  },
-  {
-    icon: GraduationCap,
-    title: 'IT-Student Aan Huis',
-    description: 'Ervaren student komt naar u toe'
-  },
-  {
-    icon: Zap,
-    title: 'Snel & Flexibel',
-    description: 'Ook avonden en weekenden'
-  }
+  { icon: Users, text: 'Persoonlijke hulp aan huis' },
+  { icon: MessageCircle, text: 'Begrijpelijke uitleg, zonder vakjargon' },
+  { icon: CheckCircle, text: 'Betaalbaar en betrouwbaar' }
 ]
 
 const processSteps = [
@@ -63,7 +57,7 @@ const eindhovenAreas = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Eindhoven?",
-    answer: "Onze tarieven beginnen vanaf €13,99 per kwartier in Eindhoven. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief. Perfect voor studenten en inwoners van de technologiestad Eindhoven."
+    answer: "Onze tarieven beginnen vanaf €14,50 per kwartier in Eindhoven. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief. Perfect voor studenten en inwoners van de technologiestad Eindhoven."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Eindhoven?",
@@ -92,10 +86,11 @@ function FAQItem({ question, answer, isOpen, onToggle }: {
   return (
     <div className="glass-effect rounded-lg overflow-hidden">
       <button
+        type="button"
         onClick={onToggle}
         className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
       >
-        <h3 className="text-xl font-semibold text-white pr-4">{question}</h3>
+        <h3 className="text-xl font-semibold text-secondary-800 pr-4">{question}</h3>
         {isOpen ? (
           <ChevronUp className="w-6 h-6 text-primary-400 flex-shrink-0" />
         ) : (
@@ -104,7 +99,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: {
       </button>
       {isOpen && (
         <div className="px-6 pb-6">
-          <p className="text-neural-300 leading-relaxed">{answer}</p>
+          <p className="text-secondary-700 leading-relaxed">{answer}</p>
         </div>
       )}
     </div>
@@ -156,7 +151,7 @@ export default function StudentAanHuisEindhovenLanding() {
               }
             ],
             "serviceType": "Student computerhulp aan huis Eindhoven",
-            "priceRange": "€13,99 - €18,50",
+            "priceRange": "€14,50 - €18,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -199,72 +194,73 @@ export default function StudentAanHuisEindhovenLanding() {
         }}
       />
 
-      <div className="relative min-h-screen">
-        <ClientWrapper>
-          <FloatingElements />
-        </ClientWrapper>
+      <section className="hero-section relative flex items-start justify-center overflow-hidden">
+        <FloatingDevices />
 
-        {/* Hero Section */}
-        <section className="hero-section relative z-10 md:z-auto">
-          <div className="max-w-7xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <MapPin className="w-4 h-4 mr-2" />
-                Student Aan Huis Service Eindhoven - High Tech Campus
-              </div>
+        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-gradient">Student aan Huis Eindhoven</span>
+          </h1>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
-                Student Aan Huis Eindhoven
-                <br />
-                <span className="text-white">Betaalbare Computerhulp</span>
-              </h1>
+          <p className="text-xl lg:text-2xl text-primary-700 max-w-4xl mx-auto mb-6 leading-relaxed">
+            Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis in <span className="text-primary-700 font-semibold">Eindhoven en omgeving</span>. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
+          </p>
 
-              <p className="text-xl text-neural-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Computerproblemen in de technologiestad Eindhoven? Onze IT-studenten van TU/e en andere hogescholen komen naar je toe!
-                Betaalbare hulp door lokale studenten met ervaring in Eindhoven's innovatieve tech-omgeving.
-                <span className="text-primary-300 font-semibold"> Van Strijp-S tot High Tech Campus - snel en vakkundig!</span>
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
-                {benefits.map((benefit, index) => {
-                  const IconComponent = benefit.icon
-                  return (
-                    <div key={index} className="glass-effect rounded-lg p-4 text-center">
-                      <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <IconComponent className="w-5 h-5 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                      <p className="text-neural-300 text-base">{benefit.description}</p>
-                    </div>
-                  )
-                })}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/afspraak" className="btn-cta">
-                  <Calendar className="w-6 h-6 mr-3" />
-                  Afspraak Maken
-                </Link>
-                <Link href="tel:+31642827860" className="btn-secondary">
-                  <Phone className="w-6 h-6 mr-3" />
-                  Bel Nu: 06-42827860
-                </Link>
-              </div>
-            </div>
+          <div className="flex flex-wrap justify-center gap-6 mb-4">
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon
+              return (
+                <div
+                  key={index}
+                  className="flex items-center space-x-3 text-lg text-primary-700"
+                >
+                  <IconComponent className="w-6 h-6 text-primary-700" />
+                  <span>{benefit.text}</span>
+                </div>
+              )
+            })}
           </div>
-        </section>
 
-        {/* Services Section */}
-        <ServicesPreview />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <Link href="/afspraak" className="btn-cta">
+              <Calendar className="w-6 h-6 mr-3" />
+              Afspraak Maken
+            </Link>
+
+            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
+              <Phone className="w-5 h-5 mr-2" />
+              Bel Nu
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div className="relative">
+
+        <TrustSignals />
+
+        <ServicesGrid
+          title="Wat Wij Voor U Kunnen Doen"
+          maxItems={6}
+        />
+
+        {/* Pricing Section */}
+        <PricingSection />
+
+        {/* Testimonials Section */}
+        <TestimonialsSection />
+
+        {/* Windows 11 Urgent Section */}
+        <Windows11UrgentSection />
 
         {/* Process Section */}
         <section className="section-spacing bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Hoe Werkt Student Aan Huis in Eindhoven?
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Snel, lokaal en betaalbaar - vakkundige tech-hulp in Eindhoven
               </p>
             </div>
@@ -272,92 +268,89 @@ export default function StudentAanHuisEindhovenLanding() {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
                     {step.step}
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">{step.title}</h3>
-                  <p className="text-neural-300 text-lg leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
+                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <TestimonialsSection />
-
-        {/* Pricing Section */}
-        <PricingSection />
+        {/* Services Section */}
+        <ServicesPreview />
 
         {/* Why Choose Student Section */}
         <section className="section-spacing bg-neural-900/30">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Waarom kiezen voor onze Student Aan Huis in Eindhoven?
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+                Waarom Kiezen Voor Student Aan Huis Eindhoven?
               </h2>
-              <p className="text-xl text-neural-300 max-w-3xl mx-auto">
+              <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
                 Ontdek de voordelen van computerhulp door ervaren TU/e IT-studenten in de technologiestad Eindhoven
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <Euro className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Betaalbare Tarieven Eindhoven</h3>
-                <p className="text-neural-300 leading-relaxed">
-                  Vanaf €13,99 per kwartier in Eindhoven - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven, ideaal voor de tech-community.
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Eindhoven</h3>
+                <p className="text-secondary-700 leading-relaxed">
+                  Vanaf €14,50 per kwartier in Eindhoven - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven, ideaal voor de tech-community.
                 </p>
               </div>
 
               <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">TU/e IT-Studenten</h3>
-                <p className="text-neural-300 leading-relaxed">
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">TU/e IT-Studenten</h3>
+                <p className="text-secondary-700 leading-relaxed">
                   Onze studenten in Eindhoven studeren aan TU/e en andere technische hogescholen. Ze zijn opgeleid in de nieuwste technologieën en kennen Eindhoven's tech-ecosysteem goed.
                 </p>
               </div>
 
               <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <Zap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Flexibele Tijden</h3>
-                <p className="text-neural-300 leading-relaxed">
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Flexibele Tijden</h3>
+                <p className="text-secondary-700 leading-relaxed">
                   Ook 's avonds en in weekenden beschikbaar in Eindhoven. Studenten hebben flexibele schema's, perfect voor werkenden bij ASML, Philips en andere tech-bedrijven.
                 </p>
               </div>
 
               <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Heel Tech-Regio Eindhoven</h3>
-                <p className="text-neural-300 leading-relaxed">
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel Tech-Regio Eindhoven</h3>
+                <p className="text-secondary-700 leading-relaxed">
                   Van Centrum tot High Tech Campus, van Strijp-S tot TU/e - onze studenten komen overal in Eindhoven en omliggende tech-gemeenten zoals Veldhoven en Best.
                 </p>
               </div>
 
               <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <Calendar className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Snelle Beschikbaarheid</h3>
-                <p className="text-neural-300 leading-relaxed">
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Beschikbaarheid</h3>
+                <p className="text-secondary-700 leading-relaxed">
                   Vaak nog dezelfde dag beschikbaar in Eindhoven. Door onze lokale studenten hebben we korte reistijd, zelfs naar High Tech Campus en bedrijventerreinen.
                 </p>
               </div>
 
               <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Moderne Tech Kennis</h3>
-                <p className="text-neural-300 leading-relaxed">
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Moderne Tech Kennis</h3>
+                <p className="text-secondary-700 leading-relaxed">
                   Studenten zijn vertrouwd met de nieuwste software en technologieën uit Eindhoven's innovatieve omgeving. Ideaal voor moderne computerproblemen en tech-integratie.
                 </p>
               </div>
@@ -369,21 +362,21 @@ export default function StudentAanHuisEindhovenLanding() {
         <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Onze Student IT Diensten in Eindhoven
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Uitgebreide computerhulp door vakkundige IT-studenten in de technologiestad Eindhoven
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-white mb-4">🖥️ Computer & Laptop Hulp Eindhoven</h3>
+                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🖥️ Computer & Laptop Hulp Eindhoven</h3>
 
                 <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-white mb-3">Laptop en Computer Reparatie</h4>
-                  <ul className="text-neural-300 space-y-2">
+                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
+                  <ul className="text-secondary-700 space-y-2">
                     <li>• Computer start niet op - diagnose en reparatie door TU/e studenten</li>
                     <li>• Laptop scherm vervangen of repareren (gaming laptops specialiteit)</li>
                     <li>• Toetsenbord en touchpad problemen vakkundig oplossen</li>
@@ -394,8 +387,8 @@ export default function StudentAanHuisEindhovenLanding() {
                 </div>
 
                 <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-white mb-3">Software Installatie & Updates</h4>
-                  <ul className="text-neural-300 space-y-2">
+                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
+                  <ul className="text-secondary-700 space-y-2">
                     <li>• Windows 11 installatie en updates voor optimale prestaties</li>
                     <li>• Microsoft Office 365 installatie en configuratie</li>
                     <li>• Professionele antivirus software installeren en configureren</li>
@@ -407,11 +400,11 @@ export default function StudentAanHuisEindhovenLanding() {
               </div>
 
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-white mb-4">🌐 Internet & Smart Home Eindhoven</h3>
+                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🌐 Internet & Smart Home Eindhoven</h3>
 
                 <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-white mb-3">WiFi & Internet Problemen</h4>
-                  <ul className="text-neural-300 space-y-2">
+                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
+                  <ul className="text-secondary-700 space-y-2">
                     <li>• WiFi verbinding problemen in moderne Eindhoven appartementen</li>
                     <li>• High-end router instellen voor maximale snelheid</li>
                     <li>• Glasvezel internet optimalisatie (KPN, Ziggo, T-Mobile)</li>
@@ -422,8 +415,8 @@ export default function StudentAanHuisEindhovenLanding() {
                 </div>
 
                 <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-white mb-3">Smartphone & Smart Home</h4>
-                  <ul className="text-neural-300 space-y-2">
+                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Smart Home</h4>
+                  <ul className="text-secondary-700 space-y-2">
                     <li>• iPhone en Android telefoon volledig instellen en migreren</li>
                     <li>• Smart home apparaten koppelen (Philips Hue, Google/Alexa)</li>
                     <li>• Contacten, foto's en documenten synchroniseren</li>
@@ -437,14 +430,15 @@ export default function StudentAanHuisEindhovenLanding() {
           </div>
         </section>
 
+
         {/* FAQ Section */}
         <section className="section-spacing bg-neural-900/50">
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Veelgestelde Vragen Student Aan Huis Eindhoven
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Antwoorden op de meest gestelde vragen over onze student IT service in de technologiestad Eindhoven
               </p>
             </div>
@@ -467,10 +461,10 @@ export default function StudentAanHuisEindhovenLanding() {
         <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Werkgebied Eindhoven & Technologie Regio
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Onze IT-studenten komen naar alle wijken in Eindhoven en de High Tech regio
               </p>
             </div>
@@ -479,14 +473,14 @@ export default function StudentAanHuisEindhovenLanding() {
               {eindhovenAreas.map((area, index) => (
                 <div key={index} className="glass-effect rounded-lg p-4 text-center">
                   <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
-                  <span className="text-neural-200 text-base font-medium">{area}</span>
+                  <span className="text-secondary-700 text-base font-medium">{area}</span>
                 </div>
               ))}
             </div>
 
             <div className="text-center">
-              <p className="text-neural-300 text-lg mb-6">
-                Ook High Tech Campus, TU/e Campus en ASML omgeving! <strong className="text-white">Bel ons</strong> - wij komen waarschijnlijk ook bij jou!
+              <p className="text-secondary-700 text-lg mb-6">
+                Ook High Tech Campus, TU/e Campus en ASML omgeving! <strong className="text-secondary-800">Bel ons</strong> - wij komen waarschijnlijk ook bij jou!
               </p>
               <Link href="/regios/eindhoven" className="btn-secondary">
                 <MapPin className="w-5 h-5 mr-2" />
@@ -497,23 +491,23 @@ export default function StudentAanHuisEindhovenLanding() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-spacing bg-gradient-to-r from-blue-600 to-purple-600">
+        <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
           <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">
               Klaar voor Betaalbare Tech-Hulp in Eindhoven?
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">
               Onze ervaren IT-studenten van TU/e en andere hogescholen in Eindhoven staan klaar om je te helpen.
               Van High Tech Campus tot Strijp-S - snel, betaalbaar en vakkundig!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/afspraak" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center">
+              <Link href="/afspraak" className="btn-cta">
                 <Calendar className="w-6 h-6 mr-3" />
                 Plan Nu Je Afspraak
               </Link>
-              <Link href="tel:+31642827860" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center">
+              <Link href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
                 <Phone className="w-6 h-6 mr-3" />
-                Bel Direct: 06-42827860
+                Bel Direct
               </Link>
             </div>
           </div>

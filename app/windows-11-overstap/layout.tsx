@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Windows 11 Overstap Service | Hulp met IT - Zorgeloos Upgraden',
+  title: 'Windows 11 Overstap | Deadline oktober 2025',
   description: 'Windows 10 stopt op 14 oktober 2025! Professionele Windows 11 overstap door IT-studenten. Backup, installatie en nazorg vanaf €51,97. Plan nu je upgrade.',
   keywords: [
     'Windows 11 overstap',

@@ -1,34 +1,23 @@
-import { FloatingElements } from '@/components/three/FloatingElements'
-import { ClientWrapper } from '@/components/ClientWrapper'
+import { ServicesGrid } from '@/components/services/ServicesGrid'
+import { FloatingDevices } from '@/components/three/FloatingDevices'
 import { PricingSection } from '@/components/home/PricingSection'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
+import { TrustSignals } from '@/components/home/TrustSignals'
+import { Windows11UrgentSection } from '@/components/home/Windows11UrgentSection'
 import Link from 'next/link'
 import {
   Phone,
   Calendar,
   Clock,
   Award,
-  Users,
-  MapPin
+  CheckCircle
 } from 'lucide-react'
 
 const benefits = [
-  {
-    icon: Clock,
-    title: 'Snelle Hulp Rotterdam',
-    description: 'Wij komen snel naar u toe in heel Rotterdam'
-  },
-  {
-    icon: Award,
-    title: 'Vriendelijke Specialisten',
-    description: 'Ervaren helpers die rustig uitleggen wat er gebeurt'
-  },
-  {
-    icon: Users,
-    title: 'Persoonlijke Aanpak',
-    description: 'Geduldig en begripvol, we nemen de tijd voor u'
-  }
+  { icon: Clock, text: 'Snelle hulp Rotterdam' },
+  { icon: Award, text: 'Vriendelijk & betrouwbaar' },
+  { icon: CheckCircle, text: 'Vakkundige specialisten' },
 ]
 
 const processSteps = [
@@ -87,69 +76,67 @@ export default function ComputerhulpAanHuisRotterdam() {
         }}
       />
 
-      <div className="relative min-h-screen">
-        <ClientWrapper>
-          <FloatingElements />
-        </ClientWrapper>
+      <section className="hero-section relative flex items-start justify-center overflow-hidden">
+        <FloatingDevices />
 
-        {/* Hero Section */}
-        <section className="hero-section relative z-10 md:z-auto">
-          <div className="max-w-7xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <div className="inline-flex items-center bg-green-500/20 text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <MapPin className="w-4 h-4 mr-2" />
-                Computerhulp aan Huis Rotterdam
-              </div>
+        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+            <span className="text-gradient">Computerhulp aan Huis</span>
+            <br />
+            <span className="text-secondary-800">Rotterdam</span>
+          </h1>
 
-              <h1 className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
-                Computerhulp aan Huis
-                <br />
-                <span className="text-white">Rotterdam</span>
-              </h1>
+          <p className="text-xl lg:text-2xl text-primary-700 max-w-4xl mx-auto mb-6 leading-relaxed">
+            Computerhulp aan huis door vriendelijke specialisten in Rotterdam. Wij komen <span className="text-primary-700 font-semibold">binnen 24-48u</span> naar u toe en lossen het snel en vakkundig voor u op!
+          </p>
 
-              <p className="text-xl text-neural-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Computerhulp aan huis door vriendelijke specialisten in Rotterdam. Wij komen naar u toe in heel Rotterdam en helpen rustig bij uw computerproblemen.
-                <span className="text-primary-300 font-semibold"> Transparante tarieven, geen verrassingen achteraf!</span>
-              </p>
-
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
-                {benefits.map((benefit, index) => {
-                  const IconComponent = benefit.icon
-                  return (
-                    <div key={index} className="glass-effect rounded-lg p-4 text-center">
-                      <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mx-auto mb-3">
-                        <IconComponent className="w-5 h-5 text-white" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
-                      <p className="text-neural-300 text-base">{benefit.description}</p>
-                    </div>
-                  )
-                })}
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/afspraak" className="btn-cta">
-                  <Calendar className="w-6 h-6 mr-3" />
-                  Afspraak Maken Rotterdam
-                </Link>
-                <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
-                  <Phone className="w-6 h-6 mr-3" />
-                  Bel Nu: 06-42827860
-                </a>
-              </div>
-            </div>
+          <div className="flex flex-wrap justify-center gap-6 mb-4">
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon
+              return (
+                <div
+                  key={index}
+                  className="flex items-center space-x-3 text-lg text-primary-700"
+                >
+                  <IconComponent className="w-6 h-6 text-primary-700" />
+                  <span>{benefit.text}</span>
+                </div>
+              )
+            })}
           </div>
-        </section>
 
-        <ServicesPreview />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <Link href="/afspraak" className="btn-cta">
+              <Calendar className="w-6 h-6 mr-3" />
+              Afspraak Maken
+            </Link>
+
+            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
+              <Phone className="w-5 h-5 mr-2" />
+              Bel Nu
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div className="relative">
+
+        <TrustSignals />
+        <ServicesGrid
+          title="Wat We Voor U Kunnen Doen"
+          maxItems={6}
+        />
+        <PricingSection />
+        <TestimonialsSection />
+        <Windows11UrgentSection />
 
         <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Hoe Werkt Computerhulp aan Huis in Rotterdam?
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Eenvoudig en snel - van afspraak tot opgeloste computerproblemen
               </p>
             </div>
@@ -160,27 +147,26 @@ export default function ComputerhulpAanHuisRotterdam() {
                   <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
                     {step.step}
                   </div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">{step.title}</h3>
-                  <p className="text-neural-300 text-lg leading-relaxed">{step.description}</p>
+                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
+                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <TestimonialsSection />
-        <PricingSection />
+        <ServicesPreview />
 
         <section className="section-spacing bg-neural-900/50">
           <div className="max-w-4xl mx-auto container-padding">
-            <h2 className="text-3xl font-bold text-white text-center mb-8">
+            <h2 className="text-3xl font-bold text-secondary-800 text-center mb-8">
               Computerhulp aan Huis in Heel Rotterdam
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="glass-effect rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">🏙️ Rotterdam Wijken</h3>
-                <ul className="text-neural-300 space-y-2">
+                <h3 className="text-xl font-semibold text-secondary-800 mb-4">🏙️ Rotterdam Wijken</h3>
+                <ul className="text-secondary-700 space-y-2">
                   <li>• Computerhulp Rotterdam Centrum</li>
                   <li>• Computerhulp Rotterdam Noord</li>
                   <li>• Computerhulp Rotterdam Zuid</li>
@@ -190,8 +176,8 @@ export default function ComputerhulpAanHuisRotterdam() {
               </div>
 
               <div className="glass-effect rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">💻 Onze Services Rotterdam</h3>
-                <ul className="text-neural-300 space-y-2">
+                <h3 className="text-xl font-semibold text-secondary-800 mb-4">💻 Onze Services Rotterdam</h3>
+                <ul className="text-secondary-700 space-y-2">
                   <li>• Laptop reparatie Rotterdam</li>
                   <li>• Virus verwijdering Rotterdam</li>
                   <li>• Computer traag maken sneller</li>
@@ -202,10 +188,10 @@ export default function ComputerhulpAanHuisRotterdam() {
             </div>
 
             <div className="text-center">
-              <h3 className="text-2xl font-semibold text-white mb-4">
+              <h3 className="text-2xl font-semibold text-secondary-800 mb-4">
                 Waarom Computerhulp aan Huis Rotterdam?
               </h3>
-              <p className="text-neural-300 text-lg leading-relaxed">
+              <p className="text-secondary-700 text-lg leading-relaxed">
                 Hulp met IT biedt computerhulp aan huis in heel Rotterdam. Van de Coolsingel tot Feijenoord, van Blijdorp tot Charlois - onze vriendelijke specialisten komen naar u toe en nemen rustig de tijd om uw computerproblemen op te lossen en uit te leggen hoe alles werkt.
               </p>
             </div>

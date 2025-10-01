@@ -1,54 +1,54 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const testimonials = [
   {
     name: 'Rose Garden',
-    date: '1 september 2024',
+    date: '1 september 2025',
     specialist: 'Adam',
     content: 'Rustig, geduldig en duidelijk in uitleggen van het eea. Adam is goed en prettig met tekst en uitleg.'
   },
   {
-    name: 'Riet Bloem', 
-    date: '30 juni 2024',
+    name: 'Riet Bloem',
+    date: '30 juni 2025',
     specialist: 'Adam',
     content: 'Verrassend professioneel geholpen met email problemen. Adam loste alles op met alle geduld; een vriendelijk mens. Suuuuuper blij, ik ga weer aan de slag met een goed gevoel. De betere computer hulp ever ....veel succes Adam!'
   },
   {
     name: 'Harold Lensing',
-    date: '30 juni 2024',
+    date: '30 juni 2025',
     specialist: 'Adam',
     content: 'Top service, Adam heeft al mijn computer problemen razend snel opgelost, ik ben er blij mee😎'
   },
   {
     name: 'Weerheijm-Maas',
-    date: '29 maart 2024', 
+    date: '29 maart 2025',
     specialist: 'Ahmad',
     content: 'Ahmad kwam mij vandaag weer helpen met mijn computer. Deze was gecrasht terwijl ik hem nu direct nodig had. Ahmad is rustig, flexibel, betrouwbaar, klantvriendelijk, en een harde werker, kundig in zijn vak, en kan goed uitleggen als dat nodig is.'
   },
   {
     name: 'Anthon Pol',
-    date: '23 maart 2024',
+    date: '23 maart 2025',
     specialist: 'Hulp met IT Team',
     content: 'De computer startte niet meer op. Dankzij Hulp met IT werd het probleem goed en snel opgelost. De Hulp was vriendelijk en deskundig. Ik ben erg blij dat ik deze hulp heb gekozen.'
   },
   {
     name: 'A Blokdijk',
-    date: '13 maart 2024', 
+    date: '13 maart 2025',
     specialist: 'Hulp met IT Team',
     content: 'Ben weer superblij met de snelle hulp bij mijn PC strubbelingen die in een snel tempo waren opgelost door deze vriendelijke en betrouwbare man!'
   },
   {
     name: 'Elsbeth Grievink',
-    date: '4 maart 2024',
-    specialist: 'Ahmad', 
+    date: '4 maart 2025',
+    specialist: 'Ahmad',
     content: 'Ik had een heel lijstje met problemen: laptop \'gehackt\', mailprogramma deed niet wat ik wilde, kon geen mails ontvangen op telefoon, had gedoe met Teams, etc etc. Ahmad was op tijd, vriendelijk en rustig en heeft ALLE problemen op dit lijstje in een uur tijd gefikst.'
   }
 ]
 
-export function TestimonialsSection() {
+export const TestimonialsSection = React.memo(function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -120,7 +120,7 @@ export function TestimonialsSection() {
           <h2 className="text-4xl lg:text-5xl font-bold text-gradient mb-6">
             Wat Onze Klanten Zeggen
           </h2>
-          <p className="text-xl text-neural-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed">
             Echte reviews van tevreden klanten. 
             Lees hier wat zij te zeggen hebben over onze service.
           </p>
@@ -130,6 +130,7 @@ export function TestimonialsSection() {
         <div className="relative max-w-4xl mx-auto">
           {/* Navigation Arrows */}
           <button
+            type="button"
             onClick={prevTestimonial}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
             aria-label="Vorige review"
@@ -138,6 +139,7 @@ export function TestimonialsSection() {
           </button>
 
           <button
+            type="button"
             onClick={nextTestimonial}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg"
             aria-label="Volgende review"
@@ -159,25 +161,25 @@ export function TestimonialsSection() {
               </div>
 
               {/* Quote */}
-              <blockquote className="text-xl md:text-2xl text-neural-200 leading-relaxed mb-8 italic">
+              <blockquote className="text-xl md:text-2xl text-secondary-800 leading-relaxed mb-8 italic">
                 "{currentTestimonial.content}"
               </blockquote>
 
               {/* Author Info */}
               <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                 <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">
+                  <span className="text-secondary-800 font-bold text-xl">
                     {currentTestimonial.name.charAt(0)}
                   </span>
                 </div>
                 <div className="text-center md:text-left">
-                  <div className="font-bold text-white text-lg">
+                  <div className="font-bold text-secondary-800 text-lg">
                     {currentTestimonial.name}
                   </div>
-                  <div className="text-neutral-400">
+                  <div className="text-primary-600">
                     {currentTestimonial.date}
                   </div>
-                  <div className="text-primary-400 text-sm font-medium">
+                  <div className="text-primary-700 text-sm font-medium">
                     Geholpen door {currentTestimonial.specialist}
                   </div>
                 </div>
@@ -190,12 +192,13 @@ export function TestimonialsSection() {
         <div className="flex justify-center mt-8 gap-3">
           {testimonials.map((_, index) => (
             <button
+              type="button"
               key={index}
               onClick={() => goToTestimonial(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? 'bg-primary-500 scale-125'
-                  : 'bg-white/30 hover:bg-white/50'
+                  ? 'bg-gradient-to-r from-primary-500 to-accent-500 scale-125'
+                  : 'bg-primary-300 hover:bg-primary-400'
               }`}
               aria-label={`Ga naar review ${index + 1}`}
             />
@@ -205,4 +208,4 @@ export function TestimonialsSection() {
       </div>
     </section>
   )
-}
+})

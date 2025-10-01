@@ -123,12 +123,12 @@ export default function Windows11OverstapLanding() {
               <h1 className="text-4xl lg:text-6xl font-bold text-gradient mb-6">
                 Windows 11 Overstap Service
                 <br />
-                <span className="text-white">Zorgeloos & Professioneel</span>
+                <span className="text-secondary-800">Zorgeloos & Professioneel</span>
               </h1>
               
-              <p className="text-xl text-neural-300 max-w-4xl mx-auto leading-relaxed mb-8">
+              <p className="text-xl text-secondary-700 max-w-4xl mx-auto leading-relaxed mb-8">
                 <strong className="text-red-400">Windows 10 stopt binnenkort!</strong> Onze IT-experts komen naar je toe voor een 
-                <span className="text-primary-300 font-semibold"> zorgeloze overstap naar Windows 11</span> - 
+                <span className="text-secondary-800 font-semibold"> zorgeloze overstap naar Windows 11</span> - 
                 inclusief backup, installatie en nazorg.
               </p>
               
@@ -136,9 +136,9 @@ export default function Windows11OverstapLanding() {
                 <p className="text-red-300 text-lg font-semibold mb-2">
                   ⚠️ Belangrijk: Na 14 oktober 2025 krijgt Windows 10 geen beveiligingsupdates meer
                 </p>
-                <p className="text-neural-300">
+                <p className="text-secondary-700">
                   Dit betekent dat je computer kwetsbaar wordt voor virussen, malware en cyberaanvallen. 
-                  <strong className="text-white"> Plan nu je overstap</strong> en blijf veilig online.
+                  <strong className="text-secondary-800"> Plan nu je overstap</strong> en blijf veilig online.
                 </p>
               </div>
               
@@ -149,7 +149,7 @@ export default function Windows11OverstapLanding() {
                 </Link>
                 <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
                   <Phone className="w-6 h-6 mr-3" />
-                  Direct Bellen: 06-42827860
+                  Direct Bellen
                 </a>
               </div>
             </div>
@@ -160,10 +160,10 @@ export default function Windows11OverstapLanding() {
         <section className="section-spacing bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Waarom Nu Overstappen?
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Microsoft stopt binnenkort met Windows 10 support
               </p>
             </div>
@@ -176,8 +176,8 @@ export default function Windows11OverstapLanding() {
                     <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 bg-gradient-to-r from-red-500 to-orange-500`}>
                       <IconComponent className={`w-8 h-8 text-white`} />
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">{point.title}</h3>
-                    <p className="text-neural-300 leading-relaxed">{point.description}</p>
+                    <h3 className="text-xl font-semibold text-secondary-800 mb-3">{point.title}</h3>
+                    <p className="text-secondary-700 leading-relaxed">{point.description}</p>
                   </div>
                 )
               })}
@@ -189,10 +189,10 @@ export default function Windows11OverstapLanding() {
         <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Zo Werkt Onze Windows 11 Overstap
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Van planning tot werkende computer - wij regelen alles
               </p>
             </div>
@@ -203,15 +203,15 @@ export default function Windows11OverstapLanding() {
                 return (
                   <div key={index} className="text-center">
                     <div className="relative mb-6">
-                      <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-4">
                         <IconComponent className="w-10 h-10 text-white" />
                       </div>
                       <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-sm">
                         {step.step}
                       </div>
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
-                    <p className="text-neural-300 leading-relaxed">{step.description}</p>
+                    <h3 className="text-xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
+                    <p className="text-secondary-700 leading-relaxed">{step.description}</p>
                   </div>
                 )
               })}
@@ -223,7 +223,7 @@ export default function Windows11OverstapLanding() {
         <section className="section-spacing bg-white/5">
           <div className="max-w-7xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Transparante Prijzen, Geen Verrassingen
               </h2>
             </div>
@@ -232,23 +232,23 @@ export default function Windows11OverstapLanding() {
               <div className="grid md:grid-cols-3 gap-8 text-center">
                 <div>
                   <div className="text-3xl font-bold text-gradient mb-2">€41,97</div>
-                  <p className="text-neural-300 text-lg">Voor 45 minuten</p>
-                  <p className="text-neural-400 text-sm">(minimum bezoek)</p>
+                  <p className="text-secondary-700 text-lg">Voor 45 minuten</p>
+                  <p className="text-primary-600 text-sm">(minimum bezoek)</p>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-gradient mb-2">€10,-</div>
-                  <p className="text-neural-300 text-lg">Reiskosten</p>
-                  <p className="text-neural-400 text-sm">(eenmalig per bezoek)</p>
+                  <p className="text-secondary-700 text-lg">Reiskosten</p>
+                  <p className="text-primary-600 text-sm">(eenmalig per bezoek)</p>
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-gradient mb-2">24-48u</div>
-                  <p className="text-neural-300 text-lg">Snelle service</p>
-                  <p className="text-neural-400 text-sm">(meestal binnen 2 dagen)</p>
+                  <p className="text-secondary-700 text-lg">Snelle service</p>
+                  <p className="text-primary-600 text-sm">(meestal binnen 2 dagen)</p>
                 </div>
               </div>
               <div className="mt-6 text-center">
-                <p className="text-neural-300 text-sm">Extra tijd: €13,99 per kwartier • Geen verrassingen achteraf</p>
-                <p className="text-neural-400 text-xs mt-2">Windows 11 overstap: Gemiddeld 2-4 uur werk</p>
+                <p className="text-secondary-700 text-sm">Extra tijd: €14,50 per kwartier • Geen verrassingen achteraf</p>
+                <p className="text-primary-600 text-xs mt-2">Windows 11 overstap: Gemiddeld 2-4 uur werk</p>
               </div>
             </div>
           </div>
@@ -258,10 +258,10 @@ export default function Windows11OverstapLanding() {
         <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Wat Krijg Je Van Ons?
               </h2>
-              <p className="text-xl text-neural-300">
+              <p className="text-xl text-secondary-700">
                 Complete service van A tot Z
               </p>
             </div>
@@ -270,7 +270,7 @@ export default function Windows11OverstapLanding() {
               {includedServices.map((service, index) => (
                 <div key={index} className="flex items-center glass-effect rounded-lg p-4">
                   <CheckCircle className="w-6 h-6 text-green-400 mr-3 flex-shrink-0" />
-                  <span className="text-neural-200 font-medium">{service}</span>
+                  <span className="text-secondary-700 font-medium">{service}</span>
                 </div>
               ))}
             </div>
@@ -283,13 +283,13 @@ export default function Windows11OverstapLanding() {
         {/* Final CTA */}
         <section className="section-spacing bg-gradient-to-r from-red-600 to-orange-600">
           <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
               Windows 10 Stopt Binnenkort - Wacht Niet Langer!
             </h2>
-            <p className="text-xl text-white/90 mb-2">
+            <p className="text-xl text-secondary-800/90 mb-2">
               Plan nu je zorgeloze overstap naar Windows 11
             </p>
-            <p className="text-lg text-white/80 mb-8">
+            <p className="text-lg text-secondary-800/80 mb-8">
               ✅ Professionele installatie ✅ Alles blijft werken ✅ 30 dagen nazorg
             </p>
             
@@ -300,12 +300,12 @@ export default function Windows11OverstapLanding() {
               </Link>
               <a href="tel:+31642827860" className="bg-white/20 text-white font-semibold px-8 py-4 rounded-lg text-lg hover:bg-white/30 transition-colors inline-flex items-center justify-center">
                 <Phone className="w-6 h-6 mr-3" />
-                Of Bel Direct: 06-42827860
+                Of Bel Direct
               </a>
             </div>
             
             <div className="mt-8 bg-white/10 rounded-lg p-4 max-w-2xl mx-auto">
-              <p className="text-white/90 text-sm">
+              <p className="text-secondary-800/90 text-sm">
                 <strong>Voordelen:</strong> ✓ Transparante prijzen ✓ Geen verborgen kosten ✓ 30 dagen nazorg inbegrepen
               </p>
             </div>

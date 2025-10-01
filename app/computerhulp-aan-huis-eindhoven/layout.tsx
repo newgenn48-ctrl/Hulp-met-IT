@@ -1,19 +1,19 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Aan Huis Eindhoven | IT-Specialist Eindhoven | Computer Reparatie',
-  description: 'Computerhulp aan huis in Eindhoven ✓ Ervaren specialisten ✓ Heel Eindhoven ✓ Van Centrum tot Veldhoven ✓ Transparante tarieven ✓ Bel 06-42827860',
+  title: 'Computerhulp Eindhoven | Specialist komt naar u',
+  description: 'Computerhulp aan huis in Eindhoven ✓ Ervaren specialisten ✓ Heel Eindhoven ✓ Van Centrum tot Veldhoven ✓ Transparante tarieven ✓ Bel ons',
   keywords: [
     'computerhulp aan huis eindhoven',
     'computer reparatie eindhoven',
     'laptop reparatie eindhoven',
     'pc hulp eindhoven',
-    'virus verwijdering eindhoven',
-    'computerhulp eindhoven centrum',
-    'computerhulp veldhoven',
-    'computerhulp helmond',
+    'IT hulp eindhoven',
     'computer specialist eindhoven',
-    'IT hulp eindhoven'
+    'eindhoven computerhulp avond',
+    'eindhoven IT hulp weekend',
+    'computerhulp eindhoven spoed',
+    'betaalbare IT hulp eindhoven'
   ],
   robots: {
     index: true,

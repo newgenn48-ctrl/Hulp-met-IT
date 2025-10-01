@@ -32,27 +32,29 @@ export function CookieConsent() {
   if (!showConsent) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-gray-200 p-4 z-50 shadow-lg">
+    <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-primary-200 p-4 z-50 shadow-lg">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="text-sm text-gray-700">
+        <div className="text-sm text-primary-700">
           <p>
             We gebruiken cookies voor website functionaliteit en analytics.
             Door verder te gaan ga je akkoord met ons{' '}
-            <a href="/privacy" className="text-primary-600 hover:underline">
+            <a href="/privacy" className="text-primary-600 hover:text-accent-500 font-medium transition-colors">
               privacybeleid
             </a>.
           </p>
         </div>
-        <div className="flex gap-2 flex-shrink-0">
+        <div className="flex gap-3 flex-shrink-0">
           <button
+            type="button"
             onClick={declineCookies}
-            className="px-4 py-2 text-sm text-gray-600 hover:text-gray-800 transition-colors"
+            className="px-5 py-2.5 text-sm text-secondary-600 hover:text-secondary-800 border border-secondary-300 rounded-lg hover:bg-secondary-50 transition-colors"
           >
             Afwijzen
           </button>
           <button
+            type="button"
             onClick={acceptCookies}
-            className="px-6 py-2 bg-primary-600 text-white text-sm rounded-lg hover:bg-primary-700 transition-colors"
+            className="px-6 py-2.5 bg-gradient-to-r from-primary-500 to-accent-500 text-white text-sm font-medium rounded-lg hover:from-primary-600 hover:to-accent-600 shadow-md hover:shadow-lg transition-all"
           >
             Accepteren
           </button>

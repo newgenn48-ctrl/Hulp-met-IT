@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student Aan Huis | Betaalbare Computerhulp door IT-Studenten ✓',
-  description: 'Betaalbare computerhulp door ervaren IT-studenten! ✓ €13,99 per kwartier + €10 voorrijkosten ✓ Studententarieven ✓ Heel Nederland ✓ Alle computerproblemen ✓ Bel: 06-42827860',
+  description: 'Betaalbare computerhulp door ervaren IT-studenten! ✓ €14,50 per kwartier + €10 voorrijkosten ✓ Studententarieven ✓ Heel Nederland ✓ Alle computerproblemen ✓ Bel ons',
   keywords: [
     'student aan huis',
     'student computerhulp',
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student Aan Huis - Betaalbare Computerhulp door IT-Studenten',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten. €13,99 per kwartier + €10 voorrijkosten. Heel Nederland!',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten. €14,50 per kwartier + €10 voorrijkosten. Heel Nederland!',
     images: ['/og-image.webp'],
     url: '/student-aan-huis',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student Aan Huis - Betaalbare Computerhulp',
-    description: 'Betaalbare computerhulp door IT-studenten vanaf €13,99 per kwartier!',
+    description: 'Betaalbare computerhulp door IT-studenten vanaf €14,50 per kwartier!',
   },
   robots: {
     index: true,

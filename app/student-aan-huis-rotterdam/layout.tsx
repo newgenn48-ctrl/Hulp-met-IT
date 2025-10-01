@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Rotterdam | IT-Student Rotterdam | Computerhulp Thuis',
-  description: 'Student aan huis Rotterdam: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Ook avonden/weekenden. Bel 06-42827860!',
+  title: 'Student Rotterdam | Betaalbare computerhulp thuis',
+  description: 'Student aan huis Rotterdam: betaalbare computerhulp door IT-studenten. Ook avonden/weekenden. Bel ons!',
   keywords: [
     'student aan huis rotterdam',
     'student computerhulp rotterdam',
@@ -12,19 +12,22 @@ export const metadata: Metadata = {
     'betaalbare computer hulp rotterdam',
     'studenten computer service rotterdam',
     'rotterdam student IT hulp',
-    'computer student rotterdam',
-    'laptop reparatie rotterdam student'
+    'rotterdam computerhulp avond',
+    'rotterdam IT hulp weekend'
   ],
   openGraph: {
-    title: 'Student Aan Huis Rotterdam - €13,99 per kwartier + €10 voorrijkosten',
-    description: 'Student aan huis Rotterdam: betaalbare computerhulp door IT-studenten! €13,99 per kwartier + €10 voorrijkosten. Bel 06-42827860!',
+    title: 'Student Aan Huis Rotterdam',
+    description: 'Student aan huis Rotterdam: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     url: '/student-aan-huis-rotterdam',
+    type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Rotterdam - €13,99 per kwartier + €10 voorrijkosten',
-    description: 'Student aan huis Rotterdam: betaalbare computerhulp! €13,99 per kwartier + €10 voorrijkosten. Bel 06-42827860!',
+    title: 'Student Aan Huis Rotterdam',
+    description: 'Student aan huis Rotterdam: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {
     index: true,

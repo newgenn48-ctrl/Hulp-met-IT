@@ -1,19 +1,19 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Aan Huis Utrecht | IT-Specialist Utrecht | Computer Reparatie',
-  description: 'Computerhulp aan huis in Utrecht ✓ Ervaren specialisten ✓ Heel Utrecht ✓ Van Centrum tot Nieuwegein ✓ Transparante tarieven ✓ Bel 06-42827860',
+  title: 'Computerhulp Utrecht | Specialist komt naar u',
+  description: 'Computerhulp aan huis in Utrecht ✓ Ervaren specialisten ✓ Heel Utrecht ✓ Van Centrum tot Nieuwegein ✓ Transparante tarieven ✓ Bel ons',
   keywords: [
     'computerhulp aan huis utrecht',
     'computer reparatie utrecht',
     'laptop reparatie utrecht',
     'pc hulp utrecht',
-    'virus verwijdering utrecht',
-    'computerhulp utrecht centrum',
-    'computerhulp nieuwegein',
-    'computerhulp zeist',
+    'IT hulp utrecht',
     'computer specialist utrecht',
-    'IT hulp utrecht'
+    'utrecht computerhulp avond',
+    'utrecht IT hulp weekend',
+    'computerhulp utrecht spoed',
+    'betaalbare IT hulp utrecht'
   ],
   openGraph: {
     title: 'Computerhulp aan Huis Utrecht | Computer Specialist',

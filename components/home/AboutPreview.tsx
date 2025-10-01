@@ -1,7 +1,6 @@
 'use client'
 
 import { Card } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 import { Users, Award, Clock, Shield } from 'lucide-react'
 
@@ -19,21 +18,19 @@ export function AboutPreview() {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-5xl font-bold mb-6">
-              <span className="text-white">Waarom kiezen voor </span>
+              <span className="text-secondary-800">Waarom kiezen voor </span>
               <span className="text-gradient">Hulp met IT</span>
-              <span className="text-white">?</span>
+              <span className="text-secondary-800">?</span>
             </h2>
             
-            <p className="text-xl text-neural-300 leading-relaxed mb-8">
+            <p className="text-xl text-primary-700 leading-relaxed mb-8">
               Al meer dan 10 jaar helpen we mensen met hun computerproblemen. Onze uitgebreide ervaring 
               heeft ons uitgebouwd tot een van de meest betrouwbare computer services 
               voor particulieren in Nederland. Onze ervaren specialisten nemen de tijd voor u.
             </p>
 
-            <Link href="/over-ons">
-              <Button size="lg">
-                Meer over ons
-              </Button>
+            <Link href="/over-ons" className="btn-cta">
+              Meer over ons
             </Link>
           </div>
 
@@ -49,7 +46,7 @@ export function AboutPreview() {
                     <div className="text-2xl font-bold text-gradient mb-2">
                       {stat.number}
                     </div>
-                    <p className="text-sm text-neural-400">
+                    <p className="text-sm text-primary-600">
                       {stat.label}
                     </p>
                   </Card>

@@ -1,6 +1,8 @@
 import { FloatingElements } from '@/components/three/FloatingElements'
 import { ClientWrapper } from '@/components/ClientWrapper'
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
+import { FAQSection } from '@/components/ui/FAQSection'
 import Link from 'next/link'
 import { 
   MapPin, 
@@ -167,13 +169,86 @@ export default function CityPage({ params }: PageProps) {
     ],
   }
 
+  const breadcrumbItems = [
+    { name: 'Regio\'s', url: '/regios' },
+    { name: `Computerhulp ${city.name}`, url: `/regios/computerhulp-${city.slug}` }
+  ]
+
+  // Generate city-specific FAQ data
+  const cityFaqData = [
+    {
+      question: `Hoe snel kunnen jullie komen voor computerhulp in ${city.name}?`,
+      answer: `In ${city.name} zijn we meestal binnen 24-48 uur ter plaatse. Voor spoedgevallen proberen we vaak nog dezelfde dag langs te komen. Bel ons voor de snelste service in ${city.name} en omgeving.`
+    },
+    {
+      question: `Wat kost computerhulp aan huis in ${city.name}?`,
+      answer: `Onze tarieven in ${city.name} beginnen vanaf €28,50 per kwartier. Er zijn geen voorrijkosten binnen ${city.name}. We geven altijd een duidelijke kostenopgave vooraf.`
+    },
+    {
+      question: `Welke wijken in ${city.name} bedienen jullie?`,
+      answer: `We bedienen ${city.name} en alle omliggende wijken: ${city.serviceAreas.slice(0, 4).join(', ')} en meer. Onze IT-specialisten kennen heel ${city.name} door en door.`
+    },
+    {
+      question: `Kunnen jullie ook 's avonds en weekenden komen in ${city.name}?`,
+      answer: `Ja! In ${city.name} zijn we flexibel beschikbaar: doordeweeks tot 21:00, weekenden tot 18:00, en voor noodgevallen soms ook later. We passen ons aan uw schema aan.`
+    },
+    {
+      question: `Wat voor computerproblemen lossen jullie op in ${city.name}?`,
+      answer: `In ${city.name} helpen we met alle IT-problemen: langzame computers, virussen, internet/WiFi issues, printer problemen, e-mail instellingen, data recovery en software installaties. Geen probleem te groot of klein!`
+    }
+  ]
+
+  // Problem-focused content
+  const commonProblems = [
+    {
+      problem: "Computer doet het niet meer",
+      solution: `Vaak ligt dit aan een software probleem of een losse kabel. Onze experts in ${city.name} diagnosticeren snel de oorzaak.`,
+      urgent: true
+    },
+    {
+      problem: "Internet/WiFi werkt niet",
+      solution: `WiFi problemen komen veel voor in ${city.name}. We controleren router, instellingen en signaalsterkte voor optimale verbinding.`,
+      urgent: true
+    },
+    {
+      problem: "Computer is heel langzaam",
+      solution: `Langzame computers zijn vaak te redden! We ruimen op, verwijderen virussen en optimaliseren de prestaties.`,
+      urgent: false
+    },
+    {
+      problem: "Printer print niet",
+      solution: `Printer problemen lossen we snel op: driver updates, cartridge issues, en WiFi-printing instellen.`,
+      urgent: false
+    }
+  ]
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": cityFaqData.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          })
+        }}
+      />
+
+      <Breadcrumbs items={breadcrumbItems} />
+
       <div className="relative min-h-screen">
         <ClientWrapper>
           <FloatingElements />
@@ -191,11 +266,11 @@ export default function CityPage({ params }: PageProps) {
                   <h1 className="text-4xl lg:text-6xl font-bold text-gradient">
                     Computerhulp {city.name}
                   </h1>
-                  <p className="text-lg text-neural-300">{city.population} inwoners</p>
+                  <p className="text-lg text-secondary-700">{city.population} inwoners</p>
                 </div>
               </div>
               
-              <p className="text-xl text-neural-300 max-w-4xl mx-auto leading-relaxed mb-8">
+              <p className="text-xl text-secondary-700 max-w-4xl mx-auto leading-relaxed mb-8">
                 {city.longDescription}
               </p>
               
@@ -204,11 +279,9 @@ export default function CityPage({ params }: PageProps) {
                   <Phone className="w-5 h-5 mr-2" />
                   Direct bellen - Snelle service
                 </a>
-                <Link href="/afspraak">
-                  <button className="btn-secondary text-lg px-8 py-4">
-                    Online afspraak maken
-                    <ArrowRight className="w-5 h-5 ml-2" />
-                  </button>
+                <Link href="/afspraak" className="btn-secondary text-lg px-8 py-4">
+                  Online afspraak maken
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </div>
             </div>
@@ -222,10 +295,10 @@ export default function CityPage({ params }: PageProps) {
                     <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="w-6 h-6 text-white" />
                     </div>
-                    <h3 className="text-lg font-semibold text-white mb-2">
+                    <h3 className="text-lg font-semibold text-secondary-800 mb-2">
                       {benefit.title}
                     </h3>
-                    <p className="text-neural-300 text-sm leading-relaxed">
+                    <p className="text-secondary-700 text-sm leading-relaxed">
                       {benefit.description}
                     </p>
                   </div>
@@ -236,14 +309,14 @@ export default function CityPage({ params }: PageProps) {
             {/* Service Areas */}
             <div className="mb-8">
               <div className="card-3d">
-                <h2 className="text-3xl font-bold text-white mb-8 text-center">
+                <h2 className="text-3xl font-bold text-secondary-800 mb-8 text-center">
                   Waar we actief zijn in {city.name}
                 </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {city.serviceAreas.map((area, index) => (
                     <div key={index} className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-colors">
                       <CheckCircle className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                      <span className="text-neural-300">{area}</span>
+                      <span className="text-secondary-700">{area}</span>
                     </div>
                   ))}
                 </div>
@@ -252,23 +325,70 @@ export default function CityPage({ params }: PageProps) {
 
             {/* Services Preview */}
             <div className="mb-8">
-              <h2 className="text-4xl font-bold text-center text-white mb-4">
+              <h2 className="text-4xl font-bold text-center text-secondary-800 mb-4">
                 Onze IT-Diensten in {city.name}
               </h2>
-              <p className="text-lg text-neural-300 text-center max-w-3xl mx-auto mb-8">
+              <p className="text-lg text-secondary-700 text-center max-w-3xl mx-auto mb-8">
                 Van eenvoudige installaties tot complexe reparaties - onze IT-specialisten 
                 in {city.name} helpen u met alle computerproblemen.
               </p>
               <ServicesPreview />
             </div>
 
+            {/* Problem-Focused Content */}
+            <div className="mb-8">
+              <div className="card-3d">
+                <h2 className="text-3xl font-bold text-secondary-800 mb-8 text-center">
+                  Computer Problemen in {city.name}? Wij Helpen Direct!
+                </h2>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  {commonProblems.map((item, index) => (
+                    <div key={index} className={`p-6 rounded-lg border-l-4 ${item.urgent ? 'border-red-500 bg-red-50' : 'border-blue-500 bg-blue-50'}`}>
+                      <h3 className="text-lg font-semibold text-secondary-800 mb-3 flex items-center">
+                        {item.urgent && <span className="text-red-500 mr-2">🚨</span>}
+                        {item.problem}
+                      </h3>
+                      <p className="text-secondary-700 mb-4">{item.solution}</p>
+                      <div className="flex items-center justify-between">
+                        <span className={`text-sm font-medium ${item.urgent ? 'text-red-600' : 'text-blue-600'}`}>
+                          {item.urgent ? 'Spoedhulp beschikbaar' : 'Snelle oplossing'}
+                        </span>
+                        <a href="tel:+31642827860" className="text-primary-600 hover:text-primary-700 font-medium">
+                          Direct bellen →
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center mt-8">
+                  <h3 className="text-xl font-semibold text-secondary-800 mb-4">
+                    Uw probleem staat er niet bij?
+                  </h3>
+                  <p className="text-secondary-700 mb-6">
+                    Geen zorgen! Onze IT-experts in {city.name} hebben oplossingen voor alle computerproblemen.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="tel:+31642827860" className="btn-cta">
+                      <Phone className="w-5 h-5 mr-2" />
+                      Bel Nu - Gratis Advies
+                    </a>
+                    <Link href="/afspraak" className="btn-secondary">
+                      Plan Online Afspraak
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Why Choose Us */}
             <div className="mb-8">
               <div className="card-3d">
-                <h2 className="text-3xl font-bold text-white mb-8 text-center">
+                <h2 className="text-3xl font-bold text-secondary-800 mb-8 text-center">
                   Waarom kiezen voor Hulp met IT in {city.name}?
                 </h2>
-                
+
                 <div className="grid md:grid-cols-2 gap-8">
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
@@ -276,58 +396,58 @@ export default function CityPage({ params }: PageProps) {
                         <Zap className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white mb-2">
+                        <h3 className="text-lg font-semibold text-secondary-800 mb-2">
                           Lokale Expertise
                         </h3>
-                        <p className="text-neural-300">
-                          Onze IT-specialisten kennen {city.name} door en door en begrijpen 
+                        <p className="text-secondary-700">
+                          Onze IT-specialisten kennen {city.name} door en door en begrijpen
                           de specifieke behoeften van inwoners en bedrijven.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start space-x-4">
                       <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Award className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white mb-2">
+                        <h3 className="text-lg font-semibold text-secondary-800 mb-2">
                           Bewezen Track Record
                         </h3>
-                        <p className="text-neural-300">
-                          Vele tevreden klanten in {city.name} en omgeving vertrouwen 
+                        <p className="text-secondary-700">
+                          Vele tevreden klanten in {city.name} en omgeving vertrouwen
                           al jaren op onze betrouwbare IT-service.
                         </p>
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
                       <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Clock className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white mb-2">
+                        <h3 className="text-lg font-semibold text-secondary-800 mb-2">
                           Snelle Response
                         </h3>
-                        <p className="text-neural-300">
-                          In {city.name} zijn we meestal binnen 24-48 uur ter plaatse, 
+                        <p className="text-secondary-700">
+                          In {city.name} zijn we meestal binnen 24-48 uur ter plaatse,
                           vaak zelfs nog sneller voor spoedgevallen.
                         </p>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-start space-x-4">
                       <div className="w-10 h-10 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Shield className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-white mb-2">
+                        <h3 className="text-lg font-semibold text-secondary-800 mb-2">
                           Veilig & Betrouwbaar
                         </h3>
-                        <p className="text-neural-300">
-                          Volledig verzekerd, gescreende medewerkers en garantie op al ons werk. 
+                        <p className="text-secondary-700">
+                          Volledig verzekerd, gescreende medewerkers en garantie op al ons werk.
                           Uw apparaten en data zijn veilig bij ons.
                         </p>
                       </div>
@@ -336,6 +456,13 @@ export default function CityPage({ params }: PageProps) {
                 </div>
               </div>
             </div>
+
+            {/* FAQ Section */}
+            <FAQSection
+              title={`Veelgestelde Vragen over Computerhulp in ${city.name}`}
+              subtitle={`Antwoorden op de meest gestelde vragen over IT-service in ${city.name} en omgeving`}
+              faqs={cityFaqData}
+            />
 
           </div>
         </section>

@@ -1,5 +1,6 @@
-import { InteractiveOrb } from '@/components/three/InteractiveOrb'
+import { FloatingElements } from '@/components/three/FloatingElements'
 import { ClientWrapper } from '@/components/ClientWrapper'
+import { NoSSR } from '@/components/NoSSR'
 import { 
   Phone, 
   Mail, 
@@ -11,7 +12,7 @@ import {
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact - Hulp met IT | Direct Bereikbaar voor al uw IT-Vragen',
+  title: 'Contact | Direct bereikbaar | Hele dag',
   description: 'Neem contact op met Hulp met IT voor al uw computervragen. ✓ Direct telefonisch bereikbaar ✓ Snelle response ✓ Vrijblijvend advies ✓ Landelijk beschikbaar',
   keywords: [
     'contact hulp met IT',
@@ -66,7 +67,7 @@ const faqs = [
   },
   {
     question: 'Wat zijn de kosten?',
-    answer: 'We hanteren transparante tarieven van €13,99 per kwartier. Minimaal 3 kwartier (€41,97) + €10 reiskosten eenmalig. Geen verrassingen achteraf!'
+    answer: 'We hanteren transparante tarieven van €14,50 per kwartier. Minimaal 3 kwartier (€41,97) + €10 reiskosten eenmalig. Geen verrassingen achteraf!'
   },
   {
     question: 'Welke betalingsmogelijkheden accepteren jullie?',
@@ -82,9 +83,11 @@ export default function ContactPage() {
   return (
     <>      
       <div className="relative min-h-screen">
-        <ClientWrapper>
-          <InteractiveOrb />
-        </ClientWrapper>
+        <NoSSR fallback={<div className="absolute inset-0 pointer-events-none" />}>
+          <ClientWrapper>
+            <FloatingElements />
+          </ClientWrapper>
+        </NoSSR>
         
         <section className="hero-section relative z-10 md:z-auto">
           <div className="max-w-6xl mx-auto container-padding">
@@ -92,7 +95,7 @@ export default function ContactPage() {
               <h1 className="text-5xl lg:text-7xl font-bold text-gradient mb-6">
                 Contact
               </h1>
-              <p className="text-xl text-neural-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl text-secondary-700 max-w-3xl mx-auto leading-relaxed">
                 Heeft u vragen over onze services of wilt u direct hulp? 
                 We staan klaar om u te helpen via meerdere kanalen.
               </p>
@@ -101,7 +104,7 @@ export default function ContactPage() {
             <div className="grid lg:grid-cols-2 gap-8 mb-8">
               <div>
                 <div className="card-3d">
-                  <h3 className="text-xl font-semibold text-white mb-4">
+                  <h3 className="text-xl font-semibold text-secondary-800 mb-4">
                     Direct Contact
                   </h3>
                   <div className="space-y-4">
@@ -118,13 +121,13 @@ export default function ContactPage() {
                                 <IconComponent className="w-5 h-5 text-white" />
                               </div>
                               <div>
-                                <h4 className="font-medium text-white mb-1">
+                                <h4 className="font-medium text-secondary-800 mb-1">
                                   {item.title}
                                 </h4>
-                                <p className="text-primary-300 mb-1">
+                                <p className="text-secondary-700 mb-1">
                                   {item.value}
                                 </p>
-                                <p className="text-sm text-neural-400">
+                                <p className="text-sm text-primary-600">
                                   {item.description}
                                 </p>
                               </div>
@@ -135,13 +138,13 @@ export default function ContactPage() {
                                 <IconComponent className="w-5 h-5 text-white" />
                               </div>
                               <div>
-                                <h4 className="font-medium text-white mb-1">
+                                <h4 className="font-medium text-secondary-800 mb-1">
                                   {item.title}
                                 </h4>
-                                <p className="text-neutral-300 mb-1">
+                                <p className="text-secondary-700 mb-1">
                                   {item.value}
                                 </p>
-                                <p className="text-sm text-neural-400">
+                                <p className="text-sm text-primary-600">
                                   {item.description}
                                 </p>
                               </div>
@@ -156,26 +159,26 @@ export default function ContactPage() {
 
               <div>
                 <div className="card-3d">
-                  <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
+                  <h3 className="text-xl font-semibold text-secondary-800 mb-4 flex items-center">
                     <Clock className="w-5 h-5 mr-2" />
                     Openingstijden
                   </h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-neural-300">Maandag - Vrijdag</span>
-                      <span className="text-white">8:00 - 21:00</span>
+                      <span className="text-secondary-700">Maandag - Vrijdag</span>
+                      <span className="text-secondary-800">8:00 - 21:00</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-neural-300">Zaterdag</span>
-                      <span className="text-white">9:00 - 18:00</span>
+                      <span className="text-secondary-700">Zaterdag</span>
+                      <span className="text-secondary-800">9:00 - 18:00</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-neural-300">Zondag</span>
-                      <span className="text-white">10:00 - 17:00</span>
+                      <span className="text-secondary-700">Zondag</span>
+                      <span className="text-secondary-800">10:00 - 17:00</span>
                     </div>
                   </div>
                   <div className="mt-4 p-3 bg-primary-500/10 rounded-lg">
-                    <p className="text-sm text-primary-300 flex items-start">
+                    <p className="text-sm text-secondary-700 flex items-start">
                       <Headphones className="w-4 h-4 mr-2 mt-0.5 flex-shrink-0" />
                       Voor spoedgevallen zijn we ook buiten kantoortijden bereikbaar via WhatsApp
                     </p>
@@ -185,16 +188,16 @@ export default function ContactPage() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-4xl font-bold text-center text-white mb-8">
+              <h2 className="text-4xl font-bold text-center text-secondary-800 mb-8">
                 Veelgestelde Vragen
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 {faqs.map((faq, index) => (
                   <div key={index} className="card-3d">
-                    <h3 className="text-lg font-semibold text-white mb-3">
+                    <h3 className="text-lg font-semibold text-secondary-800 mb-3">
                       {faq.question}
                     </h3>
-                    <p className="text-neural-300 leading-relaxed">
+                    <p className="text-secondary-700 leading-relaxed">
                       {faq.answer}
                     </p>
                   </div>
@@ -204,10 +207,10 @@ export default function ContactPage() {
 
             <div className="text-center">
               <div className="card-3d max-w-2xl mx-auto">
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-3xl font-bold text-secondary-800 mb-4">
                   Liever direct een afspraak maken?
                 </h2>
-                <p className="text-neural-300 mb-6">
+                <p className="text-secondary-700 mb-6">
                   Via ons online afspraaksysteem kunt u direct een geschikte tijd inplannen.
                   Binnen enkele minuten heeft u bevestiging!
                 </p>

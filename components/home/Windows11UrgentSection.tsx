@@ -14,21 +14,21 @@ export function Windows11UrgentSection() {
           
           <div className="relative z-10">
             <div className="text-center mb-8">
-              <div className="inline-flex items-center bg-orange-500/20 text-orange-100 px-6 py-3 rounded-full text-lg font-bold mb-4 animate-pulse border-2 border-orange-400/40">
+              <div className="inline-flex items-center bg-orange-500/20 text-orange-800 px-6 py-3 rounded-full text-lg font-bold mb-4 animate-pulse border-2 border-orange-400/40">
                 <AlertTriangle className="w-5 h-5 mr-3" />
                 LET OP: Windows 10 Support Eindigt Binnenkort
               </div>
               
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
                 Windows 10 stopt op <span className="text-red-400">14 oktober 2025</span>
                 <br />
                 <span className="text-gradient">Al klaar voor de overstap?</span>
               </h2>
               
-              <p className="text-xl text-neural-300 max-w-3xl mx-auto leading-relaxed mb-6">
+              <p className="text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed mb-6">
                 Microsoft stopt binnenkort met beveiligingsupdates voor Windows 10. 
-                <span className="text-white font-semibold"> Onze Windows 11 Overstap Service</span> zorgt 
-                voor een zorgeloze upgrade - <strong className="text-primary-300">inclusief backup en nazorg!</strong>
+                <span className="text-secondary-800 font-semibold"> Onze Windows 11 Overstap Service</span> zorgt 
+                voor een zorgeloze upgrade - <strong className="text-primary-700">inclusief backup en nazorg!</strong>
               </p>
             </div>
             
@@ -38,8 +38,8 @@ export function Windows11UrgentSection() {
                   <Shield className="w-8 h-8 text-red-400" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-white">Geen Updates Meer</div>
-                  <div className="text-sm text-neural-300">Kwetsbaar voor virussen</div>
+                  <div className="font-semibold text-secondary-800">Geen Updates Meer</div>
+                  <div className="text-sm text-primary-700">Kwetsbaar voor virussen</div>
                 </div>
               </div>
               
@@ -48,8 +48,8 @@ export function Windows11UrgentSection() {
                   <Clock className="w-8 h-8 text-orange-400" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-white">Beperkte Tijd</div>
-                  <div className="text-sm text-neural-300">Plan nu je overstap</div>
+                  <div className="font-semibold text-secondary-800">Beperkte Tijd</div>
+                  <div className="text-sm text-primary-700">Plan nu je overstap</div>
                 </div>
               </div>
               
@@ -58,8 +58,8 @@ export function Windows11UrgentSection() {
                   <AlertTriangle className="w-8 h-8 text-yellow-400" />
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-white">Veiligheidsrisico</div>
-                  <div className="text-sm text-neural-300">Onbeveiligde computer</div>
+                  <div className="font-semibold text-secondary-800">Veiligheidsrisico</div>
+                  <div className="text-sm text-primary-700">Onbeveiligde computer</div>
                 </div>
               </div>
             </div>
@@ -83,8 +83,8 @@ export function Windows11UrgentSection() {
             
             <div className="mt-6 text-center">
               <div className="inline-block bg-green-500/20 border border-green-500/30 rounded-lg px-4 py-2">
-                <p className="text-green-300 text-sm font-medium">
-                  ✅ Boek voor eind december 2025 en ontvang <span className="text-green-200 font-semibold">20% korting</span>
+                <p className="text-green-800 text-sm font-medium">
+                  ✅ Boek voor eind december 2025 en ontvang <span className="text-green-900 font-semibold">20% korting</span>
                 </p>
               </div>
             </div>

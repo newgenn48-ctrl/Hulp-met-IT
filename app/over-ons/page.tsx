@@ -1,5 +1,6 @@
 import { ParticleField } from '@/components/three/ParticleField'
 import { ClientWrapper } from '@/components/ClientWrapper'
+import { ServicesGrid } from '@/components/services/ServicesGrid'
 import Link from 'next/link'
 import { 
   Users, 
@@ -14,7 +15,7 @@ import {
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Over Ons - Hulp met IT | Ervaren IT-Specialisten aan Huis',
+  title: 'Over Ons | 10 jaar ervaring | Betrouwbaar',
   description: 'Leer meer over Hulp met IT: wie we zijn, onze missie en waarom mensen ons vertrouwen voor hun IT-problemen. Persoonlijke service met 10+ jaar ervaring.',
   keywords: [
     'over hulp met IT',
@@ -78,7 +79,7 @@ export default function OverOnsPage() {
               <h1 className="text-4xl lg:text-6xl font-bold text-gradient mb-4">
                 Over Hulp met IT
               </h1>
-              <p className="text-lg text-neural-300 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-secondary-700 max-w-3xl mx-auto leading-relaxed">
                 Al meer dan 10 jaar helpen wij mensen met hun IT-problemen. 
                 Wat begon als een klein initiatief, is uitgegroeid tot de meest betrouwbare 
                 IT-service voor particulieren in Nederland.
@@ -87,15 +88,15 @@ export default function OverOnsPage() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="card-3d">
-                <h2 className="text-3xl font-bold text-white mb-6">
+                <h2 className="text-3xl font-bold text-secondary-800 mb-6">
                   Onze Missie
                 </h2>
-                <p className="text-neural-300 leading-relaxed mb-6">
+                <p className="text-secondary-700 leading-relaxed mb-6">
                   Wij geloven dat technologie het leven moet verrijken, niet compliceren. 
                   Onze missie is om IT-ondersteuning toegankelijk, begrijpelijk en 
                   betaalbaar te maken voor iedereen.
                 </p>
-                <p className="text-neural-300 leading-relaxed">
+                <p className="text-secondary-700 leading-relaxed">
                   Door het inzetten van ervaren IT-specialisten creëren we een 
                   unieke service: klanten krijgen kwalitatieve hulp tegen een 
                   eerlijke prijs, met persoonlijke aandacht en vakkundigheid.
@@ -103,17 +104,17 @@ export default function OverOnsPage() {
               </div>
 
               <div className="card-3d">
-                <h2 className="text-3xl font-bold text-white mb-6">
+                <h2 className="text-3xl font-bold text-secondary-800 mb-6">
                   Onze Aanpak
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-primary-400 mr-3 mt-1" />
                     <div>
-                      <h3 className="font-semibold text-white mb-1">
+                      <h3 className="font-semibold text-secondary-800 mb-1">
                         Up-to-date Kennis
                       </h3>
-                      <p className="text-neural-300">
+                      <p className="text-secondary-700">
                         Onze specialisten blijven continu op de hoogte van nieuwe technologieën
                       </p>
                     </div>
@@ -122,10 +123,10 @@ export default function OverOnsPage() {
                   <div className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-primary-400 mr-3 mt-1" />
                     <div>
-                      <h3 className="font-semibold text-white mb-1">
+                      <h3 className="font-semibold text-secondary-800 mb-1">
                         Innovatieve Oplossingen
                       </h3>
-                      <p className="text-neural-300">
+                      <p className="text-secondary-700">
                         Creatieve en moderne aanpak voor alle IT-uitdagingen
                       </p>
                     </div>
@@ -134,10 +135,10 @@ export default function OverOnsPage() {
                   <div className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-primary-400 mr-3 mt-1" />
                     <div>
-                      <h3 className="font-semibold text-white mb-1">
+                      <h3 className="font-semibold text-secondary-800 mb-1">
                         Eerlijke Prijzen
                       </h3>
-                      <p className="text-neural-300">
+                      <p className="text-secondary-700">
                         Kwaliteit tegen een faire prijs zonder verrassingen
                       </p>
                     </div>
@@ -146,10 +147,10 @@ export default function OverOnsPage() {
                   <div className="flex items-start">
                     <CheckCircle className="w-5 h-5 text-primary-400 mr-3 mt-1" />
                     <div>
-                      <h3 className="font-semibold text-white mb-1">
+                      <h3 className="font-semibold text-secondary-800 mb-1">
                         Duidelijke Communicatie
                       </h3>
-                      <p className="text-neural-300">
+                      <p className="text-secondary-700">
                         Complexe technische zaken uitgelegd in begrijpelijke taal
                       </p>
                     </div>
@@ -159,7 +160,7 @@ export default function OverOnsPage() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-center text-white mb-8">
+              <h2 className="text-3xl font-bold text-center text-secondary-800 mb-8">
                 Onze Cijfers
               </h2>
               <div className="grid md:grid-cols-4 gap-6">
@@ -173,7 +174,7 @@ export default function OverOnsPage() {
                       <div className="text-3xl font-bold text-gradient mb-2">
                         {stat.number}
                       </div>
-                      <p className="text-neural-400">
+                      <p className="text-primary-600">
                         {stat.label}
                       </p>
                     </div>
@@ -183,7 +184,7 @@ export default function OverOnsPage() {
             </div>
 
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-center text-white mb-8">
+              <h2 className="text-3xl font-bold text-center text-secondary-800 mb-8">
                 Onze Waarden
               </h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -196,10 +197,10 @@ export default function OverOnsPage() {
                           <IconComponent className="w-6 h-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="text-xl font-semibold text-white mb-3">
+                          <h3 className="text-xl font-semibold text-secondary-800 mb-3">
                             {value.title}
                           </h3>
-                          <p className="text-neural-300 leading-relaxed">
+                          <p className="text-secondary-700 leading-relaxed">
                             {value.description}
                           </p>
                         </div>
@@ -213,10 +214,10 @@ export default function OverOnsPage() {
 
             <div className="text-center">
               <div className="card-3d max-w-2xl mx-auto">
-                <h2 className="text-3xl font-bold text-white mb-4">
+                <h2 className="text-3xl font-bold text-secondary-800 mb-4">
                   Klaar om kennis te maken?
                 </h2>
-                <p className="text-neural-300 mb-6">
+                <p className="text-secondary-700 mb-6">
                   We helpen u graag met al uw IT-vragen. 
                   Maak vrijblijvend een afspraak of neem direct contact op.
                 </p>
@@ -232,6 +233,11 @@ export default function OverOnsPage() {
             </div>
           </div>
         </section>
+
+        <ServicesGrid
+          title="Wat We Voor U Kunnen Doen"
+          maxItems={6}
+        />
       </div>
     </>
   )

@@ -1,29 +1,40 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Tilburg | IT-Student Tilburg | Computerhulp Thuis',
-  description: 'Computerproblemen in Tilburg? Onze IT-studenten komen naar je toe! Betaalbare hulp vanaf €13,99 per kwartier. Snel, vakkundig en lokaal.',
+  title: 'Student Tilburg | Betaalbare computerhulp thuis',
+  description: 'Computerproblemen in Tilburg? Onze IT-studenten komen naar je toe! Betaalbare hulp Snel, vakkundig en lokaal.',
   keywords: [
-    'computerhulp Tilburg',
-    'IT service Tilburg',
-    'laptop reparatie Tilburg',
-    'student aan huis Tilburg',
-    'IT hulp aan huis Tilburg',
-    'computer problemen Tilburg',
-    'technische ondersteuning Tilburg'
+    'student aan huis tilburg',
+    'student computerhulp tilburg',
+    'betaalbare computerhulp tilburg',
+    'IT student tilburg',
+    'computer reparatie tilburg student',
+    'betaalbare computer hulp tilburg',
+    'studenten computer service tilburg',
+    'tilburg student IT hulp',
+    'tilburg computerhulp avond',
+    'tilburg IT hulp weekend'
   ],
   openGraph: {
     title: 'Student Aan Huis Tilburg | Betaalbare Computerhulp',
     description: 'IT-studenten komen naar je toe in Tilburg. Betaalbare tarieven, vakkundige hulp.',
+    images: ['/og-image.webp'],
+    url: '/student-aan-huis-tilburg',
     type: 'website',
     locale: 'nl_NL',
+    siteName: 'Hulp met IT'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Student Aan Huis Tilburg | Betaalbare Computerhulp',
+    description: 'IT-studenten komen naar je toe in Tilburg. Betaalbare tarieven, vakkundige hulp.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/student-aan-huis-tilburg'
+    canonical: '/student-aan-huis-tilburg'
   }
 }
 

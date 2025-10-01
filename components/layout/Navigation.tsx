@@ -23,8 +23,8 @@ export function Navigation() {
           className={cn(
             'relative text-lg font-medium transition-all duration-300 hover:text-primary-300 group',
             pathname === item.href
-              ? 'text-white'
-              : 'text-neural-300'
+              ? 'text-secondary-800'
+              : 'text-primary-700'
           )}
         >
           {item.name}

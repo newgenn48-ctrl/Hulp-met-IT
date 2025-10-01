@@ -85,20 +85,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }))
 
-  // Student Aan Huis city pages
-  const studentAanHuisPages = cities.map(city => ({
-    url: `${baseUrl}/student-aan-huis-${city.slug}`,
+  // Student Aan Huis city pages - Only include cities that have actual pages
+  const studentAanHuisCities = [
+    'alphen-aan-den-rijn', 'amersfoort', 'amsterdam', 'arnhem', 'baarn', 'blaricum', 'breda',
+    'bussum', 'capelle-aan-den-ijssel', 'delft', 'den-bosch', 'den-haag', 'dordrecht',
+    'eindhoven', 'enschede', 'gouda', 'groningen', 'haarlem', 'hilversum', 'huizen', 'katwijk',
+    'laren', 'leiden', 'leidschendam-voorburg', 'middelburg', 'naarden', 'nijmegen', 'rotterdam',
+    'schiedam', 'soest', 'tilburg', 'utrecht', 'vlaardingen', 'weesp', 'zoetermeer', 'zwolle'
+  ]
+
+  const studentAanHuisPages = studentAanHuisCities.map(slug => ({
+    url: `${baseUrl}/student-aan-huis-${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.9,
+    priority: 0.8,
   }))
 
-  // Computerhulp Aan Huis city pages
-  const computerhulpAanHuisPages = cities.map(city => ({
-    url: `${baseUrl}/computerhulp-aan-huis-${city.slug}`,
+  // Computerhulp Aan Huis city pages - Only include cities that have actual pages
+  const computerhulpAanHuisCities = [
+    'almere', 'alphen-aan-den-rijn', 'amersfoort', 'amsterdam', 'arnhem', 'baarn', 'blaricum',
+    'breda', 'bussum', 'capelle-aan-den-ijssel', 'delft', 'den-bosch', 'den-haag',
+    'dordrecht', 'eindhoven', 'enschede', 'gouda', 'groningen', 'haarlem',
+    'hilversum', 'huizen', 'katwijk', 'laren', 'leiden', 'leidschendam-voorburg', 'middelburg', 'naarden', 'nijmegen',
+    'rotterdam', 'schiedam', 'soest', 'tilburg', 'utrecht', 'vlaardingen', 'weesp', 'zoetermeer', 'zwolle'
+  ]
+
+  const computerhulpAanHuisPages = computerhulpAanHuisCities.map(slug => ({
+    url: `${baseUrl}/computerhulp-aan-huis-${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.9,
+    priority: 0.8,
   }))
 
   return [...staticPages, ...servicePages, ...cityPages, ...studentAanHuisPages, ...computerhulpAanHuisPages]

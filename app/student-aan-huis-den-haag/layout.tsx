@@ -1,29 +1,40 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Den Haag | IT-Student Den Haag | Computerhulp Thuis',
-  description: 'Computerproblemen in Den Haag? Onze IT-studenten komen naar je toe! Betaalbare hulp vanaf €13,99 per kwartier. Snel, vakkundig en lokaal.',
+  title: 'Student Den Haag | Betaalbare computerhulp thuis',
+  description: 'Computerproblemen in Den Haag? Onze IT-studenten komen naar je toe! Betaalbare hulp Snel, vakkundig en lokaal.',
   keywords: [
-    'computerhulp Den Haag',
-    'IT service Den Haag',
-    'laptop reparatie Den Haag',
-    'student aan huis Den Haag',
-    'IT hulp aan huis Den Haag',
-    'computer problemen Den Haag',
-    'technische ondersteuning Den Haag'
+    'student aan huis den haag',
+    'student computerhulp den haag',
+    'betaalbare computerhulp den haag',
+    'IT student den haag',
+    'computer reparatie den haag student',
+    'betaalbare computer hulp den haag',
+    'studenten computer service den haag',
+    'den haag student IT hulp',
+    'den haag computerhulp avond',
+    'den haag IT hulp weekend'
   ],
   openGraph: {
     title: 'Student Aan Huis Den Haag | Betaalbare Computerhulp',
     description: 'IT-studenten komen naar je toe in Den Haag. Betaalbare tarieven, vakkundige hulp.',
+    images: ['/og-image.webp'],
+    url: '/student-aan-huis-den-haag',
     type: 'website',
     locale: 'nl_NL',
+    siteName: 'Hulp met IT'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Student Aan Huis Den Haag | Betaalbare Computerhulp',
+    description: 'IT-studenten komen naar je toe in Den Haag. Betaalbare tarieven, vakkundige hulp.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/student-aan-huis-den-haag'
+    canonical: '/student-aan-huis-den-haag'
   }
 }
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 import { appointmentSchema, type AppointmentFormData } from '@/lib/validation'
 
 // Extended form data with security fields
@@ -51,6 +51,7 @@ export default function AppointmentFormSecure() {
   const [errorMessage, setErrorMessage] = useState('')
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({})
   const [rateLimitExceeded, setRateLimitExceeded] = useState(false)
+  const formRef = useRef<HTMLDivElement>(null)
 
   const handleInputChange = (field: keyof ExtendedFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -63,6 +64,17 @@ export default function AppointmentFormSecure() {
       })
     }
   }
+
+  // Scroll to top of form when success message is shown
+  useEffect(() => {
+    if (submitStatus === 'success' && formRef.current) {
+      formRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      })
+    }
+  }, [submitStatus])
 
   // Real-time validation for specific fields
   const validateField = (field: keyof ExtendedFormData, value: string): string => {
@@ -236,7 +248,7 @@ export default function AppointmentFormSecure() {
 
   if (submitStatus === 'success') {
     return (
-      <div className="max-w-2xl mx-auto p-8">
+      <div ref={formRef} className="max-w-2xl mx-auto p-8">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 text-center">
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -273,23 +285,23 @@ export default function AppointmentFormSecure() {
   return (
     <>
 
-      <div className="max-w-2xl mx-auto p-8">
+      <div ref={formRef} className="max-w-2xl mx-auto p-8">
       <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
         {/* Progress indicator */}
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6">
+        <div className="bg-gradient-to-r from-blue-700 to-blue-700 px-8 py-6">
           <div className="flex items-center justify-between text-white">
             <div className="flex space-x-4">
               <div className={`flex items-center space-x-2 ${currentStep >= 1 ? 'opacity-100' : 'opacity-50'}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${currentStep >= 1 ? 'bg-white text-blue-600' : 'bg-blue-500'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${currentStep >= 1 ? 'bg-white text-blue-600' : 'bg-gradient-to-r from-primary-500 to-accent-500'}`}>
                   1
                 </div>
                 <span className="text-sm font-medium">Gegevens</span>
               </div>
               <div className="flex items-center">
-                <div className={`w-8 h-0.5 ${currentStep >= 2 ? 'bg-white' : 'bg-blue-500'}`}></div>
+                <div className={`w-8 h-0.5 ${currentStep >= 2 ? 'bg-white' : 'bg-gradient-to-r from-primary-500 to-accent-500'}`}></div>
               </div>
               <div className={`flex items-center space-x-2 ${currentStep >= 2 ? 'opacity-100' : 'opacity-50'}`}>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${currentStep >= 2 ? 'bg-white text-blue-600' : 'bg-blue-500'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${currentStep >= 2 ? 'bg-white text-blue-600' : 'bg-gradient-to-r from-primary-500 to-accent-500'}`}>
                   2
                 </div>
                 <span className="text-sm font-medium">Afspraak</span>
@@ -491,7 +503,7 @@ export default function AppointmentFormSecure() {
                   type="button"
                   onClick={nextStep}
                   disabled={!validateStep(1)}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                  className="bg-gradient-to-r from-blue-700 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
                 >
                   <span>Volgende</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -682,7 +694,7 @@ export default function AppointmentFormSecure() {
                   type="button"
                   onClick={handleSubmit}
                   disabled={isLoading}
-                  className="bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
+                  className="bg-gradient-to-r from-blue-700 to-blue-700 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center space-x-2"
                 >
                   {isLoading ? (
                     <>

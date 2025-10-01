@@ -101,7 +101,9 @@ function generateReference(): string {
 async function sendEmail(to: string, subject: string, html: string, reference: string, isAdmin = false) {
   // Check if we have SMTP configuration
   if (!process.env.SMTP_PASS) {
-    console.warn('⚠️  SMTP not configured, email will not be sent')
+    if (process.env.NODE_ENV === 'development') {
+      console.log('DEBUG: SMTP not configured, email will not be sent')
+    }
     return {
       success: false,
       error: new Error('SMTP not configured. Please set SMTP environment variables.')
@@ -795,11 +797,11 @@ export async function POST(request: NextRequest) {
     // Check if email is configured
     if (!process.env.SMTP_PASS) {
       logSecurityEvent('EMAIL_NOT_CONFIGURED', { reference }, ip)
-      console.warn('Email not configured - appointment saved locally only')
 
       // Log appointment data for manual processing
       if (process.env.NODE_ENV === 'development') {
-        console.log('APPOINTMENT REQUEST:', {
+        console.log('DEBUG: Email not configured - appointment saved locally only')
+        console.log('DEBUG: APPOINTMENT REQUEST:', {
           reference,
           timestamp: new Date().toISOString(),
           customer: `${sanitizedData.firstName} ${sanitizedData.lastName}`,
@@ -854,7 +856,9 @@ export async function POST(request: NextRequest) {
         customerEmailSent = true
       } else {
         customerError = customerResult.error as Error
-        console.error('❌ Customer email failed:', customerResult.error)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('DEBUG: Customer email failed:', customerResult.error)
+        }
         logSecurityEvent('CUSTOMER_EMAIL_FAILED', {
           error: customerResult.error instanceof Error ? customerResult.error.message : 'Unknown error',
           customerEmail: data.email,
@@ -878,7 +882,9 @@ export async function POST(request: NextRequest) {
         adminEmailSent = true
       } else {
         adminError = adminResult.error as Error
-        console.error('❌ Admin email failed:', adminResult.error)
+        if (process.env.NODE_ENV === 'development') {
+          console.log('DEBUG: Admin email failed:', adminResult.error)
+        }
         logSecurityEvent('ADMIN_EMAIL_FAILED', {
           error: adminResult.error instanceof Error ? adminResult.error.message : 'Unknown error',
           reference
@@ -909,7 +915,9 @@ export async function POST(request: NextRequest) {
         error: error instanceof Error ? error.message : 'Unknown error',
         reference
       }, ip)
-      console.error('❌ Critical email sending error:', error)
+      if (process.env.NODE_ENV === 'development') {
+        console.log('DEBUG: Critical email sending error:', error)
+      }
       throw error
     }
 

@@ -15,7 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     const baseClasses = 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50'
 
     const variantClasses = {
-      default: 'bg-primary-600 text-white hover:bg-primary-700',
+      default: 'bg-primary-600 text-secondary-800 hover:bg-gradient-to-r from-primary-500 to-accent-500',
       secondary: 'bg-secondary text-secondary-foreground hover:bg-secondary/80',
       outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
       ghost: 'hover:bg-accent hover:text-accent-foreground',
@@ -39,6 +39,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
+        type="button"
         className={cn(baseClasses, variantClasses[variant], sizeClasses[size], className)}
         ref={ref}
         {...props}

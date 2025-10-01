@@ -10,10 +10,10 @@ export default function NotFound() {
       <div className="text-center max-w-md mx-auto">
         <div className="mb-8">
           <h1 className="text-9xl font-bold text-gradient mb-4">404</h1>
-          <h2 className="text-2xl font-semibold text-neural-100 mb-4">
+          <h2 className="text-2xl font-semibold text-secondary-800 mb-4">
             Pagina niet gevonden
           </h2>
-          <p className="text-neural-400 mb-8">
+          <p className="text-primary-600 mb-8">
             De pagina die u zoekt bestaat niet of is verplaatst.
           </p>
         </div>

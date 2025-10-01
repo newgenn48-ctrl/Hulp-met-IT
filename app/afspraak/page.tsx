@@ -8,7 +8,7 @@ import dynamic from 'next/dynamic'
 const AppointmentForm = dynamic(() => import('@/components/forms/AppointmentForm').then(mod => ({ default: mod.AppointmentForm })), {
   loading: () => (
     <div className="w-full h-[500px] bg-white/5 backdrop-blur-lg rounded-xl border border-white/10 animate-pulse flex items-center justify-center">
-      <div className="text-neutral-400">Formulier wordt geladen...</div>
+      <div className="text-secondary-400">Formulier wordt geladen...</div>
     </div>
   ),
   ssr: false
@@ -47,9 +47,8 @@ export default function AfspraakPage() {
               <h1 className="text-5xl lg:text-7xl font-bold text-gradient mb-6">
                 Afspraak Maken
               </h1>
-              <p className="text-xl text-neural-300 max-w-3xl mx-auto leading-relaxed">
-                Plan direct uw afspraak in. Bel ons en onze IT-specialist 
-                komt naar u toe.
+              <p className="text-xl text-secondary-700 max-w-3xl mx-auto leading-relaxed">
+                Neem contact met ons op voor professionele IT-hulp aan huis.
               </p>
             </div>
 

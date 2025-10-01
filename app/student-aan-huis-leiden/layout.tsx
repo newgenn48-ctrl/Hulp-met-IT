@@ -1,29 +1,40 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Leiden | IT-Student Leiden | Computerhulp Thuis',
-  description: 'Computerproblemen in Leiden? Onze IT-studenten komen naar je toe! Betaalbare hulp vanaf €13,99 per kwartier. Snel, vakkundig en lokaal.',
+  title: 'Student Leiden | Betaalbare computerhulp thuis',
+  description: 'Computerproblemen in Leiden? Onze IT-studenten komen naar je toe! Betaalbare hulp Snel, vakkundig en lokaal.',
   keywords: [
-    'computerhulp Leiden',
-    'IT service Leiden',
-    'laptop reparatie Leiden',
-    'student aan huis Leiden',
-    'IT hulp aan huis Leiden',
-    'computer problemen Leiden',
-    'technische ondersteuning Leiden'
+    'student aan huis leiden',
+    'student computerhulp leiden',
+    'betaalbare computerhulp leiden',
+    'IT student leiden',
+    'computer reparatie leiden student',
+    'betaalbare computer hulp leiden',
+    'studenten computer service leiden',
+    'leiden student IT hulp',
+    'leiden computerhulp avond',
+    'leiden IT hulp weekend'
   ],
   openGraph: {
     title: 'Student Aan Huis Leiden | Betaalbare Computerhulp',
     description: 'IT-studenten komen naar je toe in Leiden. Betaalbare tarieven, vakkundige hulp.',
+    images: ['/og-image.webp'],
+    url: '/student-aan-huis-leiden',
     type: 'website',
     locale: 'nl_NL',
+    siteName: 'Hulp met IT'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Student Aan Huis Leiden | Betaalbare Computerhulp',
+    description: 'IT-studenten komen naar je toe in Leiden. Betaalbare tarieven, vakkundige hulp.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/student-aan-huis-leiden'
+    canonical: '/student-aan-huis-leiden'
   }
 }
 

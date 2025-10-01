@@ -1,29 +1,40 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Aan Huis Den Bosch | IT-Student Den Bosch | Computerhulp Thuis',
-  description: 'Computerproblemen in Den Bosch? Onze IT-studenten komen naar je toe! Betaalbare hulp vanaf €13,99 per kwartier. Snel, vakkundig en lokaal.',
+  title: 'Student Den Bosch | Betaalbare computerhulp thuis',
+  description: 'Computerproblemen in Den Bosch? Onze IT-studenten komen naar je toe! Betaalbare hulp Snel, vakkundig en lokaal.',
   keywords: [
-    'computerhulp Den Bosch',
-    'IT service Den Bosch',
-    'laptop reparatie Den Bosch',
-    'student aan huis Den Bosch',
-    'IT hulp aan huis Den Bosch',
-    'computer problemen Den Bosch',
-    'technische ondersteuning Den Bosch'
+    'student aan huis den bosch',
+    'student computerhulp den bosch',
+    'betaalbare computerhulp den bosch',
+    'IT student den bosch',
+    'computer reparatie den bosch student',
+    'betaalbare computer hulp den bosch',
+    'studenten computer service den bosch',
+    'den bosch student IT hulp',
+    'den bosch computerhulp avond',
+    'den bosch IT hulp weekend'
   ],
   openGraph: {
     title: 'Student Aan Huis Den Bosch | Betaalbare Computerhulp',
     description: 'IT-studenten komen naar je toe in Den Bosch. Betaalbare tarieven, vakkundige hulp.',
+    images: ['/og-image.webp'],
+    url: '/student-aan-huis-den-bosch',
     type: 'website',
     locale: 'nl_NL',
+    siteName: 'Hulp met IT'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Student Aan Huis Den Bosch | Betaalbare Computerhulp',
+    description: 'IT-studenten komen naar je toe in Den Bosch. Betaalbare tarieven, vakkundige hulp.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/student-aan-huis-den-bosch'
+    canonical: '/student-aan-huis-den-bosch'
   }
 }
 
