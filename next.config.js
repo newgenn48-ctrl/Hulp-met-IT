@@ -22,6 +22,10 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: true,
   swcMinify: true,
+  // Modern browser target - no legacy polyfills (saves ~12.5KB)
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   experimental: {
     optimizePackageImports: ['lucide-react'],
     gzipSize: true

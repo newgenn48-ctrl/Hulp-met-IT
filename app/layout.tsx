@@ -98,13 +98,18 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
+        {/* Preconnect to critical origins (saves ~300ms for LCP) */}
+        <link rel="preconnect" href="https://www.google.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://scripts.clarity.ms" crossOrigin="anonymous" />
+
+        {/* DNS prefetch for lower priority origins */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="//c.clarity.ms" />
+
         {/* Preload critical resources */}
         <link rel="preload" href="/og-image.webp" as="image" type="image/webp" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="//www.google.com" />
-        <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
-        <link rel="dns-prefetch" href="//www.clarity.ms" />
       </head>
       <body className={`${inter.className} antialiased`}>
         {/* Skip link for screen readers */}

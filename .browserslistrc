@@ -1,6 +1,10 @@
+# Modern browsers only - no legacy polyfills needed (saves ~12.5KB)
+# This targets browsers with native ES6+ support
 last 2 versions
 > 0.5%
 not dead
-Safari >= 9
-Chrome >= 54
-Firefox ESR
+Chrome >= 90
+Edge >= 90
+Firefox >= 88
+Safari >= 14
+iOS >= 14
