@@ -5,11 +5,16 @@ export function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Hulp met IT",
-    "description": "Vriendelijke computerhulp aan huis door ervaren IT-specialisten",
+    "description": "Betaalbare computerhulp aan huis door ervaren IT-specialisten in heel Nederland",
     "url": "https://hulpmetit.nl",
     "telephone": "+31-6-42827860",
     "email": "info@hulpmetit.nl",
-    "priceRange": "€13.99 per kwartier",
+    "priceRange": "€53,50 - €65,50",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NL",
+      "addressRegion": "Nederland"
+    },
     "serviceArea": {
       "@type": "Country",
       "name": "Nederland"
@@ -22,17 +27,36 @@ export function LocalBusinessSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Computerhulp aan huis",
-            "description": "Professionele computer ondersteuning aan huis"
+            "name": "Standaard Computerhulp aan huis",
+            "description": "Professionele computerhulp aan huis - €10 voorrijkosten + €14,50 per kwartier daarna"
           },
-          "price": "13.99",
-          "priceCurrency": "EUR",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "13.99",
+            "price": "53.50",
             "priceCurrency": "EUR",
-            "unitCode": "C62",
-            "unitText": "per kwartier"
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": "3",
+              "unitText": "kwartier"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Spoedhulp Computerhulp",
+            "description": "Spoedservice binnen 24 uur - €10 voorrijkosten + €18,50 per kwartier daarna"
+          },
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "65.50",
+            "priceCurrency": "EUR",
+            "referenceQuantity": {
+              "@type": "QuantitativeValue",
+              "value": "3",
+              "unitText": "kwartier"
+            }
           }
         },
         {
@@ -47,8 +71,8 @@ export function LocalBusinessSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Laptop ondersteuning",
-            "description": "Hulp met laptop problemen en onderhoud"
+            "name": "Laptop en computer ondersteuning",
+            "description": "Hulp met laptop en computer problemen en onderhoud"
           }
         }
       ]
@@ -56,21 +80,22 @@ export function LocalBusinessSchema() {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
-      "ratingCount": "247",
-      "bestRating": "5"
+      "reviewCount": "1000",
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
         "opens": "08:00",
-        "closes": "18:00"
+        "closes": "22:00"
       },
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "17:00"
+        "dayOfWeek": ["Saturday", "Sunday"],
+        "opens": "08:00",
+        "closes": "22:00"
       }
     ],
     "contactPoint": {
