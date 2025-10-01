@@ -21,6 +21,8 @@ body {
   line-height: 1.6;
   color: theme('colors.secondary.800');
   background-color: theme('colors.primary.50');
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {

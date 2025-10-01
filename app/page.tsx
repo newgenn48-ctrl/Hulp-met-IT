@@ -1,14 +1,17 @@
+import dynamic from 'next/dynamic'
 import { HeroSection } from '@/components/home/HeroSection'
-import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { Windows11UrgentSection } from '@/components/home/Windows11UrgentSection'
-import { PricingSection } from '@/components/home/PricingSection'
-import { RegionsPreview } from '@/components/home/RegionsPreview'
-import { AboutPreview } from '@/components/home/AboutPreview'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { TrustSignals } from '@/components/home/TrustSignals'
-import { LazyBackgroundScene } from '@/components/three/LazyBackgroundScene'
 import { LocalBusinessSchema } from '@/components/seo/LocalBusinessSchema'
 import { Metadata } from 'next'
+
+// Lazy load below-the-fold components for better initial load
+const ServicesGrid = dynamic(() => import('@/components/services/ServicesGrid').then(mod => ({ default: mod.ServicesGrid })), { ssr: true })
+const PricingSection = dynamic(() => import('@/components/home/PricingSection').then(mod => ({ default: mod.PricingSection })), { ssr: true })
+const TestimonialsSection = dynamic(() => import('@/components/home/TestimonialsSection').then(mod => ({ default: mod.TestimonialsSection })), { ssr: true })
+const Windows11UrgentSection = dynamic(() => import('@/components/home/Windows11UrgentSection').then(mod => ({ default: mod.Windows11UrgentSection })), { ssr: true })
+const RegionsPreview = dynamic(() => import('@/components/home/RegionsPreview').then(mod => ({ default: mod.RegionsPreview })), { ssr: true })
+const AboutPreview = dynamic(() => import('@/components/home/AboutPreview').then(mod => ({ default: mod.AboutPreview })), { ssr: true })
+const LazyBackgroundScene = dynamic(() => import('@/components/three/LazyBackgroundScene').then(mod => ({ default: mod.LazyBackgroundScene })), { ssr: false })
 
 export const metadata: Metadata = {
   title: 'Hulp Met IT | Computerhulp aan Huis',

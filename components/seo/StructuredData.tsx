@@ -16,6 +16,8 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
     "url": BUSINESS_INFO.WEBSITE_URL,
     "telephone": CONTACT_INFO.PHONE,
     "email": CONTACT_INFO.EMAIL,
+    "image": "https://hulpmetit.nl/og-image.webp",
+    "logo": "https://hulpmetit.nl/og-image.webp",
     // Social media links worden toegevoegd zodra accounts actief zijn
     // "sameAs": [
     //   "https://www.facebook.com/hulpmetit",

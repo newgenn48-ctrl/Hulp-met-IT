@@ -46,7 +46,7 @@ const processSteps = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Delft?",
-    answer: "Onze tarieven beginnen vanaf €14,50 per kwartier in Delft. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    answer: "Onze tarieven beginnen vanaf €53,50 voor 3 kwartier in Delft. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Delft?",

@@ -57,7 +57,7 @@ const baarnAreas = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Baarn?",
-    answer: "Onze tarieven beginnen vanaf €14,50 per kwartier in Baarn. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    answer: "Onze tarieven beginnen vanaf €53,50 voor 3 kwartier in Baarn. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Baarn?",
@@ -138,7 +138,7 @@ export default function StudentAanHuisBaarnLanding() {
               }
             ],
             "serviceType": "Student computerhulp aan huis Baarn",
-            "priceRange": "€14,50 - €18,50",
+            "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })
         }}
@@ -251,7 +251,7 @@ export default function StudentAanHuisBaarnLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Baarn</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €14,50 per kwartier in Baarn - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                  Vanaf €53,50 voor 3 kwartier in Baarn - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
                 </p>
               </div>
 

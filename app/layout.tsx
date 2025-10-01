@@ -99,14 +99,14 @@ export default function RootLayout({
     <html lang="nl" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         {/* Preconnect to critical origins (saves ~300ms for LCP) */}
-        <link rel="preconnect" href="https://www.google.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://scripts.clarity.ms" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://scripts.clarity.ms" />
 
         {/* DNS prefetch for lower priority origins */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//googleads.g.doubleclick.net" />
-        <link rel="dns-prefetch" href="//c.clarity.ms" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+        <link rel="dns-prefetch" href="https://c.clarity.ms" />
 
         {/* Preload critical resources */}
         <link rel="preload" href="/og-image.webp" as="image" type="image/webp" />

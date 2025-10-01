@@ -9,6 +9,8 @@ export function LocalBusinessSchema() {
     "url": "https://hulpmetit.nl",
     "telephone": "+31-6-42827860",
     "email": "info@hulpmetit.nl",
+    "image": "https://hulpmetit.nl/og-image.webp",
+    "logo": "https://hulpmetit.nl/og-image.webp",
     "priceRange": "€53,50 - €65,50",
     "address": {
       "@type": "PostalAddress",

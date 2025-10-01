@@ -27,8 +27,15 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   experimental: {
-    optimizePackageImports: ['lucide-react'],
-    gzipSize: true
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    gzipSize: true,
+    optimizeCss: true, // Optimize CSS loading
+  },
+  // Reduce JavaScript bundle size
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase member}}',
+    },
   },
   httpAgentOptions: {
     keepAlive: true
@@ -43,14 +50,6 @@ const nextConfig = {
             value: 'nosniff'
           },
           {
-            key: 'X-Frame-Options',
-            value: 'DENY'
-          },
-          {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
-          },
-          {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin'
           },
@@ -60,7 +59,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com; script-src-elem 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://vitals.vercel-insights.com; frame-src https://www.google.com https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
+            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com; script-src-elem 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://vitals.vercel-insights.com; frame-src https://www.google.com https://www.googletagmanager.com; frame-ancestors 'none'; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
           }
         ]
       },

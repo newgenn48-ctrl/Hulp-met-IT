@@ -57,7 +57,7 @@ const eindhovenAreas = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Eindhoven?",
-    answer: "Onze tarieven beginnen vanaf €14,50 per kwartier in Eindhoven. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief. Perfect voor studenten en inwoners van de technologiestad Eindhoven."
+    answer: "Onze tarieven beginnen vanaf €53,50 voor 3 kwartier in Eindhoven. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief. Perfect voor studenten en inwoners van de technologiestad Eindhoven."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Eindhoven?",
@@ -151,7 +151,7 @@ export default function StudentAanHuisEindhovenLanding() {
               }
             ],
             "serviceType": "Student computerhulp aan huis Eindhoven",
-            "priceRange": "€14,50 - €18,50",
+            "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -165,14 +165,14 @@ export default function StudentAanHuisEindhovenLanding() {
                 "@type": "Offer",
                 "name": "Computer Reparatie Eindhoven",
                 "description": "Professionele computer reparatie door IT-studenten",
-                "price": "13.99",
+                "price": "53.50",
                 "priceCurrency": "EUR"
               },
               {
                 "@type": "Offer",
                 "name": "Laptop Hulp Eindhoven",
                 "description": "Laptop reparatie en ondersteuning aan huis",
-                "price": "13.99",
+                "price": "53.50",
                 "priceCurrency": "EUR"
               }
             ],
@@ -301,7 +301,7 @@ export default function StudentAanHuisEindhovenLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Eindhoven</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €14,50 per kwartier in Eindhoven - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven, ideaal voor de tech-community.
+                  Vanaf €53,50 voor 3 kwartier in Eindhoven - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven, ideaal voor de tech-community.
                 </p>
               </div>
 

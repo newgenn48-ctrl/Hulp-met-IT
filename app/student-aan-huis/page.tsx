@@ -49,7 +49,7 @@ const processSteps = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp?",
-    answer: "Onze tarieven zijn €14,50 per kwartier plus €10 eenmalige voorrijkosten. Dit is veel voordeliger dan traditionele computerhulp services. Minimum 3 kwartier (€53,50 totaal)."
+    answer: "Onze tarieven zijn €53,50 voor 3 kwartier plus €10 eenmalige voorrijkosten. Dit is veel voordeliger dan traditionele computerhulp services. Minimum 3 kwartier (€53,50 totaal)."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd?",
@@ -142,10 +142,10 @@ export default function StudentAanHuisLanding() {
             "offers": {
               "@type": "Offer",
               "priceCurrency": "EUR",
-              "price": "13.99",
+              "price": "53.50",
               "priceSpecification": {
                 "@type": "UnitPriceSpecification",
-                "price": "13.99",
+                "price": "53.50",
                 "priceCurrency": "EUR",
                 "unitText": "per kwartier"
               },
@@ -289,7 +289,7 @@ export default function StudentAanHuisLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €14,50 per kwartier - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                  Vanaf €53,50 voor 3 kwartier - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
                 </p>
               </div>
 

@@ -57,7 +57,7 @@ const middelburgAreas = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Middelburg?",
-    answer: "Onze tarieven beginnen vanaf €14,50 per kwartier in Middelburg. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    answer: "Onze tarieven beginnen vanaf €53,50 voor 3 kwartier in Middelburg. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Middelburg?",
@@ -138,7 +138,7 @@ export default function StudentAanHuisMiddelburgLanding() {
               }
             ],
             "serviceType": "Student computerhulp aan huis Middelburg",
-            "priceRange": "€14,50 - €18,50",
+            "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -148,7 +148,7 @@ export default function StudentAanHuisMiddelburgLanding() {
             "offers": {
               "@type": "Offer",
               "description": "Computerhulp door IT-studenten in Middelburg",
-              "price": "13.99",
+              "price": "53.50",
               "priceCurrency": "EUR",
               "availability": "https://schema.org/InStock"
             }
@@ -263,7 +263,7 @@ export default function StudentAanHuisMiddelburgLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Middelburg</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €14,50 per kwartier in Middelburg - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                  Vanaf €53,50 voor 3 kwartier in Middelburg - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
                 </p>
               </div>
 
