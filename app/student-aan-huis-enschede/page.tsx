@@ -136,13 +136,8 @@ export default function StudentAanHuisEnschedeLanding() {
               "latitude": 52.2215,
               "longitude": 6.8937
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Enschede"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Enschede",
+            "areaServed": { "@type": "City", "name": "Enschede" },
+            "serviceType": "Student aan huis Enschede",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

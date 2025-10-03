@@ -131,13 +131,8 @@ export default function StudentAanHuisBlaricumLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Blaricum"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Blaricum",
+            "areaServed": { "@type": "City", "name": "Blaricum" },
+            "serviceType": "Student aan huis Blaricum",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

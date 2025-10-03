@@ -131,13 +131,8 @@ export default function StudentAanHuisSoestLanding() {
               "addressRegion": "Utrecht",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Soest"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Soest",
+            "areaServed": { "@type": "City", "name": "Soest" },
+            "serviceType": "Student aan huis Soest",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

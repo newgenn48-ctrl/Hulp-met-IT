@@ -131,13 +131,8 @@ export default function StudentAanHuisAmsterdamLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Amsterdam"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Amsterdam",
+            "areaServed": { "@type": "City", "name": "Amsterdam" },
+            "serviceType": "Student aan huis Amsterdam",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

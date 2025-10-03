@@ -132,13 +132,8 @@ export default function StudentAanHuisRotterdamLanding() {
               "addressRegion": "Zuid-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Rotterdam"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Rotterdam",
+            "areaServed": { "@type": "City", "name": "Rotterdam" },
+            "serviceType": "Student aan huis Rotterdam",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

@@ -131,13 +131,8 @@ export default function StudentAanHuisNijmegenLanding() {
               "addressRegion": "Gelderland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Nijmegen"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Nijmegen",
+            "areaServed": { "@type": "City", "name": "Nijmegen" },
+            "serviceType": "Student aan huis Nijmegen",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

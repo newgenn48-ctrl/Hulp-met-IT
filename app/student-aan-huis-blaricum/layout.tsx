@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student Blaricum | Betaalbare computerhulp thuis',
-  description: 'Computerhulp aan huis in Blaricum door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven. Snel, betaalbaar en betrouwbaar.',
+  title: 'Student aan huis Blaricum | Hulp Met IT',
+  description: 'Student aan huis in Blaricum voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
   keywords: 'student aan huis Blaricum, computerhulp Blaricum, IT student Blaricum, computer reparatie Blaricum, laptop hulp Blaricum',
   openGraph: {
     title: 'Student aan Huis Blaricum - Computerhulp door Studenten',

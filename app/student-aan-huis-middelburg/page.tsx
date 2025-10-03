@@ -131,13 +131,8 @@ export default function StudentAanHuisMiddelburgLanding() {
               "addressRegion": "Zeeland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Middelburg"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Middelburg",
+            "areaServed": { "@type": "City", "name": "Middelburg" },
+            "serviceType": "Student aan huis Middelburg",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

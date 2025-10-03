@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student Laren | Betaalbare computerhulp thuis',
-  description: 'Computerhulp aan huis in Laren door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven. Snel, betaalbaar en betrouwbaar.',
+  title: 'Student aan huis Laren | Hulp Met IT',
+  description: 'Student aan huis in Laren voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
   keywords: 'student aan huis Laren, computerhulp Laren, IT student Laren, computer reparatie Laren, laptop hulp Laren',
   openGraph: {
     title: 'Student aan Huis Laren - Computerhulp door Studenten',

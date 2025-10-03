@@ -131,13 +131,8 @@ export default function StudentAanHuisDordrechtLanding() {
               "addressRegion": "Zuid-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Dordrecht"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Dordrecht",
+            "areaServed": { "@type": "City", "name": "Dordrecht" },
+            "serviceType": "Student aan huis Dordrecht",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

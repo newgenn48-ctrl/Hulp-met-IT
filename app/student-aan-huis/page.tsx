@@ -114,6 +114,32 @@ export default function StudentAanHuisLanding() {
   }
   return (
     <>
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hulpmetit.nl"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Student aan huis",
+                "item": "https://hulpmetit.nl/student-aan-huis"
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* LocalBusiness Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -129,7 +155,7 @@ export default function StudentAanHuisLanding() {
               "@type": "Country",
               "name": "Nederland"
             },
-            "serviceType": "ComputerRepair",
+            "serviceType": "Student aan huis Nederland",
             "priceRange": "€53,50-€100",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {
@@ -181,96 +207,90 @@ export default function StudentAanHuisLanding() {
           })
         }}
       />
-      
-      <section className="hero-section relative flex items-start justify-center overflow-hidden">
-        <FloatingDevices />
 
-        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-gradient">Student aan Huis</span>
-          </h1>
+      {/* Breadcrumbs Navigation */}
+      <nav aria-label="Breadcrumb" className="bg-white/50 backdrop-blur-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto container-padding py-3">
+          <ol className="flex items-center space-x-2 text-sm">
+            <li>
+              <Link href="/" className="text-primary-600 hover:text-primary-700 transition-colors">
+                Home
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li>
+              <span className="text-gray-700 font-medium">Student aan huis</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
 
-          <p className="text-xl lg:text-2xl text-primary-700 max-w-4xl mx-auto mb-6 leading-relaxed">
-            Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
-          </p>
+      <section className="relative flex items-start justify-center overflow-hidden min-h-[600px] lg:min-h-[700px] pt-20">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/images/student-aan-huis/student-aan-huis.webp)',
+              filter: 'brightness(0.7) contrast(1.1)'
+            }}
+          />
+          {/* Gradient Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-accent-900/30" />
+        </div>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-4">
-            {benefits.map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-3 text-lg text-primary-700"
-                >
-                  <IconComponent className="w-6 h-6 text-primary-700" />
-                  <span>{benefit.text}</span>
-                </div>
-              )
-            })}
-          </div>
+        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center flex items-center min-h-[600px] lg:min-h-[700px]">
+          <div className="w-full">
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+              <span className="text-white drop-shadow-lg">Student aan Huis</span>
+            </h1>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-            <Link href="/afspraak" className="btn-cta">
-              <Calendar className="w-6 h-6 mr-3" />
-              Afspraak Maken
-            </Link>
+            <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-8 leading-relaxed drop-shadow-md">
+              Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
+            </p>
 
-            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
-              <Phone className="w-5 h-5 mr-2" />
-              Bel Nu
-            </a>
+            <div className="flex flex-wrap justify-center gap-6 mb-8">
+              {benefits.map((benefit, index) => {
+                const IconComponent = benefit.icon
+                return (
+                  <div
+                    key={index}
+                    className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
+                  >
+                    <IconComponent className="w-6 h-6 text-white" />
+                    <span className="drop-shadow-sm">{benefit.text}</span>
+                  </div>
+                )
+              })}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+              <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
+                <Calendar className="w-6 h-6 mr-3" />
+                Afspraak Maken
+              </Link>
+
+              <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow bg-white/95 hover:bg-white">
+                <Phone className="w-5 h-5 mr-2" />
+                Bel Nu
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       <div className="relative">
 
-        <TrustSignals />
-
+        {/* 1. DIENSTEN - Eerste vraag: "Wat doen jullie?" */}
         <ServicesGrid
           title="Wat Wij Voor U Kunnen Doen"
           maxItems={6}
         />
 
-        {/* Pricing Section */}
+        {/* 2. PRIJZEN - Tweede vraag: "Wat kost het?" */}
         <PricingSection />
 
-        {/* Testimonials Section */}
-        <TestimonialsSection />
-
-        {/* Windows 11 Urgent Section */}
-        <Windows11UrgentSection />
-
-        {/* Process Section */}
-        <section className="section-spacing" aria-labelledby="process-heading">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 id="process-heading" className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Hoe Werkt Student Aan Huis?
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Snel, flexibel en betaalbaar - vakkundige hulp
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto" role="list" aria-label="Proces stappen">
-              {processSteps.map((step, index) => (
-                <div key={index} className="text-center" role="listitem">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white" aria-label={`Stap ${step.step}`}>
-                    {step.step}
-                  </div>
-                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
-                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <ServicesPreview />
-
-        {/* Why Choose Student Section */}
+        {/* 3. WAAROM STUDENT - Derde vraag: "Waarom een student?" */}
         <section className="section-spacing bg-neural-900/30">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
@@ -346,106 +366,61 @@ export default function StudentAanHuisLanding() {
           </div>
         </section>
 
-        {/* Services Detail Section */}
-        <section className="section-spacing">
+        {/* 4. HOE WERKT HET - Vierde vraag: "Hoe werkt het praktisch?" */}
+        <section className="section-spacing bg-white/5" aria-labelledby="process-heading">
           <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Onze Student IT Diensten
+            <div className="text-center mb-8">
+              <h2 id="process-heading" className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+                Hoe Werkt Student Aan Huis?
               </h2>
               <p className="text-xl text-secondary-700">
-                Uitgebreide computerhulp door vakkundige IT-studenten
+                In 3 eenvoudige stappen naar vakkundige hulp
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🖥️ Computer & Laptop Hulp</h3>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• Computer start niet op - diagnose en reparatie</li>
-                    <li>• Laptop scherm vervangen of repareren</li>
-                    <li>• Toetsenbord en touchpad problemen</li>
-                    <li>• Hardware upgrades (RAM, SSD, harde schijf)</li>
-                    <li>• Ventilator reiniging bij oververhitting</li>
-                  </ul>
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto" role="list" aria-label="Proces stappen">
+              {processSteps.map((step, index) => (
+                <div key={index} className="text-center" role="listitem">
+                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white" aria-label={`Stap ${step.step}`}>
+                    {step.step}
+                  </div>
+                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
+                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
                 </div>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• Windows installatie en updates</li>
-                    <li>• Microsoft Office installatie en configuratie</li>
-                    <li>• Antivirus software installeren</li>
-                    <li>• Browser installatie en bookmarks overzetten</li>
-                    <li>• Printer drivers en software installeren</li>
-                  </ul>
-                </div>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Data & Bestanden</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• Foto's en documenten overzetten naar nieuwe computer</li>
-                    <li>• Backup maken van belangrijke bestanden</li>
-                    <li>• Cloud storage instellen (Google Drive, OneDrive)</li>
-                    <li>• Verloren bestanden terughalen</li>
-                    <li>• Externe harde schijf configureren</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🌐 Internet & Netwerk</h3>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• WiFi verbinding problemen oplossen</li>
-                    <li>• Router instellen en configureren</li>
-                    <li>• Langzame internet snelheid verbeteren</li>
-                    <li>• Netwerk printer verbinding maken</li>
-                    <li>• Smart TV internet verbinding</li>
-                  </ul>
-                </div>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">E-mail & Communicatie</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• E-mail accounts instellen (Gmail, Outlook)</li>
-                    <li>• WhatsApp Web en desktop apps</li>
-                    <li>• Zoom, Teams, Skype installeren</li>
-                    <li>• Contacten overzetten tussen apparaten</li>
-                    <li>• Sociale media accounts beveiligen</li>
-                  </ul>
-                </div>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Tablet Hulp</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• iPhone en Android telefoon instellen</li>
-                    <li>• Apps downloaden en organiseren</li>
-                    <li>• Contacten en foto's synchroniseren</li>
-                    <li>• Tablet koppelen aan WiFi en accounts</li>
-                    <li>• Privacy instellingen optimaliseren</li>
-                  </ul>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
+        {/* 5. TESTIMONIALS - Vijfde vraag: "Wat zeggen anderen?" */}
+        <TestimonialsSection />
 
-        {/* FAQ Section */}
+        {/* 6. FAQ - Laatste vragen wegnemen */}
         <section className="section-spacing bg-neural-900/50">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqData.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              })
+            }}
+          />
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Veelgestelde Vragen Student Aan Huis
+                Veelgestelde Vragen Over Student Aan Huis
               </h2>
               <p className="text-xl text-secondary-700">
-                Antwoorden op de meest gestelde vragen over onze student IT service
+                Antwoorden op de meest gestelde vragen over student aan huis service
               </p>
             </div>
 
@@ -463,7 +438,7 @@ export default function StudentAanHuisLanding() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* 8. FINAL CTA - Oproep tot actie */}
         <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
           <div className="max-w-4xl mx-auto container-padding text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">

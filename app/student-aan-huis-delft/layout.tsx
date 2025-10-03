@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Delft | Betaalbare computerhulp thuis',
-  description: 'Student aan huis Delft: betaalbare computerhulp door IT-studenten. Ook avonden/weekenden. Bel ons!',
+  title: 'Student aan huis Delft | Hulp Met IT',
+  description: 'Student aan huis in Delft voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
   keywords: [
     'student aan huis delft',
     'student computerhulp delft',

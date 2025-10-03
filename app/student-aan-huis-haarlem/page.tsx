@@ -131,13 +131,8 @@ export default function StudentAanHuisHaarlemLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Haarlem"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Haarlem",
+            "areaServed": { "@type": "City", "name": "Haarlem" },
+            "serviceType": "Student aan huis Haarlem",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

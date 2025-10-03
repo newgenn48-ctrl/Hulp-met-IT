@@ -131,13 +131,8 @@ export default function StudentAanHuisWeespLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Weesp"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Weesp",
+            "areaServed": { "@type": "City", "name": "Weesp" },
+            "serviceType": "Student aan huis Weesp",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

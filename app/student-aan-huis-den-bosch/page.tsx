@@ -131,13 +131,8 @@ export default function StudentAanHuisDenBoschLanding() {
               "addressRegion": "Noord-Brabant",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Den Bosch"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Den Bosch",
+            "areaServed": { "@type": "City", "name": "Den Bosch" },
+            "serviceType": "Student aan huis Den Bosch",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

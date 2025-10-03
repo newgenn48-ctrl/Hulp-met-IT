@@ -131,13 +131,8 @@ export default function StudentAanHuisNaardenLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Naarden"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Naarden",
+            "areaServed": { "@type": "City", "name": "Naarden" },
+            "serviceType": "Student aan huis Naarden",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

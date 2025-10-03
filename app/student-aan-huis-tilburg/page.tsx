@@ -131,13 +131,8 @@ export default function StudentAanHuisTilburgLanding() {
               "addressRegion": "Noord-Brabant",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Tilburg"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Tilburg",
+            "areaServed": { "@type": "City", "name": "Tilburg" },
+            "serviceType": "Student aan huis Tilburg",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

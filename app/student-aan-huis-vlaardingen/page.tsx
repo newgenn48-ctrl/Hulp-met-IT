@@ -136,13 +136,8 @@ export default function StudentAanHuisVlaardingenLanding() {
               "latitude": 51.9123,
               "longitude": 4.3419
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Vlaardingen"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Vlaardingen",
+            "areaServed": { "@type": "City", "name": "Vlaardingen" },
+            "serviceType": "Student aan huis Vlaardingen",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Capelle aan den IJssel | Betaalbare computerhulp thuis',
-  description: 'Student aan huis Capelle aan den IJssel: betaalbare computerhulp door IT-studenten. Ook avonden/weekenden. Bel ons!',
+  title: 'Student aan huis Capelle aan den IJssel | Hulp Met IT',
+  description: 'Student aan huis in Capelle aan den IJssel voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
   keywords: [
     'student aan huis capelle aan den ijssel',
     'student computerhulp capelle aan den ijssel',

@@ -132,25 +132,8 @@ export default function StudentAanHuisEindhovenLanding() {
               "addressRegion": "Noord-Brabant",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Eindhoven"
-              },
-              {
-                "@type": "City",
-                "name": "Veldhoven"
-              },
-              {
-                "@type": "City",
-                "name": "Helmond"
-              },
-              {
-                "@type": "City",
-                "name": "Best"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Eindhoven",
+            "areaServed": { "@type": "City", "name": "Eindhoven" },
+            "serviceType": "Student aan huis Eindhoven",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

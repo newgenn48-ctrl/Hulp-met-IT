@@ -136,13 +136,8 @@ export default function StudentAanHuisCapelleAanDenIJsselLanding() {
               "latitude": 51.9289,
               "longitude": 4.5780
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Capelle aan den IJssel"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Capelle aan den IJssel",
+            "areaServed": { "@type": "City", "name": "Capelle aan den IJssel" },
+            "serviceType": "Student aan huis Capelle aan den IJssel",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

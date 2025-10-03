@@ -130,25 +130,8 @@ export default function StudentAanHuisUtrechtLanding() {
               "addressRegion": "Utrecht",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Utrecht"
-              },
-              {
-                "@type": "City",
-                "name": "Nieuwegein"
-              },
-              {
-                "@type": "City",
-                "name": "Zeist"
-              },
-              {
-                "@type": "City",
-                "name": "Houten"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Utrecht",
+            "areaServed": { "@type": "City", "name": "Utrecht" },
+            "serviceType": "Student aan huis Utrecht",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

@@ -131,13 +131,8 @@ export default function StudentAanHuisBredaLanding() {
               "addressRegion": "Noord-Brabant",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Breda"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Breda",
+            "areaServed": { "@type": "City", "name": "Breda" },
+            "serviceType": "Student aan huis Breda",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

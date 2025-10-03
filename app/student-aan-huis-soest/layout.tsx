@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student Soest | Betaalbare computerhulp thuis',
-  description: 'Betaalbare computerhulp aan huis in Soest door studenten. Deskundige IT-hulp voor particulieren en bedrijven. Snel en betrouwbaar.',
+  title: 'Student aan huis Soest | Hulp Met IT',
+  description: 'Student aan huis in Soest voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
   keywords: 'student aan huis Soest, computerhulp Soest, IT student Soest, computer reparatie Soest, laptop hulp Soest',
   openGraph: {
     title: 'Student aan Huis Soest - Computerhulp door Studenten',

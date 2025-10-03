@@ -130,25 +130,8 @@ export default function StudentAanHuisDenHaagLanding() {
               "addressRegion": "Zuid-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Den Haag"
-              },
-              {
-                "@type": "City",
-                "name": "Scheveningen"
-              },
-              {
-                "@type": "City",
-                "name": "Wassenaar"
-              },
-              {
-                "@type": "City",
-                "name": "Voorburg"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Den Haag",
+            "areaServed": { "@type": "City", "name": "Den Haag" },
+            "serviceType": "Student aan huis Den Haag",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

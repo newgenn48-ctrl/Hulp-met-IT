@@ -136,13 +136,8 @@ export default function StudentAanHuisGoudaLanding() {
               "latitude": 52.0175,
               "longitude": 4.7134
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Gouda"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Gouda",
+            "areaServed": { "@type": "City", "name": "Gouda" },
+            "serviceType": "Student aan huis Gouda",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

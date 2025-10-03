@@ -131,13 +131,8 @@ export default function StudentAanHuisHilversumLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Hilversum"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Hilversum",
+            "areaServed": { "@type": "City", "name": "Hilversum" },
+            "serviceType": "Student aan huis Hilversum",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

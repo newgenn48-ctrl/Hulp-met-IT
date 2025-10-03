@@ -136,13 +136,8 @@ export default function StudentAanHuisGroningenLanding() {
               "latitude": 53.2194,
               "longitude": 6.5665
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Groningen"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Groningen",
+            "areaServed": { "@type": "City", "name": "Groningen" },
+            "serviceType": "Student aan huis Groningen",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

@@ -136,13 +136,8 @@ export default function StudentAanHuisAlphenAanDenRijnLanding() {
               "latitude": 52.1307,
               "longitude": 4.6573
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Alphen aan den Rijn"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Alphen aan den Rijn",
+            "areaServed": { "@type": "City", "name": "Alphen aan den Rijn" },
+            "serviceType": "Student aan huis Alphen aan den Rijn",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

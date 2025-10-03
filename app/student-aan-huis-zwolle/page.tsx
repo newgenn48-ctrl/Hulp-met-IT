@@ -136,13 +136,8 @@ export default function StudentAanHuisZwolleLanding() {
               "latitude": 52.5168,
               "longitude": 6.0830
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Zwolle"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Zwolle",
+            "areaServed": { "@type": "City", "name": "Zwolle" },
+            "serviceType": "Student aan huis Zwolle",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

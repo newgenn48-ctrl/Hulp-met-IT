@@ -131,13 +131,8 @@ export default function StudentAanHuisArnhemLanding() {
               "addressRegion": "Gelderland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Arnhem"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Arnhem",
+            "areaServed": { "@type": "City", "name": "Arnhem" },
+            "serviceType": "Student aan huis Arnhem",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

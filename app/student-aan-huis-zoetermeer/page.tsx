@@ -131,13 +131,8 @@ export default function StudentAanHuisZoetermeerLanding() {
               "addressRegion": "Zuid-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Zoetermeer"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Zoetermeer",
+            "areaServed": { "@type": "City", "name": "Zoetermeer" },
+            "serviceType": "Student aan huis Zoetermeer",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

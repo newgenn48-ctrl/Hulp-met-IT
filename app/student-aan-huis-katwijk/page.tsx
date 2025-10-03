@@ -136,13 +136,8 @@ export default function StudentAanHuisKatwijkLanding() {
               "latitude": 52.2042,
               "longitude": 4.3256
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Katwijk"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Katwijk",
+            "areaServed": { "@type": "City", "name": "Katwijk" },
+            "serviceType": "Student aan huis Katwijk",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

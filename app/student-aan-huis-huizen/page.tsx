@@ -131,13 +131,8 @@ export default function StudentAanHuisHuizenLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Huizen"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Huizen",
+            "areaServed": { "@type": "City", "name": "Huizen" },
+            "serviceType": "Student aan huis Huizen",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

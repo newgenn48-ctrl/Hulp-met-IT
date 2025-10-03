@@ -117,7 +117,7 @@ export default function StudentAanHuisDelft() {
               "addressRegion": "Zuid-Holland",
               "addressCountry": "NL"
             },
-            "serviceType": "Student computerhulp aan huis Delft",
+            "serviceType": "Student aan huis Delft",
             "priceRange": "€51,97 - €75",
             "openingHours": "Mo-Su 08:00-22:00"
           })

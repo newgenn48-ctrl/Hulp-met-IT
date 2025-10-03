@@ -131,13 +131,8 @@ export default function StudentAanHuisLeidenLanding() {
               "addressRegion": "Zuid-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Leiden"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Leiden",
+            "areaServed": { "@type": "City", "name": "Leiden" },
+            "serviceType": "Student aan huis Leiden",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

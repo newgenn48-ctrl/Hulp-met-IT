@@ -131,13 +131,8 @@ export default function StudentAanHuisAmersfoortLanding() {
               "addressRegion": "Utrecht",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Amersfoort"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Amersfoort",
+            "areaServed": { "@type": "City", "name": "Amersfoort" },
+            "serviceType": "Student aan huis Amersfoort",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {

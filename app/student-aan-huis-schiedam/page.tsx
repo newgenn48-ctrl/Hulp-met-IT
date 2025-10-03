@@ -136,13 +136,8 @@ export default function StudentAanHuisSchiedamLanding() {
               "latitude": 51.9158,
               "longitude": 4.4003
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Schiedam"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Schiedam",
+            "areaServed": { "@type": "City", "name": "Schiedam" },
+            "serviceType": "Student aan huis Schiedam",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

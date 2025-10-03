@@ -94,11 +94,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'schiedam', 'soest', 'tilburg', 'utrecht', 'vlaardingen', 'weesp', 'zoetermeer', 'zwolle'
   ]
 
+  // High priority cities (grote steden)
+  const highPriorityCities = ['amsterdam', 'rotterdam', 'den-haag', 'utrecht', 'eindhoven', 'groningen', 'tilburg']
+
   const studentAanHuisPages = studentAanHuisCities.map(slug => ({
     url: `${baseUrl}/student-aan-huis-${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: highPriorityCities.includes(slug) ? 0.95 : 0.9,
   }))
 
   // Computerhulp Aan Huis city pages - Only include cities that have actual pages

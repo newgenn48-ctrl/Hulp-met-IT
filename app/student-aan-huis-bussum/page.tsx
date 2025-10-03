@@ -131,13 +131,8 @@ export default function StudentAanHuisBussumLanding() {
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Bussum"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Bussum",
+            "areaServed": { "@type": "City", "name": "Bussum" },
+            "serviceType": "Student aan huis Bussum",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

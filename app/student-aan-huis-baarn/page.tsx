@@ -131,13 +131,8 @@ export default function StudentAanHuisBaarnLanding() {
               "addressRegion": "Utrecht",
               "addressCountry": "NL"
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Baarn"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Baarn",
+            "areaServed": { "@type": "City", "name": "Baarn" },
+            "serviceType": "Student aan huis Baarn",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

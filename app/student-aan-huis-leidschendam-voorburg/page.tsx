@@ -136,13 +136,8 @@ export default function StudentAanHuisLeidschedamVoorburgLanding() {
               "latitude": 52.0814,
               "longitude": 4.3890
             },
-            "areaServed": [
-              {
-                "@type": "City",
-                "name": "Leidschendam-Voorburg"
-              }
-            ],
-            "serviceType": "Student computerhulp aan huis Leidschendam-Voorburg",
+            "areaServed": { "@type": "City", "name": "Leidschendam-Voorburg" },
+            "serviceType": "Student aan huis Leidschendam-Voorburg",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })

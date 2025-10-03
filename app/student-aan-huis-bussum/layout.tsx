@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student Bussum | Betaalbare computerhulp thuis',
-  description: 'Computerhulp aan huis in Bussum door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven. Snel, betaalbaar en betrouwbaar.',
+  title: 'Student aan huis Bussum | Hulp Met IT',
+  description: 'Student aan huis in Bussum voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
   keywords: 'student aan huis Bussum, computerhulp Bussum, IT student Bussum, computer reparatie Bussum, laptop hulp Bussum',
   openGraph: {
     title: 'Student aan Huis Bussum - Computerhulp door Studenten',

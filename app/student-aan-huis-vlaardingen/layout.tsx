@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student Vlaardingen | Betaalbare computerhulp thuis',
-  description: 'Student aan huis Vlaardingen: betaalbare computerhulp door IT-studenten. Ook avonden/weekenden. Bel ons!',
+  title: 'Student aan huis Vlaardingen | Hulp Met IT',
+  description: 'Student aan huis in Vlaardingen voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
   keywords: [
     'student aan huis vlaardingen',
     'student computerhulp vlaardingen',
