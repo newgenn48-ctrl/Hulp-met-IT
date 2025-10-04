@@ -1,12 +1,8 @@
 'use client'
 
-import { FloatingDevices } from '@/components/three/FloatingDevices'
-import { ServicesPreview } from '@/components/home/ServicesPreview'
 import { ServicesGrid } from '@/components/services/ServicesGrid'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
-import { TrustSignals } from '@/components/home/TrustSignals'
-import { Windows11UrgentSection } from '@/components/home/Windows11UrgentSection'
 import Link from 'next/link'
 import { useState } from 'react'
 import {

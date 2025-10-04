@@ -1,23 +1,47 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Laren | Specialist komt naar u',
-  description: 'Professionele computerhulp aan huis in Laren. Ervaren studenten helpen met computer, laptop, internet en printer problemen. Snel, betaalbaar en deskundig.',
-  keywords: 'computerhulp Laren, pc hulp Laren, laptop reparatie Laren, computer problemen Laren, IT hulp Laren',
+  title: 'Computerhulp aan huis Laren | Hulp Met IT',
+  description: 'Computerhulp aan huis in Laren voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
+  keywords: [
+    'computerhulp aan huis laren',
+    'computer reparatie laren',
+    'laptop reparatie laren',
+    'IT specialist laren',
+    'pc hulp laren',
+    'computer specialist laren',
+    'laren computerhulp avond',
+    'laren IT hulp weekend',
+    'computerhulp laren spoed',
+    'betaalbare IT hulp laren'
+  ],
   openGraph: {
-    title: 'Computerhulp aan Huis Laren',
-    description: 'Professionele computerhulp aan huis in Laren. Ervaren studenten helpen met al uw computer en IT problemen.',
-    url: 'https://hulpmetit.nl/computerhulp-aan-huis-laren',
-    siteName: 'Hulp met IT',
-    locale: 'nl_NL',
+    title: 'Computerhulp aan huis Laren | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Laren door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
+    url: '/computerhulp-aan-huis-laren',
     type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT'
   },
-};
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Computerhulp aan huis Laren | IT-Specialisten',
+    description: 'Computerhulp aan huis Laren. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-laren',
+  },
+}
 
-export default function LarenLayout({
+export default function ComputerhulpAanHuisLarenLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  return children;
+  return children
 }

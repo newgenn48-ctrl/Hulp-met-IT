@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Leiden | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Leiden ✓ Ervaren specialisten ✓ Heel Leiden ✓ Van Centrum tot wijken ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Leiden | Hulp Met IT',
+  description: 'Computerhulp aan huis in Leiden voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis leiden',
     'computer reparatie leiden',
     'laptop reparatie leiden',
+    'IT specialist leiden',
     'pc hulp leiden',
-    'IT hulp leiden',
     'computer specialist leiden',
     'leiden computerhulp avond',
     'leiden IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp leiden'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Leiden | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Leiden ✓ Ervaren specialisten komen bij u ✓ Transparante tarieven',
-    images: ['/images/computerhulp-leiden-og.webp'],
+    title: 'Computerhulp aan huis Leiden | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Leiden door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-leiden',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Leiden | Computer Specialist',
-    description: 'Computerhulp aan huis Leiden ✓ Specialist komt bij u ✓ Heel Leiden ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Leiden | IT-Specialisten',
+    description: 'Computerhulp aan huis Leiden. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

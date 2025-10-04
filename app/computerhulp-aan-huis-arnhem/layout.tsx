@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Arnhem | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Arnhem ✓ Ervaren specialisten ✓ Heel Arnhem ✓ Van Centrum tot Noord ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Arnhem | Hulp Met IT',
+  description: 'Computerhulp aan huis in Arnhem voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis arnhem',
     'computer reparatie arnhem',
     'laptop reparatie arnhem',
+    'IT specialist arnhem',
     'pc hulp arnhem',
-    'IT hulp arnhem',
     'computer specialist arnhem',
     'arnhem computerhulp avond',
     'arnhem IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp arnhem'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Arnhem | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Arnhem ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Noord ✓ Transparante tarieven',
-    images: ['/images/computerhulp-arnhem-og.webp'],
+    title: 'Computerhulp aan huis Arnhem | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Arnhem door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-arnhem',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Arnhem | Computer Specialist',
-    description: 'Computerhulp aan huis Arnhem ✓ Specialist komt bij u ✓ Heel Arnhem ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Arnhem | IT-Specialisten',
+    description: 'Computerhulp aan huis Arnhem. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

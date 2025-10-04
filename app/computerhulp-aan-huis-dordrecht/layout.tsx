@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Dordrecht | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Dordrecht ✓ Ervaren specialisten ✓ Heel Dordrecht ✓ Van Centrum tot Sterrenburg ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Dordrecht | Hulp Met IT',
+  description: 'Computerhulp aan huis in Dordrecht voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis dordrecht',
     'computer reparatie dordrecht',
     'laptop reparatie dordrecht',
+    'IT specialist dordrecht',
     'pc hulp dordrecht',
-    'IT hulp dordrecht',
     'computer specialist dordrecht',
     'dordrecht computerhulp avond',
     'dordrecht IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp dordrecht'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Dordrecht | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Dordrecht ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Sterrenburg ✓ Transparante tarieven',
-    images: ['/images/computerhulp-dordrecht-og.webp'],
+    title: 'Computerhulp aan huis Dordrecht | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Dordrecht door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-dordrecht',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Dordrecht | Computer Specialist',
-    description: 'Computerhulp aan huis Dordrecht ✓ Specialist komt bij u ✓ Heel Dordrecht ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Dordrecht | IT-Specialisten',
+    description: 'Computerhulp aan huis Dordrecht. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

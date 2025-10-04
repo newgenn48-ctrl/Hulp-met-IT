@@ -1,7 +1,32 @@
 {
   "permissions": {
     "allow": [
-      "Bash(if [ -f \"$file\" ])"
+      "Bash(if [ -f \"$file\" ])",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(dir \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\hulpmetit-nextgen\\public\\images\\student-aan-huis\")",
+      "Bash(python:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nSEO Optimization: Update all 37 student-aan-huis pages\n\n✅ Fixed meta titles: ''Student aan huis [STAD] | Hulp Met IT''\n✅ Updated meta descriptions with keyword ''Student aan huis in [STAD]''\n✅ Fixed structured data: serviceType and areaServed (single city)\n✅ Added FAQ Schema for Google rich snippets\n✅ Added Breadcrumbs with schema markup\n✅ Removed duplicate content sections\n✅ Optimized section order for conversion (Hero → Diensten → Prijzen → Waarom → Proces → Reviews → FAQ)\n✅ Increased sitemap priorities (0.9 for cities, 0.95 for major cities)\n✅ Hero section with background image + optimized overlay\n\nBulk updated 36 city pages + template page.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(for dir in student-aan-huis-*/)",
+      "Bash(do if ! grep -q \"FAQPage\" \"$dirpage.tsx\")",
+      "Bash(then echo \"$dir\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(dir \"C:\\Users\\konia\\OneDrive - Stichting Hogeschool Utrecht\\hulpmetit-nextgen\\public\\images\\computerhulp-aan-huis\")",
+      "Bash(find:*)",
+      "Bash(npm run build:*)",
+      "Bash(npx tsc:*)",
+      "Read(//c/Users/konia/OneDrive - Stichting Hogeschool utrecht/hulpmetit-nextgen/app/student-aan-huis-amsterdam/**)",
+      "Bash(for dir in computerhulp-aan-huis-*/)",
+      "Bash(do if ! grep -q \"Waarom kiezen voor\" \"$dir/page.tsx\")",
+      "Bash(then echo \"$dir%/\")",
+      "Bash(for city in den-haag eindhoven groningen leiden rotterdam tilburg utrecht)",
+      "Bash(do echo \"Checking $city:\")",
+      "Bash(grep:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(tee:*)",
+      "Bash(pkill:*)"
     ],
     "deny": [],
     "ask": []

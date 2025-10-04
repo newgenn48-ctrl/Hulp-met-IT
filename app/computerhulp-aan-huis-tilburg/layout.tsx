@@ -1,20 +1,34 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Tilburg | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Tilburg ✓ Ervaren specialisten ✓ Heel Tilburg ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Tilburg | Hulp Met IT',
+  description: 'Computerhulp aan huis in Tilburg voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis tilburg',
     'computer reparatie tilburg',
     'laptop reparatie tilburg',
+    'IT specialist tilburg',
     'pc hulp tilburg',
-    'IT hulp tilburg',
     'computer specialist tilburg',
     'tilburg computerhulp avond',
     'tilburg IT hulp weekend',
     'computerhulp tilburg spoed',
     'betaalbare IT hulp tilburg'
   ],
+  openGraph: {
+    title: 'Computerhulp aan huis Tilburg | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Tilburg door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
+    url: '/computerhulp-aan-huis-tilburg',
+    type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Computerhulp aan huis Tilburg | IT-Specialisten',
+    description: 'Computerhulp aan huis Tilburg. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
+  },
   robots: {
     index: true,
     follow: true,

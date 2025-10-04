@@ -1,23 +1,47 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Huizen | Specialist komt naar u',
-  description: 'Professionele computerhulp aan huis in Huizen. Ervaren studenten helpen met computer, laptop, internet en printer problemen. Snel, betaalbaar en deskundig.',
-  keywords: 'computerhulp Huizen, pc hulp Huizen, laptop reparatie Huizen, computer problemen Huizen, IT hulp Huizen',
+  title: 'Computerhulp aan huis Huizen | Hulp Met IT',
+  description: 'Computerhulp aan huis in Huizen voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
+  keywords: [
+    'computerhulp aan huis huizen',
+    'computer reparatie huizen',
+    'laptop reparatie huizen',
+    'IT specialist huizen',
+    'pc hulp huizen',
+    'computer specialist huizen',
+    'huizen computerhulp avond',
+    'huizen IT hulp weekend',
+    'computerhulp huizen spoed',
+    'betaalbare IT hulp huizen'
+  ],
   openGraph: {
-    title: 'Computerhulp aan Huis Huizen',
-    description: 'Professionele computerhulp aan huis in Huizen. Ervaren studenten helpen met al uw computer en IT problemen.',
-    url: 'https://hulpmetit.nl/computerhulp-aan-huis-huizen',
-    siteName: 'Hulp met IT',
-    locale: 'nl_NL',
+    title: 'Computerhulp aan huis Huizen | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Huizen door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
+    url: '/computerhulp-aan-huis-huizen',
     type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT'
   },
-};
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Computerhulp aan huis Huizen | IT-Specialisten',
+    description: 'Computerhulp aan huis Huizen. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-huizen',
+  },
+}
 
-export default function HuizenLayout({
+export default function ComputerhulpAanHuisHuizenLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  return children;
+  return children
 }

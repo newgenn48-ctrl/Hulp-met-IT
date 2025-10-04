@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Alphen aan den Rijn | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Alphen aan den Rijn ✓ Ervaren specialisten ✓ Heel Alphen aan den Rijn ✓ Van Centrum tot Kerk en Zanen ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Alphen aan den Rijn | Hulp Met IT',
+  description: 'Computerhulp aan huis in Alphen aan den Rijn voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis alphen aan den rijn',
     'computer reparatie alphen aan den rijn',
     'laptop reparatie alphen aan den rijn',
+    'IT specialist alphen aan den rijn',
     'pc hulp alphen aan den rijn',
-    'IT hulp alphen aan den rijn',
     'computer specialist alphen aan den rijn',
     'alphen aan den rijn computerhulp avond',
     'alphen aan den rijn IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp alphen aan den rijn'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Alphen aan den Rijn | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Alphen aan den Rijn ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Kerk en Zanen ✓ Transparante tarieven',
-    images: ['/images/computerhulp-alphen-aan-den-rijn-og.webp'],
+    title: 'Computerhulp aan huis Alphen aan den Rijn | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Alphen aan den Rijn door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-alphen-aan-den-rijn',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Alphen aan den Rijn | Computer Specialist',
-    description: 'Computerhulp aan huis Alphen aan den Rijn ✓ Specialist komt bij u ✓ Heel Alphen aan den Rijn ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Alphen aan den Rijn | IT-Specialisten',
+    description: 'Computerhulp aan huis Alphen aan den Rijn. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ComputerhulpAanHuisAlphenAanDenRijnLayout({
+export default function ComputerhulpAanHuisAlphenaandenRijnLayout({
   children,
 }: {
   children: React.ReactNode

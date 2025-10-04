@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Delft | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Delft ✓ Ervaren specialisten ✓ Heel Delft ✓ Van Centrum tot Tanthof ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Delft | Hulp Met IT',
+  description: 'Computerhulp aan huis in Delft voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis delft',
     'computer reparatie delft',
     'laptop reparatie delft',
+    'IT specialist delft',
     'pc hulp delft',
-    'IT hulp delft',
     'computer specialist delft',
     'delft computerhulp avond',
     'delft IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp delft'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Delft | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Delft ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Tanthof ✓ Transparante tarieven',
-    images: ['/images/computerhulp-delft-og.webp'],
+    title: 'Computerhulp aan huis Delft | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Delft door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-delft',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Delft | Computer Specialist',
-    description: 'Computerhulp aan huis Delft ✓ Specialist komt bij u ✓ Heel Delft ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Delft | IT-Specialisten',
+    description: 'Computerhulp aan huis Delft. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Amsterdam | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Amsterdam ✓ Ervaren specialisten ✓ Heel Amsterdam ✓ Van Centrum tot Noord ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Amsterdam | Hulp Met IT',
+  description: 'Computerhulp aan huis in Amsterdam voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis amsterdam',
     'computer reparatie amsterdam',
     'laptop reparatie amsterdam',
+    'IT specialist amsterdam',
     'pc hulp amsterdam',
-    'IT hulp amsterdam',
     'computer specialist amsterdam',
     'amsterdam computerhulp avond',
     'amsterdam IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp amsterdam'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Amsterdam | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Amsterdam ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Noord ✓ Transparante tarieven',
-    images: ['/images/computerhulp-amsterdam-og.webp'],
+    title: 'Computerhulp aan huis Amsterdam | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Amsterdam door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-amsterdam',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Amsterdam | Computer Specialist',
-    description: 'Computerhulp aan huis Amsterdam ✓ Specialist komt bij u ✓ Heel Amsterdam ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Amsterdam | IT-Specialisten',
+    description: 'Computerhulp aan huis Amsterdam. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

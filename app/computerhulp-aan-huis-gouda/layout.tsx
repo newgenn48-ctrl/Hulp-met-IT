@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Gouda | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Gouda ✓ Ervaren specialisten ✓ Heel Gouda ✓ Van Centrum tot Goverwelle ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Gouda | Hulp Met IT',
+  description: 'Computerhulp aan huis in Gouda voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis gouda',
     'computer reparatie gouda',
     'laptop reparatie gouda',
+    'IT specialist gouda',
     'pc hulp gouda',
-    'IT hulp gouda',
     'computer specialist gouda',
     'gouda computerhulp avond',
     'gouda IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp gouda'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Gouda | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Gouda ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Goverwelle ✓ Transparante tarieven',
-    images: ['/images/computerhulp-gouda-og.webp'],
+    title: 'Computerhulp aan huis Gouda | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Gouda door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-gouda',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Gouda | Computer Specialist',
-    description: 'Computerhulp aan huis Gouda ✓ Specialist komt bij u ✓ Heel Gouda ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Gouda | IT-Specialisten',
+    description: 'Computerhulp aan huis Gouda. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Almere | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Almere ✓ Ervaren specialisten ✓ Heel Almere ✓ Van Centrum tot Noord ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Almere | Hulp Met IT',
+  description: 'Computerhulp aan huis in Almere voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis almere',
     'computer reparatie almere',
     'laptop reparatie almere',
+    'IT specialist almere',
     'pc hulp almere',
-    'IT hulp almere',
     'computer specialist almere',
     'almere computerhulp avond',
     'almere IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp almere'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Almere | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Almere ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Noord ✓ Transparante tarieven',
-    images: ['/images/computerhulp-almere-og.webp'],
+    title: 'Computerhulp aan huis Almere | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Almere door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-almere',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Almere | Computer Specialist',
-    description: 'Computerhulp aan huis Almere ✓ Specialist komt bij u ✓ Heel Almere ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Almere | IT-Specialisten',
+    description: 'Computerhulp aan huis Almere. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

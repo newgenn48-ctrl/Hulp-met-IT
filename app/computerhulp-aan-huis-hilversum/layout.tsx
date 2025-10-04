@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Hilversum | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Hilversum ✓ Ervaren specialisten ✓ Heel Hilversum ✓ Van Centrum tot Kerkelanden ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Hilversum | Hulp Met IT',
+  description: 'Computerhulp aan huis in Hilversum voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis hilversum',
     'computer reparatie hilversum',
     'laptop reparatie hilversum',
+    'IT specialist hilversum',
     'pc hulp hilversum',
-    'IT hulp hilversum',
     'computer specialist hilversum',
     'hilversum computerhulp avond',
     'hilversum IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp hilversum'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Hilversum | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Hilversum ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Kerkelanden ✓ Transparante tarieven',
-    images: ['/images/computerhulp-hilversum-og.webp'],
+    title: 'Computerhulp aan huis Hilversum | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Hilversum door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-hilversum',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Hilversum | Computer Specialist',
-    description: 'Computerhulp aan huis Hilversum ✓ Specialist komt bij u ✓ Heel Hilversum ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Hilversum | IT-Specialisten',
+    description: 'Computerhulp aan huis Hilversum. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

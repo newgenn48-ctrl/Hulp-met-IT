@@ -117,7 +117,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}/computerhulp-aan-huis-${slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: highPriorityCities.includes(slug) ? 0.95 : 0.9,
   }))
 
   return [...staticPages, ...servicePages, ...cityPages, ...studentAanHuisPages, ...computerhulpAanHuisPages]

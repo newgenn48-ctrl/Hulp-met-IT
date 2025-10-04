@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Breda | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Breda ✓ Ervaren specialisten ✓ Heel Breda ✓ Van Centrum tot Noord ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Breda | Hulp Met IT',
+  description: 'Computerhulp aan huis in Breda voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis breda',
     'computer reparatie breda',
     'laptop reparatie breda',
+    'IT specialist breda',
     'pc hulp breda',
-    'IT hulp breda',
     'computer specialist breda',
     'breda computerhulp avond',
     'breda IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp breda'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Breda | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Breda ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Noord ✓ Transparante tarieven',
-    images: ['/images/computerhulp-breda-og.webp'],
+    title: 'Computerhulp aan huis Breda | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Breda door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-breda',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Breda | Computer Specialist',
-    description: 'Computerhulp aan huis Breda ✓ Specialist komt bij u ✓ Heel Breda ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Breda | IT-Specialisten',
+    description: 'Computerhulp aan huis Breda. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

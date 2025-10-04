@@ -1,13 +1,9 @@
 'use client'
 
-
 import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { FloatingDevices } from '@/components/three/FloatingDevices'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
-import { TrustSignals } from '@/components/home/TrustSignals'
-import { Windows11UrgentSection } from '@/components/home/Windows11UrgentSection'
 import Link from 'next/link'
 import { useState } from 'react'
 import {
@@ -114,7 +110,33 @@ export default function StudentAanHuisDordrechtLanding() {
   }
   return (
     <>
+      
+      {/* Breadcrumb Schema */}
       <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://hulpmetit.nl"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Student aan huis Dordrecht",
+                "item": "https://hulpmetit.nl/student-aan-huis-dordrecht"
+              }
+            ]
+          })
+        }}
+      />
+
+<script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -138,17 +160,44 @@ export default function StudentAanHuisDordrechtLanding() {
           })
         }}
       />
+      {/* Breadcrumbs Navigation */}
+      <nav aria-label="Breadcrumb" className="bg-white/50 backdrop-blur-sm border-b border-gray-200">
+        <div className="max-w-7xl mx-auto container-padding py-3">
+          <ol className="flex items-center space-x-2 text-sm">
+            <li>
+              <Link href="/" className="text-primary-600 hover:text-primary-700 transition-colors">
+                Home
+              </Link>
+            </li>
+            <li className="text-gray-400">/</li>
+            <li>
+              <span className="text-gray-700 font-medium">Student aan huis Dordrecht</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
 
-      <section className="hero-section relative flex items-start justify-center overflow-hidden">
-        <FloatingDevices />
-
-        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center">
+      <section className="relative flex items-start justify-center overflow-hidden min-h-[600px] lg:min-h-[700px] pt-20">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/images/student-aan-huis/student-aan-huis.webp)',
+              filter: 'brightness(0.7) contrast(1.1)'
+            }}
+          />
+          {/* Gradient Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-accent-900/30" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center flex items-center min-h-[600px] lg:min-h-[700px]">
+          <div className="w-full">
           <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-gradient">Student aan Huis Dordrecht</span>
+            <span className="text-white drop-shadow-lg">Student aan Huis Dordrecht</span>
           </h1>
 
-          <p className="text-xl lg:text-2xl text-primary-700 max-w-4xl mx-auto mb-6 leading-relaxed">
-            Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis in <span className="text-primary-700 font-semibold">Dordrecht en omgeving</span>. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
+          <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">
+            Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis in <span className="font-semibold">Dordrecht en omgeving</span>. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-4">
@@ -157,33 +206,31 @@ export default function StudentAanHuisDordrechtLanding() {
               return (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 text-lg text-primary-700"
+                  className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
                 >
-                  <IconComponent className="w-6 h-6 text-primary-700" />
-                  <span>{benefit.text}</span>
+                  <IconComponent className="w-6 h-6 text-white" />
+                  <span className="drop-shadow-sm">{benefit.text}</span>
                 </div>
               )
             })}
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-            <Link href="/afspraak" className="btn-cta">
+            <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
               <Calendar className="w-6 h-6 mr-3" />
               Afspraak Maken
             </Link>
 
-            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
+            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow bg-white/95 hover:bg-white">
               <Phone className="w-5 h-5 mr-2" />
               Bel Nu
             </a>
           </div>
         </div>
+        </div>
       </section>
 
       <div className="relative">
-
-        <TrustSignals />
-
         <ServicesGrid
           title="Wat Wij Voor U Kunnen Doen"
           maxItems={6}
@@ -196,8 +243,6 @@ export default function StudentAanHuisDordrechtLanding() {
         <TestimonialsSection />
 
         {/* Windows 11 Urgent Section */}
-        <Windows11UrgentSection />
-
         {/* Process Section */}
         <section className="section-spacing bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
@@ -371,9 +416,25 @@ export default function StudentAanHuisDordrechtLanding() {
           </div>
         </section>
 
-
         {/* FAQ Section */}
         <section className="section-spacing bg-neural-900/50">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqData.map(faq => ({
+                  "@type": "Question",
+                  "name": faq.question,
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq.answer
+                  }
+                }))
+              })
+            }}
+          />
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
@@ -441,7 +502,7 @@ export default function StudentAanHuisDordrechtLanding() {
               Onze ervaren IT-studenten in Dordrecht staan klaar om je te helpen. Snel, betaalbaar en vakkundig!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/afspraak" className="btn-cta">
+              <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
                 <Calendar className="w-6 h-6 mr-3" />
                 Plan Nu Je Afspraak
               </Link>

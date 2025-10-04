@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Vlaardingen | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Vlaardingen ✓ Ervaren specialisten ✓ Heel Vlaardingen ✓ Van Centrum tot Westwijk ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Vlaardingen | Hulp Met IT',
+  description: 'Computerhulp aan huis in Vlaardingen voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis vlaardingen',
     'computer reparatie vlaardingen',
     'laptop reparatie vlaardingen',
+    'IT specialist vlaardingen',
     'pc hulp vlaardingen',
-    'IT hulp vlaardingen',
     'computer specialist vlaardingen',
     'vlaardingen computerhulp avond',
     'vlaardingen IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp vlaardingen'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Vlaardingen | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Vlaardingen ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Westwijk ✓ Transparante tarieven',
-    images: ['/images/computerhulp-vlaardingen-og.webp'],
+    title: 'Computerhulp aan huis Vlaardingen | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Vlaardingen door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-vlaardingen',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Vlaardingen | Computer Specialist',
-    description: 'Computerhulp aan huis Vlaardingen ✓ Specialist komt bij u ✓ Heel Vlaardingen ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Vlaardingen | IT-Specialisten',
+    description: 'Computerhulp aan huis Vlaardingen. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

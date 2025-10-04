@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Capelle aan den IJssel | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Capelle aan den IJssel ✓ Ervaren specialisten ✓ Heel Capelle aan den IJssel ✓ Van Centrum tot Fascinatio ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Capelle aan den IJssel | Hulp Met IT',
+  description: 'Computerhulp aan huis in Capelle aan den IJssel voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis capelle aan den ijssel',
     'computer reparatie capelle aan den ijssel',
     'laptop reparatie capelle aan den ijssel',
+    'IT specialist capelle aan den ijssel',
     'pc hulp capelle aan den ijssel',
-    'IT hulp capelle aan den ijssel',
     'computer specialist capelle aan den ijssel',
     'capelle aan den ijssel computerhulp avond',
     'capelle aan den ijssel IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp capelle aan den ijssel'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Capelle aan den IJssel | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Capelle aan den IJssel ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Fascinatio ✓ Transparante tarieven',
-    images: ['/images/computerhulp-capelle-aan-den-ijssel-og.webp'],
+    title: 'Computerhulp aan huis Capelle aan den IJssel | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Capelle aan den IJssel door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-capelle-aan-den-ijssel',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Capelle aan den IJssel | Computer Specialist',
-    description: 'Computerhulp aan huis Capelle aan den IJssel ✓ Specialist komt bij u ✓ Heel Capelle aan den IJssel ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Capelle aan den IJssel | IT-Specialisten',
+    description: 'Computerhulp aan huis Capelle aan den IJssel. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default function ComputerhulpAanHuisCapelleAanDenIJsselLayout({
+export default function ComputerhulpAanHuisCapelleaandenIJsselLayout({
   children,
 }: {
   children: React.ReactNode

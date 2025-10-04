@@ -1,23 +1,47 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Soest | Specialist komt naar u',
-  description: 'Professionele computerhulp aan huis in Soest. Ervaren studenten helpen met computer, laptop, internet en printer problemen. Snel, betaalbaar en deskundig.',
-  keywords: 'computerhulp Soest, pc hulp Soest, laptop reparatie Soest, computer problemen Soest, IT hulp Soest',
+  title: 'Computerhulp aan huis Soest | Hulp Met IT',
+  description: 'Computerhulp aan huis in Soest voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
+  keywords: [
+    'computerhulp aan huis soest',
+    'computer reparatie soest',
+    'laptop reparatie soest',
+    'IT specialist soest',
+    'pc hulp soest',
+    'computer specialist soest',
+    'soest computerhulp avond',
+    'soest IT hulp weekend',
+    'computerhulp soest spoed',
+    'betaalbare IT hulp soest'
+  ],
   openGraph: {
-    title: 'Computerhulp aan Huis Soest',
-    description: 'Professionele computerhulp aan huis in Soest. Ervaren studenten helpen met al uw computer en IT problemen.',
-    url: 'https://hulpmetit.nl/computerhulp-aan-huis-soest',
-    siteName: 'Hulp met IT',
-    locale: 'nl_NL',
+    title: 'Computerhulp aan huis Soest | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Soest door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
+    url: '/computerhulp-aan-huis-soest',
     type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT'
   },
-};
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Computerhulp aan huis Soest | IT-Specialisten',
+    description: 'Computerhulp aan huis Soest. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-soest',
+  },
+}
 
-export default function SoestLayout({
+export default function ComputerhulpAanHuisSoestLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  return children;
+  return children
 }

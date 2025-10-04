@@ -1,20 +1,34 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Eindhoven | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Eindhoven ✓ Ervaren specialisten ✓ Heel Eindhoven ✓ Van Centrum tot Veldhoven ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Eindhoven | Hulp Met IT',
+  description: 'Computerhulp aan huis in Eindhoven voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis eindhoven',
     'computer reparatie eindhoven',
     'laptop reparatie eindhoven',
+    'IT specialist eindhoven',
     'pc hulp eindhoven',
-    'IT hulp eindhoven',
     'computer specialist eindhoven',
     'eindhoven computerhulp avond',
     'eindhoven IT hulp weekend',
     'computerhulp eindhoven spoed',
     'betaalbare IT hulp eindhoven'
   ],
+  openGraph: {
+    title: 'Computerhulp aan huis Eindhoven | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Eindhoven door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
+    url: '/computerhulp-aan-huis-eindhoven',
+    type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Computerhulp aan huis Eindhoven | IT-Specialisten',
+    description: 'Computerhulp aan huis Eindhoven. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
+  },
   robots: {
     index: true,
     follow: true,

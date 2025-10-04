@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Zoetermeer | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Zoetermeer ✓ Ervaren specialisten ✓ Heel Zoetermeer ✓ Van Centrum tot Rokkeveen ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Zoetermeer | Hulp Met IT',
+  description: 'Computerhulp aan huis in Zoetermeer voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis zoetermeer',
     'computer reparatie zoetermeer',
     'laptop reparatie zoetermeer',
+    'IT specialist zoetermeer',
     'pc hulp zoetermeer',
-    'IT hulp zoetermeer',
     'computer specialist zoetermeer',
     'zoetermeer computerhulp avond',
     'zoetermeer IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp zoetermeer'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Zoetermeer | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Zoetermeer ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Rokkeveen ✓ Transparante tarieven',
-    images: ['/images/computerhulp-zoetermeer-og.webp'],
+    title: 'Computerhulp aan huis Zoetermeer | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Zoetermeer door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-zoetermeer',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Zoetermeer | Computer Specialist',
-    description: 'Computerhulp aan huis Zoetermeer ✓ Specialist komt bij u ✓ Heel Zoetermeer ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Zoetermeer | IT-Specialisten',
+    description: 'Computerhulp aan huis Zoetermeer. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,

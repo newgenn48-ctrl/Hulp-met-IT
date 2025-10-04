@@ -1,6 +1,6 @@
 'use client'
 
-import { Monitor, Printer, Wifi, Smartphone, Mail, GraduationCap } from 'lucide-react'
+import { Monitor, Printer, Wifi, Smartphone, Mail, GraduationCap, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import services from '@/lib/data/services.json'
 
@@ -45,7 +45,7 @@ export function ServicesGrid({
               <Link
                 key={service.slug}
                 href={`/diensten/${service.slug}`}
-                className="group text-center p-8 bg-white rounded-2xl shadow-lg border border-primary-200 hover:shadow-xl hover:border-primary-300 hover:-translate-y-2 transition-all duration-300"
+                className="group text-center p-8 bg-white rounded-2xl shadow-lg border border-primary-200 hover:shadow-xl hover:border-primary-300 hover:-translate-y-2 transition-all duration-300 flex flex-col"
               >
                 <div className="mb-6 flex justify-center">
                   <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg">
@@ -53,9 +53,16 @@ export function ServicesGrid({
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-secondary-800 group-hover:text-primary-600 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-secondary-800 group-hover:text-primary-600 transition-colors duration-300 mb-4">
                   {service.name}
                 </h3>
+
+                <div className="mt-auto">
+                  <span className="inline-flex items-center text-primary-600 font-semibold text-sm group-hover:text-primary-700 transition-colors">
+                    Meer info
+                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
               </Link>
             )
           })}

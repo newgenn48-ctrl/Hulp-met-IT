@@ -1,14 +1,14 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Schiedam | Specialist komt naar u',
-  description: 'Computerhulp aan huis in Schiedam ✓ Ervaren specialisten ✓ Heel Schiedam ✓ Van Centrum tot Nieuwland ✓ Transparante tarieven ✓ Bel ons',
+  title: 'Computerhulp aan huis Schiedam | Hulp Met IT',
+  description: 'Computerhulp aan huis in Schiedam voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis schiedam',
     'computer reparatie schiedam',
     'laptop reparatie schiedam',
+    'IT specialist schiedam',
     'pc hulp schiedam',
-    'IT hulp schiedam',
     'computer specialist schiedam',
     'schiedam computerhulp avond',
     'schiedam IT hulp weekend',
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     'betaalbare IT hulp schiedam'
   ],
   openGraph: {
-    title: 'Computerhulp aan Huis Schiedam | Computer Specialist',
-    description: 'Computerhulp aan huis in heel Schiedam ✓ Ervaren specialisten komen bij u ✓ Van Centrum tot Nieuwland ✓ Transparante tarieven',
-    images: ['/images/computerhulp-schiedam-og.webp'],
+    title: 'Computerhulp aan huis Schiedam | IT-Specialisten | Hulp Met IT',
+    description: 'Computerhulp aan huis in Schiedam door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    images: ['/og-image.webp'],
     url: '/computerhulp-aan-huis-schiedam',
     type: 'website',
     locale: 'nl_NL',
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan Huis Schiedam | Computer Specialist',
-    description: 'Computerhulp aan huis Schiedam ✓ Specialist komt bij u ✓ Heel Schiedam ✓ Transparante tarieven',
+    title: 'Computerhulp aan huis Schiedam | IT-Specialisten',
+    description: 'Computerhulp aan huis Schiedam. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
   },
   robots: {
     index: true,
