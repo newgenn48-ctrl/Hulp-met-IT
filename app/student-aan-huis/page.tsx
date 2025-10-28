@@ -153,14 +153,7 @@ export default function StudentAanHuisLanding() {
             },
             "serviceType": "Student aan huis Nederland",
             "priceRange": "€53,50-€100",
-            "openingHours": "Mo-Su 08:00-22:00",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "500",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
+            "openingHours": "Mo-Su 09:00-21:00",
             "offers": {
               "@type": "Offer",
               "priceCurrency": "EUR",
@@ -242,7 +235,7 @@ export default function StudentAanHuisLanding() {
             </h1>
 
             <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-8 leading-relaxed drop-shadow-md">
-              Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
+              Betaalbare computerhulp door deskundige IT-studenten bij u thuis
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 mb-8">

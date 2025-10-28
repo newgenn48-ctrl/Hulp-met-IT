@@ -163,14 +163,7 @@ export default function ComputerhulpAanHuisLanding() {
             },
             "serviceType": "Computerhulp aan huis Nederland",
             "priceRange": "€53,50-€100",
-            "openingHours": "Mo-Su 08:00-22:00",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "500",
-              "bestRating": "5",
-              "worstRating": "1"
-            },
+            "openingHours": "Mo-Su 09:00-21:00",
             "offers": {
               "@type": "Offer",
               "priceCurrency": "EUR",
