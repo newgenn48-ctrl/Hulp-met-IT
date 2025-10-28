@@ -33,7 +33,6 @@ const serviceTypes = [
   { value: 'tablet-smartphone', label: 'Tablet & Smartphone hulp' },
   { value: 'uitleg-les', label: 'Uitleg & Les - Computer training' },
   { value: 'email-problemen', label: 'E-mail problemen oplossen' },
-  { value: 'windows-11-overstap', label: 'Windows 11 Overstap Service' },
   { value: 'student-aan-huis', label: 'Student Aan Huis - Algemene IT hulp' },
   { value: 'anders', label: 'Anders - Beschrijf in opmerkingen' }
 ]

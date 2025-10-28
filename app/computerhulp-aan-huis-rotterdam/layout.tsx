@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Rotterdam | Hulp Met IT',
-  description: 'Computerhulp aan huis in Rotterdam voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis in Rotterdam voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis rotterdam',
     'computer reparatie rotterdam',
@@ -17,9 +17,8 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Computerhulp aan huis Rotterdam | IT-Specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis in Rotterdam door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    description: 'Computerhulp aan huis in Rotterdam door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Ook avond en weekend!',
     images: ['/og-image.webp'],
-    url: '/computerhulp-aan-huis-rotterdam',
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Hulp met IT'
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Computerhulp aan huis Rotterdam | IT-Specialisten',
-    description: 'Computerhulp aan huis Rotterdam. Specialist komt bij u. Vanaf €53,50 voor 3 kwartier.',
+    description: 'Computerhulp aan huis Rotterdam. Specialist komt bij u. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50).',
   },
   robots: {
     index: true,

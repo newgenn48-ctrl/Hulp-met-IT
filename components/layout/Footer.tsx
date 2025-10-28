@@ -43,7 +43,7 @@ export function Footer() {
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 mr-3 text-primary-700" />
-                <span className="text-primary-700">Ma-Zo: 8:00 - 21:00</span>
+                <span className="text-primary-700">Ma-Zo: 09:00 - 21:00</span>
               </div>
             </div>
           </div>
@@ -95,6 +95,11 @@ export function Footer() {
               <li>
                 <Link href="/privacy" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
                   Privacy beleid
+                </Link>
+              </li>
+              <li>
+                <Link href="/algemene-voorwaarden" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                  Algemene voorwaarden
                 </Link>
               </li>
               <li>

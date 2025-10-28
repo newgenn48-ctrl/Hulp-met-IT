@@ -53,7 +53,7 @@ const rotterdamAreas = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Rotterdam?",
-    answer: "Onze tarieven beginnen vanaf €53,50 voor 3 kwartier in Rotterdam. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    answer: "Onze tarieven beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Rotterdam. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Rotterdam?",
@@ -261,8 +261,6 @@ export default function StudentAanHuisRotterdamLanding() {
 
         {/* Testimonials Section */}
         <TestimonialsSection />
-
-        {/* Windows 11 Urgent Section */}
         {/* Services Section */}
         <ServicesPreview />
 
@@ -314,7 +312,7 @@ export default function StudentAanHuisRotterdamLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Rotterdam</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €53,50 voor 3 kwartier in Rotterdam - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                  Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Rotterdam - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
                 </p>
               </div>
 

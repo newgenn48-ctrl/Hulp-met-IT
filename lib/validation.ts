@@ -62,7 +62,6 @@ export const appointmentSchema = z.object({
       'tablet-smartphone',
       'uitleg-les',
       'email-problemen',
-      'windows-11-overstap',
       'student-aan-huis',
       'anders'
     ].includes(type), 'Ongeldig service type'),

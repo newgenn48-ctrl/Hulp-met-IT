@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Nederland | Hulp Met IT',
-  description: 'Student aan huis in heel Nederland voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Beschikbaar in alle steden!',
+  description: 'Student aan huis in heel Nederland voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Beschikbaar in alle steden!',
   keywords: [
     'student aan huis',
     'student computerhulp',
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: 'Student Aan Huis - Betaalbare Computerhulp door IT-Studenten',
     description: 'Betaalbare computerhulp door ervaren IT-studenten. €14,50 per kwartier + €10 voorrijkosten. Heel Nederland!',
     images: ['/og-image.webp'],
-    url: '/student-aan-huis',
   },
   twitter: {
     card: 'summary_large_image',

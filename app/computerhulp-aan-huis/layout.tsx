@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis | Hulp Met IT',
-  description: 'Computerhulp aan huis voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 voor 3 kwartier. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis',
     'computer reparatie aan huis',
@@ -20,14 +20,13 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Computerhulp aan huis | IT-Specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 voor 3 kwartier. Ook avond en weekend!',
+    description: 'Computerhulp aan huis door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Ook avond en weekend!',
     images: ['/og-image.webp'],
-    url: '/computerhulp-aan-huis',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Computerhulp aan huis - Ervaren IT-Specialisten',
-    description: 'Computerhulp aan huis door IT-specialisten met 10+ jaar ervaring vanaf €53,50 voor 3 kwartier!',
+    description: 'Computerhulp aan huis door IT-specialisten met 10+ jaar ervaring vanaf €53,50 (€10 voorrijkosten + 3 x €14,50)!',
   },
   robots: {
     index: true,

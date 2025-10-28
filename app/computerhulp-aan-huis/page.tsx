@@ -47,7 +47,7 @@ const processSteps = [
 const faqData = [
   {
     question: "Wat kost computerhulp aan huis?",
-    answer: "Onze tarieven zijn €53,50 voor 3 kwartier plus €10 eenmalige voorrijkosten. Dit is veel voordeliger dan traditionele computerhulp services. Minimum 3 kwartier."
+    answer: "Onze tarieven zijn €53,50 (€10 voorrijkosten + 3 x €14,50) plus €10 eenmalige voorrijkosten. Dit is veel voordeliger dan traditionele computerhulp services. Minimum 3 kwartier."
   },
   {
     question: "Zijn jullie specialisten wel gekwalificeerd?",
@@ -334,7 +334,7 @@ export default function ComputerhulpAanHuisLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €53,50 voor 3 kwartier - veel goedkoper dan traditionele computerhulp. Eerlijke prijzen zonder verrassingen.
+                  Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) - veel goedkoper dan traditionele computerhulp. Eerlijke prijzen zonder verrassingen.
                 </p>
               </div>
 

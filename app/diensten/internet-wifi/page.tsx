@@ -17,10 +17,16 @@ export const metadata: Metadata = {
   title: 'WiFi Problemen | Internet hulp | Snel opgelost',
   description: service.longDescription,
   keywords: service.keywords,
+  alternates: {
+    canonical: '/diensten/internet-wifi',
+  },
   openGraph: {
     title: `${service.name} - Hulp met IT`,
     description: service.longDescription,
+    url: 'https://hulpmetit.nl/diensten/internet-wifi',
     images: [`/images/${service.slug}-og.webp`],
+    type: 'website',
+    locale: 'nl_NL',
   },
 }
 
@@ -35,7 +41,7 @@ const faqData = [
   },
   {
     question: "Wat kost internet en WiFi hulp?",
-    answer: "Onze tarieven beginnen vanaf €28,50 per kwartier. We maken eerst een diagnose en geven een duidelijke kostenopgave voordat we beginnen met de reparatie."
+    answer: "Onze tarieven beginnen vanaf €14,50 per kwartier (min. 3 kwartier = €43,50) + €10 voorrijkosten. We maken eerst een diagnose en geven een duidelijke kostenopgave voordat we beginnen met de reparatie."
   },
   {
     question: "Kunnen jullie alle internetproviders helpen?",

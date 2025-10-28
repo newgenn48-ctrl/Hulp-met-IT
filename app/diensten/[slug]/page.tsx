@@ -39,9 +39,15 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
     title: `${service.name} - Vriendelijke IT Hulp aan Huis | Hulp met IT`,
     description: `${service.description} ✓ Vriendelijke IT-specialisten ✓ Transparante tarieven €14,50 per kwartier ✓ Persoonlijke hulp ✓ Direct online afspraak maken`,
     keywords: service.keywords,
+    alternates: {
+      canonical: `/diensten/${params.slug}`,
+    },
     openGraph: {
       title: `${service.name} - Vriendelijke IT Hulp aan Huis`,
       description: service.description,
+      url: `https://hulpmetit.nl/diensten/${params.slug}`,
+      type: 'website',
+      locale: 'nl_NL',
       images: [`/images/services/${service.slug}.webp`],
     },
   }

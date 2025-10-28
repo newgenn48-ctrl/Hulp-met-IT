@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Capelle aan den IJssel | Hulp Met IT',
-  description: 'Student aan huis in Capelle aan den IJssel voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
+  description: 'Student aan huis in Capelle aan den IJssel voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: [
     'student aan huis capelle aan den ijssel',
     'student computerhulp capelle aan den ijssel',
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: 'Student Aan Huis Capelle aan den IJssel | IT-Student Computerhulp',
     description: 'Student aan huis Capelle aan den IJssel: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
-    url: '/student-aan-huis-capelle-aan-den-ijssel',
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Hulp met IT'

@@ -118,18 +118,11 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
       "addressCountry": "NL",
       "addressRegion": "Nederland"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "1000",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "priceRange": PRICING.PRICE_RANGE,
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "openingHours": SERVICE_HOURS.OPENING_HOURS,
     "foundingDate": BUSINESS_INFO.FOUNDED_YEAR,
-    "slogan": "Betaalbare computerhulp aan huis - vanaf €53,50 voor 3 kwartier"
+    "slogan": "Betaalbare computerhulp aan huis - vanaf €53,50 (€10 voorrijkosten + 3 x €14,50)"
   }
 
   const faqData = {

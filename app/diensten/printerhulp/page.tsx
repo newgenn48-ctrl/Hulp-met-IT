@@ -17,10 +17,16 @@ export const metadata: Metadata = {
   title: 'Printerhulp | Alle merken | Installatie reparatie',
   description: service.longDescription,
   keywords: service.keywords,
+  alternates: {
+    canonical: '/diensten/printerhulp',
+  },
   openGraph: {
     title: `${service.name} - Hulp met IT`,
     description: service.longDescription,
+    url: 'https://hulpmetit.nl/diensten/printerhulp',
     images: [`/images/${service.slug}-og.webp`],
+    type: 'website',
+    locale: 'nl_NL',
   },
 }
 
@@ -35,7 +41,7 @@ const faqData = [
   },
   {
     question: "Wat kost printerhulp aan huis?",
-    answer: "Onze printerhulp begint vanaf €28,50 per kwartier. Dit omvat diagnose, reparatie en installatie. Voor complexere problemen geven we vooraf een kostenopgave."
+    answer: "Onze printerhulp kost €14,50 per kwartier (minimaal 3 kwartier = €43,50) plus €10 voorrijkosten. Dit omvat diagnose, reparatie en installatie. Voor complexere problemen geven we vooraf een kostenopgave."
   },
   {
     question: "Kunnen jullie een nieuwe printer installeren?",

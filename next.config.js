@@ -98,6 +98,11 @@ const nextConfig = {
         source: '/home',
         destination: '/',
         permanent: true
+      },
+      {
+        source: '/regios/computerhulp-:slug',
+        destination: '/regios/:slug',
+        permanent: true
       }
     ]
   }

@@ -17,10 +17,16 @@ export const metadata: Metadata = {
   title: 'Tablet Smartphone Hulp | iPhone iPad Android | Mobile',
   description: service.longDescription,
   keywords: service.keywords,
+  alternates: {
+    canonical: '/diensten/tablet-smartphone',
+  },
   openGraph: {
     title: `${service.name} - Hulp met IT`,
     description: service.longDescription,
+    url: 'https://hulpmetit.nl/diensten/tablet-smartphone',
     images: [`/images/${service.slug}-og.webp`],
+    type: 'website',
+    locale: 'nl_NL',
   },
 }
 

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Dordrecht | Hulp Met IT',
-  description: 'Student aan huis in Dordrecht voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
+  description: 'Student aan huis in Dordrecht voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: [
     'student aan huis dordrecht',
     'student computerhulp dordrecht',
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: 'Student Aan Huis Dordrecht | IT-Student Computerhulp',
     description: 'Student aan huis Dordrecht: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
-    url: '/student-aan-huis-dordrecht',
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Hulp met IT'

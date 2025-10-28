@@ -35,7 +35,7 @@ export function PricingSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-4">
           <PricingCard
             title="Standaard Hulp"
             price="€53,50"
@@ -51,6 +51,10 @@ export function PricingSection() {
             popular={true}
           />
         </div>
+
+        <p className="text-center text-sm text-secondary-600 mb-8">
+          * Alle prijzen zijn inclusief 21% BTW
+        </p>
 
         <div className="text-center">
           <div className="card-3d max-w-3xl mx-auto">

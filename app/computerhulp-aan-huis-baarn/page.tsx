@@ -43,7 +43,7 @@ const processSteps = [
 const faqData = [
   {
     question: "Wat kost computerhulp aan huis in Baarn?",
-    answer: "Onze computerhulp aan huis in Baarn begint vanaf €53,50 voor 3 kwartier. Voor 1 uur betaalt u €69,50. Wij werken met transparante prijzen zonder verborgen kosten."
+    answer: "Onze computerhulp aan huis in Baarn begint vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Voor 1 uur betaalt u €69,50. Wij werken met transparante prijzen zonder verborgen kosten."
   },
   {
     question: "Hoe snel kan een specialist bij mij thuis komen in Baarn?",
@@ -307,7 +307,7 @@ export default function ComputerhulpAanHuisBaarn() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Eerlijke Prijzen</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Transparante tarieven vanaf €53,50 voor 3 kwartier. Geen verrassingen, u weet vooraf wat u betaalt.
+                  Transparante tarieven vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Geen verrassingen, u weet vooraf wat u betaalt.
                 </p>
               </div>
             </div>

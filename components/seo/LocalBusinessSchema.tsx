@@ -65,14 +65,6 @@ export function LocalBusinessSchema() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Windows 11 overstap",
-            "description": "Professionele upgrade van Windows 10 naar Windows 11"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
             "name": "Laptop en computer ondersteuning",
             "description": "Hulp met laptop en computer problemen en onderhoud"
           }

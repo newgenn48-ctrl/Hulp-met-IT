@@ -2,13 +2,12 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Student aan huis Naarden | Hulp Met IT',
-  description: 'Student aan huis in Naarden voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
+  description: 'Student aan huis in Naarden voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: 'student aan huis Naarden, computerhulp Naarden, IT student Naarden, computer reparatie Naarden, laptop hulp Naarden',
   openGraph: {
     title: 'Student aan Huis Naarden - Computerhulp door Studenten',
     description: 'Computerhulp aan huis in Naarden door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
     images: ['/og-image.webp'],
-    url: '/student-aan-huis-naarden',
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Hulp met IT'

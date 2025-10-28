@@ -50,12 +50,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/windows-11-overstap`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-    },
-    {
       url: `${baseUrl}/computerhulp-aan-huis`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
@@ -63,6 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/algemene-voorwaarden`,
       lastModified: new Date(),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
@@ -79,7 +79,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // City pages
   const cityPages = cities.map(city => ({
-    url: `${baseUrl}/regios/computerhulp-${city.slug}`,
+    url: `${baseUrl}/regios/${city.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,

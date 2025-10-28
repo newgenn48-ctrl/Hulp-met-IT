@@ -56,10 +56,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = `Computerhulp ${city.name} - IT Service aan Huis | Hulp met IT`
   const description = `${city.longDescription} ✓ Snelle service ✓ Lokale kennis ✓ Ervaren IT-specialisten`
 
-  // Use computerhulp- URL in metadata if that's how we were accessed
-  const canonicalUrl = params.slug.startsWith('computerhulp-') 
-    ? `https://hulpmetit.nl/regios/computerhulp-${city.slug}`
-    : `https://hulpmetit.nl/regios/${city.slug}`
+  // Always use short URL format as canonical
+  const canonicalUrl = `https://hulpmetit.nl/regios/${city.slug}`
 
   return {
     title,
@@ -124,9 +122,7 @@ export default function CityPage({ params }: PageProps) {
     },
   ]
 
-  const schemaUrl = params.slug.startsWith('computerhulp-') 
-    ? `https://hulpmetit.nl/regios/computerhulp-${city.slug}`
-    : `https://hulpmetit.nl/regios/${city.slug}`
+  const schemaUrl = `https://hulpmetit.nl/regios/${city.slug}`
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -182,7 +178,7 @@ export default function CityPage({ params }: PageProps) {
     },
     {
       question: `Wat kost computerhulp aan huis in ${city.name}?`,
-      answer: `Onze tarieven in ${city.name} beginnen vanaf €28,50 per kwartier. Er zijn geen voorrijkosten binnen ${city.name}. We geven altijd een duidelijke kostenopgave vooraf.`
+      answer: `Onze tarieven zijn €14,50 per kwartier (minimaal 3 kwartier = €43,50) plus €10 voorrijkosten. We geven altijd een duidelijke kostenopgave vooraf.`
     },
     {
       question: `Welke wijken in ${city.name} bedienen jullie?`,

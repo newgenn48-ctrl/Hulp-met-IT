@@ -17,10 +17,16 @@ export const metadata: Metadata = {
   title: 'Email Problemen | Outlook Gmail | Installatie hulp',
   description: service.longDescription,
   keywords: service.keywords,
+  alternates: {
+    canonical: '/diensten/email-problemen',
+  },
   openGraph: {
     title: `${service.name} - Hulp met IT`,
     description: service.longDescription,
+    url: 'https://hulpmetit.nl/diensten/email-problemen',
     images: [`/images/${service.slug}-og.webp`],
+    type: 'website',
+    locale: 'nl_NL',
   },
 }
 

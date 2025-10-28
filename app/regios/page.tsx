@@ -46,7 +46,7 @@ const regiosFaqData = [
   },
   {
     question: "Hoeveel kost computerhulp in verschillende steden?",
-    answer: "Onze tarieven zijn landelijk hetzelfde: vanaf €28,50 per kwartier. Geen voorrijkosten in de meeste steden. We hanteren transparante, vaste tarieven door heel Nederland."
+    answer: "Onze tarieven zijn landelijk hetzelfde: vanaf €14,50 per kwartier (min. 3 kwartier = €43,50) + €10 voorrijkosten. Geen voorrijkosten in de meeste steden. We hanteren transparante, vaste tarieven door heel Nederland."
   },
   {
     question: "Zijn jullie IT-specialisten lokaal beschikbaar?",

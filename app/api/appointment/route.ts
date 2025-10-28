@@ -39,7 +39,6 @@ const serviceTypeLabels: Record<string, string> = {
   'tablet-smartphone': 'Tablet & Smartphone hulp',
   'uitleg-les': 'Uitleg & Les - Computer training',
   'email-problemen': 'E-mail problemen oplossen',
-  'windows-11-overstap': 'Windows 11 Overstap Service',
   'student-aan-huis': 'Student Aan Huis - Algemene IT hulp',
   'anders': 'Anders - Zie beschrijving'
 }

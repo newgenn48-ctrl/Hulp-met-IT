@@ -17,10 +17,16 @@ export const metadata: Metadata = {
   title: 'Computerles Uitleg | Computer Training | IT-Les',
   description: service.longDescription,
   keywords: service.keywords,
+  alternates: {
+    canonical: '/diensten/uitleg-les',
+  },
   openGraph: {
     title: `${service.name} - Hulp met IT`,
     description: service.longDescription,
+    url: 'https://hulpmetit.nl/diensten/uitleg-les',
     images: [`/images/${service.slug}-og.webp`],
+    type: 'website',
+    locale: 'nl_NL',
   },
 }
 
@@ -31,7 +37,7 @@ const faqData = [
   },
   {
     question: "Hoeveel kost een computerles aan huis?",
-    answer: "Onze computerlessen kosten €42,50 per uur. Dit is inclusief persoonlijke begeleiding, oefenmateriaal, en nazorg. Geen abonnementen of verborgen kosten."
+    answer: "Onze computerlessen kosten €58,00 per uur (4 kwartier x €14,50). Dit is inclusief persoonlijke begeleiding, oefenmateriaal, en nazorg. Geen abonnementen of verborgen kosten."
   },
   {
     question: "Ben ik niet te oud om nog te leren computeren?",

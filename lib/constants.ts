@@ -21,16 +21,19 @@ export const BUSINESS_INFO = {
 } as const
 
 export const PRICING = {
-  RATE_PER_QUARTER: 13.99,
+  RATE_PER_QUARTER: 14.50,
   TRAVEL_COSTS: 10.00,
-  MINIMUM_COST: 23.99,
-  PRICE_RANGE: '€23,99-€100',
+  MINIMUM_QUARTERS: 3,
+  MINIMUM_COST: 53.50, // 3x14.50 + 10
+  EMERGENCY_RATE: 18.50,
+  EMERGENCY_MINIMUM: 65.50, // 3x18.50 + 10
+  PRICE_RANGE: '€53,50-€100',
   CURRENCY: 'EUR'
 } as const
 
 export const SERVICE_HOURS = {
-  OPENING_HOURS: 'Mo-Su 08:00-22:00',
-  DESCRIPTION: '08:00 tot 22:00, 7 dagen per week'
+  OPENING_HOURS: 'Mo-Su 09:00-21:00',
+  DESCRIPTION: '09:00 tot 21:00, 7 dagen per week'
 } as const
 
 export const SOCIAL_MEDIA = {

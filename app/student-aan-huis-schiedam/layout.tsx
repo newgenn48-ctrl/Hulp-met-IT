@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Schiedam | Hulp Met IT',
-  description: 'Student aan huis in Schiedam voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
+  description: 'Student aan huis in Schiedam voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: [
     'student aan huis schiedam',
     'student computerhulp schiedam',
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: 'Student Aan Huis Schiedam | IT-Student Computerhulp',
     description: 'Student aan huis Schiedam: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
-    url: '/student-aan-huis-schiedam',
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Hulp met IT'

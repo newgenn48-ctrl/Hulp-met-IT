@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Nijmegen | Hulp Met IT',
-  description: 'Student aan huis in Nijmegen voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 voor 3 kwartier. Snel en vakkundig!',
+  description: 'Student aan huis in Nijmegen voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: [
     'student aan huis nijmegen',
     'student computerhulp nijmegen',
@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: 'Student Aan Huis Nijmegen | Betaalbare Computerhulp',
     description: 'IT-studenten komen naar je toe in Nijmegen. Betaalbare tarieven, vakkundige hulp.',
     images: ['/og-image.webp'],
-    url: '/student-aan-huis-nijmegen',
     type: 'website',
     locale: 'nl_NL',
     siteName: 'Hulp met IT'

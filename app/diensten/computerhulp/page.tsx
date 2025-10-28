@@ -17,9 +17,13 @@ export const metadata: Metadata = {
   title: 'Computerhulp | Virus verwijderen | Data behouden',
   description: service.longDescription,
   keywords: service.keywords,
+  alternates: {
+    canonical: '/diensten/computerhulp',
+  },
   openGraph: {
     title: `${service.name} - Hulp met IT`,
     description: service.longDescription,
+    url: 'https://hulpmetit.nl/diensten/computerhulp',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
 const faqData = [
   {
     question: "Wat kost computerhulp aan huis?",
-    answer: "Onze tarieven beginnen vanaf €28,50 per kwartier. We rekenen alleen voor de tijd die daadwerkelijk besteed wordt aan het oplossen van uw probleem. Er zijn geen voorrijkosten of verborgen kosten."
+    answer: "Onze tarieven zijn €14,50 per kwartier (minimaal 3 kwartier = €43,50) plus €10 voorrijkosten. We rekenen alleen voor de tijd die daadwerkelijk besteed wordt aan het oplossen van uw probleem."
   },
   {
     question: "Hoe snel kunnen jullie komen voor computerhulp?",
