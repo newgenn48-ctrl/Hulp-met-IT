@@ -271,7 +271,7 @@ export default function ComputerhulpAanHuisLanding() {
             </h1>
 
             <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-8 leading-relaxed drop-shadow-md">
-              Computerproblemen? Onze ervaren IT-specialisten met 10+ jaar ervaring komen bij u thuis. U krijgt professionele hulp zodat uw computer weer perfect werkt!
+              Professionele computerhulp bij u thuis - Snel, betrouwbaar en betaalbaar
             </p>
 
             <div className="flex flex-wrap justify-center gap-6 mb-8">
