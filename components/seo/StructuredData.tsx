@@ -1,12 +1,11 @@
 import { CONTACT_INFO, BUSINESS_INFO, PRICING, SERVICE_HOURS } from '@/lib/constants'
 
 interface StructuredDataProps {
-  page?: 'home' | 'faq' | 'service'
   breadcrumbs?: Array<{ name: string; url: string }>
   serviceName?: string
 }
 
-export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _serviceName }: StructuredDataProps = {}) {
+export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: StructuredDataProps = {}) {
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -125,53 +124,6 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
     "slogan": "Betaalbare computerhulp aan huis - vanaf €53,50 (€10 voorrijkosten + 3 x €14,50)"
   }
 
-  const faqData = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Hoeveel kost jullie computerhulp?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Onze standaard tarieven zijn €53,50 voor de eerste 3 kwartier (inclusief €10 voorrijkosten). Daarna betaalt u €14,50 per extra kwartier. Voor spoedhulp binnen 24 uur is het €65,50 voor de eerste 3 kwartier en €18,50 per extra kwartier. We spreken altijd vooraf af wat het gaat kosten."
-        }
-      },
-      {
-        "@type": "Question", 
-        "name": "Wanneer kunnen jullie langskomen?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Meestal kunnen we binnen 24-48 uur bij u zijn. Voor spoedhulp proberen we binnen 24 uur te komen. We bellen altijd vooraf om een afspraak te maken die u uitkomt."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wat voor computerproblemen lossen jullie op?", 
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Alle soorten! Computer installatie, problemen oplossen, onderhoud, e-mail setup, printer doet het niet, internet problemen, WhatsApp installeren, programma's uitleggen - eigenlijk alles wat met computers te maken heeft."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Hoe weten we zeker dat jullie betrouwbaar zijn?",
-        "acceptedAnswer": {
-          "@type": "Answer", 
-          "text": "We hebben meer dan 10 jaar ervaring met alle soorten computerproblemen. Onze specialisten zijn ervaren en betrouwbaar. Bent u niet tevreden? Dan krijgt u uw geld terug."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Helpen jullie ook ouderen met hun computer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja, heel graag! Veel van onze klanten zijn 50+. We zijn geduldig, nemen de tijd en leggen alles stap voor stap uit. We snappen dat technologie soms ingewikkeld kan zijn."
-        }
-      }
-    ]
-  }
-
   // Organization schema for better brand recognition
   const organizationData = {
     "@context": "https://schema.org",
@@ -204,10 +156,8 @@ export function StructuredData({ page = 'home', breadcrumbs = [], serviceName: _
     }))
   } : null
 
+  // Let individual pages handle their own FAQPage schemas to avoid duplicates
   const schemas: any[] = [localBusinessData, organizationData]
-  if (page === 'faq' || page === 'home') {
-    schemas.push(faqData)
-  }
   if (breadcrumbData) {
     schemas.push(breadcrumbData)
   }
