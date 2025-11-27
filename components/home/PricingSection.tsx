@@ -6,20 +6,17 @@ import { ArrowRight, Phone } from 'lucide-react'
 
 export function PricingSection() {
   const standardFeatures = [
-    "Voorrijkosten €10 inbegrepen",
-    "Daarna €14,50 per extra kwartier",
-    "Afspraak vanaf overmorgen mogelijk",
-    "Telefonische nazorg tot 1 week na bezoek",
-    "Uitgebreide uitleg en tips"
+    "Minimale afname: 3 kwartier",
+    "Voorrijkosten €10 (eenmalig)",
+    "Afspraak vanaf overmorgen mogelijk"
   ]
 
   const urgentFeatures = [
-    "Voorrijkosten €10 inbegrepen",
-    "Daarna €18,50 per extra kwartier",
+    "Minimale afname: 3 kwartier",
+    "Voorrijkosten €10 (eenmalig)",
     "Binnen 24 uur bij u thuis",
     "Ook avonden en weekenden beschikbaar",
-    "Prioriteit bij acute problemen",
-    "Telefonische nazorg tot 1 week na bezoek"
+    "Prioriteit bij acute problemen"
   ]
 
   return (
@@ -38,15 +35,15 @@ export function PricingSection() {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-4">
           <PricingCard
             title="Standaard Hulp"
-            price="€53,50"
-            period="voor eerste 3 kwartier"
+            price="€14,50"
+            period="per kwartier"
             features={standardFeatures}
           />
 
           <PricingCard
             title="Spoedhulp"
-            price="€65,50"
-            period="voor eerste 3 kwartier"
+            price="€18,50"
+            period="per kwartier"
             features={urgentFeatures}
             popular={true}
           />

@@ -37,7 +37,15 @@
       "Bash(echo \"Updated: $file\")",
       "Bash(echo \"Skipped: $file\")",
       "Bash(git commit -m \"$(cat <<''EOF''\nCritical business fixes: Legal compliance & pricing updates\n\nCRITICAL FIXES:\n✅ Fix pricing constants naar €14,50 model (was €13,99)\n✅ Update service hours naar 09:00-21:00 (consistent overal)\n✅ Verwijder fake review numbers uit schema (Google penalty risk)\n✅ Voeg BTW vermelding toe bij prijzen (wettelijk vereist)\n✅ Maak complete algemene voorwaarden pagina\n\nLEGAL COMPLIANCE:\n- Algemene voorwaarden volledig uitgewerkt (14 secties)\n- Herroepingsrecht correct beschreven\n- Aansprakelijkheid beperkt en gedocumenteerd\n- Garantie voorwaarden toegevoegd\n- Privacy/GDPR verwijzing\n- Klachtenprocedure beschreven\n- Link in footer + sitemap\n\nPRICING FIXES:\n- lib/constants.ts: Alle prijzen geüpdatet naar nieuw model\n- MINIMUM_COST: €23,99 → €53,50 (3x€14,50 + €10)\n- EMERGENCY rates toegevoegd (€18,50/kwartier)\n- BTW notice op PricingSection\n- Schema.org prijzen consistent\n\nSERVICE HOURS:\n- Constants: Mo-Su 09:00-21:00\n- Footer: Ma-Zo: 09:00 - 21:00\n- Consistent door hele site\n\nREVIEWS:\n- Fake AggregateRating verwijderd (1000 reviews = misleading)\n- Trustpilot widget component voorbereid\n- Instructies voor setup toegevoegd\n\nFEATURES READY:\n🟢 WhatsApp Business (al geïmplementeerd in StickyContactButtons)\n🟢 Algemene Voorwaarden (volledig compliant)\n🟢 BTW vermelding (legal compliant)\n🟢 Trustpilot placeholder (ready for activation)\n\nIMPACT:\n- Legal risk geëlimineerd ✅\n- Google penalty risk verwijderd ✅\n- Pricing consistent ✅\n- Wettelijk compliant ✅\n\nTESTED:\n✅ TypeScript type checking passed\n✅ No build errors\n✅ All constants updated\n✅ Legal pages accessible\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "WebSearch",
+      "WebFetch(domain:www.studentaanhuis.nl)",
+      "WebFetch(domain:www.hulpstation.nl)",
+      "WebFetch(domain:fiksi.nl)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
