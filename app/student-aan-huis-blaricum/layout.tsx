@@ -1,28 +1,29 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Blaricum | Hulp Met IT',
-  description: 'Student aan huis in Blaricum voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
-  keywords: 'student aan huis Blaricum, computerhulp Blaricum, IT student Blaricum, computer reparatie Blaricum, laptop hulp Blaricum',
+  title: 'Computerhulp Blaricum | IT Student aan Huis in het Gooi | Hulp met IT',
+  description: 'Computerhulp aan huis in Blaricum door ervaren IT-studenten van Hogeschool Utrecht. Hulp met laptop, tablet, smartphone en WiFi. Vanaf €53,50. Ook in Laren, Huizen en Hilversum.',
+  keywords: 'computerhulp Blaricum, IT student aan huis Blaricum, laptop hulp Blaricum, computer reparatie Gooi, WiFi problemen Blaricum, smartphone hulp Laren, tablet hulp Huizen, Hogeschool Utrecht IT student',
   openGraph: {
-    title: 'Student aan Huis Blaricum - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Blaricum door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Computerhulp Blaricum | IT Student aan Huis in het Gooi',
+    description: 'Betaalbare computerhulp aan huis in Blaricum en omgeving door IT-studenten van Hogeschool Utrecht. Persoonlijke hulp met computer, laptop, tablet en smartphone.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    siteName: 'Hulp met IT',
+    url: 'https://hulpmetit.nl/student-aan-huis-blaricum'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student aan Huis Blaricum - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Blaricum door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Computerhulp Blaricum | IT Student aan Huis in het Gooi',
+    description: 'Betaalbare computerhulp aan huis in Blaricum door IT-studenten. Persoonlijke hulp met al uw apparaten.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-blaricum'
+    canonical: 'https://hulpmetit.nl/student-aan-huis-blaricum'
   }
 };
 

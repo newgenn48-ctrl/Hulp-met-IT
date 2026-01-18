@@ -1,82 +1,56 @@
 'use client'
 
 import Link from 'next/link'
-import { 
-  MapPin, 
-  ArrowRight,
-  Users
-} from 'lucide-react'
+import { MapPin, ArrowRight } from 'lucide-react'
 import cities from '@/lib/data/cities.json'
 
-const featuredCities = cities
-  .slice(0, 6)
+const featuredCities = cities.slice(0, 6)
 
 export function RegionsPreview() {
   return (
-    <section className="section-spacing">
-      <div className="max-w-7xl mx-auto container-padding">
-        <div className="text-center mb-8">
-          <h2 className="text-5xl lg:text-6xl font-bold text-gradient mb-6">
-            Onze Regio's
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+
+        <div className="text-center mb-16">
+          <p className="text-primary-500 font-semibold mb-3">Werkgebied</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+            Actief in heel Nederland
           </h2>
-          <p className="text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed">
-            We zijn actief in de belangrijkste Nederlandse steden én omliggende gemeenten. 
-            Onze lokale IT-specialisten kennen uw regio door en door en bieden snelle service aan huis.
+          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+            Onze IT-specialisten komen bij u thuis, waar u ook woont.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {featuredCities.map((city, _index) => (
-            <div key={city.slug} className="h-full group hover:scale-105 transition-transform duration-300">
-              <div className="card-3d h-full">
-                <div className="text-center p-8 flex flex-col h-full">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <MapPin className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-semibold text-secondary-800 mb-2">
-                    {city.name}
-                  </h3>
-                  <p className="text-primary-600 text-sm mb-4">
-                    {city.population} inwoners
-                  </p>
-                  <p className="text-primary-700 leading-relaxed mb-6 flex-grow">
-                    {city.description}
-                  </p>
-
-                  <div className="mb-6">
-                    <div className="flex items-center justify-center mb-2">
-                      <Users className="w-4 h-4 text-primary-700 mr-2" />
-                      <span className="text-primary-700 font-semibold text-sm">
-                        Lokale IT-service
-                      </span>
-                    </div>
-                  </div>
-
-                  <Link href={`/regios/computerhulp-${city.slug}`} className="btn-secondary text-sm px-4 py-2 inline-flex items-center justify-center">
-                    IT-hulp {city.name}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+          {featuredCities.map((city) => (
+            <Link
+              key={city.slug}
+              href={`/computerhulp-aan-huis-${city.slug}`}
+              className="group flex items-center gap-3 bg-secondary-50 hover:bg-primary-50 rounded-xl p-4 border border-secondary-200 hover:border-primary-300 transition-colors"
+            >
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-secondary-200 group-hover:border-primary-300 group-hover:bg-primary-100 transition-colors flex-shrink-0">
+                <MapPin className="w-5 h-5 text-primary-500" />
               </div>
-            </div>
+              <div>
+                <p className="font-semibold text-secondary-900 group-hover:text-primary-600 transition-colors">
+                  {city.name}
+                </p>
+                <p className="text-secondary-500">IT-hulp aan huis</p>
+              </div>
+            </Link>
           ))}
         </div>
 
         <div className="text-center">
-          <div className="card-3d max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-secondary-800 mb-4">
-              In heel Nederland actief
-            </h3>
-            <p className="text-primary-700 mb-6">
-              Ontdek alle steden en omliggende plaatsen waar wij IT-hulp aan huis bieden. Van Amsterdam tot Arnhem, 
-              van Rotterdam tot Utrecht - overal in deze regio's staan onze experts voor u klaar.
-            </p>
-            <Link href="/regios" className="btn-cta">
-              Alle regio's bekijken
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </div>
+          <Link
+            href="/regios"
+            className="inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+          >
+            Bekijk alle regio&apos;s
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
         </div>
+
       </div>
     </section>
   )

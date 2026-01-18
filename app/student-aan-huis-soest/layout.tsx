@@ -1,29 +1,44 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Soest | Hulp Met IT',
-  description: 'Student aan huis in Soest voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
-  keywords: 'student aan huis Soest, computerhulp Soest, IT student Soest, computer reparatie Soest, laptop hulp Soest',
+  title: 'ICT Student aan Huis Soest | Computerhulp vanaf €14,50/uur | Hulp met IT',
+  description: 'ICT Student aan huis in Soest voor computerhulp. IT-studenten van Hogeschool Utrecht komen bij u thuis in Soest Centrum, Soestdijk, Soesterberg en omgeving. Betaalbaar: vanaf €14,50/uur + €10 voorrijkosten.',
+  keywords: [
+    'student aan huis soest',
+    'computerhulp soest',
+    'IT student soest',
+    'computer reparatie soest',
+    'laptop hulp soest',
+    'ict hulp soest',
+    'computerhulp soest centrum',
+    'computerhulp soestdijk',
+    'computerhulp soesterberg',
+    'thuishulp computer soest',
+    'hogeschool utrecht student soest',
+    'betaalbare computerhulp soest',
+    'computer hulp aan huis soest'
+  ],
   openGraph: {
-    title: 'Student aan Huis Soest - Computerhulp door Studenten',
-    description: 'Betaalbare computerhulp aan huis in Soest door studenten. Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'ICT Student aan Huis Soest | Computerhulp vanaf €14,50/uur',
+    description: 'Betaalbare computerhulp aan huis in Soest door IT-studenten van Hogeschool Utrecht. Hulp in Soest Centrum, Soestdijk, Soesterberg en omgeving.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    siteName: 'Hulp met IT',
+    url: 'https://hulpmetit.nl/student-aan-huis-soest'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student aan Huis Soest - Computerhulp door Studenten',
-    description: 'Betaalbare computerhulp aan huis in Soest door studenten. Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'ICT Student aan Huis Soest | Computerhulp vanaf €14,50/uur',
+    description: 'Betaalbare computerhulp aan huis in Soest door IT-studenten van Hogeschool Utrecht. Hulp in Soest Centrum, Soestdijk, Soesterberg en omgeving.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-soest'
-  }
+    canonical: 'https://hulpmetit.nl/student-aan-huis-soest'
+  },
 };
 
 export default function SoestStudentLayout({

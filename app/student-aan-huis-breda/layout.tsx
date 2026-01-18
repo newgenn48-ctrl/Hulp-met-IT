@@ -1,23 +1,26 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Breda | Hulp Met IT',
-  description: 'Student aan huis in Breda voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'Student aan huis Breda | Computerhulp aan Huis | Hulp met IT',
+  description: 'Student aan huis in Breda voor computerhulp. Betaalbare IT-studenten van Avans Hogeschool en NHTV komen naar je toe. Vanaf €53,50. Breda Centrum, Princenhage, Ginneken en omgeving.',
   keywords: [
     'student aan huis breda',
     'student computerhulp breda',
     'betaalbare computerhulp breda',
     'IT student breda',
     'computer reparatie breda student',
-    'betaalbare computer hulp breda',
-    'studenten computer service breda',
-    'breda student IT hulp',
+    'computerhulp breda centrum',
+    'computerhulp princenhage',
+    'computerhulp ginneken',
+    'avans hogeschool student hulp',
     'breda computerhulp avond',
-    'breda IT hulp weekend'
+    'breda IT hulp weekend',
+    'computerhulp oosterhout',
+    'computerhulp etten-leur'
   ],
   openGraph: {
-    title: 'Student Aan Huis Breda | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp.',
+    title: 'Student aan Huis Breda | Betaalbare Computerhulp',
+    description: 'IT-studenten van Avans Hogeschool en NHTV komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp in Breda Centrum, Princenhage, Ginneken en omgeving.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +28,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Breda | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp.',
+    title: 'Student aan Huis Breda | Betaalbare Computerhulp',
+    description: 'IT-studenten van Avans Hogeschool en NHTV komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp.',
   },
   robots: {
     index: true,

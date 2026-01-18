@@ -7,125 +7,182 @@ export function Footer() {
   return (
     <footer className="relative bg-primary-50 border-t border-primary-200">
       <div className="max-w-7xl mx-auto container-padding py-12">
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
           <div>
             <Link href="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
                 <span className="text-2xl font-bold text-white">H</span>
               </div>
               <div>
                 <span className="text-2xl font-bold text-gradient">Hulp met IT</span>
-                <div className="text-sm text-primary-600">Computer Specialist aan huis</div>
+                <div className="text-sm text-primary-600">IT-Specialist aan huis</div>
               </div>
             </Link>
-            
-            <p className="text-primary-700 leading-relaxed mb-6 max-w-md">
-              Snelle, betrouwbare IT-ondersteuning aan huis door ervaren specialisten 
+
+            <p className="text-secondary-600 leading-relaxed mb-6 max-w-md text-sm">
+              Snelle, betrouwbare IT-ondersteuning aan huis door ervaren specialisten
               met meer dan 10 jaar ervaring in het vakgebied.
             </p>
 
             <div className="space-y-3 text-sm">
-              <div className="flex items-center">
-                <Phone className="w-4 h-4 mr-3 text-primary-700" />
-                <a href="tel:+31642827860" className="text-primary-700 hover:text-primary-700 transition-colors">
-                  +31 (0)6 42827860
-                </a>
+              <a href="tel:+31642827860" className="flex items-center text-secondary-600 hover:text-primary-600 transition-colors">
+                <Phone className="w-4 h-4 mr-3 text-primary-600" />
+                06-42 82 78 60
+              </a>
+              <a href="mailto:info@hulpmetit.nl" className="flex items-center text-secondary-600 hover:text-primary-600 transition-colors">
+                <Mail className="w-4 h-4 mr-3 text-primary-600" />
+                info@hulpmetit.nl
+              </a>
+              <div className="flex items-center text-secondary-600">
+                <MapPin className="w-4 h-4 mr-3 text-primary-600" />
+                Landelijk werkzaam
               </div>
-              <div className="flex items-center">
-                <Mail className="w-4 h-4 mr-3 text-primary-700" />
-                <a href="mailto:info@hulpmetit.nl" className="text-primary-700 hover:text-primary-700 transition-colors">
-                  info@hulpmetit.nl
-                </a>
+              <div className="flex items-center text-secondary-600">
+                <Clock className="w-4 h-4 mr-3 text-primary-600" />
+                Ma-Zo: 09:00 - 21:00
               </div>
-              <div className="flex items-center">
-                <MapPin className="w-4 h-4 mr-3 text-primary-700" />
-                <span className="text-primary-700">Landelijk werkzaam</span>
-              </div>
-              <div className="flex items-center">
-                <Clock className="w-4 h-4 mr-3 text-primary-700" />
-                <span className="text-primary-700">Ma-Zo: 09:00 - 21:00</span>
-              </div>
+            </div>
+
+            <div className="mt-4 pt-4 border-t border-primary-200 text-sm text-secondary-500 space-y-1">
+              <p>KvK: 91310318</p>
+              <p>BTW: NL865613461B01</p>
             </div>
           </div>
 
+          {/* Services */}
           <div>
             <h3 className="text-lg font-semibold text-secondary-800 mb-4">Diensten</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/computerhulp-aan-huis" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
-                  Computerhulp aan huis
+                <Link href="/diensten/computerhulp" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Computerhulp
                 </Link>
               </li>
               <li>
-                <Link href="/student-aan-huis" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
-                  Student aan huis
-                </Link>
-              </li>
-              <li>
-                <Link href="/diensten/printerhulp" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                <Link href="/diensten/printerhulp" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
                   Printer hulp
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/internet-wifi" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                <Link href="/diensten/email-problemen" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  E-mail problemen
+                </Link>
+              </li>
+              <li>
+                <Link href="/diensten/internet-wifi" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
                   Internet & WiFi
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/tablet-smartphone" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                <Link href="/diensten/tablet-smartphone" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
                   Tablet & Smartphone
+                </Link>
+              </li>
+              <li>
+                <Link href="/diensten/uitleg-les" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Uitleg & Les
+                </Link>
+              </li>
+              <li>
+                <Link href="/student-aan-huis" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Student aan huis
                 </Link>
               </li>
             </ul>
           </div>
 
+          {/* Popular Regions */}
+          <div>
+            <h3 className="text-lg font-semibold text-secondary-800 mb-4">Populaire Regio&apos;s</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/computerhulp-aan-huis-amsterdam" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Amsterdam
+                </Link>
+              </li>
+              <li>
+                <Link href="/computerhulp-aan-huis-rotterdam" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Rotterdam
+                </Link>
+              </li>
+              <li>
+                <Link href="/computerhulp-aan-huis-utrecht" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Utrecht
+                </Link>
+              </li>
+              <li>
+                <Link href="/computerhulp-aan-huis-den-haag" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Den Haag
+                </Link>
+              </li>
+              <li>
+                <Link href="/computerhulp-aan-huis-eindhoven" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Eindhoven
+                </Link>
+              </li>
+              <li>
+                <Link href="/computerhulp-aan-huis-almere" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Almere
+                </Link>
+              </li>
+              <li>
+                <Link href="/regios" className="text-primary-600 hover:text-primary-700 transition-colors text-sm font-medium">
+                  Alle regio&apos;s →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company */}
           <div>
             <h3 className="text-lg font-semibold text-secondary-800 mb-4">Bedrijf</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/over-ons" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                <Link href="/over-ons" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
                   Over ons
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                <Link href="/contact" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                <Link href="/afspraak" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
+                  Afspraak maken
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
                   Privacy beleid
                 </Link>
               </li>
               <li>
-                <Link href="/algemene-voorwaarden" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
+                <Link href="/algemene-voorwaarden" className="text-secondary-600 hover:text-primary-600 transition-colors text-sm">
                   Algemene voorwaarden
                 </Link>
               </li>
-              <li>
-                <Link href="/sitemap.xml" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
-                  Sitemap
-                </Link>
-              </li>
-              <li>
-                <Link href="/regios" className="text-primary-600 hover:text-secondary-800 transition-colors text-sm">
-                  Alle regio's
-                </Link>
-              </li>
             </ul>
+
+            {/* CTA */}
+            <div className="mt-6 p-4 bg-white rounded-lg border border-primary-200">
+              <p className="text-sm font-medium text-secondary-800 mb-2">Hulp nodig?</p>
+              <a
+                href="tel:+31642827860"
+                className="inline-flex items-center text-sm font-semibold text-primary-600 hover:text-primary-700"
+              >
+                <Phone className="w-4 h-4 mr-2" />
+                Bel nu: 06-42 82 78 60
+              </a>
+            </div>
           </div>
         </div>
 
         <div className="section-divider my-12" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-primary-600 gap-4">
-          <p>
-            © {currentYear} Hulp met IT. Alle rechten voorbehouden.
-          </p>
-          <div className="flex flex-col md:flex-row gap-4 text-xs">
-            <span>KvK: 91310318</span>
-            <span>BTW: NL865613461B01</span>
-          </div>
+        <div className="text-center text-sm text-primary-600">
+          <p>© {currentYear} Hulp met IT. Alle rechten voorbehouden.</p>
         </div>
       </div>
     </footer>

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Gouda | Hulp Met IT',
-  description: 'Student aan huis in Gouda voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Gouda | Hulp Met IT',
+  description: 'ICT Student aan huis in Gouda voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: [
     'student aan huis gouda',
     'student computerhulp gouda',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'gouda IT hulp weekend'
   ],
   openGraph: {
-    title: 'Student Aan Huis Gouda | IT-Student Computerhulp',
+    title: 'Student Aan Huis Gouda',
     description: 'Student aan huis Gouda: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Gouda | IT-Student Computerhulp',
+    title: 'Student Aan Huis Gouda',
     description: 'Student aan huis Gouda: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {

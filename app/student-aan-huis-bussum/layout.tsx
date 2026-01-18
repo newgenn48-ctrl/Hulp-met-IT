@@ -1,12 +1,25 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Bussum | Hulp Met IT',
-  description: 'Student aan huis in Bussum voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
-  keywords: 'student aan huis Bussum, computerhulp Bussum, IT student Bussum, computer reparatie Bussum, laptop hulp Bussum',
+  title: 'ICT Student aan huis Bussum | Hulp Met IT',
+  description: 'ICT Student aan huis in Bussum voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  keywords: [
+    'student aan huis bussum',
+    'student computerhulp bussum',
+    'betaalbare computerhulp bussum',
+    'IT student bussum',
+    'computer reparatie bussum student',
+    'betaalbare computer hulp bussum',
+    'studenten computer service bussum',
+    'bussum student IT hulp',
+    'bussum computerhulp avond',
+    'bussum IT hulp weekend',
+    'computerhulp gooi',
+    'student aan huis gooi'
+  ],
   openGraph: {
-    title: 'Student aan Huis Bussum - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Bussum door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Student Aan Huis Bussum',
+    description: 'Student aan huis Bussum: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -14,22 +27,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student aan Huis Bussum - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Bussum door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Student Aan Huis Bussum',
+    description: 'Student aan huis Bussum: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-bussum'
-  }
-};
+    canonical: '/student-aan-huis-bussum',
+  },
+}
 
-export default function BussumStudentLayout({
+export default function StudentAanHuisBussumLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  return children;
+  return children
 }

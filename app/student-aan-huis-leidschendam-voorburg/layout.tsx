@@ -1,43 +1,75 @@
 import { Metadata } from 'next'
 
+const CITY = 'Leidschendam-Voorburg'
+
 export const metadata: Metadata = {
-  title: 'Student aan huis Leidschendam-Voorburg | Hulp Met IT',
-  description: 'Student aan huis in Leidschendam-Voorburg voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
+  description: `ICT Student aan huis in ${CITY} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Leidschendam Centrum, Voorburg, Stompwijk en omgeving. Vanaf €53,50. Snel, vakkundig en vriendelijk!`,
   keywords: [
-    'student aan huis leidschendam voorburg',
-    'student computerhulp leidschendam voorburg',
-    'betaalbare computerhulp leidschendam voorburg',
-    'IT student leidschendam voorburg',
-    'computer reparatie leidschendam voorburg student',
-    'betaalbare computer hulp leidschendam voorburg',
-    'studenten computer service leidschendam voorburg',
-    'leidschendam voorburg student IT hulp',
-    'leidschendam voorburg computerhulp avond',
-    'leidschendam voorburg IT hulp weekend'
+    `student aan huis leidschendam-voorburg`,
+    `computerhulp leidschendam-voorburg`,
+    `ict hulp leidschendam-voorburg`,
+    `computer reparatie leidschendam-voorburg`,
+    `laptop hulp leidschendam-voorburg`,
+    `it student leidschendam-voorburg`,
+    `betaalbare computerhulp leidschendam-voorburg`,
+    `computer problemen leidschendam-voorburg`,
+    `wifi problemen leidschendam-voorburg`,
+    `internet hulp leidschendam-voorburg`,
+    'computerhulp leidschendam centrum',
+    'ict hulp voorburg',
+    'computer reparatie stompwijk',
+    'laptop hulp den haag',
+    'it student rijswijk',
+    'computerhulp wassenaar',
+    'wifi problemen zoetermeer',
+    'computer hulp nootdorp',
+    'ict hulp delft',
+    'computerhulp voorschoten',
+    'laptop reparatie leiden',
+    'computerhulp leiderdorp',
+    'tu delft student computerhulp',
+    'haagse hogeschool it student'
   ],
   openGraph: {
-    title: 'Student Aan Huis Leidschendam-Voorburg | IT-Student Computerhulp',
-    description: 'Student aan huis Leidschendam-Voorburg: betaalbare computerhulp door IT-studenten. Bel ons!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
+    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis in Leidschendam-Voorburg en omgeving. Vanaf €53,50.`,
+    url: `https://hulpmetit.nl/student-aan-huis-leidschendam-voorburg`,
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: `ICT Student aan huis ${CITY} - Hulp met IT`
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Leidschendam-Voorburg | IT-Student Computerhulp',
-    description: 'Student aan huis Leidschendam-Voorburg: betaalbare computerhulp door IT-studenten. Bel ons!',
+    title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
+    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis.`,
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: `https://hulpmetit.nl/student-aan-huis-leidschendam-voorburg`
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-leidschendam-voorburg',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1
+    }
+  }
 }
 
-export default function StudentAanHuisLeidschedamVoorburgLayout({
+export default function StudentAanHuisLeidschendamVoorburgLayout({
   children,
 }: {
   children: React.ReactNode

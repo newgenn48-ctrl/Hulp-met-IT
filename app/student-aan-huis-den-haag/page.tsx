@@ -1,593 +1,481 @@
 'use client'
 
-import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { ServicesPreview } from '@/components/home/ServicesPreview'
-import { PricingSection } from '@/components/home/PricingSection'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import {
   Phone,
-  Calendar,
-  Users,
-  MessageCircle,
-  CheckCircle,
-  GraduationCap,
-  Zap,
-  Euro,
-  MapPin,
+  ArrowRight,
+  Star,
+  Check,
   ChevronDown,
-  ChevronUp
+  Users,
+  Shield,
+  Clock,
+  GraduationCap,
+  Calendar,
+  MapPin
 } from 'lucide-react'
+import { PricingSection } from '@/components/home/PricingSection'
+import { ServicesGrid } from '@/components/services/ServicesGrid'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
+
+const CITY = 'Den Haag'
 
 const benefits = [
-  { icon: Users, text: 'Persoonlijke hulp aan huis' },
-  { icon: MessageCircle, text: 'Begrijpelijke uitleg, zonder vakjargon' },
-  { icon: CheckCircle, text: 'Betaalbaar en betrouwbaar' }
+  {
+    icon: Check,
+    title: 'Transparante Tarieven',
+    description: 'Duidelijke prijzen vooraf, geen verborgen kosten of verrassingen.'
+  },
+  {
+    icon: GraduationCap,
+    title: 'IT-Studenten',
+    description: 'Opgeleid in de nieuwste technologieën, vertrouwd met moderne systemen.'
+  },
+  {
+    icon: Clock,
+    title: 'Flexibele Tijden',
+    description: "Ook 's avonds en in weekenden beschikbaar."
+  },
+  {
+    icon: Users,
+    title: 'Persoonlijke Aanpak',
+    description: 'Geduldig en begrijpelijke uitleg, zonder vakjargon.'
+  },
+  {
+    icon: Calendar,
+    title: 'Snel Beschikbaar',
+    description: 'Vaak nog dezelfde dag, ook voor spoedgevallen.'
+  },
+  {
+    icon: Shield,
+    title: 'Betrouwbaar',
+    description: 'Alle studenten zijn gescreend en getraind.'
+  }
 ]
 
 const processSteps = [
   {
-    step: '1',
-    title: 'Plan Afspraak',
-    description: 'Bel of plan online - binnen Den Haag snel beschikbaar'
+    title: 'U belt of plant online',
+    description: `Vertel ons kort wat het probleem is. Wij plannen een afspraak op een moment dat u uitkomt in ${CITY}.`
   },
   {
-    step: '2',
-    title: 'Student Komt Langs',
-    description: 'IT-student komt naar je adres in Den Haag'
+    title: 'Student komt langs',
+    description: `Een ervaren IT-student komt bij u thuis in ${CITY} met alle benodigde tools en kennis.`
   },
   {
-    step: '3',
-    title: 'Probleem Opgelost',
-    description: 'Vakkundige hulp tegen studententarief + uitleg'
+    title: 'Probleem wordt opgelost',
+    description: 'Vakkundige hulp tegen studententarief. U krijgt uitleg zodat u het begrijpt.'
+  },
+  {
+    title: 'Betaling achteraf',
+    description: 'U betaalt pas na afloop. Geen vooruitbetaling, geen verrassingen.'
   }
 ]
 
-const denHaagAreas = [
-  'Den Haag Centrum', 'Scheveningen', 'Wassenaar', 'Voorburg',
-  'Leidschenveen', 'Bezuidenhout', 'Haagse Hout', 'Loosduinen',
-  'Rijswijk', 'Delft'
+const areas = [
+  'Den Haag Centrum', 'Scheveningen', 'Loosduinen', 'Laak',
+  'Haagse Hout', 'Escamp', 'Segbroek', 'Leidschenveen-Ypenburg',
+  'Rijswijk', 'Voorburg', 'Wassenaar', 'Delft'
 ]
 
 const faqData = [
   {
-    question: "Wat kost student aan huis hulp in Den Haag?",
-    answer: "Onze tarieven beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Den Haag. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    question: `Wat kost ICT student aan huis hulp in ${CITY}?`,
+    answer: `Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard bezoek van 45 minuten kost dus €53,50. U betaalt achteraf.`
   },
   {
-    question: "Zijn jullie studenten wel gekwalificeerd in Den Haag?",
-    answer: "Ja, onze studenten in Den Haag volgen IT-opleidingen en hebben praktijkervaring. Ze zijn vertrouwd met moderne technologie en worden geselecteerd op hun technische vaardigheden en communicatieve vaardigheden."
+    question: `Zijn de studenten wel gekwalificeerd in ${CITY}?`,
+    answer: `Ja, onze studenten in ${CITY} volgen IT-opleidingen aan de Haagse Hogeschool en TU Delft. Ze worden geselecteerd op technische én communicatieve vaardigheden. Alle studenten zijn gescreend.`
   },
   {
-    question: "Kunnen jullie ook 's avonds en weekenden komen in Den Haag?",
-    answer: "Ja, dat is een van onze grote voordelen! Onze studenten in Den Haag hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+    question: `Kunnen jullie ook 's avonds en in weekenden in ${CITY}?`,
+    answer: `Ja, dat is een van onze voordelen! Studenten hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week in ${CITY}.`
   },
   {
-    question: "Hoe snel kunnen jullie komen in Den Haag?",
-    answer: "In Den Haag kunnen we vaak nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgent problemen proberen we binnen 2-4 uur beschikbaar te zijn."
+    question: `Hoe snel kunnen jullie komen in ${CITY}?`,
+    answer: `Vaak kunnen we nog dezelfde dag langskomen in ${CITY}. Voor urgente problemen proberen we binnen enkele uren beschikbaar te zijn.`
   },
   {
-    question: "Welke wijken in Den Haag bedienen jullie?",
-    answer: "We bedienen alle wijken van Den Haag: Centrum, Scheveningen, Bezuidenhout, Haagse Hout, Loosduinen, plus omliggende gemeenten zoals Wassenaar, Voorburg, Rijswijk en Delft."
+    question: `Welke gebieden in ${CITY} bedienen jullie?`,
+    answer: `We bedienen heel ${CITY} en omgeving, inclusief ${areas.slice(0, 6).join(', ')} en meer.`
   }
 ]
 
-function FAQItem({ question, answer, isOpen, onToggle }: {
-  question: string
-  answer: string
-  isOpen: boolean
-  onToggle: () => void
-}) {
-  return (
-    <div className="glass-effect rounded-lg overflow-hidden">
-      <button
-        type="button"
-        onClick={onToggle}
-        className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
-      >
-        <h3 className="text-xl font-semibold text-secondary-800 pr-4">{question}</h3>
-        {isOpen ? (
-          <ChevronUp className="w-6 h-6 text-primary-400 flex-shrink-0" />
-        ) : (
-          <ChevronDown className="w-6 h-6 text-primary-400 flex-shrink-0" />
-        )}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6">
-          <p className="text-secondary-700 leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
-  )
-}
+export default function StudentAanHuisDenHaagPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
-export default function StudentAanHuisDenHaagLanding() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index)
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
   }
+
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `ICT Student aan Huis ${CITY}`,
+    description: `Betaalbare computerhulp door ervaren IT-studenten aan huis in ${CITY}`,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Hulp met IT',
+      telephone: '+31642827860',
+      url: 'https://hulpmetit.nl',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: CITY,
+        addressRegion: 'Zuid-Holland',
+        addressCountry: 'NL'
+      },
+      priceRange: '€53,50 - €100',
+      openingHours: 'Mo-Su 08:00-22:00'
+    },
+    areaServed: {
+      '@type': 'City',
+      name: CITY
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '53.50',
+      priceCurrency: 'EUR',
+      description: 'Computerhulp aan huis door IT-studenten'
+    }
+  }
+
   return (
     <>
-      
-      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://hulpmetit.nl"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Student aan huis Den Haag",
-                "item": "https://hulpmetit.nl/student-aan-huis-den-haag"
-              }
-            ]
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-
-<script
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Hulp met IT - Student Aan Huis Den Haag",
-            "description": "Betaalbare computerhulp in Den Haag door ervaren IT-studenten aan huis. Snel, betrouwbaar en vakkundig. Van Scheveningen tot Wassenaar.",
-            "url": "https://hulpmetit.nl/student-aan-huis-den-haag",
-            "telephone": "+31642827860",
-            "email": "info@hulpmetit.nl",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Den Haag",
-              "addressRegion": "Zuid-Holland",
-              "addressCountry": "NL"
-            },
-            "areaServed": { "@type": "City", "name": "Den Haag" },
-            "serviceType": "Student aan huis Den Haag",
-            "priceRange": "€53,50 - €65,50",
-            "openingHours": "Mo-Su 08:00-22:00",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "127"
-            },
-            "offers": {
-              "@type": "Offer",
-              "description": "Computerhulp aan huis door IT-studenten",
-              "priceSpecification": {
-                "@type": "PriceSpecification",
-                "price": "53.50",
-                "priceCurrency": "EUR",
-                "unitText": "per kwartier"
-              }
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "IT Diensten Den Haag",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Computer reparatie Den Haag"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Laptop hulp Den Haag"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "WiFi installatie Den Haag"
-                  }
-                }
-              ]
-            }
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
-      {/* Breadcrumbs Navigation */}
-      <nav aria-label="Breadcrumb" className="bg-white/50 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto container-padding py-3">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link href="/" className="text-primary-600 hover:text-primary-700 transition-colors">
-                Home
-              </Link>
-            </li>
-            <li className="text-gray-400">/</li>
-            <li>
-              <span className="text-gray-700 font-medium">Student aan huis Den Haag</span>
-            </li>
-          </ol>
+
+      {/* Breadcrumbs */}
+      <div className="bg-secondary-50 border-b border-secondary-200">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3">
+          <nav className="flex items-center gap-2 text-sm">
+            <Link href="/" className="text-secondary-500 hover:text-primary-500">Home</Link>
+            <span className="text-secondary-400">/</span>
+            <Link href="/student-aan-huis" className="text-secondary-500 hover:text-primary-500">ICT Student aan huis</Link>
+            <span className="text-secondary-400">/</span>
+            <span className="text-secondary-700 font-medium">{CITY}</span>
+          </nav>
         </div>
-      </nav>
+      </div>
 
-      <section className="relative flex items-start justify-center overflow-hidden min-h-[600px] lg:min-h-[700px] pt-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/images/student-aan-huis/student-aan-huis.webp)',
-              filter: 'brightness(0.7) contrast(1.1)'
-            }}
-          />
-          {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-accent-900/30" />
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-100/50 pt-12 pb-16 lg:pt-16 lg:pb-24">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+            {/* Content */}
+            <div>
+              {/* Rating */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex">
+                  {[...Array(4)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-primary-500 fill-primary-500" />
+                  ))}
+                  <div className="relative w-5 h-5">
+                    <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
+                    <div className="absolute overflow-hidden" style={{ width: '80%' }}>
+                      <Star className="w-5 h-5 text-primary-500 fill-primary-500" />
+                    </div>
+                  </div>
+                </div>
+                <span className="text-secondary-600">4.8/5 · 2000+ klanten</span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
+                ICT Student
+                <span className="text-primary-500"> aan huis {CITY}</span>
+              </h1>
+
+              {/* Subtitel */}
+              <p className="text-xl text-secondary-600 leading-relaxed mb-4 max-w-lg">
+                Betaalbare computerhulp door ervaren IT-studenten in {CITY}. Snel, vakkundig en vriendelijk bij u thuis.
+              </p>
+              <p className="text-lg text-secondary-500 mb-8 max-w-lg">
+                Ook senioren begeleiden wij met geduld en heldere uitleg.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/afspraak"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+                >
+                  Afspraak maken
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <a
+                  href="tel:+31642827860"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Bel ons
+                </a>
+              </div>
+            </div>
+
+            {/* Photo */}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary-200 to-primary-300 rounded-3xl transform rotate-3" />
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <Image
+                  src="/student-aan-huis.webp"
+                  alt={`IT-student helpt klant thuis met computer in ${CITY}`}
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center flex items-center min-h-[600px] lg:min-h-[700px]">
-          <div className="w-full">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-white drop-shadow-lg">Student aan Huis Den Haag</span>
-          </h1>
+      </section>
 
-          <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">
-            Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis in <span className="font-semibold">Den Haag en omgeving</span>. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
-          </p>
+      {/* USP Bar */}
+      <section className="bg-primary-500 py-6">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          {/* Mobile */}
+          <div className="grid grid-cols-3 gap-4 md:hidden text-white text-center mb-4">
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
+                <GraduationCap className="w-5 h-5 text-white" />
+              </div>
+              <p className="font-semibold text-sm">IT-student</p>
+              <p className="text-primary-100 text-xs">ervaren</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
+                <Clock className="w-5 h-5 text-white" />
+              </div>
+              <p className="font-semibold text-sm">Flexibel</p>
+              <p className="text-primary-100 text-xs">ook &apos;s avonds</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
+                <Shield className="w-5 h-5 text-white" />
+              </div>
+              <p className="font-semibold text-sm">Betrouwbaar</p>
+              <p className="text-primary-100 text-xs">gescreend</p>
+            </div>
+          </div>
+          <Link
+            href="/afspraak"
+            className="md:hidden w-full inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+          >
+            Afspraak maken
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-4">
+          {/* Desktop */}
+          <div className="hidden md:flex items-center justify-between gap-4 text-white">
+            <div className="flex items-center gap-10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <GraduationCap className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold">Ervaren IT-studenten</p>
+                  <p className="text-primary-100 text-sm">Opgeleid en gescreend</p>
+                </div>
+              </div>
+              <div className="w-px h-10 bg-primary-400" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold">Flexibele tijden</p>
+                  <p className="text-primary-100 text-sm">Ook &apos;s avonds & weekenden</p>
+                </div>
+              </div>
+              <div className="w-px h-10 bg-primary-400" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold">Betrouwbaar</p>
+                  <p className="text-primary-100 text-sm">Alle studenten gescreend</p>
+                </div>
+              </div>
+            </div>
+            <Link
+              href="/afspraak"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+            >
+              Afspraak maken
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <ServicesGrid maxItems={6} />
+
+      {/* Why Student */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 font-semibold mb-3">Waarom wij?</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              Voordelen van ICT student aan huis in {CITY}
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => {
               const IconComponent = benefit.icon
               return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
-                >
-                  <IconComponent className="w-6 h-6 text-white" />
-                  <span className="drop-shadow-sm">{benefit.text}</span>
+                <div key={index} className="bg-secondary-50 rounded-xl p-6 border border-secondary-200">
+                  <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mb-4">
+                    <IconComponent className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">{benefit.title}</h3>
+                  <p className="text-secondary-600">{benefit.description}</p>
                 </div>
               )
             })}
           </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-            <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
-              <Calendar className="w-6 h-6 mr-3" />
-              Afspraak Maken
-            </Link>
-
-            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow bg-white/95 hover:bg-white">
-              <Phone className="w-5 h-5 mr-2" />
-              Bel Nu
-            </a>
-          </div>
-        </div>
         </div>
       </section>
 
-      <div className="relative">
-        <ServicesGrid
-          title="Wat Wij Voor U Kunnen Doen"
-          maxItems={6}
-        />
-
-        {/* Pricing Section */}
-        <PricingSection />
-
-        {/* Testimonials Section */}
-        <TestimonialsSection />
-        {/* Process Section */}
-        <section className="section-spacing bg-white/5">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Hoe Werkt Student Aan Huis in Den Haag?
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Snel, lokaal en betaalbaar - vakkundige hulp in Den Haag
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {processSteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
-                    {step.step}
-                  </div>
-                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
-                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <ServicesPreview />
-
-        {/* Why Choose Student Section */}
-        <section className="section-spacing bg-neural-900/30">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Waarom Kiezen Voor Student Aan Huis Den Haag?
-              </h2>
-              <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
-                Ontdek de voordelen van computerhulp door ervaren IT-studenten in Den Haag
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Euro className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Den Haag</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Den Haag - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Lokale IT-Studenten</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Onze studenten in Den Haag zijn opgeleid in de nieuwste technologieën en kennen de stad goed. Snel ter plaatse in alle wijken.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Flexibele Tijden</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Ook 's avonds en in weekenden beschikbaar in Den Haag. Studenten hebben flexibele schema's en kunnen snel schakelen.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel Den Haag & Omgeving</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Van Centrum tot Scheveningen, van Bezuidenhout tot Wassenaar - onze studenten komen overal in Den Haag en omgeving.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Beschikbaarheid</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Vaak nog dezelfde dag beschikbaar in Den Haag. Korte reistijd door lokale studenten betekent snelle hulp bij jou thuis.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Moderne Kennis</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Studenten zijn vertrouwd met de nieuwste software en technologieën. Ideaal voor moderne computerproblemen en innovaties.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Detail Section */}
-        <section className="section-spacing">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Onze Student IT Diensten in Den Haag
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Uitgebreide computerhulp door vakkundige IT-studenten in Den Haag en omgeving
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🖥️ Computer & Laptop Hulp Den Haag</h3>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• Computer start niet op - volledige diagnose en reparatie</li>
-                    <li>• Laptop scherm vervangen en touchscreen reparaties</li>
-                    <li>• Toetsenbord, touchpad en muis problemen oplossen</li>
-                    <li>• Hardware upgrades: RAM geheugen, SSD en harde schijf</li>
-                    <li>• Ventilator reiniging en koeling bij oververhitting</li>
-                    <li>• Virus verwijdering en prestatie optimalisatie</li>
-                  </ul>
-                </div>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• Windows 10/11 installatie en systeem updates</li>
-                    <li>• Microsoft Office pakket installatie en configuratie</li>
-                    <li>• Antivirus software installeren en optimaliseren</li>
-                    <li>• Browser installatie en persoonlijke data overzetten</li>
-                    <li>• Printer drivers installeren en netwerk verbinding</li>
-                    <li>• Backup systeem opzetten voor veilige data opslag</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🌐 Internet & Netwerk Den Haag</h3>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• WiFi verbinding problemen diagnosticeren en oplossen</li>
-                    <li>• Router installatie, configuratie en optimalisatie</li>
-                    <li>• Langzame internet snelheid analyseren en verbeteren</li>
-                    <li>• Netwerk printer verbinding en delen tussen apparaten</li>
-                    <li>• Smart TV, tablet en telefoon internet verbinding</li>
-                    <li>• Beveiligde thuisnetwerk opzetten met wachtwoordbeveiliging</li>
-                  </ul>
-                </div>
-
-                <div className="glass-effect rounded-lg p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Tablet Hulp</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>• iPhone en Android telefoon volledige installatie</li>
-                    <li>• Apps downloaden, organiseren en accounts koppelen</li>
-                    <li>• Contacten, foto's en documenten synchroniseren</li>
-                    <li>• iPad en Android tablet optimaal configureren</li>
-                    <li>• Privacy instellingen en beveiliging optimaliseren</li>
-                    <li>• E-mail accounts instellen en sociale media koppelen</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 text-center">
-              <div className="glass-effect rounded-lg p-8 max-w-4xl mx-auto">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🏛️ Speciaal voor Den Haag Bewoners</h3>
-                <p className="text-secondary-700 leading-relaxed mb-6">
-                  Als regeringsstad heeft Den Haag unieke IT-behoeften. Onze studenten begrijpen de specifieke vereisten van
-                  overheidswerknemers, internationale organisaties en diplomaten. We bieden discrete, professionele service
-                  aangepast aan de Haagse context, van het Binnenhof tot Scheveningen.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6 text-left">
-                  <div>
-                    <h4 className="font-semibold text-secondary-800 mb-2">• Diplomatiek Kwartier Service</h4>
-                    <p className="text-secondary-700 text-sm">Speciale service voor internationale bewoners</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary-800 mb-2">• Overheids IT-ondersteuning</h4>
-                    <p className="text-secondary-700 text-sm">Ervaring met overheids-specifieke software</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary-800 mb-2">• Scheveningen tot Wassenaar</h4>
-                    <p className="text-secondary-700 text-sm">Volledige dekking van de Haagse regio</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary-800 mb-2">• Meertalige Ondersteuning</h4>
-                    <p className="text-secondary-700 text-sm">Service in Nederlands, Engels en andere talen</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="section-spacing bg-neural-900/50">
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": faqData.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer
-                  }
-                }))
-              })
-            }}
-          />
-          <div className="max-w-4xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Veelgestelde Vragen Student Aan Huis Den Haag
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Antwoorden op de meest gestelde vragen over onze student IT service in Den Haag
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqData.map((faq, index) => (
-                <FAQItem
-                  key={index}
-                  question={faq.question}
-                  answer={faq.answer}
-                  isOpen={openFAQ === index}
-                  onToggle={() => toggleFAQ(index)}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Den Haag Areas Section */}
-        <section className="section-spacing">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Werkgebied Den Haag & Omgeving
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Onze IT-studenten komen naar alle wijken in en rondom Den Haag
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-              {denHaagAreas.map((area, index) => (
-                <div key={index} className="glass-effect rounded-lg p-4 text-center">
-                  <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
-                  <span className="text-secondary-700 text-base font-medium">{area}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <p className="text-secondary-700 text-lg mb-6">
-                Niet in de lijst? <strong className="text-secondary-800">Bel ons</strong> - wij komen waarschijnlijk ook bij jou!
-              </p>
-              <Link href="/regios/den-haag" className="btn-secondary">
-                <MapPin className="w-5 h-5 mr-2" />
-                Meer Info Den Haag
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
-          <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">
-              Klaar voor Betaalbare Computerhulp in Den Haag?
+      {/* How it works */}
+      <section className="py-16 lg:py-20 bg-secondary-50">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 font-semibold mb-3">Hoe het werkt</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              In 4 stappen geholpen in {CITY}
             </h2>
-            <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">
-              Onze ervaren IT-studenten in Den Haag staan klaar om je te helpen. Van Scheveningen tot Wassenaar - snel, betaalbaar en vakkundig!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
-                <Calendar className="w-6 h-6 mr-3" />
-                Plan Nu Je Afspraak
-              </Link>
-              <Link href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
-                <Phone className="w-6 h-6 mr-3" />
-                Bel Direct
-              </Link>
-            </div>
           </div>
-        </section>
 
-      </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="relative inline-flex mb-6">
+                  <div className="w-16 h-16 bg-white border-2 border-primary-200 rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary-500">{index + 1}</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">{step.title}</h3>
+                <p className="text-secondary-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <TestimonialsSection />
+
+      {/* Pricing */}
+      <PricingSection />
+
+      {/* Areas */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 font-semibold mb-3">Werkgebied</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              ICT Student aan huis in {CITY} en omgeving
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {areas.map((area, index) => (
+              <div key={index} className="flex items-center gap-2 bg-secondary-50 rounded-lg p-3 border border-secondary-200">
+                <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                <span className="text-secondary-700 font-medium text-sm">{area}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 lg:py-20 bg-secondary-50">
+        <div className="max-w-3xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 font-semibold mb-3">Veelgestelde vragen</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              Vragen over ICT student aan huis in {CITY}
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            {faqData.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-secondary-200 overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-50 transition-colors"
+                >
+                  <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-primary-500 flex-shrink-0 transition-transform ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {openFaq === index && (
+                  <div className="px-5 pb-5">
+                    <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 lg:py-20 bg-gradient-to-r from-primary-500 to-primary-600">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Klaar voor computerhulp in {CITY}?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Onze ervaren IT-studenten in {CITY} staan klaar om u te helpen. Snel, vakkundig en betaalbaar.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/afspraak"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+            >
+              Afspraak maken
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+            <a
+              href="tel:+31642827860"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Bel ons
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -8,9 +8,6 @@ const nextConfig = {
     // Enable type checking during build for better code quality
     ignoreBuildErrors: false,
   },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
   images: {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
@@ -21,7 +18,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  swcMinify: true,
   // Modern browser target - no legacy polyfills (saves ~12.5KB)
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',

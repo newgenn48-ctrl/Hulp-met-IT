@@ -33,7 +33,7 @@ const processSteps = [
     description: 'Bel of plan online - binnen Breda snel beschikbaar'
   },
   {
-    step: '2', 
+    step: '2',
     title: 'Student Komt Langs',
     description: 'IT-student komt naar je adres in Breda'
   },
@@ -45,19 +45,19 @@ const processSteps = [
 ]
 
 const bredaAreas = [
-  'Breda Centrum', 'Breda Noord', 'Breda Oost', 'Breda West',
-  'Breda Zuid', 'Prinsenbeek', 'Teteringen', 'Oosterhout',
-  'Etten-Leur', 'Zundert', 'Made', 'Drimmelen'
+  'Breda Centrum', 'Princenhage', 'Ginneken', 'Bavel',
+  'Teteringen', 'Ulvenhout', 'Oosterhout', 'Etten-Leur',
+  'Gilze', 'Rijen', 'Terheijden', 'Made'
 ]
 
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Breda?",
-    answer: "Onze tarieven beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Breda. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    answer: "Onze tarieven beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Breda. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen minimumtarief."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Breda?",
-    answer: "Ja, onze studenten in Breda volgen IT-opleidingen en hebben praktijkervaring. Veel van onze studenten komen van Breda University of Applied Sciences (BUas) en zijn vertrouwd met moderne technologie. Ze worden geselecteerd op hun technische vaardigheden en communicatieve vaardigheden."
+    answer: "Ja, onze studenten in Breda volgen IT-opleidingen en hebben praktijkervaring. Veel van onze studenten komen van Avans Hogeschool en NHTV en zijn vertrouwd met moderne technologie. Ze worden geselecteerd op hun technische vaardigheden en communicatieve vaardigheden."
   },
   {
     question: "Kunnen jullie ook 's avonds en weekenden komen in Breda?",
@@ -65,11 +65,11 @@ const faqData = [
   },
   {
     question: "Hoe snel kunnen jullie komen in Breda?",
-    answer: "In Breda kunnen we vaak nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgent problemen proberen we binnen 2-4 uur beschikbaar te zijn in het centrum en de hoofdwijken."
+    answer: "In Breda kunnen we vaak nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgente problemen proberen we binnen 2-4 uur beschikbaar te zijn in Breda Centrum, Princenhage, Ginneken en andere wijken."
   },
   {
     question: "Welke wijken in Breda bedienen jullie?",
-    answer: "We bedienen alle wijken van Breda: Centrum, Noord, Oost, West, Zuid, Prinsenbeek, Teteringen, plus omliggende gemeenten zoals Oosterhout en Etten-Leur."
+    answer: "We bedienen alle wijken van Breda: Breda Centrum, Princenhage, Ginneken, Bavel, Teteringen, Ulvenhout, plus omliggende gemeenten zoals Oosterhout, Etten-Leur, Gilze, Rijen, Terheijden en Made."
   }
 ]
 
@@ -110,7 +110,7 @@ export default function StudentAanHuisBredaLanding() {
   }
   return (
     <>
-      
+
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
@@ -136,14 +136,14 @@ export default function StudentAanHuisBredaLanding() {
         }}
       />
 
-<script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Hulp met IT - Student Aan Huis Breda",
-            "description": "Betaalbare computerhulp in Breda door ervaren IT-studenten. Nabij BUas en historische binnenstad.",
+            "name": "Hulp met IT - Student aan Huis Breda",
+            "description": "Betaalbare computerhulp in Breda door ervaren IT-studenten van Avans Hogeschool en NHTV. Hulp in Breda Centrum, Princenhage, Ginneken en omgeving.",
             "url": "https://hulpmetit.nl/student-aan-huis-breda",
             "telephone": "+31642827860",
             "email": "info@hulpmetit.nl",
@@ -153,7 +153,13 @@ export default function StudentAanHuisBredaLanding() {
               "addressRegion": "Noord-Brabant",
               "addressCountry": "NL"
             },
-            "areaServed": { "@type": "City", "name": "Breda" },
+            "areaServed": [
+              { "@type": "City", "name": "Breda" },
+              { "@type": "Place", "name": "Princenhage" },
+              { "@type": "Place", "name": "Ginneken" },
+              { "@type": "Place", "name": "Oosterhout" },
+              { "@type": "Place", "name": "Etten-Leur" }
+            ],
             "serviceType": "Student aan huis Breda",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
@@ -189,7 +195,7 @@ export default function StudentAanHuisBredaLanding() {
         </div>
       </nav>
 
-      
+
       <section className="relative flex items-start justify-center overflow-hidden min-h-[600px] lg:min-h-[700px] pt-20">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
@@ -259,13 +265,13 @@ export default function StudentAanHuisBredaLanding() {
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Hoe Werkt Student Aan Huis in Breda?
+                Hoe Werkt Student aan Huis in Breda?
               </h2>
               <p className="text-xl text-secondary-700">
                 Snel, lokaal en betaalbaar - vakkundige hulp in Breda
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
@@ -288,7 +294,7 @@ export default function StudentAanHuisBredaLanding() {
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Waarom Kiezen Voor Student Aan Huis Breda?
+                Waarom Kiezen Voor Student aan Huis Breda?
               </h2>
               <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
                 Ontdek de voordelen van computerhulp door ervaren IT-studenten in Breda
@@ -310,9 +316,9 @@ export default function StudentAanHuisBredaLanding() {
                 <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">BUas Studenten</h3>
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Avans & NHTV Studenten</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Onze studenten in Breda komen vaak van Breda University of Applied Sciences (BUas) en zijn opgeleid in moderne technologieën. Professionele kwaliteit.
+                  Onze studenten in Breda komen vaak van Avans Hogeschool en NHTV en zijn opgeleid in de nieuwste technologieën. Lokale kennis, professionele hulp.
                 </p>
               </div>
 
@@ -332,7 +338,7 @@ export default function StudentAanHuisBredaLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel Breda</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Van historisch Centrum tot Prinsenbeek, van Noord tot Zuid - onze studenten komen overal in Breda en omgeving zoals Oosterhout.
+                  Van Breda Centrum tot Princenhage, van Ginneken tot Bavel - onze studenten komen overal in Breda en omgeving zoals Oosterhout en Etten-Leur.
                 </p>
               </div>
 
@@ -373,53 +379,53 @@ export default function StudentAanHuisBredaLanding() {
 
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🖥️ Computer & Laptop Hulp Breda</h3>
+                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Computer & Laptop Hulp Breda</h3>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• Computer start niet op - diagnose en reparatie</li>
-                    <li>• Laptop scherm vervangen of repareren</li>
-                    <li>• Toetsenbord en touchpad problemen</li>
-                    <li>• Hardware upgrades (RAM, SSD, harde schijf)</li>
-                    <li>• Ventilator reiniging bij oververhitting</li>
+                    <li>- Computer start niet op - diagnose en reparatie</li>
+                    <li>- Laptop scherm vervangen of repareren</li>
+                    <li>- Toetsenbord en touchpad problemen</li>
+                    <li>- Hardware upgrades (RAM, SSD, harde schijf)</li>
+                    <li>- Ventilator reiniging bij oververhitting</li>
                   </ul>
                 </div>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• Windows installatie en updates</li>
-                    <li>• Microsoft Office installatie en configuratie</li>
-                    <li>• Antivirus software installeren</li>
-                    <li>• Browser installatie en bookmarks overzetten</li>
-                    <li>• Printer drivers en software installeren</li>
+                    <li>- Windows installatie en updates</li>
+                    <li>- Microsoft Office installatie en configuratie</li>
+                    <li>- Antivirus software installeren</li>
+                    <li>- Browser installatie en bookmarks overzetten</li>
+                    <li>- Printer drivers en software installeren</li>
                   </ul>
                 </div>
               </div>
 
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🌐 Internet & Netwerk Breda</h3>
+                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Internet & Netwerk Breda</h3>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• WiFi verbinding problemen oplossen</li>
-                    <li>• Router instellen en configureren</li>
-                    <li>• Langzame internet snelheid verbeteren</li>
-                    <li>• Netwerk printer verbinding maken</li>
-                    <li>• Smart TV internet verbinding</li>
+                    <li>- WiFi verbinding problemen oplossen</li>
+                    <li>- Router instellen en configureren</li>
+                    <li>- Langzame internet snelheid verbeteren</li>
+                    <li>- Netwerk printer verbinding maken</li>
+                    <li>- Smart TV internet verbinding</li>
                   </ul>
                 </div>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Tablet Hulp</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• iPhone en Android telefoon instellen</li>
-                    <li>• Apps downloaden en organiseren</li>
-                    <li>• Contacten en foto's synchroniseren</li>
-                    <li>• Tablet koppelen aan WiFi en accounts</li>
-                    <li>• Privacy instellingen optimaliseren</li>
+                    <li>- iPhone en Android telefoon instellen</li>
+                    <li>- Apps downloaden en organiseren</li>
+                    <li>- Contacten en foto's synchroniseren</li>
+                    <li>- Tablet koppelen aan WiFi en accounts</li>
+                    <li>- Privacy instellingen optimaliseren</li>
                   </ul>
                 </div>
               </div>
@@ -449,7 +455,7 @@ export default function StudentAanHuisBredaLanding() {
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Veelgestelde Vragen Student Aan Huis Breda
+                Veelgestelde Vragen Student aan Huis Breda
               </h2>
               <p className="text-xl text-secondary-700">
                 Antwoorden op de meest gestelde vragen over onze student IT service in Breda

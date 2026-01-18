@@ -1,12 +1,25 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Laren | Hulp Met IT',
-  description: 'Student aan huis in Laren voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
-  keywords: 'student aan huis Laren, computerhulp Laren, IT student Laren, computer reparatie Laren, laptop hulp Laren',
+  title: 'ICT Student aan huis Laren | Hulp Met IT',
+  description: 'ICT Student aan huis in Laren voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  keywords: [
+    'student aan huis laren',
+    'student computerhulp laren',
+    'betaalbare computerhulp laren',
+    'IT student laren',
+    'computer reparatie laren student',
+    'betaalbare computer hulp laren',
+    'studenten computer service laren',
+    'laren student IT hulp',
+    'laren computerhulp avond',
+    'laren IT hulp weekend',
+    'computerhulp gooi',
+    'student aan huis gooi'
+  ],
   openGraph: {
-    title: 'Student aan Huis Laren - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Laren door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Student Aan Huis Laren',
+    description: 'Student aan huis Laren: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -14,22 +27,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student aan Huis Laren - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Laren door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Student Aan Huis Laren',
+    description: 'Student aan huis Laren: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-laren'
-  }
-};
+    canonical: '/student-aan-huis-laren',
+  },
+}
 
-export default function LarenStudentLayout({
+export default function StudentAanHuisLarenLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  return children;
+  return children
 }

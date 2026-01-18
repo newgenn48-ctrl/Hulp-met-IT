@@ -48,7 +48,20 @@
       "Bash(taskkill:*)",
       "Bash(git pull:*)",
       "Bash(git stash:*)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Bash(cd:*)",
+      "Bash(timeout 15 npm run dev:*)",
+      "Bash(npx sharp-cli --version)",
+      "Bash(npx sharp-cli:*)",
+      "Bash(npx sharp --help:*)",
+      "Bash(node -e:*)",
+      "Bash(npm audit fix:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "Bash(powershell -Command \"Get-ChildItem -Path ''app/student-aan-huis-*'' -Recurse -Filter ''*.tsx'' | ForEach-Object { \\(Get-Content $_FullName -Raw\\) -replace ''student aan huis'', ''ICT student aan huis'' -replace ''Student aan huis'', ''ICT Student aan huis'' -replace ''Student Aan Huis'', ''ICT Student Aan Huis'' | Set-Content $_FullName }\")",
+      "Bash(powershell -Command:*)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

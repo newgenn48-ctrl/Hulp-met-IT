@@ -1,13 +1,12 @@
-import { FloatingElements } from '@/components/three/FloatingElements'
-import { ClientWrapper } from '@/components/ClientWrapper'
-import { NoSSR } from '@/components/NoSSR'
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
+import Image from 'next/image'
+import {
+  Phone,
+  Mail,
+  MapPin,
   Clock,
   MessageSquare,
-  Headphones
+  Headphones,
+  CheckCircle
 } from 'lucide-react'
 import { Metadata } from 'next'
 
@@ -81,24 +80,78 @@ const faqs = [
 
 export default function ContactPage() {
   return (
-    <>      
-      <div className="relative min-h-screen">
-        <NoSSR fallback={<div className="absolute inset-0 pointer-events-none" />}>
-          <ClientWrapper>
-            <FloatingElements />
-          </ClientWrapper>
-        </NoSSR>
-        
-        <section className="hero-section relative z-10 md:z-auto">
+    <>
+      <div className="relative">
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-primary-50 via-white to-accent-50 pt-24 pb-16">
           <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h1 className="text-5xl lg:text-7xl font-bold text-gradient mb-6">
-                Contact
-              </h1>
-              <p className="text-xl text-secondary-700 max-w-3xl mx-auto leading-relaxed">
-                Heeft u vragen over onze services of wilt u direct hulp? 
-                We staan klaar om u te helpen via meerdere kanalen.
-              </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+              {/* Content */}
+              <div>
+                <span className="inline-block text-primary-600 font-semibold text-sm uppercase tracking-wider mb-4">
+                  Contact
+                </span>
+                <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+                  <span className="text-gradient">Direct</span>
+                  <span className="text-secondary-800"> bereikbaar</span>
+                </h1>
+                <p className="text-lg text-secondary-600 leading-relaxed mb-6">
+                  Heeft u vragen over onze services of wilt u direct hulp?
+                  We staan klaar om u te helpen via meerdere kanalen.
+                </p>
+
+                {/* Quick contact buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                  <a
+                    href="tel:+31642827860"
+                    className="inline-flex items-center justify-center bg-success-500 hover:bg-success-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                  >
+                    <Phone className="w-5 h-5 mr-2" />
+                    06-42 82 78 60
+                  </a>
+                  <a
+                    href="https://wa.me/31642827860"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+                  >
+                    <MessageSquare className="w-5 h-5 mr-2" />
+                    WhatsApp
+                  </a>
+                </div>
+
+                {/* Beloftes */}
+                <div className="space-y-2 text-sm text-secondary-600">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-success-500" />
+                    <span>Vrijblijvend advies</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-success-500" />
+                    <span>Reactie binnen 2 uur</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-success-500" />
+                    <span>7 dagen per week bereikbaar</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Afbeelding */}
+              <div className="relative">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  <Image
+                    src="/hulp-met-it.webp"
+                    alt="IT-specialist helpt klant"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                </div>
+                {/* Decoratieve achtergrond */}
+                <div className="absolute -z-10 -bottom-4 -right-4 w-full h-full bg-gradient-to-r from-primary-200 to-accent-200 rounded-2xl" />
+              </div>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 mb-8">

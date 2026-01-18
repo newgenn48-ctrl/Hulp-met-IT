@@ -84,12 +84,12 @@ export function StickyContactButtons() {
           {/* Appointment button - PRIMARY ACTION */}
           <Link
             href="/afspraak"
-            className="group relative bg-gradient-to-r from-primary-500 to-accent-500 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            className="group relative bg-primary-500 hover:bg-primary-600 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
             aria-label="Maak een afspraak"
             style={{ minHeight: '60px', minWidth: '60px' }}
           >
             <Calendar className="w-7 h-7" />
-            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-secondary-800 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-primary-600 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
               Afspraak maken
             </div>
           </Link>
@@ -97,12 +97,12 @@ export function StickyContactButtons() {
           {/* Phone button */}
           <a
             href="tel:+31642827860"
-            className="group relative bg-secondary-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            className="group relative bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
             aria-label="Bel ons: 06-42827860"
             style={{ minHeight: '56px', minWidth: '56px' }}
           >
             <Phone className="w-6 h-6" />
-            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-secondary-800 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-primary-600 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
               Bel ons direct
             </div>
           </a>
@@ -117,7 +117,7 @@ export function StickyContactButtons() {
             style={{ minHeight: '56px', minWidth: '56px' }}
           >
             <MessageCircle className="w-6 h-6" />
-            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-secondary-800 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-green-600 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
               WhatsApp
             </div>
           </a>
@@ -133,7 +133,7 @@ export function StickyContactButtons() {
         <div className="flex flex-col space-y-3">
           <Link
             href="/afspraak"
-            className="bg-gradient-to-r from-primary-500 to-accent-500 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
+            className="bg-primary-500 hover:bg-primary-600 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
             aria-label="Afspraak maken"
             style={{ minHeight: '52px', minWidth: '52px' }}
           >
@@ -142,7 +142,7 @@ export function StickyContactButtons() {
 
           <a
             href="tel:+31642827860"
-            className="bg-secondary-700 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
+            className="bg-primary-600 hover:bg-primary-700 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
             aria-label="Bel ons"
             style={{ minHeight: '52px', minWidth: '52px' }}
           >
@@ -153,7 +153,7 @@ export function StickyContactButtons() {
             href="https://wa.me/31642827860?text=Hallo%2C%20ik%20heb%20hulp%20nodig%20met%20mijn%20computer"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-600 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
+            className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
             aria-label="WhatsApp"
             style={{ minHeight: '52px', minWidth: '52px' }}
           >
@@ -168,38 +168,38 @@ export function StickyContactButtons() {
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-8 pointer-events-none'
       }`}>
-        <div className="bg-white/98 backdrop-blur-sm border-2 border-secondary-300 rounded-2xl shadow-xl p-3">
+        <div className="bg-white/95 backdrop-blur-sm border border-primary-200 rounded-2xl shadow-xl p-3">
           <div className="grid grid-cols-3 gap-3">
             <a
               href="https://wa.me/31642827860?text=Hallo%2C%20ik%20heb%20hulp%20nodig%20met%20mijn%20computer"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center justify-center bg-green-600 text-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
+              className="flex flex-col items-center justify-center bg-green-500 hover:bg-green-600 text-white p-3 rounded-xl shadow-md transition-all duration-200 active:scale-95"
               aria-label="WhatsApp ons"
-              style={{ minHeight: '68px' }}
+              style={{ minHeight: '60px' }}
             >
-              <MessageCircle className="w-6 h-6 mb-2" />
-              <span className="text-sm font-semibold">WhatsApp</span>
+              <MessageCircle className="w-5 h-5 mb-1" />
+              <span className="text-xs font-semibold">WhatsApp</span>
             </a>
 
             <Link
               href="/afspraak"
-              className="flex flex-col items-center justify-center bg-gradient-to-br from-primary-500 to-accent-500 text-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
+              className="flex flex-col items-center justify-center bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-xl shadow-md transition-all duration-200 active:scale-95"
               aria-label="Afspraak maken"
-              style={{ minHeight: '68px' }}
+              style={{ minHeight: '60px' }}
             >
-              <Calendar className="w-6 h-6 mb-2" />
-              <span className="text-sm font-semibold">Afspraak</span>
+              <Calendar className="w-5 h-5 mb-1" />
+              <span className="text-xs font-semibold">Afspraak</span>
             </Link>
 
             <a
               href="tel:+31642827860"
-              className="flex flex-col items-center justify-center bg-secondary-700 text-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 active:scale-95"
+              className="flex flex-col items-center justify-center bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-xl shadow-md transition-all duration-200 active:scale-95"
               aria-label="Bel ons nu"
-              style={{ minHeight: '68px' }}
+              style={{ minHeight: '60px' }}
             >
-              <Phone className="w-6 h-6 mb-2" />
-              <span className="text-sm font-semibold">Bellen</span>
+              <Phone className="w-5 h-5 mb-1" />
+              <span className="text-xs font-semibold">Bellen</span>
             </a>
           </div>
         </div>
@@ -211,13 +211,13 @@ export function StickyContactButtons() {
           ? 'opacity-100 scale-100'
           : 'opacity-0 scale-75 pointer-events-none'
       }`}>
-        <Link
+        <a
           href="tel:+31642827860"
-          className="flex items-center justify-center bg-gradient-to-r from-primary-500 to-accent-500 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
+          className="flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
           aria-label="Bel nu"
         >
           <Phone className="w-6 h-6" />
-        </Link>
+        </a>
       </div>
     </>
   )

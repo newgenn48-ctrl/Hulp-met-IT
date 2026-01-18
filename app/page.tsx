@@ -1,52 +1,64 @@
-import dynamic from 'next/dynamic'
 import { HeroSection } from '@/components/home/HeroSection'
 import { TrustSignals } from '@/components/home/TrustSignals'
+import { HowItWorks } from '@/components/home/HowItWorks'
+import { ServicesGrid } from '@/components/services/ServicesGrid'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
+import { PricingSection } from '@/components/home/PricingSection'
+import { AboutPreview } from '@/components/home/AboutPreview'
+import { RegionsPreview } from '@/components/home/RegionsPreview'
+import { FAQSection } from '@/components/home/FAQSection'
 import { Metadata } from 'next'
 
-// Lazy load below-the-fold components for better initial load
-const ServicesGrid = dynamic(() => import('@/components/services/ServicesGrid').then(mod => ({ default: mod.ServicesGrid })), { ssr: true })
-const PricingSection = dynamic(() => import('@/components/home/PricingSection').then(mod => ({ default: mod.PricingSection })), { ssr: true })
-const TestimonialsSection = dynamic(() => import('@/components/home/TestimonialsSection').then(mod => ({ default: mod.TestimonialsSection })), { ssr: true })
-const RegionsPreview = dynamic(() => import('@/components/home/RegionsPreview').then(mod => ({ default: mod.RegionsPreview })), { ssr: true })
-const AboutPreview = dynamic(() => import('@/components/home/AboutPreview').then(mod => ({ default: mod.AboutPreview })), { ssr: true })
-const LazyBackgroundScene = dynamic(() => import('@/components/three/LazyBackgroundScene').then(mod => ({ default: mod.LazyBackgroundScene })), { ssr: false })
-
 export const metadata: Metadata = {
-  title: 'Hulp Met IT | Computerhulp aan Huis',
-  description: 'Vriendelijke IT-specialist komt naar u toe! ✓ €14,50/kwartier + €10 voorrijkosten ✓ Binnen 24u ✓ 10+ jaar ervaring ✓ Heel Nederland ✓ Bel ons',
+  title: 'Hulp Met IT | IT-Specialist aan Huis - Snel & Vakkundig',
+  description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60 voor gratis advies.',
   keywords: [
+    'IT-specialist aan huis',
     'computerhulp aan huis',
-    'computer hulp Nederland',
-    'laptop hulp',
-    'computer problemen oplossen',
-    'vriendelijke hulp aan huis',
-    'computer ondersteuning',
-    'persoonlijke computerhulp',
-    'computer uitleg'
+    'computer hulp ouderen',
+    'laptop hulp thuis',
+    'IT hulp aan huis',
+    'computer reparatie thuis',
+    'wifi problemen oplossen',
+    'printer installeren',
+    'IT-expert thuis'
   ],
   openGraph: {
-    title: 'Computerhulp Aan Huis Nederland | Vriendelijke IT-Specialisten',
-    description: 'Vriendelijke IT-specialisten komen aan huis! €14,50 per kwartier + €10 voorrijkosten. Bel ons',
+    title: 'IT-Specialist aan Huis | Hulp met IT',
+    description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     images: ['/og-image.webp'],
   },
 }
 
 export default function HomePage() {
   return (
-    <>
-      {/* Critical content loads first - no 3D blocking */}
-      <div className="relative z-10">
-        <HeroSection />
-        <TrustSignals />        {/* Build trust immediately after hero */}
-        <ServicesGrid maxItems={6} />
-        <PricingSection />      {/* Show value early in funnel */}
-        <TestimonialsSection /> {/* Social proof after pricing */}
-        <RegionsPreview />
-        <AboutPreview />
-      </div>
+    <main>
+      {/* Hero - Eerste indruk met foto en CTA */}
+      <HeroSection />
 
-      {/* 3D background loads intelligently - only when needed */}
-      <LazyBackgroundScene />
-    </>
+      {/* Diensten - Wat we doen */}
+      <ServicesGrid maxItems={6} />
+
+      {/* Hoe het werkt - Duidelijke stappen */}
+      <HowItWorks />
+
+      {/* Trust signals - Waarom wij */}
+      <TrustSignals />
+
+      {/* Reviews - Social proof */}
+      <TestimonialsSection />
+
+      {/* Prijzen - Transparantie */}
+      <PricingSection />
+
+      {/* FAQ - Veelgestelde vragen */}
+      <FAQSection />
+
+      {/* Over ons - Persoonlijk */}
+      <AboutPreview />
+
+      {/* Regio's - Lokaal */}
+      <RegionsPreview />
+    </main>
   )
 }

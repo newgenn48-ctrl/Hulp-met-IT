@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Dordrecht | Hulp Met IT',
-  description: 'Student aan huis in Dordrecht voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Dordrecht | Hulp Met IT',
+  description: 'ICT Student aan huis in Dordrecht voor computerhulp. Betaalbare IT-studenten van Da Vinci College komen naar je toe. Vanaf €53,50. Snel en vakkundig!',
   keywords: [
     'student aan huis dordrecht',
     'student computerhulp dordrecht',
@@ -13,11 +13,15 @@ export const metadata: Metadata = {
     'studenten computer service dordrecht',
     'dordrecht student IT hulp',
     'dordrecht computerhulp avond',
-    'dordrecht IT hulp weekend'
+    'dordrecht IT hulp weekend',
+    'da vinci college student computerhulp',
+    'computerhulp zwijndrecht',
+    'computerhulp papendrecht',
+    'computerhulp sliedrecht'
   ],
   openGraph: {
-    title: 'Student Aan Huis Dordrecht | IT-Student Computerhulp',
-    description: 'Student aan huis Dordrecht: betaalbare computerhulp door IT-studenten. Bel ons!',
+    title: 'ICT Student aan huis Dordrecht | Hulp Met IT',
+    description: 'Betaalbare computerhulp in Dordrecht door IT-studenten. Snel, vakkundig en vriendelijk bij u thuis.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +29,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Dordrecht | IT-Student Computerhulp',
-    description: 'Student aan huis Dordrecht: betaalbare computerhulp door IT-studenten. Bel nus!',
+    title: 'ICT Student aan huis Dordrecht | Hulp Met IT',
+    description: 'Betaalbare computerhulp in Dordrecht door IT-studenten. Snel, vakkundig en vriendelijk bij u thuis.',
   },
   robots: {
     index: true,

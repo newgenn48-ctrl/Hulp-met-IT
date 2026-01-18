@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Katwijk | Hulp Met IT',
-  description: 'Student aan huis in Katwijk voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Katwijk | Computerhulp aan Huis | Hulp Met IT',
+  description: 'ICT Student aan huis in Katwijk voor betaalbare computerhulp. Studenten van Universiteit Leiden en Hogeschool Leiden komen bij u thuis. Vanaf €53,50. Ook in Katwijk aan Zee, Rijnsburg, Leiden, Oegstgeest, Noordwijk en omgeving.',
   keywords: [
     'student aan huis katwijk',
     'student computerhulp katwijk',
@@ -13,27 +13,34 @@ export const metadata: Metadata = {
     'studenten computer service katwijk',
     'katwijk student IT hulp',
     'katwijk computerhulp avond',
-    'katwijk IT hulp weekend'
+    'katwijk IT hulp weekend',
+    'computerhulp katwijk aan zee',
+    'computerhulp rijnsburg',
+    'computerhulp leiden student',
+    'computerhulp oegstgeest',
+    'computerhulp noordwijk',
+    'computerhulp wassenaar'
   ],
   openGraph: {
-    title: 'Student Aan Huis Katwijk | IT-Student Computerhulp',
-    description: 'Student aan huis Katwijk: betaalbare computerhulp door IT-studenten. Bel ons!',
+    title: 'ICT Student aan Huis Katwijk | Betaalbare Computerhulp',
+    description: 'Betaalbare computerhulp door IT-studenten in Katwijk en omgeving. Studenten van Universiteit Leiden en Hogeschool Leiden. Vanaf €53,50.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    siteName: 'Hulp met IT',
+    url: 'https://hulpmetit.nl/student-aan-huis-katwijk'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Katwijk | IT-Student Computerhulp',
-    description: 'Student aan huis Katwijk: betaalbare computerhulp door IT-studenten. Bel ons!',
+    title: 'ICT Student aan Huis Katwijk | Betaalbare Computerhulp',
+    description: 'Betaalbare computerhulp door IT-studenten in Katwijk en omgeving. Studenten van Universiteit Leiden en Hogeschool Leiden. Vanaf €53,50.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-katwijk',
+    canonical: 'https://hulpmetit.nl/student-aan-huis-katwijk',
   },
 }
 

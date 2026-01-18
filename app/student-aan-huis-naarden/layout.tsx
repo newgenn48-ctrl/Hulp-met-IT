@@ -1,12 +1,25 @@
-import { Metadata } from 'next';
+import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Naarden | Hulp Met IT',
-  description: 'Student aan huis in Naarden voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
-  keywords: 'student aan huis Naarden, computerhulp Naarden, IT student Naarden, computer reparatie Naarden, laptop hulp Naarden',
+  title: 'ICT Student aan huis Naarden | Hulp Met IT',
+  description: 'ICT Student aan huis in Naarden voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  keywords: [
+    'student aan huis naarden',
+    'student computerhulp naarden',
+    'betaalbare computerhulp naarden',
+    'IT student naarden',
+    'computer reparatie naarden student',
+    'betaalbare computer hulp naarden',
+    'studenten computer service naarden',
+    'naarden student IT hulp',
+    'naarden computerhulp avond',
+    'naarden IT hulp weekend',
+    'computerhulp gooi',
+    'student aan huis naarden-vesting'
+  ],
   openGraph: {
-    title: 'Student aan Huis Naarden - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Naarden door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Student Aan Huis Naarden',
+    description: 'Student aan huis Naarden: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -14,22 +27,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student aan Huis Naarden - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Naarden door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Student Aan Huis Naarden',
+    description: 'Student aan huis Naarden: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-naarden'
-  }
-};
+    canonical: '/student-aan-huis-naarden',
+  },
+}
 
-export default function NaardenStudentLayout({
+export default function StudentAanHuisNaardenLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
-  return children;
+  return children
 }

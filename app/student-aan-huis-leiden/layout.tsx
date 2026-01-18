@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Leiden | Hulp Met IT',
-  description: 'Student aan huis in Leiden voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Leiden | Hulp Met IT',
+  description: 'ICT Student aan huis in Leiden voor computerhulp. Betaalbare IT-studenten van Universiteit Leiden en Hogeschool Leiden komen naar je toe. Vanaf €53,50. Snel en vakkundig!',
   keywords: [
     'student aan huis leiden',
     'student computerhulp leiden',
@@ -13,11 +13,14 @@ export const metadata: Metadata = {
     'studenten computer service leiden',
     'leiden student IT hulp',
     'leiden computerhulp avond',
-    'leiden IT hulp weekend'
+    'leiden IT hulp weekend',
+    'computerhulp oegstgeest',
+    'computerhulp voorschoten',
+    'computerhulp leiderdorp'
   ],
   openGraph: {
-    title: 'Student Aan Huis Leiden | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Leiden. Betaalbare tarieven, vakkundige hulp.',
+    title: 'ICT Student aan huis Leiden',
+    description: 'Student aan huis Leiden: betaalbare computerhulp door IT-studenten van Universiteit Leiden en Hogeschool Leiden. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,16 +28,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Leiden | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Leiden. Betaalbare tarieven, vakkundige hulp.',
+    title: 'ICT Student aan huis Leiden',
+    description: 'Student aan huis Leiden: betaalbare computerhulp door IT-studenten van Universiteit Leiden en Hogeschool Leiden. Bel ons!',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-leiden'
-  }
+    canonical: '/student-aan-huis-leiden',
+  },
 }
 
 export default function StudentAanHuisLeidenLayout({

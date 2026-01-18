@@ -1,39 +1,42 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Groningen | Hulp Met IT',
-  description: 'Student aan huis in Groningen voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan Huis Groningen | Betaalbare Computerhulp | Hulp Met IT',
+  description: 'ICT Student aan huis in Groningen voor computerhulp. Betaalbare IT-studenten van de Rijksuniversiteit Groningen en Hanzehogeschool komen bij u thuis. Vanaf €53,50. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis groningen',
-    'student computerhulp groningen',
+    'ict student aan huis groningen',
+    'computerhulp groningen',
     'betaalbare computerhulp groningen',
     'IT student groningen',
     'computer reparatie groningen student',
-    'betaalbare computer hulp groningen',
-    'studenten computer service groningen',
-    'groningen student IT hulp',
-    'groningen computerhulp avond',
-    'groningen IT hulp weekend'
+    'laptop hulp groningen',
+    'thuishulp computer groningen',
+    'groningen computerhulp avond weekend',
+    'studentaan huis paddepoel',
+    'computerhulp haren',
+    'ict hulp hoogezand'
   ],
   openGraph: {
-    title: 'Student Aan Huis Groningen | IT-Student Computerhulp',
-    description: 'Student aan huis Groningen: betaalbare computerhulp door IT-studenten. Bel ons!',
+    title: 'ICT Student aan Huis Groningen | Betaalbare Computerhulp',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Groningen. Vanaf €53,50. Snel bij u thuis!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    siteName: 'Hulp met IT',
+    url: 'https://hulpmetit.nl/student-aan-huis-groningen'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Groningen | IT-Student Computerhulp',
-    description: 'Student aan huis Groningen: betaalbare computerhulp door IT-studenten. Bel ons!',
+    title: 'ICT Student aan Huis Groningen | Betaalbare Computerhulp',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Groningen. Vanaf €53,50. Snel bij u thuis!',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-groningen',
+    canonical: 'https://hulpmetit.nl/student-aan-huis-groningen',
   },
 }
 

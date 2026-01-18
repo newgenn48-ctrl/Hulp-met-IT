@@ -18,29 +18,25 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#334155',
+  themeColor: '#f97316',
 }
 
 export const metadata: Metadata = {
-  title: 'Hulp Met IT | Computerhulp aan Huis',
-  description: 'Betaalbare computerhulp aan huis in heel Nederland ✓ €14,50 per kwartier + €10 voorrijkosten ✓ Ervaren IT-specialisten ✓ Binnen 24-48u ✓ Bel ons',
+  title: 'Hulp Met IT | IT-Specialist aan Huis',
+  description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60.',
   icons: [
     { rel: 'icon', url: '/icon', type: 'image/png', sizes: '32x32' },
     { rel: 'apple-touch-icon', url: '/icon', sizes: '32x32' }
   ],
   keywords: [
+    'IT-specialist aan huis',
     'computerhulp aan huis',
     'IT hulp',
-    'student aan huis',
     'computer reparatie',
-    'laptop reparatie',
-    'internet problemen',
-    'software installatie',
-    'virus verwijderen',
-    'Den Haag',
-    'Amsterdam',
-    'Rotterdam',
-    'Utrecht'
+    'laptop hulp',
+    'wifi problemen',
+    'IT-expert thuis',
+    'computer hulp ouderen'
   ],
   authors: [{ name: 'Hulp met IT' }],
   creator: 'Hulp met IT',
@@ -55,8 +51,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Computerhulp Aan Huis Nederland | Hulp met IT',
-    description: 'Betaalbare computerhulp aan huis door ervaren IT-specialisten. €14,50 per kwartier + €10 voorrijkosten. Bel nu!',
+    title: 'IT-Specialist aan Huis | Hulp met IT',
+    description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     url: 'https://hulpmetit.nl',
     siteName: 'Hulp met IT',
     images: [
@@ -64,7 +60,7 @@ export const metadata: Metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Hulp met IT - Computerhulp aan Huis Logo',
+        alt: 'Hulp met IT - IT-Specialist aan Huis',
       },
     ],
     locale: 'nl_NL',
@@ -72,8 +68,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hulp met IT - Computerhulp aan Huis',
-    description: 'Snelle, betrouwbare computerhulp aan huis door gekwalificeerde IT-specialisten',
+    title: 'Hulp met IT - IT-Specialist aan Huis',
+    description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     images: ['/og-image.webp'],
   },
   robots: {
@@ -96,7 +92,7 @@ export default function RootLayout({
 }) {
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WWZVT98T'
   return (
-    <html lang="nl" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="nl" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
         {/* Preconnect to critical origins (saves ~300ms for LCP) */}
         <link rel="preconnect" href="https://www.google.com" />
@@ -111,7 +107,7 @@ export default function RootLayout({
         {/* Preload critical resources */}
         <link rel="preload" href="/og-image.webp" as="image" type="image/webp" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         {/* Skip link for screen readers */}
         <a href="#main-content" className="skip-link">
           Ga naar hoofdinhoud

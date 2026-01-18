@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { useToast } from '@/components/ui/Toast'
 import { LoadingButton } from '@/components/ui/LoadingSpinner'
+import HCaptcha from '@hcaptcha/react-hcaptcha'
 
 interface AppointmentFormData {
   firstName: string
@@ -34,7 +35,6 @@ const initialFormData: AppointmentFormData = {
   problemDescription: ''
 }
 
-
 const urgencyLevels = [
   { value: 'normal', label: 'Zonder spoed - Vanaf 2 dagen', color: 'text-blue-400' },
   { value: 'urgent', label: 'Met spoed - Binnen 24 uur', color: 'text-orange-400' }
@@ -42,28 +42,24 @@ const urgencyLevels = [
 
 const timeSlots = [
   'Tussen 10:00 en 12:00 uur',
-  'Tussen 12:00 en 14:00 uur', 
+  'Tussen 12:00 en 14:00 uur',
   'Tussen 14:00 en 16:00 uur',
   'Tussen 16:00 en 18:00 uur',
   'Tussen 18:00 en 20:00 uur',
   'Tussen 19:00 en 21:00 uur'
 ]
 
-
-// Validation functions
 const validatePostalCode = (postalCode: string): boolean => {
   const dutchPostalCodeRegex = /^[1-9][0-9]{3}[A-Z]{2}$/
   return dutchPostalCodeRegex.test(postalCode.replace(/\s/g, '').toUpperCase())
 }
 
 const validateAddress = (address: string): boolean => {
-  // Check if address contains both street name and house number
   const addressRegex = /^.+\s+\d+.*$/
   return addressRegex.test(address.trim()) && address.trim().length > 5
 }
 
 const validatePhone = (phone: string): boolean => {
-  // Dutch phone number validation (mobile and landline)
   const dutchPhoneRegex = /^(\+31|0031|0)[1-9][0-9]{8}$|^(\+31|0031|0)[2-7][0-9]{7}$/
   return dutchPhoneRegex.test(phone.replace(/[\s-]/g, ''))
 }
@@ -72,7 +68,7 @@ const getMinDateForUrgency = (urgency: string): string => {
   const today = new Date()
   switch (urgency) {
     case 'urgent':
-      return today.toISOString().split('T')[0]! // Today (maar wordt niet gebruikt)
+      return today.toISOString().split('T')[0]!
     case 'normal':
       const twoDaysFromNow = new Date(today.getTime() + (2 * 24 * 60 * 60 * 1000))
       return twoDaysFromNow.toISOString().split('T')[0]!
@@ -81,6 +77,8 @@ const getMinDateForUrgency = (urgency: string): string => {
   }
 }
 
+const HCAPTCHA_SITE_KEY = process.env['NEXT_PUBLIC_HCAPTCHA_SITE_KEY'] || '10000000-ffff-ffff-ffff-000000000001'
+
 export function AppointmentForm() {
   const [formData, setFormData] = useState<AppointmentFormData>(initialFormData)
   const [currentStep, setCurrentStep] = useState(1)
@@ -88,12 +86,28 @@ export function AppointmentForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<{[key: string]: string}>({})
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
   const formRef = useRef<HTMLDivElement>(null)
+  const captchaRef = useRef<HCaptcha>(null)
   const { showToast } = useToast()
+
+  const onCaptchaVerify = useCallback((token: string) => {
+    setCaptchaToken(token)
+    if (fieldErrors['captcha']) {
+      setFieldErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors['captcha']
+        return newErrors
+      })
+    }
+  }, [fieldErrors])
+
+  const onCaptchaExpire = useCallback(() => {
+    setCaptchaToken(null)
+  }, [])
 
   const handleInputChange = (field: keyof AppointmentFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
-    // Clear error for this field when user starts typing
     if (fieldErrors[field]) {
       setFieldErrors(prev => {
         const newErrors = { ...prev }
@@ -103,7 +117,6 @@ export function AppointmentForm() {
     }
   }
 
-  // Scroll to top of form when success message is shown
   useEffect(() => {
     if (submitStatus === 'success' && formRef.current) {
       formRef.current.scrollIntoView({
@@ -114,7 +127,6 @@ export function AppointmentForm() {
     }
   }, [submitStatus])
 
-  // Check if step is valid without updating state (for use in render)
   const isStepValid = (step: number): boolean => {
     switch (step) {
       case 1:
@@ -131,90 +143,60 @@ export function AppointmentForm() {
           validatePostalCode(formData.postalCode) &&
           formData.city.trim()
         )
-
       case 2:
-        const hasValidDescription =
-          formData.problemDescription.trim().length >= 10
-
+        const hasValidDescription = formData.problemDescription.trim().length >= 10
         if (formData.urgency === 'urgent') {
           return hasValidDescription
         }
-
         const hasValidDate = !!(
           formData.preferredDate &&
           formData.preferredDate >= getMinDateForUrgency(formData.urgency)
         )
-
         return hasValidDescription && hasValidDate && !!formData.preferredTime
-
       default:
         return false
     }
   }
 
-  // Validate step and update field errors (for use in event handlers)
   const validateStep = (step: number): boolean => {
     const errors: {[key: string]: string} = {}
 
     switch (step) {
       case 1:
-        // Validate personal info
-        if (!formData.firstName.trim()) {
-          errors['firstName'] = 'Voornaam is verplicht'
-        }
-        if (!formData.lastName.trim()) {
-          errors['lastName'] = 'Achternaam is verplicht'
-        }
+        if (!formData.firstName.trim()) errors['firstName'] = 'Voornaam is verplicht'
+        if (!formData.lastName.trim()) errors['lastName'] = 'Achternaam is verplicht'
         if (!formData.email.trim()) {
           errors['email'] = 'E-mailadres is verplicht'
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-          errors['email'] = 'Voer een geldig e-mailadres in (bijv. naam@voorbeeld.nl)'
+          errors['email'] = 'Voer een geldig e-mailadres in'
         }
         if (!formData.phone.trim()) {
           errors['phone'] = 'Telefoonnummer is verplicht'
         } else if (!validatePhone(formData.phone)) {
-          errors['phone'] = 'Voer een geldig Nederlands telefoonnummer in (bijv. 06-12345678 of 020-1234567)'
+          errors['phone'] = 'Voer een geldig Nederlands telefoonnummer in'
         }
         if (!formData.address.trim()) {
           errors['address'] = 'Straat en huisnummer zijn verplicht'
         } else if (!validateAddress(formData.address)) {
-          errors['address'] = 'Voer straat en huisnummer in (bijv. Dorpsstraat 12)'
+          errors['address'] = 'Voer straat en huisnummer in'
         }
         if (!formData.postalCode.trim()) {
           errors['postalCode'] = 'Postcode is verplicht'
         } else if (!validatePostalCode(formData.postalCode)) {
-          errors['postalCode'] = 'Voer een geldige postcode in (bijv. 1234 AB)'
+          errors['postalCode'] = 'Voer een geldige postcode in'
         }
-        if (!formData.city.trim()) {
-          errors['city'] = 'Woonplaats is verplicht'
-        }
+        if (!formData.city.trim()) errors['city'] = 'Woonplaats is verplicht'
         break
-
       case 2:
-        // Validate problem description
         if (!formData.problemDescription.trim()) {
           errors['problemDescription'] = 'Beschrijf kort wat het probleem is'
         } else if (formData.problemDescription.trim().length < 10) {
-          errors['problemDescription'] = 'Geef minimaal 10 karakters beschrijving van het probleem'
+          errors['problemDescription'] = 'Geef minimaal 10 karakters'
         }
-
-        // Voor spoed: alleen probleem beschrijving vereist
         if (formData.urgency !== 'urgent') {
-          // Voor zonder spoed: datum en tijd ook vereist
           if (!formData.preferredDate) {
-            errors['preferredDate'] = 'Kies een datum voor de afspraak'
-          } else {
-            const minDate = getMinDateForUrgency(formData.urgency)
-            if (formData.preferredDate < minDate) {
-              const minDateFormatted = new Date(minDate).toLocaleDateString('nl-NL', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric'
-              })
-              errors['preferredDate'] = `Kies een datum vanaf ${minDateFormatted}`
-            }
+            errors['preferredDate'] = 'Kies een datum'
           }
-
           if (!formData.preferredTime) {
             errors['preferredTime'] = 'Kies een tijdslot'
           }
@@ -229,55 +211,36 @@ export function AppointmentForm() {
   const nextStep = () => {
     if (validateStep(currentStep)) {
       setCurrentStep(prev => Math.min(prev + 1, 2))
-      showToast({
-        type: 'success',
-        title: 'Gegevens succesvol opgeslagen',
-        message: 'U kunt nu naar de volgende stap.'
-      })
-      // Scroll to top of form
+      showToast({ type: 'success', title: 'Gegevens opgeslagen', message: 'Ga naar de volgende stap.' })
       formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    } else {
-      const errorCount = Object.keys(fieldErrors).length
-      showToast({
-        type: 'error',
-        title: `${errorCount} ${errorCount === 1 ? 'fout' : 'fouten'} gevonden`,
-        message: 'Controleer de gemarkeerde velden hieronder.'
-      })
-      // Scroll to first error
-      const firstErrorField = Object.keys(fieldErrors)[0]
-      if (firstErrorField) {
-        const element = document.querySelector(`[name="${firstErrorField}"]`)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-        }
-      }
     }
   }
 
   const prevStep = () => {
     setCurrentStep(prev => Math.max(prev - 1, 1))
-    // Scroll to top of form
     formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const handleSubmit = async () => {
     if (!validateStep(2)) return
+    if (!captchaToken) {
+      setFieldErrors(prev => ({ ...prev, captcha: 'Bevestig dat u geen robot bent' }))
+      return
+    }
 
     setIsSubmitting(true)
     setErrorMessage('')
 
     try {
-      // Zet default serviceType als niet ingevuld
       const submitData = {
         ...formData,
-        serviceType: formData.serviceType || 'anders'
+        serviceType: formData.serviceType || 'anders',
+        captchaToken
       }
-      
+
       const response = await fetch('/api/appointment', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(submitData),
       })
 
@@ -285,89 +248,35 @@ export function AppointmentForm() {
         setSubmitStatus('success')
         setFormData(initialFormData)
         setCurrentStep(1)
-        showToast({
-          type: 'success',
-          title: 'Afspraak aangevraagd!',
-          message: 'U ontvangt binnen enkele minuten een bevestiging per e-mail.'
-        })
+        setCaptchaToken(null)
+        captchaRef.current?.resetCaptcha()
+        showToast({ type: 'success', title: 'Afspraak aangevraagd!', message: 'U ontvangt een bevestiging per e-mail.' })
       } else {
         const error = await response.json()
         setSubmitStatus('error')
-
-        // Als de API specifieke field errors teruggeeft, toon die
-        if (error.errors && Array.isArray(error.errors)) {
-          const newFieldErrors: {[key: string]: string} = {}
-          error.errors.forEach((err: {field: string, message: string}) => {
-            newFieldErrors[err.field] = err.message
-          })
-          setFieldErrors(newFieldErrors)
-
-          const errorCount = error.errors.length
-          const errorMsg = `${errorCount} ${errorCount === 1 ? 'veld heeft' : 'velden hebben'} een fout. Controleer de gemarkeerde velden.`
-          setErrorMessage(errorMsg)
-          showToast({
-            type: 'error',
-            title: `${errorCount} ${errorCount === 1 ? 'fout' : 'fouten'} gevonden`,
-            message: errorMsg
-          })
-
-          // Scroll to first error field
-          const firstErrorField = error.errors[0]?.field
-          if (firstErrorField) {
-            const element = document.querySelector(`[name="${firstErrorField}"]`)
-            if (element) {
-              element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-            }
-          }
-        } else {
-          // Generieke foutmelding als er geen specifieke field errors zijn
-          const errorMsg = error.message || 'Er is een fout opgetreden. Probeer het opnieuw.'
-          setErrorMessage(errorMsg)
-          showToast({
-            type: 'error',
-            title: 'Fout bij verzenden',
-            message: errorMsg
-          })
-        }
+        setErrorMessage(error.message || 'Er is een fout opgetreden.')
       }
-    } catch (error) {
-      const errorMsg = 'Er is een verbindingsfout opgetreden. Controleer uw internetverbinding.'
+    } catch {
       setSubmitStatus('error')
-      setErrorMessage(errorMsg)
-      showToast({
-        type: 'error',
-        title: 'Verbindingsfout',
-        message: errorMsg
-      })
+      setErrorMessage('Verbindingsfout. Controleer uw internet.')
     } finally {
       setIsSubmitting(false)
     }
   }
 
-  const getMinDate = () => {
-    return getMinDateForUrgency(formData.urgency)
-  }
+  const getMinDate = () => getMinDateForUrgency(formData.urgency)
 
   if (submitStatus === 'success') {
-    // Add conversion tracking parameter to URL
-    if (typeof window !== 'undefined' && !window.location.search.includes('conversion=success')) {
-      const newUrl = `${window.location.pathname}?conversion=success`
-      window.history.replaceState({}, '', newUrl)
-    }
-
     return (
-      <div ref={formRef} className="bg-white/5 backdrop-blur-lg rounded-xl p-8 text-center border border-white/10">
+      <div ref={formRef} className="bg-white rounded-xl p-8 text-center border border-green-200 shadow-lg">
+        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
         <h3 className="text-3xl font-bold text-secondary-800 mb-4">Afspraak Aangevraagd!</h3>
-        <p className="text-secondary-700 mb-6 max-w-md mx-auto">
-          Bedankt voor uw aanvraag. U ontvangt binnen enkele minuten een bevestiging per e-mail.
-          {formData.urgency === 'urgent'
-            ? ' Wij nemen binnen 2 uur contact met u op om de afspraak te bevestigen.'
-            : ''}
-        </p>
-        <a
-          href="/"
-          className="inline-block bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-        >
+        <p className="text-secondary-600 mb-6">U ontvangt binnen enkele minuten een bevestiging per e-mail.</p>
+        <a href="/" className="inline-block bg-primary-500 hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg">
           Terug naar Home
         </a>
       </div>
@@ -375,216 +284,133 @@ export function AppointmentForm() {
   }
 
   return (
-    <div ref={formRef} className="bg-white/5 backdrop-blur-lg rounded-xl p-8 border border-white/10">
-      {/* Progress Bar */}
+    <div ref={formRef} className="bg-white rounded-xl p-8 border border-secondary-200 shadow-sm">
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
           {[1, 2].map((step) => (
             <div key={step} className="flex items-center">
               <div className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-medium ${
-                step <= currentStep 
-                  ? 'bg-gradient-to-r from-primary-500 to-accent-500 text-white' 
+                step < currentStep ? 'bg-green-500 text-white'
+                  : step === currentStep ? 'bg-primary-500 text-white ring-4 ring-primary-200'
                   : 'bg-secondary-100 text-secondary-400'
               }`}>
-                {step}
+                {step < currentStep ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                ) : step}
               </div>
               {step < 2 && (
-                <div className={`w-full h-1 mx-4 ${
-                  step < currentStep ? 'bg-gradient-to-r from-primary-500 to-accent-500' : 'bg-secondary-100'
-                }`} />
+                <div className={`w-full h-1 mx-4 ${step < currentStep ? 'bg-green-500' : 'bg-secondary-100'}`} />
               )}
             </div>
           ))}
         </div>
         <div className="text-center">
-          <span className="text-sm text-secondary-400">
-            Stap {currentStep} van 2: {
-              currentStep === 1 ? 'Contact & Adresgegevens' : 'Urgentie & Probleem'
-            }
-          </span>
+          <p className="text-sm font-medium text-secondary-700">
+            Stap {currentStep} van 2: {currentStep === 1 ? 'Contact & Adresgegevens' : 'Urgentie & Probleem'}
+          </p>
         </div>
       </div>
 
-      {/* Step Content */}
       {currentStep === 1 && (
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold text-secondary-800 mb-6 flex items-center">
-            Contact & Adresgegevens
-          </h3>
-          
+          <h3 className="text-2xl font-bold text-secondary-800 mb-6">Contact & Adresgegevens</h3>
+
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="firstName" className="block text-sm font-medium text-secondary-800 mb-2">Voornaam *</label>
+              <label className="block text-sm font-medium text-secondary-800 mb-2">Voornaam *</label>
               <input
                 type="text"
-                id="firstName"
                 name="firstName"
                 value={formData.firstName}
                 onChange={(e) => handleInputChange('firstName', e.target.value)}
-                className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                  fieldErrors['firstName']
-                    ? 'border-red-500 focus:border-red-500'
-                    : 'border-secondary-300 focus:border-primary-500'
-                }`}
+                className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['firstName'] ? 'border-red-500' : 'border-secondary-300'}`}
                 placeholder="Uw voornaam"
-                required
               />
-              {fieldErrors['firstName'] && (
-                <p className="text-sm text-red-500 mt-1 flex items-center">
-                  <span className="mr-1">⚠️</span>
-                  {fieldErrors['firstName']}
-                </p>
-              )}
+              {fieldErrors['firstName'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['firstName']}</p>}
             </div>
             <div>
-              <label htmlFor="lastName" className="block text-sm font-medium text-secondary-800 mb-2">Achternaam *</label>
+              <label className="block text-sm font-medium text-secondary-800 mb-2">Achternaam *</label>
               <input
                 type="text"
-                id="lastName"
                 name="lastName"
                 value={formData.lastName}
                 onChange={(e) => handleInputChange('lastName', e.target.value)}
-                className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                  fieldErrors['lastName']
-                    ? 'border-red-500 focus:border-red-500'
-                    : 'border-secondary-300 focus:border-primary-500'
-                }`}
+                className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['lastName'] ? 'border-red-500' : 'border-secondary-300'}`}
                 placeholder="Uw achternaam"
-                required
               />
-              {fieldErrors['lastName'] && (
-                <p className="text-sm text-red-500 mt-1 flex items-center">
-                  <span className="mr-1">⚠️</span>
-                  {fieldErrors['lastName']}
-                </p>
-              )}
+              {fieldErrors['lastName'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['lastName']}</p>}
             </div>
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-secondary-800 mb-2">E-mailadres *</label>
+            <label className="block text-sm font-medium text-secondary-800 mb-2">E-mailadres *</label>
             <input
               type="email"
-              id="email"
               name="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                fieldErrors['email']
-                  ? 'border-red-500 focus:border-red-500'
-                  : 'border-secondary-300 focus:border-primary-500'
-              }`}
+              className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['email'] ? 'border-red-500' : 'border-secondary-300'}`}
               placeholder="uw.email@example.com"
-              required
             />
-            {fieldErrors['email'] && (
-              <p className="text-sm text-red-500 mt-1 flex items-center">
-                <span className="mr-1">⚠️</span>
-                {fieldErrors['email']}
-              </p>
-            )}
+            {fieldErrors['email'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['email']}</p>}
           </div>
 
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-secondary-800 mb-2">Telefoonnummer *</label>
+            <label className="block text-sm font-medium text-secondary-800 mb-2">Telefoonnummer *</label>
             <input
               type="tel"
-              id="phone"
               name="phone"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
-              className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                fieldErrors['phone']
-                  ? 'border-red-500 focus:border-red-500'
-                  : 'border-secondary-300 focus:border-primary-500'
-              }`}
-              placeholder="06-12345678 of 020-1234567"
-              required
+              className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['phone'] ? 'border-red-500' : 'border-secondary-300'}`}
+              placeholder="06-12345678"
             />
-            {fieldErrors['phone'] && (
-              <p className="text-sm text-red-500 mt-1 flex items-center">
-                <span className="mr-1">⚠️</span>
-                {fieldErrors['phone']}
-              </p>
-            )}
+            {fieldErrors['phone'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['phone']}</p>}
           </div>
-          
+
           <div className="border-t border-secondary-300 pt-6 mt-8">
-            <h4 className="text-lg font-semibold text-secondary-800 mb-4 flex items-center">
-              Waar Moeten We Zijn?
-            </h4>
+            <h4 className="text-lg font-semibold text-secondary-800 mb-4">Waar Moeten We Zijn?</h4>
 
             <div>
-              <label htmlFor="address" className="block text-sm font-medium text-secondary-800 mb-2">Straat + Huisnummer *</label>
+              <label className="block text-sm font-medium text-secondary-800 mb-2">Straat + Huisnummer *</label>
               <input
                 type="text"
-                id="address"
                 name="address"
                 value={formData.address}
                 onChange={(e) => handleInputChange('address', e.target.value)}
-                className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                  fieldErrors['address']
-                    ? 'border-red-500 focus:border-red-500'
-                    : 'border-secondary-300 focus:border-primary-500'
-                }`}
+                className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['address'] ? 'border-red-500' : 'border-secondary-300'}`}
                 placeholder="Voorbeeldstraat 123"
-                required
               />
-              {fieldErrors['address'] && (
-                <p className="text-sm text-red-500 mt-1 flex items-center">
-                  <span className="mr-1">⚠️</span>
-                  {fieldErrors['address']}
-                </p>
-              )}
+              {fieldErrors['address'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['address']}</p>}
             </div>
 
             <div className="grid md:grid-cols-2 gap-4 mt-4">
               <div>
-                <label htmlFor="postalCode" className="block text-sm font-medium text-secondary-800 mb-2">Postcode *</label>
+                <label className="block text-sm font-medium text-secondary-800 mb-2">Postcode *</label>
                 <input
                   type="text"
-                  id="postalCode"
                   name="postalCode"
                   value={formData.postalCode}
                   onChange={(e) => handleInputChange('postalCode', e.target.value.toUpperCase())}
-                  className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                    fieldErrors['postalCode']
-                      ? 'border-red-500 focus:border-red-500'
-                      : 'border-secondary-300 focus:border-primary-500'
-                  }`}
-                  placeholder="1234AB"
-                  maxLength={6}
-                  required
+                  className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['postalCode'] ? 'border-red-500' : 'border-secondary-300'}`}
+                  placeholder="1234 AB"
+                  maxLength={7}
                 />
-                {fieldErrors['postalCode'] && (
-                  <p className="text-sm text-red-500 mt-1 flex items-center">
-                    <span className="mr-1">⚠️</span>
-                    {fieldErrors['postalCode']}
-                  </p>
-                )}
+                {fieldErrors['postalCode'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['postalCode']}</p>}
               </div>
               <div>
-                <label htmlFor="city" className="block text-sm font-medium text-secondary-800 mb-2">Stad *</label>
+                <label className="block text-sm font-medium text-secondary-800 mb-2">Stad *</label>
                 <input
                   type="text"
-                  id="city"
                   name="city"
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                    fieldErrors['city']
-                      ? 'border-red-500 focus:border-red-500'
-                      : 'border-secondary-300 focus:border-primary-500'
-                  }`}
-                  placeholder="Bijv. Amsterdam, Rotterdam, Utrecht"
-                  required
+                  className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['city'] ? 'border-red-500' : 'border-secondary-300'}`}
+                  placeholder="Amsterdam"
                 />
-                {fieldErrors['city'] && (
-                  <p className="text-sm text-red-500 mt-1 flex items-center">
-                    <span className="mr-1">⚠️</span>
-                    {fieldErrors['city']}
-                  </p>
-                )}
+                {fieldErrors['city'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['city']}</p>}
               </div>
             </div>
           </div>
@@ -593,18 +419,15 @@ export function AppointmentForm() {
 
       {currentStep === 2 && (
         <div className="space-y-6">
-          <h3 className="text-2xl font-bold text-secondary-800 mb-6 flex items-center">
-            Urgentie & Probleem
-          </h3>
+          <h3 className="text-2xl font-bold text-secondary-800 mb-6">Urgentie & Probleem</h3>
 
           <div>
-            <label htmlFor="urgency" className="block text-sm font-medium text-secondary-800 mb-3">Is dit met spoed? *</label>
+            <label className="block text-sm font-medium text-secondary-800 mb-3">Is dit met spoed? *</label>
             <div className="space-y-3">
               {urgencyLevels.map(level => (
-                <label key={level.value} className="flex items-center p-4 rounded-lg border border-secondary-300 hover:border-blue-500 cursor-pointer transition-colors">
+                <label key={level.value} className="flex items-center p-4 rounded-lg border border-secondary-300 hover:border-primary-500 cursor-pointer">
                   <input
                     type="radio"
-                    id={`urgency-${level.value}`}
                     name="urgency"
                     value={level.value}
                     checked={formData.urgency === level.value}
@@ -614,9 +437,9 @@ export function AppointmentForm() {
                   <div>
                     <div className={`font-medium ${level.color}`}>{level.label}</div>
                     <div className="text-xs text-secondary-400 mt-1">
-                      {level.value === 'urgent' 
-                        ? 'Na het aanvragen bellen wij u binnen 2 uur om direct een afspraak in te plannen'
-                        : 'U kunt zelf een datum en tijd kiezen, vanaf 2 dagen'
+                      {level.value === 'urgent'
+                        ? 'Wij bellen u binnen 2 uur'
+                        : 'Kies zelf datum en tijd'
                       }
                     </div>
                   </div>
@@ -624,128 +447,95 @@ export function AppointmentForm() {
               ))}
             </div>
           </div>
-          
-          {/* Conditionele datum/tijd selectie - alleen voor "zonder spoed" */}
+
           {formData.urgency === 'normal' && (
             <div className="border-t border-secondary-300 pt-6">
-              <h4 className="text-lg font-semibold text-secondary-800 mb-4">Kies uw gewenste datum en tijd</h4>
+              <h4 className="text-lg font-semibold text-secondary-800 mb-4">Kies datum en tijd</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="preferredDate" className="block text-sm font-medium text-secondary-800 mb-2">Gewenste Datum *</label>
+                  <label className="block text-sm font-medium text-secondary-800 mb-2">Datum *</label>
                   <input
                     type="date"
-                    id="preferredDate"
                     name="preferredDate"
                     value={formData.preferredDate}
                     onChange={(e) => handleInputChange('preferredDate', e.target.value)}
                     min={getMinDate()}
-                    className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 focus:outline-none ${
-                      fieldErrors['preferredDate']
-                        ? 'border-red-500 focus:border-red-500'
-                        : 'border-secondary-300 focus:border-primary-500'
-                    }`}
-                    required
+                    className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['preferredDate'] ? 'border-red-500' : 'border-secondary-300'}`}
                   />
-                  {fieldErrors['preferredDate'] && (
-                    <p className="text-sm text-red-500 mt-1 flex items-center">
-                      <span className="mr-1">⚠️</span>
-                      {fieldErrors['preferredDate']}
-                    </p>
-                  )}
+                  {fieldErrors['preferredDate'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['preferredDate']}</p>}
                 </div>
                 <div>
-                  <label htmlFor="preferredTime" className="block text-sm font-medium text-secondary-800 mb-2">Gewenste Tijd *</label>
+                  <label className="block text-sm font-medium text-secondary-800 mb-2">Tijd *</label>
                   <select
-                    id="preferredTime"
                     name="preferredTime"
                     value={formData.preferredTime}
                     onChange={(e) => handleInputChange('preferredTime', e.target.value)}
-                    className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 focus:outline-none ${
-                      fieldErrors['preferredTime']
-                        ? 'border-red-500 focus:border-red-500'
-                        : 'border-secondary-300 focus:border-primary-500'
-                    }`}
-                    required
+                    className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['preferredTime'] ? 'border-red-500' : 'border-secondary-300'}`}
                   >
                     <option value="">Kies een tijdslot</option>
                     {timeSlots.map(time => (
                       <option key={time} value={time}>{time}</option>
                     ))}
                   </select>
-                  {fieldErrors['preferredTime'] && (
-                    <p className="text-sm text-red-500 mt-1 flex items-center">
-                      <span className="mr-1">⚠️</span>
-                      {fieldErrors['preferredTime']}
-                    </p>
-                  )}
+                  {fieldErrors['preferredTime'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['preferredTime']}</p>}
                 </div>
               </div>
             </div>
           )}
-          
-          
+
           <div>
-            <label htmlFor="problemDescription" className="block text-sm font-medium text-secondary-800 mb-2">Beschrijf uw probleem *</label>
+            <label className="block text-sm font-medium text-secondary-800 mb-2">Beschrijf uw probleem *</label>
             <textarea
-              id="problemDescription"
               name="problemDescription"
               value={formData.problemDescription}
               onChange={(e) => handleInputChange('problemDescription', e.target.value)}
               rows={4}
-              className={`w-full px-4 py-3 rounded-lg bg-white border text-secondary-800 placeholder-secondary-400 focus:outline-none ${
-                fieldErrors['problemDescription']
-                  ? 'border-red-500 focus:border-red-500'
-                  : 'border-secondary-300 focus:border-primary-500'
-              }`}
-              placeholder="Beschrijf kort wat er aan de hand is... (bijv. 'Computer installatie', 'Printer werkt niet', 'WiFi problemen')"
-              required
+              className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['problemDescription'] ? 'border-red-500' : 'border-secondary-300'}`}
+              placeholder="Beschrijf kort wat er aan de hand is..."
             />
-            {fieldErrors['problemDescription'] ? (
-              <p className="text-sm text-red-500 mt-1 flex items-center">
-                <span className="mr-1">⚠️</span>
-                {fieldErrors['problemDescription']}
-              </p>
-            ) : (
-              <p className="text-xs text-secondary-400 mt-1">
-                Een korte beschrijving is voldoende - we bespreken de details tijdens het bezoek.
-              </p>
-            )}
+            {fieldErrors['problemDescription'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['problemDescription']}</p>}
           </div>
         </div>
       )}
 
-
-      {/* Error Message */}
-      {submitStatus === 'error' && (
-        <div className="mt-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg flex items-center">
-          <span className="text-red-300">{errorMessage}</span>
+      {currentStep === 2 && (
+        <div className="mt-6 flex flex-col items-center">
+          <HCaptcha
+            ref={captchaRef}
+            sitekey={HCAPTCHA_SITE_KEY}
+            onVerify={onCaptchaVerify}
+            onExpire={onCaptchaExpire}
+            languageOverride="nl"
+          />
+          {fieldErrors['captcha'] && <p className="text-sm text-red-500 mt-2">{fieldErrors['captcha']}</p>}
         </div>
       )}
 
-      {/* Navigation Buttons */}
+      {submitStatus === 'error' && (
+        <div className="mt-6 p-4 bg-red-100 border border-red-300 rounded-lg">
+          <span className="text-red-700">{errorMessage}</span>
+        </div>
+      )}
+
       <div className="flex justify-between mt-8">
         <button
           type="button"
           onClick={prevStep}
           disabled={currentStep === 1}
-          className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-            currentStep === 1 
-              ? 'bg-secondary-100 text-secondary-500 cursor-not-allowed' 
-              : 'bg-secondary-200 text-secondary-800 hover:bg-secondary-300'
+          className={`px-6 py-3 rounded-lg font-medium ${
+            currentStep === 1 ? 'bg-secondary-100 text-secondary-400 cursor-not-allowed' : 'bg-secondary-200 text-secondary-800 hover:bg-secondary-300'
           }`}
         >
           Vorige
         </button>
-        
+
         {currentStep < 2 ? (
           <button
             type="button"
             onClick={nextStep}
             disabled={!isStepValid(currentStep)}
-            className={`px-6 py-3 rounded-lg font-medium transition-colors ${
-              isStepValid(currentStep)
-                ? 'bg-gradient-to-r from-primary-500 to-accent-500 text-white hover:from-blue-700 hover:to-blue-800'
-                : 'bg-secondary-100 text-secondary-500 cursor-not-allowed'
+            className={`px-6 py-3 rounded-lg font-medium ${
+              isStepValid(currentStep) ? 'bg-primary-500 text-white hover:bg-primary-600' : 'bg-secondary-100 text-secondary-400 cursor-not-allowed'
             }`}
           >
             Volgende
@@ -756,10 +546,8 @@ export function AppointmentForm() {
             onClick={handleSubmit}
             isLoading={isSubmitting}
             disabled={!isStepValid(2)}
-            className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-              isStepValid(2)
-                ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white hover:from-green-600 hover:to-blue-600'
-                : 'bg-secondary-100 text-secondary-500 cursor-not-allowed'
+            className={`px-8 py-3 rounded-lg font-medium ${
+              isStepValid(2) ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-secondary-100 text-secondary-400 cursor-not-allowed'
             }`}
           >
             Afspraak Aanvragen

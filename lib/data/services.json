@@ -4,51 +4,85 @@
     "slug": "computerhulp",
     "icon": "Monitor",
     "emoji": "💻",
-    "description": "Computer installatie, problemen oplossen en onderhoud - wij helpen u persoonlijk!",
-    "longDescription": "Heeft u problemen met uw computer? Of het nu gaat om installatie, problemen oplossen, ongewenste programma's opruimen, of onderhoud - onze vriendelijke specialisten komen naar u toe en helpen u rustig verder. We leggen alles duidelijk uit en hebben ervaring met alle computer merken.",
-    "duration": "1-2 uur gemiddeld",
+    "shortDescription": "Hulp met uw computer, laptop of PC? Wij komen bij u thuis.",
+    "description": "Computerhulp aan huis voor alle problemen met uw computer, laptop of PC. Installatie, reparatie en uitleg.",
+    "heroText": "Problemen met uw computer of laptop? Wij komen bij u thuis en lossen het op. Ook voor installatie van een nieuwe PC of laptop.",
+    "longDescription": "Heeft uw computer of laptop problemen? Loopt hij traag, starten programma's niet meer op, of heeft u een nieuwe PC die geïnstalleerd moet worden? Onze IT-specialisten komen bij u thuis. Wij helpen met alle merken laptops en computers, inclusief Windows 10 en 11. U krijgt duidelijke uitleg en betaalt pas achteraf.",
+    "metaTitle": "Computerhulp aan Huis | Snel & Vakkundig | Hulp met IT",
+    "metaDescription": "Computerproblemen? Onze IT-specialist komt bij u thuis. ✓ Trage computer versnellen ✓ Windows problemen oplossen ✓ Vanaf €53,50 ✓ Binnen 48 uur geholpen",
+    "duration": "45-90 minuten",
     "features": [
-      "Windows updates en onderhoud",
-      "Ongewenste programma's opruimen",
-      "Computer opschonen en versnellen", 
-      "Programma's installeren en uitleg",
-      "Nieuwe computer gebruiksklaar maken",
-      "Bestanden veilig bewaren",
-      "Computer hardware controleren"
+      "Nieuwe laptop of PC installeren",
+      "Trage computer versnellen",
+      "Windows problemen oplossen",
+      "Virussen en malware verwijderen",
+      "Bestanden overzetten naar nieuwe computer",
+      "Programma's installeren en instellen",
+      "Updates en onderhoud uitvoeren"
+    ],
+    "benefits": [
+      "Uw computer werkt weer snel en soepel",
+      "Geen gedoe met wegbrengen naar een winkel",
+      "Duidelijke uitleg zodat u het begrijpt",
+      "Vaste prijs, geen verrassingen achteraf"
     ],
     "process": [
       {
-        "title": "Probleem analyse",
-        "description": "We onderzoeken uw computer grondig om het probleem vast te stellen"
+        "title": "U belt of plant online",
+        "description": "Vertel ons kort wat het probleem is. Wij plannen een afspraak op een moment dat u uitkomt."
       },
       {
-        "title": "Duidelijke uitleg",
-        "description": "U krijgt een heldere uitleg van het probleem en de oplossing"
+        "title": "Wij komen bij u thuis",
+        "description": "Onze specialist komt langs en bekijkt uw computer. U hoeft niets voor te bereiden."
       },
       {
-        "title": "Probleem oplossen",
-        "description": "We lossen het probleem ter plekke op waar mogelijk"
+        "title": "Probleem wordt opgelost",
+        "description": "Wij lossen het probleem ter plekke op. De meeste problemen zijn binnen 45 minuten verholpen."
       },
       {
-        "title": "Nazorg",
-        "description": "Tips en advies om problemen in de toekomst te voorkomen"
+        "title": "Uitleg en nazorg",
+        "description": "U krijgt uitleg over wat we gedaan hebben. Bij vragen achteraf kunt u altijd bellen."
       }
     ],
     "commonIssues": [
-      "Nieuwe computer hulp en setup",
-      "Ongewenste programma's op computer",
+      "Computer is erg traag geworden",
       "Windows start niet meer op",
-      "Programma's crashen regelmatig",
-      "Opslagruimte is vol",
-      "Computer maakt vreemde geluiden"
+      "Blauwe schermen of foutmeldingen",
+      "Programma's crashen of hangen",
+      "Computer vol met ongewenste software",
+      "Bestanden kwijt of per ongeluk verwijderd"
+    ],
+    "faqs": [
+      {
+        "question": "Hoe lang duurt een computerreparatie aan huis?",
+        "answer": "De meeste computerproblemen lossen wij binnen 45 tot 90 minuten op. Bij complexere problemen, zoals een volledige herinstallatie, kan het langer duren. Wij geven u vooraf een inschatting."
+      },
+      {
+        "question": "Wat kost computerhulp aan huis?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard bezoek van 45 minuten kost dus €53,50. U betaalt achteraf."
+      },
+      {
+        "question": "Kunnen jullie alle merken computers helpen?",
+        "answer": "Ja, wij hebben ervaring met alle merken: HP, Dell, Lenovo, Asus, Acer, en anderen. Ook helpen wij met alle Windows-versies (Windows 10 en 11)."
+      },
+      {
+        "question": "Moet ik iets voorbereiden voor de afspraak?",
+        "answer": "Nee, u hoeft niets te doen. Zorg alleen dat de computer aanstaat of klaar staat. Als u wachtwoorden heeft, is het handig om die bij de hand te hebben."
+      },
+      {
+        "question": "Wat als het probleem niet opgelost kan worden?",
+        "answer": "Dat komt zelden voor. Mocht het toch zo zijn, dan betaalt u alleen voor de tijd die wij besteed hebben. Wij zijn altijd eerlijk en transparant."
+      }
     ],
     "keywords": [
       "computerhulp aan huis",
-      "computer hulp",
+      "computer hulp thuis",
+      "trage computer versnellen",
+      "computer reparatie aan huis",
+      "Windows problemen oplossen",
       "computer opschonen",
-      "computer installatie",
-      "Windows problemen",
-      "IT hulp"
+      "IT hulp aan huis",
+      "computer specialist thuis"
     ]
   },
   {
@@ -56,8 +90,12 @@
     "slug": "printerhulp",
     "icon": "Printer",
     "emoji": "🖨️",
+    "shortDescription": "Printer werkt niet? Wij helpen u met installatie en problemen.",
     "description": "Printer werkt niet? Wij helpen u vriendelijk verder!",
+    "heroText": "Printer doet het niet meer? Of een nieuwe printer aansluiten? Wij komen bij u thuis en zorgen dat alles weer werkt.",
     "longDescription": "Printer problemen kunnen heel vervelend zijn. Of het nu gaat om een nieuwe printer aansluiten, draadloos printen instellen, of een probleem oplossen - onze vriendelijke specialisten helpen u persoonlijk en hebben ervaring met alle printer merken zoals HP, Canon, Epson en Brother.",
+    "metaTitle": "Printerhulp aan Huis | Installatie & Problemen | Hulp met IT",
+    "metaDescription": "Printer doet het niet? Onze specialist komt bij u thuis. ✓ Alle merken (HP, Canon, Epson, Brother) ✓ Draadloos printen ✓ Vanaf €53,50 ✓ Snel geholpen",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe printer installatie en setup",
@@ -67,6 +105,12 @@
       "Papierstoringen oplossen",
       "Scanner installatie",
       "Printer onderhoud en reiniging"
+    ],
+    "benefits": [
+      "Printen en scannen werkt weer perfect",
+      "Draadloos printen vanaf alle apparaten",
+      "Geen gedoe met ingewikkelde handleidingen",
+      "Duidelijke uitleg over het gebruik"
     ],
     "process": [
       {
@@ -94,13 +138,35 @@
       "Papierstoring in printer",
       "Scanner werkt niet"
     ],
+    "faqs": [
+      {
+        "question": "Kunnen jullie alle merken printers installeren?",
+        "answer": "Ja, wij hebben ervaring met alle gangbare merken: HP, Canon, Epson, Brother, Samsung en anderen. Of het nu een inkjet- of laserprinter is, wij helpen u."
+      },
+      {
+        "question": "Wat kost het om een printer te laten installeren?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard printer installatie kost meestal €53,50 tot €68."
+      },
+      {
+        "question": "Kunnen jullie ook draadloos printen instellen?",
+        "answer": "Ja, wij stellen draadloos printen in zodat u vanaf al uw apparaten kunt printen: computer, laptop, tablet en smartphone. Wij zorgen dat alles goed verbonden is met uw WiFi netwerk."
+      },
+      {
+        "question": "Mijn printer geeft vegen of strepen, kunnen jullie dat oplossen?",
+        "answer": "Ja, vaak is dit op te lossen door de printkop te reinigen of de cartridges te controleren. Wij kijken ter plekke wat het probleem is en zorgen dat de printkwaliteit weer goed wordt."
+      },
+      {
+        "question": "Kunnen jullie ook een scanner installeren?",
+        "answer": "Ja, wij installeren ook scanners en all-in-one apparaten. Wij zorgen dat u gemakkelijk documenten en foto's kunt scannen naar uw computer."
+      }
+    ],
     "keywords": [
       "printer installatie",
       "printer hulp",
       "draadloos printen",
       "printer problemen",
       "scanner installatie",
-      "printer hulp"
+      "printer hulp aan huis"
     ]
   },
   {
@@ -108,8 +174,12 @@
     "slug": "email-problemen",
     "icon": "Mail",
     "emoji": "📧",
+    "shortDescription": "E-mail werkt niet? Wij helpen met instellen en problemen oplossen.",
     "description": "E-mail werkt niet? Wij zorgen dat u weer berichten kunt versturen!",
+    "heroText": "Problemen met uw e-mail? Wij komen bij u thuis en zorgen dat u weer kunt mailen. Ook voor het instellen van e-mail op nieuwe apparaten.",
     "longDescription": "E-mail problemen kunnen heel vervelend zijn, vooral als u belangrijke berichten mist. Wij helpen u met het instellen van e-mail op alle apparaten, het oplossen van problemen met versturen en ontvangen, en zorgen dat uw e-mail weer goed werkt.",
+    "metaTitle": "E-mail Problemen Oplossen aan Huis | Hulp met IT",
+    "metaDescription": "E-mail doet het niet? Onze specialist komt bij u thuis. ✓ Outlook, Gmail, Hotmail ✓ E-mail op alle apparaten ✓ Vanaf €53,50 ✓ Duidelijke uitleg",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe e-mail account aanmaken",
@@ -119,6 +189,12 @@
       "Spam en phishing bescherming",
       "Contact- en agendabeheer",
       "E-mail backup en herstel"
+    ],
+    "benefits": [
+      "U kunt weer e-mails versturen en ontvangen",
+      "E-mail werkt op al uw apparaten",
+      "Beschermd tegen spam en phishing",
+      "Duidelijke uitleg over het gebruik"
     ],
     "process": [
       {
@@ -146,13 +222,36 @@
       "Teveel spam berichten",
       "E-mail account gehackt"
     ],
+    "faqs": [
+      {
+        "question": "Kunnen jullie Outlook, Gmail en Hotmail instellen?",
+        "answer": "Ja, wij hebben ervaring met alle e-mail programma's en diensten. Of u nu Outlook, Gmail, Hotmail, Yahoo of een andere provider gebruikt, wij zorgen dat het werkt."
+      },
+      {
+        "question": "Wat kost het om e-mail in te stellen?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Het instellen van e-mail op meerdere apparaten kost meestal €53,50 tot €68."
+      },
+      {
+        "question": "Kunnen jullie e-mail op mijn telefoon instellen?",
+        "answer": "Ja, wij stellen e-mail in op al uw apparaten: computer, laptop, tablet en smartphone. Zo kunt u overal uw berichten lezen en versturen."
+      },
+      {
+        "question": "Ik krijg heel veel spam, kunnen jullie dat oplossen?",
+        "answer": "Ja, wij stellen spamfilters in zodat ongewenste berichten automatisch worden geblokkeerd. Ook geven wij tips om spam te voorkomen."
+      },
+      {
+        "question": "Mijn e-mail account is gehackt, kunnen jullie helpen?",
+        "answer": "Ja, wij helpen u uw account te beveiligen. We wijzigen uw wachtwoord, controleren de instellingen en zorgen dat uw account weer veilig is."
+      }
+    ],
     "keywords": [
       "e-mail problemen",
       "email installatie",
       "Outlook hulp",
       "Gmail instellen",
       "e-mail synchronisatie",
-      "spam bescherming"
+      "spam bescherming",
+      "e-mail hulp aan huis"
     ]
   },
   {
@@ -160,8 +259,12 @@
     "slug": "internet-wifi",
     "icon": "Wifi",
     "emoji": "📶",
+    "shortDescription": "Internet traag of WiFi problemen? Wij helpen u snel verder.",
     "description": "Internet traag? WiFi problemen? Wij helpen!",
+    "heroText": "Slecht WiFi signaal of traag internet? Wij komen bij u thuis en zorgen voor een stabiele, snelle verbinding in elke kamer.",
     "longDescription": "Een goede internetverbinding is belangrijk. Wij helpen u met alle internet en WiFi problemen, van het aansluiten van een nieuwe router tot het verbeteren van uw draadloze netwerk voor de beste snelheid door heel uw huis.",
+    "metaTitle": "Internet & WiFi Hulp aan Huis | Router & Netwerk | Hulp met IT",
+    "metaDescription": "Internet problemen of slecht WiFi? Onze specialist komt bij u thuis. ✓ Router installatie ✓ WiFi verbeteren ✓ Vanaf €53,50 ✓ Snel geholpen",
     "duration": "1-2 uur gemiddeld",
     "features": [
       "Nieuwe router installatie en setup",
@@ -171,6 +274,12 @@
       "Veilig internetten instellen",
       "Smart TV aansluiten",
       "WiFi bereik uitbreiden"
+    ],
+    "benefits": [
+      "Snel en stabiel internet in elke kamer",
+      "Alle apparaten goed verbonden",
+      "Veilig netwerk met sterk wachtwoord",
+      "Geen gedoe meer met verbindingsproblemen"
     ],
     "process": [
       {
@@ -198,13 +307,36 @@
       "WiFi wachtwoord vergeten",
       "Nieuwe router installeren"
     ],
+    "faqs": [
+      {
+        "question": "Kunnen jullie mijn WiFi bereik verbeteren?",
+        "answer": "Ja, wij analyseren uw situatie en adviseren de beste oplossing. Dit kan zijn: de router verplaatsen, instellingen optimaliseren, of een WiFi versterker plaatsen."
+      },
+      {
+        "question": "Wat kost het om een router te laten installeren?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een router installatie kost meestal €53,50 tot €82, afhankelijk van de complexiteit."
+      },
+      {
+        "question": "Mijn internet is erg traag, kunnen jullie dat oplossen?",
+        "answer": "Ja, wij onderzoeken waar het probleem zit. Vaak kunnen we de snelheid verbeteren door router instellingen aan te passen, het kanaal te wijzigen of de router beter te positioneren."
+      },
+      {
+        "question": "Kunnen jullie mijn Smart TV met internet verbinden?",
+        "answer": "Ja, wij verbinden uw Smart TV met WiFi en stellen apps in zoals Netflix, YouTube of NPO. Zo kunt u direct aan de slag."
+      },
+      {
+        "question": "Ik ben mijn WiFi wachtwoord vergeten, kunnen jullie helpen?",
+        "answer": "Ja, wij kunnen uw huidige wachtwoord opzoeken of een nieuw wachtwoord instellen. Daarna verbinden we al uw apparaten opnieuw."
+      }
+    ],
     "keywords": [
       "WiFi installatie",
       "internet problemen",
       "router instellen",
       "WiFi verbeteren",
       "internet traag",
-      "netwerk hulp"
+      "netwerk hulp",
+      "WiFi hulp aan huis"
     ]
   },
   {
@@ -212,8 +344,12 @@
     "slug": "tablet-smartphone",
     "icon": "Smartphone",
     "emoji": "📱",
+    "shortDescription": "Hulp met uw tablet of smartphone nodig? Wij komen bij u thuis.",
     "description": "Hulp met uw tablet of smartphone nodig?",
+    "heroText": "Hulp nodig met uw telefoon of tablet? Wij komen bij u thuis voor installatie, uitleg en al uw vragen over apps en functies.",
     "longDescription": "Tablets en smartphones kunnen lastig zijn. Wij helpen u graag met het instellen van apps, e-mail, WhatsApp, foto's overzetten en alles wat u nodig heeft om uw telefoon of tablet goed te kunnen gebruiken.",
+    "metaTitle": "Tablet & Smartphone Hulp aan Huis | Apps & Uitleg | Hulp met IT",
+    "metaDescription": "Hulp met uw tablet of smartphone? Onze specialist komt bij u thuis. ✓ WhatsApp instellen ✓ Apps uitleggen ✓ Vanaf €53,50 ✓ Geduldig en duidelijk",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe telefoon/tablet gebruiksklaar maken",
@@ -223,6 +359,12 @@
       "E-mail instellen",
       "Beveiliging instellen",
       "iCloud/Google account hulp"
+    ],
+    "benefits": [
+      "U begrijpt hoe uw apparaat werkt",
+      "Alle apps ingesteld en uitgelegd",
+      "Foto's veilig bewaard",
+      "Videobellen met familie lukt"
     ],
     "process": [
       {
@@ -250,13 +392,36 @@
       "Videobellen met familie",
       "Opslagruimte vol"
     ],
+    "faqs": [
+      {
+        "question": "Helpen jullie met iPhone, iPad en Android?",
+        "answer": "Ja, wij helpen met alle merken en systemen: iPhone, iPad, Samsung, Huawei, Android tablets en meer. Wij kennen alle apparaten."
+      },
+      {
+        "question": "Wat kost hulp met mijn telefoon of tablet?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een bezoek van 45 minuten kost €53,50."
+      },
+      {
+        "question": "Kunnen jullie WhatsApp voor mij instellen?",
+        "answer": "Ja, wij installeren WhatsApp en leggen stap voor stap uit hoe u berichten verstuurt, foto's deelt en videobelt. U krijgt rustig de tijd om te oefenen."
+      },
+      {
+        "question": "Hoe zet ik foto's over naar mijn computer?",
+        "answer": "Wij helpen u foto's van uw telefoon of tablet naar uw computer te zetten. Ook kunnen wij een backup instellen zodat uw foto's veilig bewaard blijven."
+      },
+      {
+        "question": "Mijn telefoon zegt dat de opslag vol is, wat nu?",
+        "answer": "Wij kijken wat ruimte inneemt en ruimen op wat weg kan. Ook kunnen wij foto's overzetten naar de cloud of uw computer om ruimte vrij te maken."
+      }
+    ],
     "keywords": [
       "tablet hulp",
       "smartphone hulp",
       "WhatsApp installeren",
       "apps installeren",
       "mobiel hulp",
-      "iPad hulp"
+      "iPad hulp",
+      "telefoon hulp aan huis"
     ]
   },
   {
@@ -264,8 +429,12 @@
     "slug": "uitleg-les",
     "icon": "Monitor",
     "emoji": "🎓",
+    "shortDescription": "Computerles aan huis. Rustig en geduldig op uw eigen tempo.",
     "description": "Rustig en geduldig computerles aan huis",
+    "heroText": "Wilt u beter leren werken met uw computer, tablet of telefoon? Wij geven persoonlijke les bij u thuis, op uw eigen tempo.",
     "longDescription": "Wilt u beter leren werken met uw computer, tablet of smartphone? Onze geduldige specialisten geven persoonlijke uitleg op uw eigen tempo. We leggen alles stap voor stap uit en zorgen dat u zich zeker voelt.",
+    "metaTitle": "Computerles aan Huis | Persoonlijke Uitleg | Hulp met IT",
+    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Op uw eigen tempo ✓ Geduldig en duidelijk ✓ Vanaf €53,50 ✓ Persoonlijke aandacht",
     "duration": "1-2 uur per les",
     "features": [
       "Nieuwe apparaat leren gebruiken",
@@ -275,6 +444,12 @@
       "Online bankieren veilig",
       "Foto's beheren en bewerken",
       "Social media gebruiken"
+    ],
+    "benefits": [
+      "U voelt zich zekerder met technologie",
+      "Persoonlijke les op uw eigen tempo",
+      "Direct antwoord op al uw vragen",
+      "Praktische vaardigheden die u direct kunt gebruiken"
     ],
     "process": [
       {
@@ -302,13 +477,459 @@
       "Foto's organiseren",
       "Social media begrijpen"
     ],
+    "faqs": [
+      {
+        "question": "Voor wie is computerles aan huis geschikt?",
+        "answer": "Voor iedereen die beter wil leren werken met technologie. Veel van onze klanten zijn senioren, maar ook mensen die net een nieuwe computer of telefoon hebben zijn welkom."
+      },
+      {
+        "question": "Wat kost een les aan huis?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een les van 1 uur kost €68, een uitgebreide les van 1,5 uur kost €82,50."
+      },
+      {
+        "question": "Ik ben een absolute beginner, is dat een probleem?",
+        "answer": "Helemaal niet! Wij beginnen waar u bent. Of u nu nog nooit een computer heeft gebruikt of alleen wat bijscholing wilt, wij passen de les aan op uw niveau."
+      },
+      {
+        "question": "Kunnen jullie mij leren videobellen met mijn kleinkinderen?",
+        "answer": "Ja, dat is een van de meest gevraagde onderwerpen! Wij leren u videobellen via WhatsApp, Skype, FaceTime of Zoom. U oefent direct tijdens de les."
+      },
+      {
+        "question": "Is online bankieren veilig? Kunnen jullie dat uitleggen?",
+        "answer": "Ja, wij leggen uit hoe u veilig kunt internetbankieren. U leert hoe u phishing herkent, een sterk wachtwoord maakt en veilig inlogt bij uw bank."
+      }
+    ],
     "keywords": [
       "computerles aan huis",
       "computer cursus",
       "computer uitleg",
       "digitale vaardigheden",
       "senioren computerles",
-      "computer training"
+      "computer training",
+      "computerles voor beginners"
+    ]
+  },
+  {
+    "name": "Smart Home",
+    "slug": "smart-home",
+    "icon": "Smartphone",
+    "emoji": "🏠",
+    "shortDescription": "Hulp met slimme apparaten zoals Google Home, Alexa en smart TV.",
+    "description": "Hulp met smart home apparaten en slimme technologie.",
+    "heroText": "Slimme speaker, thermostaat of camera gekocht? Wij komen bij u thuis en zorgen dat alles werkt en met elkaar verbonden is.",
+    "longDescription": "Smart home apparaten kunnen het leven makkelijker maken, maar het instellen is vaak lastig. Wij helpen u met alle slimme apparaten: van Google Home en Alexa tot slimme thermostaten, camera's en verlichting.",
+    "metaTitle": "Smart Home Hulp aan Huis | Installatie & Uitleg | Hulp met IT",
+    "metaDescription": "Hulp met smart home apparaten? Onze specialist komt bij u thuis. ✓ Google Home & Alexa ✓ Slimme thermostaat ✓ Vanaf €53,50 ✓ Duidelijke uitleg",
+    "duration": "45 min - 1,5 uur",
+    "features": [
+      "Google Home en Alexa instellen",
+      "Slimme thermostaat installeren",
+      "Smart TV apps configureren",
+      "Slimme verlichting koppelen",
+      "Beveiligingscamera's instellen",
+      "Apparaten met elkaar verbinden",
+      "Spraakbesturing uitleggen"
+    ],
+    "benefits": [
+      "Al uw slimme apparaten werken samen",
+      "Bediening via spraak of app",
+      "Duidelijke uitleg over alle functies",
+      "Geen gedoe met ingewikkelde installaties"
+    ],
+    "process": [
+      {
+        "title": "Apparaten bekijken",
+        "description": "We inventariseren welke apparaten u heeft en wat u wilt bereiken"
+      },
+      {
+        "title": "Installatie & koppeling",
+        "description": "We installeren en verbinden alle apparaten met uw WiFi en elkaar"
+      },
+      {
+        "title": "Configuratie",
+        "description": "We stellen alles in zoals u het wilt: schema's, routines en automatiseringen"
+      },
+      {
+        "title": "Uitleg & oefenen",
+        "description": "We leggen uit hoe alles werkt en oefenen samen met de bediening"
+      }
+    ],
+    "commonIssues": [
+      "Google Home of Alexa instellen",
+      "Smart TV verbinden met internet",
+      "Slimme thermostaat programmeren",
+      "Camera's bekijken op telefoon",
+      "Apparaten reageren niet op spraak",
+      "Slimme verlichting koppelen"
+    ],
+    "faqs": [
+      {
+        "question": "Welke smart home apparaten kunnen jullie installeren?",
+        "answer": "Wij helpen met alle gangbare merken en apparaten: Google Home, Amazon Alexa, Philips Hue, Tado thermostaten, Ring deurbellen, slimme camera's en meer."
+      },
+      {
+        "question": "Wat kost smart home hulp aan huis?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een gemiddelde installatie kost €53,50 tot €82,50."
+      },
+      {
+        "question": "Kunnen jullie mijn apparaten met elkaar laten samenwerken?",
+        "answer": "Ja, wij zorgen dat uw apparaten samenwerken. Bijvoorbeeld: lichten die aangaan als u thuiskomt, of de thermostaat die lager gaat als u weggaat."
+      },
+      {
+        "question": "Ik snap de spraakbediening niet, kunnen jullie dat uitleggen?",
+        "answer": "Ja, wij leggen rustig uit hoe u apparaten bedient met uw stem. U oefent tijdens het bezoek zodat u het zelf kunt."
+      },
+      {
+        "question": "Mijn smart home apparaat doet het niet meer, kunnen jullie helpen?",
+        "answer": "Ja, wij lossen problemen op met slimme apparaten. Vaak is het een verbindingsprobleem dat we snel kunnen verhelpen."
+      }
+    ],
+    "keywords": [
+      "smart home hulp",
+      "google home instellen",
+      "alexa installeren",
+      "slimme thermostaat",
+      "smart tv hulp",
+      "domotica hulp",
+      "slimme apparaten"
+    ]
+  },
+  {
+    "name": "Computerles",
+    "slug": "computerles",
+    "icon": "Monitor",
+    "emoji": "👨‍🏫",
+    "shortDescription": "Persoonlijke computerles aan huis. Op uw eigen tempo leren.",
+    "description": "Computerles aan huis voor beginners en gevorderden.",
+    "heroText": "Wilt u beter leren werken met de computer? Wij geven persoonlijke les bij u thuis, aangepast aan uw niveau en leerdoelen.",
+    "longDescription": "Computerles aan huis is de beste manier om te leren. U werkt op uw eigen computer, in uw eigen tempo, met persoonlijke aandacht. Of u nu een absolute beginner bent of specifieke vaardigheden wilt leren.",
+    "metaTitle": "Computerles aan Huis | Persoonlijk & Op Uw Tempo | Hulp met IT",
+    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Persoonlijke aandacht ✓ Op uw eigen tempo ✓ Vanaf €53,50 ✓ Alle onderwerpen",
+    "duration": "1-2 uur per les",
+    "features": [
+      "Basis computervaardigheden",
+      "Windows leren gebruiken",
+      "Internet en e-mail",
+      "Tekstverwerking (Word)",
+      "Foto's beheren en bewerken",
+      "Veilig internetten en bankieren",
+      "Social media uitleg"
+    ],
+    "benefits": [
+      "Les op uw eigen computer thuis",
+      "Persoonlijke aandacht en geduld",
+      "Op uw eigen tempo leren",
+      "Direct toepasbare vaardigheden"
+    ],
+    "process": [
+      {
+        "title": "Kennismaking",
+        "description": "We bespreken wat u wilt leren en kijken wat u al kunt"
+      },
+      {
+        "title": "Lesplan maken",
+        "description": "We maken een plan op maat voor uw leerdoelen"
+      },
+      {
+        "title": "Stap voor stap leren",
+        "description": "Rustige uitleg met veel oefening op uw eigen computer"
+      },
+      {
+        "title": "Herhalen en oefenen",
+        "description": "We herhalen tot u het zelfstandig kunt en zeker voelt"
+      }
+    ],
+    "commonIssues": [
+      "Beginnen met de computer",
+      "Bestanden opslaan en terugvinden",
+      "E-mail leren gebruiken",
+      "Veilig internetbankieren",
+      "Foto's van camera naar computer",
+      "Documenten maken en printen"
+    ],
+    "faqs": [
+      {
+        "question": "Ik heb nog nooit een computer gebruikt, kan ik toch les krijgen?",
+        "answer": "Ja, wij beginnen bij het begin. We leggen alles uit: de muis, het toetsenbord, hoe u programma's opent. Geen vraag is te simpel."
+      },
+      {
+        "question": "Wat kost computerles aan huis?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een les van 1 uur kost €68, anderhalf uur kost €82,50."
+      },
+      {
+        "question": "Hoeveel lessen heb ik nodig?",
+        "answer": "Dat hangt af van uw leerdoelen en tempo. Sommige mensen hebben aan 2-3 lessen genoeg, anderen plannen maandelijks een les. U bepaalt zelf."
+      },
+      {
+        "question": "Geven jullie ook les aan senioren?",
+        "answer": "Ja, veel van onze cursisten zijn senioren. Wij hebben veel geduld en passen het tempo aan. U krijgt alle tijd om te oefenen."
+      },
+      {
+        "question": "Kan ik ook specifieke dingen leren, zoals Excel?",
+        "answer": "Ja, wij geven les in alle programma's: Word, Excel, PowerPoint en meer. We stemmen de les af op wat u wilt leren."
+      }
+    ],
+    "keywords": [
+      "computerles aan huis",
+      "computer leren",
+      "computerles senioren",
+      "computerles beginners",
+      "privé computerles",
+      "computer cursus thuis",
+      "leren werken met computer"
+    ]
+  },
+  {
+    "name": "Smart TV",
+    "slug": "smart-tv",
+    "icon": "Monitor",
+    "emoji": "📺",
+    "shortDescription": "Smart TV instellen en apps zoals Netflix configureren.",
+    "description": "Hulp met uw Smart TV en streaming diensten.",
+    "heroText": "Nieuwe Smart TV gekocht of hulp nodig met Netflix en andere apps? Wij komen bij u thuis en zorgen dat u direct kunt kijken.",
+    "longDescription": "Een Smart TV biedt eindeloze mogelijkheden, maar het instellen kan lastig zijn. Wij helpen u met het verbinden met internet, apps installeren en uitleggen hoe alles werkt.",
+    "metaTitle": "Smart TV Hulp aan Huis | Netflix & Apps Instellen | Hulp met IT",
+    "metaDescription": "Hulp met uw Smart TV? Onze specialist komt bij u thuis. ✓ Netflix, YouTube, NPO ✓ WiFi verbinden ✓ Vanaf €53,50 ✓ Duidelijke uitleg",
+    "duration": "30 min - 1 uur",
+    "features": [
+      "Smart TV met WiFi verbinden",
+      "Netflix en andere apps instellen",
+      "YouTube en NPO Start configureren",
+      "Geluid en beeld optimaliseren",
+      "Afstandsbediening uitleggen",
+      "Chromecast of Apple TV installeren",
+      "Zenders sorteren"
+    ],
+    "benefits": [
+      "Direct kunnen kijken wat u wilt",
+      "Alle apps ingesteld en uitgelegd",
+      "Optimale beeld- en geluidskwaliteit",
+      "Geen gedoe met ingewikkelde menu's"
+    ],
+    "process": [
+      {
+        "title": "TV controleren",
+        "description": "We bekijken uw TV en de huidige instellingen"
+      },
+      {
+        "title": "Internet verbinden",
+        "description": "We verbinden de TV met uw WiFi netwerk"
+      },
+      {
+        "title": "Apps installeren",
+        "description": "We installeren en configureren de gewenste apps"
+      },
+      {
+        "title": "Uitleg geven",
+        "description": "We leggen uit hoe u alles bedient en apps opent"
+      }
+    ],
+    "commonIssues": [
+      "Smart TV verbinden met WiFi",
+      "Netflix account instellen",
+      "Apps downloaden op TV",
+      "Geluid via soundbar",
+      "Beeld kwaliteit verbeteren",
+      "TV reageert traag"
+    ],
+    "faqs": [
+      {
+        "question": "Kunnen jullie alle merken Smart TV's helpen?",
+        "answer": "Ja, wij hebben ervaring met Samsung, LG, Sony, Philips en alle andere merken. Het maakt niet uit welke TV u heeft."
+      },
+      {
+        "question": "Wat kost het om mijn Smart TV in te stellen?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. De meeste TV-installaties zijn binnen 45 minuten klaar."
+      },
+      {
+        "question": "Kunnen jullie Netflix voor mij instellen?",
+        "answer": "Ja, wij installeren Netflix en loggen in met uw account. Heeft u nog geen account? Dan helpen wij u er een aan te maken."
+      },
+      {
+        "question": "Mijn TV heeft geen geluid via de soundbar, kunnen jullie helpen?",
+        "answer": "Ja, wij verbinden uw soundbar met de TV en zorgen dat het geluid goed werkt. Ook stellen we de beste instellingen in."
+      },
+      {
+        "question": "Kunnen jullie ook een Chromecast installeren?",
+        "answer": "Ja, wij installeren Chromecast, Apple TV, Amazon Fire Stick en andere streaming apparaten. We leggen ook uit hoe u er mee werkt."
+      }
+    ],
+    "keywords": [
+      "smart tv hulp",
+      "smart tv instellen",
+      "netflix instellen",
+      "tv met wifi verbinden",
+      "smart tv apps",
+      "tv hulp aan huis"
+    ]
+  },
+  {
+    "name": "Virusverwijdering",
+    "slug": "virusverwijdering",
+    "icon": "Shield",
+    "emoji": "🛡️",
+    "shortDescription": "Virus of malware op uw computer? Wij maken hem weer schoon.",
+    "description": "Virusverwijdering en beveiliging van uw computer.",
+    "heroText": "Computer besmet met een virus of malware? Wij komen bij u thuis, verwijderen alle schadelijke software en beveiligen uw computer.",
+    "longDescription": "Virussen en malware kunnen uw computer traag maken, gegevens stelen of zelfs onbruikbaar maken. Onze specialisten verwijderen alle schadelijke software en zorgen dat uw computer weer veilig is.",
+    "metaTitle": "Virusverwijdering aan Huis | Computer Opschonen | Hulp met IT",
+    "metaDescription": "Virus op uw computer? Onze specialist komt bij u thuis. ✓ Malware verwijderen ✓ Computer beveiligen ✓ Vanaf €53,50 ✓ Snel geholpen",
+    "duration": "1-2 uur",
+    "features": [
+      "Virussen en malware verwijderen",
+      "Spyware en adware opruimen",
+      "Computer grondig scannen",
+      "Antivirussoftware installeren",
+      "Browser opschonen",
+      "Veilig internetten uitleggen",
+      "Wachtwoorden beveiligen"
+    ],
+    "benefits": [
+      "Computer weer veilig en snel",
+      "Alle schadelijke software verwijderd",
+      "Beschermd tegen nieuwe bedreigingen",
+      "Tips om veilig te blijven"
+    ],
+    "process": [
+      {
+        "title": "Diagnose",
+        "description": "We onderzoeken welke virussen of malware aanwezig zijn"
+      },
+      {
+        "title": "Verwijdering",
+        "description": "We verwijderen alle schadelijke software grondig"
+      },
+      {
+        "title": "Beveiliging",
+        "description": "We installeren bescherming en beveiligen uw systeem"
+      },
+      {
+        "title": "Preventie uitleg",
+        "description": "We geven tips om toekomstige besmetting te voorkomen"
+      }
+    ],
+    "commonIssues": [
+      "Computer is erg traag geworden",
+      "Vreemde pop-ups en advertenties",
+      "Browser opent verkeerde pagina's",
+      "Programma's starten vanzelf",
+      "Waarschuwing voor virus gekregen",
+      "Computer gedraagt zich vreemd"
+    ],
+    "faqs": [
+      {
+        "question": "Hoe weet ik of mijn computer een virus heeft?",
+        "answer": "Tekenen zijn: trage computer, veel pop-ups, programma's die vanzelf starten, browser die naar vreemde sites gaat, of waarschuwingen van uw antivirusprogramma."
+      },
+      {
+        "question": "Wat kost virusverwijdering?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een grondige virusverwijdering duurt meestal 1 tot 2 uur."
+      },
+      {
+        "question": "Raken mijn bestanden beschadigd door het virus?",
+        "answer": "Soms wel. Wij doen ons best om al uw bestanden te behouden. In ernstige gevallen kan het nodig zijn Windows opnieuw te installeren, maar we bespreken dit altijd eerst met u."
+      },
+      {
+        "question": "Welke antivirus raden jullie aan?",
+        "answer": "Voor de meeste mensen is Windows Defender (gratis ingebouwd) voldoende. Wij zorgen dat dit goed is ingesteld en up-to-date is."
+      },
+      {
+        "question": "Hoe voorkom ik dat ik weer een virus krijg?",
+        "answer": "Wij geven u praktische tips: niet op verdachte links klikken, software up-to-date houden, en voorzichtig zijn met bijlagen in e-mail."
+      }
+    ],
+    "keywords": [
+      "virusverwijdering",
+      "malware verwijderen",
+      "computer virus",
+      "computer opschonen",
+      "antivirus hulp",
+      "virus verwijderen aan huis"
+    ]
+  },
+  {
+    "name": "Data & Backup",
+    "slug": "data-backup",
+    "icon": "HardDrive",
+    "emoji": "💾",
+    "shortDescription": "Bestanden kwijt of backup nodig? Wij helpen u met uw data.",
+    "description": "Data backup, herstel en beveiliging van uw bestanden.",
+    "heroText": "Belangrijke bestanden kwijt of een backup nodig? Wij komen bij u thuis en zorgen dat uw foto's en documenten veilig zijn.",
+    "longDescription": "Uw foto's, documenten en herinneringen zijn onvervangbaar. Wij helpen u met het maken van backups, het herstellen van verloren bestanden en het veilig bewaren van uw data.",
+    "metaTitle": "Data Backup & Herstel aan Huis | Bestanden Veilig | Hulp met IT",
+    "metaDescription": "Bestanden kwijt of backup nodig? Onze specialist komt bij u thuis. ✓ Data herstellen ✓ Backup instellen ✓ Vanaf €53,50 ✓ Uw herinneringen veilig",
+    "duration": "1-2 uur",
+    "features": [
+      "Automatische backup instellen",
+      "Verloren bestanden herstellen",
+      "Foto's veilig bewaren",
+      "Externe harde schijf configureren",
+      "Cloud backup (Google/OneDrive)",
+      "Data overzetten naar nieuwe computer",
+      "Oude harde schijf uitlezen"
+    ],
+    "benefits": [
+      "Uw bestanden zijn veilig bewaard",
+      "Automatische backup zonder omkijken",
+      "Verloren data hersteld waar mogelijk",
+      "Rust dat uw herinneringen beschermd zijn"
+    ],
+    "process": [
+      {
+        "title": "Situatie bekijken",
+        "description": "We inventariseren uw bestanden en huidige backup situatie"
+      },
+      {
+        "title": "Beste oplossing kiezen",
+        "description": "We adviseren de beste backup methode voor uw situatie"
+      },
+      {
+        "title": "Backup instellen",
+        "description": "We configureren automatische backup van uw belangrijke bestanden"
+      },
+      {
+        "title": "Uitleg & controle",
+        "description": "We leggen uit hoe de backup werkt en hoe u dit kunt controleren"
+      }
+    ],
+    "commonIssues": [
+      "Foto's per ongeluk verwijderd",
+      "Geen backup van belangrijke bestanden",
+      "Bestanden overzetten naar nieuwe PC",
+      "Externe schijf wordt niet herkend",
+      "Computer kapot, data redden",
+      "Cloud backup instellen"
+    ],
+    "faqs": [
+      {
+        "question": "Kunnen jullie verwijderde bestanden herstellen?",
+        "answer": "In veel gevallen wel, vooral als ze recent zijn verwijderd. Hoe sneller u ons belt, hoe groter de kans op herstel. Gebruik de computer zo min mogelijk tot wij er zijn."
+      },
+      {
+        "question": "Wat kost data backup of herstel?",
+        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. De duur hangt af van de hoeveelheid data en complexiteit."
+      },
+      {
+        "question": "Wat is de beste manier om een backup te maken?",
+        "answer": "Wij adviseren een combinatie: een externe harde schijf thuis én cloud backup (zoals Google Drive of OneDrive). Zo bent u dubbel beschermd."
+      },
+      {
+        "question": "Mijn computer is kapot, kunnen jullie de data redden?",
+        "answer": "Vaak wel. Als de harde schijf nog werkt, kunnen we de data overzetten naar een nieuwe computer of externe schijf."
+      },
+      {
+        "question": "Kunnen jullie foto's van mijn telefoon backuppen?",
+        "answer": "Ja, wij stellen automatische backup in voor uw telefoon naar de cloud of uw computer. Zo raakt u nooit meer foto's kwijt."
+      }
+    ],
+    "keywords": [
+      "data backup",
+      "bestanden herstellen",
+      "backup maken",
+      "data recovery",
+      "foto backup",
+      "bestanden overzetten",
+      "externe harde schijf"
     ]
   }
 ]

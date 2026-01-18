@@ -1,102 +1,69 @@
 'use client'
 
-import { Shield, Award, Clock, Users, CheckCircle, Phone } from 'lucide-react'
+import { Shield, Clock, Award, Heart } from 'lucide-react'
 
-const trustSignals = [
+const features = [
   {
-    icon: Shield,
-    title: "Veilig & Betrouwbaar",
-    description: "Professionele service met volledige zekerheid en vertrouwen"
+    icon: Heart,
+    title: 'Persoonlijke aandacht',
+    description: 'Duidelijke uitleg zonder technisch jargon. U begrijpt wat we doen.'
   },
   {
-    icon: Award, 
-    title: "10 Jaar Ervaring",
-    description: "Ruime ervaring met alle soorten computer- en IT-problemen"
+    icon: Shield,
+    title: 'Veilig & betrouwbaar',
+    description: 'Volledig verzekerd. Uw gegevens zijn bij ons in goede handen.'
   },
   {
     icon: Clock,
-    title: "Betrouwbare Service",
-    description: "Komen altijd op afspraak, meestal binnen 24-48 uur"
+    title: 'Snel geholpen',
+    description: 'Wij werken efficiënt en lossen uw probleem zo snel mogelijk op.'
   },
   {
-    icon: Users,
-    title: "Ervaren Specialisten", 
-    description: "Alle medewerkers zijn gescreend en hebben ruime ervaring"
+    icon: Award,
+    title: '10+ jaar ervaring',
+    description: 'Al meer dan 5.000 huisbezoeken bij particulieren en kleine ondernemers.'
   }
-]
-
-const guarantees = [
-  "✓ Transparante prijzen - geen verrassingen achteraf", 
-  "✓ Gratis nazorg - altijd bereikbaar voor vragen",
-  "✓ Veilig en betrouwbaar - volledig verzekerd",
-  "✓ Snelle service - meestal binnen 24-48 uur"
 ]
 
 export function TrustSignals() {
   return (
-    <section className="section-spacing bg-gradient-to-b from-transparent to-white/5">
-      <div className="max-w-6xl mx-auto container-padding">
-        <div className="text-center mb-8">
-          <h2 className="text-4xl lg:text-5xl font-bold text-gradient mb-6">
-            Waarom Ons Vertrouwen?
+    <section className="py-20 lg:py-28 bg-secondary-50">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8">
+
+        <div className="text-center mb-16">
+          <p className="text-primary-500 font-semibold mb-3">Waarom wij</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+            IT-hulp waar u op kunt vertrouwen
           </h2>
-          <p className="text-xl text-primary-700 max-w-3xl mx-auto leading-relaxed">
-            Ervaren specialisten met bewezen expertise. Ontdek waarom mensen voor onze service kiezen.
+          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+            Wij begrijpen dat het frustrerend is als uw techniek niet doet wat u wilt.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {trustSignals.map((signal, index) => {
-            const IconComponent = signal.icon
+        <div className="grid md:grid-cols-2 gap-6">
+          {features.map((feature, index) => {
+            const IconComponent = feature.icon
             return (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <IconComponent className="w-8 h-8 text-white" />
+              <div
+                key={index}
+                className="flex gap-5 bg-white rounded-xl p-6 border border-secondary-200"
+              >
+                <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <IconComponent className="w-6 h-6 text-primary-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">
-                  {signal.title}
-                </h3>
-                <p className="text-primary-700 leading-relaxed">
-                  {signal.description}
-                </p>
+                <div>
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-1">
+                    {feature.title}
+                  </h3>
+                  <p className="text-secondary-600">
+                    {feature.description}
+                  </p>
+                </div>
               </div>
             )
           })}
         </div>
 
-        <div className="card-3d max-w-4xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-secondary-800 mb-6">
-                Onze Garanties Voor U
-              </h3>
-              <div className="space-y-4">
-                {guarantees.map((guarantee, index) => (
-                  <div key={index} className="flex items-start">
-                    <CheckCircle className="w-6 h-6 text-green-400 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-primary-700 text-lg">{guarantee}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="text-center lg:text-left">
-              <div className="bg-primary-50 rounded-xl p-6 border border-primary-200">
-                <h4 className="text-xl font-semibold text-secondary-800 mb-4">
-                  Nog vragen? Bel ons!
-                </h4>
-                <p className="text-primary-700 mb-6">
-                  Onze vriendelijke medewerkers staan klaar om al uw vragen te beantwoorden. 
-                  Geen verplichtingen, gewoon eerlijk advies.
-                </p>
-                <a href="tel:+31642827860" className="btn-cta w-full sm:w-auto">
-                  <Phone className="w-5 h-5 mr-2" />
-                  Bel Direct
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )

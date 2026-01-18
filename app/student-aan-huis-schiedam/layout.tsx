@@ -1,40 +1,71 @@
 import { Metadata } from 'next'
 
+const CITY = 'Schiedam'
+
 export const metadata: Metadata = {
-  title: 'Student aan huis Schiedam | Hulp Met IT',
-  description: 'Student aan huis in Schiedam voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
+  description: `ICT Student aan huis in ${CITY} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Schiedam Centrum, Schiedam Noord, Schiedam Oost, Schiedam West en omgeving. Vanaf €53,50. Snel, vakkundig en vriendelijk!`,
   keywords: [
-    'student aan huis schiedam',
-    'student computerhulp schiedam',
-    'betaalbare computerhulp schiedam',
-    'IT student schiedam',
-    'computer reparatie schiedam student',
-    'betaalbare computer hulp schiedam',
-    'studenten computer service schiedam',
-    'schiedam student IT hulp',
-    'schiedam computerhulp avond',
-    'schiedam IT hulp weekend'
+    `student aan huis ${CITY.toLowerCase()}`,
+    `computerhulp ${CITY.toLowerCase()}`,
+    `ict hulp ${CITY.toLowerCase()}`,
+    `computer reparatie ${CITY.toLowerCase()}`,
+    `laptop hulp ${CITY.toLowerCase()}`,
+    `it student ${CITY.toLowerCase()}`,
+    `betaalbare computerhulp ${CITY.toLowerCase()}`,
+    `computer problemen ${CITY.toLowerCase()}`,
+    `wifi problemen ${CITY.toLowerCase()}`,
+    `internet hulp ${CITY.toLowerCase()}`,
+    'computerhulp schiedam centrum',
+    'ict hulp schiedam noord',
+    'computer reparatie schiedam oost',
+    'laptop hulp schiedam west',
+    'it student vlaardingen',
+    'computerhulp rotterdam',
+    'wifi problemen delft',
+    'computer hulp maassluis',
+    'ict hulp hoek van holland',
+    'computerhulp overschie',
+    'laptop reparatie delfshaven',
+    'hogeschool rotterdam student computerhulp',
+    'tu delft it student'
   ],
   openGraph: {
-    title: 'Student Aan Huis Schiedam | IT-Student Computerhulp',
-    description: 'Student aan huis Schiedam: betaalbare computerhulp door IT-studenten. Bel ons!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
+    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis in Schiedam en omgeving. Vanaf €53,50.`,
+    url: `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`,
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: `ICT Student aan huis ${CITY} - Hulp met IT`
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Schiedam | IT-Student Computerhulp',
-    description: 'Student aan huis Schiedam: betaalbare computerhulp door IT-studenten. Bel ons!',
+    title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
+    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis.`,
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-schiedam',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function StudentAanHuisSchiedamLayout({

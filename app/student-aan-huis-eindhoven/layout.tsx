@@ -1,39 +1,45 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Eindhoven | Hulp Met IT',
-  description: 'Student aan huis in Eindhoven voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Eindhoven | Computerhulp aan Huis | Hulp Met IT',
+  description: 'ICT Student aan huis in Eindhoven voor betaalbare computerhulp. Ervaren IT-studenten van TU Eindhoven en Fontys komen bij u thuis. Vanaf €53,50. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis eindhoven',
-    'student computerhulp eindhoven',
+    'ict student aan huis eindhoven',
+    'computerhulp eindhoven',
+    'computer hulp eindhoven',
+    'laptop reparatie eindhoven',
+    'IT hulp eindhoven',
+    'pc hulp eindhoven',
+    'thuishulp computer eindhoven',
+    'computerhulp aan huis eindhoven',
     'betaalbare computerhulp eindhoven',
-    'IT student eindhoven',
-    'computer reparatie eindhoven student',
-    'betaalbare computer hulp eindhoven',
-    'studenten computer service eindhoven',
-    'eindhoven student IT hulp',
-    'eindhoven computerhulp avond',
-    'eindhoven IT hulp weekend'
+    'student computerhulp eindhoven',
+    'TU eindhoven student hulp',
+    'fontys student computerhulp',
+    'eindhoven it ondersteuning',
+    'computer problemen eindhoven'
   ],
   openGraph: {
-    title: 'Student Aan Huis Eindhoven | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Eindhoven. Betaalbare tarieven, vakkundige hulp.',
+    title: 'ICT Student aan huis Eindhoven | Betaalbare Computerhulp',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten van TU Eindhoven en Fontys. Snel bij u thuis in Eindhoven en omgeving. Vanaf €53,50.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    siteName: 'Hulp met IT',
+    url: 'https://hulpmetit.nl/student-aan-huis-eindhoven'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Eindhoven | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Eindhoven. Betaalbare tarieven, vakkundige hulp.',
+    title: 'ICT Student aan huis Eindhoven | Betaalbare Computerhulp',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten van TU Eindhoven en Fontys. Snel bij u thuis in Eindhoven en omgeving.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-eindhoven'
+    canonical: 'https://hulpmetit.nl/student-aan-huis-eindhoven'
   }
 }
 

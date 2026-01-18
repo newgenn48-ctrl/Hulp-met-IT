@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Hilversum | Hulp Met IT',
-  description: 'Student aan huis in Hilversum voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Hilversum | Hulp Met IT',
+  description: 'ICT Student aan huis in Hilversum voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: [
     'student aan huis hilversum',
     'student computerhulp hilversum',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'hilversum IT hulp weekend'
   ],
   openGraph: {
-    title: 'Student Aan Huis Hilversum | IT-Student Computerhulp',
+    title: 'Student Aan Huis Hilversum',
     description: 'Student aan huis Hilversum: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Hilversum | IT-Student Computerhulp',
+    title: 'Student Aan Huis Hilversum',
     description: 'Student aan huis Hilversum: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Zoetermeer | Hulp Met IT',
-  description: 'Student aan huis in Zoetermeer voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Zoetermeer | Hulp Met IT',
+  description: 'ICT Student aan huis in Zoetermeer voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
   keywords: [
     'student aan huis zoetermeer',
     'student computerhulp zoetermeer',
@@ -13,10 +13,14 @@ export const metadata: Metadata = {
     'studenten computer service zoetermeer',
     'zoetermeer student IT hulp',
     'zoetermeer computerhulp avond',
-    'zoetermeer IT hulp weekend'
+    'zoetermeer IT hulp weekend',
+    'computerhulp rokkeveen',
+    'computerhulp meerzicht',
+    'computerhulp pijnacker',
+    'computerhulp nootdorp'
   ],
   openGraph: {
-    title: 'Student Aan Huis Zoetermeer | IT-Student Computerhulp',
+    title: 'Student Aan Huis Zoetermeer',
     description: 'Student aan huis Zoetermeer: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Zoetermeer | IT-Student Computerhulp',
+    title: 'Student Aan Huis Zoetermeer',
     description: 'Student aan huis Zoetermeer: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {

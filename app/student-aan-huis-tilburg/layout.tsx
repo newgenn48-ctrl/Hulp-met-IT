@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Tilburg | Hulp Met IT',
-  description: 'Student aan huis in Tilburg voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
+  title: 'ICT Student aan huis Tilburg | Hulp Met IT',
+  description: 'ICT Student aan huis in Tilburg voor computerhulp. Betaalbare IT-studenten van Tilburg University en Fontys komen naar je toe. Vanaf €53,50. Snel en vakkundig!',
   keywords: [
     'student aan huis tilburg',
     'student computerhulp tilburg',
@@ -13,11 +13,15 @@ export const metadata: Metadata = {
     'studenten computer service tilburg',
     'tilburg student IT hulp',
     'tilburg computerhulp avond',
-    'tilburg IT hulp weekend'
+    'tilburg IT hulp weekend',
+    'computerhulp reeshof',
+    'computerhulp berkel-enschot',
+    'computerhulp goirle',
+    'computerhulp oisterwijk'
   ],
   openGraph: {
-    title: 'Student Aan Huis Tilburg | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Tilburg. Betaalbare tarieven, vakkundige hulp.',
+    title: 'Student Aan Huis Tilburg',
+    description: 'Student aan huis Tilburg: betaalbare computerhulp door IT-studenten van Tilburg University en Fontys. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,16 +29,16 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Tilburg | Betaalbare Computerhulp',
-    description: 'IT-studenten komen naar je toe in Tilburg. Betaalbare tarieven, vakkundige hulp.',
+    title: 'Student Aan Huis Tilburg',
+    description: 'Student aan huis Tilburg: betaalbare computerhulp door IT-studenten van Tilburg University en Fontys. Bel ons!',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-tilburg'
-  }
+    canonical: '/student-aan-huis-tilburg',
+  },
 }
 
 export default function StudentAanHuisTilburgLayout({

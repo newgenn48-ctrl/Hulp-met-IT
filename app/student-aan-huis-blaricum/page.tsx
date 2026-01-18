@@ -20,6 +20,9 @@ import {
   ChevronUp
 } from 'lucide-react'
 
+const CITY = 'Blaricum'
+const LOCAL_INSTITUTION = 'Hogeschool Utrecht'
+
 const benefits = [
   { icon: Users, text: 'Persoonlijke hulp aan huis' },
   { icon: MessageCircle, text: 'Begrijpelijke uitleg, zonder vakjargon' },
@@ -30,12 +33,12 @@ const processSteps = [
   {
     step: '1',
     title: 'Plan Afspraak',
-    description: 'Bel of plan online - binnen Blaricum snel beschikbaar'
+    description: `Bel of plan online - binnen ${CITY} snel beschikbaar`
   },
   {
-    step: '2', 
+    step: '2',
     title: 'Student Komt Langs',
-    description: 'IT-student komt naar je adres in Blaricum'
+    description: `IT-student komt naar je adres in ${CITY}`
   },
   {
     step: '3',
@@ -44,32 +47,32 @@ const processSteps = [
   }
 ]
 
-const blaricumAreas = [
-  'Blaricum Centrum', 'Blaricum Noord', 'Blaricum Zuid', 'Blaricum Oost',
-  'Blaricum West', 'Blaricum Zuidoost', 'Amstelveen', 'Diemen',
-  'Ouderkerk aan de Amstel', 'Weesp', 'Abcoude', 'Breukelen'
+const cityAreas = [
+  'Blaricum Centrum', 'Blaricum Dorp', 'Laren', 'Huizen',
+  'Hilversum', 'Bussum', 'Naarden', 'Eemnes',
+  'Baarn', 'Loosdrecht', 'Kortenhoef', 'Hollandsche Rading'
 ]
 
 const faqData = [
   {
-    question: "Wat kost student aan huis hulp in Blaricum?",
-    answer: "Onze tarieven beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Blaricum. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen voorrijkosten of minimumtarief."
+    question: `Wat kost computerhulp aan huis in ${CITY}?`,
+    answer: `Onze tarieven in ${CITY} beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Dit is veel voordeliger dan traditionele computerhulp. Je betaalt alleen voor de daadwerkelijk bestede tijd.`
   },
   {
-    question: "Zijn jullie studenten wel gekwalificeerd in Blaricum?",
-    answer: "Ja, onze studenten in Blaricum volgen IT-opleidingen en hebben praktijkervaring. Ze zijn vertrouwd met moderne technologie en worden geselecteerd op hun technische vaardigheden en communicatieve vaardigheden."
+    question: `Zijn jullie studenten wel gekwalificeerd voor hulp in ${CITY}?`,
+    answer: `Ja, onze studenten volgen IT-opleidingen aan ${LOCAL_INSTITUTION} en hebben praktijkervaring. Ze zijn vertrouwd met moderne technologie en worden geselecteerd op hun technische en communicatieve vaardigheden.`
   },
   {
-    question: "Kunnen jullie ook 's avonds en weekenden komen in Blaricum?",
-    answer: "Ja, dat is een van onze grote voordelen! Onze studenten in Blaricum hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+    question: `Kunnen jullie ook 's avonds en weekenden komen in ${CITY}?`,
+    answer: `Ja, dat is een van onze grote voordelen! Onze studenten hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden langskomen. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week.`
   },
   {
-    question: "Hoe snel kunnen jullie komen in Blaricum?",
-    answer: "In Blaricum kunnen we vaak nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgent problemen proberen we binnen 2-4 uur beschikbaar te zijn."
+    question: `Hoe snel kunnen jullie in ${CITY} komen?`,
+    answer: `In ${CITY} en omgeving kunnen we vaak nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgente problemen proberen we binnen 2-4 uur beschikbaar te zijn.`
   },
   {
-    question: "Welke wijken in Blaricum bedienen jullie?",
-    answer: "We bedienen alle wijken van Blaricum: Centrum, Noord, Zuid, Oost, West, Zuidoost, plus omliggende gemeenten zoals Amstelveen, Diemen en Weesp."
+    question: `Welke plaatsen in de buurt van ${CITY} bedienen jullie?`,
+    answer: `We bedienen ${CITY} en alle omliggende plaatsen in het Gooi, waaronder Laren, Huizen, Hilversum, Bussum, Naarden, Eemnes, Baarn, Loosdrecht en Kortenhoef.`
   }
 ]
 
@@ -110,7 +113,7 @@ export default function StudentAanHuisBlaricumLanding() {
   }
   return (
     <>
-      
+
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
@@ -128,33 +131,40 @@ export default function StudentAanHuisBlaricumLanding() {
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Student aan huis Blaricum",
-                "item": "https://hulpmetit.nl/student-aan-huis-blaricum"
+                "name": `Computerhulp ${CITY}`,
+                "item": `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`
               }
             ]
           })
         }}
       />
 
-<script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "name": "Hulp met IT - Student Aan Huis Blaricum",
-            "description": "Betaalbare computerhulp in Blaricum door ervaren IT-studenten",
-            "url": "https://hulpmetit.nl/student-aan-huis-blaricum",
+            "name": `Hulp met IT - Computerhulp ${CITY}`,
+            "description": `Betaalbare computerhulp in ${CITY} door ervaren IT-studenten van ${LOCAL_INSTITUTION}`,
+            "url": `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`,
             "telephone": "+31642827860",
             "email": "info@hulpmetit.nl",
             "address": {
               "@type": "PostalAddress",
-              "addressLocality": "Blaricum",
+              "addressLocality": CITY,
               "addressRegion": "Noord-Holland",
               "addressCountry": "NL"
             },
-            "areaServed": { "@type": "City", "name": "Blaricum" },
-            "serviceType": "Student aan huis Blaricum",
+            "areaServed": [
+              { "@type": "City", "name": CITY },
+              { "@type": "City", "name": "Laren" },
+              { "@type": "City", "name": "Huizen" },
+              { "@type": "City", "name": "Hilversum" },
+              { "@type": "City", "name": "Bussum" },
+              { "@type": "City", "name": "Naarden" }
+            ],
+            "serviceType": "Computerhulp aan huis",
             "priceRange": "€53,50 - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })
@@ -171,13 +181,13 @@ export default function StudentAanHuisBlaricumLanding() {
             </li>
             <li className="text-gray-400">/</li>
             <li>
-              <span className="text-gray-700 font-medium">Student aan huis Blaricum</span>
+              <span className="text-gray-700 font-medium">Computerhulp {CITY}</span>
             </li>
           </ol>
         </div>
       </nav>
 
-      
+
       <section className="relative flex items-start justify-center overflow-hidden min-h-[600px] lg:min-h-[700px] pt-20">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
@@ -194,11 +204,11 @@ export default function StudentAanHuisBlaricumLanding() {
         <div className="relative z-10 max-w-6xl mx-auto container-padding text-center flex items-center min-h-[600px] lg:min-h-[700px]">
           <div className="w-full">
           <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-white drop-shadow-lg">Student aan Huis Blaricum</span>
+            <span className="text-white drop-shadow-lg">Computerhulp aan Huis {CITY}</span>
           </h1>
 
           <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">
-            Heeft u vragen of problemen met uw computer, tablet, smartphone of een ander apparaat? Onze IT-studenten komen bij u thuis in <span className="font-semibold">Blaricum en omgeving</span>. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Onze studenten zijn betrouwbaar en zorgvuldig, zodat u met een gerust hart hulp aan huis krijgt.
+            Heeft u vragen of problemen met uw computer, laptop, tablet of smartphone? Onze IT-studenten van {LOCAL_INSTITUTION} komen bij u thuis in <span className="font-semibold">{CITY} en het Gooi</span>. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Betrouwbaar en betaalbaar.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-4">
@@ -247,13 +257,13 @@ export default function StudentAanHuisBlaricumLanding() {
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Hoe Werkt Student Aan Huis in Blaricum?
+                Hoe Werkt Computerhulp aan Huis in {CITY}?
               </h2>
               <p className="text-xl text-secondary-700">
-                Snel, lokaal en betaalbaar - vakkundige hulp in Blaricum
+                Snel, lokaal en betaalbaar - vakkundige hulp in {CITY} en omgeving
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
@@ -276,10 +286,10 @@ export default function StudentAanHuisBlaricumLanding() {
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Waarom kiezen voor onze Student Aan Huis in Blaricum?
+                Waarom Kiezen voor Computerhulp in {CITY}?
               </h2>
               <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
-                Ontdek de voordelen van computerhulp door ervaren IT-studenten in Blaricum
+                Ontdek de voordelen van computerhulp door IT-studenten van {LOCAL_INSTITUTION}
               </p>
             </div>
 
@@ -288,9 +298,9 @@ export default function StudentAanHuisBlaricumLanding() {
                 <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <Euro className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Blaricum</h3>
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Blaricum - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                  Vanaf €53,50 in {CITY} - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
                 </p>
               </div>
 
@@ -298,9 +308,9 @@ export default function StudentAanHuisBlaricumLanding() {
                 <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Lokale IT-Studenten</h3>
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Studenten van {LOCAL_INSTITUTION}</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Onze studenten in Blaricum zijn opgeleid in de nieuwste technologieën en kennen de stad goed. Snel ter plaatse.
+                  Onze IT-studenten zijn opgeleid in de nieuwste technologieen en kennen het Gooi goed. Snel ter plaatse in {CITY}.
                 </p>
               </div>
 
@@ -310,7 +320,7 @@ export default function StudentAanHuisBlaricumLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Flexibele Tijden</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Ook 's avonds en in weekenden beschikbaar in Blaricum. Studenten hebben flexibele schema's.
+                  Ook 's avonds en in weekenden beschikbaar in {CITY}. Studenten hebben flexibele schema's.
                 </p>
               </div>
 
@@ -318,9 +328,9 @@ export default function StudentAanHuisBlaricumLanding() {
                 <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel Blaricum</h3>
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel het Gooi</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Van Centrum tot Noord, van Oost tot West - onze studenten komen overal in Blaricum en omgeving.
+                  Van {CITY} tot Laren, van Huizen tot Hilversum - onze studenten komen overal in de regio.
                 </p>
               </div>
 
@@ -330,7 +340,7 @@ export default function StudentAanHuisBlaricumLanding() {
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Beschikbaarheid</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vaak nog dezelfde dag beschikbaar in Blaricum. Korte reistijd betekent snelle hulp.
+                  Vaak nog dezelfde dag beschikbaar in {CITY}. Korte reistijd betekent snelle hulp.
                 </p>
               </div>
 
@@ -338,9 +348,9 @@ export default function StudentAanHuisBlaricumLanding() {
                 <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
                   <GraduationCap className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Moderne Kennis</h3>
+                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Actuele Kennis</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Studenten zijn vertrouwd met de nieuwste software en technologieën. Ideaal voor moderne computerproblemen.
+                  Studenten zijn vertrouwd met de nieuwste software en technologieen. Ideaal voor moderne computerproblemen.
                 </p>
               </div>
             </div>
@@ -352,62 +362,62 @@ export default function StudentAanHuisBlaricumLanding() {
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Onze Student IT Diensten in Blaricum
+                Onze IT Diensten in {CITY}
               </h2>
               <p className="text-xl text-secondary-700">
-                Uitgebreide computerhulp door vakkundige IT-studenten in Blaricum
+                Uitgebreide computerhulp door vakkundige IT-studenten in {CITY} en omgeving
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🖥️ Computer & Laptop Hulp Blaricum</h3>
+                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Computer & Laptop Hulp {CITY}</h3>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• Computer start niet op - diagnose en reparatie</li>
-                    <li>• Laptop scherm vervangen of repareren</li>
-                    <li>• Toetsenbord en touchpad problemen</li>
-                    <li>• Hardware upgrades (RAM, SSD, harde schijf)</li>
-                    <li>• Ventilator reiniging bij oververhitting</li>
+                    <li>- Computer start niet op - diagnose en reparatie</li>
+                    <li>- Laptop scherm vervangen of repareren</li>
+                    <li>- Toetsenbord en touchpad problemen</li>
+                    <li>- Hardware upgrades (RAM, SSD, harde schijf)</li>
+                    <li>- Ventilator reiniging bij oververhitting</li>
                   </ul>
                 </div>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• Windows installatie en updates</li>
-                    <li>• Microsoft Office installatie en configuratie</li>
-                    <li>• Antivirus software installeren</li>
-                    <li>• Browser installatie en bookmarks overzetten</li>
-                    <li>• Printer drivers en software installeren</li>
+                    <li>- Windows installatie en updates</li>
+                    <li>- Microsoft Office installatie en configuratie</li>
+                    <li>- Antivirus software installeren</li>
+                    <li>- Browser installatie en bookmarks overzetten</li>
+                    <li>- Printer drivers en software installeren</li>
                   </ul>
                 </div>
               </div>
 
               <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">🌐 Internet & Netwerk Blaricum</h3>
+                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Internet & Netwerk {CITY}</h3>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• WiFi verbinding problemen oplossen</li>
-                    <li>• Router instellen en configureren</li>
-                    <li>• Langzame internet snelheid verbeteren</li>
-                    <li>• Netwerk printer verbinding maken</li>
-                    <li>• Smart TV internet verbinding</li>
+                    <li>- WiFi verbinding problemen oplossen</li>
+                    <li>- Router instellen en configureren</li>
+                    <li>- Langzame internet snelheid verbeteren</li>
+                    <li>- Netwerk printer verbinding maken</li>
+                    <li>- Smart TV internet verbinding</li>
                   </ul>
                 </div>
 
                 <div className="glass-effect rounded-lg p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Tablet Hulp</h4>
                   <ul className="text-secondary-700 space-y-2">
-                    <li>• iPhone en Android telefoon instellen</li>
-                    <li>• Apps downloaden en organiseren</li>
-                    <li>• Contacten en foto's synchroniseren</li>
-                    <li>• Tablet koppelen aan WiFi en accounts</li>
-                    <li>• Privacy instellingen optimaliseren</li>
+                    <li>- iPhone en Android telefoon instellen</li>
+                    <li>- Apps downloaden en organiseren</li>
+                    <li>- Contacten en foto's synchroniseren</li>
+                    <li>- Tablet koppelen aan WiFi en accounts</li>
+                    <li>- Privacy instellingen optimaliseren</li>
                   </ul>
                 </div>
               </div>
@@ -437,10 +447,10 @@ export default function StudentAanHuisBlaricumLanding() {
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Veelgestelde Vragen Student Aan Huis Blaricum
+                Veelgestelde Vragen over Computerhulp in {CITY}
               </h2>
               <p className="text-xl text-secondary-700">
-                Antwoorden op de meest gestelde vragen over onze student IT service in Blaricum
+                Antwoorden op de meest gestelde vragen over onze IT service in {CITY}
               </p>
             </div>
 
@@ -458,20 +468,20 @@ export default function StudentAanHuisBlaricumLanding() {
           </div>
         </section>
 
-        {/* Blaricum Areas Section */}
+        {/* Areas Section */}
         <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Werkgebied Blaricum & Omgeving
+                Werkgebied {CITY} & het Gooi
               </h2>
               <p className="text-xl text-secondary-700">
-                Onze IT-studenten komen naar alle wijken in en rondom Blaricum
+                Onze IT-studenten komen naar alle plaatsen in en rondom {CITY}
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-              {blaricumAreas.map((area, index) => (
+              {cityAreas.map((area, index) => (
                 <div key={index} className="glass-effect rounded-lg p-4 text-center">
                   <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
                   <span className="text-secondary-700 text-base font-medium">{area}</span>
@@ -481,12 +491,8 @@ export default function StudentAanHuisBlaricumLanding() {
 
             <div className="text-center">
               <p className="text-secondary-700 text-lg mb-6">
-                Niet in de lijst? <strong className="text-secondary-800">Bel ons</strong> - wij komen waarschijnlijk ook bij jou!
+                Niet in de lijst? <strong className="text-secondary-800">Bel ons</strong> - wij komen waarschijnlijk ook bij u!
               </p>
-              <Link href="/regios/blaricum" className="btn-secondary">
-                <MapPin className="w-5 h-5 mr-2" />
-                Meer Info Blaricum
-              </Link>
             </div>
           </div>
         </section>
@@ -495,15 +501,15 @@ export default function StudentAanHuisBlaricumLanding() {
         <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
           <div className="max-w-4xl mx-auto container-padding text-center">
             <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">
-              Klaar voor Betaalbare Computerhulp in Blaricum?
+              Klaar voor Betaalbare Computerhulp in {CITY}?
             </h2>
             <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">
-              Onze ervaren IT-studenten in Blaricum staan klaar om je te helpen. Snel, betaalbaar en vakkundig!
+              Onze IT-studenten van {LOCAL_INSTITUTION} staan klaar om u te helpen. Snel, betaalbaar en vakkundig!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
                 <Calendar className="w-6 h-6 mr-3" />
-                Plan Nu Je Afspraak
+                Plan Nu Uw Afspraak
               </Link>
               <Link href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
                 <Phone className="w-6 h-6 mr-3" />

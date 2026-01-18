@@ -1,28 +1,29 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Huizen | Hulp Met IT',
-  description: 'Student aan huis in Huizen voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Snel en vakkundig!',
-  keywords: 'student aan huis Huizen, computerhulp Huizen, IT student Huizen, computer reparatie Huizen, laptop hulp Huizen',
+  title: 'Computerhulp Huizen | IT Student aan Huis in het Gooi | Hulp met IT',
+  description: 'Computerhulp aan huis in Huizen door ervaren IT-studenten van Hogeschool Utrecht. Hulp met laptop, tablet, smartphone en WiFi. Vanaf €53,50. Ook in Bussum, Naarden en Blaricum.',
+  keywords: 'computerhulp Huizen, IT student aan huis Huizen, laptop hulp Huizen, computer reparatie Gooi, WiFi problemen Huizen, smartphone hulp Bussum, tablet hulp Naarden, Hogeschool Utrecht IT student',
   openGraph: {
-    title: 'Student aan Huis Huizen - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Huizen door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Computerhulp Huizen | IT Student aan Huis in het Gooi',
+    description: 'Betaalbare computerhulp aan huis in Huizen en omgeving door IT-studenten van Hogeschool Utrecht. Persoonlijke hulp met computer, laptop, tablet en smartphone.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    siteName: 'Hulp met IT',
+    url: 'https://hulpmetit.nl/student-aan-huis-huizen'
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student aan Huis Huizen - Computerhulp door Studenten',
-    description: 'Computerhulp aan huis in Huizen door studenten. Betaalbare Deskundige IT-hulp voor particulieren en bedrijven.',
+    title: 'Computerhulp Huizen | IT Student aan Huis in het Gooi',
+    description: 'Betaalbare computerhulp aan huis in Huizen door IT-studenten. Persoonlijke hulp met al uw apparaten.',
   },
   robots: {
     index: true,
     follow: true,
   },
   alternates: {
-    canonical: '/student-aan-huis-huizen'
+    canonical: 'https://hulpmetit.nl/student-aan-huis-huizen'
   }
 };
 

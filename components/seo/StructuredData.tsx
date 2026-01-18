@@ -121,7 +121,7 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "openingHours": SERVICE_HOURS.OPENING_HOURS,
     "foundingDate": BUSINESS_INFO.FOUNDED_YEAR,
-    "slogan": "Betaalbare computerhulp aan huis - vanaf €53,50 (€10 voorrijkosten + 3 x €14,50)"
+    "slogan": "IT-Specialist aan huis - Snel, vakkundig en bij u thuis"
   }
 
   // Organization schema for better brand recognition

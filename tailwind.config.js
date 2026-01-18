@@ -8,18 +8,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Oranje - Nederlands, warm, vriendelijk
         primary: {
-          50: '#fafcff',
-          100: '#f2f7ff',
-          200: '#e6f0ff',
-          300: '#cfe2ff',
-          400: '#a3c7ff',
-          500: '#2563eb',
-          600: '#1d4ed8',
-          700: '#1e40af',
-          800: '#1e3a8a',
-          900: '#172554',
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',  // Hoofd oranje
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
         },
+        // Donkerblauw - Professioneel, betrouwbaar
         secondary: {
           50: '#f8fafc',
           100: '#f1f5f9',
@@ -30,105 +32,43 @@ module.exports = {
           600: '#475569',
           700: '#334155',
           800: '#1e293b',
-          900: '#0f172a',
+          900: '#0f172a',  // Donker voor tekst
         },
-        accent: {
-          50: '#fef7f0',
-          100: '#feecdc',
-          200: '#fed5b3',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+        // Donkerblauw accent
+        navy: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
+        // Succes groen (legacy support)
         success: {
           50: '#f0fdf4',
           100: '#dcfce7',
           200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
           500: '#22c55e',
           600: '#16a34a',
           700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
         },
-        neutral: {
-          50: '#fafafa',
-          100: '#f5f5f5',
-          200: '#e5e5e5',
-          300: '#d4d4d4',
-          400: '#a3a3a3',
-          500: '#737373',
-          600: '#525252',
-          700: '#404040',
-          800: '#262626',
-          900: '#171717',
-        },
-        trust: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-        }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       fontSize: {
-        'xs': ['0.75rem', { lineHeight: '1rem' }],
-        'sm': ['0.875rem', { lineHeight: '1.25rem' }],
-        'base': ['1rem', { lineHeight: '1.5rem' }],
-        'lg': ['1.125rem', { lineHeight: '1.75rem' }],
-        'xl': ['1.25rem', { lineHeight: '1.75rem' }],
-        '2xl': ['1.5rem', { lineHeight: '2rem' }],
-        '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-        '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-        '5xl': ['3rem', { lineHeight: '1' }],
-        '6xl': ['3.75rem', { lineHeight: '1' }],
-        '7xl': ['4.5rem', { lineHeight: '1' }],
-        '8xl': ['6rem', { lineHeight: '1' }],
-        '9xl': ['8rem', { lineHeight: '1' }],
-      },
-      animation: {
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'rotate-slow': 'rotate 10s linear infinite',
-        'bounce-slow': 'bounce 3s infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        glow: {
-          '0%': {
-            boxShadow: '0 0 20px rgba(29, 78, 216, 0.3)',
-            transform: 'scale(1)',
-          },
-          '100%': {
-            boxShadow: '0 0 30px rgba(29, 78, 216, 0.5)',
-            transform: 'scale(1.02)',
-          },
-        },
-      },
-      backdropBlur: {
-        xs: '2px',
-      },
-      screens: {
-        'xs': '475px',
+        'sm': ['0.9375rem', { lineHeight: '1.5' }],    // 15px
+        'base': ['1.0625rem', { lineHeight: '1.6' }],  // 17px
+        'lg': ['1.1875rem', { lineHeight: '1.6' }],    // 19px
+        'xl': ['1.375rem', { lineHeight: '1.4' }],     // 22px
+        '2xl': ['1.75rem', { lineHeight: '1.3' }],     // 28px
+        '3xl': ['2.25rem', { lineHeight: '1.2' }],     // 36px
+        '4xl': ['2.75rem', { lineHeight: '1.1' }],     // 44px
+        '5xl': ['3.5rem', { lineHeight: '1.1' }],      // 56px
       },
     },
   },

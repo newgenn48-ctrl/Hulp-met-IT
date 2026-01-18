@@ -71,12 +71,12 @@ export const Header = React.memo(function Header() {
             href="/"
             className="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105"
           >
-            <div className="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
               <Monitor className="w-6 h-6 text-white" />
             </div>
             <div>
               <span className="text-xl font-bold text-gradient">Hulp met IT</span>
-              <div className="text-xs text-primary-600 leading-none">Computer Specialist aan huis</div>
+              <div className="text-xs text-primary-600 leading-none">IT-Specialist aan huis</div>
             </div>
           </Link>
 
@@ -85,7 +85,7 @@ export const Header = React.memo(function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg font-medium text-primary-700 hover:text-primary-700 transition-colors"
+                className="text-lg font-medium text-secondary-700 hover:text-primary-600 transition-colors"
               >
                 {item.name}
               </Link>
@@ -93,9 +93,12 @@ export const Header = React.memo(function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:+31642827860" className="text-sm text-primary-700 hover:text-primary-700 inline-flex items-center px-3 py-2 rounded-md hover:bg-primary-50 transition-colors">
-              <Phone className="w-4 h-4 mr-2" />
-              Bel ons
+            <a
+              href="tel:+31642827860"
+              className="flex items-center gap-2 bg-secondary-100 hover:bg-secondary-200 border border-secondary-300 text-secondary-800 font-semibold px-4 py-2.5 rounded-lg transition-colors"
+            >
+              <Phone className="w-5 h-5" />
+              <span className="text-base">06-42 82 78 60</span>
             </a>
             <Link href="/afspraak" className="btn-cta text-sm px-4 py-2">
               Afspraak maken
@@ -104,7 +107,7 @@ export const Header = React.memo(function Header() {
 
           <button
             type="button"
-            className="lg:hidden text-primary-700 hover:text-primary-700"
+            className="lg:hidden text-secondary-700 hover:text-primary-600 p-2 rounded-lg hover:bg-primary-50 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Sluit menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
@@ -124,7 +127,7 @@ export const Header = React.memo(function Header() {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-primary-700 hover:text-primary-700"
+                  className="text-lg font-medium text-secondary-700 hover:text-primary-600 transition-colors"
                 >
                   {item.name}
                 </Link>

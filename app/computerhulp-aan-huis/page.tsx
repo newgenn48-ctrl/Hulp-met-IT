@@ -1,484 +1,442 @@
 'use client'
 
-import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { PricingSection } from '@/components/home/PricingSection'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import {
   Phone,
-  Calendar,
+  ArrowRight,
+  Star,
+  ChevronDown,
   Users,
-  MessageCircle,
-  CheckCircle,
-  GraduationCap,
-  Zap,
-  Euro,
+  Award,
   Shield,
   Clock,
-  ChevronDown,
-  ChevronUp
+  Monitor,
+  Wrench
 } from 'lucide-react'
+import { PricingSection } from '@/components/home/PricingSection'
+import { ServicesGrid } from '@/components/services/ServicesGrid'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 
 const benefits = [
-  { icon: Users, text: '10+ jaar ervaring' },
-  { icon: MessageCircle, text: 'Begrijpelijke uitleg' },
-  { icon: CheckCircle, text: 'Betaalbaar en betrouwbaar' }
+  {
+    icon: Award,
+    title: '10+ Jaar Ervaring',
+    description: 'Onze specialisten hebben ruim 10 jaar ervaring met computerhulp.'
+  },
+  {
+    icon: Users,
+    title: 'Persoonlijke Aanpak',
+    description: 'Geduldig en begrijpelijke uitleg, zonder vakjargon.'
+  },
+  {
+    icon: Clock,
+    title: 'Snel Ter Plaatse',
+    description: 'Vaak nog dezelfde dag, ook voor spoedgevallen.'
+  },
+  {
+    icon: Shield,
+    title: 'Betrouwbaar & Veilig',
+    description: 'Alle specialisten zijn gescreend. Uw privacy staat voorop.'
+  },
+  {
+    icon: Wrench,
+    title: 'Alle Problemen',
+    description: 'Van trage computer tot virus, wij lossen het op.'
+  },
+  {
+    icon: Monitor,
+    title: 'Alle Merken',
+    description: 'HP, Dell, Lenovo, Asus, Apple - wij kennen ze allemaal.'
+  }
 ]
 
 const processSteps = [
   {
-    step: '1',
-    title: 'Plan Afspraak',
-    description: 'Bel of plan online - ook \'s avonds en in weekenden mogelijk'
+    title: 'U belt of plant online',
+    description: 'Vertel ons kort wat het probleem is. Wij plannen een afspraak op een moment dat u uitkomt.'
   },
   {
-    step: '2',
-    title: 'Specialist Komt Langs',
-    description: 'Ervaren IT-specialist komt snel naar je toe met alle benodigde tools'
+    title: 'Specialist komt langs',
+    description: 'Een ervaren IT-specialist komt bij u thuis met alle benodigde tools.'
   },
   {
-    step: '3',
-    title: 'Probleem Opgelost',
-    description: 'Vakkundige hulp tegen eerlijke tarieven + uitleg hoe het werkt'
+    title: 'Probleem wordt opgelost',
+    description: 'Vakkundige hulp ter plekke. U krijgt uitleg zodat u het begrijpt.'
+  },
+  {
+    title: 'Betaling achteraf',
+    description: 'U betaalt pas na afloop. Geen vooruitbetaling, geen verrassingen.'
   }
 ]
 
 const faqData = [
   {
-    question: "Wat kost computerhulp aan huis?",
-    answer: "Onze tarieven zijn €53,50 (€10 voorrijkosten + 3 x €14,50) plus €10 eenmalige voorrijkosten. Dit is veel voordeliger dan traditionele computerhulp services. Minimum 3 kwartier."
+    question: 'Wat kost computerhulp aan huis?',
+    answer: 'Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard bezoek van 45 minuten kost dus €53,50. U betaalt achteraf.'
   },
   {
-    question: "Zijn jullie specialisten wel gekwalificeerd?",
-    answer: "Ja, onze specialisten hebben 10+ jaar ervaring met computerhulp. Ze zijn vertrouwd met moderne technologie en worden geselecteerd op hun technische vaardigheden en communicatieve vaardigheden. Alle specialisten zijn gescreend en getraind."
+    question: 'Hoe snel kunnen jullie komen?',
+    answer: 'Vaak kunnen we nog dezelfde dag langskomen. Voor urgente problemen proberen we binnen enkele uren beschikbaar te zijn.'
   },
   {
-    question: "Kunnen jullie ook 's avonds en weekenden komen?",
-    answer: "Ja, dat is een van onze grote voordelen! Onze specialisten hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+    question: 'Kunnen jullie alle merken computers helpen?',
+    answer: 'Ja, wij hebben ervaring met alle merken: HP, Dell, Lenovo, Asus, Acer, Apple en anderen. Ook helpen wij met alle Windows-versies.'
   },
   {
-    question: "Wat als het probleem niet opgelost kan worden?",
-    answer: "We zijn eerlijk over wat wel en niet mogelijk is. Als een probleem te complex is, verwijzen we door naar andere specialisten. Je betaalt alleen voor de tijd die besteed is aan diagnose en advies."
+    question: 'Wat als het probleem niet opgelost kan worden?',
+    answer: 'We zijn eerlijk over wat wel en niet mogelijk is. U betaalt alleen voor de tijd die besteed is aan diagnose en advies.'
   },
   {
-    question: "Welke gebieden bedienen jullie?",
-    answer: "We hebben specialisten beschikbaar in alle grote steden van Nederland: Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven, Groningen, Tilburg en omliggende gebieden. Bekijk onze locatiepagina's voor specifieke beschikbaarheid."
-  },
-  {
-    question: "Hoe snel kunnen jullie komen?",
-    answer: "Vaak kunnen we nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgent problemen proberen we binnen 2-4 uur beschikbaar te zijn, afhankelijk van de locatie en beschikbaarheid."
-  },
-  {
-    question: "Nemen specialisten hun eigen gereedschap mee?",
-    answer: "Ja, onze specialisten komen volledig uitgerust. Ze brengen laptops, kabels, tools en software mee die nodig zijn voor de meeste reparaties en installaties. Voor specifieke hardware onderdelen overleggen we vooraf."
+    question: "Komen jullie ook 's avonds en in weekenden?",
+    answer: "Ja, wij zijn flexibel. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
   }
 ]
 
-function FAQItem({ question, answer, isOpen, onToggle }: {
-  question: string
-  answer: string
-  isOpen: boolean
-  onToggle: () => void
-}) {
-  return (
-    <div className="glass-effect rounded-lg overflow-hidden">
-      <button
-        type="button"
-        onClick={onToggle}
-        className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
-      >
-        <h3 className="text-xl font-semibold text-secondary-800 pr-4">{question}</h3>
-        {isOpen ? (
-          <ChevronUp className="w-6 h-6 text-primary-400 flex-shrink-0" />
-        ) : (
-          <ChevronDown className="w-6 h-6 text-primary-400 flex-shrink-0" />
-        )}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6">
-          <p className="text-secondary-700 leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
-  )
-}
+export default function ComputerhulpAanHuisPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
-export default function ComputerhulpAanHuisLanding() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+  // Structured data
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  }
 
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index)
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Computerhulp aan Huis',
+    alternateName: ['Computer reparatie aan huis', 'Laptop hulp thuis', 'IT specialist aan huis'],
+    description: 'Professionele computerhulp aan huis door ervaren IT-specialisten',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Hulp met IT',
+      telephone: '+31642827860',
+      url: 'https://hulpmetit.nl'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Nederland'
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '53.50',
+      priceCurrency: 'EUR'
+    }
   }
 
   return (
     <>
-      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://hulpmetit.nl"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Computerhulp aan huis",
-                "item": "https://hulpmetit.nl/computerhulp-aan-huis"
-              }
-            ]
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-
-      {/* LocalBusiness Schema with Alternative Names */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": ["LocalBusiness", "Service"],
-            "name": "Hulp met IT - Computerhulp Aan Huis",
-            "alternateName": [
-              "Computer reparatie aan huis",
-              "Laptop reparatie thuis",
-              "IT specialist aan huis",
-              "PC hulp aan huis",
-              "Computer service aan huis"
-            ],
-            "description": "Professionele computerhulp aan huis door ervaren IT-specialisten met 10+ jaar ervaring in heel Nederland",
-            "url": "https://hulpmetit.nl/computerhulp-aan-huis",
-            "telephone": "+31642827860",
-            "email": "info@hulpmetit.nl",
-            "areaServed": {
-              "@type": "Country",
-              "name": "Nederland"
-            },
-            "serviceType": "Computerhulp aan huis Nederland",
-            "priceRange": "€53,50-€100",
-            "openingHours": "Mo-Su 09:00-21:00",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "EUR",
-              "price": "53.50",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "53.50",
-                "priceCurrency": "EUR",
-                "unitText": "per 3 kwartier",
-                "referenceQuantity": {
-                  "@type": "QuantitativeValue",
-                  "value": "0.75",
-                  "unitCode": "HUR"
-                }
-              },
-              "availability": "https://schema.org/InStock"
-            },
-            "hasOfferCatalog": {
-              "@type": "OfferCatalog",
-              "name": "Computerhulp Aan Huis Services",
-              "itemListElement": [
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Laptop reparatie aan huis"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Computer problemen oplossen thuis"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Software installatie aan huis"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "WiFi en internet hulp"
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  "itemOffered": {
-                    "@type": "Service",
-                    "name": "Email en smartphone configuratie"
-                  }
-                }
-              ]
-            }
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
 
-      {/* Breadcrumbs Navigation */}
-      <nav aria-label="Breadcrumb" className="bg-white/50 backdrop-blur-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto container-padding py-3">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link href="/" className="text-primary-600 hover:text-primary-700 transition-colors">
-                Home
-              </Link>
-            </li>
-            <li className="text-gray-400">/</li>
-            <li>
-              <span className="text-gray-700 font-medium">Computerhulp aan huis</span>
-            </li>
-          </ol>
+      {/* Breadcrumbs */}
+      <div className="bg-secondary-50 border-b border-secondary-200">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3">
+          <nav className="flex items-center gap-2 text-sm">
+            <Link href="/" className="text-secondary-500 hover:text-primary-500">Home</Link>
+            <span className="text-secondary-400">/</span>
+            <span className="text-secondary-700 font-medium">Computerhulp aan huis</span>
+          </nav>
         </div>
-      </nav>
+      </div>
 
-      <section className="relative flex items-start justify-center overflow-hidden min-h-[600px] lg:min-h-[700px] pt-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/images/computerhulp-aan-huis/computerhulp-aan-huis.webp)',
-              filter: 'brightness(0.7) contrast(1.1)'
-            }}
-          />
-          {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-accent-900/30" />
-        </div>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-100/50 pt-12 pb-16 lg:pt-16 lg:pb-24">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center flex items-center min-h-[600px] lg:min-h-[700px]">
-          <div className="w-full">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-white drop-shadow-lg">Computerhulp Aan Huis</span>
-            </h1>
-
-            <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-8 leading-relaxed drop-shadow-md">
-              Professionele computerhulp bij u thuis - Snel, betrouwbaar en betaalbaar
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-6 mb-8">
-              {benefits.map((benefit, index) => {
-                const IconComponent = benefit.icon
-                return (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
-                  >
-                    <IconComponent className="w-6 h-6 text-white" />
-                    <span className="drop-shadow-sm">{benefit.text}</span>
+            {/* Content */}
+            <div>
+              {/* Rating */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="flex">
+                  {[...Array(4)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-primary-500 fill-primary-500" />
+                  ))}
+                  <div className="relative w-5 h-5">
+                    <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
+                    <div className="absolute overflow-hidden" style={{ width: '80%' }}>
+                      <Star className="w-5 h-5 text-primary-500 fill-primary-500" />
+                    </div>
                   </div>
-                )
-              })}
+                </div>
+                <span className="text-secondary-600">4.8/5 · 2000+ klanten</span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
+                Computerhulp
+                <span className="text-primary-500"> aan huis</span>
+              </h1>
+
+              {/* Subtitel */}
+              <p className="text-xl text-secondary-600 leading-relaxed mb-4 max-w-lg">
+                Professionele computerhulp bij u thuis. Snel, betrouwbaar en met 10+ jaar ervaring.
+              </p>
+              <p className="text-lg text-secondary-500 mb-8 max-w-lg">
+                Ook senioren begeleiden wij met geduld en heldere uitleg.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/afspraak"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+                >
+                  Afspraak maken
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <a
+                  href="tel:+31642827860"
+                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Bel ons
+                </a>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-              <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
-                <Calendar className="w-6 h-6 mr-3" />
-                Afspraak Maken
-              </Link>
-
-              <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow bg-white/95 hover:bg-white">
-                <Phone className="w-5 h-5 mr-2" />
-                Bel Nu
-              </a>
+            {/* Photo */}
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary-200 to-primary-300 rounded-3xl transform rotate-3" />
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <Image
+                  src="/hulp-met-it.webp"
+                  alt="IT-specialist helpt klant thuis met computerproblemen"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      <div className="relative">
-
-        {/* 1. DIENSTEN - Eerste vraag: "Wat doen jullie?" */}
-        <ServicesGrid
-          title="Wat Wij Voor U Kunnen Doen"
-          maxItems={6}
-        />
-
-        {/* 2. PRIJZEN - Tweede vraag: "Wat kost het?" */}
-        <PricingSection />
-
-        {/* 3. WAAROM COMPUTERHULP - Derde vraag: "Waarom computerhulp aan huis?" */}
-        <section className="section-spacing bg-neural-900/30">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Waarom Kiezen Voor Computerhulp Aan Huis?
-              </h2>
-              <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
-                Ontdek de voordelen van computerhulp aan huis door ervaren IT-specialisten
-              </p>
+      {/* USP Bar */}
+      <section className="bg-primary-500 py-6">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          {/* Mobile */}
+          <div className="grid grid-cols-3 gap-4 md:hidden text-white text-center mb-4">
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
+                <Award className="w-5 h-5 text-white" />
+              </div>
+              <p className="font-semibold text-sm">10+ jaar</p>
+              <p className="text-primary-100 text-xs">ervaring</p>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Euro className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) - veel goedkoper dan traditionele computerhulp. Eerlijke prijzen zonder verrassingen.
-                </p>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
+                <Clock className="w-5 h-5 text-white" />
               </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">10+ Jaar Ervaring</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Onze specialisten hebben ruim 10 jaar ervaring met computerhulp. Betrouwbaar en professioneel.
-                </p>
+              <p className="font-semibold text-sm">Snel</p>
+              <p className="text-primary-100 text-xs">ter plaatse</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
+                <Shield className="w-5 h-5 text-white" />
               </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Flexibele Tijden</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Ook 's avonds en in weekenden beschikbaar. We passen ons aan uw agenda aan.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Persoonlijke Benadering</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Geduldig en begripvol. We nemen de tijd om alles rustig uit te leggen en u te helpen begrijpen.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Clock className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Beschikbaarheid</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Vaak nog dezelfde dag beschikbaar. Bij urgent problemen proberen we binnen 2-4 uur bij u te zijn.
-                </p>
-              </div>
-
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betrouwbaar & Veilig</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Alle specialisten zijn gescreend. Uw privacy en veiligheid staan bij ons voorop.
-                </p>
-              </div>
+              <p className="font-semibold text-sm">Betaling</p>
+              <p className="text-primary-100 text-xs">achteraf</p>
             </div>
           </div>
-        </section>
+          <Link
+            href="/afspraak"
+            className="md:hidden w-full inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+          >
+            Afspraak maken
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
 
-        {/* 4. HOE WERKT HET - Vierde vraag: "Hoe werkt het praktisch?" */}
-        <section className="section-spacing bg-white/5" aria-labelledby="process-heading">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 id="process-heading" className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Hoe Werkt Computerhulp Aan Huis?
-              </h2>
-              <p className="text-xl text-secondary-700">
-                In 3 eenvoudige stappen naar vakkundige hulp
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto" role="list" aria-label="Proces stappen">
-              {processSteps.map((step, index) => (
-                <div key={index} className="text-center" role="listitem">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white" aria-label={`Stap ${step.step}`}>
-                    {step.step}
-                  </div>
-                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
-                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
+          {/* Desktop */}
+          <div className="hidden md:flex items-center justify-between gap-4 text-white">
+            <div className="flex items-center gap-10">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Award className="w-5 h-5 text-white" />
                 </div>
-              ))}
+                <div>
+                  <p className="font-semibold">10+ jaar ervaring</p>
+                  <p className="text-primary-100 text-sm">Vakkundige specialisten</p>
+                </div>
+              </div>
+              <div className="w-px h-10 bg-primary-400" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold">Snel ter plaatse</p>
+                  <p className="text-primary-100 text-sm">Vaak dezelfde dag</p>
+                </div>
+              </div>
+              <div className="w-px h-10 bg-primary-400" />
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Shield className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <p className="font-semibold">Betaling achteraf</p>
+                  <p className="text-primary-100 text-sm">Geen vooruitbetaling</p>
+                </div>
+              </div>
             </div>
+            <Link
+              href="/afspraak"
+              className="inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+            >
+              Afspraak maken
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* 5. TESTIMONIALS - Vijfde vraag: "Wat zeggen anderen?" */}
-        <TestimonialsSection />
+      {/* Services */}
+      <ServicesGrid maxItems={6} />
 
-        {/* 6. FAQ - Laatste vragen wegnemen */}
-        <section className="section-spacing bg-neural-900/50">
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": faqData.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer
-                  }
-                }))
-              })
-            }}
-          />
-          <div className="max-w-4xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
-                Veelgestelde Vragen Over Computerhulp Aan Huis
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Antwoorden op de meest gestelde vragen over computerhulp aan huis service
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqData.map((faq, index) => (
-                <FAQItem
-                  key={index}
-                  question={faq.question}
-                  answer={faq.answer}
-                  isOpen={openFAQ === index}
-                  onToggle={() => toggleFAQ(index)}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 7. FINAL CTA - Oproep tot actie */}
-        <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
-          <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">
-              Klaar voor Professionele Computerhulp?
+      {/* Why Us */}
+      <section className="py-16 lg:py-20 bg-secondary-50">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 font-semibold mb-3">Waarom wij?</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              Voordelen van computerhulp aan huis
             </h2>
-            <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">
-              Onze ervaren IT-specialisten staan klaar om u te helpen. Snel, betaalbaar en vakkundig - precies wat u nodig hebt!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/afspraak" className="btn-cta">
-                <Calendar className="w-6 h-6 mr-3" />
-                Plan Nu Uw Afspraak
-              </Link>
-              <Link href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
-                <Phone className="w-6 h-6 mr-3" />
-                Bel Direct
-              </Link>
-            </div>
           </div>
-        </section>
 
-      </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon
+              return (
+                <div key={index} className="bg-white rounded-xl p-6 border border-secondary-200">
+                  <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mb-4">
+                    <IconComponent className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">{benefit.title}</h3>
+                  <p className="text-secondary-600">{benefit.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 font-semibold mb-3">Hoe het werkt</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              In 4 stappen geholpen
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="relative inline-flex mb-6">
+                  <div className="w-16 h-16 bg-white border-2 border-primary-200 rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary-500">{index + 1}</span>
+                  </div>
+                </div>
+                <h3 className="text-lg font-semibold text-secondary-900 mb-2">{step.title}</h3>
+                <p className="text-secondary-600">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <TestimonialsSection />
+
+      {/* Pricing */}
+      <PricingSection />
+
+      {/* FAQ */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-6 sm:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-500 font-semibold mb-3">Veelgestelde vragen</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              Vragen over computerhulp aan huis
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            {faqData.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-secondary-50 rounded-xl border border-secondary-200 overflow-hidden"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                >
+                  <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-primary-500 flex-shrink-0 transition-transform ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {openFaq === index && (
+                  <div className="px-5 pb-5">
+                    <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 lg:py-20 bg-gradient-to-r from-primary-500 to-primary-600">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Klaar voor professionele computerhulp?
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Onze ervaren IT-specialisten staan klaar om u te helpen. Snel, vakkundig en betrouwbaar.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/afspraak"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+            >
+              Afspraak maken
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+            <a
+              href="tel:+31642827860"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Bel ons
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
