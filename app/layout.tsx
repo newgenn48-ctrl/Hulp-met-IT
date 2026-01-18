@@ -104,8 +104,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         <link rel="dns-prefetch" href="https://c.clarity.ms" />
 
-        {/* Preload critical resources */}
-        <link rel="preload" href="/og-image.webp" as="image" type="image/webp" />
       </head>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         {/* Skip link for screen readers */}
