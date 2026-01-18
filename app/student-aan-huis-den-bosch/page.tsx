@@ -157,9 +157,9 @@ export default function StudentAanHuisDenBoschPage() {
       <div className="bg-secondary-50 border-b border-secondary-200">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3">
           <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-secondary-500 hover:text-primary-500">Home</Link>
+            <Link href="/" className="text-secondary-500 hover:text-primary-700">Home</Link>
             <span className="text-secondary-400">/</span>
-            <Link href="/student-aan-huis" className="text-secondary-500 hover:text-primary-500">ICT Student aan huis</Link>
+            <Link href="/student-aan-huis" className="text-secondary-500 hover:text-primary-700">ICT Student aan huis</Link>
             <span className="text-secondary-400">/</span>
             <span className="text-secondary-700 font-medium">{CITY_CASUAL}</span>
           </nav>
@@ -177,12 +177,12 @@ export default function StudentAanHuisDenBoschPage() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="flex">
                   {[...Array(4)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-primary-500 fill-primary-500" />
+                    <Star key={i} className="w-5 h-5 text-primary-700 fill-primary-500" />
                   ))}
                   <div className="relative w-5 h-5">
                     <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
                     <div className="absolute overflow-hidden" style={{ width: '80%' }}>
-                      <Star className="w-5 h-5 text-primary-500 fill-primary-500" />
+                      <Star className="w-5 h-5 text-primary-700 fill-primary-500" />
                     </div>
                   </div>
                 </div>
@@ -192,7 +192,7 @@ export default function StudentAanHuisDenBoschPage() {
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
                 ICT Student
-                <span className="text-primary-500"> aan huis {CITY_CASUAL}</span>
+                <span className="text-primary-700"> aan huis {CITY_CASUAL}</span>
               </h1>
 
               {/* Subtitel */}
@@ -327,7 +327,7 @@ export default function StudentAanHuisDenBoschPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-500 font-semibold mb-3">Waarom wij?</p>
+            <p className="text-primary-700 font-semibold mb-3">Waarom wij?</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               Voordelen van ICT student aan huis in {CITY_CASUAL}
             </h2>
@@ -354,7 +354,7 @@ export default function StudentAanHuisDenBoschPage() {
       <section className="py-16 lg:py-20 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-500 font-semibold mb-3">Hoe het werkt</p>
+            <p className="text-primary-700 font-semibold mb-3">Hoe het werkt</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               In 4 stappen geholpen in {CITY_CASUAL}
             </h2>
@@ -365,7 +365,7 @@ export default function StudentAanHuisDenBoschPage() {
               <div key={index} className="text-center">
                 <div className="relative inline-flex mb-6">
                   <div className="w-16 h-16 bg-white border-2 border-primary-200 rounded-2xl flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary-500">{index + 1}</span>
+                    <span className="text-2xl font-bold text-primary-700">{index + 1}</span>
                   </div>
                 </div>
                 <h3 className="text-lg font-semibold text-secondary-900 mb-2">{step.title}</h3>
@@ -386,7 +386,7 @@ export default function StudentAanHuisDenBoschPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-500 font-semibold mb-3">Werkgebied</p>
+            <p className="text-primary-700 font-semibold mb-3">Werkgebied</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               ICT Student aan huis in {CITY_CASUAL} en omgeving
             </h2>
@@ -395,7 +395,7 @@ export default function StudentAanHuisDenBoschPage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
             {areas.map((area, index) => (
               <div key={index} className="flex items-center gap-2 bg-secondary-50 rounded-lg p-3 border border-secondary-200">
-                <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                <MapPin className="w-4 h-4 text-primary-700 flex-shrink-0" />
                 <span className="text-secondary-700 font-medium text-sm">{area}</span>
               </div>
             ))}
@@ -407,7 +407,7 @@ export default function StudentAanHuisDenBoschPage() {
       <section className="py-16 lg:py-20 bg-secondary-50">
         <div className="max-w-3xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-500 font-semibold mb-3">Veelgestelde vragen</p>
+            <p className="text-primary-700 font-semibold mb-3">Veelgestelde vragen</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               Vragen over ICT student aan huis in {CITY_CASUAL}
             </h2>
@@ -425,7 +425,7 @@ export default function StudentAanHuisDenBoschPage() {
                 >
                   <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-primary-500 flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
                       openFaq === index ? 'rotate-180' : ''
                     }`}
                   />

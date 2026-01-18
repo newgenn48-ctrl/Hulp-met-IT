@@ -64,7 +64,7 @@ export default function RegiosPage() {
       <div className="bg-secondary-50 border-b border-secondary-200">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3">
           <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-secondary-500 hover:text-primary-500">Home</Link>
+            <Link href="/" className="text-secondary-500 hover:text-primary-700">Home</Link>
             <span className="text-secondary-400">/</span>
             <span className="text-secondary-700 font-medium">Regio&apos;s</span>
           </nav>
@@ -79,12 +79,12 @@ export default function RegiosPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="flex">
                 {[...Array(4)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-primary-500 fill-primary-500" />
+                  <Star key={i} className="w-5 h-5 text-primary-700 fill-primary-500" />
                 ))}
                 <div className="relative w-5 h-5">
                   <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
                   <div className="absolute overflow-hidden" style={{ width: '80%' }}>
-                    <Star className="w-5 h-5 text-primary-500 fill-primary-500" />
+                    <Star className="w-5 h-5 text-primary-700 fill-primary-500" />
                   </div>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function RegiosPage() {
 
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
               Computerhulp
-              <span className="text-primary-500"> in heel Nederland</span>
+              <span className="text-primary-700"> in heel Nederland</span>
             </h1>
 
             <p className="text-xl text-secondary-600 leading-relaxed mb-8 max-w-3xl mx-auto">
@@ -216,7 +216,7 @@ export default function RegiosPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-500 font-semibold mb-3">Onze locaties</p>
+            <p className="text-primary-700 font-semibold mb-3">Onze locaties</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               Vind computerhulp in uw stad
             </h2>
@@ -231,10 +231,10 @@ export default function RegiosPage() {
                 <div className="bg-secondary-50 rounded-xl p-6 border border-secondary-200 hover:border-primary-300 hover:shadow-lg transition-all group">
                   <div className="flex items-center justify-between mb-3">
                     <div>
-                      <h3 className="text-xl font-semibold text-secondary-800 group-hover:text-primary-500 transition-colors">
+                      <h3 className="text-xl font-semibold text-secondary-800 group-hover:text-primary-700 transition-colors">
                         {city.name}
                       </h3>
-                      <p className="text-primary-500 text-sm">{city.population} inwoners</p>
+                      <p className="text-primary-700 text-sm">{city.population} inwoners</p>
                     </div>
                     <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                       <MapPin className="w-5 h-5 text-white" />
@@ -247,7 +247,7 @@ export default function RegiosPage() {
 
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-secondary-500">{city.region}</span>
-                    <span className="text-primary-500 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
+                    <span className="text-primary-700 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
                       Meer info
                       <ArrowRight className="w-4 h-4 ml-1" />
                     </span>
@@ -294,7 +294,7 @@ export default function RegiosPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-500 font-semibold mb-3">Veelgestelde vragen</p>
+            <p className="text-primary-700 font-semibold mb-3">Veelgestelde vragen</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
               Vragen over IT-hulp in Nederland
             </h2>
@@ -312,7 +312,7 @@ export default function RegiosPage() {
                 >
                   <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-primary-500 flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
                       openFaq === index ? 'rotate-180' : ''
                     }`}
                   />

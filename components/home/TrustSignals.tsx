@@ -31,7 +31,7 @@ export function TrustSignals() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
 
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-semibold mb-3">Waarom wij</p>
+          <p className="text-primary-700 font-semibold mb-3">Waarom wij</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
             IT-hulp waar u op kunt vertrouwen
           </h2>

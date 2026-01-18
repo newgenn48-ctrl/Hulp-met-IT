@@ -58,7 +58,7 @@ export default function DienstenPage() {
       <div className="bg-secondary-50 border-b border-secondary-200">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3">
           <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-secondary-500 hover:text-primary-500">Home</Link>
+            <Link href="/" className="text-secondary-500 hover:text-primary-700">Home</Link>
             <span className="text-secondary-400">/</span>
             <span className="text-secondary-700 font-medium">Diensten</span>
           </nav>
@@ -73,12 +73,12 @@ export default function DienstenPage() {
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="flex">
                 {[...Array(4)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-primary-500 fill-primary-500" />
+                  <Star key={i} className="w-5 h-5 text-primary-700 fill-primary-500" />
                 ))}
                 <div className="relative w-5 h-5">
                   <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
                   <div className="absolute overflow-hidden" style={{ width: '80%' }}>
-                    <Star className="w-5 h-5 text-primary-500 fill-primary-500" />
+                    <Star className="w-5 h-5 text-primary-700 fill-primary-500" />
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function DienstenPage() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl font-bold text-secondary-900 mb-6">
-              Onze <span className="text-primary-500">diensten</span>
+              Onze <span className="text-primary-700">diensten</span>
             </h1>
             <p className="text-xl text-secondary-600 leading-relaxed mb-8">
               Van computerproblemen tot WiFi installatie - onze IT-specialisten komen bij u thuis en helpen u persoonlijk. Duidelijke uitleg, transparante tarieven.
@@ -139,7 +139,7 @@ export default function DienstenPage() {
                   <ul className="space-y-2 mb-4">
                     {service.features.slice(0, 3).map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-secondary-600">
-                        <Check className="w-4 h-4 text-primary-500 flex-shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-primary-700 flex-shrink-0 mt-0.5" />
                         <span>{feature}</span>
                       </li>
                     ))}

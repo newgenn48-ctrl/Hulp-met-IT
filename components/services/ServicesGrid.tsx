@@ -31,7 +31,7 @@ export function ServicesGrid({
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
 
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-semibold mb-3">Onze diensten</p>
+          <p className="text-primary-700 font-semibold mb-3">Onze diensten</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
             {title}
           </h2>
@@ -58,7 +58,7 @@ export function ServicesGrid({
                 <p className="text-secondary-600 mb-4">
                   {service.description}
                 </p>
-                <span className="inline-flex items-center text-primary-500 font-medium group-hover:text-primary-600">
+                <span className="inline-flex items-center text-primary-700 font-medium group-hover:text-primary-600">
                   Meer info
                   <ArrowRight className="w-4 h-4 ml-1" />
                 </span>

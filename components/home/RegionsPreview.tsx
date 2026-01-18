@@ -12,7 +12,7 @@ export function RegionsPreview() {
       <div className="max-w-6xl mx-auto px-6 sm:px-8">
 
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-semibold mb-3">Werkgebied</p>
+          <p className="text-primary-700 font-semibold mb-3">Werkgebied</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
             Actief in heel Nederland
           </h2>
@@ -29,7 +29,7 @@ export function RegionsPreview() {
               className="group flex items-center gap-3 bg-secondary-50 hover:bg-primary-50 rounded-xl p-4 border border-secondary-200 hover:border-primary-300 transition-colors"
             >
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center border border-secondary-200 group-hover:border-primary-300 group-hover:bg-primary-100 transition-colors flex-shrink-0">
-                <MapPin className="w-5 h-5 text-primary-500" />
+                <MapPin className="w-5 h-5 text-primary-700" />
               </div>
               <div>
                 <p className="font-semibold text-secondary-900 group-hover:text-primary-600 transition-colors">

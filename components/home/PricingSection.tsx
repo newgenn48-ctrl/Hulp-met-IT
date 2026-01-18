@@ -9,7 +9,7 @@ export function PricingSection() {
       <div className="max-w-5xl mx-auto px-6 sm:px-8">
 
         <div className="text-center mb-16">
-          <p className="text-primary-500 font-semibold mb-3">Tarieven</p>
+          <p className="text-primary-700 font-semibold mb-3">Tarieven</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
             Duidelijke prijzen, geen verrassingen
           </h2>
@@ -32,15 +32,15 @@ export function PricingSection() {
             </div>
             <ul className="space-y-3 mb-8">
               <li className="flex items-center gap-3 text-secondary-700">
-                <Check className="w-5 h-5 text-primary-500" />
+                <Check className="w-5 h-5 text-primary-700" />
                 Minimaal 45 minuten
               </li>
               <li className="flex items-center gap-3 text-secondary-700">
-                <Check className="w-5 h-5 text-primary-500" />
+                <Check className="w-5 h-5 text-primary-700" />
                 €10 voorrijkosten (eenmalig)
               </li>
               <li className="flex items-center gap-3 text-secondary-700">
-                <Check className="w-5 h-5 text-primary-500" />
+                <Check className="w-5 h-5 text-primary-700" />
                 Betaling achteraf
               </li>
             </ul>
@@ -89,7 +89,7 @@ export function PricingSection() {
 
         {/* Note */}
         <div className="flex items-center justify-center gap-3 bg-primary-50 border border-primary-200 rounded-xl px-6 py-4 mb-12 max-w-xl mx-auto">
-          <Clock className="w-5 h-5 text-primary-500 flex-shrink-0" />
+          <Clock className="w-5 h-5 text-primary-700 flex-shrink-0" />
           <p className="text-secondary-700 font-medium">
             De meeste voorkomende problemen worden binnen 45 minuten opgelost.
           </p>

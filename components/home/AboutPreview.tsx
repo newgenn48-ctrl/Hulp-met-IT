@@ -34,7 +34,7 @@ export function AboutPreview() {
 
           {/* Content */}
           <div>
-            <p className="text-primary-500 font-semibold mb-3">Over Hulp met IT</p>
+            <p className="text-primary-700 font-semibold mb-3">Over Hulp met IT</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
               Persoonlijke IT-hulp waar u op kunt rekenen
             </h2>

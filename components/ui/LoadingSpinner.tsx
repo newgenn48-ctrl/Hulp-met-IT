@@ -16,7 +16,7 @@ const sizeClasses = {
 }
 
 const colorClasses = {
-  primary: 'text-primary-500',
+  primary: 'text-primary-700',
   white: 'text-white',
   secondary: 'text-secondary-500'
 }

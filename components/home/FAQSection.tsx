@@ -61,7 +61,7 @@ export function FAQSection() {
 
       <div className="max-w-3xl mx-auto px-6 sm:px-8">
         <div className="text-center mb-12">
-          <p className="text-primary-500 font-semibold mb-3">Veelgestelde vragen</p>
+          <p className="text-primary-700 font-semibold mb-3">Veelgestelde vragen</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
             Heeft u vragen?
           </h2>
@@ -82,7 +82,7 @@ export function FAQSection() {
               >
                 <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-primary-500 flex-shrink-0 transition-transform ${
+                  className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
                 />
