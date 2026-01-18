@@ -1,9 +1,8 @@
 'use client'
 
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useToast } from '@/components/ui/Toast'
 import { LoadingButton } from '@/components/ui/LoadingSpinner'
-import HCaptcha from '@hcaptcha/react-hcaptcha'
 
 interface AppointmentFormData {
   firstName: string
@@ -77,8 +76,6 @@ const getMinDateForUrgency = (urgency: string): string => {
   }
 }
 
-const HCAPTCHA_SITE_KEY = process.env['NEXT_PUBLIC_HCAPTCHA_SITE_KEY'] || '10000000-ffff-ffff-ffff-000000000001'
-
 export function AppointmentForm() {
   const [formData, setFormData] = useState<AppointmentFormData>(initialFormData)
   const [currentStep, setCurrentStep] = useState(1)
@@ -86,25 +83,8 @@ export function AppointmentForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<{[key: string]: string}>({})
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null)
   const formRef = useRef<HTMLDivElement>(null)
-  const captchaRef = useRef<HCaptcha>(null)
   const { showToast } = useToast()
-
-  const onCaptchaVerify = useCallback((token: string) => {
-    setCaptchaToken(token)
-    if (fieldErrors['captcha']) {
-      setFieldErrors(prev => {
-        const newErrors = { ...prev }
-        delete newErrors['captcha']
-        return newErrors
-      })
-    }
-  }, [fieldErrors])
-
-  const onCaptchaExpire = useCallback(() => {
-    setCaptchaToken(null)
-  }, [])
 
   const handleInputChange = (field: keyof AppointmentFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
@@ -223,10 +203,6 @@ export function AppointmentForm() {
 
   const handleSubmit = async () => {
     if (!validateStep(2)) return
-    if (!captchaToken) {
-      setFieldErrors(prev => ({ ...prev, captcha: 'Bevestig dat u geen robot bent' }))
-      return
-    }
 
     setIsSubmitting(true)
     setErrorMessage('')
@@ -234,8 +210,7 @@ export function AppointmentForm() {
     try {
       const submitData = {
         ...formData,
-        serviceType: formData.serviceType || 'anders',
-        captchaToken
+        serviceType: formData.serviceType || 'anders'
       }
 
       const response = await fetch('/api/appointment', {
@@ -248,8 +223,6 @@ export function AppointmentForm() {
         setSubmitStatus('success')
         setFormData(initialFormData)
         setCurrentStep(1)
-        setCaptchaToken(null)
-        captchaRef.current?.resetCaptcha()
         showToast({ type: 'success', title: 'Afspraak aangevraagd!', message: 'U ontvangt een bevestiging per e-mail.' })
       } else {
         const error = await response.json()
@@ -495,19 +468,6 @@ export function AppointmentForm() {
             />
             {fieldErrors['problemDescription'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['problemDescription']}</p>}
           </div>
-        </div>
-      )}
-
-      {currentStep === 2 && (
-        <div className="mt-6 flex flex-col items-center">
-          <HCaptcha
-            ref={captchaRef}
-            sitekey={HCAPTCHA_SITE_KEY}
-            onVerify={onCaptchaVerify}
-            onExpire={onCaptchaExpire}
-            languageOverride="nl"
-          />
-          {fieldErrors['captcha'] && <p className="text-sm text-red-500 mt-2">{fieldErrors['captcha']}</p>}
         </div>
       )}
 

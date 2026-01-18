@@ -690,38 +690,6 @@ function getAdminEmailTemplate(data: AppointmentFormData, reference: string, sec
 </html>`
 }
 
-// Verify hCaptcha token
-async function verifyHCaptcha(token: string): Promise<boolean> {
-  const secret = process.env['HCAPTCHA_SECRET_KEY']
-
-  // Skip verification if secret not configured (development)
-  if (!secret) {
-    if (process.env.NODE_ENV === 'development') {
-      console.log('DEBUG: hCaptcha secret not configured, skipping verification')
-    }
-    return true
-  }
-
-  try {
-    const response = await fetch('https://hcaptcha.com/siteverify', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        secret,
-        response: token,
-      }),
-    })
-
-    const data = await response.json()
-    return data.success === true
-  } catch (error) {
-    console.error('hCaptcha verification error:', error)
-    return false
-  }
-}
-
 export async function POST(request: NextRequest) {
   const headersList = await headers()
   const ip = headersList.get('x-forwarded-for') || headersList.get('x-real-ip') || 'unknown'
@@ -767,32 +735,7 @@ export async function POST(request: NextRequest) {
     // Parse and validate request body
     const rawData = await request.json()
 
-    // Verify hCaptcha token if present
-    if (rawData.captchaToken) {
-      const captchaValid = await verifyHCaptcha(rawData.captchaToken)
-      if (!captchaValid) {
-        logSecurityEvent('CAPTCHA_VERIFICATION_FAILED', { userAgent }, ip)
-        return NextResponse.json(
-          { message: 'Captcha verificatie mislukt. Probeer het opnieuw.' },
-          {
-            status: 400,
-            headers: securityHeaders
-          }
-        )
-      }
-    } else if (process.env['HCAPTCHA_SECRET_KEY']) {
-      // Captcha required but not provided
-      logSecurityEvent('CAPTCHA_MISSING', { userAgent }, ip)
-      return NextResponse.json(
-        { message: 'Captcha verificatie is verplicht.' },
-        {
-          status: 400,
-          headers: securityHeaders
-        }
-      )
-    }
-
-    // Remove captcha token from data before validation
+    // Remove captcha token from data before validation (captcha disabled)
     delete rawData.captchaToken
 
     // Log suspicious activity
