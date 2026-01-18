@@ -2,13 +2,20 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { appointmentSchema, checkRateLimit, logSecurityEvent, sanitizeInput, clearRateLimit, type AppointmentFormData } from '@/lib/validation'
 import { headers } from 'next/headers'
-import DOMPurify from 'dompurify'
-import { JSDOM } from 'jsdom'
 import { CONTACT_INFO, BUSINESS_INFO } from '@/lib/constants'
 
-// Create DOMPurify instance for server-side sanitization
-const window = new JSDOM('').window
-const purify = DOMPurify(window as any)
+// Simple HTML escape function for server-side sanitization
+function escapeHtml(text: string): string {
+  const htmlEscapes: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+    '/': '&#x2F;'
+  }
+  return text.replace(/[&<>"'/]/g, char => htmlEscapes[char] || char)
+}
 
 // Types for better type safety (EmailStatus removed as it's not used)
 
@@ -804,9 +811,9 @@ export async function POST(request: NextRequest) {
       lastName: sanitizeInput(data.lastName),
       address: sanitizeInput(data.address),
       city: sanitizeInput(data.city),
-      problemDescription: purify.sanitize(data.problemDescription),
+      problemDescription: escapeHtml(data.problemDescription),
       deviceType: data.deviceType ? sanitizeInput(data.deviceType) : '',
-      previousAttempts: data.previousAttempts ? purify.sanitize(data.previousAttempts) : ''
+      previousAttempts: data.previousAttempts ? escapeHtml(data.previousAttempts) : ''
     }
 
     // Generate reference number
