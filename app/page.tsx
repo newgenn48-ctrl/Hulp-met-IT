@@ -10,7 +10,7 @@ import { FAQSection } from '@/components/home/FAQSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hulp Met IT | IT-Specialist aan Huis - Snel & Vakkundig',
+  title: 'Hulp Met IT | Computerhulp aan huis - Snel & Vakkundig',
   description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60 voor gratis advies.',
   keywords: [
     'IT-specialist aan huis',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     'IT-expert thuis'
   ],
   openGraph: {
-    title: 'IT-Specialist aan Huis | Hulp met IT',
+    title: 'Computerhulp aan huis | Hulp met IT',
     description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     images: ['/og-image.webp'],
   },

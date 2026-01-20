@@ -121,7 +121,7 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "openingHours": SERVICE_HOURS.OPENING_HOURS,
     "foundingDate": BUSINESS_INFO.FOUNDED_YEAR,
-    "slogan": "IT-Specialist aan huis - Snel, vakkundig en bij u thuis"
+    "slogan": "Computerhulp aan huis - Snel, vakkundig en bij u thuis"
   }
 
   // Organization schema for better brand recognition

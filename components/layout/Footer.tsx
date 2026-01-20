@@ -16,7 +16,7 @@ export function Footer() {
               </div>
               <div>
                 <span className="text-2xl font-bold text-gradient">Hulp met IT</span>
-                <div className="text-sm text-primary-600">IT-Specialist aan huis</div>
+                <div className="text-sm text-primary-600">Computerhulp aan huis</div>
               </div>
             </Link>
 

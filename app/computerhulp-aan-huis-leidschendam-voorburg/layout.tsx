@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'betaalbare IT hulp leidschendam-voorburg'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Leidschendam-Voorburg | IT-Specialisten | Hulp Met IT',
+    title: 'Computerhulp aan huis Leidschendam-Voorburg | Computerhulp specialisten | Hulp Met IT',
     description: 'Computerhulp aan huis in Leidschendam-Voorburg door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Leidschendam-Voorburg | IT-Specialisten',
+    title: 'Computerhulp aan huis Leidschendam-Voorburg | Computerhulp specialisten',
     description: 'Computerhulp aan huis Leidschendam-Voorburg. Specialist komt bij u. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50).',
   },
   robots: {

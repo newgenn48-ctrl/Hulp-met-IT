@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'betaalbare IT hulp den bosch'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Den Bosch | IT-Specialisten | Hulp Met IT',
+    title: 'Computerhulp aan huis Den Bosch | Computerhulp specialisten | Hulp Met IT',
     description: 'Computerhulp aan huis in Den Bosch door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Den Bosch | IT-Specialisten',
+    title: 'Computerhulp aan huis Den Bosch | Computerhulp specialisten',
     description: 'Computerhulp aan huis Den Bosch. Specialist komt bij u. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50).',
   },
   robots: {

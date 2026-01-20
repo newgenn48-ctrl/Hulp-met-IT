@@ -76,7 +76,7 @@ export const Header = React.memo(function Header() {
             </div>
             <div>
               <span className="text-xl font-bold text-gradient">Hulp met IT</span>
-              <div className="text-xs text-primary-600 leading-none">IT-Specialist aan huis</div>
+              <div className="text-xs text-primary-600 leading-none">Computerhulp aan huis</div>
             </div>
           </Link>
 

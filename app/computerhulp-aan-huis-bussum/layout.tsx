@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'betaalbare IT hulp bussum'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Bussum | IT-Specialisten | Hulp Met IT',
+    title: 'Computerhulp aan huis Bussum | Computerhulp specialisten | Hulp Met IT',
     description: 'Computerhulp aan huis in Bussum door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Bussum | IT-Specialisten',
+    title: 'Computerhulp aan huis Bussum | Computerhulp specialisten',
     description: 'Computerhulp aan huis Bussum. Specialist komt bij u. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50).',
   },
   robots: {

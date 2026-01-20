@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Hulp Met IT | IT-Specialist aan Huis',
+  title: 'Hulp Met IT | Computerhulp aan huis',
   description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60.',
   icons: [
     { rel: 'icon', url: '/icon', type: 'image/png', sizes: '32x32' },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'IT-Specialist aan Huis | Hulp met IT',
+    title: 'Computerhulp aan huis | Hulp met IT',
     description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     url: 'https://hulpmetit.nl',
     siteName: 'Hulp met IT',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 630,
-        alt: 'Hulp met IT - IT-Specialist aan Huis',
+        alt: 'Hulp met IT - Computerhulp aan huis',
       },
     ],
     locale: 'nl_NL',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hulp met IT - IT-Specialist aan Huis',
+    title: 'Hulp met IT - Computerhulp aan huis',
     description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     images: ['/og-image.webp'],
   },

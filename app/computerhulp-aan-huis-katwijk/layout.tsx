@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'betaalbare IT hulp katwijk'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Katwijk | IT-Specialisten | Hulp Met IT',
+    title: 'Computerhulp aan huis Katwijk | Computerhulp specialisten | Hulp Met IT',
     description: 'Computerhulp aan huis in Katwijk door IT-specialisten met 10+ jaar ervaring. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Katwijk | IT-Specialisten',
+    title: 'Computerhulp aan huis Katwijk | Computerhulp specialisten',
     description: 'Computerhulp aan huis Katwijk. Specialist komt bij u. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50).',
   },
   robots: {

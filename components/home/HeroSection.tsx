@@ -31,7 +31,7 @@ export function HeroSection() {
 
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
-              IT-Specialist
+              Computerhulp specialist
               <span className="text-primary-700"> aan huis</span>
             </h1>
 

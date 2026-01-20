@@ -61,7 +61,8 @@
       "Bash(timeout:*)",
       "Bash(powershell -Command \"Get-ChildItem -Path ''app/student-aan-huis-*'' -Recurse -Filter ''*.tsx'' | ForEach-Object { \\(Get-Content $_FullName -Raw\\) -replace ''student aan huis'', ''ICT student aan huis'' -replace ''Student aan huis'', ''ICT Student aan huis'' -replace ''Student Aan Huis'', ''ICT Student Aan Huis'' | Set-Content $_FullName }\")",
       "Bash(powershell -Command:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(xargs sed:*)"
     ],
     "deny": [],
     "ask": []
