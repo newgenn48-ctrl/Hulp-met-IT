@@ -93,16 +93,16 @@ export const Header = React.memo(function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
+            <Link href="/afspraak" className="btn-cta text-sm px-4 py-2.5">
+              Afspraak maken
+            </Link>
             <a
               href="tel:+31642827860"
               className="flex items-center gap-2 bg-secondary-100 hover:bg-secondary-200 border border-secondary-300 text-secondary-800 font-semibold px-4 py-2.5 rounded-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span className="text-base">06-42 82 78 60</span>
+              <span className="text-base">Bel direct</span>
             </a>
-            <Link href="/afspraak" className="btn-cta text-sm px-4 py-2">
-              Afspraak maken
-            </Link>
           </div>
 
           <button
@@ -135,13 +135,13 @@ export const Header = React.memo(function Header() {
             </nav>
             
             <div className="flex flex-col space-y-3">
-              <a href="tel:+31642827860" onClick={() => setIsMobileMenuOpen(false)} className="btn-secondary">
-                <Phone className="w-5 h-5 mr-2" />
-                Direct bellen
-              </a>
               <Link href="/afspraak" onClick={() => setIsMobileMenuOpen(false)} className="btn-cta">
                 Afspraak maken
               </Link>
+              <a href="tel:+31642827860" onClick={() => setIsMobileMenuOpen(false)} className="btn-secondary">
+                <Phone className="w-5 h-5 mr-2" />
+                Bel direct
+              </a>
             </div>
           </div>
         </div>

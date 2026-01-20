@@ -97,7 +97,7 @@ export default function OverOnsPage() {
                   </Link>
                   <a href="tel:+31642827860" className="btn-secondary inline-flex items-center justify-center">
                     <Phone className="w-5 h-5 mr-2" />
-                    06-42 82 78 60
+                    Bel direct
                   </a>
                 </div>
               </div>

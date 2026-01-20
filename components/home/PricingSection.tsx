@@ -44,10 +44,6 @@ export function PricingSection() {
                 Betaling achteraf
               </li>
             </ul>
-            <div className="bg-secondary-50 rounded-lg p-4 text-center">
-              <p className="text-sm text-secondary-600">Voorbeeld: 45 min</p>
-              <p className="text-2xl font-bold text-secondary-900">€53,50 totaal</p>
-            </div>
           </div>
 
           {/* Spoedhulp */}
@@ -79,10 +75,6 @@ export function PricingSection() {
                 Prioriteit bij acute problemen
               </li>
             </ul>
-            <div className="bg-white/20 rounded-lg p-4 text-center">
-              <p className="text-sm text-white/80">Voorbeeld: 45 min</p>
-              <p className="text-2xl font-bold">€65,50 totaal</p>
-            </div>
           </div>
 
         </div>
@@ -104,20 +96,20 @@ export function PricingSection() {
             Vrijblijvend adviesgesprek. Wij vertellen u direct wat wij voor u kunnen doen - zonder verplichtingen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Bel 06-42 82 78 60
-            </a>
             <Link
               href="/afspraak"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
             >
               Afspraak maken
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
+            <a
+              href="tel:+31642827860"
+              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              Bel direct
+            </a>
           </div>
         </div>
 

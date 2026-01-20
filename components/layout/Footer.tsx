@@ -173,7 +173,7 @@ export function Footer() {
                 className="inline-flex items-center text-sm font-semibold text-primary-600 hover:text-primary-700"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Bel nu: 06-42 82 78 60
+                Bel direct
               </a>
             </div>
           </div>
