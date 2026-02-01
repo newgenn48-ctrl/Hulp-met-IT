@@ -4,6 +4,12 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["fra1"],
+  "crons": [
+    {
+      "path": "/api/cron/rebuild",
+      "schedule": "0 3 * * *"
+    }
+  ],
   "functions": {
     "app/api/appointment/route.ts": {
       "maxDuration": 10
