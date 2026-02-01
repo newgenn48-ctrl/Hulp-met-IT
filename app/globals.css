@@ -35,8 +35,8 @@ body {
 
 /* Primaire knop - Oranje */
 .btn-primary {
-  @apply inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-primary-500 rounded-lg transition-colors;
-  @apply hover:bg-primary-600;
+  @apply inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-primary-600 rounded-lg transition-colors;
+  @apply hover:bg-primary-700;
 }
 
 /* Secundaire knop - Wit met border */

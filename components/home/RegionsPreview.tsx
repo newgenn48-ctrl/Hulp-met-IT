@@ -44,7 +44,7 @@ export function RegionsPreview() {
         <div className="text-center">
           <Link
             href="/regios"
-            className="inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+            className="inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-xl transition-colors shadow-lg shadow-primary-600/30"
           >
             Bekijk alle regio&apos;s
             <ArrowRight className="w-5 h-5 ml-2" />

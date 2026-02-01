@@ -49,7 +49,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 mb-5 sm:mb-6">
               <a
                 href="tel:+31642827860"
-                className="inline-flex items-center justify-center w-full sm:w-auto px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-sm sm:text-base lg:text-lg font-bold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-sm sm:text-base lg:text-lg font-bold text-white bg-primary-600 hover:bg-primary-700 rounded-xl transition-colors shadow-lg shadow-primary-600/30"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Bel direct voor hulp
