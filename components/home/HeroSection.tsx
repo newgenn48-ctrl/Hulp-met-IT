@@ -21,7 +21,7 @@ export function HeroSection() {
 
             {/* Subtitel */}
             <p className="text-xl text-secondary-600 leading-relaxed mb-8 max-w-lg">
-              Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.
+              Zoek je computerhulp aan huis? Of hulp met je andere digitale apparaten? Wij komen langs en lossen het op.
             </p>
 
             {/* USPs - compact, benefit-focused */}
