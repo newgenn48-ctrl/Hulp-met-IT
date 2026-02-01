@@ -34,11 +34,11 @@ export function CookieConsent() {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-lg border-t border-primary-200 p-4 z-50 shadow-lg">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <div className="text-sm text-primary-700">
+        <div className="text-sm text-secondary-700">
           <p>
             We gebruiken cookies voor website functionaliteit en analytics.
             Door verder te gaan ga je akkoord met ons{' '}
-            <a href="/privacy" className="text-primary-600 hover:text-accent-500 font-medium transition-colors">
+            <a href="/privacy" className="text-primary-800 hover:text-primary-900 font-medium underline transition-colors">
               privacybeleid
             </a>.
           </p>
@@ -54,7 +54,7 @@ export function CookieConsent() {
           <button
             type="button"
             onClick={acceptCookies}
-            className="px-6 py-2.5 bg-gradient-to-r from-primary-500 to-accent-500 text-white text-sm font-medium rounded-lg hover:from-primary-600 hover:to-accent-600 shadow-md hover:shadow-lg transition-all"
+            className="px-6 py-2.5 bg-primary-600 text-white text-sm font-medium rounded-lg hover:bg-primary-700 shadow-md hover:shadow-lg transition-all"
           >
             Accepteren
           </button>
