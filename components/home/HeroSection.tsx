@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, ArrowRight, Star } from 'lucide-react'
+import { Phone, ArrowRight } from 'lucide-react'
 
 export function HeroSection() {
   return (
@@ -13,34 +13,15 @@ export function HeroSection() {
           {/* Linker kolom - Content */}
           <div>
 
-            {/* Rating */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex">
-                {[...Array(4)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-primary-700 fill-primary-500" />
-                ))}
-                <div className="relative w-5 h-5">
-                  <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
-                  <div className="absolute overflow-hidden" style={{ width: '80%' }}>
-                    <Star className="w-5 h-5 text-primary-700 fill-primary-500" />
-                  </div>
-                </div>
-              </div>
-              <span className="text-secondary-600">4.8/5 · 2000+ klanten</span>
-            </div>
-
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
-              Computerhulp specialist
+              Computerhulp
               <span className="text-primary-700"> aan huis</span>
             </h1>
 
             {/* Subtitel */}
-            <p className="text-xl text-secondary-600 leading-relaxed mb-4 max-w-lg">
+            <p className="text-xl text-secondary-600 leading-relaxed mb-8 max-w-lg">
               Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.
-            </p>
-            <p className="text-lg text-secondary-500 mb-8 max-w-lg">
-              Ook senioren begeleiden wij met geduld en heldere uitleg.
             </p>
 
             {/* USPs - compact, benefit-focused */}
