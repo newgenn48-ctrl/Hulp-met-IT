@@ -1,31 +1,27 @@
 import { HeroSection } from '@/components/home/HeroSection'
-import { TrustSignals } from '@/components/home/TrustSignals'
+import { ProblemsSection } from '@/components/home/ProblemsSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
-import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { PricingSection } from '@/components/home/PricingSection'
-import { AboutPreview } from '@/components/home/AboutPreview'
+import { TrustSignals } from '@/components/home/TrustSignals'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { RegionsPreview } from '@/components/home/RegionsPreview'
-import { FAQSection } from '@/components/home/FAQSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Hulp Met IT | Computerhulp aan huis - Snel & Vakkundig',
-  description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60 voor gratis advies.',
+  title: 'Computerhulp aan huis | Hulp met IT - Direct geholpen',
+  description: 'Computerproblemen? Wij komen bij u thuis en lossen het op. Rustige, vriendelijke hulp zonder technische praat. Binnen 24 uur geholpen. Bel nu!',
   keywords: [
-    'IT-specialist aan huis',
     'computerhulp aan huis',
-    'computer hulp ouderen',
+    'computer hulp',
     'laptop hulp thuis',
-    'IT hulp aan huis',
-    'computer reparatie thuis',
     'wifi problemen oplossen',
     'printer installeren',
-    'IT-expert thuis'
+    'computer reparatie thuis',
+    'IT hulp aan huis',
   ],
   openGraph: {
     title: 'Computerhulp aan huis | Hulp met IT',
-    description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
+    description: 'Computerproblemen? Wij komen bij u thuis en lossen het op. Rustige, vriendelijke hulp. Binnen 24 uur geholpen.',
     images: ['/og-image.webp'],
   },
 }
@@ -33,29 +29,23 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
-      {/* Hero - Eerste indruk met foto en CTA */}
+      {/* Hero - Urgentie & duidelijke actie */}
       <HeroSection />
 
-      {/* Diensten - Wat we doen */}
-      <ServicesGrid maxItems={6} />
+      {/* Herkenbare problemen - Emotionele connectie */}
+      <ProblemsSection />
 
-      {/* Hoe het werkt - Duidelijke stappen */}
+      {/* Hoe het werkt - Simpele stappen */}
       <HowItWorks />
 
-      {/* Trust signals - Waarom wij */}
+      {/* Prijzen - Eenvoudig en duidelijk */}
+      <PricingSection />
+
+      {/* Waarom wij - Vertrouwen */}
       <TrustSignals />
 
       {/* Reviews - Social proof */}
       <TestimonialsSection />
-
-      {/* Prijzen - Transparantie */}
-      <PricingSection />
-
-      {/* FAQ - Veelgestelde vragen */}
-      <FAQSection />
-
-      {/* Over ons - Persoonlijk */}
-      <AboutPreview />
 
       {/* Regio's - Lokaal */}
       <RegionsPreview />
