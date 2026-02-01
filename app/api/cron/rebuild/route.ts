@@ -5,11 +5,11 @@ export const runtime = 'edge'
 export async function GET(request: Request) {
   // Verify the request is from Vercel Cron
   const authHeader = request.headers.get('authorization')
-  if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
+  if (authHeader !== `Bearer ${process.env['CRON_SECRET']}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const deployHookUrl = process.env.VERCEL_DEPLOY_HOOK
+  const deployHookUrl = process.env['VERCEL_DEPLOY_HOOK']
 
   if (!deployHookUrl) {
     return NextResponse.json(
