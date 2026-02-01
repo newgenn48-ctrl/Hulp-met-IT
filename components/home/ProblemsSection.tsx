@@ -35,7 +35,7 @@ export function ProblemsSection() {
                 className="flex items-center gap-4 bg-secondary-50 rounded-xl p-4 border border-secondary-100"
               >
                 <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <IconComponent className="w-5 h-5 text-primary-600" />
+                  <IconComponent className="w-5 h-5 text-primary-700" />
                 </div>
                 <p className="text-secondary-700 font-medium">{problem.text}</p>
               </div>
@@ -47,7 +47,7 @@ export function ProblemsSection() {
         <div className="text-center">
           <Link
             href="/diensten"
-            className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-700 border-2 border-primary-400 hover:bg-primary-50 rounded-xl transition-colors"
           >
             Alle diensten bekijken
             <ArrowRight className="w-5 h-5 ml-2" />

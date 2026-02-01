@@ -56,7 +56,7 @@ export function HeroSection() {
               </a>
               <Link
                 href="/afspraak"
-                className="inline-flex items-center justify-center w-full sm:w-auto px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-sm sm:text-base lg:text-lg font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
+                className="inline-flex items-center justify-center w-full sm:w-auto px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 text-sm sm:text-base lg:text-lg font-semibold text-primary-700 border-2 border-primary-400 hover:bg-primary-50 rounded-xl transition-colors"
               >
                 Afspraak inplannen
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
