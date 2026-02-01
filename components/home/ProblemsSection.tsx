@@ -1,6 +1,7 @@
 'use client'
 
-import { Monitor, Wifi, Printer, Mail, Smartphone, HelpCircle } from 'lucide-react'
+import Link from 'next/link'
+import { Monitor, Wifi, Printer, Mail, Smartphone, HelpCircle, ArrowRight } from 'lucide-react'
 
 const problems = [
   { icon: Monitor, text: 'Computer is ineens traag' },
@@ -25,7 +26,7 @@ export function ProblemsSection() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
           {problems.map((problem, index) => {
             const IconComponent = problem.icon
             return (
@@ -40,6 +41,17 @@ export function ProblemsSection() {
               </div>
             )
           })}
+        </div>
+
+        {/* Alle diensten knop */}
+        <div className="text-center">
+          <Link
+            href="/diensten"
+            className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
+          >
+            Alle diensten bekijken
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
         </div>
 
       </div>
