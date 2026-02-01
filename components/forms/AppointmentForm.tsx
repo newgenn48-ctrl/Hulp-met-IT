@@ -292,10 +292,12 @@ export function AppointmentForm() {
 
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-secondary-800 mb-2">Voornaam *</label>
+              <label htmlFor="firstName" className="block text-sm font-medium text-secondary-800 mb-2">Voornaam *</label>
               <input
                 type="text"
+                id="firstName"
                 name="firstName"
+                autoComplete="given-name"
                 value={formData.firstName}
                 onChange={(e) => handleInputChange('firstName', e.target.value)}
                 className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['firstName'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -304,10 +306,12 @@ export function AppointmentForm() {
               {fieldErrors['firstName'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['firstName']}</p>}
             </div>
             <div>
-              <label className="block text-sm font-medium text-secondary-800 mb-2">Achternaam *</label>
+              <label htmlFor="lastName" className="block text-sm font-medium text-secondary-800 mb-2">Achternaam *</label>
               <input
                 type="text"
+                id="lastName"
                 name="lastName"
+                autoComplete="family-name"
                 value={formData.lastName}
                 onChange={(e) => handleInputChange('lastName', e.target.value)}
                 className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['lastName'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -318,10 +322,12 @@ export function AppointmentForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-secondary-800 mb-2">E-mailadres *</label>
+            <label htmlFor="email" className="block text-sm font-medium text-secondary-800 mb-2">E-mailadres *</label>
             <input
               type="email"
+              id="email"
               name="email"
+              autoComplete="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
               className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['email'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -331,10 +337,12 @@ export function AppointmentForm() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-secondary-800 mb-2">Telefoonnummer *</label>
+            <label htmlFor="phone" className="block text-sm font-medium text-secondary-800 mb-2">Telefoonnummer *</label>
             <input
               type="tel"
+              id="phone"
               name="phone"
+              autoComplete="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
               className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['phone'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -347,10 +355,12 @@ export function AppointmentForm() {
             <h4 className="text-lg font-semibold text-secondary-800 mb-4">Waar Moeten We Zijn?</h4>
 
             <div>
-              <label className="block text-sm font-medium text-secondary-800 mb-2">Straat + Huisnummer *</label>
+              <label htmlFor="address" className="block text-sm font-medium text-secondary-800 mb-2">Straat + Huisnummer *</label>
               <input
                 type="text"
+                id="address"
                 name="address"
+                autoComplete="street-address"
                 value={formData.address}
                 onChange={(e) => handleInputChange('address', e.target.value)}
                 className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['address'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -361,10 +371,12 @@ export function AppointmentForm() {
 
             <div className="grid md:grid-cols-2 gap-4 mt-4">
               <div>
-                <label className="block text-sm font-medium text-secondary-800 mb-2">Postcode *</label>
+                <label htmlFor="postalCode" className="block text-sm font-medium text-secondary-800 mb-2">Postcode *</label>
                 <input
                   type="text"
+                  id="postalCode"
                   name="postalCode"
+                  autoComplete="postal-code"
                   value={formData.postalCode}
                   onChange={(e) => handleInputChange('postalCode', e.target.value.toUpperCase())}
                   className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['postalCode'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -374,10 +386,12 @@ export function AppointmentForm() {
                 {fieldErrors['postalCode'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['postalCode']}</p>}
               </div>
               <div>
-                <label className="block text-sm font-medium text-secondary-800 mb-2">Stad *</label>
+                <label htmlFor="city" className="block text-sm font-medium text-secondary-800 mb-2">Stad *</label>
                 <input
                   type="text"
+                  id="city"
                   name="city"
+                  autoComplete="address-level2"
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
                   className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['city'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -394,13 +408,14 @@ export function AppointmentForm() {
         <div className="space-y-6">
           <h3 className="text-2xl font-bold text-secondary-800 mb-6">Urgentie & Probleem</h3>
 
-          <div>
-            <label className="block text-sm font-medium text-secondary-800 mb-3">Is dit met spoed? *</label>
+          <fieldset>
+            <legend className="block text-sm font-medium text-secondary-800 mb-3">Is dit met spoed? *</legend>
             <div className="space-y-3">
               {urgencyLevels.map(level => (
-                <label key={level.value} className="flex items-center p-4 rounded-lg border border-secondary-300 hover:border-primary-500 cursor-pointer">
+                <label key={level.value} htmlFor={`urgency-${level.value}`} className="flex items-center p-4 rounded-lg border border-secondary-300 hover:border-primary-500 cursor-pointer">
                   <input
                     type="radio"
+                    id={`urgency-${level.value}`}
                     name="urgency"
                     value={level.value}
                     checked={formData.urgency === level.value}
@@ -419,17 +434,19 @@ export function AppointmentForm() {
                 </label>
               ))}
             </div>
-          </div>
+          </fieldset>
 
           {formData.urgency === 'normal' && (
             <div className="border-t border-secondary-300 pt-6">
               <h4 className="text-lg font-semibold text-secondary-800 mb-4">Kies datum en tijd</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-secondary-800 mb-2">Datum *</label>
+                  <label htmlFor="preferredDate" className="block text-sm font-medium text-secondary-800 mb-2">Datum *</label>
                   <input
                     type="date"
+                    id="preferredDate"
                     name="preferredDate"
+                    autoComplete="off"
                     value={formData.preferredDate}
                     onChange={(e) => handleInputChange('preferredDate', e.target.value)}
                     min={getMinDate()}
@@ -438,9 +455,11 @@ export function AppointmentForm() {
                   {fieldErrors['preferredDate'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['preferredDate']}</p>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-secondary-800 mb-2">Tijd *</label>
+                  <label htmlFor="preferredTime" className="block text-sm font-medium text-secondary-800 mb-2">Tijd *</label>
                   <select
+                    id="preferredTime"
                     name="preferredTime"
+                    autoComplete="off"
                     value={formData.preferredTime}
                     onChange={(e) => handleInputChange('preferredTime', e.target.value)}
                     className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['preferredTime'] ? 'border-red-500' : 'border-secondary-300'}`}
@@ -457,9 +476,11 @@ export function AppointmentForm() {
           )}
 
           <div>
-            <label className="block text-sm font-medium text-secondary-800 mb-2">Beschrijf uw probleem *</label>
+            <label htmlFor="problemDescription" className="block text-sm font-medium text-secondary-800 mb-2">Beschrijf uw probleem *</label>
             <textarea
+              id="problemDescription"
               name="problemDescription"
+              autoComplete="off"
               value={formData.problemDescription}
               onChange={(e) => handleInputChange('problemDescription', e.target.value)}
               rows={4}
