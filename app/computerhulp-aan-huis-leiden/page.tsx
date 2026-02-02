@@ -172,7 +172,7 @@ export default function ComputerhulpAanHuisLeiden() {
             <span className="text-yellow-400">Leiden</span>
           </h1>
 
-          <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">Zoekt u betrouwbare computerhulp aan huis in Leiden? Onze ervaren en vriendelijke specialisten komen bij u thuis en helpen u rustig en duidelijk, zodat alles weer werkt zoals het hoort.</p>
+          <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">Rustige, vriendelijke hulp aan huis in Leiden. Wij helpen u met uw computer, wifi, printer of telefoon.</p>
 
           <div className="flex flex-wrap justify-center gap-6 mb-4">
             {benefits.map((benefit, index) => {
