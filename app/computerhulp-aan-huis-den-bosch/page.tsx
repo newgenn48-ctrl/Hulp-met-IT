@@ -1,5 +1,6 @@
 'use client'
 
+import { CityHeroSection } from '@/components/city/CityHeroSection'
 import { ServicesGrid } from '@/components/services/ServicesGrid'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
@@ -14,12 +15,6 @@ import {
   ChevronDown,
   ChevronUp
 } from 'lucide-react'
-
-const benefits = [
-  { icon: Users, text: '10+ jaar ervaring' },
-  { icon: MessageCircle, text: 'Begrijpelijke uitleg' },
-  { icon: CheckCircle, text: 'Betaalbaar en betrouwbaar' }
-]
 
 const processSteps = [
   {
@@ -149,61 +144,7 @@ export default function ComputerhulpAanHuisDenBosch() {
         </div>
       </nav>
 
-      <section className="relative flex items-start justify-center overflow-hidden pt-20">
-                {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/images/computerhulp-aan-huis/computerhulp-aan-huis.webp)',
-              filter: 'brightness(0.7) contrast(1.1)'
-            }}
-          />
-          {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-accent-900/30" />
-        </div>
-
-<div className="relative z-10 max-w-6xl mx-auto container-padding text-center flex items-center min-h-[600px] lg:min-h-[700px]">
-          <div className="w-full">
-
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-white drop-shadow-lg">Computerhulp aan Huis</span>
-            <br />
-            <span className="text-yellow-400">Den Bosch</span>
-          </h1>
-
-          <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">Rustige, vriendelijke hulp aan huis in Den Bosch. Wij helpen u met uw computer, wifi, printer of telefoon.</p>
-
-          <div className="flex flex-wrap justify-center gap-6 mb-4">
-            {benefits.map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
-                >
-                  <IconComponent className="w-6 h-6 text-white" />
-                  <span className="drop-shadow-sm">{benefit.text}</span>
-                </div>
-              )
-            })}
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-            <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
-              <Calendar className="w-6 h-6 mr-3" />
-              Afspraak Maken
-            </Link>
-
-            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow bg-white/95 hover:bg-white">
-              <Phone className="w-5 h-5 mr-2" />
-              Bel Nu
-            </a>
-          </div>
-
-        </div>
-        </div>
-      </section>
+      <CityHeroSection cityName="Den Bosch" />
 
       <div className="relative">
         <ServicesGrid
