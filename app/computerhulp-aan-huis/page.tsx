@@ -6,7 +6,6 @@ import { useState } from 'react'
 import {
   Phone,
   ArrowRight,
-  Star,
   ChevronDown,
   Users,
   Award,
@@ -162,22 +161,6 @@ export default function ComputerhulpAanHuisPage() {
 
             {/* Content */}
             <div>
-              {/* Rating */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex">
-                  {[...Array(4)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-primary-700 fill-primary-500" />
-                  ))}
-                  <div className="relative w-5 h-5">
-                    <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
-                    <div className="absolute overflow-hidden" style={{ width: '80%' }}>
-                      <Star className="w-5 h-5 text-primary-700 fill-primary-500" />
-                    </div>
-                  </div>
-                </div>
-                <span className="text-secondary-600">4.8/5 · 2000+ klanten</span>
-              </div>
-
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
                 Computerhulp

@@ -5,7 +5,6 @@ import { useState } from 'react'
 import {
   MapPin,
   Clock,
-  Star,
   ArrowRight,
   Phone,
   Shield,
@@ -75,22 +74,6 @@ export default function RegiosPage() {
       <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-100/50 pt-12 pb-16 lg:pt-16 lg:pb-20">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            {/* Rating */}
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="flex">
-                {[...Array(4)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-primary-700 fill-primary-500" />
-                ))}
-                <div className="relative w-5 h-5">
-                  <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
-                  <div className="absolute overflow-hidden" style={{ width: '80%' }}>
-                    <Star className="w-5 h-5 text-primary-700 fill-primary-500" />
-                  </div>
-                </div>
-              </div>
-              <span className="text-secondary-600">4.8/5 · 2000+ klanten</span>
-            </div>
-
             <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
               Computerhulp
               <span className="text-primary-700"> in heel Nederland</span>
@@ -121,7 +104,7 @@ export default function RegiosPage() {
           </div>
 
           {/* Stats Cards */}
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
             <div className="bg-white rounded-xl p-6 border border-secondary-200 shadow-sm text-center">
               <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6 text-white" />
@@ -136,14 +119,6 @@ export default function RegiosPage() {
               </div>
               <h3 className="text-xl font-semibold text-secondary-800 mb-2">24-48u Service</h3>
               <p className="text-secondary-600">Snelle response in elke regio</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-secondary-200 shadow-sm text-center">
-              <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Star className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-secondary-800 mb-2">4.8+ Rating</h3>
-              <p className="text-secondary-600">Uitstekende reviews in alle steden</p>
             </div>
           </div>
         </div>

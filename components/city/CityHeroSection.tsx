@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, ArrowRight, Clock, CheckCircle, Star } from 'lucide-react'
+import { Phone, ArrowRight, Clock, CheckCircle } from 'lucide-react'
 
 interface CityHeroSectionProps {
   cityName: string
@@ -65,18 +65,6 @@ export function CityHeroSection({ cityName }: CityHeroSectionProps) {
                 Afspraak inplannen
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Link>
-            </div>
-
-            {/* Social proof */}
-            <div className="flex items-center justify-center md:justify-start gap-1.5 sm:gap-2 text-xs sm:text-sm text-secondary-600">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary-500 fill-primary-500" />
-                ))}
-              </div>
-              <span className="font-medium">4.8/5</span>
-              <span className="text-secondary-400">•</span>
-              <span>2000+ klanten</span>
             </div>
           </div>
 

@@ -7,7 +7,6 @@ import {
   ArrowRight,
   Check,
   Phone,
-  Star,
   ChevronDown,
   Users,
   Shield,
@@ -110,22 +109,6 @@ export default function ServicePage({ params }: ServicePageProps) {
 
             {/* Linker kolom - Content */}
             <div>
-              {/* Rating */}
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex">
-                  {[...Array(4)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-primary-700 fill-primary-500" />
-                  ))}
-                  <div className="relative w-5 h-5">
-                    <Star className="absolute w-5 h-5 text-primary-200 fill-primary-200" />
-                    <div className="absolute overflow-hidden" style={{ width: '80%' }}>
-                      <Star className="w-5 h-5 text-primary-700 fill-primary-500" />
-                    </div>
-                  </div>
-                </div>
-                <span className="text-secondary-600">4.8/5 · 2000+ klanten</span>
-              </div>
-
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
                 {service.name}
@@ -383,28 +366,6 @@ export default function ServicePage({ params }: ServicePageProps) {
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="bg-white rounded-xl p-4 border border-secondary-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
-                      <Star className="w-5 h-5 text-primary-600" />
-                    </div>
-                    <div>
-                      <p className="text-xl font-bold text-secondary-900">4.8/5</p>
-                      <p className="text-secondary-500 text-sm">Klantwaardering</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white rounded-xl p-4 border border-secondary-200">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
-                      <Users className="w-5 h-5 text-primary-600" />
-                    </div>
-                    <div>
-                      <p className="text-xl font-bold text-secondary-900">2000+</p>
-                      <p className="text-secondary-500 text-sm">Klanten geholpen</p>
-                    </div>
-                  </div>
-                </div>
                 <div className="bg-white rounded-xl p-4 border border-secondary-200">
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center">
