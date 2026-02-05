@@ -17,7 +17,6 @@ import {
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
 import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 
 const benefits = [
   {
@@ -366,8 +365,6 @@ export default function StudentAanHuisPage() {
       </section>
 
       {/* Reviews */}
-      <TestimonialsSection />
-
       {/* Pricing */}
       <PricingSection />
 

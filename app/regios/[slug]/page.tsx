@@ -19,7 +19,6 @@ import {
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
 import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { notFound } from 'next/navigation'
 import cities from '@/lib/data/cities.json'
 
@@ -397,9 +396,6 @@ export default function RegioPage({ params }: PageProps) {
           </div>
         </div>
       </section>
-
-      {/* Reviews */}
-      <TestimonialsSection />
 
       {/* Pricing */}
       <PricingSection />

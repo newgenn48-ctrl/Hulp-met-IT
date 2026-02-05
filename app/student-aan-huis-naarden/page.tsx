@@ -18,7 +18,6 @@ import {
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
 import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 
 const CITY = 'Naarden'
 
@@ -376,8 +375,6 @@ export default function StudentAanHuisNaardenPage() {
       </section>
 
       {/* Reviews */}
-      <TestimonialsSection />
-
       {/* Pricing */}
       <PricingSection />
 

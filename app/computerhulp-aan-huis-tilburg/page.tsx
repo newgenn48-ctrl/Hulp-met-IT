@@ -3,7 +3,6 @@
 import { CityHeroSection } from '@/components/city/CityHeroSection'
 import { ServicesGrid } from '@/components/services/ServicesGrid'
 import { PricingSection } from '@/components/home/PricingSection'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { useState } from 'react'
 import Link from 'next/link'
 import {
@@ -138,9 +137,7 @@ export default function ComputerhulpAanHuisTilburg() {
           title="Wat We Voor U Kunnen Doen"
           maxItems={6}
         />
-        <PricingSection />
-        <TestimonialsSection />
-        <section className="section-spacing">
+        <PricingSection />        <section className="section-spacing">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">

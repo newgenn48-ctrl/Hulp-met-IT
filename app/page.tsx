@@ -3,7 +3,6 @@ import { ProblemsSection } from '@/components/home/ProblemsSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TrustSignals } from '@/components/home/TrustSignals'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { RegionsPreview } from '@/components/home/RegionsPreview'
 import { Metadata } from 'next'
 
@@ -45,8 +44,6 @@ export default function HomePage() {
       <TrustSignals />
 
       {/* Reviews - Social proof */}
-      <TestimonialsSection />
-
       {/* Regio's - Lokaal */}
       <RegionsPreview />
     </main>

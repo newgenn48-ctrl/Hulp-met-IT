@@ -3,7 +3,6 @@
 import { ServicesGrid } from '@/components/services/ServicesGrid'
 import { ServicesPreview } from '@/components/home/ServicesPreview'
 import { PricingSection } from '@/components/home/PricingSection'
-import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
 import { useState } from 'react'
 import {
@@ -277,8 +276,6 @@ export default function StudentAanHuisBaarnPage() {
         <PricingSection />
 
         {/* Testimonials Section */}
-        <TestimonialsSection />
-
         {/* Process Section */}
         <section className="section-spacing bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
