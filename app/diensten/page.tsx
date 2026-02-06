@@ -115,7 +115,7 @@ export default function DienstenPage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-3">
+          <div className="grid sm:grid-cols-2 gap-3">
             {services.map((service) => {
               const IconComponent = iconMap[service.icon] || Monitor
 
@@ -123,20 +123,20 @@ export default function DienstenPage() {
                 <Link
                   key={service.slug}
                   href={`/diensten/${service.slug}`}
-                  className="group flex items-center gap-4 bg-white rounded-lg px-5 py-4 hover:shadow-md transition-shadow border border-secondary-100"
+                  className="group flex items-start gap-4 bg-white rounded-lg px-5 py-4 hover:shadow-md transition-shadow border border-secondary-100"
                 >
-                  <div className="w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <IconComponent className="w-[18px] h-[18px] text-primary-600" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-secondary-900 text-[15px]">
                       {service.name}
                     </h3>
-                    <p className="text-secondary-500 text-sm truncate">
+                    <p className="text-secondary-500 text-sm">
                       {service.shortDescription}
                     </p>
                   </div>
-                  <ChevronRight className="w-4 h-4 text-secondary-300 group-hover:text-primary-500 transition-colors flex-shrink-0" />
+                  <ChevronRight className="w-4 h-4 text-secondary-300 group-hover:text-primary-500 transition-colors flex-shrink-0 mt-1" />
                 </Link>
               )
             })}
