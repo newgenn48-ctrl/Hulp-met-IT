@@ -70,7 +70,7 @@ export default function AlgemeneVoorwaardenPage() {
                 <ul className="list-disc list-inside space-y-1 ml-4">
                   <li>Uurtarief: €14,50 per kwartier (€58,00 per uur)</li>
                   <li>Voorrijkosten: €10,00 (eenmalig per bezoek)</li>
-                  <li>Minimum afname: 3 kwartier (€43,50 + €10 voorrijkosten = €53,50 totaal)</li>
+                  <li>Minimum afname: 3 kwartier</li>
                   <li>Spoedhulp (binnen 24 uur): €18,50 per kwartier</li>
                   <li>Alle prijzen zijn inclusief 21% BTW</li>
                 </ul>
@@ -103,7 +103,7 @@ export default function AlgemeneVoorwaardenPage() {
                 <ul className="list-disc list-inside space-y-1 ml-4">
                   <li>Kosteloos tot 24 uur voor de afspraak</li>
                   <li>Binnen 24 uur: €25 annuleringskosten</li>
-                  <li>Bij no-show (niet thuis zonder afmelding): volledige minimumkosten (€53,50)</li>
+                  <li>Bij no-show (niet thuis zonder afmelding): volledige minimumkosten (3 kwartier + voorrijkosten)</li>
                 </ul>
 
                 <p className="mt-4"><strong>Annulering door Hulp met IT:</strong></p>

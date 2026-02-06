@@ -4,11 +4,8 @@ import Link from 'next/link'
 import { useState } from 'react'
 import {
   MapPin,
-  Clock,
   ArrowRight,
   Phone,
-  Shield,
-  Users,
   ChevronDown
 } from 'lucide-react'
 import cities from '@/lib/data/cities.json'
@@ -24,7 +21,7 @@ const regiosFaqData = [
   },
   {
     question: "Hoeveel kost computerhulp in verschillende steden?",
-    answer: "Onze tarieven zijn landelijk hetzelfde: vanaf €14,50 per kwartier (min. 3 kwartier = €43,50) + €10 voorrijkosten. We hanteren transparante, vaste tarieven door heel Nederland."
+    answer: "Onze tarieven zijn landelijk hetzelfde: vanaf €14,50 per kwartier (min. 3 kwartier = 3 x €14,50) + €10 voorrijkosten. We hanteren transparante, vaste tarieven door heel Nederland."
   },
   {
     question: "Zijn jullie IT-specialisten lokaal beschikbaar?",
@@ -71,162 +68,65 @@ export default function RegiosPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-100/50 pt-12 pb-16 lg:pt-16 lg:pb-20">
+      <section className="bg-white py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
-              Computerhulp
-              <span className="text-primary-700"> in heel Nederland</span>
+          <div className="max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-900 leading-tight mb-6">
+              Computerhulp in heel Nederland
             </h1>
-
-            <p className="text-xl text-secondary-600 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Hulp met IT is actief in de belangrijkste Nederlandse steden én omliggende gemeenten.
-              Onze lokale IT-specialisten kennen uw regio door en door en bieden snelle, betrouwbare service aan huis.
+            <p className="text-lg text-secondary-600 leading-relaxed mb-8">
+              Wij komen bij u thuis, waar u ook woont. In meer dan 30 steden door heel Nederland staan onze medewerkers voor u klaar.
             </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/afspraak"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
               >
                 Afspraak maken
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <a
                 href="tel:+31642827860"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Bel ons
               </a>
             </div>
           </div>
-
-          {/* Stats Cards */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div className="bg-white rounded-xl p-6 border border-secondary-200 shadow-sm text-center">
-              <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-secondary-800 mb-2">30+ Steden</h3>
-              <p className="text-secondary-600">Actief in steden en omliggende plaatsen</p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-secondary-200 shadow-sm text-center">
-              <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Clock className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-xl font-semibold text-secondary-800 mb-2">24-48u Service</h3>
-              <p className="text-secondary-600">Snelle response in elke regio</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* USP Bar */}
-      <section className="bg-primary-500 py-6">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          {/* Mobile */}
-          <div className="grid grid-cols-3 gap-4 md:hidden text-white text-center">
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <MapPin className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">Landelijk</p>
-              <p className="text-primary-100 text-xs">heel NL</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <Users className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">Lokaal</p>
-              <p className="text-primary-100 text-xs">kennen de regio</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">Betrouwbaar</p>
-              <p className="text-primary-100 text-xs">verzekerd</p>
-            </div>
-          </div>
-
-          {/* Desktop */}
-          <div className="hidden md:flex items-center justify-center gap-10 text-white">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                <MapPin className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold">Landelijke dekking</p>
-                <p className="text-primary-100 text-sm">30+ steden in Nederland</p>
-              </div>
-            </div>
-            <div className="w-px h-10 bg-primary-400" />
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                <Users className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold">Lokale experts</p>
-                <p className="text-primary-100 text-sm">Kennen uw regio door en door</p>
-              </div>
-            </div>
-            <div className="w-px h-10 bg-primary-400" />
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold">Betrouwbaar</p>
-                <p className="text-primary-100 text-sm">Gescreend en verzekerd</p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Cities Grid */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-24 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Onze locaties</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              Vind computerhulp in uw stad
-            </h2>
-            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Klik op uw stad voor meer informatie over onze lokale IT-service
-            </p>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+            Vind computerhulp in uw stad
+          </h2>
+          <p className="text-secondary-600 mb-10 max-w-2xl">
+            Klik op uw stad voor meer informatie over onze lokale IT-service.
+          </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {cities.map((city) => (
               <Link key={city.slug} href={`/regios/${city.slug}`}>
-                <div className="bg-secondary-50 rounded-xl p-6 border border-secondary-200 hover:border-primary-300 hover:shadow-lg transition-all group">
-                  <div className="flex items-center justify-between mb-3">
+                <div className="bg-white rounded-lg p-5 border border-secondary-200 hover:border-primary-300 transition-colors group">
+                  <div className="flex items-start justify-between mb-2">
                     <div>
-                      <h3 className="text-xl font-semibold text-secondary-800 group-hover:text-primary-700 transition-colors">
+                      <h3 className="text-lg font-semibold text-secondary-900 group-hover:text-primary-700 transition-colors">
                         {city.name}
                       </h3>
-                      <p className="text-primary-700 text-sm">{city.population} inwoners</p>
+                      <p className="text-secondary-500 text-sm">{city.region}</p>
                     </div>
-                    <div className="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <MapPin className="w-5 h-5 text-white" />
-                    </div>
+                    <MapPin className="w-5 h-5 text-primary-600 flex-shrink-0 mt-1" />
                   </div>
-
-                  <p className="text-secondary-600 mb-4 text-sm leading-relaxed">
+                  <p className="text-secondary-600 text-sm leading-relaxed mb-3">
                     {city.description}
                   </p>
-
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-secondary-500">{city.region}</span>
-                    <span className="text-primary-700 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
-                      Meer info
-                      <ArrowRight className="w-4 h-4 ml-1" />
-                    </span>
-                  </div>
+                  <span className="text-primary-600 font-medium text-sm inline-flex items-center">
+                    Meer info
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </span>
                 </div>
               </Link>
             ))}
@@ -235,59 +135,56 @@ export default function RegiosPage() {
       </section>
 
       {/* Not Found Section */}
-      <section className="py-16 lg:py-20 bg-secondary-50">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8">
-          <div className="bg-white rounded-2xl p-8 md:p-12 border border-secondary-200 shadow-sm text-center">
-            <h2 className="text-3xl font-bold text-secondary-900 mb-4">
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
               Uw stad niet gevonden?
             </h2>
-            <p className="text-lg text-secondary-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-secondary-600 mb-8">
               We breiden ons servicebereik continu uit. Neem contact op om te kijken
               of we ook in uw plaats of gemeente actief zijn of binnenkort komen.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/afspraak"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+              >
+                Afspraak maken
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
               <a
                 href="tel:+31642827860"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                Bel voor beschikbaarheid
+                Bel ons
               </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
-              >
-                Neem contact op
-              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-24 bg-secondary-50">
         <div className="max-w-3xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Veelgestelde vragen</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              Vragen over IT-hulp in Nederland
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-8">
+            Veelgestelde vragen
+          </h2>
 
           <div className="space-y-3">
             {regiosFaqData.map((faq, index) => (
               <div
                 key={index}
-                className="bg-secondary-50 rounded-xl border border-secondary-200 overflow-hidden"
+                className="bg-white rounded-lg border border-secondary-200 overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-50 transition-colors"
                 >
                   <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-secondary-500 flex-shrink-0 transition-transform ${
                       openFaq === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -304,25 +201,25 @@ export default function RegiosPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-gradient-to-r from-primary-500 to-primary-600">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
             Klaar voor computerhulp?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-secondary-600 mb-8 max-w-xl mx-auto">
             Onze IT-specialisten staan in heel Nederland klaar om u te helpen. Snel, vakkundig en betaalbaar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/afspraak"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
             >
               Afspraak maken
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <a
               href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
             >
               <Phone className="w-5 h-5 mr-2" />
               Bel ons

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ICT Student aan huis Katwijk | Computerhulp aan Huis | Hulp Met IT',
-  description: 'ICT Student aan huis in Katwijk voor betaalbare computerhulp. Studenten van Universiteit Leiden en Hogeschool Leiden komen bij u thuis. Vanaf €53,50. Ook in Katwijk aan Zee, Rijnsburg, Leiden, Oegstgeest, Noordwijk en omgeving.',
+  description: 'ICT Student aan huis in Katwijk voor betaalbare computerhulp. Studenten van Universiteit Leiden en Hogeschool Leiden komen bij u thuis. €14,50 per kwartier. Ook in Katwijk aan Zee, Rijnsburg, Leiden, Oegstgeest, Noordwijk en omgeving.',
   keywords: [
     'student aan huis katwijk',
     'student computerhulp katwijk',
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'ICT Student aan Huis Katwijk | Betaalbare Computerhulp',
-    description: 'Betaalbare computerhulp door IT-studenten in Katwijk en omgeving. Studenten van Universiteit Leiden en Hogeschool Leiden. Vanaf €53,50.',
+    description: 'Betaalbare computerhulp door IT-studenten in Katwijk en omgeving. Studenten van Universiteit Leiden en Hogeschool Leiden. €14,50 per kwartier.',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'ICT Student aan Huis Katwijk | Betaalbare Computerhulp',
-    description: 'Betaalbare computerhulp door IT-studenten in Katwijk en omgeving. Studenten van Universiteit Leiden en Hogeschool Leiden. Vanaf €53,50.',
+    description: 'Betaalbare computerhulp door IT-studenten in Katwijk en omgeving. Studenten van Universiteit Leiden en Hogeschool Leiden. €14,50 per kwartier.',
   },
   robots: {
     index: true,

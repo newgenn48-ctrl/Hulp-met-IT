@@ -37,7 +37,7 @@ const processSteps = [
 const faqData = [
   {
     question: "Wat kost computerhulp aan huis in Tilburg?",
-    answer: "Onze computerhulp aan huis in Tilburg begint vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Voor 1 uur betaalt u €69,50. Wij werken met transparante prijzen zonder verborgen kosten."
+    answer: "Onze computerhulp aan huis in Tilburg kost €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
   },
   {
     question: "Hoe snel kan een specialist bij mij thuis komen in Tilburg?",
@@ -114,7 +114,7 @@ export default function ComputerhulpAanHuisTilburg() {
         }}
       />
       {/* Breadcrumbs Navigation */}
-      <nav aria-label="Breadcrumb" className="bg-white/50 backdrop-blur-sm border-b border-gray-200">
+      <nav aria-label="Breadcrumb" className="bg-secondary-50 border-b border-secondary-200">
         <div className="max-w-7xl mx-auto container-padding py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
@@ -137,10 +137,10 @@ export default function ComputerhulpAanHuisTilburg() {
           title="Wat We Voor U Kunnen Doen"
           maxItems={6}
         />
-        <PricingSection />        <section className="section-spacing">
+        <PricingSection />        <section className="py-16 lg:py-24">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Hoe Werkt Computerhulp aan Huis in Tilburg?
               </h2>
               <p className="text-xl text-secondary-700">
@@ -151,7 +151,7 @@ export default function ComputerhulpAanHuisTilburg() {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
+                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold text-primary-600">
                     {step.step}
                   </div>
                   <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
@@ -163,10 +163,10 @@ export default function ComputerhulpAanHuisTilburg() {
         </section>
 
         {/* Why Choose Section */}
-        <section className="section-spacing bg-neural-900/30">
+        <section className="py-16 lg:py-24 bg-secondary-50">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Waarom kiezen voor Computerhulp aan Huis Tilburg?
               </h2>
               <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
@@ -175,9 +175,9 @@ export default function ComputerhulpAanHuisTilburg() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Users className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">10+ Jaar Ervaring</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -185,9 +185,9 @@ export default function ComputerhulpAanHuisTilburg() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betrouwbaar & Professioneel</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -195,9 +195,9 @@ export default function ComputerhulpAanHuisTilburg() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Phone className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Phone className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Service</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -205,9 +205,9 @@ export default function ComputerhulpAanHuisTilburg() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <MessageCircle className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <MessageCircle className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Duidelijke Uitleg</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -215,9 +215,9 @@ export default function ComputerhulpAanHuisTilburg() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">7 Dagen per Week</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -225,20 +225,20 @@ export default function ComputerhulpAanHuisTilburg() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Eerlijke Prijzen</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Transparante tarieven vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Geen verrassingen, u weet vooraf wat u betaalt.
+                  Transparante tarieven: €14,50 per kwartier + €10 voorrijkosten. Geen verrassingen, u weet vooraf wat u betaalt.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section-spacing bg-neural-900/50">
+        <section className="py-16 lg:py-24 bg-secondary-50">
                     <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -272,7 +272,7 @@ export default function ComputerhulpAanHuisTilburg() {
               </h3>
               <div className="space-y-4">
                 {faqData.map((faq, index) => (
-                  <div key={index} className="glass-effect rounded-lg overflow-hidden">
+                  <div key={index} className="bg-white rounded-lg border border-secondary-100 overflow-hidden">
                     <button
                       onClick={() => toggleFAQ(index)}
                       className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/50 transition-colors"

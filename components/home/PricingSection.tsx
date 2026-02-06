@@ -1,71 +1,60 @@
 'use client'
 
 import Link from 'next/link'
-import { Phone, ArrowRight, Check } from 'lucide-react'
+import { Phone, ArrowRight } from 'lucide-react'
 
 export function PricingSection() {
   return (
-    <section className="py-16 lg:py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-6 sm:px-8">
+    <section className="py-16 lg:py-24 bg-secondary-50">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
-        <div className="text-center mb-10">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-            Wat kost het?
-          </h2>
-        </div>
-
-        {/* Simpele prijs card */}
-        <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-8 sm:p-10 text-center text-white mb-8">
-          <p className="text-white/80 text-lg mb-2">Meeste problemen opgelost</p>
-          <div className="mb-6">
-            <span className="text-5xl sm:text-6xl font-bold">vanaf €49</span>
-            <span className="text-xl ml-2">all-in</span>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8 text-white/90">
-            <div className="flex items-center gap-2">
-              <Check className="w-5 h-5" />
-              <span>Inclusief voorrijkosten</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="w-5 h-5" />
-              <span>Inclusief eerste 45 minuten</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="w-5 h-5" />
-              <span>Geen verborgen kosten</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Check className="w-5 h-5" />
-              <span>Betaling achteraf</span>
-            </div>
-          </div>
-
-          <p className="text-white/70 text-sm mb-8">
-            Spoedhulp mogelijk (vandaag of morgen) • U weet vooraf waar u aan toe bent
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Bel direct
-            </a>
-            <Link
-              href="/afspraak"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
-            >
-              Afspraak maken
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </div>
-        </div>
-
-        <p className="text-center text-secondary-500 text-sm">
-          Vrijblijvend advies – geen verplichtingen
+        <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+          Eenvoudige prijzen
+        </h2>
+        <p className="text-secondary-500 mb-10">
+          Geen abonnement, geen verborgen kosten. U betaalt achteraf.
         </p>
+
+        <div className="bg-white rounded-xl border border-secondary-200 text-left mb-8">
+          <div className="p-6 border-b border-secondary-100">
+            <div className="flex items-baseline justify-between">
+              <h3 className="font-semibold text-secondary-900">Hulp aan huis</h3>
+              <div className="text-right">
+                <span className="text-3xl font-bold text-secondary-900">&euro;14,50</span>
+                <p className="text-xs text-secondary-400 mt-0.5">per kwartier</p>
+              </div>
+            </div>
+          </div>
+          <div className="px-6 py-3.5 border-b border-secondary-100 flex justify-between items-center">
+            <span className="text-sm text-secondary-600">Minimum</span>
+            <span className="text-sm font-medium text-secondary-900">45 minuten (3 kwartier)</span>
+          </div>
+          <div className="px-6 py-3.5 border-b border-secondary-100 flex justify-between items-center">
+            <span className="text-sm text-secondary-600">Voorrijkosten</span>
+            <span className="text-sm font-medium text-secondary-900">&euro;10</span>
+          </div>
+          <div className="px-6 py-3.5 flex justify-between items-center">
+            <span className="text-sm text-secondary-600">Betaling</span>
+            <span className="text-sm font-medium text-secondary-900">Achteraf, per pin of tikkie</span>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="tel:+31642827860"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            Bel voor advies
+          </a>
+          <Link
+            href="/afspraak"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-secondary-700 bg-white border border-secondary-200 hover:border-secondary-300 rounded-lg transition-colors"
+          >
+            Afspraak inplannen
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
 
       </div>
     </section>

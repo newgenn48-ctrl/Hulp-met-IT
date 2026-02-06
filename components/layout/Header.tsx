@@ -22,26 +22,17 @@ export const Header = React.memo(function Header() {
     const controlHeader = () => {
       const currentScrollY = window.scrollY
 
-      // Show header when:
-      // 1. Scrolling up
-      // 2. At the very top (0-100px)
-      // 3. Mobile menu is open
       if (currentScrollY < lastScrollY || currentScrollY < 100 || isMobileMenuOpen) {
         setIsVisible(true)
       } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Hide header when scrolling down and past 100px
         setIsVisible(false)
-        // Close mobile menu when header hides
         setIsMobileMenuOpen(false)
       }
 
       setLastScrollY(currentScrollY)
-
-      // Track if user has scrolled for styling changes
       setIsScrolled(currentScrollY > 50)
     }
 
-    // Throttle scroll events for performance
     let ticking = false
     const handleScroll = () => {
       if (!ticking) {
@@ -65,18 +56,21 @@ export const Header = React.memo(function Header() {
         ? 'glass-effect shadow-lg backdrop-blur-md'
         : 'bg-white/95 backdrop-blur-sm shadow-sm'
     }`}>
+      {/* Accent stripe top */}
+      <div className="h-1 bg-gradient-to-r from-primary-600 via-primary-500 to-accent-500" />
+
       <div className="max-w-7xl mx-auto container-padding">
         <div className="flex items-center justify-between h-20">
           <Link
             href="/"
             className="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105"
           >
-            <div className="w-12 h-12 bg-primary-500 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
               <Monitor className="w-6 h-6 text-white" />
             </div>
             <div>
               <span className="text-xl font-bold text-gradient">Hulp met IT</span>
-              <div className="text-xs text-primary-800 leading-none">Computerhulp aan huis</div>
+              <div className="text-xs text-primary-700 leading-none">Computerhulp aan huis</div>
             </div>
           </Link>
 
@@ -93,12 +87,12 @@ export const Header = React.memo(function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/afspraak" className="btn-cta text-sm px-4 py-2.5">
+            <Link href="/afspraak" className="inline-flex items-center justify-center text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2.5 rounded-lg transition-colors">
               Afspraak maken
             </Link>
             <a
               href="tel:+31642827860"
-              className="flex items-center gap-2 bg-secondary-100 hover:bg-secondary-200 border border-secondary-300 text-secondary-800 font-semibold px-4 py-2.5 rounded-lg transition-colors"
+              className="flex items-center gap-2 bg-primary-50 hover:bg-primary-100 border border-primary-200 text-primary-700 font-semibold px-4 py-2.5 rounded-lg transition-colors"
             >
               <Phone className="w-5 h-5" />
               <span className="text-base">Bel direct</span>
@@ -133,9 +127,9 @@ export const Header = React.memo(function Header() {
                 </Link>
               ))}
             </nav>
-            
+
             <div className="flex flex-col space-y-3">
-              <Link href="/afspraak" onClick={() => setIsMobileMenuOpen(false)} className="btn-cta">
+              <Link href="/afspraak" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-lg transition-colors">
                 Afspraak maken
               </Link>
               <a href="tel:+31642827860" onClick={() => setIsMobileMenuOpen(false)} className="btn-secondary">

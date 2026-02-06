@@ -27,7 +27,7 @@ export const PRICING = {
   MINIMUM_COST: 53.50, // 3x14.50 + 10
   EMERGENCY_RATE: 18.50,
   EMERGENCY_MINIMUM: 65.50, // 3x18.50 + 10
-  PRICE_RANGE: '€53,50-€100',
+  PRICE_RANGE: '€14,50 per kwartier',
   CURRENCY: 'EUR'
 } as const
 

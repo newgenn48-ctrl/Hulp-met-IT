@@ -5,61 +5,52 @@ import { Phone, Calendar, Home, CheckCircle } from 'lucide-react'
 const steps = [
   {
     icon: Phone,
-    number: '1',
     title: 'U belt ons',
-    description: 'U vertelt kort wat het probleem is'
+    description: 'Vertel kort wat er aan de hand is'
   },
   {
     icon: Calendar,
-    number: '2',
-    title: 'Wij plannen direct een afspraak',
-    description: 'Vaak nog dezelfde of volgende dag'
+    title: 'Afspraak op uw moment',
+    description: 'Vaak al dezelfde of volgende dag'
   },
   {
     icon: Home,
-    number: '3',
     title: 'Wij komen bij u thuis',
     description: 'Rustig, vriendelijk en duidelijk'
   },
   {
     icon: CheckCircle,
-    number: '4',
     title: 'Probleem opgelost',
-    description: 'Met uitleg en nazorg'
+    description: 'Met uitleg zodat u het begrijpt'
   }
 ]
 
 export function HowItWorks() {
   return (
-    <section className="py-16 lg:py-20 bg-secondary-50">
-      <div className="max-w-4xl mx-auto px-6 sm:px-8">
+    <section className="py-16 lg:py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-            Zo helpen wij u
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+            Hoe werkt het?
           </h2>
-          <p className="text-lg text-secondary-600">
-            Geen moeilijke systemen, geen gedoe.
+          <p className="text-secondary-500 max-w-lg mx-auto">
+            Van telefoontje tot opgelost probleem &mdash; in vier stappen.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
           {steps.map((step, index) => {
             const IconComponent = step.icon
             return (
-              <div key={index} className="bg-white rounded-xl p-6 border border-secondary-200 text-center">
-                <div className="relative inline-flex mb-4">
-                  <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center">
-                    <IconComponent className="w-7 h-7 text-primary-600" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 w-7 h-7 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                    {step.number}
-                  </span>
+              <div key={index} className="text-center">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-50 mb-4">
+                  <IconComponent className="w-5 h-5 text-primary-600" />
                 </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">
+                <h3 className="font-semibold text-secondary-900 text-[15px] mb-1">
                   {step.title}
                 </h3>
-                <p className="text-secondary-600 text-sm">
+                <p className="text-secondary-500 text-sm leading-snug">
                   {step.description}
                 </p>
               </div>

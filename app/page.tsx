@@ -1,5 +1,5 @@
 import { HeroSection } from '@/components/home/HeroSection'
-import { ProblemsSection } from '@/components/home/ProblemsSection'
+import { CompactServicesSection } from '@/components/home/CompactServicesSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TrustSignals } from '@/components/home/TrustSignals'
@@ -31,8 +31,8 @@ export default function HomePage() {
       {/* Hero - Urgentie & duidelijke actie */}
       <HeroSection />
 
-      {/* Herkenbare problemen - Emotionele connectie */}
-      <ProblemsSection />
+      {/* Diensten - Compact overzicht */}
+      <CompactServicesSection />
 
       {/* Hoe het werkt - Simpele stappen */}
       <HowItWorks />
@@ -43,7 +43,6 @@ export default function HomePage() {
       {/* Waarom wij - Vertrouwen */}
       <TrustSignals />
 
-      {/* Reviews - Social proof */}
       {/* Regio's - Lokaal */}
       <RegionsPreview />
     </main>

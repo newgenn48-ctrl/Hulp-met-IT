@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Breda | Computerhulp aan Huis | Hulp met IT',
-  description: 'Student aan huis in Breda voor computerhulp. Betaalbare IT-studenten van Avans Hogeschool en NHTV komen naar je toe. Vanaf €53,50. Breda Centrum, Princenhage, Ginneken en omgeving.',
+  description: 'Student aan huis in Breda voor computerhulp. Betaalbare IT-studenten van Avans Hogeschool en NHTV komen naar je toe. €14,50 per kwartier. Breda Centrum, Princenhage, Ginneken en omgeving.',
   keywords: [
     'student aan huis breda',
     'student computerhulp breda',

@@ -90,7 +90,7 @@ const processSteps = [
 const faqData = [
   {
     question: `Wat kost ICT student aan huis hulp in ${CITY}?`,
-    answer: `Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard bezoek van 45 minuten kost dus €53,50 in ${CITY}. U betaalt achteraf.`
+    answer: `Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (3 kwartier) plus €10 voorrijkosten. Een standaard bezoek van 45 minuten kost dus €14,50 per kwartier in ${CITY}. U betaalt achteraf.`
   },
   {
     question: `Zijn de studenten wel gekwalificeerd in ${CITY}?`,
@@ -154,7 +154,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
     },
     offers: {
       '@type': 'Offer',
-      price: '53.50',
+      price: '14.50',
       priceCurrency: 'EUR',
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
@@ -197,7 +197,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-100/50 pt-12 pb-16 lg:pt-16 lg:pb-24">
+      <section className="relative bg-white pt-12 pb-16 lg:pt-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6 sm:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -211,7 +211,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
 
               {/* Subtitel */}
               <p className="text-xl text-secondary-600 leading-relaxed mb-4 max-w-lg">
-                Betaalbare computerhulp door ervaren IT-studenten in {CITY}. Snel, vakkundig en vriendelijk bij u thuis.
+                Hulp nodig met uw computer of telefoon? Onze IT-student komt bij u thuis en lost het samen met u op.
               </p>
               <p className="text-lg text-secondary-500 mb-8 max-w-lg">
                 Ook senioren in {CITY} begeleiden wij met geduld en heldere uitleg.
@@ -221,14 +221,14 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/afspraak"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+                  className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors "
                 >
                   Afspraak maken
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <a
                   href="tel:+31642827860"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Bel ons
@@ -238,8 +238,8 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
 
             {/* Photo */}
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary-200 to-primary-300 rounded-3xl transform rotate-3" />
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+              
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-secondary-200">
                 <Image
                   src="/student-aan-huis.webp"
                   alt={`IT-student helpt klant thuis met computer in ${CITY}`}
@@ -254,87 +254,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
           </div>
         </div>
       </section>
-
-      {/* USP Bar */}
-      <section className="bg-primary-500 py-6">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          {/* Mobile */}
-          <div className="grid grid-cols-3 gap-4 md:hidden text-white text-center mb-4">
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <GraduationCap className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">IT-student</p>
-              <p className="text-primary-100 text-xs">ervaren</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <Clock className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">Flexibel</p>
-              <p className="text-primary-100 text-xs">ook 's avonds</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">Betrouwbaar</p>
-              <p className="text-primary-100 text-xs">gescreend</p>
-            </div>
-          </div>
-          <Link
-            href="/afspraak"
-            className="md:hidden w-full inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
-          >
-            Afspraak maken
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Link>
-
-          {/* Desktop */}
-          <div className="hidden md:flex items-center justify-between gap-4 text-white">
-            <div className="flex items-center gap-10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                  <GraduationCap className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold">Ervaren IT-studenten</p>
-                  <p className="text-primary-100 text-sm">Opgeleid en gescreend</p>
-                </div>
-              </div>
-              <div className="w-px h-10 bg-primary-400" />
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold">Flexibele tijden</p>
-                  <p className="text-primary-100 text-sm">Ook 's avonds & weekenden</p>
-                </div>
-              </div>
-              <div className="w-px h-10 bg-primary-400" />
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold">Betrouwbaar</p>
-                  <p className="text-primary-100 text-sm">Alle studenten gescreend</p>
-                </div>
-              </div>
-            </div>
-            <Link
-              href="/afspraak"
-              className="inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
-            >
-              Afspraak maken
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
+{/* Services */}
       <ServicesGrid maxItems={6} />
 
       {/* Why Student */}
@@ -342,7 +262,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
             <p className="text-primary-700 font-semibold mb-3">Waarom een student?</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
               Voordelen van ICT student aan huis in {CITY}
             </h2>
           </div>
@@ -352,8 +272,8 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
               const IconComponent = benefit.icon
               return (
                 <div key={index} className="bg-white rounded-xl p-6 border border-secondary-200">
-                  <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6 text-white" />
+                  <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
+                    <IconComponent className="w-5 h-5 text-primary-600" />
                   </div>
                   <h3 className="text-lg font-semibold text-secondary-900 mb-2">{benefit.title}</h3>
                   <p className="text-secondary-600">{benefit.description}</p>
@@ -368,8 +288,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Hoe het werkt</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
               In 4 stappen geholpen in {CITY}
             </h2>
           </div>
@@ -398,8 +317,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
       <section className="py-16 lg:py-20 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Werkgebied</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
               Wij komen bij u thuis in {CITY} en omgeving
             </h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
@@ -431,8 +349,7 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
       <section className="py-16 lg:py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6 sm:px-8">
           <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Veelgestelde vragen</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
               Vragen over ICT student aan huis {CITY}
             </h2>
           </div>
@@ -466,9 +383,9 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-gradient-to-r from-primary-500 to-primary-600">
+      <section className="py-16 lg:py-20 bg-primary-600">
         <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             Klaar voor betaalbare computerhulp in {CITY}?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -477,14 +394,14 @@ export default function StudentAanHuisCapelleAanDenIJsselPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/afspraak"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-primary-600 bg-white hover:bg-secondary-50 rounded-lg transition-colors"
             >
               Afspraak maken
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <a
               href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg transition-colors"
             >
               <Phone className="w-5 h-5 mr-2" />
               Bel ons

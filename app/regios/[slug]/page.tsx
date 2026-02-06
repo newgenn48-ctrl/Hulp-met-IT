@@ -1,20 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, use } from 'react'
 import {
   Phone,
   ArrowRight,
   Check,
   ChevronDown,
-  Users,
-  Shield,
-  Clock,
-  Wrench,
-  Calendar,
-  MapPin,
-  Award
+  MapPin
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
 import { ServicesGrid } from '@/components/services/ServicesGrid'
@@ -28,36 +21,12 @@ interface PageProps {
 }
 
 const benefits = [
-  {
-    icon: Check,
-    title: 'Transparante Tarieven',
-    description: 'Duidelijke prijzen vooraf, geen verborgen kosten of verrassingen.'
-  },
-  {
-    icon: Award,
-    title: 'Ervaren Specialisten',
-    description: 'Vakkundige IT-experts met jarenlange ervaring en kennis.'
-  },
-  {
-    icon: Clock,
-    title: 'Flexibele Tijden',
-    description: "Ook 's avonds en in weekenden beschikbaar."
-  },
-  {
-    icon: Users,
-    title: 'Persoonlijke Aanpak',
-    description: 'Geduldig en begrijpelijke uitleg, zonder vakjargon.'
-  },
-  {
-    icon: Calendar,
-    title: 'Snel Beschikbaar',
-    description: 'Vaak nog dezelfde dag, ook voor spoedgevallen.'
-  },
-  {
-    icon: Shield,
-    title: 'Betrouwbaar',
-    description: 'Alle medewerkers zijn gescreend en verzekerd.'
-  }
+  'Transparante tarieven, geen verborgen kosten',
+  'Ervaren IT-specialisten met jarenlange kennis',
+  'Flexibele tijden, ook \'s avonds en in weekenden',
+  'Persoonlijke aanpak met geduld en heldere uitleg',
+  'Vaak nog dezelfde dag beschikbaar',
+  'Alle medewerkers zijn gescreend en verzekerd'
 ]
 
 export default function RegioPage({ params }: PageProps) {
@@ -77,18 +46,22 @@ export default function RegioPage({ params }: PageProps) {
 
   const processSteps = [
     {
+      step: '1',
       title: 'U belt of plant online',
       description: `Vertel ons kort wat het probleem is. Wij plannen een afspraak op een moment dat u uitkomt in ${city.name}.`
     },
     {
+      step: '2',
       title: 'Expert komt langs',
       description: `Een ervaren IT-specialist komt bij u thuis in ${city.name} met alle benodigde tools en kennis.`
     },
     {
+      step: '3',
       title: 'Probleem wordt opgelost',
       description: 'Vakkundige hulp met duidelijke uitleg. U krijgt tips zodat u het zelf ook begrijpt.'
     },
     {
+      step: '4',
       title: 'Betaling achteraf',
       description: 'U betaalt pas na afloop. Geen vooruitbetaling, geen verrassingen.'
     }
@@ -97,7 +70,7 @@ export default function RegioPage({ params }: PageProps) {
   const faqData = [
     {
       question: `Wat kost computerhulp in ${city.name}?`,
-      answer: `Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard bezoek van 45 minuten kost dus €53,50. U betaalt achteraf.`
+      answer: `Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf.`
     },
     {
       question: `Zijn jullie IT-specialisten wel gekwalificeerd in ${city.name}?`,
@@ -157,8 +130,9 @@ export default function RegioPage({ params }: PageProps) {
     })),
     offers: {
       '@type': 'Offer',
-      price: '53.50',
-      priceCurrency: 'EUR'
+      price: '14.50',
+      priceCurrency: 'EUR',
+      unitText: 'per kwartier'
     }
   }
 
@@ -187,139 +161,31 @@ export default function RegioPage({ params }: PageProps) {
       </div>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-50 via-white to-primary-100/50 pt-12 pb-16 lg:pt-16 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-
-            {/* Content */}
-            <div>
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
-                Computerhulp
-                <span className="text-primary-700"> {city.name}</span>
-              </h1>
-
-              {/* Subtitel */}
-              <p className="text-xl text-secondary-600 leading-relaxed mb-4 max-w-lg">
-                {city.description}
-              </p>
-              <p className="text-lg text-secondary-500 mb-8 max-w-lg">
-                Ook senioren begeleiden wij met geduld en heldere uitleg.
-              </p>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/afspraak"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
-                >
-                  Afspraak maken
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <a
-                  href="tel:+31642827860"
-                  className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-primary-600 border-2 border-primary-300 hover:bg-primary-50 rounded-xl transition-colors"
-                >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Bel ons
-                </a>
-              </div>
-            </div>
-
-            {/* Photo */}
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-primary-200 to-primary-300 rounded-3xl transform rotate-3" />
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                <Image
-                  src="/hulp-met-it.webp"
-                  alt={`Computerhulp in ${city.name}`}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* USP Bar */}
-      <section className="bg-primary-500 py-6">
+      <section className="bg-white py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          {/* Mobile */}
-          <div className="grid grid-cols-3 gap-4 md:hidden text-white text-center mb-4">
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <Wrench className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">IT-expert</p>
-              <p className="text-primary-100 text-xs">ervaren</p>
+          <div className="max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-900 leading-tight mb-6">
+              Computerhulp in {city.name}
+            </h1>
+            <p className="text-lg text-secondary-600 leading-relaxed mb-4">
+              {city.description}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/afspraak"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+              >
+                Afspraak maken
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <a
+                href="tel:+31642827860"
+                className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Bel ons
+              </a>
             </div>
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <Clock className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">Flexibel</p>
-              <p className="text-primary-100 text-xs">ook &apos;s avonds</p>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center mb-2">
-                <Shield className="w-5 h-5 text-white" />
-              </div>
-              <p className="font-semibold text-sm">Betrouwbaar</p>
-              <p className="text-primary-100 text-xs">verzekerd</p>
-            </div>
-          </div>
-          <Link
-            href="/afspraak"
-            className="md:hidden w-full inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
-          >
-            Afspraak maken
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Link>
-
-          {/* Desktop */}
-          <div className="hidden md:flex items-center justify-between gap-4 text-white">
-            <div className="flex items-center gap-10">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                  <Wrench className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold">Ervaren IT-specialisten</p>
-                  <p className="text-primary-100 text-sm">Vakkundige experts</p>
-                </div>
-              </div>
-              <div className="w-px h-10 bg-primary-400" />
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold">Flexibele tijden</p>
-                  <p className="text-primary-100 text-sm">Ook &apos;s avonds & weekenden</p>
-                </div>
-              </div>
-              <div className="w-px h-10 bg-primary-400" />
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <p className="font-semibold">Betrouwbaar</p>
-                  <p className="text-primary-100 text-sm">Gescreend en verzekerd</p>
-                </div>
-              </div>
-            </div>
-            <Link
-              href="/afspraak"
-              className="inline-flex items-center justify-center px-6 py-3 font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
-            >
-              Afspraak maken
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
           </div>
         </div>
       </section>
@@ -328,52 +194,45 @@ export default function RegioPage({ params }: PageProps) {
       <ServicesGrid maxItems={6} />
 
       {/* Why Us */}
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Waarom wij?</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              Voordelen van computerhulp in {city.name}
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div key={index} className="bg-secondary-50 rounded-xl p-6 border border-secondary-200">
-                  <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center mb-4">
-                    <IconComponent className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">{benefit.title}</h3>
-                  <p className="text-secondary-600">{benefit.description}</p>
-                </div>
-              )
-            })}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
+                Waarom kiezen voor computerhulp in {city.name}?
+              </h2>
+              <p className="text-secondary-600">
+                Wij bieden betrouwbare en betaalbare IT-hulp aan huis in {city.name} en omgeving.
+                Onze specialisten helpen u snel en vakkundig met elk computerprobleem.
+              </p>
+            </div>
+            <ul className="space-y-4">
+              {benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-secondary-700">{benefit}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="py-16 lg:py-20 bg-secondary-50">
+      <section className="py-16 lg:py-24 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Hoe het werkt</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              In 4 stappen geholpen in {city.name}
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-10">
+            In 4 stappen geholpen in {city.name}
+          </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="relative inline-flex mb-6">
-                  <div className="w-16 h-16 bg-white border-2 border-primary-200 rounded-2xl flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary-700">{index + 1}</span>
-                  </div>
+              <div key={index}>
+                <div className="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <span className="text-lg font-bold text-white">{step.step}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-secondary-900 mb-2">{step.title}</h3>
-                <p className="text-secondary-600">{step.description}</p>
+                <p className="text-secondary-600 text-sm leading-relaxed">{step.description}</p>
               </div>
             ))}
           </div>
@@ -383,21 +242,21 @@ export default function RegioPage({ params }: PageProps) {
       {/* Pricing */}
       <PricingSection />
 
-      {/* Areas */}
-      <section className="py-16 lg:py-20 bg-white">
+      {/* Service Areas */}
+      <section className="py-16 lg:py-24 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Werkgebied</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              Computerhulp in {city.name} en omgeving
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+            Werkgebied in {city.name} en omgeving
+          </h2>
+          <p className="text-secondary-600 mb-8 max-w-2xl">
+            Wij komen bij u thuis in de volgende wijken en plaatsen.
+          </p>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {city.serviceAreas.map((area, index) => (
-              <div key={index} className="flex items-center gap-2 bg-secondary-50 rounded-lg p-3 border border-secondary-200">
-                <MapPin className="w-4 h-4 text-primary-700 flex-shrink-0" />
-                <span className="text-secondary-700 font-medium text-sm">{area}</span>
+              <div key={index} className="flex items-center gap-2 bg-white rounded-lg p-3 border border-secondary-200">
+                <MapPin className="w-4 h-4 text-primary-600 flex-shrink-0" />
+                <span className="text-secondary-700 text-sm">{area}</span>
               </div>
             ))}
           </div>
@@ -405,28 +264,25 @@ export default function RegioPage({ params }: PageProps) {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 lg:py-20 bg-secondary-50">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <p className="text-primary-700 font-semibold mb-3">Veelgestelde vragen</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              Vragen over computerhulp in {city.name}
-            </h2>
-          </div>
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-8">
+            Veelgestelde vragen over computerhulp in {city.name}
+          </h2>
 
           <div className="space-y-3">
             {faqData.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl border border-secondary-200 overflow-hidden"
+                className="bg-secondary-50 rounded-lg border border-secondary-200 overflow-hidden"
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-50 transition-colors"
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
                 >
                   <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-secondary-500 flex-shrink-0 transition-transform ${
                       openFaq === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -443,25 +299,25 @@ export default function RegioPage({ params }: PageProps) {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-gradient-to-r from-primary-500 to-primary-600">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+      <section className="py-16 lg:py-24 bg-secondary-50">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
             Klaar voor computerhulp in {city.name}?
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-secondary-600 mb-8 max-w-xl mx-auto">
             Onze ervaren IT-specialisten in {city.name} staan klaar om u te helpen. Snel, vakkundig en betaalbaar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/afspraak"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
             >
               Afspraak maken
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <a
               href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white border-2 border-white/30 hover:bg-white/10 rounded-xl transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
             >
               <Phone className="w-5 h-5 mr-2" />
               Bel ons

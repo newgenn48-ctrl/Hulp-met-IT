@@ -97,7 +97,7 @@ function FAQItem({
   onToggle: () => void
 }) {
   return (
-    <div className="glass-effect rounded-lg overflow-hidden">
+    <div className="bg-white rounded-lg border border-secondary-100 overflow-hidden">
       <button
         type="button"
         onClick={onToggle}
@@ -186,7 +186,7 @@ export default function StudentAanHuisAmersfoortPage() {
             offers: {
               '@type': 'Offer',
               description: `Computerhulp door IT-studenten in ${city}`,
-              price: '53.50',
+              price: '14.50',
               priceCurrency: 'EUR',
               availability: 'https://schema.org/InStock'
             }
@@ -197,7 +197,7 @@ export default function StudentAanHuisAmersfoortPage() {
       {/* Breadcrumbs Navigation */}
       <nav
         aria-label="Breadcrumb"
-        className="bg-white/50 backdrop-blur-sm border-b border-gray-200"
+        className="bg-secondary-50 border-b border-secondary-200"
       >
         <div className="max-w-7xl mx-auto container-padding py-3">
           <ol className="flex items-center space-x-2 text-sm">
@@ -258,7 +258,7 @@ export default function StudentAanHuisAmersfoortPage() {
                     key={index}
                     className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
                   >
-                    <IconComponent className="w-6 h-6 text-white" />
+                    <IconComponent className="w-5 h-5 text-primary-600" />
                     <span className="drop-shadow-sm">{benefit.text}</span>
                   </div>
                 )
@@ -294,10 +294,10 @@ export default function StudentAanHuisAmersfoortPage() {
 
         {/* Testimonials Section */}
         {/* Process Section */}
-        <section className="section-spacing bg-white/5">
+        <section className="py-16 lg:py-24 bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Hoe Werkt ICT Student aan Huis in {city}?
               </h2>
               <p className="text-xl text-secondary-700">
@@ -308,7 +308,7 @@ export default function StudentAanHuisAmersfoortPage() {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
+                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold text-primary-600">
                     {step.step}
                   </div>
                   <h3 className="text-2xl font-semibold text-secondary-800 mb-3">
@@ -327,10 +327,10 @@ export default function StudentAanHuisAmersfoortPage() {
         <ServicesPreview />
 
         {/* Why Choose Student Section */}
-        <section className="section-spacing bg-neural-900/30">
+        <section className="py-16 lg:py-24 bg-secondary-50">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Waarom Kiezen Voor ICT Student aan Huis {city}?
               </h2>
               <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
@@ -339,9 +339,9 @@ export default function StudentAanHuisAmersfoortPage() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Euro className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Euro className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">
                   Betaalbare Tarieven {city}
@@ -353,9 +353,9 @@ export default function StudentAanHuisAmersfoortPage() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">
                   Lokale IT-Studenten
@@ -366,9 +366,9 @@ export default function StudentAanHuisAmersfoortPage() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">
                   Flexibele Tijden
@@ -379,9 +379,9 @@ export default function StudentAanHuisAmersfoortPage() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <MapPin className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">
                   Heel {city} en Omgeving
@@ -392,9 +392,9 @@ export default function StudentAanHuisAmersfoortPage() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">
                   Snelle Beschikbaarheid
@@ -405,9 +405,9 @@ export default function StudentAanHuisAmersfoortPage() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">
                   Moderne Kennis
@@ -422,10 +422,10 @@ export default function StudentAanHuisAmersfoortPage() {
         </section>
 
         {/* Services Detail Section */}
-        <section className="section-spacing">
+        <section className="py-16 lg:py-24">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Onze IT Diensten in {city}
               </h2>
               <p className="text-xl text-secondary-700">
@@ -439,7 +439,7 @@ export default function StudentAanHuisAmersfoortPage() {
                   Computer en Laptop Hulp {city}
                 </h3>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">
                     Laptop en Computer Reparatie
                   </h4>
@@ -452,7 +452,7 @@ export default function StudentAanHuisAmersfoortPage() {
                   </ul>
                 </div>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">
                     Software Installatie en Updates
                   </h4>
@@ -471,7 +471,7 @@ export default function StudentAanHuisAmersfoortPage() {
                   Internet en Netwerk {city}
                 </h3>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">
                     WiFi en Internet Problemen
                   </h4>
@@ -484,7 +484,7 @@ export default function StudentAanHuisAmersfoortPage() {
                   </ul>
                 </div>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">
                     Smartphone en Tablet Hulp
                   </h4>
@@ -502,7 +502,7 @@ export default function StudentAanHuisAmersfoortPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section-spacing bg-neural-900/50">
+        <section className="py-16 lg:py-24 bg-secondary-50">
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -522,7 +522,7 @@ export default function StudentAanHuisAmersfoortPage() {
           />
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Veelgestelde Vragen ICT Student aan Huis {city}
               </h2>
               <p className="text-xl text-secondary-700">
@@ -546,10 +546,10 @@ export default function StudentAanHuisAmersfoortPage() {
         </section>
 
         {/* Areas Section */}
-        <section className="section-spacing">
+        <section className="py-16 lg:py-24">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Werkgebied {city} en Omgeving
               </h2>
               <p className="text-xl text-secondary-700">
@@ -559,7 +559,7 @@ export default function StudentAanHuisAmersfoortPage() {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
               {areas.map((area, index) => (
-                <div key={index} className="glass-effect rounded-lg p-4 text-center">
+                <div key={index} className="bg-white rounded-lg border border-secondary-100 p-4 text-center">
                   <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
                   <span className="text-secondary-700 text-base font-medium">{area}</span>
                 </div>
@@ -577,9 +577,9 @@ export default function StudentAanHuisAmersfoortPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-primary-50 via-white to-accent-50">
           <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-6">
               Klaar voor Betaalbare Computerhulp in {city}?
             </h2>
             <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">

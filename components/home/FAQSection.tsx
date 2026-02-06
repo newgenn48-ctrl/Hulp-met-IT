@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: 'Wat kost een huisbezoek?',
-    answer: 'Wij rekenen €14,50 per kwartier voor standaard hulp, met een minimum van 45 minuten. Voorrijkosten zijn €10 eenmalig. Bij spoedhulp is het tarief €18,50 per kwartier.'
+    answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. Bij spoedhulp is het tarief €18,50 per kwartier.'
   },
   {
     question: 'Moet ik vooraf betalen?',

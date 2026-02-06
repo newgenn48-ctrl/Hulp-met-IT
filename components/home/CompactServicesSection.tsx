@@ -1,44 +1,32 @@
 'use client'
 
-import { Monitor, Printer, Wifi, Smartphone, Mail, GraduationCap, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import { Monitor, Printer, Wifi, Smartphone, Mail, ChevronRight } from 'lucide-react'
 import services from '@/lib/data/services.json'
 
-const iconMap = {
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Monitor,
   Printer,
   Wifi,
   Smartphone,
   Mail,
-  GraduationCap
 }
 
-interface ServicesGridProps {
-  title?: string
-  showAll?: boolean
-  maxItems?: number
-}
-
-export function ServicesGrid({
-  title = "Onze diensten",
-  showAll = false,
-  maxItems = 6
-}: ServicesGridProps) {
-  const displayServices = showAll ? services : services.slice(0, maxItems)
+export function CompactServicesSection() {
+  const displayServices = services.slice(0, 6)
 
   return (
     <section className="py-16 lg:py-24 bg-secondary-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <div className="max-w-2xl mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900">
-            {title}
+            Onze diensten
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-3">
           {displayServices.map((service) => {
-            const IconComponent = iconMap[service.icon as keyof typeof iconMap] || Monitor
+            const IconComponent = iconMap[service.icon] || Monitor
             return (
               <Link
                 key={service.slug}
@@ -62,16 +50,14 @@ export function ServicesGrid({
           })}
         </div>
 
-        {!showAll && (
-          <div className="mt-6">
-            <Link
-              href="/diensten"
-              className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
-            >
-              Alle diensten bekijken &rarr;
-            </Link>
-          </div>
-        )}
+        <div className="mt-6">
+          <Link
+            href="/diensten"
+            className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+          >
+            Alle diensten bekijken &rarr;
+          </Link>
+        </div>
       </div>
     </section>
   )

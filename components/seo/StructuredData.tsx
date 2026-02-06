@@ -32,18 +32,14 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
           "itemOffered": {
             "@type": "Service",
             "name": "Standaard Computerhulp aan huis",
-            "description": "Professionele computerhulp aan huis - €10 voorrijkosten + €14,50 per kwartier daarna",
+            "description": "Professionele computerhulp aan huis - €14,50 per kwartier + €10 voorrijkosten",
             "serviceType": "ComputerRepair"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "53.50",
+            "price": "14.50",
             "priceCurrency": "EUR",
-            "referenceQuantity": {
-              "@type": "QuantitativeValue",
-              "value": "3",
-              "unitText": "kwartier"
-            }
+            "unitText": "kwartier"
           }
         },
         {
@@ -51,18 +47,14 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
           "itemOffered": {
             "@type": "Service",
             "name": "Spoedhulp Computerhulp",
-            "description": "Spoedservice binnen 24 uur - €10 voorrijkosten + €18,50 per kwartier daarna",
+            "description": "Spoedservice binnen 24 uur - €18,50 per kwartier + €10 voorrijkosten",
             "serviceType": "ComputerRepair"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "65.50",
+            "price": "18.50",
             "priceCurrency": "EUR",
-            "referenceQuantity": {
-              "@type": "QuantitativeValue",
-              "value": "3",
-              "unitText": "kwartier"
-            }
+            "unitText": "kwartier"
           }
         },
         {
@@ -70,18 +62,14 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
           "itemOffered": {
             "@type": "Service",
             "name": "WiFi en internet problemen oplossen",
-            "description": "WiFi en internetproblemen snel opgelost - vanaf €53,50",
+            "description": "WiFi en internetproblemen snel opgelost - €14,50 per kwartier",
             "serviceType": "NetworkSupport"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "53.50",
+            "price": "14.50",
             "priceCurrency": "EUR",
-            "referenceQuantity": {
-              "@type": "QuantitativeValue",
-              "value": "3",
-              "unitText": "kwartier"
-            }
+            "unitText": "kwartier"
           }
         }
       ]

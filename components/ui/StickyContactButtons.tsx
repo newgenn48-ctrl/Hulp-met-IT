@@ -24,15 +24,12 @@ export function StickyContactButtons() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY
-      const shouldShow = scrollPosition > 300 // Show after scrolling 300px
+      const shouldShow = scrollPosition > 300
       setIsScrolled(shouldShow)
 
-      // Smart mobile button visibility (similar to header logic)
       if (scrollPosition < lastScrollY || scrollPosition < 200) {
-        // Show when scrolling up or near top
         setShowMobileButtons(true)
       } else if (scrollPosition > lastScrollY && scrollPosition > 200) {
-        // Hide when scrolling down and past 200px for more content visibility
         setShowMobileButtons(false)
       }
 
@@ -40,7 +37,6 @@ export function StickyContactButtons() {
     }
 
     if (isMounted) {
-      // Throttle scroll events for performance
       let ticking = false
       const throttledScroll = () => {
         if (!ticking) {
@@ -52,9 +48,7 @@ export function StickyContactButtons() {
         }
       }
 
-      // Add scroll listener
       window.addEventListener('scroll', throttledScroll)
-      // Check initial scroll position
       handleScroll()
 
       return () => window.removeEventListener('scroll', throttledScroll)
@@ -69,7 +63,6 @@ export function StickyContactButtons() {
     }
   }, [shouldHide, isMounted, isScrolled, showMobileButtons])
 
-  // Prevent hydration mismatch by not rendering until mounted
   if (!isMounted) return null
 
   return (
@@ -81,15 +74,15 @@ export function StickyContactButtons() {
           : 'opacity-0 translate-y-8 pointer-events-none'
       }`}>
         <div className="flex flex-col items-end space-y-4">
-          {/* Appointment button - PRIMARY ACTION */}
+          {/* Appointment button - PRIMARY ACTION (Amber) */}
           <Link
             href="/afspraak"
-            className="group relative bg-primary-500 hover:bg-primary-600 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+            className="group relative bg-accent-500 hover:bg-accent-600 text-white p-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
             aria-label="Maak een afspraak"
             style={{ minHeight: '60px', minWidth: '60px' }}
           >
             <Calendar className="w-7 h-7" />
-            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-primary-600 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-accent-600 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
               Afspraak maken
             </div>
           </Link>
@@ -102,7 +95,7 @@ export function StickyContactButtons() {
             style={{ minHeight: '56px', minWidth: '56px' }}
           >
             <Phone className="w-6 h-6" />
-            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-primary-600 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
+            <div className="absolute right-full mr-4 top-1/2 transform -translate-y-1/2 bg-primary-700 text-white px-4 py-3 rounded-lg text-base font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
               Bel ons direct
             </div>
           </a>
@@ -133,7 +126,7 @@ export function StickyContactButtons() {
         <div className="flex flex-col space-y-3">
           <Link
             href="/afspraak"
-            className="bg-primary-500 hover:bg-primary-600 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
+            className="bg-accent-500 hover:bg-accent-600 text-white p-4 rounded-l-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-2"
             aria-label="Afspraak maken"
             style={{ minHeight: '52px', minWidth: '52px' }}
           >
@@ -168,7 +161,7 @@ export function StickyContactButtons() {
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-8 pointer-events-none'
       }`}>
-        <div className="bg-white/95 backdrop-blur-sm border border-primary-200 rounded-2xl shadow-xl p-3">
+        <div className="bg-white/95 backdrop-blur-sm border border-secondary-200 rounded-2xl shadow-xl p-3">
           <div className="grid grid-cols-3 gap-3">
             <a
               href="https://wa.me/31642827860?text=Hallo%2C%20ik%20heb%20hulp%20nodig%20met%20mijn%20computer"
@@ -184,7 +177,7 @@ export function StickyContactButtons() {
 
             <Link
               href="/afspraak"
-              className="flex flex-col items-center justify-center bg-primary-500 hover:bg-primary-600 text-white p-3 rounded-xl shadow-md transition-all duration-200 active:scale-95"
+              className="flex flex-col items-center justify-center bg-accent-500 hover:bg-accent-600 text-white p-3 rounded-xl shadow-md transition-all duration-200 active:scale-95"
               aria-label="Afspraak maken"
               style={{ minHeight: '60px' }}
             >
@@ -213,7 +206,7 @@ export function StickyContactButtons() {
       }`}>
         <a
           href="tel:+31642827860"
-          className="flex items-center justify-center bg-primary-500 hover:bg-primary-600 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
+          className="flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white w-14 h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 active:scale-95"
           aria-label="Bel nu"
         >
           <Phone className="w-6 h-6" />

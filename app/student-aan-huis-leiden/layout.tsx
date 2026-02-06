@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ICT Student aan huis Leiden | Hulp Met IT',
-  description: 'ICT Student aan huis in Leiden voor computerhulp. Betaalbare IT-studenten van Universiteit Leiden en Hogeschool Leiden komen naar je toe. Vanaf €53,50. Snel en vakkundig!',
+  description: 'ICT Student aan huis in Leiden voor computerhulp. Betaalbare IT-studenten van Universiteit Leiden en Hogeschool Leiden komen naar je toe. €14,50 per kwartier. Snel en vakkundig!',
   keywords: [
     'student aan huis leiden',
     'student computerhulp leiden',

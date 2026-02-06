@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "ICT Student aan huis 's-Hertogenbosch (Den Bosch) | Hulp Met IT",
-  description: "ICT Student aan huis in 's-Hertogenbosch voor computerhulp. Betaalbare IT-studenten van Avans en HAS Hogeschool komen naar je toe in Den Bosch. Vanaf €53,50. Snel en vakkundig!",
+  description: "ICT Student aan huis in 's-Hertogenbosch voor computerhulp. Betaalbare IT-studenten van Avans en HAS Hogeschool komen naar je toe in Den Bosch. €14,50 per kwartier. Snel en vakkundig!",
   keywords: [
     'student aan huis den bosch',
     "student aan huis 's-hertogenbosch",

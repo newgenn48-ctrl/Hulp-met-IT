@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ICT Student aan huis Nederland | Hulp Met IT',
-  description: 'ICT Student aan huis in heel Nederland voor computerhulp. Betaalbare IT-studenten komen naar je toe. Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Beschikbaar in alle steden!',
+  description: 'ICT Student aan huis in heel Nederland voor computerhulp. Betaalbare IT-studenten komen naar je toe. €14,50 per kwartier + €10 voorrijkosten. Beschikbaar in alle steden!',
   keywords: [
     'ICT student aan huis',
     'student computerhulp',

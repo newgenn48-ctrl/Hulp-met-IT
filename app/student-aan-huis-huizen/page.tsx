@@ -55,7 +55,7 @@ const cityAreas = [
 const faqData = [
   {
     question: `Wat kost computerhulp aan huis in ${CITY}?`,
-    answer: `Onze tarieven in ${CITY} beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50). Dit is veel voordeliger dan traditionele computerhulp. Je betaalt alleen voor de daadwerkelijk bestede tijd.`
+    answer: `Onze tarieven in ${CITY} beginnen €14,50 per kwartier (€10 voorrijkosten + 3 x €14,50). Dit is veel voordeliger dan traditionele computerhulp. Je betaalt alleen voor de daadwerkelijk bestede tijd.`
   },
   {
     question: `Zijn jullie studenten wel gekwalificeerd voor hulp in ${CITY}?`,
@@ -82,7 +82,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: {
   onToggle: () => void
 }) {
   return (
-    <div className="glass-effect rounded-lg overflow-hidden">
+    <div className="bg-white rounded-lg border border-secondary-100 overflow-hidden">
       <button
         type="button"
         onClick={onToggle}
@@ -164,13 +164,13 @@ export default function StudentAanHuisHuizenLanding() {
               { "@type": "City", "name": "Hilversum" }
             ],
             "serviceType": "Computerhulp aan huis",
-            "priceRange": "€53,50 - €65,50",
+            "priceRange": "€14,50 per kwartier - €65,50",
             "openingHours": "Mo-Su 08:00-22:00"
           })
         }}
       />
       {/* Breadcrumbs Navigation */}
-      <nav aria-label="Breadcrumb" className="bg-white/50 backdrop-blur-sm border-b border-gray-200">
+      <nav aria-label="Breadcrumb" className="bg-secondary-50 border-b border-secondary-200">
         <div className="max-w-7xl mx-auto container-padding py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
@@ -218,7 +218,7 @@ export default function StudentAanHuisHuizenLanding() {
                   key={index}
                   className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
                 >
-                  <IconComponent className="w-6 h-6 text-white" />
+                  <IconComponent className="w-5 h-5 text-primary-600" />
                   <span className="drop-shadow-sm">{benefit.text}</span>
                 </div>
               )
@@ -250,10 +250,10 @@ export default function StudentAanHuisHuizenLanding() {
         <PricingSection />
 
         {/* Testimonials Section */}        {/* Process Section */}
-        <section className="section-spacing bg-white/5">
+        <section className="py-16 lg:py-24 bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Hoe Werkt Computerhulp aan Huis in {CITY}?
               </h2>
               <p className="text-xl text-secondary-700">
@@ -264,7 +264,7 @@ export default function StudentAanHuisHuizenLanding() {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
+                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold text-primary-600">
                     {step.step}
                   </div>
                   <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
@@ -279,10 +279,10 @@ export default function StudentAanHuisHuizenLanding() {
         <ServicesPreview />
 
         {/* Why Choose Student Section */}
-        <section className="section-spacing bg-neural-900/30">
+        <section className="py-16 lg:py-24 bg-secondary-50">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Waarom Kiezen voor Computerhulp in {CITY}?
               </h2>
               <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
@@ -291,19 +291,19 @@ export default function StudentAanHuisHuizenLanding() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Euro className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Euro className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €53,50 in {CITY} - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                  €14,50 per kwartier in {CITY} - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Studenten van {LOCAL_INSTITUTION}</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -311,9 +311,9 @@ export default function StudentAanHuisHuizenLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Flexibele Tijden</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -321,9 +321,9 @@ export default function StudentAanHuisHuizenLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <MapPin className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel het Gooi</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -331,9 +331,9 @@ export default function StudentAanHuisHuizenLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Beschikbaarheid</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -341,9 +341,9 @@ export default function StudentAanHuisHuizenLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Actuele Kennis</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -355,10 +355,10 @@ export default function StudentAanHuisHuizenLanding() {
         </section>
 
         {/* Services Detail Section */}
-        <section className="section-spacing">
+        <section className="py-16 lg:py-24">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Onze IT Diensten in {CITY}
               </h2>
               <p className="text-xl text-secondary-700">
@@ -370,7 +370,7 @@ export default function StudentAanHuisHuizenLanding() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Computer & Laptop Hulp {CITY}</h3>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- Computer start niet op - diagnose en reparatie</li>
@@ -381,7 +381,7 @@ export default function StudentAanHuisHuizenLanding() {
                   </ul>
                 </div>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- Windows installatie en updates</li>
@@ -396,7 +396,7 @@ export default function StudentAanHuisHuizenLanding() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Internet & Netwerk {CITY}</h3>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- WiFi verbinding problemen oplossen</li>
@@ -407,7 +407,7 @@ export default function StudentAanHuisHuizenLanding() {
                   </ul>
                 </div>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Tablet Hulp</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- iPhone en Android telefoon instellen</li>
@@ -423,7 +423,7 @@ export default function StudentAanHuisHuizenLanding() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section-spacing bg-neural-900/50">
+        <section className="py-16 lg:py-24 bg-secondary-50">
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -443,7 +443,7 @@ export default function StudentAanHuisHuizenLanding() {
           />
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Veelgestelde Vragen over Computerhulp in {CITY}
               </h2>
               <p className="text-xl text-secondary-700">
@@ -466,10 +466,10 @@ export default function StudentAanHuisHuizenLanding() {
         </section>
 
         {/* Areas Section */}
-        <section className="section-spacing">
+        <section className="py-16 lg:py-24">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Werkgebied {CITY} & het Gooi
               </h2>
               <p className="text-xl text-secondary-700">
@@ -479,7 +479,7 @@ export default function StudentAanHuisHuizenLanding() {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
               {cityAreas.map((area, index) => (
-                <div key={index} className="glass-effect rounded-lg p-4 text-center">
+                <div key={index} className="bg-white rounded-lg border border-secondary-100 p-4 text-center">
                   <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
                   <span className="text-secondary-700 text-base font-medium">{area}</span>
                 </div>
@@ -495,9 +495,9 @@ export default function StudentAanHuisHuizenLanding() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-primary-50 via-white to-accent-50">
           <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-6">
               Klaar voor Betaalbare Computerhulp in {CITY}?
             </h2>
             <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">

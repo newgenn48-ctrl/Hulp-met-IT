@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 const CITY = 'Leidschendam-Voorburg'
 
 export const metadata: Metadata = {
-  title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
-  description: `ICT Student aan huis in ${CITY} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Leidschendam Centrum, Voorburg, Stompwijk en omgeving. Vanaf €53,50. Snel, vakkundig en vriendelijk!`,
+  title: `ICT Student aan huis ${CITY} | Computerhulp €14,50 per kwartier`,
+  description: `ICT Student aan huis in ${CITY} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Leidschendam Centrum, Voorburg, Stompwijk en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!`,
   keywords: [
     `student aan huis leidschendam-voorburg`,
     `computerhulp leidschendam-voorburg`,
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     'haagse hogeschool it student'
   ],
   openGraph: {
-    title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
-    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis in Leidschendam-Voorburg en omgeving. Vanaf €53,50.`,
+    title: `ICT Student aan huis ${CITY} | Computerhulp €14,50 per kwartier`,
+    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis in Leidschendam-Voorburg en omgeving. €14,50 per kwartier.`,
     url: `https://hulpmetit.nl/student-aan-huis-leidschendam-voorburg`,
     siteName: 'Hulp met IT',
     locale: 'nl_NL',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `ICT Student aan huis ${CITY} | Computerhulp vanaf €53,50`,
+    title: `ICT Student aan huis ${CITY} | Computerhulp €14,50 per kwartier`,
     description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis.`,
     images: ['/og-image.webp']
   },

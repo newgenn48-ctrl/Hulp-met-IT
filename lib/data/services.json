@@ -9,7 +9,7 @@
     "heroText": "Problemen met uw computer of laptop? Wij komen bij u thuis en lossen het op. Ook voor installatie van een nieuwe PC of laptop.",
     "longDescription": "Heeft uw computer of laptop problemen? Loopt hij traag, starten programma's niet meer op, of heeft u een nieuwe PC die geïnstalleerd moet worden? Onze IT-specialisten komen bij u thuis. Wij helpen met alle merken laptops en computers, inclusief Windows 10 en 11. U krijgt duidelijke uitleg en betaalt pas achteraf.",
     "metaTitle": "Computerhulp aan Huis | Snel & Vakkundig | Hulp met IT",
-    "metaDescription": "Computerproblemen? Onze IT-specialist komt bij u thuis. ✓ Trage computer versnellen ✓ Windows problemen oplossen ✓ Vanaf €53,50 ✓ Binnen 48 uur geholpen",
+    "metaDescription": "Computerproblemen? Onze IT-specialist komt bij u thuis. ✓ Trage computer versnellen ✓ Windows problemen oplossen ✓ €14,50 per kwartier ✓ Binnen 48 uur geholpen",
     "duration": "45-90 minuten",
     "features": [
       "Nieuwe laptop of PC installeren",
@@ -59,7 +59,7 @@
       },
       {
         "question": "Wat kost computerhulp aan huis?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard bezoek van 45 minuten kost dus €53,50. U betaalt achteraf."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Kunnen jullie alle merken computers helpen?",
@@ -95,7 +95,7 @@
     "heroText": "Printer doet het niet meer? Of een nieuwe printer aansluiten? Wij komen bij u thuis en zorgen dat alles weer werkt.",
     "longDescription": "Printer problemen kunnen heel vervelend zijn. Of het nu gaat om een nieuwe printer aansluiten, draadloos printen instellen, of een probleem oplossen - onze vriendelijke specialisten helpen u persoonlijk en hebben ervaring met alle printer merken zoals HP, Canon, Epson en Brother.",
     "metaTitle": "Printerhulp aan Huis | Installatie & Problemen | Hulp met IT",
-    "metaDescription": "Printer doet het niet? Onze specialist komt bij u thuis. ✓ Alle merken (HP, Canon, Epson, Brother) ✓ Draadloos printen ✓ Vanaf €53,50 ✓ Snel geholpen",
+    "metaDescription": "Printer doet het niet? Onze specialist komt bij u thuis. ✓ Alle merken (HP, Canon, Epson, Brother) ✓ Draadloos printen ✓ €14,50 per kwartier ✓ Snel geholpen",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe printer installatie en setup",
@@ -145,7 +145,7 @@
       },
       {
         "question": "Wat kost het om een printer te laten installeren?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een standaard printer installatie kost meestal €53,50 tot €68."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Kunnen jullie ook draadloos printen instellen?",
@@ -179,7 +179,7 @@
     "heroText": "Problemen met uw e-mail? Wij komen bij u thuis en zorgen dat u weer kunt mailen. Ook voor het instellen van e-mail op nieuwe apparaten.",
     "longDescription": "E-mail problemen kunnen heel vervelend zijn, vooral als u belangrijke berichten mist. Wij helpen u met het instellen van e-mail op alle apparaten, het oplossen van problemen met versturen en ontvangen, en zorgen dat uw e-mail weer goed werkt.",
     "metaTitle": "E-mail Problemen Oplossen aan Huis | Hulp met IT",
-    "metaDescription": "E-mail doet het niet? Onze specialist komt bij u thuis. ✓ Outlook, Gmail, Hotmail ✓ E-mail op alle apparaten ✓ Vanaf €53,50 ✓ Duidelijke uitleg",
+    "metaDescription": "E-mail doet het niet? Onze specialist komt bij u thuis. ✓ Outlook, Gmail, Hotmail ✓ E-mail op alle apparaten ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe e-mail account aanmaken",
@@ -229,7 +229,7 @@
       },
       {
         "question": "Wat kost het om e-mail in te stellen?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Het instellen van e-mail op meerdere apparaten kost meestal €53,50 tot €68."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Kunnen jullie e-mail op mijn telefoon instellen?",
@@ -264,7 +264,7 @@
     "heroText": "Slecht WiFi signaal of traag internet? Wij komen bij u thuis en zorgen voor een stabiele, snelle verbinding in elke kamer.",
     "longDescription": "Een goede internetverbinding is belangrijk. Wij helpen u met alle internet en WiFi problemen, van het aansluiten van een nieuwe router tot het verbeteren van uw draadloze netwerk voor de beste snelheid door heel uw huis.",
     "metaTitle": "Internet & WiFi Hulp aan Huis | Router & Netwerk | Hulp met IT",
-    "metaDescription": "Internet problemen of slecht WiFi? Onze specialist komt bij u thuis. ✓ Router installatie ✓ WiFi verbeteren ✓ Vanaf €53,50 ✓ Snel geholpen",
+    "metaDescription": "Internet problemen of slecht WiFi? Onze specialist komt bij u thuis. ✓ Router installatie ✓ WiFi verbeteren ✓ €14,50 per kwartier ✓ Snel geholpen",
     "duration": "1-2 uur gemiddeld",
     "features": [
       "Nieuwe router installatie en setup",
@@ -314,7 +314,7 @@
       },
       {
         "question": "Wat kost het om een router te laten installeren?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een router installatie kost meestal €53,50 tot €82, afhankelijk van de complexiteit."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Mijn internet is erg traag, kunnen jullie dat oplossen?",
@@ -349,7 +349,7 @@
     "heroText": "Hulp nodig met uw telefoon of tablet? Wij komen bij u thuis voor installatie, uitleg en al uw vragen over apps en functies.",
     "longDescription": "Tablets en smartphones kunnen lastig zijn. Wij helpen u graag met het instellen van apps, e-mail, WhatsApp, foto's overzetten en alles wat u nodig heeft om uw telefoon of tablet goed te kunnen gebruiken.",
     "metaTitle": "Tablet & Smartphone Hulp aan Huis | Apps & Uitleg | Hulp met IT",
-    "metaDescription": "Hulp met uw tablet of smartphone? Onze specialist komt bij u thuis. ✓ WhatsApp instellen ✓ Apps uitleggen ✓ Vanaf €53,50 ✓ Geduldig en duidelijk",
+    "metaDescription": "Hulp met uw tablet of smartphone? Onze specialist komt bij u thuis. ✓ WhatsApp instellen ✓ Apps uitleggen ✓ €14,50 per kwartier ✓ Geduldig en duidelijk",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe telefoon/tablet gebruiksklaar maken",
@@ -399,7 +399,7 @@
       },
       {
         "question": "Wat kost hulp met mijn telefoon of tablet?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een bezoek van 45 minuten kost €53,50."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Kunnen jullie WhatsApp voor mij instellen?",
@@ -434,7 +434,7 @@
     "heroText": "Wilt u beter leren werken met uw computer, tablet of telefoon? Wij geven persoonlijke les bij u thuis, op uw eigen tempo.",
     "longDescription": "Wilt u beter leren werken met uw computer, tablet of smartphone? Onze geduldige specialisten geven persoonlijke uitleg op uw eigen tempo. We leggen alles stap voor stap uit en zorgen dat u zich zeker voelt.",
     "metaTitle": "Computerles aan Huis | Persoonlijke Uitleg | Hulp met IT",
-    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Op uw eigen tempo ✓ Geduldig en duidelijk ✓ Vanaf €53,50 ✓ Persoonlijke aandacht",
+    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Op uw eigen tempo ✓ Geduldig en duidelijk ✓ €14,50 per kwartier ✓ Persoonlijke aandacht",
     "duration": "1-2 uur per les",
     "features": [
       "Nieuwe apparaat leren gebruiken",
@@ -484,7 +484,7 @@
       },
       {
         "question": "Wat kost een les aan huis?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een les van 1 uur kost €68, een uitgebreide les van 1,5 uur kost €82,50."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Ik ben een absolute beginner, is dat een probleem?",
@@ -519,7 +519,7 @@
     "heroText": "Slimme speaker, thermostaat of camera gekocht? Wij komen bij u thuis en zorgen dat alles werkt en met elkaar verbonden is.",
     "longDescription": "Smart home apparaten kunnen het leven makkelijker maken, maar het instellen is vaak lastig. Wij helpen u met alle slimme apparaten: van Google Home en Alexa tot slimme thermostaten, camera's en verlichting.",
     "metaTitle": "Smart Home Hulp aan Huis | Installatie & Uitleg | Hulp met IT",
-    "metaDescription": "Hulp met smart home apparaten? Onze specialist komt bij u thuis. ✓ Google Home & Alexa ✓ Slimme thermostaat ✓ Vanaf €53,50 ✓ Duidelijke uitleg",
+    "metaDescription": "Hulp met smart home apparaten? Onze specialist komt bij u thuis. ✓ Google Home & Alexa ✓ Slimme thermostaat ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
     "duration": "45 min - 1,5 uur",
     "features": [
       "Google Home en Alexa instellen",
@@ -569,7 +569,7 @@
       },
       {
         "question": "Wat kost smart home hulp aan huis?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een gemiddelde installatie kost €53,50 tot €82,50."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Kunnen jullie mijn apparaten met elkaar laten samenwerken?",
@@ -604,7 +604,7 @@
     "heroText": "Wilt u beter leren werken met de computer? Wij geven persoonlijke les bij u thuis, aangepast aan uw niveau en leerdoelen.",
     "longDescription": "Computerles aan huis is de beste manier om te leren. U werkt op uw eigen computer, in uw eigen tempo, met persoonlijke aandacht. Of u nu een absolute beginner bent of specifieke vaardigheden wilt leren.",
     "metaTitle": "Computerles aan Huis | Persoonlijk & Op Uw Tempo | Hulp met IT",
-    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Persoonlijke aandacht ✓ Op uw eigen tempo ✓ Vanaf €53,50 ✓ Alle onderwerpen",
+    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Persoonlijke aandacht ✓ Op uw eigen tempo ✓ €14,50 per kwartier ✓ Alle onderwerpen",
     "duration": "1-2 uur per les",
     "features": [
       "Basis computervaardigheden",
@@ -654,7 +654,7 @@
       },
       {
         "question": "Wat kost computerles aan huis?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een les van 1 uur kost €68, anderhalf uur kost €82,50."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Hoeveel lessen heb ik nodig?",
@@ -689,7 +689,7 @@
     "heroText": "Nieuwe Smart TV gekocht of hulp nodig met Netflix en andere apps? Wij komen bij u thuis en zorgen dat u direct kunt kijken.",
     "longDescription": "Een Smart TV biedt eindeloze mogelijkheden, maar het instellen kan lastig zijn. Wij helpen u met het verbinden met internet, apps installeren en uitleggen hoe alles werkt.",
     "metaTitle": "Smart TV Hulp aan Huis | Netflix & Apps Instellen | Hulp met IT",
-    "metaDescription": "Hulp met uw Smart TV? Onze specialist komt bij u thuis. ✓ Netflix, YouTube, NPO ✓ WiFi verbinden ✓ Vanaf €53,50 ✓ Duidelijke uitleg",
+    "metaDescription": "Hulp met uw Smart TV? Onze specialist komt bij u thuis. ✓ Netflix, YouTube, NPO ✓ WiFi verbinden ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
     "duration": "30 min - 1 uur",
     "features": [
       "Smart TV met WiFi verbinden",
@@ -739,7 +739,7 @@
       },
       {
         "question": "Wat kost het om mijn Smart TV in te stellen?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. De meeste TV-installaties zijn binnen 45 minuten klaar."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Kunnen jullie Netflix voor mij instellen?",
@@ -773,7 +773,7 @@
     "heroText": "Computer besmet met een virus of malware? Wij komen bij u thuis, verwijderen alle schadelijke software en beveiligen uw computer.",
     "longDescription": "Virussen en malware kunnen uw computer traag maken, gegevens stelen of zelfs onbruikbaar maken. Onze specialisten verwijderen alle schadelijke software en zorgen dat uw computer weer veilig is.",
     "metaTitle": "Virusverwijdering aan Huis | Computer Opschonen | Hulp met IT",
-    "metaDescription": "Virus op uw computer? Onze specialist komt bij u thuis. ✓ Malware verwijderen ✓ Computer beveiligen ✓ Vanaf €53,50 ✓ Snel geholpen",
+    "metaDescription": "Virus op uw computer? Onze specialist komt bij u thuis. ✓ Malware verwijderen ✓ Computer beveiligen ✓ €14,50 per kwartier ✓ Snel geholpen",
     "duration": "1-2 uur",
     "features": [
       "Virussen en malware verwijderen",
@@ -823,7 +823,7 @@
       },
       {
         "question": "Wat kost virusverwijdering?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. Een grondige virusverwijdering duurt meestal 1 tot 2 uur."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Raken mijn bestanden beschadigd door het virus?",
@@ -857,7 +857,7 @@
     "heroText": "Belangrijke bestanden kwijt of een backup nodig? Wij komen bij u thuis en zorgen dat uw foto's en documenten veilig zijn.",
     "longDescription": "Uw foto's, documenten en herinneringen zijn onvervangbaar. Wij helpen u met het maken van backups, het herstellen van verloren bestanden en het veilig bewaren van uw data.",
     "metaTitle": "Data Backup & Herstel aan Huis | Bestanden Veilig | Hulp met IT",
-    "metaDescription": "Bestanden kwijt of backup nodig? Onze specialist komt bij u thuis. ✓ Data herstellen ✓ Backup instellen ✓ Vanaf €53,50 ✓ Uw herinneringen veilig",
+    "metaDescription": "Bestanden kwijt of backup nodig? Onze specialist komt bij u thuis. ✓ Data herstellen ✓ Backup instellen ✓ €14,50 per kwartier ✓ Uw herinneringen veilig",
     "duration": "1-2 uur",
     "features": [
       "Automatische backup instellen",
@@ -907,7 +907,7 @@
       },
       {
         "question": "Wat kost data backup of herstel?",
-        "answer": "Wij rekenen €14,50 per kwartier met een minimum van 45 minuten (€43,50) plus €10 voorrijkosten. De duur hangt af van de hoeveelheid data en complexiteit."
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
         "question": "Wat is de beste manier om een backup te maken?",

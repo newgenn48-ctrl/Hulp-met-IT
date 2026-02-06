@@ -52,7 +52,7 @@ const bredaAreas = [
 const faqData = [
   {
     question: "Wat kost student aan huis hulp in Breda?",
-    answer: "Onze tarieven beginnen vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Breda. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen minimumtarief."
+    answer: "Onze tarieven beginnen €14,50 per kwartier (€10 voorrijkosten + 3 x €14,50) in Breda. Dit is veel voordeliger dan traditionele computerhulp services. Je betaalt alleen voor de daadwerkelijk bestede tijd, geen minimumtarief."
   },
   {
     question: "Zijn jullie studenten wel gekwalificeerd in Breda?",
@@ -79,7 +79,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: {
   onToggle: () => void
 }) {
   return (
-    <div className="glass-effect rounded-lg overflow-hidden">
+    <div className="bg-white rounded-lg border border-secondary-100 overflow-hidden">
       <button
         type="button"
         onClick={onToggle}
@@ -160,7 +160,7 @@ export default function StudentAanHuisBredaLanding() {
               { "@type": "Place", "name": "Etten-Leur" }
             ],
             "serviceType": "Student aan huis Breda",
-            "priceRange": "€53,50 - €65,50",
+            "priceRange": "€14,50 per kwartier - €65,50",
             "openingHours": "Mo-Su 08:00-22:00",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -170,7 +170,7 @@ export default function StudentAanHuisBredaLanding() {
             "offers": {
               "@type": "Offer",
               "description": "Computerhulp door IT-studenten in Breda",
-              "price": "53.50",
+              "price": "14.50",
               "priceCurrency": "EUR",
               "availability": "https://schema.org/InStock"
             }
@@ -178,7 +178,7 @@ export default function StudentAanHuisBredaLanding() {
         }}
       />
       {/* Breadcrumbs Navigation */}
-      <nav aria-label="Breadcrumb" className="bg-white/50 backdrop-blur-sm border-b border-gray-200">
+      <nav aria-label="Breadcrumb" className="bg-secondary-50 border-b border-secondary-200">
         <div className="max-w-7xl mx-auto container-padding py-3">
           <ol className="flex items-center space-x-2 text-sm">
             <li>
@@ -226,7 +226,7 @@ export default function StudentAanHuisBredaLanding() {
                   key={index}
                   className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
                 >
-                  <IconComponent className="w-6 h-6 text-white" />
+                  <IconComponent className="w-5 h-5 text-primary-600" />
                   <span className="drop-shadow-sm">{benefit.text}</span>
                 </div>
               )
@@ -258,10 +258,10 @@ export default function StudentAanHuisBredaLanding() {
         <PricingSection />
 
         {/* Testimonials Section */}        {/* Process Section */}
-        <section className="section-spacing bg-white/5">
+        <section className="py-16 lg:py-24 bg-white/5">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Hoe Werkt Student aan Huis in Breda?
               </h2>
               <p className="text-xl text-secondary-700">
@@ -272,7 +272,7 @@ export default function StudentAanHuisBredaLanding() {
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {processSteps.map((step, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold text-white">
+                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold text-primary-600">
                     {step.step}
                   </div>
                   <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
@@ -287,10 +287,10 @@ export default function StudentAanHuisBredaLanding() {
         <ServicesPreview />
 
         {/* Why Choose Student Section */}
-        <section className="section-spacing bg-neural-900/30">
+        <section className="py-16 lg:py-24 bg-secondary-50">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Waarom Kiezen Voor Student aan Huis Breda?
               </h2>
               <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
@@ -299,19 +299,19 @@ export default function StudentAanHuisBredaLanding() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Euro className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Euro className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven Breda</h3>
                 <p className="text-secondary-700 leading-relaxed">
-                  Vanaf €53,50 (€10 voorrijkosten + 3 x €14,50) in Breda - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
+                  €14,50 per kwartier + €10 voorrijkosten in Breda - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Avans & NHTV Studenten</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -319,9 +319,9 @@ export default function StudentAanHuisBredaLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Zap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Flexibele Tijden</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -329,9 +329,9 @@ export default function StudentAanHuisBredaLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <MapPin className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <MapPin className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel Breda</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -339,9 +339,9 @@ export default function StudentAanHuisBredaLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <Calendar className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Beschikbaarheid</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -349,9 +349,9 @@ export default function StudentAanHuisBredaLanding() {
                 </p>
               </div>
 
-              <div className="glass-effect rounded-lg p-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-primary-500 to-accent-500 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-6 h-6 text-white" />
+              <div className="bg-white rounded-lg border border-secondary-100 p-6">
+                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
+                  <GraduationCap className="w-5 h-5 text-primary-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-secondary-800 mb-3">Moderne Kennis</h3>
                 <p className="text-secondary-700 leading-relaxed">
@@ -363,10 +363,10 @@ export default function StudentAanHuisBredaLanding() {
         </section>
 
         {/* Services Detail Section */}
-        <section className="section-spacing">
+        <section className="py-16 lg:py-24">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Onze Student IT Diensten in Breda
               </h2>
               <p className="text-xl text-secondary-700">
@@ -378,7 +378,7 @@ export default function StudentAanHuisBredaLanding() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Computer & Laptop Hulp Breda</h3>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- Computer start niet op - diagnose en reparatie</li>
@@ -389,7 +389,7 @@ export default function StudentAanHuisBredaLanding() {
                   </ul>
                 </div>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- Windows installatie en updates</li>
@@ -404,7 +404,7 @@ export default function StudentAanHuisBredaLanding() {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Internet & Netwerk Breda</h3>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- WiFi verbinding problemen oplossen</li>
@@ -415,7 +415,7 @@ export default function StudentAanHuisBredaLanding() {
                   </ul>
                 </div>
 
-                <div className="glass-effect rounded-lg p-6">
+                <div className="bg-white rounded-lg border border-secondary-100 p-6">
                   <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Tablet Hulp</h4>
                   <ul className="text-secondary-700 space-y-2">
                     <li>- iPhone en Android telefoon instellen</li>
@@ -431,7 +431,7 @@ export default function StudentAanHuisBredaLanding() {
         </section>
 
         {/* FAQ Section */}
-        <section className="section-spacing bg-neural-900/50">
+        <section className="py-16 lg:py-24 bg-secondary-50">
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{
@@ -451,7 +451,7 @@ export default function StudentAanHuisBredaLanding() {
           />
           <div className="max-w-4xl mx-auto container-padding">
             <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Veelgestelde Vragen Student aan Huis Breda
               </h2>
               <p className="text-xl text-secondary-700">
@@ -474,10 +474,10 @@ export default function StudentAanHuisBredaLanding() {
         </section>
 
         {/* Breda Areas Section */}
-        <section className="section-spacing">
+        <section className="py-16 lg:py-24">
           <div className="max-w-6xl mx-auto container-padding">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-4">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
                 Werkgebied Breda & Omgeving
               </h2>
               <p className="text-xl text-secondary-700">
@@ -487,7 +487,7 @@ export default function StudentAanHuisBredaLanding() {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
               {bredaAreas.map((area, index) => (
-                <div key={index} className="glass-effect rounded-lg p-4 text-center">
+                <div key={index} className="bg-white rounded-lg border border-secondary-100 p-4 text-center">
                   <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
                   <span className="text-secondary-700 text-base font-medium">{area}</span>
                 </div>
@@ -507,9 +507,9 @@ export default function StudentAanHuisBredaLanding() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-spacing bg-gradient-to-br from-primary-50 via-white to-accent-50">
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-primary-50 via-white to-accent-50">
           <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold text-secondary-800 mb-6">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-6">
               Klaar voor Betaalbare Computerhulp in Breda?
             </h2>
             <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">

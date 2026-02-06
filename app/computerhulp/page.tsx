@@ -1,7 +1,23 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
-import { Phone, MessageCircle, ArrowRight, Zap, Shield, Clock, Monitor, Wifi, Mail, Printer, Smartphone, GraduationCap, Calendar } from 'lucide-react'
+import {
+  Phone,
+  ArrowRight,
+  ChevronDown,
+  Zap,
+  Shield,
+  Clock,
+  Monitor,
+  Wifi,
+  Mail,
+  Printer,
+  Smartphone,
+  GraduationCap,
+  ChevronRight,
+  Check
+} from 'lucide-react'
 
 const services = [
   {
@@ -42,264 +58,397 @@ const services = [
   },
 ]
 
+const faqData = [
+  {
+    question: 'Wat kost computerhulp aan huis?',
+    answer: 'Wij rekenen \u20ac14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn \u20ac10 eenmalig. U betaalt achteraf.'
+  },
+  {
+    question: 'Hoe snel kunnen jullie komen?',
+    answer: 'Vaak kunnen we nog dezelfde dag langskomen. Voor urgente problemen proberen we binnen enkele uren beschikbaar te zijn.'
+  },
+  {
+    question: 'Kunnen jullie alle merken computers helpen?',
+    answer: 'Ja, wij hebben ervaring met alle merken: HP, Dell, Lenovo, Asus, Acer, Apple en anderen. Ook helpen wij met alle Windows-versies.'
+  },
+  {
+    question: 'Wat als het probleem niet opgelost kan worden?',
+    answer: 'We zijn eerlijk over wat wel en niet mogelijk is. U betaalt alleen voor de tijd die besteed is aan diagnose en advies.'
+  },
+  {
+    question: "Komen jullie ook 's avonds en in weekenden?",
+    answer: "Ja, wij zijn flexibel. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+  },
+  {
+    question: 'Moet ik vooraf betalen?',
+    answer: 'Nee, u betaalt pas achteraf. Betalen kan via pin of tikkie.'
+  }
+]
+
 export default function ComputerhulpPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  }
+
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Computerhulp aan Huis',
+    alternateName: ['Computer reparatie aan huis', 'Laptop hulp thuis', 'IT specialist aan huis'],
+    description: 'Professionele computerhulp aan huis door ervaren IT-specialisten',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Hulp met IT',
+      telephone: '+31642827860',
+      url: 'https://hulpmetit.nl'
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Nederland'
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '14.50',
+      priceCurrency: 'EUR'
+    }
+  }
+
   return (
-    <div className="min-h-screen">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
+      />
 
-      {/* HERO */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }} />
-        </div>
+      <div className="min-h-screen">
 
-        <div className="relative max-w-6xl mx-auto px-4 pt-32 pb-16 md:pt-40 md:pb-24">
-          <div className="text-center">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-4 py-2 rounded-full text-sm font-medium mb-8">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              Beschikbaar voor afspraken
-            </div>
-
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-              Computerhulp
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                aan huis
-              </span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Professionele IT-hulp bij u thuis. Snel, vakkundig en tegen een eerlijke prijs.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Link
-                href="/afspraak"
-                className="group inline-flex items-center justify-center bg-white text-slate-900 text-lg font-semibold px-8 py-4 rounded-full hover:bg-slate-100 transition-all shadow-lg shadow-white/10"
-              >
-                <Calendar className="w-5 h-5 mr-3" />
-                Afspraak Maken
-                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Link>
-
-              <a
-                href="tel:+31642827860"
-                className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all shadow-lg shadow-emerald-500/20"
-              >
-                <Phone className="w-5 h-5 mr-3" />
-                Direct Bellen
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Waar kunnen we mee helpen?
-            </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Van kleine problemen tot complete installaties
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => {
-              const IconComponent = service.icon
-              return (
-                <Link
-                  key={index}
-                  href={service.href}
-                  className="group p-6 rounded-2xl border border-slate-200 hover:border-blue-200 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">{service.title}</h3>
-                  <p className="text-slate-600">{service.desc}</p>
-                  <span className="inline-flex items-center text-blue-600 text-sm font-medium mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                    Meer info <ArrowRight className="w-4 h-4 ml-1" />
-                  </span>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section className="py-20 px-4 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Hoe werkt het?
-            </h2>
-            <p className="text-lg text-slate-600">
-              In drie stappen naar een werkende computer
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative">
-              <div className="text-6xl font-bold text-slate-200 mb-4">01</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Neem contact op</h3>
-              <p className="text-slate-600">Bel of stuur een WhatsApp. Beschrijf kort uw probleem.</p>
-            </div>
-
-            <div className="relative">
-              <div className="text-6xl font-bold text-slate-200 mb-4">02</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Plan een afspraak</h3>
-              <p className="text-slate-600">Wij komen op een moment dat u uitkomt. Vaak al binnen 24-48 uur.</p>
-            </div>
-
-            <div className="relative">
-              <div className="text-6xl font-bold text-slate-200 mb-4">03</div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-2">Probleem opgelost</h3>
-              <p className="text-slate-600">Onze specialist lost het ter plaatse op. U betaalt alleen voor de tijd.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY US */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                Waarom klanten voor ons kiezen
-              </h2>
-              <p className="text-lg text-slate-600 mb-8">
-                Wij geloven in persoonlijke service, transparante prijzen en vakmanschap. Geen gedoe, gewoon goede hulp.
+        {/* HERO */}
+        <section className="bg-white pt-24 sm:pt-28 md:pt-32 pb-12 lg:pb-20">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl">
+              <p className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-4">
+                Computerhulp aan huis
               </p>
 
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-blue-600" />
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-secondary-900 leading-[1.1] mb-6">
+                Wij lossen het{' '}
+                <span className="text-primary-600">voor u op</span>
+              </h1>
+
+              <p className="text-lg text-secondary-600 leading-relaxed mb-8 max-w-lg">
+                Vastgelopen met uw computer of laptop? Wij komen bij u thuis en lossen het op. U hoeft nergens heen — gewoon duidelijke hulp zonder gedoe.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-10">
+                <Link
+                  href="/afspraak"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+                >
+                  Afspraak maken
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a
+                  href="tel:+31642827860"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  Bel ons
+                </a>
+              </div>
+
+              <div className="flex items-center gap-6 text-sm text-secondary-500">
+                <span>10+ jaar ervaring</span>
+                <span className="w-1 h-1 rounded-full bg-secondary-300" />
+                <span>Betaling achteraf</span>
+                <span className="w-1 h-1 rounded-full bg-secondary-300" />
+                <span>&euro;14,50 per kwartier</span>
+              </div>
+            </div>
+          </div>
+          <div className="h-px bg-secondary-200 mt-12 lg:mt-20" />
+        </section>
+
+        {/* SERVICES */}
+        <section className="py-16 lg:py-24 bg-secondary-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mb-10">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900">
+                Waar kunnen we mee helpen?
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-3">
+              {services.map((service, index) => {
+                const IconComponent = service.icon
+                return (
+                  <Link
+                    key={index}
+                    href={service.href}
+                    className="group flex items-center gap-4 bg-white rounded-lg px-5 py-4 hover:shadow-md transition-shadow border border-secondary-100"
+                  >
+                    <div className="w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="w-[18px] h-[18px] text-primary-600" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-semibold text-secondary-900 text-[15px]">
+                        {service.title}
+                      </h3>
+                      <p className="text-secondary-500 text-sm truncate">
+                        {service.desc}
+                      </p>
+                    </div>
+                    <ChevronRight className="w-4 h-4 text-secondary-300 group-hover:text-primary-500 transition-colors flex-shrink-0" />
+                  </Link>
+                )
+              })}
+            </div>
+
+            <div className="mt-6">
+              <Link
+                href="/diensten"
+                className="text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+              >
+                Alle diensten bekijken &rarr;
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* HOW IT WORKS */}
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+                Hoe werkt het?
+              </h2>
+              <p className="text-secondary-500 max-w-lg mx-auto">
+                In drie stappen naar een werkende computer.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-bold text-sm mb-4">
+                  1
+                </div>
+                <h3 className="font-semibold text-secondary-900 text-[15px] mb-1">Neem contact op</h3>
+                <p className="text-secondary-500 text-sm leading-snug">
+                  Bel of stuur een WhatsApp. Beschrijf kort uw probleem.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-bold text-sm mb-4">
+                  2
+                </div>
+                <h3 className="font-semibold text-secondary-900 text-[15px] mb-1">Plan een afspraak</h3>
+                <p className="text-secondary-500 text-sm leading-snug">
+                  Wij komen op een moment dat u uitkomt. Vaak al binnen 24-48 uur.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-50 text-primary-600 font-bold text-sm mb-4">
+                  3
+                </div>
+                <h3 className="font-semibold text-secondary-900 text-[15px] mb-1">Probleem opgelost</h3>
+                <p className="text-secondary-500 text-sm leading-snug">
+                  Onze specialist lost het ter plaatse op. U betaalt alleen voor de tijd.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* WHY US */}
+        <section className="py-16 lg:py-24 bg-secondary-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+                  Waarom klanten voor ons kiezen
+                </h2>
+                <p className="text-secondary-500 mb-8 max-w-lg">
+                  Wij geloven in persoonlijke service, transparante prijzen en vakmanschap. Geen gedoe, gewoon goede hulp.
+                </p>
+
+                <ul className="space-y-4">
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center mt-0.5">
+                      <Zap className="w-[18px] h-[18px] text-primary-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-secondary-900 text-[15px] mb-0.5">Snel geholpen</h3>
+                      <p className="text-secondary-500 text-sm">Meestal binnen 24-48 uur bij u thuis</p>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center mt-0.5">
+                      <Shield className="w-[18px] h-[18px] text-primary-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-secondary-900 text-[15px] mb-0.5">Vaste tarieven</h3>
+                      <p className="text-secondary-500 text-sm">U weet vooraf wat het kost, geen verrassingen</p>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center mt-0.5">
+                      <Clock className="w-[18px] h-[18px] text-primary-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-secondary-900 text-[15px] mb-0.5">10+ jaar ervaring</h3>
+                      <p className="text-secondary-500 text-sm">Alle merken en problemen, wij kennen ze</p>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center mt-0.5">
+                      <Check className="w-[18px] h-[18px] text-primary-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-secondary-900 text-[15px] mb-0.5">Duidelijke uitleg</h3>
+                      <p className="text-secondary-500 text-sm">Geen jargon, wij leggen het begrijpelijk uit</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Pricing Card */}
+              <div>
+                <div className="bg-white rounded-xl border border-secondary-200">
+                  <div className="p-6 border-b border-secondary-100">
+                    <div className="flex items-baseline justify-between">
+                      <h3 className="font-semibold text-secondary-900">Hulp aan huis</h3>
+                      <div className="text-right">
+                        <span className="text-3xl font-bold text-secondary-900">&euro;14,50</span>
+                        <p className="text-xs text-secondary-400 mt-0.5">per kwartier</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">Snel geholpen</h3>
-                    <p className="text-slate-600">Meestal binnen 24-48 uur bij u thuis</p>
+                  <div className="px-6 py-3.5 border-b border-secondary-100 flex justify-between items-center">
+                    <span className="text-sm text-secondary-600">Minimum</span>
+                    <span className="text-sm font-medium text-secondary-900">45 minuten (3 kwartier)</span>
+                  </div>
+                  <div className="px-6 py-3.5 border-b border-secondary-100 flex justify-between items-center">
+                    <span className="text-sm text-secondary-600">Voorrijkosten</span>
+                    <span className="text-sm font-medium text-secondary-900">&euro;10</span>
+                  </div>
+                  <div className="px-6 py-3.5 border-b border-secondary-100 flex justify-between items-center">
+                    <span className="text-sm text-secondary-600">Inclusief</span>
+                    <span className="text-sm font-medium text-secondary-900">21% BTW</span>
+                  </div>
+                  <div className="px-6 py-3.5 flex justify-between items-center">
+                    <span className="text-sm text-secondary-600">Betaling</span>
+                    <span className="text-sm font-medium text-secondary-900">Achteraf, per pin of tikkie</span>
                   </div>
                 </div>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">Vaste tarieven</h3>
-                    <p className="text-slate-600">U weet vooraf wat het kost, geen verrassingen</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-slate-900 mb-1">10+ jaar ervaring</h3>
-                    <p className="text-slate-600">Alle merken en problemen, wij kennen ze</p>
-                  </div>
+                <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/afspraak"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors flex-1"
+                  >
+                    Afspraak maken
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <a
+                    href="tel:+31642827860"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold text-secondary-700 bg-white border border-secondary-200 hover:border-secondary-300 rounded-lg transition-colors flex-1"
+                  >
+                    <Phone className="w-4 h-4" />
+                    Bel ons
+                  </a>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
 
-            {/* Pricing Card */}
-            <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-10 text-white">
-              <div className="text-sm text-slate-400 mb-2 uppercase tracking-wider">Tarieven</div>
-              <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-5xl md:text-6xl font-bold">€14,50</span>
-                <span className="text-slate-400">/ kwartier</span>
-              </div>
+        {/* FAQ */}
+        <section className="py-16 lg:py-24 bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+              Veelgestelde vragen
+            </h2>
+            <p className="text-secondary-500 mb-10">
+              Hier vindt u antwoorden op de meest gestelde vragen over computerhulp aan huis.
+            </p>
 
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-slate-300">Voorrijkosten €10 (eenmalig)</span>
+            <div className="space-y-3">
+              {faqData.map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-secondary-50 rounded-xl border border-secondary-200 overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                  >
+                    <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                        openFaq === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  {openFaq === index && (
+                    <div className="px-5 pb-5">
+                      <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  )}
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-slate-300">Minimale afname: 3 kwartier</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                    <svg className="w-3 h-3 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <span className="text-slate-300">Inclusief 21% BTW</span>
-                </div>
-              </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="border-t border-slate-700 pt-6 mb-8">
-                <div className="text-sm text-slate-400 mb-1">Eerste afspraak vanaf</div>
-                <div className="text-2xl font-semibold">€53,50 <span className="text-base font-normal text-slate-400">voor 45 min</span></div>
-              </div>
+        {/* CTA */}
+        <section className="py-16 lg:py-24 bg-secondary-50">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
+              Hulp nodig?
+            </h2>
+            <p className="text-secondary-500 mb-8">
+              Neem vrijblijvend contact op. We helpen u graag verder.
+            </p>
 
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Link
+                href="/afspraak"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+              >
+                Afspraak maken
+                <ArrowRight className="w-4 h-4" />
+              </Link>
               <a
                 href="tel:+31642827860"
-                className="block w-full text-center bg-white text-slate-900 font-semibold py-4 rounded-xl hover:bg-slate-100 transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-secondary-700 bg-white border border-secondary-200 hover:border-secondary-300 rounded-lg transition-colors"
               >
-                Bel voor een afspraak
+                <Phone className="w-4 h-4" />
+                Bel ons
               </a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-cyan-600">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Hulp nodig?
-          </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Neem vrijblijvend contact op. We helpen u graag verder.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+31642827860"
-              className="inline-flex items-center justify-center bg-white text-blue-600 text-lg font-semibold px-8 py-4 rounded-full hover:bg-blue-50 transition-all shadow-lg"
-            >
-              <Phone className="w-5 h-5 mr-3" />
-              06 42 82 78 60
-            </a>
-
-            <a
-              href="https://wa.me/31642827860?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20computerhulp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white text-lg font-semibold px-8 py-4 rounded-full transition-all shadow-lg"
-            >
-              <MessageCircle className="w-5 h-5 mr-3" />
-              WhatsApp ons
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </div>
+      </div>
+    </>
   )
 }
