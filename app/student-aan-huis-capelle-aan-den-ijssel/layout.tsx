@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     images: ['/og-image.webp']
   },
   alternates: {
-    canonical: `https://hulpmetit.nl/student-aan-huis-capelle-aan-den-ijssel`
+    canonical: `/student-aan-huis-capelle-aan-den-ijssel`
   },
   robots: {
     index: true,

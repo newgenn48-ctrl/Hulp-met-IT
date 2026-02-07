@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     follow: true
   },
   alternates: {
-    canonical: `https://hulpmetit.nl/student-aan-huis-${citySlug}`
+    canonical: `/student-aan-huis-${citySlug}`
   }
 }
 

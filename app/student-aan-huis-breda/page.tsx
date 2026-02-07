@@ -60,7 +60,7 @@ const faqData = [
   },
   {
     question: "Kunnen jullie ook 's avonds en weekenden komen in Breda?",
-    answer: "Ja, dat is een van onze grote voordelen! Onze studenten in Breda hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+    answer: "Ja, dat is een van onze grote voordelen! Onze studenten in Breda hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden. We zijn bereikbaar van 08:00 tot 21:00, 7 dagen per week."
   },
   {
     question: "Hoe snel kunnen jullie komen in Breda?",

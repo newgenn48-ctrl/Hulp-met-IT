@@ -90,7 +90,7 @@ const faqData = [
   },
   {
     question: `Kunnen jullie ook 's avonds en in weekenden in ${CITY_CASUAL}?`,
-    answer: `Ja, dat is een van onze voordelen! Studenten hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week in ${CITY_CASUAL}.`
+    answer: `Ja, dat is een van onze voordelen! Studenten hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 21:00, 7 dagen per week in ${CITY_CASUAL}.`
   },
   {
     question: `Hoe snel kunnen jullie komen in ${CITY_CASUAL}?`,
@@ -323,11 +323,9 @@ export default function StudentAanHuisDenBoschPage() {
                     }`}
                   />
                 </button>
-                {openFaq === index && (
-                  <div className="px-5 pb-5">
+                <div className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
                     <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                   </div>
-                )}
               </div>
             ))}
           </div>

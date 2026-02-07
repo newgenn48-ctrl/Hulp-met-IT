@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     images: ['/og-image.webp']
   },
   alternates: {
-    canonical: `https://hulpmetit.nl/student-aan-huis-leidschendam-voorburg`
+    canonical: `/student-aan-huis-leidschendam-voorburg`
   },
   robots: {
     index: true,

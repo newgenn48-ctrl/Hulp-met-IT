@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/student-aan-huis-den-haag',
+    canonical: '/student-aan-huis-den-haag',
   },
 }
 

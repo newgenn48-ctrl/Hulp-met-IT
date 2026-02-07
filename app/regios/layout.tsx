@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/regios',
+    canonical: '/regios',
   },
 }
 

@@ -144,8 +144,18 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
     }))
   } : null
 
+  // WebSite schema for sitelinks search box
+  const websiteData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Hulp met IT",
+    "url": "https://hulpmetit.nl",
+    "inLanguage": "nl-NL",
+    "description": BUSINESS_INFO.DESCRIPTION
+  }
+
   // Let individual pages handle their own FAQPage schemas to avoid duplicates
-  const schemas: any[] = [localBusinessData, organizationData]
+  const schemas: any[] = [localBusinessData, organizationData, websiteData]
   if (breadcrumbData) {
     schemas.push(breadcrumbData)
   }

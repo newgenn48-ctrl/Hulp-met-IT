@@ -57,13 +57,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/algemene-voorwaarden`,
-      lastModified: new Date(),
+      lastModified: new Date('2025-01-01'),
       changeFrequency: 'yearly' as const,
       priority: 0.3,
     },

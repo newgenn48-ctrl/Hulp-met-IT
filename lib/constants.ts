@@ -32,8 +32,8 @@ export const PRICING = {
 } as const
 
 export const SERVICE_HOURS = {
-  OPENING_HOURS: 'Mo-Su 09:00-21:00',
-  DESCRIPTION: '09:00 tot 21:00, 7 dagen per week'
+  OPENING_HOURS: 'Mo-Su 08:00-21:00',
+  DESCRIPTION: '08:00 tot 21:00, 7 dagen per week'
 } as const
 
 export const SOCIAL_MEDIA = {

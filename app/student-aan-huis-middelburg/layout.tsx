@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: 'https://hulpmetit.nl/student-aan-huis-middelburg',
+    canonical: '/student-aan-huis-middelburg',
   },
 }
 

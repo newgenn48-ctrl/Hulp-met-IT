@@ -189,11 +189,9 @@ export default function RegiosPage() {
                     }`}
                   />
                 </button>
-                {openFaq === index && (
-                  <div className="px-5 pb-5">
+                <div className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
                     <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                   </div>
-                )}
               </div>
             ))}
           </div>

@@ -80,7 +80,7 @@ const faqData = [
   },
   {
     question: "Kunnen jullie ook 's avonds en in weekenden?",
-    answer: "Ja, dat is een van onze voordelen! Studenten hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week."
+    answer: "Ja, dat is een van onze voordelen! Studenten hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 21:00, 7 dagen per week."
   },
   {
     question: 'Hoe snel kunnen jullie komen?',
@@ -295,11 +295,9 @@ export default function StudentAanHuisPage() {
                     }`}
                   />
                 </button>
-                {openFaq === index && (
-                  <div className="px-5 pb-5">
+                <div className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
                     <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                   </div>
-                )}
               </div>
             ))}
           </div>

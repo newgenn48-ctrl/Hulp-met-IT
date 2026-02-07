@@ -40,7 +40,7 @@ export function Footer() {
               </div>
               <div className="flex items-center text-secondary-400">
                 <Clock className="w-4 h-4 mr-3 text-primary-400" />
-                Ma-Zo: 09:00 - 21:00
+                Ma-Zo: 08:00 - 21:00
               </div>
             </div>
 

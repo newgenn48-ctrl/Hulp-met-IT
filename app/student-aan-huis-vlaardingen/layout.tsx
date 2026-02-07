@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     images: ['/og-image.webp']
   },
   alternates: {
-    canonical: `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`
+    canonical: `/student-aan-huis-${CITY.toLowerCase()}`
   },
   robots: {
     index: true,

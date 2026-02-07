@@ -78,7 +78,7 @@ export default function RegioPage({ params }: PageProps) {
     },
     {
       question: `Kunnen jullie ook 's avonds en in weekenden in ${city.name}?`,
-      answer: `Ja, dat is een van onze voordelen! We zijn flexibel beschikbaar van 08:00 tot 22:00, 7 dagen per week in ${city.name}.`
+      answer: `Ja, dat is een van onze voordelen! We zijn flexibel beschikbaar van 08:00 tot 21:00, 7 dagen per week in ${city.name}.`
     },
     {
       question: `Hoe snel kunnen jullie komen in ${city.name}?`,
@@ -287,11 +287,9 @@ export default function RegioPage({ params }: PageProps) {
                     }`}
                   />
                 </button>
-                {openFaq === index && (
-                  <div className="px-5 pb-5">
+                <div className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
                     <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                   </div>
-                )}
               </div>
             ))}
           </div>

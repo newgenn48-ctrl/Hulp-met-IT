@@ -12,6 +12,10 @@ export default function manifest(): MetadataRoute.Manifest {
     categories: ['business', 'productivity', 'utilities'],
     lang: 'nl',
     orientation: 'portrait-primary',
-    icons: []
+    icons: [
+      { src: '/icon', sizes: '32x32', type: 'image/png' },
+      { src: '/icon', sizes: '192x192', type: 'image/png' },
+      { src: '/icon', sizes: '512x512', type: 'image/png' },
+    ]
   }
 }

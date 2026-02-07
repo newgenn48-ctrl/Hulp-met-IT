@@ -96,6 +96,11 @@ const nextConfig = {
         permanent: true
       },
       {
+        source: '/computerhulp',
+        destination: '/computerhulp-aan-huis',
+        permanent: true
+      },
+      {
         source: '/regios/computerhulp-:slug',
         destination: '/regios/:slug',
         permanent: true

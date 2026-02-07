@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       follow: true,
     },
     alternates: {
-      canonical: `https://hulpmetit.nl/regios/${city.slug}`,
+      canonical: `/regios/${city.slug}`,
     },
   }
 }
