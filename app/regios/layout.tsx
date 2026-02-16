@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp in heel Nederland | Onze Regio\'s | Hulp met IT',
-  description: 'Hulp met IT is actief in 30+ Nederlandse steden. Vind computerhulp aan huis in uw stad. ✓ Amsterdam ✓ Rotterdam ✓ Den Haag ✓ Utrecht ✓ Eindhoven en meer! €14,50 per kwartier.',
+  title: 'Computerhulp in heel Nederland | Hulp met IT',
+  description: 'Hulp met IT biedt computerhulp aan huis in 30+ Nederlandse steden. Amsterdam, Rotterdam, Den Haag, Utrecht, Eindhoven en meer. Vanaf €14,50/kwartier.',
   keywords: [
     'computerhulp Nederland',
     'IT hulp alle steden',
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'computer reparatie Nederland',
     'IT hulp aan huis overal',
     'technische ondersteuning Nederland',
-    'lokale IT specialist',
+    'lokale ICT student',
     'computerhulp aan huis',
     'IT service landelijk'
   ],

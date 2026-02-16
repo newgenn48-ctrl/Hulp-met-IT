@@ -6,71 +6,23 @@ import { useState } from 'react'
 import {
   Phone,
   ArrowRight,
-  Check,
   ChevronDown,
-  Users,
-  Shield,
-  Clock,
+  MapPin,
+  Banknote,
   GraduationCap,
-  Calendar,
-  MapPin
+  CalendarDays
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
-import { ServicesGrid } from '@/components/services/ServicesGrid'
+import { HowItWorks } from '@/components/home/HowItWorks'
+import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { CTASection } from '@/components/home/CTASection'
+import { SectionDivider } from '@/components/ui/SectionDivider'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { CompactServicesSection } from '@/components/home/CompactServicesSection'
+import { NearbyCities } from '@/components/city/NearbyCities'
+import { CityAboutSection } from '@/components/city/CityAboutSection'
 
 const CITY = 'Utrecht'
-
-const benefits = [
-  {
-    icon: Check,
-    title: 'Transparante Tarieven',
-    description: 'Duidelijke prijzen vooraf, geen verborgen kosten of verrassingen.'
-  },
-  {
-    icon: GraduationCap,
-    title: 'IT-Studenten',
-    description: 'Opgeleid in de nieuwste technologieën, vertrouwd met moderne systemen.'
-  },
-  {
-    icon: Clock,
-    title: 'Flexibele Tijden',
-    description: "Ook 's avonds en in weekenden beschikbaar."
-  },
-  {
-    icon: Users,
-    title: 'Persoonlijke Aanpak',
-    description: 'Geduldig en begrijpelijke uitleg, zonder vakjargon.'
-  },
-  {
-    icon: Calendar,
-    title: 'Snel Beschikbaar',
-    description: 'Vaak nog dezelfde dag, ook voor spoedgevallen.'
-  },
-  {
-    icon: Shield,
-    title: 'Betrouwbaar',
-    description: 'Alle studenten zijn gescreend en getraind.'
-  }
-]
-
-const processSteps = [
-  {
-    title: 'U belt of plant online',
-    description: `Vertel ons kort wat het probleem is. Wij plannen een afspraak op een moment dat u uitkomt in ${CITY}.`
-  },
-  {
-    title: 'Student komt langs',
-    description: `Een ervaren IT-student komt bij u thuis in ${CITY} met alle benodigde tools en kennis.`
-  },
-  {
-    title: 'Probleem wordt opgelost',
-    description: 'Vakkundige hulp tegen studententarief. U krijgt uitleg zodat u het begrijpt.'
-  },
-  {
-    title: 'Betaling achteraf',
-    description: 'U betaalt pas na afloop. Geen vooruitbetaling, geen verrassingen.'
-  }
-]
 
 const areas = [
   'Utrecht Centrum', 'Utrecht Noord', 'Utrecht Zuid', 'Utrecht Oost',
@@ -103,6 +55,25 @@ const faqData = [
 
 export default function StudentAanHuisCityPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://hulpmetit.nl'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: `ICT Student aan Huis ${CITY}`,
+        item: 'https://hulpmetit.nl/student-aan-huis-utrecht'
+      }
+    ]
+  }
 
   const faqStructuredData = {
     '@context': 'https://schema.org',
@@ -143,6 +114,10 @@ export default function StudentAanHuisCityPage() {
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
       <script
@@ -150,214 +125,197 @@ export default function StudentAanHuisCityPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
 
-      {/* Breadcrumbs */}
-      <div className="bg-secondary-50 border-b border-secondary-200">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-secondary-500 hover:text-primary-700">Home</Link>
-            <span className="text-secondary-400">/</span>
-            <Link href="/student-aan-huis" className="text-secondary-500 hover:text-primary-700">ICT Student aan huis</Link>
-            <span className="text-secondary-400">/</span>
-            <span className="text-secondary-700 font-medium">{CITY}</span>
-          </nav>
-        </div>
-      </div>
+      {/* Hero - matching homepage */}
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        <Image
+          src="/student-aan-huis.webp"
+          alt="Student aan huis in Utrecht"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-secondary-900/75 to-secondary-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-secondary-900/30" />
 
-      {/* Hero Section */}
-      <section className="relative bg-white pt-12 pb-16 lg:pt-16 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-6 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
+          <div className="max-w-2xl">
+            <ScrollReveal>
 
-            {/* Content */}
-            <div>
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-bold text-secondary-900 leading-tight mb-6">
-                ICT Student
-                <span className="text-primary-700"> aan huis {CITY}</span>
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                Student aan huis{' '}
+                <span className="text-accent-400">in {CITY}</span>
               </h1>
 
-              {/* Subtitel */}
-              <p className="text-xl text-secondary-600 leading-relaxed mb-4 max-w-lg">
-                Hulp nodig met uw computer of telefoon? Onze IT-student komt bij u thuis en lost het samen met u op.
+              <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
+                Een HBO-opgeleide student komt bij u thuis in {CITY}, lost het probleem op en legt alles uit in gewone taal. Zo kunt u er weer tegenaan.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <Link
                   href="/afspraak"
-                  className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors "
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-accent"
                 >
                   Afspraak maken
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:+31642827860"
-                  className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Bel ons
+                  <Phone className="w-4 h-4" />
+                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
                 </a>
               </div>
-            </div>
 
-            {/* Photo */}
-            <div className="relative">
-              
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-secondary-200">
-                <Image
-                  src="/student-aan-huis.webp"
-                  alt={`IT-student helpt klant thuis met computer in ${CITY}`}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+              <p className="text-accent-400 text-sm font-medium mb-8">
+                Meestal binnen 24 uur geholpen
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3 text-sm">
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <GraduationCap className="w-3.5 h-3.5 text-primary-300" />
+                  HBO-opgeleide studenten
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <Banknote className="w-3.5 h-3.5 text-primary-300" />
+                  Betaalbare tarieven
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <CalendarDays className="w-3.5 h-3.5 text-primary-300" />
+                  7 dagen per week
+                </span>
               </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-{/* Services */}
-      <ServicesGrid maxItems={6} />
-
-      {/* Why Student */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
-              Voordelen van ICT student aan huis in {CITY}
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div key={index} className="bg-secondary-50 rounded-xl p-6 border border-secondary-200">
-                  <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
-                    <IconComponent className="w-5 h-5 text-primary-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">{benefit.title}</h3>
-                  <p className="text-secondary-600">{benefit.description}</p>
-                </div>
-              )
-            })}
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* How it works */}
-      <section className="py-16 lg:py-20 bg-secondary-50">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
-              In 4 stappen geholpen in {CITY}
-            </h2>
-          </div>
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafaf9" />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="relative inline-flex mb-6">
-                  <div className="w-16 h-16 bg-white border-2 border-primary-200 rounded-2xl flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary-700">{index + 1}</span>
-                  </div>
-                </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">{step.title}</h3>
-                <p className="text-secondary-600">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CompactServicesSection />
 
-      {/* Reviews */}
-      {/* Pricing */}
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
+
+      <CityAboutSection citySlug="utrecht" pageType="student" />
+
+      <SectionDivider variant="soft-curve" topColor="#ffffff" bottomColor="#ffffff" />
+
+      <HowItWorks />
+
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+
       <PricingSection />
 
-      {/* Areas */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
-              ICT Student aan huis in {CITY} en omgeving
-            </h2>
-          </div>
+      <SectionDivider
+        variant="layered-wave"
+        topColor="#fafaf9"
+        bottomColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust' }}
+      />
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {areas.map((area, index) => (
-              <div key={index} className="flex items-center gap-2 bg-secondary-50 rounded-lg p-3 border border-secondary-200">
-                <MapPin className="w-4 h-4 text-primary-700 flex-shrink-0" />
-                <span className="text-secondary-700 font-medium text-sm">{area}</span>
+      <TrustAndPricing />
+
+      <SectionDivider
+        variant="swoosh"
+        topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
+        bottomColor="#fafaf9"
+      />
+
+      {/* Areas - city-specific */}
+      {areas.length > 0 && (
+        <section className="py-20 lg:py-28 bg-secondary-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollReveal>
+              <div className="text-center mb-14">
+                <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Werkgebied</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+                </h2>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            </ScrollReveal>
 
-      {/* FAQ */}
-      <section className="py-16 lg:py-20 bg-secondary-50">
-        <div className="max-w-3xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
-              Vragen over ICT student aan huis in {CITY}
-            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+              {areas.map((area, index) => (
+                <ScrollReveal key={index} delay={index * 50}>
+                  <div className="flex items-center gap-3 bg-white rounded-xl p-3.5 lg:p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                    <span className="font-medium text-secondary-900 text-sm">{area}</span>
+                  </div>
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
+        </section>
+      )}
+
+      <NearbyCities currentCitySlug="utrecht" pageType="student" />
+
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
+
+      {/* FAQ - city-specific */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">FAQ</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+                Vragen over ICT student aan huis in {CITY}
+              </h2>
+            </div>
+          </ScrollReveal>
 
           <div className="space-y-3">
             {faqData.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl border border-secondary-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-50 transition-colors"
-                >
-                  <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
-                      openFaq === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
+              <ScrollReveal key={index} delay={index * 60}>
+                <div className="bg-secondary-50 rounded-2xl shadow-card overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    aria-expanded={openFaq === index}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                  >
+                    <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                        openFaq === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div id={`faq-answer-${index}`} role="region" className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
                     <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                   </div>
-              </div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 lg:py-20 bg-primary-600">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-            Klaar voor computerhulp in {CITY}?
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Onze ervaren IT-studenten in {CITY} staan klaar om u te helpen. Snel, vakkundig en betaalbaar.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/afspraak"
-              className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-primary-600 bg-white hover:bg-secondary-50 rounded-lg transition-colors"
-            >
-              Afspraak maken
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-            <a
-              href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white border border-white/30 hover:bg-white/10 rounded-lg transition-colors"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Bel ons
+      {/* Cross-link */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Heeft u een complex probleem? Onze{' '}
+            <a href="/computerhulp-aan-huis-utrecht" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              HBO-opgeleide studenten staan klaar
             </a>
-          </div>
+            .
+          </p>
         </div>
       </section>
+
+      <SectionDivider
+        variant="tilt"
+        topColor="#ffffff"
+        bottomColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta' }}
+      />
+
+      <CTASection />
+
+      <SectionDivider
+        variant="diagonal"
+        topColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta-bot' }}
+        bottomColor="#1c1917"
+      />
     </>
   )
 }

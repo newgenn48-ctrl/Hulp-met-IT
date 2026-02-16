@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Laren | Hulp Met IT',
+  title: 'Student aan huis Laren | Hulp met IT',
   description: 'ICT Student aan huis in Laren voor computerhulp. Betaalbare IT-studenten komen naar je toe. €14,50 per kwartier + €10 voorrijkosten. Snel en vakkundig!',
   keywords: [
     'student aan huis laren',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'student aan huis gooi'
   ],
   openGraph: {
-    title: 'Student Aan Huis Laren',
+    title: 'Student aan huis Laren | Hulp met IT',
     description: 'Student aan huis Laren: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Laren',
+    title: 'Student aan huis Laren | Hulp met IT',
     description: 'Student aan huis Laren: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {

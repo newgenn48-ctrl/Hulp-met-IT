@@ -1,63 +1,73 @@
 'use client'
 
 import { Phone, Calendar, Home, CheckCircle } from 'lucide-react'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 const steps = [
   {
     icon: Phone,
-    title: 'U belt ons',
-    description: 'Vertel kort wat er aan de hand is'
+    title: 'Neem contact op',
+    description: 'Bel ons of plan online een afspraak. Wij luisteren en denken mee.',
   },
   {
     icon: Calendar,
-    title: 'Afspraak op uw moment',
-    description: 'Vaak al dezelfde of volgende dag'
+    title: 'Afspraak inplannen',
+    description: 'Wij komen wanneer het u uitkomt. Vaak al dezelfde of volgende dag.',
   },
   {
     icon: Home,
-    title: 'Wij komen bij u thuis',
-    description: 'Rustig, vriendelijk en duidelijk'
+    title: 'Hulp aan huis',
+    description: 'Onze student lost het probleem rustig bij u thuis op.',
   },
   {
     icon: CheckCircle,
-    title: 'Probleem opgelost',
-    description: 'Met uitleg zodat u het begrijpt'
-  }
+    title: 'Opgelost',
+    description: 'U krijgt duidelijke uitleg. Bij vragen kunt u altijd terugbellen.',
+  },
 ]
 
 export function HowItWorks() {
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section className="py-20 lg:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
-            Hoe werkt het?
-          </h2>
-          <p className="text-secondary-500 max-w-lg mx-auto">
-            Van telefoontje tot opgelost probleem &mdash; in vier stappen.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-14">
+            <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Zo werkt het</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              In vier stappen geholpen
+            </h2>
+            <p className="text-secondary-500 max-w-xl mx-auto text-lg">
+              Geen ingewikkeld gedoe. Gewoon even bellen, en wij regelen de rest.
+            </p>
+          </div>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4">
+        {/* Horizontal process bar on desktop, vertical on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-0 relative">
+          {/* Connecting line (desktop) */}
+          <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary-200 via-primary-300 to-primary-200" />
+
           {steps.map((step, index) => {
             const IconComponent = step.icon
             return (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary-50 mb-4">
-                  <IconComponent className="w-5 h-5 text-primary-600" />
+              <ScrollReveal key={index} delay={index * 120}>
+                <div className="relative flex md:flex-col items-start md:items-center text-left md:text-center gap-4 md:gap-0 md:px-4">
+                  {/* Number + icon circle */}
+                  <div className="relative z-10 w-20 h-20 rounded-2xl bg-white shadow-card flex flex-col items-center justify-center flex-shrink-0 md:mb-6">
+                    <span className="text-xs font-bold text-primary-400 leading-none">Stap {index + 1}</span>
+                    <IconComponent className="w-6 h-6 text-primary-600 mt-1" />
+                  </div>
+
+                  <div className="md:max-w-[200px]">
+                    <h3 className="font-bold text-secondary-900 mb-1">{step.title}</h3>
+                    <p className="text-secondary-500 text-sm leading-relaxed">{step.description}</p>
+                  </div>
                 </div>
-                <h3 className="font-semibold text-secondary-900 text-[15px] mb-1">
-                  {step.title}
-                </h3>
-                <p className="text-secondary-500 text-sm leading-snug">
-                  {step.description}
-                </p>
-              </div>
+              </ScrollReveal>
             )
           })}
         </div>
-
       </div>
     </section>
   )

@@ -35,8 +35,8 @@ const initialFormData: AppointmentFormData = {
 }
 
 const urgencyLevels = [
-  { value: 'normal', label: 'Zonder spoed - Vanaf 2 dagen', color: 'text-blue-400' },
-  { value: 'urgent', label: 'Met spoed - Binnen 24 uur', color: 'text-orange-400' }
+  { value: 'normal', label: 'Zonder spoed - Vanaf 2 dagen', color: 'text-primary-400' },
+  { value: 'urgent', label: 'Met spoed - Binnen 24 uur', color: 'text-accent-400' }
 ]
 
 const timeSlots = [
@@ -165,7 +165,7 @@ export function AppointmentForm() {
         } else if (!validatePostalCode(formData.postalCode)) {
           errors['postalCode'] = 'Voer een geldige postcode in'
         }
-        if (!formData.city.trim()) errors['city'] = 'Woonplaats is verplicht'
+        if (!formData.city.trim()) errors['city'] = 'Stad is verplicht'
         break
       case 2:
         if (!formData.problemDescription.trim()) {
@@ -224,6 +224,15 @@ export function AppointmentForm() {
         setFormData(initialFormData)
         setCurrentStep(1)
         showToast({ type: 'success', title: 'Afspraak aangevraagd!', message: 'U ontvangt een bevestiging per e-mail.' })
+
+        // Google Ads conversion tracking
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'conversion', {
+            'send_to': 'AW-16646363193/afspraak',
+            'value': 53.50,
+            'currency': 'EUR'
+          })
+        }
       } else {
         const error = await response.json()
         setSubmitStatus('error')
@@ -241,15 +250,15 @@ export function AppointmentForm() {
 
   if (submitStatus === 'success') {
     return (
-      <div ref={formRef} className="bg-white rounded-xl p-8 text-center border border-green-200 shadow-lg">
+      <div ref={formRef} className="bg-white rounded-2xl p-8 text-center border border-green-200 shadow-professional">
         <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-3xl font-bold text-secondary-800 mb-4">Afspraak Aangevraagd!</h3>
+        <h3 className="text-3xl font-bold text-secondary-800 mb-4">Afspraak aangevraagd!</h3>
         <p className="text-secondary-600 mb-6">U ontvangt binnen enkele minuten een bevestiging per e-mail.</p>
-        <a href="/" className="inline-block bg-primary-500 hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-lg">
+        <a href="/" className="inline-block bg-primary-500 hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl shadow-primary">
           Terug naar Home
         </a>
       </div>
@@ -257,14 +266,15 @@ export function AppointmentForm() {
   }
 
   return (
-    <div ref={formRef} className="bg-white rounded-xl p-8 border border-secondary-200 shadow-sm">
+    <div ref={formRef} className="bg-white rounded-2xl p-8 border border-secondary-200 shadow-professional">
+      {/* Progress bar */}
       <div className="mb-8">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-center mb-4">
           {[1, 2].map((step) => (
             <div key={step} className="flex items-center">
-              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-medium ${
-                step < currentStep ? 'bg-green-500 text-white'
-                  : step === currentStep ? 'bg-primary-500 text-white ring-4 ring-primary-200'
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-300 ${
+                step < currentStep ? 'bg-primary-500 text-white'
+                  : step === currentStep ? 'bg-primary-500 text-white ring-4 ring-primary-100 shadow-primary'
                   : 'bg-secondary-100 text-secondary-400'
               }`}>
                 {step < currentStep ? (
@@ -274,7 +284,7 @@ export function AppointmentForm() {
                 ) : step}
               </div>
               {step < 2 && (
-                <div className={`w-full h-1 mx-4 ${step < currentStep ? 'bg-green-500' : 'bg-secondary-100'}`} />
+                <div className={`w-20 sm:w-32 h-1 mx-3 rounded-full transition-colors duration-300 ${step < currentStep ? 'bg-primary-500' : 'bg-secondary-100'}`} />
               )}
             </div>
           ))}
@@ -300,7 +310,7 @@ export function AppointmentForm() {
                 autoComplete="given-name"
                 value={formData.firstName}
                 onChange={(e) => handleInputChange('firstName', e.target.value)}
-                className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['firstName'] ? 'border-red-500' : 'border-secondary-300'}`}
+                className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['firstName'] ? 'border-red-500' : 'border-secondary-300'}`}
                 placeholder="Uw voornaam"
               />
               {fieldErrors['firstName'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['firstName']}</p>}
@@ -314,7 +324,7 @@ export function AppointmentForm() {
                 autoComplete="family-name"
                 value={formData.lastName}
                 onChange={(e) => handleInputChange('lastName', e.target.value)}
-                className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['lastName'] ? 'border-red-500' : 'border-secondary-300'}`}
+                className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['lastName'] ? 'border-red-500' : 'border-secondary-300'}`}
                 placeholder="Uw achternaam"
               />
               {fieldErrors['lastName'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['lastName']}</p>}
@@ -330,7 +340,7 @@ export function AppointmentForm() {
               autoComplete="email"
               value={formData.email}
               onChange={(e) => handleInputChange('email', e.target.value)}
-              className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['email'] ? 'border-red-500' : 'border-secondary-300'}`}
+              className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['email'] ? 'border-red-500' : 'border-secondary-300'}`}
               placeholder="uw.email@example.com"
             />
             {fieldErrors['email'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['email']}</p>}
@@ -345,14 +355,14 @@ export function AppointmentForm() {
               autoComplete="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange('phone', e.target.value)}
-              className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['phone'] ? 'border-red-500' : 'border-secondary-300'}`}
+              className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['phone'] ? 'border-red-500' : 'border-secondary-300'}`}
               placeholder="06-12345678"
             />
             {fieldErrors['phone'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['phone']}</p>}
           </div>
 
           <div className="border-t border-secondary-300 pt-6 mt-8">
-            <h4 className="text-lg font-semibold text-secondary-800 mb-4">Waar Moeten We Zijn?</h4>
+            <h4 className="text-lg font-semibold text-secondary-800 mb-4">Waar moeten we zijn?</h4>
 
             <div>
               <label htmlFor="address" className="block text-sm font-medium text-secondary-800 mb-2">Straat + Huisnummer *</label>
@@ -363,7 +373,7 @@ export function AppointmentForm() {
                 autoComplete="street-address"
                 value={formData.address}
                 onChange={(e) => handleInputChange('address', e.target.value)}
-                className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['address'] ? 'border-red-500' : 'border-secondary-300'}`}
+                className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['address'] ? 'border-red-500' : 'border-secondary-300'}`}
                 placeholder="Voorbeeldstraat 123"
               />
               {fieldErrors['address'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['address']}</p>}
@@ -379,7 +389,7 @@ export function AppointmentForm() {
                   autoComplete="postal-code"
                   value={formData.postalCode}
                   onChange={(e) => handleInputChange('postalCode', e.target.value.toUpperCase())}
-                  className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['postalCode'] ? 'border-red-500' : 'border-secondary-300'}`}
+                  className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['postalCode'] ? 'border-red-500' : 'border-secondary-300'}`}
                   placeholder="1234 AB"
                   maxLength={7}
                 />
@@ -394,7 +404,7 @@ export function AppointmentForm() {
                   autoComplete="address-level2"
                   value={formData.city}
                   onChange={(e) => handleInputChange('city', e.target.value)}
-                  className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['city'] ? 'border-red-500' : 'border-secondary-300'}`}
+                  className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['city'] ? 'border-red-500' : 'border-secondary-300'}`}
                   placeholder="Amsterdam"
                 />
                 {fieldErrors['city'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['city']}</p>}
@@ -412,7 +422,15 @@ export function AppointmentForm() {
             <legend className="block text-sm font-medium text-secondary-800 mb-3">Is dit met spoed? *</legend>
             <div className="space-y-3">
               {urgencyLevels.map(level => (
-                <label key={level.value} htmlFor={`urgency-${level.value}`} className="flex items-center p-4 rounded-lg border border-secondary-300 hover:border-primary-500 cursor-pointer">
+                <label
+                  key={level.value}
+                  htmlFor={`urgency-${level.value}`}
+                  className={`flex items-center p-4 rounded-xl border-2 cursor-pointer transition-all duration-200 ${
+                    formData.urgency === level.value
+                      ? 'border-primary-500 bg-primary-50 shadow-sm'
+                      : 'border-secondary-200 hover:border-primary-300'
+                  }`}
+                >
                   <input
                     type="radio"
                     id={`urgency-${level.value}`}
@@ -450,7 +468,7 @@ export function AppointmentForm() {
                     value={formData.preferredDate}
                     onChange={(e) => handleInputChange('preferredDate', e.target.value)}
                     min={getMinDate()}
-                    className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['preferredDate'] ? 'border-red-500' : 'border-secondary-300'}`}
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['preferredDate'] ? 'border-red-500' : 'border-secondary-300'}`}
                   />
                   {fieldErrors['preferredDate'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['preferredDate']}</p>}
                 </div>
@@ -462,7 +480,7 @@ export function AppointmentForm() {
                     autoComplete="off"
                     value={formData.preferredTime}
                     onChange={(e) => handleInputChange('preferredTime', e.target.value)}
-                    className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['preferredTime'] ? 'border-red-500' : 'border-secondary-300'}`}
+                    className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['preferredTime'] ? 'border-red-500' : 'border-secondary-300'}`}
                   >
                     <option value="">Kies een tijdslot</option>
                     {timeSlots.map(time => (
@@ -484,7 +502,7 @@ export function AppointmentForm() {
               value={formData.problemDescription}
               onChange={(e) => handleInputChange('problemDescription', e.target.value)}
               rows={4}
-              className={`w-full px-4 py-3 rounded-lg border ${fieldErrors['problemDescription'] ? 'border-red-500' : 'border-secondary-300'}`}
+              className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldErrors['problemDescription'] ? 'border-red-500' : 'border-secondary-300'}`}
               placeholder="Beschrijf kort wat er aan de hand is..."
             />
             {fieldErrors['problemDescription'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['problemDescription']}</p>}
@@ -493,7 +511,7 @@ export function AppointmentForm() {
       )}
 
       {submitStatus === 'error' && (
-        <div className="mt-6 p-4 bg-red-100 border border-red-300 rounded-lg">
+        <div className="mt-6 p-4 bg-red-100 border border-red-300 rounded-xl">
           <span className="text-red-700">{errorMessage}</span>
         </div>
       )}
@@ -503,7 +521,7 @@ export function AppointmentForm() {
           type="button"
           onClick={prevStep}
           disabled={currentStep === 1}
-          className={`px-6 py-3 rounded-lg font-medium ${
+          className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
             currentStep === 1 ? 'bg-secondary-100 text-secondary-400 cursor-not-allowed' : 'bg-secondary-200 text-secondary-800 hover:bg-secondary-300'
           }`}
         >
@@ -515,8 +533,8 @@ export function AppointmentForm() {
             type="button"
             onClick={nextStep}
             disabled={!isStepValid(currentStep)}
-            className={`px-6 py-3 rounded-lg font-medium ${
-              isStepValid(currentStep) ? 'bg-primary-500 text-white hover:bg-primary-600' : 'bg-secondary-100 text-secondary-400 cursor-not-allowed'
+            className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
+              isStepValid(currentStep) ? 'bg-primary-500 text-white hover:bg-primary-600 shadow-primary hover:-translate-y-0.5' : 'bg-secondary-100 text-secondary-400 cursor-not-allowed'
             }`}
           >
             Volgende
@@ -527,11 +545,11 @@ export function AppointmentForm() {
             onClick={handleSubmit}
             isLoading={isSubmitting}
             disabled={!isStepValid(2)}
-            className={`px-8 py-3 rounded-lg font-medium ${
-              isStepValid(2) ? 'bg-green-500 text-white hover:bg-green-600' : 'bg-secondary-100 text-secondary-400 cursor-not-allowed'
+            className={`px-8 py-3 rounded-xl font-medium transition-all duration-200 ${
+              isStepValid(2) ? 'bg-green-500 text-white hover:bg-green-600 hover:-translate-y-0.5' : 'bg-secondary-100 text-secondary-400 cursor-not-allowed'
             }`}
           >
-            Afspraak Aanvragen
+            Afspraak aanvragen
           </LoadingButton>
         )}
       </div>

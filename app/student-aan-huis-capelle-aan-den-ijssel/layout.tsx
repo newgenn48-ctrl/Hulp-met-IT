@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 const CITY = 'Capelle aan den IJssel'
 
 export const metadata: Metadata = {
-  title: `ICT Student aan huis ${CITY} | Computerhulp €14,50 per kwartier`,
+  title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
   description: `ICT Student aan huis in ${CITY} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Capelle Centrum, Schollevaar, Oostgaarde, Schenkel en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!`,
   keywords: [
     `student aan huis capelle aan den ijssel`,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'erasmus universiteit it student'
   ],
   openGraph: {
-    title: `ICT Student aan huis ${CITY} | Computerhulp €14,50 per kwartier`,
+    title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
     description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis in Capelle aan den IJssel en omgeving. €14,50 per kwartier.`,
     url: `https://hulpmetit.nl/student-aan-huis-capelle-aan-den-ijssel`,
     siteName: 'Hulp met IT',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `ICT Student aan huis ${CITY} | Computerhulp €14,50 per kwartier`,
+    title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
     description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis.`,
     images: ['/og-image.webp']
   },

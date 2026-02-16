@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Enschede | Hulp Met IT',
-  description: 'ICT Student aan huis in Enschede voor computerhulp. Betaalbare IT-studenten van Universiteit Twente en Saxion komen naar je toe. €14,50 per kwartier. Snel en vakkundig!',
+  title: 'Student aan huis Enschede | Hulp met IT',
+  description: 'ICT Student aan huis in Enschede voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis enschede',
     'student computerhulp enschede',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'saxion student computerhulp'
   ],
   openGraph: {
-    title: 'ICT Student aan huis Enschede | Hulp Met IT',
+    title: 'Student aan huis Enschede | Hulp met IT',
     description: 'Betaalbare computerhulp door IT-studenten in Enschede en omgeving. €14,50 per kwartier. Ook in Hengelo, Oldenzaal en Almelo!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan huis Enschede | Hulp Met IT',
+    title: 'Student aan huis Enschede | Hulp met IT',
     description: 'Betaalbare computerhulp door IT-studenten in Enschede en omgeving. €14,50 per kwartier. Ook in Hengelo, Oldenzaal en Almelo!',
   },
   robots: {

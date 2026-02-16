@@ -4,15 +4,9 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["fra1"],
-  "crons": [
-    {
-      "path": "/api/cron/rebuild",
-      "schedule": "0 3 * * *"
-    }
-  ],
   "functions": {
     "app/api/appointment/route.ts": {
-      "maxDuration": 10
+      "maxDuration": 30
     }
   },
   "headers": [
@@ -45,7 +39,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com; script-src-elem 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://vitals.vercel-insights.com; frame-src https://www.google.com https://www.googletagmanager.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://js.hcaptcha.com; script-src-elem 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://js.hcaptcha.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://newassets.hcaptcha.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://vitals.vercel-insights.com https://api.hcaptcha.com https://sentry.hcaptcha.com; frame-src https://www.google.com https://www.googletagmanager.com https://newassets.hcaptcha.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
         }
       ]
     },

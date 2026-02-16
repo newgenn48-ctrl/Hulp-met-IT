@@ -2,22 +2,22 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Bussum | Hulp Met IT',
-  description: 'Computerhulp aan huis in Bussum voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. €14,50 per kwartier + €10 voorrijkosten. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis in Bussum voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'computerhulp aan huis bussum',
     'computer reparatie bussum',
     'laptop reparatie bussum',
-    'IT specialist bussum',
+    'ICT student bussum',
     'pc hulp bussum',
-    'computer specialist bussum',
+    'computer student bussum',
     'bussum computerhulp avond',
     'bussum IT hulp weekend',
     'computerhulp bussum spoed',
     'betaalbare IT hulp bussum'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Bussum | Computerhulp specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis in Bussum door IT-specialisten met 10+ jaar ervaring. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    title: 'Computerhulp aan huis Bussum | ICT Student aan Huis | Hulp Met IT',
+    description: 'Computerhulp aan huis in Bussum door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Bussum | Computerhulp specialisten',
-    description: 'Computerhulp aan huis Bussum. Specialist komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Bussum | ICT Student aan Huis',
+    description: 'Computerhulp aan huis Bussum. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
   },
   robots: {
     index: true,

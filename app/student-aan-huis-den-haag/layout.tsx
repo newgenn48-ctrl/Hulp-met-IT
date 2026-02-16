@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Den Haag | Computerhulp €14,50 per kwartier',
+  title: 'Student aan huis Den Haag | Hulp met IT',
   description: 'ICT Student aan huis in Den Haag voor computerhulp. Betaalbare IT-studenten van de Haagse Hogeschool komen bij u thuis. Snel, vakkundig en vriendelijk. Bel nu!',
   keywords: [
     'ICT student aan huis Den Haag',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'betaalbare computerhulp Den Haag'
   ],
   openGraph: {
-    title: 'ICT Student aan huis Den Haag | Computerhulp aan Huis',
+    title: 'Student aan huis Den Haag | Hulp met IT',
     description: 'Betaalbare computerhulp door IT-studenten in Den Haag. €14,50 per kwartier. Snel ter plaatse!',
     url: 'https://hulpmetit.nl/student-aan-huis-den-haag',
     type: 'website',

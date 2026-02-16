@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Dordrecht | Hulp Met IT',
+  title: 'Student aan huis Dordrecht | Hulp met IT',
   description: 'ICT Student aan huis in Dordrecht voor computerhulp. Betaalbare IT-studenten van Da Vinci College komen naar je toe. €14,50 per kwartier. Snel en vakkundig!',
   keywords: [
     'student aan huis dordrecht',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'computerhulp sliedrecht'
   ],
   openGraph: {
-    title: 'ICT Student aan huis Dordrecht | Hulp Met IT',
+    title: 'Student aan huis Dordrecht | Hulp met IT',
     description: 'Betaalbare computerhulp in Dordrecht door IT-studenten. Snel, vakkundig en vriendelijk bij u thuis.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan huis Dordrecht | Hulp Met IT',
+    title: 'Student aan huis Dordrecht | Hulp met IT',
     description: 'Betaalbare computerhulp in Dordrecht door IT-studenten. Snel, vakkundig en vriendelijk bij u thuis.',
   },
   robots: {

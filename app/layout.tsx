@@ -18,24 +18,24 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#2563eb',
+  themeColor: '#2557a7',
 }
 
 export const metadata: Metadata = {
   title: 'Hulp Met IT | Computerhulp aan huis',
-  description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60.',
+  description: 'Uw persoonlijke ICT-student voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60.',
   icons: [
     { rel: 'icon', url: '/icon', type: 'image/png', sizes: '32x32' },
     { rel: 'apple-touch-icon', url: '/icon', sizes: '32x32' }
   ],
   keywords: [
-    'IT-specialist aan huis',
+    'ICT-student aan huis',
     'computerhulp aan huis',
     'IT hulp',
     'computer reparatie',
     'laptop hulp',
     'wifi problemen',
-    'IT-expert thuis',
+    'ICT-student thuis',
     'computer hulp ouderen'
   ],
   authors: [{ name: 'Hulp met IT' }],
@@ -47,12 +47,10 @@ export const metadata: Metadata = {
     telephone: false,
   },
   metadataBase: new URL('https://hulpmetit.nl'),
-  alternates: {
-    canonical: '/',
-  },
+  alternates: {},
   openGraph: {
     title: 'Computerhulp aan huis | Hulp met IT',
-    description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
+    description: 'Uw persoonlijke ICT-student voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     url: 'https://hulpmetit.nl',
     siteName: 'Hulp met IT',
     images: [
@@ -69,7 +67,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Hulp met IT - Computerhulp aan huis',
-    description: 'Uw persoonlijke IT-expert voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
+    description: 'Uw persoonlijke ICT-student voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis.',
     images: ['/og-image.webp'],
   },
   robots: {
@@ -90,7 +88,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const gtmId = process.env.NEXT_PUBLIC_GTM_ID || 'GTM-WWZVT98T'
+  const gtmId = process.env['NEXT_PUBLIC_GTM_ID'] ?? 'GTM-WWZVT98T'
+  const gadsId = process.env['NEXT_PUBLIC_GOOGLE_ADS_ID'] ?? 'AW-16646363193'
   return (
     <html lang="nl" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
@@ -135,7 +134,7 @@ gtmJ=gtmD.createElement(gtmS),gtmDl=gtmL!='dataLayer'?'&l='+gtmL:'';gtmJ.async=t
         />
         {/* Google Ads Conversion Tracking */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16646363193"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gadsId}`}
           strategy="afterInteractive"
         />
         <Script
@@ -146,7 +145,7 @@ gtmJ=gtmD.createElement(gtmS),gtmDl=gtmL!='dataLayer'?'&l='+gtmL:'';gtmJ.async=t
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'AW-16646363193');
+              gtag('config', '${gadsId}');
             `,
           }}
         />

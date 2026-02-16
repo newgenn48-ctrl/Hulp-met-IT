@@ -39,14 +39,14 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       {/* Visual breadcrumbs */}
       <nav
         aria-label="Breadcrumb"
-        className="bg-slate-50 border-b border-slate-200"
+        className="bg-secondary-50 border-b border-secondary-200"
       >
         <div className="max-w-7xl mx-auto container-padding py-3">
           <ol className="flex items-center space-x-2 text-sm">
             {allItems.map((item, index) => (
               <li key={index} className="flex items-center">
                 {index > 0 && (
-                  <ChevronRight className="w-4 h-4 text-slate-400 mx-2" />
+                  <ChevronRight className="w-4 h-4 text-secondary-400 mx-2" />
                 )}
 
                 {index === 0 ? (
@@ -58,7 +58,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
                     {item.name}
                   </Link>
                 ) : index === allItems.length - 1 ? (
-                  <span className="text-slate-600 font-medium">
+                  <span className="text-secondary-600 font-medium">
                     {item.name}
                   </span>
                 ) : (

@@ -4,7 +4,7 @@ const city = 'Amersfoort'
 const citySlug = 'amersfoort'
 
 export const metadata: Metadata = {
-  title: `ICT Student aan Huis ${city} | Computerhulp vanaf 53,50 | Hulp met IT`,
+  title: 'Student aan huis Amersfoort | Hulp met IT',
   description: `ICT Student aan huis in ${city} voor betaalbare computerhulp. Ervaren IT-studenten van Hogeschool Utrecht komen bij u thuis. Vanaf 53,50. Hulp met computer, laptop, tablet, smartphone, internet en meer.`,
   keywords: [
     `ict student aan huis ${city.toLowerCase()}`,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     `hulp met computer ${city.toLowerCase()}`
   ],
   openGraph: {
-    title: `ICT Student aan Huis ${city} | Betaalbare Computerhulp`,
+    title: 'Student aan huis Amersfoort | Hulp met IT',
     description: `Ervaren IT-studenten komen bij u thuis in ${city}. Betaalbare tarieven vanaf 53,50. Hulp met computer, laptop, tablet, smartphone en internet.`,
     url: `https://hulpmetit.nl/student-aan-huis-${citySlug}`,
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `ICT Student aan Huis ${city} | Betaalbare Computerhulp`,
+    title: 'Student aan huis Amersfoort | Hulp met IT',
     description: `Ervaren IT-studenten komen bij u thuis in ${city}. Betaalbare tarieven vanaf 53,50.`,
     images: ['/student-aan-huis.webp']
   },

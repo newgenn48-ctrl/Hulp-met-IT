@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Alphen aan den Rijn | Hulp Met IT',
-  description: 'ICT Student aan huis in Alphen aan den Rijn voor computerhulp. Betaalbare IT-studenten komen naar je toe in Alphen Centrum, Ridderveld, De Baronie en omgeving. €14,50 per kwartier. Snel en vakkundig!',
+  title: 'Student aan huis Alphen aan den Rijn | Hulp met IT',
+  description: 'ICT Student aan huis in Alphen aan den Rijn voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis alphen aan den rijn',
     'student computerhulp alphen aan den rijn',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'student aan huis benthuizen'
   ],
   openGraph: {
-    title: 'ICT Student aan huis Alphen aan den Rijn | Hulp Met IT',
+    title: 'Student aan huis Alphen aan den Rijn | Hulp met IT',
     description: 'Student aan huis Alphen aan den Rijn: betaalbare computerhulp door IT-studenten. Ook in Boskoop, Hazerswoude en omgeving. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan huis Alphen aan den Rijn | Hulp Met IT',
+    title: 'Student aan huis Alphen aan den Rijn | Hulp met IT',
     description: 'Student aan huis Alphen aan den Rijn: betaalbare computerhulp door IT-studenten. Ook in Boskoop, Hazerswoude en omgeving. Bel ons!',
   },
   robots: {

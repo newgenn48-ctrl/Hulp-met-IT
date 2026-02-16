@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Zwolle | Hulp Met IT',
-  description: 'ICT Student aan huis in Zwolle voor computerhulp. Betaalbare IT-studenten van Hogeschool Windesheim komen naar je toe. €14,50 per kwartier + €10 voorrijkosten. Snel en vakkundig!',
+  title: 'Student aan huis Zwolle | Hulp met IT',
+  description: 'ICT Student aan huis in Zwolle voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis zwolle',
     'student computerhulp zwolle',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     'computerhulp hardenberg'
   ],
   openGraph: {
-    title: 'Student Aan Huis Zwolle',
+    title: 'Student aan huis Zwolle | Hulp met IT',
     description: 'Student aan huis Zwolle: betaalbare computerhulp door IT-studenten van Hogeschool Windesheim. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Zwolle',
+    title: 'Student aan huis Zwolle | Hulp met IT',
     description: 'Student aan huis Zwolle: betaalbare computerhulp door IT-studenten van Hogeschool Windesheim. Bel ons!',
   },
   robots: {

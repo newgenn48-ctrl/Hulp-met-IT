@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Privacybeleid - Hulp met IT',
   description: 'Privacybeleid en gegevensbescherming bij Hulp met IT. Lees hoe we omgaan met je persoonlijke gegevens.',
+  alternates: {
+    canonical: '/privacy',
+  },
   robots: {
     index: true,
     follow: true,

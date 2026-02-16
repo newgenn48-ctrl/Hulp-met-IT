@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Amsterdam | Hulp Met IT',
-  description: 'ICT Student aan huis in Amsterdam voor computerhulp. Betaalbare IT-studenten komen naar je toe. €14,50 per kwartier + €10 voorrijkosten. Snel en vakkundig!',
+  title: 'Student aan huis Amsterdam | Hulp met IT',
+  description: 'ICT Student aan huis in Amsterdam voor computerhulp. Betaalbare IT-studenten komen naar u toe. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten. Snel en vakkundig!',
   keywords: [
     'student aan huis amsterdam',
     'student computerhulp amsterdam',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'amsterdam IT hulp weekend'
   ],
   openGraph: {
-    title: 'Student Aan Huis Amsterdam | IT-Student Computerhulp',
+    title: 'Student aan huis Amsterdam | Hulp met IT',
     description: 'Student aan huis Amsterdam: betaalbare computerhulp door IT-studenten. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student Aan Huis Amsterdam | IT-Student Computerhulp',
+    title: 'Student aan huis Amsterdam | Hulp met IT',
     description: 'Student aan huis Amsterdam: betaalbare computerhulp door IT-studenten. Bel ons!',
   },
   robots: {

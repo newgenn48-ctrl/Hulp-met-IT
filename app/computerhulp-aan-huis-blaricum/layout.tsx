@@ -2,22 +2,22 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Blaricum | Hulp Met IT',
-  description: 'Computerhulp aan huis in Blaricum voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. €14,50 per kwartier + €10 voorrijkosten. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis in Blaricum voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'computerhulp aan huis blaricum',
     'computer reparatie blaricum',
     'laptop reparatie blaricum',
-    'IT specialist blaricum',
+    'ICT student blaricum',
     'pc hulp blaricum',
-    'computer specialist blaricum',
+    'computer student blaricum',
     'blaricum computerhulp avond',
     'blaricum IT hulp weekend',
     'computerhulp blaricum spoed',
     'betaalbare IT hulp blaricum'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Blaricum | Computerhulp specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis in Blaricum door IT-specialisten met 10+ jaar ervaring. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    title: 'Computerhulp aan huis Blaricum | ICT Student aan Huis | Hulp Met IT',
+    description: 'Computerhulp aan huis in Blaricum door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Blaricum | Computerhulp specialisten',
-    description: 'Computerhulp aan huis Blaricum. Specialist komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Blaricum | ICT Student aan Huis',
+    description: 'Computerhulp aan huis Blaricum. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
   },
   robots: {
     index: true,

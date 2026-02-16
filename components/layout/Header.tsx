@@ -65,11 +65,11 @@ export const Header = React.memo(function Header() {
             href="/"
             className="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105"
           >
-            <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-primary">
               <Monitor className="w-6 h-6 text-white" />
             </div>
             <div>
-              <span className="text-xl font-bold text-gradient">Hulp met IT</span>
+              <span className="text-xl font-bold text-primary-700">Hulp met IT</span>
               <div className="text-xs text-primary-700 leading-none">Computerhulp aan huis</div>
             </div>
           </Link>
@@ -79,7 +79,7 @@ export const Header = React.memo(function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-lg font-medium text-secondary-700 hover:text-primary-600 transition-colors"
+                className="relative text-lg font-medium text-secondary-700 hover:text-primary-600 transition-colors after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500 after:rounded-full after:transition-all after:duration-300 hover:after:w-full"
               >
                 {item.name}
               </Link>
@@ -87,15 +87,15 @@ export const Header = React.memo(function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/afspraak" className="inline-flex items-center justify-center text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2.5 rounded-lg transition-colors">
+            <Link href="/afspraak" className="inline-flex items-center justify-center text-sm font-semibold text-white bg-accent-500 hover:bg-accent-600 px-4 py-2.5 rounded-xl shadow-accent transition-all duration-200 hover:-translate-y-0.5">
               Afspraak maken
             </Link>
             <a
               href="tel:+31642827860"
-              className="flex items-center gap-2 bg-primary-50 hover:bg-primary-100 border border-primary-200 text-primary-700 font-semibold px-4 py-2.5 rounded-lg transition-colors"
+              className="flex items-center gap-2 bg-primary-50 hover:bg-primary-100 border border-primary-200 text-primary-700 font-semibold px-4 py-2.5 rounded-xl transition-colors"
             >
               <Phone className="w-5 h-5" />
-              <span className="text-base">Bel direct</span>
+              <span className="text-base">Bel ons<span className="hidden lg:inline"> - 06-42827860</span></span>
             </a>
           </div>
 
@@ -111,35 +111,37 @@ export const Header = React.memo(function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden glass-effect border-t border-primary-200">
-          <div className="container-padding py-6">
-            <nav className="flex flex-col space-y-4 mb-6">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-lg font-medium text-secondary-700 hover:text-primary-600 transition-colors"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="flex flex-col space-y-3">
-              <Link href="/afspraak" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-lg transition-colors">
-                Afspraak maken
+      {/* Mobile menu - smooth transition */}
+      <div
+        className={`lg:hidden glass-effect border-t border-primary-200 overflow-hidden transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="container-padding py-6">
+          <nav className="flex flex-col space-y-4 mb-6">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-lg font-medium text-secondary-700 hover:text-primary-600 transition-colors"
+              >
+                {item.name}
               </Link>
-              <a href="tel:+31642827860" onClick={() => setIsMobileMenuOpen(false)} className="btn-secondary">
-                <Phone className="w-5 h-5 mr-2" />
-                Bel direct
-              </a>
-            </div>
+            ))}
+          </nav>
+
+          <div className="flex flex-col space-y-3">
+            <Link href="/afspraak" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex items-center justify-center px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-colors shadow-accent">
+              Afspraak maken
+            </Link>
+            <a href="tel:+31642827860" onClick={() => setIsMobileMenuOpen(false)} className="btn-secondary">
+              <Phone className="w-5 h-5 mr-2" />
+              Bel direct
+            </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   )
 })

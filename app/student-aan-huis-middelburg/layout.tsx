@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Middelburg | Computerhulp aan Huis | Hulp Met IT',
-  description: 'ICT Student aan huis in Middelburg voor betaalbare computerhulp. Studenten van HZ University of Applied Sciences komen bij u thuis. €14,50 per kwartier. Ook in Vlissingen, Veere, Goes, Domburg, Oostkapelle en heel Zeeland.',
+  title: 'Student aan huis Middelburg | Hulp met IT',
+  description: 'ICT Student aan huis in Middelburg voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis middelburg',
     'student computerhulp middelburg',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     'HZ University student computerhulp'
   ],
   openGraph: {
-    title: 'ICT Student aan Huis Middelburg | Betaalbare Computerhulp',
+    title: 'Student aan huis Middelburg | Hulp met IT',
     description: 'Betaalbare computerhulp door IT-studenten in Middelburg en heel Zeeland. Studenten van HZ University of Applied Sciences. €14,50 per kwartier.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan Huis Middelburg | Betaalbare Computerhulp',
+    title: 'Student aan huis Middelburg | Hulp met IT',
     description: 'Betaalbare computerhulp door IT-studenten in Middelburg en heel Zeeland. Studenten van HZ University of Applied Sciences. €14,50 per kwartier.',
   },
   robots: {

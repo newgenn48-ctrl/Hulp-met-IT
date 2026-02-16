@@ -2,22 +2,22 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Leiden | Hulp Met IT',
-  description: 'Computerhulp aan huis in Leiden voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. €14,50 per kwartier + €10 voorrijkosten. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis in Leiden voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'computerhulp aan huis leiden',
     'computer reparatie leiden',
     'laptop reparatie leiden',
-    'IT specialist leiden',
+    'ICT student leiden',
     'pc hulp leiden',
-    'computer specialist leiden',
+    'computer student leiden',
     'leiden computerhulp avond',
     'leiden IT hulp weekend',
     'computerhulp leiden spoed',
     'betaalbare IT hulp leiden'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Leiden | Computerhulp specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis in Leiden door IT-specialisten met 10+ jaar ervaring. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    title: 'Computerhulp aan huis Leiden | ICT Student aan Huis | Hulp Met IT',
+    description: 'Computerhulp aan huis in Leiden door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Leiden | Computerhulp specialisten',
-    description: 'Computerhulp aan huis Leiden. Specialist komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Leiden | ICT Student aan Huis',
+    description: 'Computerhulp aan huis Leiden. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
   },
   robots: {
     index: true,

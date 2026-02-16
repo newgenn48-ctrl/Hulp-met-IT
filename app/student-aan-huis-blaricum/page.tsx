@@ -1,52 +1,30 @@
 'use client'
 
-import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { ServicesPreview } from '@/components/home/ServicesPreview'
-import { PricingSection } from '@/components/home/PricingSection'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import {
   Phone,
-  Calendar,
-  Users,
-  MessageCircle,
-  CheckCircle,
-  GraduationCap,
-  Zap,
-  Euro,
-  MapPin,
+  ArrowRight,
   ChevronDown,
-  ChevronUp
+  MapPin,
+  Banknote,
+  GraduationCap,
+  CalendarDays
 } from 'lucide-react'
+import { PricingSection } from '@/components/home/PricingSection'
+import { HowItWorks } from '@/components/home/HowItWorks'
+import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { CTASection } from '@/components/home/CTASection'
+import { SectionDivider } from '@/components/ui/SectionDivider'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { CompactServicesSection } from '@/components/home/CompactServicesSection'
+import { NearbyCities } from '@/components/city/NearbyCities'
+import { CityAboutSection } from '@/components/city/CityAboutSection'
 
 const CITY = 'Blaricum'
-const LOCAL_INSTITUTION = 'Hogeschool Utrecht'
 
-const benefits = [
-  { icon: Users, text: 'Persoonlijke hulp aan huis' },
-  { icon: MessageCircle, text: 'Begrijpelijke uitleg, zonder vakjargon' },
-  { icon: CheckCircle, text: 'Betaalbaar en betrouwbaar' }
-]
-
-const processSteps = [
-  {
-    step: '1',
-    title: 'Plan Afspraak',
-    description: `Bel of plan online - binnen ${CITY} snel beschikbaar`
-  },
-  {
-    step: '2',
-    title: 'Student Komt Langs',
-    description: `IT-student komt naar je adres in ${CITY}`
-  },
-  {
-    step: '3',
-    title: 'Probleem Opgelost',
-    description: 'Vakkundige hulp tegen studententarief + uitleg'
-  }
-]
-
-const cityAreas = [
+const areas = [
   'Blaricum Centrum', 'Blaricum Dorp', 'Laren', 'Huizen',
   'Hilversum', 'Bussum', 'Naarden', 'Eemnes',
   'Baarn', 'Loosdrecht', 'Kortenhoef', 'Hollandsche Rading'
@@ -54,469 +32,290 @@ const cityAreas = [
 
 const faqData = [
   {
-    question: `Wat kost computerhulp aan huis in ${CITY}?`,
-    answer: `Onze tarieven in ${CITY} beginnen €14,50 per kwartier (€10 voorrijkosten + 3 x €14,50). Dit is veel voordeliger dan traditionele computerhulp. Je betaalt alleen voor de daadwerkelijk bestede tijd.`
+    question: `Wat kost ICT student aan huis hulp in ${CITY}?`,
+    answer: `Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf.`
   },
   {
-    question: `Zijn jullie studenten wel gekwalificeerd voor hulp in ${CITY}?`,
-    answer: `Ja, onze studenten volgen IT-opleidingen aan ${LOCAL_INSTITUTION} en hebben praktijkervaring. Ze zijn vertrouwd met moderne technologie en worden geselecteerd op hun technische en communicatieve vaardigheden.`
+    question: `Zijn de studenten wel gekwalificeerd in ${CITY}?`,
+    answer: `Ja, onze studenten in ${CITY} volgen IT-opleidingen aan Hogeschool Utrecht en andere hogescholen en universiteiten. Ze worden geselecteerd op technische én communicatieve vaardigheden. Alle studenten zijn gescreend.`
   },
   {
-    question: `Kunnen jullie ook 's avonds en weekenden komen in ${CITY}?`,
-    answer: `Ja, dat is een van onze grote voordelen! Onze studenten hebben flexibele schema's en kunnen vaak ook 's avonds en in weekenden langskomen. We zijn bereikbaar van 08:00 tot 21:00, 7 dagen per week.`
+    question: `Kunnen jullie ook 's avonds en in weekenden in ${CITY}?`,
+    answer: `Ja, dat is een van onze voordelen! Studenten hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 21:00, 7 dagen per week in ${CITY}.`
   },
   {
-    question: `Hoe snel kunnen jullie in ${CITY} komen?`,
-    answer: `In ${CITY} en omgeving kunnen we vaak nog dezelfde dag langskomen, vooral 's avonds en in weekenden. Voor urgente problemen proberen we binnen 2-4 uur beschikbaar te zijn.`
+    question: `Hoe snel kunnen jullie komen in ${CITY}?`,
+    answer: `Vaak kunnen we nog dezelfde dag langskomen in ${CITY}. Voor urgente problemen proberen we binnen enkele uren beschikbaar te zijn.`
   },
   {
-    question: `Welke plaatsen in de buurt van ${CITY} bedienen jullie?`,
-    answer: `We bedienen ${CITY} en alle omliggende plaatsen in het Gooi, waaronder Laren, Huizen, Hilversum, Bussum, Naarden, Eemnes, Baarn, Loosdrecht en Kortenhoef.`
+    question: `Welke gebieden in ${CITY} bedienen jullie?`,
+    answer: `We bedienen heel ${CITY} en omgeving, inclusief ${areas.slice(0, 6).join(', ')} en meer.`
   }
 ]
 
-function FAQItem({ question, answer, isOpen, onToggle }: {
-  question: string
-  answer: string
-  isOpen: boolean
-  onToggle: () => void
-}) {
-  return (
-    <div className="bg-white rounded-lg border border-secondary-100 overflow-hidden">
-      <button
-        type="button"
-        onClick={onToggle}
-        className="w-full p-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
-      >
-        <h3 className="text-xl font-semibold text-secondary-800 pr-4">{question}</h3>
-        {isOpen ? (
-          <ChevronUp className="w-6 h-6 text-primary-400 flex-shrink-0" />
-        ) : (
-          <ChevronDown className="w-6 h-6 text-primary-400 flex-shrink-0" />
-        )}
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6">
-          <p className="text-secondary-700 leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
-  )
-}
+export default function StudentAanHuisCityPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
-export default function StudentAanHuisBlaricumLanding() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index)
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://hulpmetit.nl'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: `ICT Student aan Huis ${CITY}`,
+        item: 'https://hulpmetit.nl/student-aan-huis-blaricum'
+      }
+    ]
   }
+
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  }
+
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: `ICT Student aan Huis ${CITY}`,
+    description: `Betaalbare computerhulp door ervaren IT-studenten aan huis in ${CITY}`,
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Hulp met IT',
+      telephone: '+31642827860',
+      url: 'https://hulpmetit.nl'
+    },
+    areaServed: {
+      '@type': 'City',
+      name: CITY
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '14.50',
+      priceCurrency: 'EUR'
+    }
+  }
+
   return (
     <>
-
-      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://hulpmetit.nl"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": `Computerhulp ${CITY}`,
-                "item": `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`
-              }
-            ]
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
       />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": `Hulp met IT - Computerhulp ${CITY}`,
-            "description": `Betaalbare computerhulp in ${CITY} door ervaren IT-studenten van ${LOCAL_INSTITUTION}`,
-            "url": `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`,
-            "telephone": "+31642827860",
-            "email": "info@hulpmetit.nl",
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": CITY,
-              "addressRegion": "Noord-Holland",
-              "addressCountry": "NL"
-            },
-            "areaServed": [
-              { "@type": "City", "name": CITY },
-              { "@type": "City", "name": "Laren" },
-              { "@type": "City", "name": "Huizen" },
-              { "@type": "City", "name": "Hilversum" },
-              { "@type": "City", "name": "Bussum" },
-              { "@type": "City", "name": "Naarden" }
-            ],
-            "serviceType": "Computerhulp aan huis",
-            "priceRange": "€14,50 per kwartier - €65,50",
-            "openingHours": "Mo-Su 08:00-22:00"
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
-      {/* Breadcrumbs Navigation */}
-      <nav aria-label="Breadcrumb" className="bg-secondary-50 border-b border-secondary-200">
-        <div className="max-w-7xl mx-auto container-padding py-3">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link href="/" className="text-primary-600 hover:text-primary-700 transition-colors">
-                Home
-              </Link>
-            </li>
-            <li className="text-gray-400">/</li>
-            <li>
-              <span className="text-gray-700 font-medium">Computerhulp {CITY}</span>
-            </li>
-          </ol>
-        </div>
-      </nav>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
+      />
 
+      {/* Hero - matching homepage */}
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        <Image
+          src="/student-aan-huis.webp"
+          alt="Student aan huis in Blaricum"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-secondary-900/75 to-secondary-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-secondary-900/30" />
 
-      <section className="relative flex items-start justify-center overflow-hidden min-h-[600px] lg:min-h-[700px] pt-20">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: 'url(/images/student-aan-huis/student-aan-huis.webp)',
-              filter: 'brightness(0.7) contrast(1.1)'
-            }}
-          />
-          {/* Gradient Overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-accent-900/30" />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto container-padding text-center flex items-center min-h-[600px] lg:min-h-[700px]">
-          <div className="w-full">
-          <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-white drop-shadow-lg">Computerhulp aan Huis {CITY}</span>
-          </h1>
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
+          <div className="max-w-2xl">
+            <ScrollReveal>
 
-          <p className="text-xl lg:text-2xl text-white max-w-4xl mx-auto mb-6 leading-relaxed">
-            Heeft u vragen of problemen met uw computer, laptop, tablet of smartphone? Onze IT-studenten van {LOCAL_INSTITUTION} komen bij u thuis in <span className="font-semibold">{CITY} en het Gooi</span>. U krijgt rustige, geduldige hulp zodat u alles goed begrijpt. Betrouwbaar en betaalbaar.
-          </p>
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                Student aan huis{' '}
+                <span className="text-accent-400">in {CITY}</span>
+              </h1>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-4">
-            {benefits.map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-3 text-lg text-white bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg"
+              <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
+                Een HBO-opgeleide student komt bij u thuis in {CITY}, lost het probleem op en legt alles uit in gewone taal. Zo kunt u er weer tegenaan.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <Link
+                  href="/afspraak"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-accent"
                 >
-                  <IconComponent className="w-5 h-5 text-primary-600" />
-                  <span className="drop-shadow-sm">{benefit.text}</span>
-                </div>
-              )
-            })}
-          </div>
+                  Afspraak maken
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a
+                  href="tel:+31642827860"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                </a>
+              </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-            <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
-              <Calendar className="w-6 h-6 mr-3" />
-              Afspraak Maken
-            </Link>
+              <p className="text-accent-400 text-sm font-medium mb-8">
+                Meestal binnen 24 uur geholpen
+              </p>
 
-            <a href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center shadow-xl hover:shadow-2xl transition-shadow bg-white/95 hover:bg-white">
-              <Phone className="w-5 h-5 mr-2" />
-              Bel Nu
-            </a>
+              <div className="flex flex-wrap items-center gap-3 text-sm">
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <GraduationCap className="w-3.5 h-3.5 text-primary-300" />
+                  HBO-opgeleide studenten
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <Banknote className="w-3.5 h-3.5 text-primary-300" />
+                  Betaalbare tarieven
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <CalendarDays className="w-3.5 h-3.5 text-primary-300" />
+                  7 dagen per week
+                </span>
+              </div>
+            </ScrollReveal>
           </div>
-        </div>
         </div>
       </section>
 
-      <div className="relative">
-        <ServicesGrid
-          title="Wat Wij Voor U Kunnen Doen"
-          maxItems={6}
-        />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafaf9" />
 
-        {/* Pricing Section */}
-        <PricingSection />
+      <CompactServicesSection />
 
-        {/* Testimonials Section */}        {/* Process Section */}
-        <section className="py-16 lg:py-24 bg-white/5">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
-                Hoe Werkt Computerhulp aan Huis in {CITY}?
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Snel, lokaal en betaalbaar - vakkundige hulp in {CITY} en omgeving
-              </p>
-            </div>
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {processSteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold text-primary-600">
-                    {step.step}
+      <CityAboutSection citySlug="blaricum" pageType="student" />
+
+      <SectionDivider variant="soft-curve" topColor="#ffffff" bottomColor="#ffffff" />
+
+      <HowItWorks />
+
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+
+      <PricingSection />
+
+      <SectionDivider
+        variant="layered-wave"
+        topColor="#fafaf9"
+        bottomColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust' }}
+      />
+
+      <TrustAndPricing />
+
+      <SectionDivider
+        variant="swoosh"
+        topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
+        bottomColor="#fafaf9"
+      />
+
+      {/* Areas - city-specific */}
+      {areas.length > 0 && (
+        <section className="py-20 lg:py-28 bg-secondary-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollReveal>
+              <div className="text-center mb-14">
+                <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Werkgebied</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+                </h2>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
+              {areas.map((area, index) => (
+                <ScrollReveal key={index} delay={index * 50}>
+                  <div className="flex items-center gap-3 bg-white rounded-xl p-3.5 lg:p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                    <span className="font-medium text-secondary-900 text-sm">{area}</span>
                   </div>
-                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
-                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </section>
+      )}
 
-        {/* Services Section */}
-        <ServicesPreview />
+      <NearbyCities currentCitySlug="blaricum" pageType="student" />
 
-        {/* Why Choose Student Section */}
-        <section className="py-16 lg:py-24 bg-secondary-50">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
-                Waarom Kiezen voor Computerhulp in {CITY}?
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
+
+      {/* FAQ - city-specific */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">FAQ</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+                Vragen over ICT student aan huis in {CITY}
               </h2>
-              <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
-                Ontdek de voordelen van computerhulp door IT-studenten van {LOCAL_INSTITUTION}
-              </p>
             </div>
+          </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <Euro className="w-5 h-5 text-primary-600" />
+          <div className="space-y-3">
+            {faqData.map((faq, index) => (
+              <ScrollReveal key={index} delay={index * 60}>
+                <div className="bg-secondary-50 rounded-2xl shadow-card overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    aria-expanded={openFaq === index}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                  >
+                    <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                        openFaq === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div id={`faq-answer-${index}`} role="region" className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
+                    <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betaalbare Tarieven</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  €14,50 per kwartier in {CITY} - veel goedkoper dan traditionele computerhulp. Perfecte kwaliteit tegen studententarieven.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Studenten van {LOCAL_INSTITUTION}</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Onze IT-studenten zijn opgeleid in de nieuwste technologieen en kennen het Gooi goed. Snel ter plaatse in {CITY}.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <Zap className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Flexibele Tijden</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Ook 's avonds en in weekenden beschikbaar in {CITY}. Studenten hebben flexibele schema's.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <MapPin className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Heel het Gooi</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Van {CITY} tot Laren, van Huizen tot Hilversum - onze studenten komen overal in de regio.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Beschikbaarheid</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Vaak nog dezelfde dag beschikbaar in {CITY}. Korte reistijd betekent snelle hulp.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <GraduationCap className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Actuele Kennis</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Studenten zijn vertrouwd met de nieuwste software en technologieen. Ideaal voor moderne computerproblemen.
-                </p>
-              </div>
-            </div>
+              </ScrollReveal>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Services Detail Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
-                Onze IT Diensten in {CITY}
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Uitgebreide computerhulp door vakkundige IT-studenten in {CITY} en omgeving
-              </p>
-            </div>
+      {/* Cross-link */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Heeft u een complex probleem? Onze{' '}
+            <a href="/computerhulp-aan-huis-blaricum" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              HBO-opgeleide studenten staan klaar
+            </a>
+            .
+          </p>
+        </div>
+      </section>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Computer & Laptop Hulp {CITY}</h3>
+      <SectionDivider
+        variant="tilt"
+        topColor="#ffffff"
+        bottomColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta' }}
+      />
 
-                <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Laptop en Computer Reparatie</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>- Computer start niet op - diagnose en reparatie</li>
-                    <li>- Laptop scherm vervangen of repareren</li>
-                    <li>- Toetsenbord en touchpad problemen</li>
-                    <li>- Hardware upgrades (RAM, SSD, harde schijf)</li>
-                    <li>- Ventilator reiniging bij oververhitting</li>
-                  </ul>
-                </div>
+      <CTASection />
 
-                <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Software Installatie & Updates</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>- Windows installatie en updates</li>
-                    <li>- Microsoft Office installatie en configuratie</li>
-                    <li>- Antivirus software installeren</li>
-                    <li>- Browser installatie en bookmarks overzetten</li>
-                    <li>- Printer drivers en software installeren</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <h3 className="text-2xl font-semibold text-secondary-800 mb-4">Internet & Netwerk {CITY}</h3>
-
-                <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">WiFi & Internet Problemen</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>- WiFi verbinding problemen oplossen</li>
-                    <li>- Router instellen en configureren</li>
-                    <li>- Langzame internet snelheid verbeteren</li>
-                    <li>- Netwerk printer verbinding maken</li>
-                    <li>- Smart TV internet verbinding</li>
-                  </ul>
-                </div>
-
-                <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                  <h4 className="text-lg font-semibold text-secondary-800 mb-3">Smartphone & Tablet Hulp</h4>
-                  <ul className="text-secondary-700 space-y-2">
-                    <li>- iPhone en Android telefoon instellen</li>
-                    <li>- Apps downloaden en organiseren</li>
-                    <li>- Contacten en foto's synchroniseren</li>
-                    <li>- Tablet koppelen aan WiFi en accounts</li>
-                    <li>- Privacy instellingen optimaliseren</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 lg:py-24 bg-secondary-50">
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": faqData.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer
-                  }
-                }))
-              })
-            }}
-          />
-          <div className="max-w-4xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
-                Veelgestelde Vragen over Computerhulp in {CITY}
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Antwoorden op de meest gestelde vragen over onze IT service in {CITY}
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {faqData.map((faq, index) => (
-                <FAQItem
-                  key={index}
-                  question={faq.question}
-                  answer={faq.answer}
-                  isOpen={openFAQ === index}
-                  onToggle={() => toggleFAQ(index)}
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Areas Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
-                Werkgebied {CITY} & het Gooi
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Onze IT-studenten komen naar alle plaatsen in en rondom {CITY}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-              {cityAreas.map((area, index) => (
-                <div key={index} className="bg-white rounded-lg border border-secondary-100 p-4 text-center">
-                  <MapPin className="w-5 h-5 text-blue-400 mx-auto mb-2" />
-                  <span className="text-secondary-700 text-base font-medium">{area}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <p className="text-secondary-700 text-lg mb-6">
-                Niet in de lijst? <strong className="text-secondary-800">Bel ons</strong> - wij komen waarschijnlijk ook bij u!
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-primary-50 via-white to-accent-50">
-          <div className="max-w-4xl mx-auto container-padding text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-6">
-              Klaar voor Betaalbare Computerhulp in {CITY}?
-            </h2>
-            <p className="text-xl text-primary-700 mb-8 max-w-2xl mx-auto">
-              Onze IT-studenten van {LOCAL_INSTITUTION} staan klaar om u te helpen. Snel, betaalbaar en vakkundig!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/afspraak" className="btn-cta shadow-2xl hover:shadow-3xl transition-shadow">
-                <Calendar className="w-6 h-6 mr-3" />
-                Plan Nu Uw Afspraak
-              </Link>
-              <Link href="tel:+31642827860" className="btn-secondary text-xl px-8 py-4 inline-flex items-center justify-center">
-                <Phone className="w-6 h-6 mr-3" />
-                Bel Direct
-              </Link>
-            </div>
-          </div>
-        </section>
-
-      </div>
+      <SectionDivider
+        variant="diagonal"
+        topColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta-bot' }}
+        bottomColor="#1c1917"
+      />
     </>
   )
 }

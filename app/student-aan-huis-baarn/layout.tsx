@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan Huis Baarn | Computerhulp vanaf €14,50/uur | Hulp met IT',
-  description: 'ICT Student aan huis in Baarn voor computerhulp. IT-studenten van Hogeschool Utrecht komen bij u thuis in Baarn Centrum, Lage Vuursche, Soestdijk en omgeving. Betaalbaar: vanaf €14,50/uur + €10 voorrijkosten.',
+  title: 'Student aan huis Baarn | Hulp met IT',
+  description: 'ICT Student aan huis in Baarn voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis baarn',
     'computerhulp baarn',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'computer hulp aan huis baarn'
   ],
   openGraph: {
-    title: 'ICT Student aan Huis Baarn | Computerhulp vanaf €14,50/uur',
+    title: 'Student aan huis Baarn | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Baarn door IT-studenten van Hogeschool Utrecht. Hulp in Baarn Centrum, Lage Vuursche, Soestdijk en omgeving.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan Huis Baarn | Computerhulp vanaf €14,50/uur',
+    title: 'Student aan huis Baarn | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Baarn door IT-studenten van Hogeschool Utrecht. Hulp in Baarn Centrum, Lage Vuursche, Soestdijk en omgeving.',
   },
   robots: {

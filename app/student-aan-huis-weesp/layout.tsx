@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Weesp | IT Student aan Huis | Hulp met IT',
-  description: 'Computerhulp aan huis in Weesp door ervaren IT-studenten van Hogeschool Utrecht en UvA. Hulp met laptop, tablet, smartphone en WiFi. €14,50 per kwartier. Ook in Muiden, Naarden en Diemen.',
+  title: 'Student aan huis Weesp | Hulp met IT',
+  description: 'ICT Student aan huis in Weesp voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: 'computerhulp Weesp, IT student aan huis Weesp, laptop hulp Weesp, computer reparatie Weesp, WiFi problemen Weesp, smartphone hulp Muiden, tablet hulp Naarden, Hogeschool Utrecht IT student, UvA student',
   openGraph: {
-    title: 'Computerhulp Weesp | IT Student aan Huis',
+    title: 'Student aan huis Weesp | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Weesp en omgeving door IT-studenten van Hogeschool Utrecht en UvA. Persoonlijke hulp met computer, laptop, tablet en smartphone.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp Weesp | IT Student aan Huis',
+    title: 'Student aan huis Weesp | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Weesp door IT-studenten. Persoonlijke hulp met al uw apparaten.',
   },
   robots: {

@@ -343,7 +343,7 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
           <li>Uw aanvraag is geregistreerd in ons systeem</li>
           <li>Wij nemen binnen 2 werkuren telefonisch contact op</li>
           <li>Datum en tijdstip worden definitief bevestigd</li>
-          <li>Onze gecertificeerde IT-specialist komt naar u toe</li>
+          <li>Onze HBO-opgeleide ICT-student komt naar u toe</li>
           <li>Uw IT-probleem wordt professioneel opgelost</li>
         </ul>
       </div>

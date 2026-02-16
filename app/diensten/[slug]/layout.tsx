@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const metaTitle = service.metaTitle || `${service.name} aan Huis | Hulp met IT`
-  const metaDescription = service.metaDescription || `${service.description} ✓ Transparante tarieven €14,50 per kwartier ✓ Binnen 48 uur geholpen ✓ 10+ jaar ervaring`
+  const metaDescription = service.metaDescription || `${service.description} ✓ Transparante tarieven €14,50 per kwartier ✓ Binnen 48 uur geholpen ✓ HBO-opgeleide studenten`
 
   return {
     title: metaTitle,
@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: metaTitle,
       description: service.description,
+      images: ['/og-image.webp'],
       url: `https://hulpmetit.nl/diensten/${resolvedParams.slug}`,
       type: 'article',
       locale: 'nl_NL',

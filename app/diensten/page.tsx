@@ -16,7 +16,7 @@ import services from '@/lib/data/services.json'
 
 export const metadata: Metadata = {
   title: 'IT Diensten aan Huis | Overzicht | Hulp met IT',
-  description: 'Overzicht van al onze IT-diensten aan huis: computerhulp, printerhulp, e-mail problemen, internet & WiFi, tablet & smartphone hulp en computerles. Transparante tarieven €14,50 per kwartier.',
+  description: 'Overzicht van onze IT-diensten aan huis: computerhulp, printerhulp, e-mailproblemen, WiFi, tablet & smartphone hulp en computerles. Vanaf €14,50 per kwartier.',
   keywords: [
     'IT diensten aan huis',
     'computerhulp',
@@ -93,29 +93,35 @@ export default function DienstenPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white py-20 lg:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <h1 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
-              Onze diensten
+            <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Onze diensten</p>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-900 mb-4">
+              Waar kunnen wij u mee helpen?
             </h1>
             <p className="text-lg text-secondary-600 leading-relaxed">
-              Wij helpen met alles rondom uw computer, internet en apparaten. Onze medewerker komt bij u thuis en legt alles uit in gewone taal.
+              Wij helpen met alles rondom uw computer, internet en apparaten. Onze student komt bij u thuis en legt alles uit in gewone taal.
             </p>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 lg:py-24 bg-secondary-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl mb-10">
-            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900">
-              Waar kunnen wij u mee helpen?
+      <section className="relative py-20 lg:py-28 bg-secondary-50 overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-15" />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Diensten</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+              Ons complete aanbod
             </h2>
+            <p className="text-secondary-500 max-w-2xl mx-auto text-lg">
+              Klik op een dienst voor meer informatie.
+            </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-3">
+          <div className="grid sm:grid-cols-2 gap-4">
             {services.map((service) => {
               const IconComponent = iconMap[service.icon] || Monitor
 
@@ -123,13 +129,13 @@ export default function DienstenPage() {
                 <Link
                   key={service.slug}
                   href={`/diensten/${service.slug}`}
-                  className="group flex items-start gap-4 bg-white rounded-lg px-5 py-4 hover:shadow-md transition-shadow border border-secondary-100"
+                  className="group flex items-start gap-4 bg-white rounded-2xl px-5 py-4 shadow-card hover:shadow-card-hover transition-all duration-200 hover:-translate-y-0.5"
                 >
-                  <div className="w-9 h-9 rounded-md bg-primary-50 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <IconComponent className="w-[18px] h-[18px] text-primary-600" />
+                  <div className="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <IconComponent className="w-5 h-5 text-primary-600" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-secondary-900 text-[15px]">
+                    <h3 className="font-semibold text-secondary-900 text-[15px] group-hover:text-primary-600 transition-colors">
                       {service.name}
                     </h3>
                     <p className="text-secondary-500 text-sm">
@@ -145,28 +151,30 @@ export default function DienstenPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800" />
+        <div className="absolute inset-0 bg-grid opacity-50" />
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Niet gevonden wat u zoekt?
           </h2>
-          <p className="text-secondary-600 mb-8">
-            Wij helpen graag met alle IT-gerelateerde problemen. Bel ons voor een vrijblijvend adviesgesprek.
+          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+            Wij helpen graag met alle problemen rondom uw computer en apparaten. Bel gerust, wij denken met u mee.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/afspraak"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl shadow-accent transition-all duration-200 hover:-translate-y-0.5"
             >
               Afspraak maken
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-5 h-5" />
             </Link>
             <a
               href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-primary-600 border border-primary-200 hover:bg-primary-50 rounded-lg transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-all duration-200"
             >
-              <Phone className="w-4 h-4 mr-2" />
-              Bel ons
+              <Phone className="w-5 h-5" />
+              Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
             </a>
           </div>
         </div>

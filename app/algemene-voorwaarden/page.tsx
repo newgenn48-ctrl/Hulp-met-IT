@@ -3,6 +3,9 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Algemene Voorwaarden - Hulp met IT',
   description: 'Algemene voorwaarden voor IT-dienstverlening van Hulp met IT. Lees onze voorwaarden voor computerhulp aan huis.',
+  alternates: {
+    canonical: '/algemene-voorwaarden',
+  },
   robots: {
     index: true,
     follow: true,
@@ -19,7 +22,7 @@ export default function AlgemeneVoorwaardenPage() {
               Algemene Voorwaarden
             </h1>
             <p className="text-xl text-secondary-700 max-w-3xl mx-auto leading-relaxed">
-              Laatst gewijzigd: 28 oktober 2025
+              Laatst gewijzigd: 16 februari 2026
             </p>
           </div>
 
@@ -188,7 +191,7 @@ export default function AlgemeneVoorwaardenPage() {
             <section>
               <h2 className="text-2xl font-bold text-secondary-800 mb-4">10. Privacy</h2>
               <div className="space-y-3">
-                <p>Voor de verwerking van uw persoons gegevens verwijzen wij naar ons <a href="/privacy" className="text-primary-600 hover:underline">privacybeleid</a>.</p>
+                <p>Voor de verwerking van uw persoonsgegevens verwijzen wij naar ons <a href="/privacy" className="text-primary-600 hover:underline">privacybeleid</a>.</p>
 
                 <p className="mt-3"><strong>Vertrouwelijkheid:</strong></p>
                 <ul className="list-disc list-inside space-y-1 ml-4">

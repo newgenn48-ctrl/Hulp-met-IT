@@ -7,67 +7,22 @@ import {
   Phone,
   ArrowRight,
   ChevronDown,
-  Users,
-  Award,
-  Shield,
-  Clock,
-  Monitor,
-  Wrench
+  Banknote,
+  GraduationCap,
+  CalendarDays,
+  MapPin,
+  ChevronRight
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
-import { ServicesGrid } from '@/components/services/ServicesGrid'
+import { HowItWorks } from '@/components/home/HowItWorks'
+import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { CTASection } from '@/components/home/CTASection'
+import { SectionDivider } from '@/components/ui/SectionDivider'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { CompactServicesSection } from '@/components/home/CompactServicesSection'
+import cities from '@/lib/data/cities.json'
 
-const benefits = [
-  {
-    icon: Award,
-    title: '10+ Jaar Ervaring',
-    description: 'Onze specialisten hebben ruim 10 jaar ervaring met computerhulp.'
-  },
-  {
-    icon: Users,
-    title: 'Persoonlijke Aanpak',
-    description: 'Geduldig en begrijpelijke uitleg, zonder vakjargon.'
-  },
-  {
-    icon: Clock,
-    title: 'Snel Ter Plaatse',
-    description: 'Vaak nog dezelfde dag, ook voor spoedgevallen.'
-  },
-  {
-    icon: Shield,
-    title: 'Betrouwbaar & Veilig',
-    description: 'Alle specialisten zijn gescreend. Uw privacy staat voorop.'
-  },
-  {
-    icon: Wrench,
-    title: 'Alle Problemen',
-    description: 'Van trage computer tot virus, wij lossen het op.'
-  },
-  {
-    icon: Monitor,
-    title: 'Alle Merken',
-    description: 'HP, Dell, Lenovo, Asus, Apple - wij kennen ze allemaal.'
-  }
-]
-
-const processSteps = [
-  {
-    title: 'U belt of plant online',
-    description: 'Vertel ons kort wat het probleem is. Wij plannen een afspraak op een moment dat u uitkomt.'
-  },
-  {
-    title: 'Specialist komt langs',
-    description: 'Een ervaren IT-specialist komt bij u thuis met alle benodigde tools.'
-  },
-  {
-    title: 'Probleem wordt opgelost',
-    description: 'Vakkundige hulp ter plekke. U krijgt uitleg zodat u het begrijpt.'
-  },
-  {
-    title: 'Betaling achteraf',
-    description: 'U betaalt pas na afloop. Geen vooruitbetaling, geen verrassingen.'
-  }
-]
+const displayCities = cities.slice(0, 12)
 
 const faqData = [
   {
@@ -95,7 +50,6 @@ const faqData = [
 export default function ComputerhulpAanHuisPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
 
-  // Structured data
   const faqStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -113,8 +67,8 @@ export default function ComputerhulpAanHuisPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Computerhulp aan Huis',
-    alternateName: ['Computer reparatie aan huis', 'Laptop hulp thuis', 'IT specialist aan huis'],
-    description: 'Professionele computerhulp aan huis door ervaren IT-specialisten',
+    alternateName: ['Computer reparatie aan huis', 'Laptop hulp thuis', 'ICT student aan huis'],
+    description: 'Persoonlijke computerhulp aan huis door HBO-opgeleide ICT-studenten',
     provider: {
       '@type': 'LocalBusiness',
       name: 'Hulp met IT',
@@ -143,183 +97,199 @@ export default function ComputerhulpAanHuisPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
 
-      {/* Breadcrumbs */}
-      <div className="bg-secondary-50 border-b border-secondary-200">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3">
-          <nav className="flex items-center gap-2 text-sm">
-            <Link href="/" className="text-secondary-500 hover:text-primary-700">Home</Link>
-            <span className="text-secondary-400">/</span>
-            <span className="text-secondary-700 font-medium">Computerhulp aan huis</span>
-          </nav>
-        </div>
-      </div>
+      {/* Hero - matching homepage */}
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        <Image
+          src="/hulp-met-it.webp"
+          alt="Computerhulp aan huis door ICT-student"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-secondary-900/75 to-secondary-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-secondary-900/30" />
 
-      {/* Hero Section */}
-      <section className="bg-white py-16 lg:py-24">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
+          <div className="max-w-2xl">
+            <ScrollReveal>
 
-            {/* Content */}
-            <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-900 leading-tight mb-6">
-                Computerhulp aan huis
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                Computerhulp aan huis{' '}
+                <span className="text-accent-400">bij u thuis</span>
               </h1>
 
-              <p className="text-lg text-secondary-600 leading-relaxed mb-8 max-w-lg">
-                Problemen met uw computer? Onze medewerker komt bij u thuis langs en lost het ter plekke op. U hoeft nergens heen, wij komen naar u toe en leggen alles uit in gewone taal.
+              <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
+                Problemen met uw computer? Onze student komt bij u thuis langs en lost het ter plekke op. U hoeft nergens heen, wij komen naar u toe en leggen alles uit in gewone taal.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <Link
                   href="/afspraak"
-                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-accent"
                 >
                   Afspraak maken
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
                   href="tel:+31642827860"
-                  className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
-                  <Phone className="w-5 h-5 mr-2" />
-                  Bel ons
+                  <Phone className="w-4 h-4" />
+                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
                 </a>
               </div>
-            </div>
 
-            {/* Photo */}
-            <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
-              <Image
-                src="/hulp-met-it.webp"
-                alt="IT-specialist helpt klant thuis met computerproblemen"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
+              <p className="text-accent-400 text-sm font-medium mb-8">
+                Meestal binnen 24 uur geholpen
+              </p>
 
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <ServicesGrid maxItems={6} />
-
-      {/* Why Us */}
-      <section className="py-16 lg:py-24 bg-secondary-50">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-10">
-            Voordelen van computerhulp aan huis
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => {
-              const IconComponent = benefit.icon
-              return (
-                <div key={index} className="bg-white rounded-lg p-6 border border-secondary-200">
-                  <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center mb-4">
-                    <IconComponent className="w-5 h-5 text-primary-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-secondary-900 mb-2">{benefit.title}</h3>
-                  <p className="text-secondary-500">{benefit.description}</p>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* How it works */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-6xl mx-auto px-6 sm:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-3">
-              In 4 stappen geholpen
-            </h2>
-            <p className="text-secondary-500 max-w-xl mx-auto">
-              Van eerste contact tot een opgelost probleem - zo werkt het.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {processSteps.map((step, index) => (
-              <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-secondary-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <span className="text-xl font-bold text-secondary-900">{index + 1}</span>
-                </div>
-                <h3 className="text-lg font-semibold text-secondary-900 mb-2">{step.title}</h3>
-                <p className="text-secondary-500">{step.description}</p>
+              <div className="flex flex-wrap items-center gap-3 text-sm">
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <GraduationCap className="w-3.5 h-3.5 text-primary-300" />
+                  HBO-opgeleide studenten
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <Banknote className="w-3.5 h-3.5 text-primary-300" />
+                  Betaalbare tarieven
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <CalendarDays className="w-3.5 h-3.5 text-primary-300" />
+                  7 dagen per week
+                </span>
               </div>
-            ))}
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafaf9" />
+
+      <CompactServicesSection />
+
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
+
+      <HowItWorks />
+
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+
       <PricingSection />
 
+      <SectionDivider
+        variant="layered-wave"
+        topColor="#fafaf9"
+        bottomColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust' }}
+      />
+
+      <TrustAndPricing />
+
+      <SectionDivider
+        variant="swoosh"
+        topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
+        bottomColor="#fafaf9"
+      />
+
+      {/* Cities overview */}
+      <section className="py-20 lg:py-28 bg-secondary-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Werkgebied</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+                Computerhulp aan huis in heel Nederland
+              </h2>
+              <p className="text-secondary-500 max-w-xl mx-auto text-lg">
+                Onze studenten komen bij u thuis, waar u ook woont.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4 mb-10">
+            {displayCities.map((city, index) => (
+              <ScrollReveal key={city.slug} delay={index * 50}>
+                <Link
+                  href={`/computerhulp-aan-huis-${city.slug}`}
+                  className="group flex items-center gap-3 bg-white rounded-xl p-3.5 lg:p-4 shadow-card hover:shadow-card-hover transition-all duration-300"
+                >
+                  <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                  <span className="font-medium text-secondary-900 text-sm group-hover:text-primary-600 transition-colors truncate">
+                    {city.name}
+                  </span>
+                  <ChevronRight className="w-3.5 h-3.5 text-secondary-300 group-hover:text-primary-500 transition-colors flex-shrink-0 ml-auto" />
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={600}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <span className="text-secondary-400 text-sm">+ {cities.length - 12} andere steden</span>
+              <Link
+                href="/regios"
+                className="inline-flex items-center gap-2 px-6 py-3 font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-primary text-sm"
+              >
+                Alle regio&apos;s bekijken
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
+
       {/* FAQ */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-3xl mx-auto px-6 sm:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-8">
-            Veelgestelde vragen
-          </h2>
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">FAQ</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+                Veelgestelde vragen
+              </h2>
+            </div>
+          </ScrollReveal>
 
           <div className="space-y-3">
             {faqData.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-secondary-50 rounded-lg border border-secondary-200 overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
-                >
-                  <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
-                  <ChevronDown
-                    className={`w-5 h-5 text-secondary-500 flex-shrink-0 transition-transform ${
-                      openFaq === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-                <div className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
+              <ScrollReveal key={index} delay={index * 60}>
+                <div className="bg-secondary-50 rounded-2xl shadow-card overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    aria-expanded={openFaq === index}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                  >
+                    <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                        openFaq === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div id={`faq-answer-${index}`} role="region" className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
                     <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                   </div>
-              </div>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-16 lg:py-24 bg-secondary-50">
-        <div className="max-w-3xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-secondary-900 mb-4">
-            Klaar voor professionele computerhulp?
-          </h2>
-          <p className="text-secondary-500 mb-8 max-w-xl mx-auto">
-            Onze ervaren IT-specialisten staan klaar om u te helpen. Snel, vakkundig en betrouwbaar.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/afspraak"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
-            >
-              Afspraak maken
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-            <a
-              href="tel:+31642827860"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Bel ons
-            </a>
-          </div>
-        </div>
-      </section>
+      <SectionDivider
+        variant="tilt"
+        topColor="#ffffff"
+        bottomColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta' }}
+      />
+
+      <CTASection />
+
+      <SectionDivider
+        variant="diagonal"
+        topColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta-bot' }}
+        bottomColor="#1c1917"
+      />
     </>
   )
 }

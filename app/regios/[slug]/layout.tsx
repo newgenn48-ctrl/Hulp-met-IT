@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
   }
 
   const title = `Computerhulp ${city.name} | IT Service €14,50 per kwartier | Hulp met IT`
-  const description = `Computerhulp in ${city.name} en omgeving. Ervaren IT-specialisten voor al uw computerproblemen. €14,50 per kwartier. Ook in ${city.serviceAreas.slice(0, 4).join(', ')}. Bel nu!`
+  const description = `Computerhulp in ${city.name} en omgeving. HBO-opgeleide ICT-studenten voor al uw computerproblemen. €14,50 per kwartier. Ook in ${city.serviceAreas.slice(0, 4).join(', ')}. Bel nu!`
 
   return {
     title,
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
       `laptop hulp ${city.name}`,
       `IT service ${city.name}`,
       `computer problemen ${city.name}`,
-      `IT specialist ${city.name}`,
+      `ICT student ${city.name}`,
       `${city.name.toLowerCase()} computerhulp`,
       `${city.name.toLowerCase()} IT hulp`,
       `${city.name.toLowerCase()} computer service`,
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     ],
     openGraph: {
       title: `Computerhulp ${city.name} | IT Service`,
-      description: `Professionele computerhulp in ${city.name}. Ervaren IT-specialisten, flexibele tijden. €14,50 per kwartier.`,
+      description: `Persoonlijke computerhulp in ${city.name}. HBO-opgeleide ICT-studenten, flexibele tijden. €14,50 per kwartier.`,
       images: ['/og-image.webp'],
       type: 'website',
       locale: 'nl_NL',

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Leiden | Hulp Met IT',
-  description: 'ICT Student aan huis in Leiden voor computerhulp. Betaalbare IT-studenten van Universiteit Leiden en Hogeschool Leiden komen naar je toe. €14,50 per kwartier. Snel en vakkundig!',
+  title: 'Student aan huis Leiden | Hulp met IT',
+  description: 'ICT Student aan huis in Leiden voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis leiden',
     'student computerhulp leiden',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'computerhulp leiderdorp'
   ],
   openGraph: {
-    title: 'ICT Student aan huis Leiden',
+    title: 'Student aan huis Leiden | Hulp met IT',
     description: 'Student aan huis Leiden: betaalbare computerhulp door IT-studenten van Universiteit Leiden en Hogeschool Leiden. Bel ons!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan huis Leiden',
+    title: 'Student aan huis Leiden | Hulp met IT',
     description: 'Student aan huis Leiden: betaalbare computerhulp door IT-studenten van Universiteit Leiden en Hogeschool Leiden. Bel ons!',
   },
   robots: {

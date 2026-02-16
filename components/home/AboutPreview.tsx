@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { ArrowRight, Users, Award, Clock, Shield } from 'lucide-react'
 
 const stats = [
-  { icon: Users, value: '2000+', label: 'Tevreden klanten' },
-  { icon: Award, value: '10+', label: 'Jaar ervaring' },
-  { icon: Clock, value: 'Snel', label: 'Ter plaatse' },
+  { icon: Users, value: 'HBO', label: 'Opgeleide studenten' },
+  { icon: Award, value: '40+', label: 'Steden' },
+  { icon: Clock, value: '7', label: 'Dagen per week' },
   { icon: Shield, value: '100%', label: 'Verzekerd' },
 ]
 
@@ -24,7 +24,7 @@ export function AboutPreview() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
               <Image
                 src="/student-aan-huis.webp"
-                alt="Hulp met IT specialist helpt klant thuis"
+                alt="Hulp met IT student helpt klant thuis"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -36,15 +36,15 @@ export function AboutPreview() {
           <div>
             <p className="text-primary-700 font-semibold mb-3">Over Hulp met IT</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
-              Persoonlijke IT-hulp waar u op kunt rekenen
+              Persoonlijke hulp waar u op kunt rekenen
             </h2>
             <p className="text-lg text-secondary-600 mb-6 leading-relaxed">
               <strong className="text-secondary-800">Hulp met IT</strong> is geen groot bedrijf, maar een klein team dat echt om u geeft.
-              Al meer dan 10 jaar helpen wij mensen met hun computer- en IT-problemen.
+              Onze studenten helpen u met al uw computer- en internetproblemen, rustig en op uw tempo.
             </p>
             <p className="text-lg text-secondary-600 mb-8 leading-relaxed">
-              Of u nu moeite heeft met uw laptop, WiFi, printer of tablet - wij komen
-              naar u toe en zorgen ervoor dat alles weer werkt.
+              Of u nu moeite heeft met uw laptop, internet, printer of tablet — wij komen
+              bij u thuis en zorgen dat alles weer werkt. En we leggen het uit zodat u het begrijpt.
             </p>
 
             {/* Stats inline */}
@@ -65,7 +65,7 @@ export function AboutPreview() {
 
             <Link
               href="/over-ons"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-500 hover:bg-primary-600 rounded-xl transition-colors shadow-lg shadow-primary-500/30"
+              className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-xl transition-colors shadow-lg shadow-primary-600/30"
             >
               Meer over ons
               <ArrowRight className="w-5 h-5 ml-2" />

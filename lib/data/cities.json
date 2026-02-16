@@ -25,7 +25,7 @@
       "computer problemen Amsterdam",
       "IT hulp aan huis Amsterdam",
       "technische ondersteuning Amsterdam",
-      "computer specialist Amsterdam"
+      "computer student Amsterdam"
     ],
     "coordinates": {
       "lat": 52.3676,
@@ -38,7 +38,7 @@
     "population": "162.000",
     "region": "Noord-Holland",
     "description": "De bloemenstad met persoonlijke IT-service en vakkundige ondersteuning",
-    "longDescription": "Haarlem, de hoofdstad van Noord-Holland, verdient IT-service van topkwaliteit. Onze specialisten kennen de stad goed - van het historische centrum tot Schalkwijk. Wij bieden betrouwbare en vriendelijke computerhulp aan alle Haarlemmers.",
+    "longDescription": "Haarlem, de hoofdstad van Noord-Holland, verdient IT-service van topkwaliteit. Onze studenten kennen de stad goed - van het historische centrum tot Schalkwijk. Wij bieden betrouwbare en vriendelijke computerhulp aan alle Haarlemmers.",
     "serviceAreas": [
       "Haarlem Centrum",
       "Haarlem Noord",
@@ -58,7 +58,7 @@
       "computer problemen Haarlem",
       "IT hulp aan huis Haarlem",
       "technische ondersteuning Haarlem",
-      "computer specialist Haarlem"
+      "computer student Haarlem"
     ],
     "coordinates": {
       "lat": 52.3874,
@@ -71,7 +71,7 @@
     "population": "650.000",
     "region": "Zuid-Holland",
     "description": "De moderne havenstad waar technologie en innovatie centraal staan",
-    "longDescription": "Rotterdam, de grootste haven van Europa, verdient de beste IT-service. Onze IT-specialisten kennen Rotterdam door en door - van het centrum tot de buitenwijken. Wij bieden snelle, betrouwbare computerhulp aan alle Rotterdammers, van Kralingseplas tot Pernis.",
+    "longDescription": "Rotterdam, de grootste haven van Europa, verdient de beste IT-service. Onze ICT-studenten kennen Rotterdam door en door - van het centrum tot de buitenwijken. Wij bieden snelle, betrouwbare computerhulp aan alle Rotterdammers, van Kralingseplas tot Pernis.",
     "serviceAreas": [
       "Rotterdam Centrum",
       "Rotterdam Noord",
@@ -91,7 +91,7 @@
       "computer problemen Rotterdam",
       "IT hulp aan huis Rotterdam",
       "technische ondersteuning Rotterdam",
-      "computer specialist Rotterdam"
+      "computer student Rotterdam"
     ],
     "coordinates": {
       "lat": 51.9244,
@@ -104,7 +104,7 @@
     "population": "545.000", 
     "region": "Zuid-Holland",
     "description": "De hofstad waar bestuur en technologie samenkomen",
-    "longDescription": "In Den Haag, de zetel van de regering, zorgen wij voor betrouwbare IT-ondersteuning. Van Scheveningen tot Leidschenveen, van het centrum tot Ypenburg - onze IT-experts staan klaar om alle computerproblemen op te lossen met de discretie en professionaliteit die past bij de hofstad.",
+    "longDescription": "In Den Haag, de zetel van de regering, zorgen wij voor betrouwbare IT-ondersteuning. Van Scheveningen tot Leidschenveen, van het centrum tot Ypenburg - onze ICT-studenten staan klaar om alle computerproblemen op te lossen met de discretie en professionaliteit die past bij de hofstad.",
     "serviceAreas": [
       "Den Haag Centrum",
       "Scheveningen",
@@ -124,7 +124,7 @@
       "computer problemen Den Haag", 
       "IT hulp aan huis Den Haag",
       "technische ondersteuning Den Haag",
-      "computer specialist Den Haag"
+      "computer student Den Haag"
     ],
     "coordinates": {
       "lat": 52.0705,
@@ -137,7 +137,7 @@
     "population": "125.000",
     "region": "Zuid-Holland",
     "description": "De historische universiteitsstad met moderne IT-ondersteuning",
-    "longDescription": "Leiden, de stad van wetenschap en geschiedenis, krijgt van ons deskundige IT-service. Onze specialisten begrijpen de behoeften van deze academische gemeenschap. Van de binnenstad tot de Leidse Hout, van Merenwijk tot Stevenshof - wij bieden kwalitatieve computerhulp.",
+    "longDescription": "Leiden, de stad van wetenschap en geschiedenis, krijgt van ons deskundige IT-service. Onze studenten begrijpen de behoeften van deze academische gemeenschap. Van de binnenstad tot de Leidse Hout, van Merenwijk tot Stevenshof - wij bieden hoogwaardige computerhulp.",
     "serviceAreas": [
       "Leiden Centrum",
       "Leiden Noord",
@@ -157,7 +157,7 @@
       "computer problemen Leiden",
       "IT hulp aan huis Leiden",
       "technische ondersteuning Leiden",
-      "computer specialist Leiden"
+      "computer student Leiden"
     ],
     "coordinates": {
       "lat": 52.1601,
@@ -170,7 +170,7 @@
     "population": "125.000",
     "region": "Zuid-Holland",
     "description": "De groene stad met moderne IT-service en persoonlijke aandacht",
-    "longDescription": "Zoetermeer, de groene stad tussen Den Haag en Gouda, verdient kwalitatieve IT-ondersteuning. Onze specialisten kennen deze jonge stad goed. Van het centrum tot Oosterheem, van Driemanspolder tot Palenstein - wij bieden betrouwbare computerhulp.",
+    "longDescription": "Zoetermeer, de groene stad tussen Den Haag en Gouda, verdient hoogwaardige IT-ondersteuning. Onze studenten kennen deze jonge stad goed. Van het centrum tot Oosterheem, van Driemanspolder tot Palenstein - wij bieden betrouwbare computerhulp.",
     "serviceAreas": [
       "Zoetermeer Centrum",
       "Zoetermeer Noord",
@@ -190,7 +190,7 @@
       "computer problemen Zoetermeer",
       "IT hulp aan huis Zoetermeer",
       "technische ondersteuning Zoetermeer",
-      "computer specialist Zoetermeer"
+      "computer student Zoetermeer"
     ],
     "coordinates": {
       "lat": 52.0575,
@@ -203,7 +203,7 @@
     "population": "119.000",
     "region": "Zuid-Holland",
     "description": "De oudste stad van Holland met moderne IT-ondersteuning",
-    "longDescription": "Dordrecht, de oudste stad van Holland, combineert geschiedenis met moderne technologie. Onze IT-specialisten respecteren deze rijke traditie en bieden professionele service. Van het historische centrum tot Wielwijk, van Dubbeldam tot Sterrenburg - wij zorgen voor uitstekende computerhulp.",
+    "longDescription": "Dordrecht, de oudste stad van Holland, combineert geschiedenis met moderne technologie. Onze ICT-studenten respecteren deze rijke traditie en bieden professionele service. Van het historische centrum tot Wielwijk, van Dubbeldam tot Sterrenburg - wij zorgen voor uitstekende computerhulp.",
     "serviceAreas": [
       "Dordrecht Centrum",
       "Dordrecht Noord",
@@ -223,7 +223,7 @@
       "computer problemen Dordrecht",
       "IT hulp aan huis Dordrecht",
       "technische ondersteuning Dordrecht",
-      "computer specialist Dordrecht"
+      "computer student Dordrecht"
     ],
     "coordinates": {
       "lat": 51.8133,
@@ -236,7 +236,7 @@
     "population": "104.000",
     "region": "Zuid-Holland",
     "description": "De technische universiteitsstad met geavanceerde IT-service",
-    "longDescription": "Delft, thuisbasis van de TU Delft, verdient technisch excellente IT-ondersteuning. Onze specialisten begrijpen de hoge tech-standaarden van deze innovatieve stad. Van het historische centrum tot Tanthof, van Voorhof tot Buitenhof - wij bieden cutting-edge computerhulp.",
+    "longDescription": "Delft, thuisbasis van de TU Delft, verdient technisch excellente IT-ondersteuning. Onze studenten begrijpen de hoge tech-standaarden van deze innovatieve stad. Van het historische centrum tot Tanthof, van Voorhof tot Buitenhof - wij bieden geavanceerde computerhulp.",
     "serviceAreas": [
       "Delft Centrum",
       "Delft Noord",
@@ -256,7 +256,7 @@
       "computer problemen Delft",
       "IT hulp aan huis Delft",
       "technische ondersteuning Delft",
-      "computer specialist Delft"
+      "computer student Delft"
     ],
     "coordinates": {
       "lat": 52.0116,
@@ -269,7 +269,7 @@
     "population": "112.000",
     "region": "Zuid-Holland",
     "description": "De groene gemeente met betrouwbare IT-ondersteuning",
-    "longDescription": "Alphen aan den Rijn, centraal gelegen in het Groene Hart, krijgt van ons persoonlijke IT-service. Onze specialisten kennen deze groene gemeente goed. Van het centrum tot Koudekerk, van Hazerswoude tot Boskoop - wij zorgen voor vriendelijke computerhulp.",
+    "longDescription": "Alphen aan den Rijn, centraal gelegen in het Groene Hart, krijgt van ons persoonlijke IT-service. Onze studenten kennen deze groene gemeente goed. Van het centrum tot Koudekerk, van Hazerswoude tot Boskoop - wij zorgen voor vriendelijke computerhulp.",
     "serviceAreas": [
       "Alphen Centrum",
       "Alphen Noord",
@@ -289,7 +289,7 @@
       "computer problemen Alphen",
       "IT hulp aan huis Alphen",
       "technische ondersteuning Alphen",
-      "computer specialist Alphen"
+      "computer student Alphen"
     ],
     "coordinates": {
       "lat": 52.1307,
@@ -302,7 +302,7 @@
     "population": "74.000",
     "region": "Zuid-Holland",
     "description": "De kaasstad met warme IT-service en persoonlijke aandacht",
-    "longDescription": "Gouda, wereldberoemd om zijn kaas en stroopwafels, verdient even excellente IT-service. Onze specialisten combineren traditionele Hollandse gastvrijheid met moderne technische kennis. Van de historische binnenstad tot Korte Akkeren, van Oosterwei tot Westergouwe - wij bieden hartelijke computerhulp.",
+    "longDescription": "Gouda, wereldberoemd om zijn kaas en stroopwafels, verdient even excellente IT-service. Onze studenten combineren traditionele Hollandse gastvrijheid met moderne technische kennis. Van de historische binnenstad tot Korte Akkeren, van Oosterwei tot Westergouwe - wij bieden hartelijke computerhulp.",
     "serviceAreas": [
       "Gouda Centrum",
       "Gouda Noord",
@@ -322,7 +322,7 @@
       "computer problemen Gouda",
       "IT hulp aan huis Gouda",
       "technische ondersteuning Gouda",
-      "computer specialist Gouda"
+      "computer student Gouda"
     ],
     "coordinates": {
       "lat": 52.0175,
@@ -335,7 +335,7 @@
     "population": "77.000",
     "region": "Zuid-Holland",
     "description": "De jeneverstad met moderne IT-ondersteuning",
-    "longDescription": "Schiedam, bekend om zijn jenever en windmolens, krijgt van ons professionele IT-service. Onze specialisten respecteren de industriële traditie van deze stad. Van het centrum tot Groenoord, van Nieuwland tot Kethel - wij zorgen voor betrouwbare computerhulp.",
+    "longDescription": "Schiedam, bekend om zijn jenever en windmolens, krijgt van ons professionele IT-service. Onze studenten respecteren de industriële traditie van deze stad. Van het centrum tot Groenoord, van Nieuwland tot Kethel - wij zorgen voor betrouwbare computerhulp.",
     "serviceAreas": [
       "Schiedam Centrum",
       "Schiedam Noord",
@@ -355,7 +355,7 @@
       "computer problemen Schiedam",
       "IT hulp aan huis Schiedam",
       "technische ondersteuning Schiedam",
-      "computer specialist Schiedam"
+      "computer student Schiedam"
     ],
     "coordinates": {
       "lat": 51.9158,
@@ -368,7 +368,7 @@
     "population": "73.000",
     "region": "Zuid-Holland",
     "description": "De havenstad met betrouwbare IT-service aan huis",
-    "longDescription": "Vlaardingen, de historische havenstad aan de Nieuwe Maas, verdient kwalitatieve IT-ondersteuning. Onze specialisten begrijpen de maritime traditie van deze stad. Van het centrum tot Westwijk, van Noord tot Ambacht - wij bieden professionele computerhulp.",
+    "longDescription": "Vlaardingen, de historische havenstad aan de Nieuwe Maas, verdient hoogwaardige IT-ondersteuning. Onze studenten begrijpen de maritieme traditie van deze stad. Van het centrum tot Westwijk, van Noord tot Ambacht - wij bieden professionele computerhulp.",
     "serviceAreas": [
       "Vlaardingen Centrum",
       "Vlaardingen Noord",
@@ -388,7 +388,7 @@
       "computer problemen Vlaardingen",
       "IT hulp aan huis Vlaardingen",
       "technische ondersteuning Vlaardingen",
-      "computer specialist Vlaardingen"
+      "computer student Vlaardingen"
     ],
     "coordinates": {
       "lat": 51.9123,
@@ -401,7 +401,7 @@
     "population": "67.000",
     "region": "Zuid-Holland",
     "description": "De groene woonstad met persoonlijke IT-ondersteuning",
-    "longDescription": "Capelle aan den IJssel, een aantrekkelijke woonstad nabij Rotterdam, krijgt van ons persoonlijke IT-service. Onze specialisten kennen deze groene gemeente goed. Van Capelsebrug tot Schollevaar, van het centrum tot Oostgaarde - wij zorgen voor vriendelijke computerhulp.",
+    "longDescription": "Capelle aan den IJssel, een aantrekkelijke woonstad nabij Rotterdam, krijgt van ons persoonlijke IT-service. Onze studenten kennen deze groene gemeente goed. Van Capelsebrug tot Schollevaar, van het centrum tot Oostgaarde - wij zorgen voor vriendelijke computerhulp.",
     "serviceAreas": [
       "Capelle Centrum",
       "Capelle Noord",
@@ -421,7 +421,7 @@
       "computer problemen Capelle",
       "IT hulp aan huis Capelle",
       "technische ondersteuning Capelle",
-      "computer specialist Capelle"
+      "computer student Capelle"
     ],
     "coordinates": {
       "lat": 51.9289,
@@ -434,7 +434,7 @@
     "population": "76.000",
     "region": "Zuid-Holland",
     "description": "De vorstelijke gemeente met excellente IT-service",
-    "longDescription": "Leidschendam-Voorburg, met zijn rijke koninklijke geschiedenis, verdient IT-service van hoge kwaliteit. Onze specialisten respecteren de deftige sfeer van deze gemeente. Van Leidschendam tot Voorburg, van het centrum tot Wilsveen - wij bieden discrete en professionele computerhulp.",
+    "longDescription": "Leidschendam-Voorburg, met zijn rijke koninklijke geschiedenis, verdient IT-service van hoge kwaliteit. Onze studenten respecteren de deftige sfeer van deze gemeente. Van Leidschendam tot Voorburg, van het centrum tot Wilsveen - wij bieden discrete en professionele computerhulp.",
     "serviceAreas": [
       "Leidschendam Centrum",
       "Voorburg Centrum",
@@ -467,7 +467,7 @@
     "population": "66.000",
     "region": "Zuid-Holland",
     "description": "De kustplaats met moderne IT-ondersteuning aan zee",
-    "longDescription": "Katwijk, de charmante kustplaats aan de Noordzee, krijgt van ons frisse IT-service. Onze specialisten waarderen de maritieme sfeer van deze badplaats. Van Katwijk aan Zee tot Katwijk aan den Rijn, van de boulevard tot de binnenduinen - wij bieden betrouwbare computerhulp.",
+    "longDescription": "Katwijk, de charmante kustplaats aan de Noordzee, krijgt van ons frisse IT-service. Onze studenten waarderen de maritieme sfeer van deze badplaats. Van Katwijk aan Zee tot Katwijk aan den Rijn, van de boulevard tot de binnenduinen - wij bieden betrouwbare computerhulp.",
     "serviceAreas": [
       "Katwijk aan Zee",
       "Katwijk aan den Rijn",
@@ -487,7 +487,7 @@
       "computer problemen Katwijk",
       "IT hulp aan huis Katwijk",
       "technische ondersteuning Katwijk",
-      "computer specialist Katwijk"
+      "computer student Katwijk"
     ],
     "coordinates": {
       "lat": 52.2042,
@@ -520,7 +520,7 @@
       "computer problemen Utrecht",
       "IT hulp aan huis Utrecht", 
       "technische ondersteuning Utrecht",
-      "computer specialist Utrecht"
+      "computer student Utrecht"
     ],
     "coordinates": {
       "lat": 52.0907,
@@ -533,7 +533,7 @@
     "population": "158.000",
     "region": "Utrecht",
     "description": "De keistad met betrouwbare IT-ondersteuning voor alle inwoners",
-    "longDescription": "Amersfoort, de charmante keistad, krijgt van ons persoonlijke IT-service. Onze specialisten kennen de stad goed - van het historische centrum tot de nieuwere wijken. Van Vathorst tot Soesterberg, van Hoogland tot Leusden - wij zorgen voor vakkundige computerhulp.",
+    "longDescription": "Amersfoort, de charmante keistad, krijgt van ons persoonlijke IT-service. Onze studenten kennen de stad goed - van het historische centrum tot de nieuwere wijken. Van Vathorst tot Soesterberg, van Hoogland tot Leusden - wij zorgen voor vakkundige computerhulp.",
     "serviceAreas": [
       "Amersfoort Centrum",
       "Amersfoort Noord",
@@ -553,7 +553,7 @@
       "computer problemen Amersfoort",
       "IT hulp aan huis Amersfoort",
       "technische ondersteuning Amersfoort", 
-      "computer specialist Amersfoort"
+      "computer student Amersfoort"
     ],
     "coordinates": {
       "lat": 52.1561,
@@ -566,7 +566,7 @@
     "population": "48.000",
     "region": "Zeeland",
     "description": "De Zeeuwse hoofdstad met moderne IT-service en persoonlijke aandacht",
-    "longDescription": "Middelburg, de historische hoofdstad van Zeeland, verdient IT-ondersteuning van hoge kwaliteit. Onze specialisten begrijpen de unieke behoeften van Walcheren. Van het centrum tot de buitenwijken, van Vlissingen tot Veere - wij bieden betrouwbare computerhulp.",
+    "longDescription": "Middelburg, de historische hoofdstad van Zeeland, verdient IT-ondersteuning van hoge kwaliteit. Onze studenten begrijpen de unieke behoeften van Walcheren. Van het centrum tot de buitenwijken, van Vlissingen tot Veere - wij bieden betrouwbare computerhulp.",
     "serviceAreas": [
       "Middelburg Centrum",
       "Middelburg Noord",
@@ -586,7 +586,7 @@
       "computer problemen Middelburg",
       "IT hulp aan huis Middelburg",
       "technische ondersteuning Middelburg",
-      "computer specialist Middelburg"
+      "computer student Middelburg"
     ],
     "coordinates": {
       "lat": 51.4988,
@@ -599,7 +599,7 @@
     "population": "235.000",
     "region": "Noord-Brabant",
     "description": "De technologiestad van Nederland met innovatieve IT-oplossingen", 
-    "longDescription": "Eindhoven, de technologiehoofdstad van Nederland, verdient geavanceerde IT-ondersteuning. Onze specialisten begrijpen de hoge tech-standaarden van de Lichtstad. Van het centrum tot Veldhoven, van Woensel tot Stratum - wij bieden cutting-edge computerhulp die past bij Eindhoven's innovatieve geest.",
+    "longDescription": "Eindhoven, de technologiehoofdstad van Nederland, verdient geavanceerde IT-ondersteuning. Onze studenten begrijpen de hoge tech-standaarden van de Lichtstad. Van het centrum tot Veldhoven, van Woensel tot Stratum - wij bieden geavanceerde computerhulp die past bij Eindhoven's innovatieve geest.",
     "serviceAreas": [
       "Eindhoven Centrum",
       "Woensel Noord",
@@ -619,7 +619,7 @@
       "computer problemen Eindhoven",
       "IT hulp aan huis Eindhoven",
       "technische ondersteuning Eindhoven", 
-      "computer specialist Eindhoven"
+      "computer student Eindhoven"
     ],
     "coordinates": {
       "lat": 51.4416,
@@ -632,7 +632,7 @@
     "population": "220.000",
     "region": "Noord-Brabant",
     "description": "De warme Brabantse stad met persoonlijke IT-service",
-    "longDescription": "In Tilburg combineren wij Brabantse warmte met professionele IT-service. Onze specialisten kennen de stad goed en bieden persoonlijke aandacht. Van het centrum tot Reeshof, van Noord tot Berkel-Enschot - wij staan klaar met vriendelijke en vakkundige computerhulp.",
+    "longDescription": "In Tilburg combineren wij Brabantse warmte met professionele IT-service. Onze studenten kennen de stad goed en bieden persoonlijke aandacht. Van het centrum tot Reeshof, van Noord tot Berkel-Enschot - wij staan klaar met vriendelijke en vakkundige computerhulp.",
     "serviceAreas": [
       "Tilburg Centrum",
       "Tilburg Noord", 
@@ -652,7 +652,7 @@
       "computer problemen Tilburg", 
       "IT hulp aan huis Tilburg",
       "technische ondersteuning Tilburg",
-      "computer specialist Tilburg"
+      "computer student Tilburg"
     ],
     "coordinates": {
       "lat": 51.5656,
@@ -685,7 +685,7 @@
       "computer problemen Breda",
       "IT hulp aan huis Breda", 
       "technische ondersteuning Breda",
-      "computer specialist Breda"
+      "computer student Breda"
     ],
     "coordinates": {
       "lat": 51.5719,
@@ -698,7 +698,7 @@
     "population": "155.000",
     "region": "Noord-Brabant",
     "description": "De Brabantse hoofdstad met betrouwbare IT-ondersteuning",
-    "longDescription": "Den Bosch, de hoofdstad van Noord-Brabant, krijgt van ons professionele IT-service. Onze specialisten kennen deze historische stad goed. Van het centrum tot de Maaspoort, van Rosmalen tot Vught - wij bieden kwalitatieve en vriendelijke computerhulp.",
+    "longDescription": "Den Bosch, de hoofdstad van Noord-Brabant, krijgt van ons professionele IT-service. Onze studenten kennen deze historische stad goed. Van het centrum tot de Maaspoort, van Rosmalen tot Vught - wij bieden hoogwaardige en vriendelijke computerhulp.",
     "serviceAreas": [
       "Den Bosch Centrum",
       "Den Bosch Noord",
@@ -718,7 +718,7 @@
       "computer problemen Den Bosch",
       "IT hulp aan huis Den Bosch",
       "technische ondersteuning Den Bosch",
-      "computer specialist Den Bosch"
+      "computer student Den Bosch"
     ],
     "coordinates": {
       "lat": 51.6978,
@@ -731,7 +731,7 @@
     "population": "180.000",
     "region": "Gelderland", 
     "description": "De oudste stad van Nederland met de nieuwste IT-technologie",
-    "longDescription": "Nijmegen, de oudste stad van Nederland, combineren wij met de nieuwste IT-technologieën. Onze specialisten waarderen de rijke geschiedenis en levendige cultuur van deze Gelderse stad. Van de binnenstad tot Waalsprong, van Dukenburg tot Lindenholt - wij bieden hoogwaardige computerhulp.",
+    "longDescription": "Nijmegen, de oudste stad van Nederland, combineren wij met de nieuwste IT-technologieën. Onze studenten waarderen de rijke geschiedenis en levendige cultuur van deze Gelderse stad. Van de binnenstad tot Waalsprong, van Dukenburg tot Lindenholt - wij bieden hoogwaardige computerhulp.",
     "serviceAreas": [
       "Nijmegen Centrum",
       "Nijmegen Noord", 
@@ -751,7 +751,7 @@
       "computer problemen Nijmegen", 
       "IT hulp aan huis Nijmegen",
       "technische ondersteuning Nijmegen",
-      "computer specialist Nijmegen"
+      "computer student Nijmegen"
     ],
     "coordinates": {
       "lat": 51.8426,
@@ -764,7 +764,7 @@
     "population": "161.000",
     "region": "Gelderland",
     "description": "De groene hoofdstad van Gelderland met duurzame IT-oplossingen",
-    "longDescription": "Arnhem, de hoofdstad van Gelderland, verdient IT-service die past bij haar groene karakter. Onze specialisten combineren technische expertise met oog voor duurzaamheid. Van Presikhaaf tot Malburgen, van het centrum tot Schuytgraaf - wij bieden betrouwbare computerhulp.",
+    "longDescription": "Arnhem, de hoofdstad van Gelderland, verdient IT-service die past bij haar groene karakter. Onze studenten combineren technische expertise met oog voor duurzaamheid. Van Presikhaaf tot Malburgen, van het centrum tot Schuytgraaf - wij bieden betrouwbare computerhulp.",
     "serviceAreas": [
       "Arnhem Centrum",
       "Arnhem Noord",
@@ -784,7 +784,7 @@
       "computer problemen Arnhem",
       "IT hulp aan huis Arnhem",
       "technische ondersteuning Arnhem",
-      "computer specialist Arnhem"
+      "computer student Arnhem"
     ],
     "coordinates": {
       "lat": 51.9851,
@@ -797,7 +797,7 @@
     "population": "235.000",
     "region": "Groningen",
     "description": "De bruisende studentenstad van het Noorden met moderne IT-service",
-    "longDescription": "Groningen, de levendige hoofdstad van het Noorden, krijgt van ons specialistische IT-ondersteuning. Onze experts begrijpen de dynamiek van deze studentenstad. Van het centrum tot Paddepoel, van Helpman tot Vinkhuizen - wij bieden topkwaliteit computerhulp.",
+    "longDescription": "Groningen, de levendige hoofdstad van het Noorden, krijgt van ons persoonlijke IT-ondersteuning. Onze studenten begrijpen de dynamiek van deze studentenstad. Van het centrum tot Paddepoel, van Helpman tot Vinkhuizen - wij bieden topkwaliteit computerhulp.",
     "serviceAreas": [
       "Groningen Centrum",
       "Groningen Noord",
@@ -817,7 +817,7 @@
       "computer problemen Groningen",
       "IT hulp aan huis Groningen",
       "technische ondersteuning Groningen",
-      "computer specialist Groningen"
+      "computer student Groningen"
     ],
     "coordinates": {
       "lat": 53.2194,
@@ -830,7 +830,7 @@
     "population": "130.000",
     "region": "Overijssel",
     "description": "De Hanzestad met betrouwbare IT-ondersteuning en persoonlijke service",
-    "longDescription": "Zwolle, de prachtige Hanzestad, verdient IT-service van hoge kwaliteit. Onze specialisten combineren historisch bewustzijn met moderne technologie. Van het centrum tot Stadshagen, van Aalanden tot Windesheim - wij zorgen voor uitstekende computerhulp.",
+    "longDescription": "Zwolle, de prachtige Hanzestad, verdient IT-service van hoge kwaliteit. Onze studenten combineren historisch bewustzijn met moderne technologie. Van het centrum tot Stadshagen, van Aalanden tot Windesheim - wij zorgen voor uitstekende computerhulp.",
     "serviceAreas": [
       "Zwolle Centrum",
       "Zwolle Noord",
@@ -850,7 +850,7 @@
       "computer problemen Zwolle",
       "IT hulp aan huis Zwolle",
       "technische ondersteuning Zwolle",
-      "computer specialist Zwolle"
+      "computer student Zwolle"
     ],
     "coordinates": {
       "lat": 52.5168,
@@ -863,7 +863,7 @@
     "population": "159.000",
     "region": "Overijssel",
     "description": "De techniekstad van Twente met innovatieve IT-oplossingen",
-    "longDescription": "Enschede, de technologie-hoofdstad van Twente, krijgt van ons geavanceerde IT-ondersteuning. Onze specialisten passen perfect bij de innovatieve geest van deze stad. Van het centrum tot Boddenkamp, van Pathmos tot Glanerbrug - wij bieden cutting-edge computerhulp.",
+    "longDescription": "Enschede, de technologie-hoofdstad van Twente, krijgt van ons geavanceerde IT-ondersteuning. Onze studenten passen perfect bij de innovatieve geest van deze stad. Van het centrum tot Boddenkamp, van Pathmos tot Glanerbrug - wij bieden geavanceerde computerhulp.",
     "serviceAreas": [
       "Enschede Centrum",
       "Enschede Noord",
@@ -883,7 +883,7 @@
       "computer problemen Enschede",
       "IT hulp aan huis Enschede",
       "technische ondersteuning Enschede",
-      "computer specialist Enschede"
+      "computer student Enschede"
     ],
     "coordinates": {
       "lat": 52.2215,
@@ -896,7 +896,7 @@
     "population": "92.000",
     "region": "Noord-Holland",
     "description": "De mediastad met moderne IT-service en persoonlijke aandacht",
-    "longDescription": "Hilversum, de mediastad van Nederland, verdient IT-service die aansluit bij haar innovatieve karakter. Onze specialisten begrijpen de dynamiek van deze creatieve stad. Van het centrum tot 's-Graveland, van Hilversumse Meent tot Kerkelanden - wij bieden professionele computerhulp.",
+    "longDescription": "Hilversum, de mediastad van Nederland, verdient IT-service die aansluit bij haar innovatieve karakter. Onze studenten begrijpen de dynamiek van deze creatieve stad. Van het centrum tot 's-Graveland, van Hilversumse Meent tot Kerkelanden - wij bieden professionele computerhulp.",
     "serviceAreas": [
       "Hilversum Centrum",
       "Hilversum Noord",
@@ -918,7 +918,7 @@
       "computer problemen Hilversum",
       "IT hulp aan huis Hilversum",
       "technische ondersteuning Hilversum",
-      "computer specialist Hilversum"
+      "computer student Hilversum"
     ],
     "coordinates": {
       "lat": 52.2234,
@@ -931,7 +931,7 @@
     "population": "35.000",
     "region": "Noord-Holland",
     "description": "De groene Gooise gemeente met persoonlijke IT-service",
-    "longDescription": "Bussum, gelegen in het hart van het Gooi en de Vechtstreek, verdient IT-service van topkwaliteit. Onze specialisten kennen deze charmante gemeente goed. Van het centrum tot Brink, van Naarden tot Laren - wij bieden betrouwbare en vriendelijke computerhulp aan alle inwoners.",
+    "longDescription": "Bussum, gelegen in het hart van het Gooi en de Vechtstreek, verdient IT-service van topkwaliteit. Onze studenten kennen deze charmante gemeente goed. Van het centrum tot Brink, van Naarden tot Laren - wij bieden betrouwbare en vriendelijke computerhulp aan alle inwoners.",
     "serviceAreas": [
       "Bussum Centrum",
       "Bussum Noord",
@@ -951,7 +951,7 @@
       "computer problemen Bussum",
       "IT hulp aan huis Bussum",
       "technische ondersteuning Bussum",
-      "computer specialist Bussum"
+      "computer student Bussum"
     ],
     "coordinates": {
       "lat": 52.2760,
@@ -964,7 +964,7 @@
     "population": "17.000",
     "region": "Noord-Holland",
     "description": "De historische vestingstad met moderne IT-ondersteuning",
-    "longDescription": "Naarden, de prachtige vestingstad in het Gooi en de Vechtstreek, krijgt van ons specialistische IT-service. Onze experts waarderen de unieke historische waarde van deze stad. Van de vestingwallen tot Naarden-Bussum, van het centrum tot het Naardermeer - wij zorgen voor uitstekende computerhulp.",
+    "longDescription": "Naarden, de prachtige vestingstad in het Gooi en de Vechtstreek, krijgt van ons persoonlijke IT-service. Onze studenten waarderen de unieke historische waarde van deze stad. Van de vestingwallen tot Naarden-Bussum, van het centrum tot het Naardermeer - wij zorgen voor uitstekende computerhulp.",
     "serviceAreas": [
       "Naarden Centrum",
       "Naarden Noord",
@@ -984,7 +984,7 @@
       "computer problemen Naarden",
       "IT hulp aan huis Naarden",
       "technische ondersteuning Naarden",
-      "computer specialist Naarden"
+      "computer student Naarden"
     ],
     "coordinates": {
       "lat": 52.2950,
@@ -997,7 +997,7 @@
     "population": "11.000",
     "region": "Noord-Holland",
     "description": "Het culturele hart van het Gooi met exclusieve IT-service",
-    "longDescription": "Laren, het charmante kunstenaarsdorp in het Gooi en de Vechtstreek, verdient IT-ondersteuning van hoge kwaliteit. Onze specialisten combineren technische expertise met begrip voor de culturele waarde van deze bijzondere gemeente. Van het centrum tot het Laarder Wasmeer, van Blaricum tot Hilversum - wij bieden discrete en professionele computerhulp.",
+    "longDescription": "Laren, het charmante kunstenaarsdorp in het Gooi en de Vechtstreek, verdient IT-ondersteuning van hoge kwaliteit. Onze studenten combineren technische expertise met begrip voor de culturele waarde van deze bijzondere gemeente. Van het centrum tot het Laarder Wasmeer, van Blaricum tot Hilversum - wij bieden discrete en professionele computerhulp.",
     "serviceAreas": [
       "Laren Centrum",
       "Laren Noord",
@@ -1017,7 +1017,7 @@
       "computer problemen Laren",
       "IT hulp aan huis Laren",
       "technische ondersteuning Laren",
-      "computer specialist Laren"
+      "computer student Laren"
     ],
     "coordinates": {
       "lat": 52.2561,
@@ -1030,7 +1030,7 @@
     "population": "41.000",
     "region": "Noord-Holland",
     "description": "De havenstad aan het Gooimeer met betrouwbare IT-service",
-    "longDescription": "Huizen, gelegen aan het prachtige Gooimeer in het Gooi en de Vechtstreek, krijgt van ons persoonlijke IT-ondersteuning. Onze specialisten kennen deze dynamische gemeente goed. Van het centrum tot de haven, van Oost tot West - wij bieden vakkundige en toegankelijke computerhulp.",
+    "longDescription": "Huizen, gelegen aan het prachtige Gooimeer in het Gooi en de Vechtstreek, krijgt van ons persoonlijke IT-ondersteuning. Onze studenten kennen deze dynamische gemeente goed. Van het centrum tot de haven, van Oost tot West - wij bieden vakkundige en toegankelijke computerhulp.",
     "serviceAreas": [
       "Huizen Centrum",
       "Huizen Noord",
@@ -1050,7 +1050,7 @@
       "computer problemen Huizen",
       "IT hulp aan huis Huizen",
       "technische ondersteuning Huizen",
-      "computer specialist Huizen"
+      "computer student Huizen"
     ],
     "coordinates": {
       "lat": 52.2979,
@@ -1063,7 +1063,7 @@
     "population": "11.000",
     "region": "Noord-Holland",
     "description": "De exclusieve Gooise gemeente met premium IT-ondersteuning",
-    "longDescription": "Blaricum, de stijlvolle gemeente in het Gooi en de Vechtstreek, verdient IT-service die past bij haar karakter. Onze specialisten bieden discrete en professionele ondersteuning. Van het centrum tot de buitengebieden, van Laren tot Huizen - wij zorgen voor kwalitatieve en persoonlijke computerhulp.",
+    "longDescription": "Blaricum, de stijlvolle gemeente in het Gooi en de Vechtstreek, verdient IT-service die past bij haar karakter. Onze studenten bieden discrete en professionele ondersteuning. Van het centrum tot de buitengebieden, van Laren tot Huizen - wij zorgen voor hoogwaardige en persoonlijke computerhulp.",
     "serviceAreas": [
       "Blaricum Centrum",
       "Blaricum Noord",
@@ -1083,7 +1083,7 @@
       "computer problemen Blaricum",
       "IT hulp aan huis Blaricum",
       "technische ondersteuning Blaricum",
-      "computer specialist Blaricum"
+      "computer student Blaricum"
     ],
     "coordinates": {
       "lat": 52.2704,
@@ -1096,7 +1096,7 @@
     "population": "20.000",
     "region": "Noord-Holland",
     "description": "De vestingstad tussen Amsterdam en Hilversum met moderne IT-service",
-    "longDescription": "Weesp, de charmante vestingstad strategisch gelegen tussen Amsterdam en Hilversum, krijgt van ons snelle en betrouwbare IT-ondersteuning. Onze specialisten waarderen de unieke ligging en geschiedenis van deze stad. Van het centrum tot de Vesting, van Naarden tot Muiden - wij bieden professionele computerhulp.",
+    "longDescription": "Weesp, de charmante vestingstad strategisch gelegen tussen Amsterdam en Hilversum, krijgt van ons snelle en betrouwbare IT-ondersteuning. Onze studenten waarderen de unieke ligging en geschiedenis van deze stad. Van het centrum tot de Vesting, van Naarden tot Muiden - wij bieden professionele computerhulp.",
     "serviceAreas": [
       "Weesp Centrum",
       "Weesp Noord",
@@ -1116,7 +1116,7 @@
       "computer problemen Weesp",
       "IT hulp aan huis Weesp",
       "technische ondersteuning Weesp",
-      "computer specialist Weesp"
+      "computer student Weesp"
     ],
     "coordinates": {
       "lat": 52.3086,
@@ -1129,7 +1129,7 @@
     "population": "25.000",
     "region": "Utrecht",
     "description": "De residentiële gemeente in Eemland met persoonlijke IT-service",
-    "longDescription": "Baarn, de groene en residentiële gemeente in het Eemland, verdient IT-ondersteuning van hoge kwaliteit. Onze specialisten begrijpen de rust en kwaliteit die deze gemeente kenmerken. Van het centrum tot Soestdijk, van Eembrugge tot Lage Vuursche - wij bieden betrouwbare en discrete computerhulp.",
+    "longDescription": "Baarn, de groene en residentiële gemeente in het Eemland, verdient IT-ondersteuning van hoge kwaliteit. Onze studenten begrijpen de rust en kwaliteit die deze gemeente kenmerken. Van het centrum tot Soestdijk, van Eembrugge tot Lage Vuursche - wij bieden betrouwbare en discrete computerhulp.",
     "serviceAreas": [
       "Baarn Centrum",
       "Baarn Noord",
@@ -1149,7 +1149,7 @@
       "computer problemen Baarn",
       "IT hulp aan huis Baarn",
       "technische ondersteuning Baarn",
-      "computer specialist Baarn"
+      "computer student Baarn"
     ],
     "coordinates": {
       "lat": 52.2115,
@@ -1162,7 +1162,7 @@
     "population": "46.000",
     "region": "Utrecht",
     "description": "De groene gemeente in Eemland met betrouwbare IT-ondersteuning",
-    "longDescription": "Soest, de ruime en groene gemeente in het Eemland, krijgt van ons kwalitatieve IT-service. Onze specialisten kennen deze aantrekkelijke woongemeente goed. Van het centrum tot Soesterberg, van Soest-Zuid tot Soest-Noord - wij bieden vriendelijke en professionele computerhulp aan alle inwoners.",
+    "longDescription": "Soest, de ruime en groene gemeente in het Eemland, krijgt van ons hoogwaardige IT-service. Onze studenten kennen deze aantrekkelijke woongemeente goed. Van het centrum tot Soesterberg, van Soest-Zuid tot Soest-Noord - wij bieden vriendelijke en professionele computerhulp aan alle inwoners.",
     "serviceAreas": [
       "Soest Centrum",
       "Soest Noord",
@@ -1182,11 +1182,356 @@
       "computer problemen Soest",
       "IT hulp aan huis Soest",
       "technische ondersteuning Soest",
-      "computer specialist Soest"
+      "computer student Soest"
     ],
     "coordinates": {
       "lat": 52.1734,
       "lng": 5.2914
+    }
+  },
+  {
+    "name": "Almere",
+    "slug": "almere",
+    "population": "218.000",
+    "region": "Flevoland",
+    "description": "De snelgroeiende stad in Flevoland met betrouwbare IT-hulp aan huis",
+    "longDescription": "Almere, de grootste stad van Flevoland, groeit snel en verdient IT-service van topkwaliteit. Onze studenten komen bij u thuis in alle stadsdelen van Almere. Van het centrum tot Almere Buiten, van Almere Haven tot Almere Poort - wij bieden vriendelijke en vakkundige computerhulp.",
+    "serviceAreas": [
+      "Almere Centrum",
+      "Almere Noord",
+      "Almere Zuid",
+      "Almere Oost",
+      "Almere West",
+      "Almere Buiten",
+      "Almere Haven",
+      "Almere Poort",
+      "Almere Hout",
+      "Almere Pampus"
+    ],
+    "keywords": [
+      "computerhulp Almere",
+      "IT service Almere",
+      "laptop reparatie Almere",
+      "computer problemen Almere",
+      "IT hulp aan huis Almere",
+      "technische ondersteuning Almere",
+      "computer student Almere"
+    ],
+    "coordinates": {
+      "lat": 52.3508,
+      "lng": 5.2647
+    }
+  },
+  {
+    "name": "Vlissingen",
+    "slug": "vlissingen",
+    "population": "45.000",
+    "region": "Zeeland",
+    "description": "De havenstad aan de Westerschelde met betrouwbare IT-service aan huis",
+    "longDescription": "Vlissingen, de stoere havenstad aan de Westerschelde, krijgt van ons persoonlijke IT-service. Onze studenten kennen Walcheren goed en komen bij u thuis. Van de boulevard tot het centrum, van Oost-Souburg tot Paauwenburg - wij bieden betrouwbare computerhulp aan alle Vlissingers.",
+    "serviceAreas": [
+      "Vlissingen Centrum",
+      "Vlissingen Boulevard",
+      "Oost-Souburg",
+      "Paauwenburg",
+      "Westerzicht",
+      "Rosenburg",
+      "Middelburg",
+      "Koudekerke"
+    ],
+    "keywords": [
+      "computerhulp Vlissingen",
+      "IT service Vlissingen",
+      "laptop reparatie Vlissingen",
+      "computer problemen Vlissingen",
+      "IT hulp aan huis Vlissingen",
+      "technische ondersteuning Vlissingen",
+      "computer student Vlissingen"
+    ],
+    "coordinates": {
+      "lat": 51.4427,
+      "lng": 3.5710
+    }
+  },
+  {
+    "name": "Goes",
+    "slug": "goes",
+    "population": "38.000",
+    "region": "Zeeland",
+    "description": "De gezellige hoofdstad van de Bevelanden met moderne IT-ondersteuning",
+    "longDescription": "Goes, het bruisende hart van de Bevelanden, verdient IT-service van topkwaliteit. Onze studenten kennen Zuid-Beveland goed en komen graag bij u langs. Van de Grote Markt tot de Goese Polder, van Kloetinge tot Wilhelminadorp - wij bieden vriendelijke computerhulp.",
+    "serviceAreas": [
+      "Goes Centrum",
+      "Goes Noord",
+      "Goes Oost",
+      "Goes West",
+      "Goes Zuid",
+      "Kloetinge",
+      "Wilhelminadorp",
+      "Goese Polder"
+    ],
+    "keywords": [
+      "computerhulp Goes",
+      "IT service Goes",
+      "laptop reparatie Goes",
+      "computer problemen Goes",
+      "IT hulp aan huis Goes",
+      "technische ondersteuning Goes",
+      "computer student Goes"
+    ],
+    "coordinates": {
+      "lat": 51.5040,
+      "lng": 3.8890
+    }
+  },
+  {
+    "name": "Terneuzen",
+    "slug": "terneuzen",
+    "population": "55.000",
+    "region": "Zeeland",
+    "description": "De industriestad aan de Westerschelde met persoonlijke IT-hulp aan huis",
+    "longDescription": "Terneuzen, de grootste stad van Zeeuws-Vlaanderen, krijgt van ons betrouwbare IT-ondersteuning. Onze studenten komen bij u thuis in heel Zeeuws-Vlaanderen. Van het centrum tot Sluiskil, van Biervliet tot Hoek - wij bieden vakkundige en vriendelijke computerhulp.",
+    "serviceAreas": [
+      "Terneuzen Centrum",
+      "Terneuzen Noord",
+      "Terneuzen Zuid",
+      "Sluiskil",
+      "Biervliet",
+      "Hoek",
+      "Axel",
+      "Westdorpe"
+    ],
+    "keywords": [
+      "computerhulp Terneuzen",
+      "IT service Terneuzen",
+      "laptop reparatie Terneuzen",
+      "computer problemen Terneuzen",
+      "IT hulp aan huis Terneuzen",
+      "technische ondersteuning Terneuzen",
+      "computer student Terneuzen"
+    ],
+    "coordinates": {
+      "lat": 51.3360,
+      "lng": 3.8270
+    }
+  },
+  {
+    "name": "Helmond",
+    "slug": "helmond",
+    "population": "93.000",
+    "region": "Noord-Brabant",
+    "description": "De innovatieve Peelstad met betrouwbare IT-service aan huis",
+    "longDescription": "Helmond, de dynamische stad in de Peel, verdient IT-ondersteuning van hoge kwaliteit. Onze studenten kennen deze innovatieve stad goed. Van het centrum tot Brandevoort, van Helmond-Noord tot Rijpelberg - wij bieden professionele en vriendelijke computerhulp.",
+    "serviceAreas": [
+      "Helmond Centrum",
+      "Helmond Noord",
+      "Helmond Oost",
+      "Helmond West",
+      "Brandevoort",
+      "Rijpelberg",
+      "Brouwhuis",
+      "Mierlo",
+      "Deurne"
+    ],
+    "keywords": [
+      "computerhulp Helmond",
+      "IT service Helmond",
+      "laptop reparatie Helmond",
+      "computer problemen Helmond",
+      "IT hulp aan huis Helmond",
+      "technische ondersteuning Helmond",
+      "computer student Helmond"
+    ],
+    "coordinates": {
+      "lat": 51.4816,
+      "lng": 5.6611
+    }
+  },
+  {
+    "name": "Oss",
+    "slug": "oss",
+    "population": "93.000",
+    "region": "Noord-Brabant",
+    "description": "De Maasstad met warme Brabantse IT-service aan huis",
+    "longDescription": "Oss, de gezellige stad aan de Maas, krijgt van ons persoonlijke IT-service. Onze studenten combineren Brabantse gastvrijheid met technische kennis. Van het centrum tot Ussen, van Ruwaard tot Berghem - wij bieden betrouwbare en vriendelijke computerhulp.",
+    "serviceAreas": [
+      "Oss Centrum",
+      "Oss Noord",
+      "Oss Oost",
+      "Oss West",
+      "Ussen",
+      "Ruwaard",
+      "Berghem",
+      "Heesch",
+      "Ravenstein"
+    ],
+    "keywords": [
+      "computerhulp Oss",
+      "IT service Oss",
+      "laptop reparatie Oss",
+      "computer problemen Oss",
+      "IT hulp aan huis Oss",
+      "technische ondersteuning Oss",
+      "computer student Oss"
+    ],
+    "coordinates": {
+      "lat": 51.7650,
+      "lng": 5.5190
+    }
+  },
+  {
+    "name": "Roosendaal",
+    "slug": "roosendaal",
+    "population": "77.000",
+    "region": "Noord-Brabant",
+    "description": "Het knooppunt van West-Brabant met professionele IT-hulp aan huis",
+    "longDescription": "Roosendaal, het verkeersknooppunt van West-Brabant, verdient IT-service van topkwaliteit. Onze studenten kennen deze Brabantse stad goed. Van het centrum tot Tolberg, van Kroeven tot Langdonk - wij bieden betrouwbare en betaalbare computerhulp.",
+    "serviceAreas": [
+      "Roosendaal Centrum",
+      "Roosendaal Noord",
+      "Roosendaal Oost",
+      "Tolberg",
+      "Kroeven",
+      "Langdonk",
+      "Nispen",
+      "Wouw"
+    ],
+    "keywords": [
+      "computerhulp Roosendaal",
+      "IT service Roosendaal",
+      "laptop reparatie Roosendaal",
+      "computer problemen Roosendaal",
+      "IT hulp aan huis Roosendaal",
+      "technische ondersteuning Roosendaal",
+      "computer student Roosendaal"
+    ],
+    "coordinates": {
+      "lat": 51.5300,
+      "lng": 4.4570
+    }
+  },
+  {
+    "name": "Bergen op Zoom",
+    "slug": "bergen-op-zoom",
+    "population": "67.000",
+    "region": "Noord-Brabant",
+    "description": "De vestingstad met persoonlijke IT-ondersteuning aan huis",
+    "longDescription": "Bergen op Zoom, de historische vestingstad in West-Brabant, krijgt van ons warme IT-service. Onze studenten waarderen het rijke karakter van deze stad. Van het centrum tot de Bergse Plaat, van Halsteren tot Lepelstraat - wij bieden vakkundige en vriendelijke computerhulp.",
+    "serviceAreas": [
+      "Bergen op Zoom Centrum",
+      "Bergen op Zoom Noord",
+      "Bergen op Zoom Oost",
+      "Bergse Plaat",
+      "Gageldonk",
+      "Halsteren",
+      "Lepelstraat",
+      "Hoogerheide"
+    ],
+    "keywords": [
+      "computerhulp Bergen op Zoom",
+      "IT service Bergen op Zoom",
+      "laptop reparatie Bergen op Zoom",
+      "computer problemen Bergen op Zoom",
+      "IT hulp aan huis Bergen op Zoom",
+      "technische ondersteuning Bergen op Zoom",
+      "computer student Bergen op Zoom"
+    ],
+    "coordinates": {
+      "lat": 51.4950,
+      "lng": 4.2920
+    }
+  },
+  {
+    "name": "Oosterhout",
+    "slug": "oosterhout",
+    "population": "56.000",
+    "region": "Noord-Brabant",
+    "description": "De groene stad tussen Breda en Tilburg met betrouwbare IT-service",
+    "longDescription": "Oosterhout, centraal gelegen tussen Breda en Tilburg, verdient IT-ondersteuning van hoge kwaliteit. Onze studenten kennen deze groene stad goed. Van het centrum tot Slotjes, van Vrachelen tot Dommelbergen - wij bieden persoonlijke en vakkundige computerhulp.",
+    "serviceAreas": [
+      "Oosterhout Centrum",
+      "Oosterhout Noord",
+      "Oosterhout Oost",
+      "Slotjes",
+      "Vrachelen",
+      "Dommelbergen",
+      "Dorst",
+      "Den Hout"
+    ],
+    "keywords": [
+      "computerhulp Oosterhout",
+      "IT service Oosterhout",
+      "laptop reparatie Oosterhout",
+      "computer problemen Oosterhout",
+      "IT hulp aan huis Oosterhout",
+      "technische ondersteuning Oosterhout",
+      "computer student Oosterhout"
+    ],
+    "coordinates": {
+      "lat": 51.6430,
+      "lng": 4.8600
+    }
+  },
+  {
+    "name": "Waalwijk",
+    "slug": "waalwijk",
+    "population": "48.000",
+    "region": "Noord-Brabant",
+    "description": "De schoenenstad met moderne IT-hulp aan huis",
+    "longDescription": "Waalwijk, de historische schoenenstad in de Langstraat, krijgt van ons persoonlijke IT-service. Onze studenten combineren Brabantse vriendelijkheid met technische expertise. Van het centrum tot Baardwijk, van Waspik tot Sprang-Capelle - wij bieden betrouwbare computerhulp.",
+    "serviceAreas": [
+      "Waalwijk Centrum",
+      "Waalwijk Noord",
+      "Waalwijk Zuid",
+      "Baardwijk",
+      "Waspik",
+      "Sprang-Capelle",
+      "Besoijen",
+      "Kaatsheuvel"
+    ],
+    "keywords": [
+      "computerhulp Waalwijk",
+      "IT service Waalwijk",
+      "laptop reparatie Waalwijk",
+      "computer problemen Waalwijk",
+      "IT hulp aan huis Waalwijk",
+      "technische ondersteuning Waalwijk",
+      "computer student Waalwijk"
+    ],
+    "coordinates": {
+      "lat": 51.6830,
+      "lng": 5.0700
+    }
+  },
+  {
+    "name": "Uden",
+    "slug": "uden",
+    "population": "42.000",
+    "region": "Noord-Brabant",
+    "description": "Het hart van het Maasland met vriendelijke IT-service aan huis",
+    "longDescription": "Uden, de levendige gemeente in het Maasland, verdient IT-service die past bij haar Brabantse karakter. Onze studenten komen graag bij u thuis. Van het centrum tot Volkel, van Odiliapeel tot Zeeland - wij bieden persoonlijke en betaalbare computerhulp.",
+    "serviceAreas": [
+      "Uden Centrum",
+      "Uden Noord",
+      "Uden Zuid",
+      "Uden Oost",
+      "Volkel",
+      "Odiliapeel",
+      "Veghel",
+      "Mill"
+    ],
+    "keywords": [
+      "computerhulp Uden",
+      "IT service Uden",
+      "laptop reparatie Uden",
+      "computer problemen Uden",
+      "IT hulp aan huis Uden",
+      "technische ondersteuning Uden",
+      "computer student Uden"
+    ],
+    "coordinates": {
+      "lat": 51.6600,
+      "lng": 5.6200
     }
   }
 ]

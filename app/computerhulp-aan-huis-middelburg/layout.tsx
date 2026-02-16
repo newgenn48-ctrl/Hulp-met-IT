@@ -2,22 +2,22 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Middelburg | Hulp Met IT',
-  description: 'Computerhulp aan huis in Middelburg voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. €14,50 per kwartier + €10 voorrijkosten. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis in Middelburg voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'computerhulp aan huis middelburg',
     'computer reparatie middelburg',
     'laptop reparatie middelburg',
-    'IT specialist middelburg',
+    'ICT student middelburg',
     'pc hulp middelburg',
-    'computer specialist middelburg',
+    'computer student middelburg',
     'middelburg computerhulp avond',
     'middelburg IT hulp weekend',
     'computerhulp middelburg spoed',
     'betaalbare IT hulp middelburg'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Middelburg | Computerhulp specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis in Middelburg door IT-specialisten met 10+ jaar ervaring. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    title: 'Computerhulp aan huis Middelburg | ICT Student aan Huis | Hulp Met IT',
+    description: 'Computerhulp aan huis in Middelburg door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Middelburg | Computerhulp specialisten',
-    description: 'Computerhulp aan huis Middelburg. Specialist komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Middelburg | ICT Student aan Huis',
+    description: 'Computerhulp aan huis Middelburg. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
   },
   robots: {
     index: true,

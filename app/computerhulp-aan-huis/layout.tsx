@@ -1,17 +1,17 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis | Hulp Met IT',
-  description: 'Computerhulp aan huis voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. €14,50 per kwartier + €10 voorrijkosten. Vandaag nog beschikbaar!',
+  title: 'Computerhulp aan Huis - Snel Geholpen | Hulp met IT',
+  description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. Vanaf €14,50 per kwartier + €10 voorrijkosten. 7 dagen per week. Vandaag nog beschikbaar!',
   keywords: [
     'computerhulp aan huis',
     'computer reparatie aan huis',
     'laptop reparatie thuis',
-    'IT specialist aan huis',
+    'ICT student aan huis',
     'computerhulp thuis',
     'computer service aan huis',
     'pc hulp thuis',
-    'computerhulp specialisten',
+    'computerhulp studenten',
     'computer hulp aan huis',
     'IT ondersteuning thuis',
     'pc reparatie thuis',
@@ -19,14 +19,18 @@ export const metadata: Metadata = {
     'thuishulp computer'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis | Computerhulp specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis door IT-specialisten met 10+ jaar ervaring. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    title: 'Computerhulp aan huis | ICT Student aan Huis | Hulp Met IT',
+    description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis',
+    type: 'website',
+    locale: 'nl_NL',
+    siteName: 'Hulp met IT',
     images: ['/og-image.webp'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis - Ervaren Computerhulp specialisten',
-    description: 'Computerhulp aan huis door IT-specialisten met 10+ jaar ervaring €14,50 per kwartier (€10 voorrijkosten + 3 x €14,50)!',
+    title: 'Computerhulp aan huis - ICT Student aan Huis',
+    description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten.',
   },
   robots: {
     index: true,

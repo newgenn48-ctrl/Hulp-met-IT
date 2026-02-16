@@ -2,70 +2,80 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Phone, ArrowRight } from 'lucide-react'
+import { Phone, ArrowRight, Banknote, GraduationCap, CalendarDays } from 'lucide-react'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export function HeroSection() {
   return (
-    <section className="relative bg-white pt-24 sm:pt-28 md:pt-32 pb-0 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="lg:grid lg:grid-cols-12 lg:gap-8 items-end">
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+      {/* Background image */}
+      <Image
+        src="/student-aan-huis.webp"
+        alt="ICT-student helpt klant met computer aan huis"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
+      />
 
-          <div className="lg:col-span-6 xl:col-span-5 pt-8 pb-12 lg:pb-20">
-            <p className="text-primary-600 font-semibold tracking-wide uppercase text-sm mb-4">
-              Computerhulp aan huis
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-secondary-900/75 to-secondary-900/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-secondary-900/30" />
+
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
+        <div className="max-w-2xl">
+          <ScrollReveal>
+            <p className="text-primary-300 font-semibold tracking-wide uppercase text-sm mb-4">
+              ICT Student aan huis
             </p>
 
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-secondary-900 leading-[1.1] mb-6">
-              Wij komen naar{' '}
-              <span className="text-primary-600">u toe</span>
+            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+              Computerhulp{' '}
+              <span className="text-accent-400">aan huis</span>
             </h1>
 
-            <p className="text-lg text-secondary-600 leading-relaxed mb-8 max-w-lg">
-              Vastgelopen met uw computer, wifi of printer? Onze medewerker komt bij u thuis langs en lost het rustig samen met u op. Geen technisch jargon, gewoon duidelijke hulp.
+            <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
+              Een HBO-opgeleide student komt bij u aan de deur, lost het probleem op en legt alles uit in gewone taal. Zo kunt u er weer tegenaan.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <Link
                 href="/afspraak"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-accent"
               >
                 Afspraak maken
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-5 h-5" />
               </Link>
               <a
                 href="tel:+31642827860"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                Bel ons
+                Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
               </a>
             </div>
 
-            <div className="flex items-center gap-6 text-sm text-secondary-500">
-              <span>10+ jaar ervaring</span>
-              <span className="w-1 h-1 rounded-full bg-secondary-300" />
-              <span>Veilig en verzekerd</span>
-              <span className="w-1 h-1 rounded-full bg-secondary-300" />
-              <span>Betaling achteraf</span>
-            </div>
-          </div>
+            <p className="text-accent-400 text-sm font-medium mb-8">
+              Meestal binnen 24 uur geholpen
+            </p>
 
-          <div className="lg:col-span-6 xl:col-span-7 relative">
-            <div className="relative aspect-[4/3] lg:aspect-auto lg:h-[480px] xl:h-[540px] rounded-t-2xl lg:rounded-tl-2xl overflow-hidden">
-              <Image
-                src="/student-aan-huis.webp"
-                alt="Computerhulp aan huis door onze medewerker"
-                fill
-                priority
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 55vw"
-              />
+            <div className="flex flex-wrap items-center gap-3 text-sm">
+              <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                <GraduationCap className="w-3.5 h-3.5 text-primary-300" />
+                HBO-opgeleide studenten
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                <Banknote className="w-3.5 h-3.5 text-primary-300" />
+                Betaalbare tarieven
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                <CalendarDays className="w-3.5 h-3.5 text-primary-300" />
+                7 dagen per week
+              </span>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
-
-      <div className="h-px bg-secondary-200" />
     </section>
   )
 }

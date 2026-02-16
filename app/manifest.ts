@@ -4,18 +4,16 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Hulp met IT',
     short_name: 'Hulp met IT',
-    description: 'Snelle, betrouwbare computerhulp aan huis door gekwalificeerde IT-specialisten',
+    description: 'Computerhulp aan huis door vriendelijke studenten. Rustig, geduldig en op uw tempo.',
     start_url: '/',
     display: 'standalone',
     background_color: '#ffffff',
-    theme_color: '#334155',
+    theme_color: '#2557a7',
     categories: ['business', 'productivity', 'utilities'],
     lang: 'nl',
     orientation: 'portrait-primary',
     icons: [
       { src: '/icon', sizes: '32x32', type: 'image/png' },
-      { src: '/icon', sizes: '192x192', type: 'image/png' },
-      { src: '/icon', sizes: '512x512', type: 'image/png' },
     ]
   }
 }

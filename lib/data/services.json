@@ -4,12 +4,12 @@
     "slug": "computerhulp",
     "icon": "Monitor",
     "emoji": "💻",
-    "shortDescription": "Hulp met uw computer, laptop of PC? Wij komen bij u thuis.",
+    "shortDescription": "Loopt uw computer niet lekker? Wij komen bij u thuis en kijken ernaar.",
     "description": "Computerhulp aan huis voor alle problemen met uw computer, laptop of PC. Installatie, reparatie en uitleg.",
     "heroText": "Problemen met uw computer of laptop? Wij komen bij u thuis en lossen het op. Ook voor installatie van een nieuwe PC of laptop.",
-    "longDescription": "Heeft uw computer of laptop problemen? Loopt hij traag, starten programma's niet meer op, of heeft u een nieuwe PC die geïnstalleerd moet worden? Onze IT-specialisten komen bij u thuis. Wij helpen met alle merken laptops en computers, inclusief Windows 10 en 11. U krijgt duidelijke uitleg en betaalt pas achteraf.",
+    "longDescription": "Heeft uw computer of laptop problemen? Loopt hij traag, starten programma's niet meer op, of heeft u een nieuwe PC die geïnstalleerd moet worden? Onze ICT-studenten komen bij u thuis. Wij helpen met alle merken laptops en computers, inclusief Windows 10 en 11. U krijgt duidelijke uitleg en betaalt pas achteraf.",
     "metaTitle": "Computerhulp aan Huis | Snel & Vakkundig | Hulp met IT",
-    "metaDescription": "Computerproblemen? Onze IT-specialist komt bij u thuis. ✓ Trage computer versnellen ✓ Windows problemen oplossen ✓ €14,50 per kwartier ✓ Binnen 48 uur geholpen",
+    "metaDescription": "Computerproblemen? Onze ICT-student komt bij u thuis. ✓ Trage computer versnellen ✓ Windows problemen oplossen ✓ €14,50 per kwartier ✓ Binnen 48 uur geholpen",
     "duration": "45-90 minuten",
     "features": [
       "Nieuwe laptop of PC installeren",
@@ -24,7 +24,7 @@
       "Uw computer werkt weer snel en soepel",
       "Geen gedoe met wegbrengen naar een winkel",
       "Duidelijke uitleg zodat u het begrijpt",
-      "Vaste prijs, geen verrassingen achteraf"
+      "Transparante tarieven, geen verrassingen achteraf"
     ],
     "process": [
       {
@@ -33,7 +33,7 @@
       },
       {
         "title": "Wij komen bij u thuis",
-        "description": "Onze specialist komt langs en bekijkt uw computer. U hoeft niets voor te bereiden."
+        "description": "Onze student komt langs en bekijkt uw computer. U hoeft niets voor te bereiden."
       },
       {
         "title": "Probleem wordt opgelost",
@@ -82,7 +82,7 @@
       "Windows problemen oplossen",
       "computer opschonen",
       "IT hulp aan huis",
-      "computer specialist thuis"
+      "computer student thuis"
     ]
   },
   {
@@ -90,12 +90,12 @@
     "slug": "printerhulp",
     "icon": "Printer",
     "emoji": "🖨️",
-    "shortDescription": "Printer werkt niet? Wij helpen u met installatie en problemen.",
+    "shortDescription": "Printer doet het niet meer? Wij komen langs en zorgen dat het weer werkt.",
     "description": "Printer werkt niet? Wij helpen u vriendelijk verder!",
     "heroText": "Printer doet het niet meer? Of een nieuwe printer aansluiten? Wij komen bij u thuis en zorgen dat alles weer werkt.",
-    "longDescription": "Printer problemen kunnen heel vervelend zijn. Of het nu gaat om een nieuwe printer aansluiten, draadloos printen instellen, of een probleem oplossen - onze vriendelijke specialisten helpen u persoonlijk en hebben ervaring met alle printer merken zoals HP, Canon, Epson en Brother.",
+    "longDescription": "Printerproblemen kunnen heel vervelend zijn. Of het nu gaat om een nieuwe printer aansluiten, draadloos printen instellen, of een probleem oplossen - onze vriendelijke studenten helpen u persoonlijk en hebben ervaring met alle printermerken zoals HP, Canon, Epson en Brother.",
     "metaTitle": "Printerhulp aan Huis | Installatie & Problemen | Hulp met IT",
-    "metaDescription": "Printer doet het niet? Onze specialist komt bij u thuis. ✓ Alle merken (HP, Canon, Epson, Brother) ✓ Draadloos printen ✓ €14,50 per kwartier ✓ Snel geholpen",
+    "metaDescription": "Printer doet het niet? Onze student komt bij u thuis. ✓ Alle merken (HP, Canon, Epson, Brother) ✓ Draadloos printen ✓ €14,50 per kwartier ✓ Snel geholpen",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe printer installatie en setup",
@@ -114,11 +114,11 @@
     ],
     "process": [
       {
-        "title": "Printer check",
+        "title": "Printercheck",
         "description": "We controleren uw printer en de verbindingen"
       },
       {
-        "title": "Probleem diagnose",
+        "title": "Probleemdiagnose",
         "description": "We stellen vast wat het exacte probleem is"
       },
       {
@@ -149,7 +149,7 @@
       },
       {
         "question": "Kunnen jullie ook draadloos printen instellen?",
-        "answer": "Ja, wij stellen draadloos printen in zodat u vanaf al uw apparaten kunt printen: computer, laptop, tablet en smartphone. Wij zorgen dat alles goed verbonden is met uw WiFi netwerk."
+        "answer": "Ja, wij stellen draadloos printen in zodat u vanaf al uw apparaten kunt printen: computer, laptop, tablet en smartphone. Wij zorgen dat alles goed verbonden is met uw WiFi-netwerk."
       },
       {
         "question": "Mijn printer geeft vegen of strepen, kunnen jullie dat oplossen?",
@@ -170,25 +170,25 @@
     ]
   },
   {
-    "name": "E-mail Problemen",
+    "name": "E-mailproblemen",
     "slug": "email-problemen",
     "icon": "Mail",
     "emoji": "📧",
-    "shortDescription": "E-mail werkt niet? Wij helpen met instellen en problemen oplossen.",
+    "shortDescription": "Kunt u niet meer bij uw e-mail? Wij helpen u er weer in.",
     "description": "E-mail werkt niet? Wij zorgen dat u weer berichten kunt versturen!",
     "heroText": "Problemen met uw e-mail? Wij komen bij u thuis en zorgen dat u weer kunt mailen. Ook voor het instellen van e-mail op nieuwe apparaten.",
-    "longDescription": "E-mail problemen kunnen heel vervelend zijn, vooral als u belangrijke berichten mist. Wij helpen u met het instellen van e-mail op alle apparaten, het oplossen van problemen met versturen en ontvangen, en zorgen dat uw e-mail weer goed werkt.",
+    "longDescription": "E-mailproblemen kunnen heel vervelend zijn, vooral als u belangrijke berichten mist. Wij helpen u met het instellen van e-mail op alle apparaten, het oplossen van problemen met versturen en ontvangen, en zorgen dat uw e-mail weer goed werkt.",
     "metaTitle": "E-mail Problemen Oplossen aan Huis | Hulp met IT",
-    "metaDescription": "E-mail doet het niet? Onze specialist komt bij u thuis. ✓ Outlook, Gmail, Hotmail ✓ E-mail op alle apparaten ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
+    "metaDescription": "E-mail doet het niet? Onze student komt bij u thuis. ✓ Outlook, Gmail, Hotmail ✓ E-mail op alle apparaten ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe e-mail account aanmaken",
-      "E-mail accounts instellen",
+      "E-mailaccounts instellen",
       "Outlook, Gmail, Hotmail configureren",
-      "E-mail synchronisatie alle apparaten",
-      "Spam en phishing bescherming",
+      "E-mailsynchronisatie alle apparaten",
+      "Spam- en phishingbescherming",
       "Contact- en agendabeheer",
-      "E-mail backup en herstel"
+      "E-mailbackup en herstel"
     ],
     "benefits": [
       "U kunt weer e-mails versturen en ontvangen",
@@ -198,11 +198,11 @@
     ],
     "process": [
       {
-        "title": "E-mail diagnose",
+        "title": "E-maildiagnose",
         "description": "We controleren uw huidige e-mail instellingen en problemen"
       },
       {
-        "title": "Account configuratie",
+        "title": "Accountconfiguratie",
         "description": "We stellen uw e-mail correct in op alle apparaten"
       },
       {
@@ -219,13 +219,13 @@
       "Berichten komen niet aan",
       "E-mail werkt niet op telefoon",
       "Kan niet inloggen op e-mail",
-      "Teveel spam berichten",
-      "E-mail account gehackt"
+      "Te veel spamberichten",
+      "E-mailaccount gehackt"
     ],
     "faqs": [
       {
         "question": "Kunnen jullie Outlook, Gmail en Hotmail instellen?",
-        "answer": "Ja, wij hebben ervaring met alle e-mail programma's en diensten. Of u nu Outlook, Gmail, Hotmail, Yahoo of een andere provider gebruikt, wij zorgen dat het werkt."
+        "answer": "Ja, wij hebben ervaring met alle e-mailprogramma's en diensten. Of u nu Outlook, Gmail, Hotmail, Yahoo of een andere provider gebruikt, wij zorgen dat het werkt."
       },
       {
         "question": "Wat kost het om e-mail in te stellen?",
@@ -245,12 +245,12 @@
       }
     ],
     "keywords": [
-      "e-mail problemen",
+      "e-mailproblemen",
       "email installatie",
       "Outlook hulp",
       "Gmail instellen",
-      "e-mail synchronisatie",
-      "spam bescherming",
+      "e-mailsynchronisatie",
+      "spambescherming",
       "e-mail hulp aan huis"
     ]
   },
@@ -259,21 +259,21 @@
     "slug": "internet-wifi",
     "icon": "Wifi",
     "emoji": "📶",
-    "shortDescription": "Internet traag of WiFi problemen? Wij helpen u snel verder.",
-    "description": "Internet traag? WiFi problemen? Wij helpen!",
-    "heroText": "Slecht WiFi signaal of traag internet? Wij komen bij u thuis en zorgen voor een stabiele, snelle verbinding in elke kamer.",
-    "longDescription": "Een goede internetverbinding is belangrijk. Wij helpen u met alle internet en WiFi problemen, van het aansluiten van een nieuwe router tot het verbeteren van uw draadloze netwerk voor de beste snelheid door heel uw huis.",
+    "shortDescription": "Internet doet het niet goed? Wij komen kijken en lossen het op.",
+    "description": "Internet traag? WiFi-problemen? Wij helpen!",
+    "heroText": "Slecht WiFi-signaal of traag internet? Wij komen bij u thuis en zorgen voor een stabiele, snelle verbinding in elke kamer.",
+    "longDescription": "Een goede internetverbinding is belangrijk. Wij helpen u met alle internet- en WiFi-problemen, van het aansluiten van een nieuwe router tot het verbeteren van uw draadloze netwerk voor de beste snelheid door heel uw huis.",
     "metaTitle": "Internet & WiFi Hulp aan Huis | Router & Netwerk | Hulp met IT",
-    "metaDescription": "Internet problemen of slecht WiFi? Onze specialist komt bij u thuis. ✓ Router installatie ✓ WiFi verbeteren ✓ €14,50 per kwartier ✓ Snel geholpen",
+    "metaDescription": "Internet problemen of slecht WiFi? Onze student komt bij u thuis. ✓ Router installatie ✓ WiFi verbeteren ✓ €14,50 per kwartier ✓ Snel geholpen",
     "duration": "1-2 uur gemiddeld",
     "features": [
       "Nieuwe router installatie en setup",
-      "WiFi installatie en verbetering",
-      "Internet snelheid optimaliseren",
-      "Router configuratie",
+      "WiFi-installatie en verbetering",
+      "Internetsnelheid optimaliseren",
+      "Routerconfiguratie",
       "Veilig internetten instellen",
       "Smart TV aansluiten",
-      "WiFi bereik uitbreiden"
+      "WiFi-bereik uitbreiden"
     ],
     "benefits": [
       "Snel en stabiel internet in elke kamer",
@@ -283,8 +283,8 @@
     ],
     "process": [
       {
-        "title": "Netwerk analyse",
-        "description": "We testen uw internetverbinding en WiFi signaal"
+        "title": "Netwerkanalyse",
+        "description": "We testen uw internetverbinding en WiFi-signaal"
       },
       {
         "title": "Optimalisatie",
@@ -301,16 +301,16 @@
     ],
     "commonIssues": [
       "Internet valt steeds weg",
-      "WiFi bereik is te klein",
+      "WiFi-bereik is te klein",
       "Trage internetsnelheid",
       "Smart TV heeft geen internet",
-      "WiFi wachtwoord vergeten",
+      "WiFi-wachtwoord vergeten",
       "Nieuwe router installeren"
     ],
     "faqs": [
       {
-        "question": "Kunnen jullie mijn WiFi bereik verbeteren?",
-        "answer": "Ja, wij analyseren uw situatie en adviseren de beste oplossing. Dit kan zijn: de router verplaatsen, instellingen optimaliseren, of een WiFi versterker plaatsen."
+        "question": "Kunnen jullie mijn WiFi-bereik verbeteren?",
+        "answer": "Ja, wij analyseren uw situatie en adviseren de beste oplossing. Dit kan zijn: de router verplaatsen, instellingen optimaliseren, of een WiFi-versterker plaatsen."
       },
       {
         "question": "Wat kost het om een router te laten installeren?",
@@ -318,20 +318,20 @@
       },
       {
         "question": "Mijn internet is erg traag, kunnen jullie dat oplossen?",
-        "answer": "Ja, wij onderzoeken waar het probleem zit. Vaak kunnen we de snelheid verbeteren door router instellingen aan te passen, het kanaal te wijzigen of de router beter te positioneren."
+        "answer": "Ja, wij onderzoeken waar het probleem zit. Vaak kunnen we de snelheid verbeteren door routerinstellingen aan te passen, het kanaal te wijzigen of de router beter te positioneren."
       },
       {
         "question": "Kunnen jullie mijn Smart TV met internet verbinden?",
         "answer": "Ja, wij verbinden uw Smart TV met WiFi en stellen apps in zoals Netflix, YouTube of NPO. Zo kunt u direct aan de slag."
       },
       {
-        "question": "Ik ben mijn WiFi wachtwoord vergeten, kunnen jullie helpen?",
+        "question": "Ik ben mijn WiFi-wachtwoord vergeten, kunnen jullie helpen?",
         "answer": "Ja, wij kunnen uw huidige wachtwoord opzoeken of een nieuw wachtwoord instellen. Daarna verbinden we al uw apparaten opnieuw."
       }
     ],
     "keywords": [
-      "WiFi installatie",
-      "internet problemen",
+      "WiFi-installatie",
+      "internetproblemen",
       "router instellen",
       "WiFi verbeteren",
       "internet traag",
@@ -344,12 +344,12 @@
     "slug": "tablet-smartphone",
     "icon": "Smartphone",
     "emoji": "📱",
-    "shortDescription": "Hulp met uw tablet of smartphone nodig? Wij komen bij u thuis.",
+    "shortDescription": "Snapt u uw telefoon of tablet niet helemaal? Wij leggen het rustig uit.",
     "description": "Hulp met uw tablet of smartphone nodig?",
     "heroText": "Hulp nodig met uw telefoon of tablet? Wij komen bij u thuis voor installatie, uitleg en al uw vragen over apps en functies.",
     "longDescription": "Tablets en smartphones kunnen lastig zijn. Wij helpen u graag met het instellen van apps, e-mail, WhatsApp, foto's overzetten en alles wat u nodig heeft om uw telefoon of tablet goed te kunnen gebruiken.",
     "metaTitle": "Tablet & Smartphone Hulp aan Huis | Apps & Uitleg | Hulp met IT",
-    "metaDescription": "Hulp met uw tablet of smartphone? Onze specialist komt bij u thuis. ✓ WhatsApp instellen ✓ Apps uitleggen ✓ €14,50 per kwartier ✓ Geduldig en duidelijk",
+    "metaDescription": "Hulp met uw tablet of smartphone? Onze student komt bij u thuis. ✓ WhatsApp instellen ✓ Apps uitleggen ✓ €14,50 per kwartier ✓ Geduldig en duidelijk",
     "duration": "30 min - 1 uur",
     "features": [
       "Nieuwe telefoon/tablet gebruiksklaar maken",
@@ -403,7 +403,7 @@
       },
       {
         "question": "Kunnen jullie WhatsApp voor mij instellen?",
-        "answer": "Ja, wij installeren WhatsApp en leggen stap voor stap uit hoe u berichten verstuurt, foto's deelt en videobelt. U krijgt rustig de tijd om te oefenen."
+        "answer": "Ja, wij installeren WhatsApp en leggen stap voor stap uit hoe u berichten verstuurt, foto's deelt en videobelt. U oefent het meteen samen met de student."
       },
       {
         "question": "Hoe zet ik foto's over naar mijn computer?",
@@ -425,88 +425,90 @@
     ]
   },
   {
-    "name": "Uitleg & Les",
-    "slug": "uitleg-les",
+    "name": "Smart TV",
+    "slug": "smart-tv",
     "icon": "Monitor",
-    "emoji": "🎓",
-    "shortDescription": "Computerles aan huis. Rustig en geduldig op uw eigen tempo.",
-    "description": "Rustig en geduldig computerles aan huis",
-    "heroText": "Wilt u beter leren werken met uw computer, tablet of telefoon? Wij geven persoonlijke les bij u thuis, op uw eigen tempo.",
-    "longDescription": "Wilt u beter leren werken met uw computer, tablet of smartphone? Onze geduldige specialisten geven persoonlijke uitleg op uw eigen tempo. We leggen alles stap voor stap uit en zorgen dat u zich zeker voelt.",
-    "metaTitle": "Computerles aan Huis | Persoonlijke Uitleg | Hulp met IT",
-    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Op uw eigen tempo ✓ Geduldig en duidelijk ✓ €14,50 per kwartier ✓ Persoonlijke aandacht",
-    "duration": "1-2 uur per les",
+    "emoji": "📺",
+    "shortDescription": "Nieuwe TV? Wij hangen hem op, stellen alles in en leggen de bediening uit.",
+    "description": "Hulp met uw TV: ophangen, instellen en aansluiten.",
+    "heroText": "Nieuwe TV gekocht of hulp nodig met zenders, mediabox of ophangen? Wij komen bij u thuis en regelen alles — van muurbeugel tot de laatste zender.",
+    "longDescription": "Of u nu een nieuwe TV wilt laten ophangen aan de muur, zenders wilt laten instellen of hulp nodig heeft met uw mediabox of CI+ module — wij regelen het. Onze student komt bij u thuis, hangt uw TV veilig op, sluit alles aan en zorgt dat u direct kunt kijken.",
+    "metaTitle": "TV Ophangen & Instellen aan Huis | Hulp met IT",
+    "metaDescription": "TV ophangen, zenders instellen of mediabox aansluiten? Onze student komt bij u thuis. ✓ TV muurmontage ✓ Zenders zoeken ✓ €14,50/kwartier ✓ 7 dagen per week",
+    "duration": "45 min - 1,5 uur",
     "features": [
-      "Nieuwe apparaat leren gebruiken",
-      "Basis computervaardigheden",
-      "Internet en e-mail gebruiken",
-      "Videobellen met familie",
-      "Online bankieren veilig",
-      "Foto's beheren en bewerken",
-      "Social media gebruiken"
+      "TV ophangen aan de muur (muurbeugel monteren)",
+      "Zenders zoeken en sorteren",
+      "Mediabox of CI+ module aansluiten",
+      "Smart TV met WiFi verbinden",
+      "Apps instellen (Netflix, YouTube, NPO Start)",
+      "Soundbar of surround sound aansluiten",
+      "Chromecast, Apple TV of Fire Stick installeren",
+      "Afstandsbediening instellen en uitleggen"
     ],
     "benefits": [
-      "U voelt zich zekerder met technologie",
-      "Persoonlijke les op uw eigen tempo",
-      "Direct antwoord op al uw vragen",
-      "Praktische vaardigheden die u direct kunt gebruiken"
+      "TV veilig en netjes aan de muur",
+      "Alle zenders ingesteld en gesorteerd",
+      "Direct kunnen kijken wat u wilt",
+      "Geen gedoe met kabels en instellingen"
     ],
     "process": [
       {
-        "title": "Niveau bepalen",
-        "description": "We kijken wat u al kunt en wat u wilt leren"
+        "title": "Situatie bekijken",
+        "description": "We bekijken uw TV, muur en gewenste opstelling"
       },
       {
-        "title": "Lesplan op maat",
-        "description": "We maken een persoonlijk lesplan voor u"
+        "title": "TV ophangen of plaatsen",
+        "description": "We monteren de muurbeugel en hangen uw TV veilig op"
       },
       {
-        "title": "Rustige uitleg",
-        "description": "Stap voor stap uitleg op uw eigen tempo"
+        "title": "Alles aansluiten",
+        "description": "We sluiten kabels, mediabox, soundbar en internet aan"
       },
       {
-        "title": "Veel oefenen",
-        "description": "We oefenen tot u het zelfstandig kunt"
+        "title": "Instellen en uitleggen",
+        "description": "We stellen zenders, apps en beeld in en leggen alles uit"
       }
     ],
     "commonIssues": [
-      "Basis computergebruik leren",
-      "E-mail leren gebruiken",
-      "Videobellen met kleinkinderen",
-      "Veilig internet bankieren",
-      "Foto's organiseren",
-      "Social media begrijpen"
+      "TV ophangen aan de muur",
+      "Zenders zoeken en sorteren",
+      "Mediabox of CI+ module aansluiten",
+      "Smart TV verbinden met WiFi",
+      "Geluid via soundbar instellen",
+      "Kabels netjes wegwerken"
     ],
     "faqs": [
       {
-        "question": "Voor wie is computerles aan huis geschikt?",
-        "answer": "Voor iedereen die beter wil leren werken met technologie. Veel van onze klanten zijn senioren, maar ook mensen die net een nieuwe computer of telefoon hebben zijn welkom."
+        "question": "Kunnen jullie mijn TV aan de muur hangen?",
+        "answer": "Ja, wij monteren de muurbeugel en hangen uw TV veilig op. Zorg dat u een muurbeugel heeft die past bij uw TV. Wij adviseren u graag welke u nodig heeft."
       },
       {
-        "question": "Wat kost een les aan huis?",
-        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
+        "question": "Kunnen jullie alle merken TV's helpen?",
+        "answer": "Ja, wij hebben ervaring met Samsung, LG, Sony, Philips, TCL, Hisense en alle andere merken. Het maakt niet uit welke TV u heeft."
       },
       {
-        "question": "Ik ben een absolute beginner, is dat een probleem?",
-        "answer": "Helemaal niet! Wij beginnen waar u bent. Of u nu nog nooit een computer heeft gebruikt of alleen wat bijscholing wilt, wij passen de les aan op uw niveau."
+        "question": "Wat kost TV ophangen en instellen?",
+        "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. TV ophangen en instellen duurt meestal 45 minuten tot 1,5 uur."
       },
       {
-        "question": "Kunnen jullie mij leren videobellen met mijn kleinkinderen?",
-        "answer": "Ja, dat is een van de meest gevraagde onderwerpen! Wij leren u videobellen via WhatsApp, Skype, FaceTime of Zoom. U oefent direct tijdens de les."
+        "question": "Kunnen jullie ook mijn mediabox of CI+ module aansluiten?",
+        "answer": "Ja, wij sluiten uw mediabox, CI+ module of decoder aan en zorgen dat alle zenders werken. Ook helpen we met het sorteren van uw favoriete zenders."
       },
       {
-        "question": "Is online bankieren veilig? Kunnen jullie dat uitleggen?",
-        "answer": "Ja, wij leggen uit hoe u veilig kunt internetbankieren. U leert hoe u phishing herkent, een sterk wachtwoord maakt en veilig inlogt bij uw bank."
+        "question": "Mijn TV heeft geen geluid via de soundbar, kunnen jullie helpen?",
+        "answer": "Ja, wij verbinden uw soundbar met de TV via HDMI ARC, optisch of Bluetooth en zorgen dat het geluid goed werkt."
       }
     ],
     "keywords": [
-      "computerles aan huis",
-      "computer cursus",
-      "computer uitleg",
-      "digitale vaardigheden",
-      "senioren computerles",
-      "computer training",
-      "computerles voor beginners"
+      "tv ophangen",
+      "tv aan muur hangen",
+      "tv instellen",
+      "zenders instellen",
+      "mediabox aansluiten",
+      "smart tv hulp",
+      "tv hulp aan huis",
+      "tv muurbeugel monteren"
     ]
   },
   {
@@ -514,12 +516,12 @@
     "slug": "smart-home",
     "icon": "Smartphone",
     "emoji": "🏠",
-    "shortDescription": "Hulp met slimme apparaten zoals Google Home, Alexa en smart TV.",
+    "shortDescription": "Slimme speaker of thermostaat gekocht? Wij stellen het voor u in.",
     "description": "Hulp met smart home apparaten en slimme technologie.",
     "heroText": "Slimme speaker, thermostaat of camera gekocht? Wij komen bij u thuis en zorgen dat alles werkt en met elkaar verbonden is.",
     "longDescription": "Smart home apparaten kunnen het leven makkelijker maken, maar het instellen is vaak lastig. Wij helpen u met alle slimme apparaten: van Google Home en Alexa tot slimme thermostaten, camera's en verlichting.",
     "metaTitle": "Smart Home Hulp aan Huis | Installatie & Uitleg | Hulp met IT",
-    "metaDescription": "Hulp met smart home apparaten? Onze specialist komt bij u thuis. ✓ Google Home & Alexa ✓ Slimme thermostaat ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
+    "metaDescription": "Hulp met smart home apparaten? Onze student komt bij u thuis. ✓ Google Home & Alexa ✓ Slimme thermostaat ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
     "duration": "45 min - 1,5 uur",
     "features": [
       "Google Home en Alexa instellen",
@@ -599,7 +601,7 @@
     "slug": "computerles",
     "icon": "Monitor",
     "emoji": "👨‍🏫",
-    "shortDescription": "Persoonlijke computerles aan huis. Op uw eigen tempo leren.",
+    "shortDescription": "Wilt u beter leren werken met de computer? Wij geven rustig les bij u thuis.",
     "description": "Computerles aan huis voor beginners en gevorderden.",
     "heroText": "Wilt u beter leren werken met de computer? Wij geven persoonlijke les bij u thuis, aangepast aan uw niveau en leerdoelen.",
     "longDescription": "Computerles aan huis is de beste manier om te leren. U werkt op uw eigen computer, in uw eigen tempo, met persoonlijke aandacht. Of u nu een absolute beginner bent of specifieke vaardigheden wilt leren.",
@@ -680,87 +682,88 @@
     ]
   },
   {
-    "name": "Smart TV",
-    "slug": "smart-tv",
+    "name": "Uitleg & Les",
+    "slug": "uitleg-les",
     "icon": "Monitor",
-    "emoji": "📺",
-    "shortDescription": "Smart TV instellen en apps zoals Netflix configureren.",
-    "description": "Hulp met uw Smart TV en streaming diensten.",
-    "heroText": "Nieuwe Smart TV gekocht of hulp nodig met Netflix en andere apps? Wij komen bij u thuis en zorgen dat u direct kunt kijken.",
-    "longDescription": "Een Smart TV biedt eindeloze mogelijkheden, maar het instellen kan lastig zijn. Wij helpen u met het verbinden met internet, apps installeren en uitleggen hoe alles werkt.",
-    "metaTitle": "Smart TV Hulp aan Huis | Netflix & Apps Instellen | Hulp met IT",
-    "metaDescription": "Hulp met uw Smart TV? Onze specialist komt bij u thuis. ✓ Netflix, YouTube, NPO ✓ WiFi verbinden ✓ €14,50 per kwartier ✓ Duidelijke uitleg",
-    "duration": "30 min - 1 uur",
+    "emoji": "🎓",
+    "shortDescription": "Persoonlijke uitleg bij u thuis. Rustig en geduldig, op uw tempo.",
+    "description": "Rustig en geduldig computerles aan huis",
+    "heroText": "Wilt u beter leren werken met uw computer, tablet of telefoon? Wij geven persoonlijke les bij u thuis, op uw eigen tempo.",
+    "longDescription": "Wilt u beter leren werken met uw computer, tablet of smartphone? Onze geduldige studenten geven persoonlijke uitleg op uw eigen tempo. We leggen alles stap voor stap uit en zorgen dat u zich zeker voelt.",
+    "metaTitle": "Computerles aan Huis | Persoonlijke Uitleg | Hulp met IT",
+    "metaDescription": "Computerles aan huis voor beginners en senioren. ✓ Op uw eigen tempo ✓ Geduldig en duidelijk ✓ €14,50 per kwartier ✓ Persoonlijke aandacht",
+    "duration": "1-2 uur per les",
     "features": [
-      "Smart TV met WiFi verbinden",
-      "Netflix en andere apps instellen",
-      "YouTube en NPO Start configureren",
-      "Geluid en beeld optimaliseren",
-      "Afstandsbediening uitleggen",
-      "Chromecast of Apple TV installeren",
-      "Zenders sorteren"
+      "Nieuwe apparaat leren gebruiken",
+      "Basis computervaardigheden",
+      "Internet en e-mail gebruiken",
+      "Videobellen met familie",
+      "Online bankieren veilig",
+      "Foto's beheren en bewerken",
+      "Social media gebruiken"
     ],
     "benefits": [
-      "Direct kunnen kijken wat u wilt",
-      "Alle apps ingesteld en uitgelegd",
-      "Optimale beeld- en geluidskwaliteit",
-      "Geen gedoe met ingewikkelde menu's"
+      "U voelt zich zekerder met technologie",
+      "Persoonlijke les op uw eigen tempo",
+      "Direct antwoord op al uw vragen",
+      "Praktische vaardigheden die u direct kunt gebruiken"
     ],
     "process": [
       {
-        "title": "TV controleren",
-        "description": "We bekijken uw TV en de huidige instellingen"
+        "title": "Niveau bepalen",
+        "description": "We kijken wat u al kunt en wat u wilt leren"
       },
       {
-        "title": "Internet verbinden",
-        "description": "We verbinden de TV met uw WiFi netwerk"
+        "title": "Lesplan op maat",
+        "description": "We maken een persoonlijk lesplan voor u"
       },
       {
-        "title": "Apps installeren",
-        "description": "We installeren en configureren de gewenste apps"
+        "title": "Rustige uitleg",
+        "description": "Stap voor stap uitleg op uw eigen tempo"
       },
       {
-        "title": "Uitleg geven",
-        "description": "We leggen uit hoe u alles bedient en apps opent"
+        "title": "Veel oefenen",
+        "description": "We oefenen tot u het zelfstandig kunt"
       }
     ],
     "commonIssues": [
-      "Smart TV verbinden met WiFi",
-      "Netflix account instellen",
-      "Apps downloaden op TV",
-      "Geluid via soundbar",
-      "Beeld kwaliteit verbeteren",
-      "TV reageert traag"
+      "Basis computergebruik leren",
+      "E-mail leren gebruiken",
+      "Videobellen met kleinkinderen",
+      "Veilig internet bankieren",
+      "Foto's organiseren",
+      "Social media begrijpen"
     ],
     "faqs": [
       {
-        "question": "Kunnen jullie alle merken Smart TV's helpen?",
-        "answer": "Ja, wij hebben ervaring met Samsung, LG, Sony, Philips en alle andere merken. Het maakt niet uit welke TV u heeft."
+        "question": "Voor wie is computerles aan huis geschikt?",
+        "answer": "Voor iedereen die beter wil leren werken met technologie. Veel van onze klanten zijn senioren, maar ook mensen die net een nieuwe computer of telefoon hebben zijn welkom."
       },
       {
-        "question": "Wat kost het om mijn Smart TV in te stellen?",
+        "question": "Wat kost een les aan huis?",
         "answer": "Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
       },
       {
-        "question": "Kunnen jullie Netflix voor mij instellen?",
-        "answer": "Ja, wij installeren Netflix en loggen in met uw account. Heeft u nog geen account? Dan helpen wij u er een aan te maken."
+        "question": "Ik ben een absolute beginner, is dat een probleem?",
+        "answer": "Helemaal niet! Wij beginnen waar u bent. Of u nu nog nooit een computer heeft gebruikt of alleen wat bijscholing wilt, wij passen de les aan op uw niveau."
       },
       {
-        "question": "Mijn TV heeft geen geluid via de soundbar, kunnen jullie helpen?",
-        "answer": "Ja, wij verbinden uw soundbar met de TV en zorgen dat het geluid goed werkt. Ook stellen we de beste instellingen in."
+        "question": "Kunnen jullie mij leren videobellen met mijn kleinkinderen?",
+        "answer": "Ja, dat is een van de meest gevraagde onderwerpen! Wij leren u videobellen via WhatsApp, Skype, FaceTime of Zoom. U oefent direct tijdens de les."
       },
       {
-        "question": "Kunnen jullie ook een Chromecast installeren?",
-        "answer": "Ja, wij installeren Chromecast, Apple TV, Amazon Fire Stick en andere streaming apparaten. We leggen ook uit hoe u er mee werkt."
+        "question": "Is online bankieren veilig? Kunnen jullie dat uitleggen?",
+        "answer": "Ja, wij leggen uit hoe u veilig kunt internetbankieren. U leert hoe u phishing herkent, een sterk wachtwoord maakt en veilig inlogt bij uw bank."
       }
     ],
     "keywords": [
-      "smart tv hulp",
-      "smart tv instellen",
-      "netflix instellen",
-      "tv met wifi verbinden",
-      "smart tv apps",
-      "tv hulp aan huis"
+      "computerles aan huis",
+      "computer cursus",
+      "computer uitleg",
+      "digitale vaardigheden",
+      "senioren computerles",
+      "computer training",
+      "computerles voor beginners"
     ]
   },
   {
@@ -768,12 +771,12 @@
     "slug": "virusverwijdering",
     "icon": "Shield",
     "emoji": "🛡️",
-    "shortDescription": "Virus of malware op uw computer? Wij maken hem weer schoon.",
+    "shortDescription": "Computer gedraagt zich vreemd? Wij maken hem weer schoon en veilig.",
     "description": "Virusverwijdering en beveiliging van uw computer.",
     "heroText": "Computer besmet met een virus of malware? Wij komen bij u thuis, verwijderen alle schadelijke software en beveiligen uw computer.",
-    "longDescription": "Virussen en malware kunnen uw computer traag maken, gegevens stelen of zelfs onbruikbaar maken. Onze specialisten verwijderen alle schadelijke software en zorgen dat uw computer weer veilig is.",
+    "longDescription": "Virussen en malware kunnen uw computer traag maken, gegevens stelen of zelfs onbruikbaar maken. Onze studenten verwijderen alle schadelijke software en zorgen dat uw computer weer veilig is.",
     "metaTitle": "Virusverwijdering aan Huis | Computer Opschonen | Hulp met IT",
-    "metaDescription": "Virus op uw computer? Onze specialist komt bij u thuis. ✓ Malware verwijderen ✓ Computer beveiligen ✓ €14,50 per kwartier ✓ Snel geholpen",
+    "metaDescription": "Virus op uw computer? Onze student komt bij u thuis. ✓ Malware verwijderen ✓ Computer beveiligen ✓ €14,50 per kwartier ✓ Snel geholpen",
     "duration": "1-2 uur",
     "features": [
       "Virussen en malware verwijderen",
@@ -804,7 +807,7 @@
         "description": "We installeren bescherming en beveiligen uw systeem"
       },
       {
-        "title": "Preventie uitleg",
+        "title": "Preventie-uitleg",
         "description": "We geven tips om toekomstige besmetting te voorkomen"
       }
     ],
@@ -852,12 +855,12 @@
     "slug": "data-backup",
     "icon": "HardDrive",
     "emoji": "💾",
-    "shortDescription": "Bestanden kwijt of backup nodig? Wij helpen u met uw data.",
+    "shortDescription": "Foto's of bestanden kwijt? Wij helpen u ze terug te vinden en veilig te bewaren.",
     "description": "Data backup, herstel en beveiliging van uw bestanden.",
     "heroText": "Belangrijke bestanden kwijt of een backup nodig? Wij komen bij u thuis en zorgen dat uw foto's en documenten veilig zijn.",
     "longDescription": "Uw foto's, documenten en herinneringen zijn onvervangbaar. Wij helpen u met het maken van backups, het herstellen van verloren bestanden en het veilig bewaren van uw data.",
     "metaTitle": "Data Backup & Herstel aan Huis | Bestanden Veilig | Hulp met IT",
-    "metaDescription": "Bestanden kwijt of backup nodig? Onze specialist komt bij u thuis. ✓ Data herstellen ✓ Backup instellen ✓ €14,50 per kwartier ✓ Uw herinneringen veilig",
+    "metaDescription": "Bestanden kwijt of backup nodig? Onze student komt bij u thuis. ✓ Data herstellen ✓ Backup instellen ✓ €14,50 per kwartier ✓ Uw herinneringen veilig",
     "duration": "1-2 uur",
     "features": [
       "Automatische backup instellen",

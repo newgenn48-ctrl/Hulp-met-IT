@@ -1,4 +1,5 @@
 import { CONTACT_INFO, BUSINESS_INFO, PRICING, SERVICE_HOURS } from '@/lib/constants'
+import cities from '@/lib/data/cities.json'
 
 interface StructuredDataProps {
   breadcrumbs?: Array<{ name: string; url: string }>
@@ -79,26 +80,10 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
         "@type": "Country",
         "name": "Nederland"
       },
-      {
+      ...cities.map(city => ({
         "@type": "City",
-        "name": "Amsterdam"
-      },
-      {
-        "@type": "City",
-        "name": "Rotterdam"
-      },
-      {
-        "@type": "City",
-        "name": "Den Haag"
-      },
-      {
-        "@type": "City",
-        "name": "Utrecht"
-      },
-      {
-        "@type": "City",
-        "name": "Eindhoven"
-      }
+        "name": city.name
+      }))
     ],
     "address": {
       "@type": "PostalAddress",

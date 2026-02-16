@@ -36,38 +36,10 @@ const nextConfig = {
   httpAgentOptions: {
     keepAlive: true
   },
+  // Security headers are managed in vercel.json to avoid duplication
+  // Cache headers for static assets (not duplicated in vercel.json)
   async headers() {
     return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
-          },
-          {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
-          },
-          {
-            key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://js.hcaptcha.com https://*.hcaptcha.com; script-src-elem 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://scripts.clarity.ms https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://js.hcaptcha.com https://*.hcaptcha.com; style-src 'self' 'unsafe-inline' https://hcaptcha.com https://*.hcaptcha.com; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://www.google.com https://www.googletagmanager.com https://c.clarity.ms https://www.clarity.ms *.clarity.ms https://va.vercel-scripts.com https://vitals.vercel-insights.com https://hcaptcha.com https://*.hcaptcha.com https://sentry.hcaptcha.com; frame-src https://www.google.com https://www.googletagmanager.com https://hcaptcha.com https://*.hcaptcha.com https://newassets.hcaptcha.com; frame-ancestors 'none'; worker-src 'self' blob:; object-src 'none'; base-uri 'self';"
-          }
-        ]
-      },
-      {
-        source: '/api/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate'
-          }
-        ]
-      },
       {
         source: '/(.*\\.(?:js|css|woff2?|png|jpg|jpeg|gif|webp|avif|ico|svg)$)',
         headers: [

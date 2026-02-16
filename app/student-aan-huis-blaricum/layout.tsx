@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Blaricum | IT Student aan Huis in het Gooi | Hulp met IT',
-  description: 'Computerhulp aan huis in Blaricum door ervaren IT-studenten van Hogeschool Utrecht. Hulp met laptop, tablet, smartphone en WiFi. €14,50 per kwartier. Ook in Laren, Huizen en Hilversum.',
+  title: 'Student aan huis Blaricum | Hulp met IT',
+  description: 'ICT Student aan huis in Blaricum voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: 'computerhulp Blaricum, IT student aan huis Blaricum, laptop hulp Blaricum, computer reparatie Gooi, WiFi problemen Blaricum, smartphone hulp Laren, tablet hulp Huizen, Hogeschool Utrecht IT student',
   openGraph: {
-    title: 'Computerhulp Blaricum | IT Student aan Huis in het Gooi',
+    title: 'Student aan huis Blaricum | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Blaricum en omgeving door IT-studenten van Hogeschool Utrecht. Persoonlijke hulp met computer, laptop, tablet en smartphone.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp Blaricum | IT Student aan Huis in het Gooi',
+    title: 'Student aan huis Blaricum | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Blaricum door IT-studenten. Persoonlijke hulp met al uw apparaten.',
   },
   robots: {

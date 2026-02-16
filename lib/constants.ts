@@ -15,7 +15,7 @@ export const BUSINESS_INFO = {
   NAME: 'Hulp met IT',
   FULL_NAME: 'Hulp met IT - Computerhulp aan Huis',
   WEBSITE_URL: 'https://hulpmetit.nl',
-  DESCRIPTION: 'Betaalbare computerhulp aan huis door ervaren IT-specialisten in heel Nederland',
+  DESCRIPTION: 'Betaalbare computerhulp aan huis door HBO-opgeleide ICT-studenten in heel Nederland',
   SLOGAN: 'Betaalbare computerhulp aan huis',
   FOUNDED_YEAR: '2020'
 } as const

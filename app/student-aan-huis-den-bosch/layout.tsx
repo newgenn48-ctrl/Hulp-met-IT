@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "ICT Student aan huis 's-Hertogenbosch (Den Bosch) | Hulp Met IT",
-  description: "ICT Student aan huis in 's-Hertogenbosch voor computerhulp. Betaalbare IT-studenten van Avans en HAS Hogeschool komen naar je toe in Den Bosch. €14,50 per kwartier. Snel en vakkundig!",
+  title: 'Student aan huis Den Bosch | Hulp met IT',
+  description: "ICT Student aan huis in 's-Hertogenbosch voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.",
   keywords: [
     'student aan huis den bosch',
     "student aan huis 's-hertogenbosch",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'computerhulp vught'
   ],
   openGraph: {
-    title: "Student Aan Huis 's-Hertogenbosch (Den Bosch)",
+    title: 'Student aan huis Den Bosch | Hulp met IT',
     description: "Student aan huis in 's-Hertogenbosch: betaalbare computerhulp door IT-studenten. Bel ons!",
     images: ['/og-image.webp'],
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Student Aan Huis 's-Hertogenbosch (Den Bosch)",
+    title: 'Student aan huis Den Bosch | Hulp met IT',
     description: "Student aan huis in 's-Hertogenbosch: betaalbare computerhulp door IT-studenten. Bel ons!",
   },
   robots: {

@@ -1,38 +1,34 @@
 'use client'
 
-import { CityHeroSection } from '@/components/city/CityHeroSection'
-import { ServicesGrid } from '@/components/services/ServicesGrid'
-import { PricingSection } from '@/components/home/PricingSection'
-import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useState } from 'react'
 import {
   Phone,
-  Calendar,
-  Users,
-  MessageCircle,
-  CheckCircle,
+  ArrowRight,
   ChevronDown,
-  ChevronUp
+  MapPin,
+  Banknote,
+  GraduationCap,
+  CalendarDays
 } from 'lucide-react'
+import { PricingSection } from '@/components/home/PricingSection'
+import { HowItWorks } from '@/components/home/HowItWorks'
+import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { CTASection } from '@/components/home/CTASection'
+import { SectionDivider } from '@/components/ui/SectionDivider'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { CompactServicesSection } from '@/components/home/CompactServicesSection'
+import { NearbyCities } from '@/components/city/NearbyCities'
+import { CityAboutSection } from '@/components/city/CityAboutSection'
 
-const processSteps = [
-  {
-    step: '1',
-    title: 'Afspraak Maken',
-    description: 'Bel ons of maak online een afspraak. Wij plannen een geschikt moment in Amersfoort'
-  },
-  {
-    step: '2',
-    title: 'Specialist Komt Langs',
-    description: 'Onze vriendelijke specialist komt naar u toe in Amersfoort en bekijkt rustig uw probleem'
-  },
-  {
-    step: '3',
-    title: 'Probleem Opgelost',
-    description: 'Wij lossen het probleem op en leggen duidelijk uit wat er gebeurd is'
-  }
+const neighborhoods = [
+  'Amersfoort Centrum',
+  'Amersfoort Noord',
+  'Amersfoort Zuid',
+  'Amersfoort Oost',
+  'Amersfoort West'
 ]
-
 
 const faqData = [
   {
@@ -40,7 +36,7 @@ const faqData = [
     answer: "Onze computerhulp aan huis in Amersfoort kost €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf."
   },
   {
-    question: "Hoe snel kan een specialist bij mij thuis komen in Amersfoort?",
+    question: "Hoe snel kan een student bij mij thuis komen in Amersfoort?",
     answer: "In de meeste gevallen kunnen wij binnen 24-48 uur bij u langskomen in Amersfoort. Voor spoedgevallen bieden wij vaak nog dezelfde dag service aan."
   },
   {
@@ -49,7 +45,7 @@ const faqData = [
   },
   {
     question: "Hebben jullie ervaring met computerhulp aan huis?",
-    answer: "Ja, wij hebben ruim 10+ jaar ervaring met computerhulp aan huis in Amersfoort en omgeving. Onze specialisten zijn vakkundig opgeleid en kunnen vrijwel elk computerprobleem oplossen."
+    answer: "Ja, wij hebben ruime ervaring met computerhulp aan huis in Amersfoort en omgeving. Onze studenten zijn HBO-opgeleid en kunnen vrijwel elk computerprobleem oplossen."
   },
   {
     question: "Werken jullie ook in het weekend in Amersfoort?",
@@ -58,281 +54,274 @@ const faqData = [
 ]
 
 export default function ComputerhulpAanHuisAmersfoort() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
 
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index)
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://hulpmetit.nl'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Computerhulp aan huis Amersfoort',
+        item: 'https://hulpmetit.nl/computerhulp-aan-huis-amersfoort'
+      }
+    ]
+  }
+
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hulp met IT - Computerhulp aan Huis Amersfoort',
+    description: 'Professionele computerhulp aan huis in Amersfoort door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-amersfoort',
+    telephone: '+31642827860',
+    email: 'info@hulpmetit.nl',
+    areaServed: {
+      '@type': 'City',
+      name: 'Amersfoort',
+      addressRegion: 'Utrecht',
+      addressCountry: 'NL'
+    },
+    serviceType: 'Computerhulp aan huis Amersfoort',
+    priceRange: '\u20AC53,50 - \u20AC100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
   }
 
   return (
     <>
-      
-      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://hulpmetit.nl"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Computerhulp aan huis Amersfoort",
-                "item": "https://hulpmetit.nl/computerhulp-aan-huis-amersfoort"
-              }
-            ]
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
       />
-
-<script
+      <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Hulp met IT - Computerhulp aan Huis Amersfoort",
-            "description": "Professionele computerhulp aan huis in Amersfoort door ervaren specialisten",
-            "url": "https://hulpmetit.nl/computerhulp-aan-huis-amersfoort",
-            "telephone": "+31642827860",
-            "email": "info@hulpmetit.nl",
-            "areaServed": {
-              "@type": "City",
-              "name": "Amersfoort",
-              "addressRegion": "Utrecht",
-              "addressCountry": "NL"
-            },
-            "serviceType": "Computerhulp aan huis Amersfoort",
-            "priceRange": "€51,97 - €100",
-            "openingHours": "Mo-Su 08:00-21:00",
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.7",
-              "reviewCount": "250"
-            },
-            "address": {
-              "@type": "PostalAddress",
-              "addressLocality": "Amersfoort",
-              "addressRegion": "Utrecht",
-              "addressCountry": "NL"
-            }
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }}
       />
-      {/* Breadcrumbs Navigation */}
-      <nav aria-label="Breadcrumb" className="bg-secondary-50 border-b border-secondary-200">
-        <div className="max-w-7xl mx-auto container-padding py-3">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li>
-              <Link href="/" className="text-primary-600 hover:text-primary-700 transition-colors">
-                Home
-              </Link>
-            </li>
-            <li className="text-gray-400">/</li>
-            <li>
-              <span className="text-gray-700 font-medium">Computerhulp aan huis Amersfoort</span>
-            </li>
-          </ol>
-        </div>
-      </nav>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
 
-      <CityHeroSection cityName="Amersfoort" />
-
-      <div className="relative">
-        <ServicesGrid
-          title="Wat We Voor U Kunnen Doen"
-          maxItems={6}
+      {/* Hero - matching homepage */}
+      <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+        <Image
+          src="/hulp-met-it.webp"
+          alt="Computerhulp aan huis in Amersfoort"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-secondary-900/75 to-secondary-900/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-secondary-900/30" />
 
-        <PricingSection />        {/* Process Section */}
-        <section className="py-16 lg:py-24">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
-                Hoe Werkt Computerhulp aan Huis in Amersfoort?
-              </h2>
-              <p className="text-xl text-secondary-700">
-                Eenvoudig en snel - van afspraak tot opgeloste computerproblemen
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
+          <div className="max-w-2xl">
+            <ScrollReveal>
+
+              <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
+                Computerhulp{' '}
+                <span className="text-accent-400">aan huis in Amersfoort</span>
+              </h1>
+
+              <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
+                Een HBO-opgeleide student komt bij u thuis in Amersfoort, lost het probleem op en legt alles uit in gewone taal. Zo kunt u er weer tegenaan.
               </p>
-            </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              {processSteps.map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold text-primary-600">
-                    {step.step}
+              <div className="flex flex-col sm:flex-row gap-3 mb-4">
+                <Link
+                  href="/afspraak"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-accent"
+                >
+                  Afspraak maken
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a
+                  href="tel:+31642827860"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
+                >
+                  <Phone className="w-4 h-4" />
+                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                </a>
+              </div>
+
+              <p className="text-accent-400 text-sm font-medium mb-8">
+                Meestal binnen 24 uur geholpen
+              </p>
+
+              <div className="flex flex-wrap items-center gap-3 text-sm">
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <GraduationCap className="w-3.5 h-3.5 text-primary-300" />
+                  HBO-opgeleide studenten
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <Banknote className="w-3.5 h-3.5 text-primary-300" />
+                  Betaalbare tarieven
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
+                  <CalendarDays className="w-3.5 h-3.5 text-primary-300" />
+                  7 dagen per week
+                </span>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafaf9" />
+
+      <CompactServicesSection />
+
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
+
+      <CityAboutSection citySlug="amersfoort" pageType="computerhulp" />
+
+      <SectionDivider variant="soft-curve" topColor="#ffffff" bottomColor="#ffffff" />
+
+      <HowItWorks />
+
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+
+      <PricingSection />
+
+      <SectionDivider
+        variant="layered-wave"
+        topColor="#fafaf9"
+        bottomColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust' }}
+      />
+
+      <TrustAndPricing />
+
+      <SectionDivider
+        variant="swoosh"
+        topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
+        bottomColor="#fafaf9"
+      />
+
+      {/* Neighborhoods - city-specific */}
+      {neighborhoods.length > 0 && (
+        <section className="py-20 lg:py-28 bg-secondary-50">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ScrollReveal>
+              <div className="text-center mb-14">
+                <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Werkgebied</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
+                  Computerhulp aan huis in heel Amersfoort
+                </h2>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 lg:gap-4 mb-10">
+              {neighborhoods.map((hood, index) => (
+                <ScrollReveal key={index} delay={index * 50}>
+                  <div className="flex items-center gap-3 bg-white rounded-xl p-3.5 lg:p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
+                    <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
+                    <span className="font-medium text-secondary-900 text-sm">{hood}</span>
                   </div>
-                  <h3 className="text-2xl font-semibold text-secondary-800 mb-3">{step.title}</h3>
-                  <p className="text-secondary-700 text-lg leading-relaxed">{step.description}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
-          </div>
 
-        {/* Why Choose Section */}
-        <section className="py-16 lg:py-24 bg-secondary-50">
-          <div className="max-w-6xl mx-auto container-padding">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-secondary-800 mb-4">
-                Waarom kiezen voor Computerhulp aan Huis Amersfoort?
+            <ScrollReveal delay={300}>
+              <div className="text-center">
+                <p className="text-secondary-500 text-lg leading-relaxed max-w-3xl mx-auto">
+                  Hulp met IT biedt computerhulp aan huis in heel Amersfoort. Onze vriendelijke studenten komen naar u toe en helpen u rustig en geduldig met uw computerproblemen. Betaalbaar en bij u thuis.
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+      )}
+
+      <NearbyCities currentCitySlug="amersfoort" pageType="computerhulp" />
+
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
+
+      {/* FAQ - city-specific */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">FAQ</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+                Veelgestelde vragen over computerhulp aan huis Amersfoort
               </h2>
-              <p className="text-xl text-secondary-700 max-w-3xl mx-auto">
-                Ontdek de voordelen van professionele computerhulp door ervaren specialisten
-              </p>
             </div>
+          </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">10+ Jaar Ervaring</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Onze specialisten hebben ruim 10 jaar ervaring met computerhulp in Amersfoort. Vakkundige oplossingen voor elk probleem.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Betrouwbaar & Professioneel</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Gediplomeerde IT-specialisten die discreet en zorgvuldig te werk gaan. U kunt met een gerust hart hulp aan huis krijgen.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <Phone className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Snelle Service</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Meestal binnen 24-48 uur bij u thuis in Amersfoort. Voor spoedgevallen vaak nog dezelfde dag beschikbaar.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <MessageCircle className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Duidelijke Uitleg</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Wij nemen rustig de tijd om alles uit te leggen in begrijpelijke taal. Na onze hulp begrijpt u precies wat er gebeurd is.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <Calendar className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">7 Dagen per Week</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Ook 's avonds en in het weekend bereikbaar in Amersfoort. Wij passen ons aan uw schema aan.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-5 h-5 text-primary-600" />
-                </div>
-                <h3 className="text-xl font-semibold text-secondary-800 mb-3">Eerlijke Prijzen</h3>
-                <p className="text-secondary-700 leading-relaxed">
-                  Transparante tarieven: €14,50 per kwartier + €10 voorrijkosten. Geen verrassingen, u weet vooraf wat u betaalt.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        </section>
-
-        {/* Services Section */}
-        {/* SEO Content Section */}
-        <section className="py-16 lg:py-24 bg-secondary-50">
-                    <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": faqData.map(faq => ({
-                  "@type": "Question",
-                  "name": faq.question,
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": faq.answer
-                  }
-                }))
-              })
-            }}
-          />
-<div className="max-w-4xl mx-auto container-padding">
-            <h2 className="text-3xl font-bold text-secondary-800 text-center mb-8">
-              Computerhulp aan Huis in Heel Amersfoort
-            </h2>
-
-            <div className="max-w-2xl mx-auto mb-8">
-              <div className="bg-white rounded-lg border border-secondary-100 p-6">
-                <h3 className="text-xl font-semibold text-secondary-800 mb-4">🏘️ Amersfoort Wijken</h3>
-                <ul className="text-secondary-700 space-y-2">
-                  <li>• Computerhulp Amersfoort Centrum</li>
-                  <li>• Computerhulp Amersfoort Noord</li>
-                  <li>• Computerhulp Amersfoort Zuid</li>
-                  <li>• Computerhulp Amersfoort Oost</li>
-                  <li>• Computerhulp Amersfoort West</li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold text-secondary-800 mb-4">
-                Waarom Computerhulp aan Huis Amersfoort?
-              </h3>
-              <p className="text-secondary-700 text-lg leading-relaxed">
-                Hulp met IT biedt computerhulp aan huis in heel Amersfoort. Van de Jordaan tot Bijlmermeer, van Nieuw-West tot Zuidoost - onze vriendelijke specialisten komen naar u toe en nemen rustig de tijd om uw computerproblemen op te lossen en uit te leggen hoe alles werkt.
-              </p>
-            </div>
-
-            <div className="mt-12">
-              <h3 className="text-2xl font-bold text-secondary-800 text-center mb-6">
-                Veelgestelde Vragen over Computerhulp aan Huis Amersfoort
-              </h3>
-              <div className="space-y-4">
-                {faqData.map((faq, index) => (
-                  <div key={index} className="bg-white rounded-lg border border-secondary-100 overflow-hidden">
-                    <button
-                      onClick={() => toggleFAQ(index)}
-                      className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-white/50 transition-colors"
-                    >
-                      <span className="font-semibold text-secondary-800">{faq.question}</span>
-                      {openFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-primary-600 flex-shrink-0" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-primary-600 flex-shrink-0" />
-                      )}
-                    </button>
-                    {openFAQ === index && (
-                      <div className="px-6 pb-4 text-secondary-700">
-                        {faq.answer}
-                      </div>
-                    )}
+          <div className="space-y-3">
+            {faqData.map((faq, index) => (
+              <ScrollReveal key={index} delay={index * 60}>
+                <div className="bg-secondary-50 rounded-2xl shadow-card overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                    aria-expanded={openFaq === index}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                  >
+                    <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                        openFaq === index ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div id={`faq-answer-${index}`} role="region" className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
+                    <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
                   </div>
-                ))}
-              </div>
-            </div>
-
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-      </div>
+      {/* Cross-link */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Op zoek naar betaalbare hulp? Onze{' '}
+            <a href="/student-aan-huis-amersfoort" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              IT-studenten helpen u ook graag
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+
+      <SectionDivider
+        variant="tilt"
+        topColor="#ffffff"
+        bottomColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta' }}
+      />
+
+      <CTASection />
+
+      <SectionDivider
+        variant="diagonal"
+        topColor={{ colors: ['#204a8e', '#2557a7', '#204a8e'], id: 'grad-cta-bot' }}
+        bottomColor="#1c1917"
+      />
     </>
   )
 }

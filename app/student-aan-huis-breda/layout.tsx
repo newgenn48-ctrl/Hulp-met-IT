@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Student aan huis Breda | Computerhulp aan Huis | Hulp met IT',
-  description: 'Student aan huis in Breda voor computerhulp. Betaalbare IT-studenten van Avans Hogeschool en NHTV komen naar je toe. €14,50 per kwartier. Breda Centrum, Princenhage, Ginneken en omgeving.',
+  title: 'Student aan huis Breda | Hulp met IT',
+  description: 'ICT Student aan huis in Breda voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis breda',
     'student computerhulp breda',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     'computerhulp etten-leur'
   ],
   openGraph: {
-    title: 'Student aan Huis Breda | Betaalbare Computerhulp',
+    title: 'Student aan huis Breda | Hulp met IT',
     description: 'IT-studenten van Avans Hogeschool en NHTV komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp in Breda Centrum, Princenhage, Ginneken en omgeving.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Student aan Huis Breda | Betaalbare Computerhulp',
+    title: 'Student aan huis Breda | Hulp met IT',
     description: 'IT-studenten van Avans Hogeschool en NHTV komen naar je toe in Breda. Betaalbare tarieven, vakkundige hulp.',
   },
   robots: {

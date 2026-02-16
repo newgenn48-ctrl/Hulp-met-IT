@@ -2,22 +2,22 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Vlaardingen | Hulp Met IT',
-  description: 'Computerhulp aan huis in Vlaardingen voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. €14,50 per kwartier + €10 voorrijkosten. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis in Vlaardingen voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'computerhulp aan huis vlaardingen',
     'computer reparatie vlaardingen',
     'laptop reparatie vlaardingen',
-    'IT specialist vlaardingen',
+    'ICT student vlaardingen',
     'pc hulp vlaardingen',
-    'computer specialist vlaardingen',
+    'computer student vlaardingen',
     'vlaardingen computerhulp avond',
     'vlaardingen IT hulp weekend',
     'computerhulp vlaardingen spoed',
     'betaalbare IT hulp vlaardingen'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Vlaardingen | Computerhulp specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis in Vlaardingen door IT-specialisten met 10+ jaar ervaring. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    title: 'Computerhulp aan huis Vlaardingen | ICT Student aan Huis | Hulp Met IT',
+    description: 'Computerhulp aan huis in Vlaardingen door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Vlaardingen | Computerhulp specialisten',
-    description: 'Computerhulp aan huis Vlaardingen. Specialist komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Vlaardingen | ICT Student aan Huis',
+    description: 'Computerhulp aan huis Vlaardingen. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
   },
   robots: {
     index: true,

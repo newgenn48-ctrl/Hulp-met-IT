@@ -1,11 +1,11 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Huizen | IT Student aan Huis in het Gooi | Hulp met IT',
-  description: 'Computerhulp aan huis in Huizen door ervaren IT-studenten van Hogeschool Utrecht. Hulp met laptop, tablet, smartphone en WiFi. €14,50 per kwartier. Ook in Bussum, Naarden en Blaricum.',
+  title: 'Student aan huis Huizen | Hulp met IT',
+  description: 'ICT Student aan huis in Huizen voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: 'computerhulp Huizen, IT student aan huis Huizen, laptop hulp Huizen, computer reparatie Gooi, WiFi problemen Huizen, smartphone hulp Bussum, tablet hulp Naarden, Hogeschool Utrecht IT student',
   openGraph: {
-    title: 'Computerhulp Huizen | IT Student aan Huis in het Gooi',
+    title: 'Student aan huis Huizen | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Huizen en omgeving door IT-studenten van Hogeschool Utrecht. Persoonlijke hulp met computer, laptop, tablet en smartphone.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp Huizen | IT Student aan Huis in het Gooi',
+    title: 'Student aan huis Huizen | Hulp met IT',
     description: 'Betaalbare computerhulp aan huis in Huizen door IT-studenten. Persoonlijke hulp met al uw apparaten.',
   },
   robots: {

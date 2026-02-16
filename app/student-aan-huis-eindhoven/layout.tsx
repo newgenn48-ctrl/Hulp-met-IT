@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan huis Eindhoven | Computerhulp aan Huis | Hulp Met IT',
-  description: 'ICT Student aan huis in Eindhoven voor betaalbare computerhulp. Ervaren IT-studenten van TU Eindhoven en Fontys komen bij u thuis. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  title: 'Student aan huis Eindhoven | Hulp met IT',
+  description: 'ICT Student aan huis in Eindhoven voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis eindhoven',
     'ict student aan huis eindhoven',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'computer problemen eindhoven'
   ],
   openGraph: {
-    title: 'ICT Student aan huis Eindhoven | Betaalbare Computerhulp',
+    title: 'Student aan huis Eindhoven | Hulp met IT',
     description: 'Betaalbare computerhulp door ervaren IT-studenten van TU Eindhoven en Fontys. Snel bij u thuis in Eindhoven en omgeving. €14,50 per kwartier.',
     images: ['/og-image.webp'],
     type: 'website',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan huis Eindhoven | Betaalbare Computerhulp',
+    title: 'Student aan huis Eindhoven | Hulp met IT',
     description: 'Betaalbare computerhulp door ervaren IT-studenten van TU Eindhoven en Fontys. Snel bij u thuis in Eindhoven en omgeving.',
   },
   robots: {

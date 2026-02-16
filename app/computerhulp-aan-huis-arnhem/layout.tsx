@@ -2,22 +2,22 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Arnhem | Hulp Met IT',
-  description: 'Computerhulp aan huis in Arnhem voor alle computerproblemen. IT-specialisten met 10+ jaar ervaring bij u thuis. €14,50 per kwartier + €10 voorrijkosten. Vandaag nog beschikbaar!',
+  description: 'Computerhulp aan huis in Arnhem voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'computerhulp aan huis arnhem',
     'computer reparatie arnhem',
     'laptop reparatie arnhem',
-    'IT specialist arnhem',
+    'ICT student arnhem',
     'pc hulp arnhem',
-    'computer specialist arnhem',
+    'computer student arnhem',
     'arnhem computerhulp avond',
     'arnhem IT hulp weekend',
     'computerhulp arnhem spoed',
     'betaalbare IT hulp arnhem'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Arnhem | Computerhulp specialisten | Hulp Met IT',
-    description: 'Computerhulp aan huis in Arnhem door IT-specialisten met 10+ jaar ervaring. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    title: 'Computerhulp aan huis Arnhem | ICT Student aan Huis | Hulp Met IT',
+    description: 'Computerhulp aan huis in Arnhem door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     images: ['/og-image.webp'],
     type: 'website',
     locale: 'nl_NL',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Arnhem | Computerhulp specialisten',
-    description: 'Computerhulp aan huis Arnhem. Specialist komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Arnhem | ICT Student aan Huis',
+    description: 'Computerhulp aan huis Arnhem. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
   },
   robots: {
     index: true,

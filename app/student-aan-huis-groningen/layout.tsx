@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'ICT Student aan Huis Groningen | Betaalbare Computerhulp | Hulp Met IT',
-  description: 'ICT Student aan huis in Groningen voor computerhulp. Betaalbare IT-studenten van de Rijksuniversiteit Groningen en Hanzehogeschool komen bij u thuis. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  title: 'Student aan huis Groningen | Hulp met IT',
+  description: 'ICT Student aan huis in Groningen voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
   keywords: [
     'student aan huis groningen',
     'ict student aan huis groningen',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     'ict hulp hoogezand'
   ],
   openGraph: {
-    title: 'ICT Student aan Huis Groningen | Betaalbare Computerhulp',
+    title: 'Student aan huis Groningen | Hulp met IT',
     description: 'Betaalbare computerhulp door ervaren IT-studenten in Groningen. €14,50 per kwartier. Snel bij u thuis!',
     images: ['/og-image.webp'],
     type: 'website',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICT Student aan Huis Groningen | Betaalbare Computerhulp',
+    title: 'Student aan huis Groningen | Hulp met IT',
     description: 'Betaalbare computerhulp door ervaren IT-studenten in Groningen. €14,50 per kwartier. Snel bij u thuis!',
   },
   robots: {

@@ -8,72 +8,46 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Blauw - Professioneel, betrouwbaar
+        // Warm vertrouwensblauw - persoonlijk, betrouwbaar (denk: huisarts/ANWB)
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#2563eb',  // Koningsblauw
-          600: '#1d4ed8',  // CTA blauw
-          700: '#1e40af',  // Tekst accent
-          800: '#1e3a8a',
-          900: '#1e3370',
+          50: '#f0f4fa',
+          100: '#dce6f4',
+          200: '#c0d0ea',
+          300: '#94b3db',
+          400: '#6190c9',
+          500: '#3a6fb5',
+          600: '#2557a7',  // Hoofdkleur
+          700: '#204a8e',
+          800: '#1d3f74',
+          900: '#1a355f',
         },
-        // Slate - Neutraal, professioneel
+        // Warme stenen grijstinten - uitnodigend, rustig
         secondary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',  // Donker voor tekst
+          50: '#fafaf9',
+          100: '#f5f5f4',
+          200: '#e7e5e4',
+          300: '#d6d3d1',
+          400: '#a8a29e',
+          500: '#78716c',
+          600: '#57534e',
+          700: '#44403c',
+          800: '#292524',
+          900: '#1c1917',
         },
-        // Amber/Goud - CTA accent
+        // Warm amber - zachter, niet schreeuwerig
         accent: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b',  // Amber/goud voor CTA's
-          600: '#d97706',
+          50: '#fefbf0',
+          100: '#fdf3d4',
+          200: '#fbe4a8',
+          300: '#f7cf72',
+          400: '#f0b442',
+          500: '#e8960e',
+          600: '#d97706',  // CTA kleur
           700: '#b45309',
           800: '#92400e',
-          900: '#78350f',
+          900: '#783510',
         },
-        // Teal - Trust signalen/vinkjes
-        teal: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',  // Vinkjes/trust signalen
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-        },
-        // Navy - Donkere secties
-        navy: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-        },
-        // Succes groen (legacy support)
+        // Succes groen (formulieren, bevestigingen)
         success: {
           50: '#f0fdf4',
           100: '#dcfce7',
@@ -85,6 +59,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['var(--font-space-grotesk)', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'sm': ['0.9375rem', { lineHeight: '1.5' }],    // 15px
