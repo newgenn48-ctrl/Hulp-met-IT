@@ -17,7 +17,7 @@ export function Footer() {
                 alt="Hulp met IT - Persoonlijke IT-hulp aan huis"
                 width={200}
                 height={77}
-                className="h-14 w-auto brightness-0 invert"
+                className="h-16 w-auto brightness-0 invert"
               />
             </Link>
 

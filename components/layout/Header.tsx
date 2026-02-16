@@ -69,10 +69,10 @@ export const Header = React.memo(function Header() {
             <Image
               src="/logo.webp"
               alt="Hulp met IT - Persoonlijke IT-hulp aan huis"
-              width={180}
-              height={69}
+              width={200}
+              height={77}
               priority
-              className="h-12 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
 

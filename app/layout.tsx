@@ -25,8 +25,10 @@ export const metadata: Metadata = {
   title: 'Hulp Met IT | Computerhulp aan huis',
   description: 'Uw persoonlijke ICT-student voor computer, laptop, wifi en meer. Snel, vakkundig en bij u thuis. Bel 06-42 82 78 60.',
   icons: [
-    { rel: 'icon', url: '/icon', type: 'image/png', sizes: '32x32' },
-    { rel: 'apple-touch-icon', url: '/icon', sizes: '32x32' }
+    { rel: 'icon', url: '/favicon.ico', type: 'image/x-icon', sizes: '32x32' },
+    { rel: 'icon', url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+    { rel: 'icon', url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    { rel: 'apple-touch-icon', url: '/apple-icon.png', sizes: '180x180' },
   ],
   keywords: [
     'ICT-student aan huis',
