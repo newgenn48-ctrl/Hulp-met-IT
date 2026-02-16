@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Phone, Menu, X, Monitor } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, Menu, X } from 'lucide-react'
 
 export const Header = React.memo(function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -63,15 +64,16 @@ export const Header = React.memo(function Header() {
         <div className="flex items-center justify-between h-20">
           <Link
             href="/"
-            className="flex items-center space-x-3 group transition-transform duration-300 hover:scale-105"
+            className="flex items-center group transition-transform duration-300 hover:scale-105"
           >
-            <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-primary">
-              <Monitor className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <span className="text-xl font-bold text-primary-700">Hulp met IT</span>
-              <div className="text-xs text-primary-700 leading-none">Computerhulp aan huis</div>
-            </div>
+            <Image
+              src="/logo.webp"
+              alt="Hulp met IT - Persoonlijke IT-hulp aan huis"
+              width={180}
+              height={69}
+              priority
+              className="h-12 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-8">

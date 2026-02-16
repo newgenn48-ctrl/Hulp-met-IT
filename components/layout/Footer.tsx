@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock, Monitor } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -10,14 +11,14 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <Link href="/" className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-primary">
-                <Monitor className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <span className="text-2xl font-bold text-white">Hulp met IT</span>
-                <div className="text-sm text-primary-400">Computerhulp aan huis</div>
-              </div>
+            <Link href="/" className="inline-block mb-6">
+              <Image
+                src="/logo.webp"
+                alt="Hulp met IT - Persoonlijke IT-hulp aan huis"
+                width={200}
+                height={77}
+                className="h-14 w-auto brightness-0 invert"
+              />
             </Link>
 
             <p className="text-secondary-400 leading-relaxed mb-6 max-w-md text-sm">
