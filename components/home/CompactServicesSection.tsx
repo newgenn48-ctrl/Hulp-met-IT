@@ -9,6 +9,21 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Monitor, Printer, Wifi, Smartphone, Mail, Shield, HardDrive,
 }
 
+// Korte, schone namen zonder "hulp" / "problemen"
+const shortNames: Record<string, string> = {
+  'computerhulp': 'Computer',
+  'printerhulp': 'Printer',
+  'email-problemen': 'E-mail',
+  'internet-wifi': 'Internet & WiFi',
+  'tablet-smartphone': 'Tablet & Smartphone',
+  'smart-tv': 'Smart TV',
+  'smart-home': 'Smart Home',
+  'computerles': 'Computerles',
+  'uitleg-les': 'Uitleg & Les',
+  'virusverwijdering': 'Virusverwijdering',
+  'data-backup': 'Data & Backup',
+}
+
 export function CompactServicesSection() {
   const displayServices = services.slice(0, 6)
 
@@ -29,29 +44,21 @@ export function CompactServicesSection() {
           </div>
         </ScrollReveal>
 
-        {/* 3-column professional grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
           {displayServices.map((service, index) => {
             const IconComponent = iconMap[service.icon] || Monitor
             return (
-              <ScrollReveal key={service.slug} delay={index * 80}>
+              <ScrollReveal key={service.slug} delay={index * 60}>
                 <Link
                   href={`/diensten/${service.slug}`}
-                  className="group block h-full bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
+                  className="group flex flex-col items-center text-center bg-white rounded-2xl p-5 shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-5 group-hover:bg-primary-100 transition-colors">
+                  <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center mb-3 group-hover:bg-primary-100 transition-colors">
                     <IconComponent className="w-6 h-6 text-primary-600" />
                   </div>
-                  <h3 className="text-lg font-bold text-secondary-900 mb-2 group-hover:text-primary-600 transition-colors">
-                    {service.name}
+                  <h3 className="text-sm font-bold text-secondary-900 group-hover:text-primary-600 transition-colors">
+                    {shortNames[service.slug] || service.name}
                   </h3>
-                  <p className="text-secondary-500 text-sm leading-relaxed mb-4">
-                    {service.shortDescription}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 group-hover:gap-2.5 transition-all">
-                    Meer info
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
                 </Link>
               </ScrollReveal>
             )
