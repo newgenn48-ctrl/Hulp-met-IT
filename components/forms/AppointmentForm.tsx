@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
+import { useRouter } from 'next/navigation'
 import { useToast } from '@/components/ui/Toast'
 import { LoadingButton } from '@/components/ui/LoadingSpinner'
 
@@ -84,6 +85,7 @@ export function AppointmentForm() {
   const [errorMessage, setErrorMessage] = useState('')
   const [fieldErrors, setFieldErrors] = useState<{[key: string]: string}>({})
   const formRef = useRef<HTMLDivElement>(null)
+  const router = useRouter()
   const { showToast } = useToast()
 
   const handleInputChange = (field: keyof AppointmentFormData, value: string) => {
@@ -97,15 +99,6 @@ export function AppointmentForm() {
     }
   }
 
-  useEffect(() => {
-    if (submitStatus === 'success' && formRef.current) {
-      formRef.current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest'
-      })
-    }
-  }, [submitStatus])
 
   const isStepValid = (step: number): boolean => {
     switch (step) {
@@ -220,10 +213,8 @@ export function AppointmentForm() {
       })
 
       if (response.ok) {
-        setSubmitStatus('success')
-        setFormData(initialFormData)
-        setCurrentStep(1)
-        showToast({ type: 'success', title: 'Afspraak aangevraagd!', message: 'U ontvangt een bevestiging per e-mail.' })
+        const result = await response.json()
+        const ref = result.reference || 'ok'
 
         // Google Ads conversion tracking
         if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
@@ -233,6 +224,10 @@ export function AppointmentForm() {
             'currency': 'EUR'
           })
         }
+
+        // Redirect naar bevestigingspagina met referentie ID
+        router.push(`/afspraak/bevestiging?ref=${encodeURIComponent(ref)}`)
+        return
       } else {
         const error = await response.json()
         setSubmitStatus('error')
@@ -247,23 +242,6 @@ export function AppointmentForm() {
   }
 
   const getMinDate = () => getMinDateForUrgency(formData.urgency)
-
-  if (submitStatus === 'success') {
-    return (
-      <div ref={formRef} className="bg-white rounded-2xl p-8 text-center border border-green-200 shadow-professional">
-        <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h3 className="text-3xl font-bold text-secondary-800 mb-4">Afspraak aangevraagd!</h3>
-        <p className="text-secondary-600 mb-6">U ontvangt binnen enkele minuten een bevestiging per e-mail.</p>
-        <a href="/" className="inline-block bg-primary-500 hover:bg-primary-600 text-white font-semibold px-6 py-3 rounded-xl shadow-primary">
-          Terug naar Home
-        </a>
-      </div>
-    )
-  }
 
   return (
     <div ref={formRef} className="bg-white rounded-2xl p-8 border border-secondary-200 shadow-professional">
