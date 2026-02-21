@@ -225,8 +225,8 @@ export function AppointmentForm() {
           })
         }
 
-        // Redirect naar bevestigingspagina met referentie ID
-        router.push(`/afspraak/bevestiging?ref=${encodeURIComponent(ref)}`)
+        // Redirect naar bevestigingspagina
+        router.push('/afspraak/bevestiging')
         return
       } else {
         const error = await response.json()

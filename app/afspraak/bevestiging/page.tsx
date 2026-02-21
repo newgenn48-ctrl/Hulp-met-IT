@@ -1,14 +1,7 @@
-'use client'
-
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
-import { Suspense } from 'react'
 import { Phone, ArrowRight } from 'lucide-react'
 
-function ConfirmationContent() {
-  const searchParams = useSearchParams()
-  const ref = searchParams.get('ref')
-
+export default function BevestigingPage() {
   return (
     <section className="min-h-screen flex items-center justify-center py-20">
       <div className="max-w-lg mx-auto px-4 sm:px-6 text-center">
@@ -23,15 +16,9 @@ function ConfirmationContent() {
             Afspraak aangevraagd!
           </h1>
 
-          <p className="text-secondary-600 mb-2">
+          <p className="text-secondary-600 mb-8">
             U ontvangt binnen enkele minuten een bevestiging per e-mail.
           </p>
-
-          {ref && (
-            <p className="text-sm text-secondary-400 mb-8">
-              Referentie: <span className="font-mono font-medium text-secondary-600">{ref}</span>
-            </p>
-          )}
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
@@ -52,17 +39,5 @@ function ConfirmationContent() {
         </div>
       </div>
     </section>
-  )
-}
-
-export default function BevestigingPage() {
-  return (
-    <Suspense fallback={
-      <section className="min-h-screen flex items-center justify-center py-20">
-        <div className="text-center text-secondary-500">Laden...</div>
-      </section>
-    }>
-      <ConfirmationContent />
-    </Suspense>
   )
 }
