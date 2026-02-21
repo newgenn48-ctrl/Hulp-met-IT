@@ -92,6 +92,7 @@ export default function RootLayout({
 }) {
   const gtmId = process.env['NEXT_PUBLIC_GTM_ID'] ?? 'GTM-WWZVT98T'
   const gadsId = process.env['NEXT_PUBLIC_GOOGLE_ADS_ID'] ?? 'AW-16646363193'
+  const gtagId = process.env['NEXT_PUBLIC_GOOGLE_TAG_ID'] ?? 'GT-WRGZFHV5'
   return (
     <html lang="nl" className={`scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
@@ -106,19 +107,20 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://c.clarity.ms" />
 
 
-        {/* Google Ads gtag.js - in head for tag detection */}
+        {/* Google tag (gtag.js) - loads GT + Google Ads in head for tag detection */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${gadsId}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtagId}`}
           strategy="beforeInteractive"
         />
         <Script
-          id="google-ads-script"
+          id="google-tag-script"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
+              gtag('config', '${gtagId}');
               gtag('config', '${gadsId}');
             `,
           }}
