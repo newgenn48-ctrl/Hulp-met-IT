@@ -213,8 +213,7 @@ export function AppointmentForm() {
       })
 
       if (response.ok) {
-        const result = await response.json()
-        const ref = result.reference || 'ok'
+        await response.json()
 
         // Google Ads conversion tracking
         if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
