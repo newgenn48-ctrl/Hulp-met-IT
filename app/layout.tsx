@@ -105,6 +105,24 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         <link rel="dns-prefetch" href="https://c.clarity.ms" />
 
+
+        {/* Google Ads gtag.js - in head for tag detection */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gadsId}`}
+          strategy="beforeInteractive"
+        />
+        <Script
+          id="google-ads-script"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gadsId}');
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.className} antialiased`} suppressHydrationWarning>
         {/* Skip link for screen readers */}
@@ -132,23 +150,6 @@ new Date().getTime(),event:'gtm.js'});var gtmF=gtmD.getElementsByTagName(gtmS)[0
 gtmJ=gtmD.createElement(gtmS),gtmDl=gtmL!='dataLayer'?'&l='+gtmL:'';gtmJ.async=true;gtmJ.src=
 'https://www.googletagmanager.com/gtm.js?id='+gtmI+gtmDl;gtmF.parentNode.insertBefore(gtmJ,gtmF);
 })(window,document,'script','dataLayer','${gtmId}');`,
-          }}
-        />
-        {/* Google Ads Conversion Tracking */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${gadsId}`}
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-ads-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gadsId}');
-            `,
           }}
         />
         <NoSSR>
