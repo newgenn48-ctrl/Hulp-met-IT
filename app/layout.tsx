@@ -175,6 +175,25 @@ gtmJ=gtmD.createElement(gtmS),gtmDl=gtmL!='dataLayer'?'&l='+gtmL:'';gtmJ.async=t
         <StructuredData />
         <Analytics />
         <SpeedInsights />
+        {/* Google Ads click-to-call conversion tracking */}
+        <Script
+          id="click-to-call-conversion"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('click', function(e) {
+                var link = e.target.closest('a[href^="tel:"]');
+                if (link && typeof gtag === 'function') {
+                  gtag('event', 'conversion', {
+                    'send_to': 'AW-16646363193/JDUgCMfxmvwbELmwzYE-',
+                    'value': 1.0,
+                    'currency': 'EUR'
+                  });
+                }
+              });
+            `,
+          }}
+        />
         {/* Fix accessibility for dynamically added iframes */}
         <Script
           id="iframe-accessibility-fix"
