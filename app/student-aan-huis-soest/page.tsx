@@ -7,53 +7,53 @@ import {
   Phone,
   ArrowRight,
   ChevronDown,
-  MapPin,
   Banknote,
   GraduationCap,
-  CalendarDays
+  CalendarDays,
+  PhoneCall,
+  UserCheck,
+  CheckCircle
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
-import { HowItWorks } from '@/components/home/HowItWorks'
 import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { CTASection } from '@/components/home/CTASection'
 import { SectionDivider } from '@/components/ui/SectionDivider'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { CompactServicesSection } from '@/components/home/CompactServicesSection'
-import { NearbyCities } from '@/components/city/NearbyCities'
-import { CityAboutSection } from '@/components/city/CityAboutSection'
 
 const CITY = 'Soest'
-
-const areas = [
-  'Soest Centrum', 'Soestdijk', 'Soesterberg', 'Baarn',
-  'Amersfoort', 'Hilversum', 'Zeist', 'Den Dolder',
-  'Leusden', 'Hoogland', 'Bunschoten', 'Eemnes'
-]
+const SLUG = 'soest'
+const REGION = 'Utrecht'
 
 const faqData = [
   {
-    question: `Wat kost ICT student aan huis hulp in ${CITY}?`,
-    answer: `Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf.`
+    question: `Wat kost een student aan huis in ${CITY}?`,
+    answer: `Een student aan huis in ${CITY} kost \u20ac14,50 per kwartier, met een minimum van 45 minuten (3 kwartier). De voorrijkosten bedragen eenmalig \u20ac10. Een standaard bezoek van 45 minuten kost dus \u20ac53,50. U betaalt achteraf per pin of Tikkie.`
   },
   {
-    question: `Zijn de studenten wel gekwalificeerd in ${CITY}?`,
-    answer: `Ja, onze studenten in ${CITY} volgen IT-opleidingen aan Hogeschool Utrecht en andere hogescholen en universiteiten. Ze worden geselecteerd op technische én communicatieve vaardigheden. Alle studenten zijn gescreend.`
+    question: `Zijn de studenten gekwalificeerd in ${CITY}?`,
+    answer: `Ja, onze studenten aan huis in ${CITY} zijn HBO-opgeleide ICT-studenten. Ze worden geselecteerd op zowel technische als communicatieve vaardigheden en zijn gescreend. Zij bieden professionele ICT hulp in ${CITY} voor al uw digitale vragen.`
   },
   {
     question: `Kunnen jullie ook 's avonds en in weekenden in ${CITY}?`,
-    answer: `Ja, dat is een van onze voordelen! Studenten hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 21:00, 7 dagen per week in ${CITY}.`
+    answer: `Ja, dat is een van onze voordelen! Onze studenten aan huis in ${CITY} hebben flexibele schema's. We zijn bereikbaar van 08:00 tot 21:00, 7 dagen per week \u2014 ook op zaterdag en zondag.`
   },
   {
     question: `Hoe snel kunnen jullie komen in ${CITY}?`,
-    answer: `Vaak kunnen we nog dezelfde dag langskomen in ${CITY}. Voor urgente problemen proberen we binnen enkele uren beschikbaar te zijn.`
+    answer: `Voor een student aan huis in ${CITY} kunnen we vaak nog dezelfde dag langskomen. In de meeste gevallen bent u binnen 24 uur geholpen. Onze studenten zijn actief in heel ${CITY} en de regio ${REGION}.`
   },
   {
     question: `Welke gebieden in ${CITY} bedienen jullie?`,
-    answer: `We bedienen heel ${CITY} en omgeving, inclusief ${areas.slice(0, 6).join(', ')} en meer.`
+    answer: `Onze studenten aan huis bedienen heel ${CITY}: Soest Centrum, Soest Noord, Soest Oost, Soest West, Soest Zuid, Soesterberg, Soestduinen, Baarn, Amersfoort, Zeist. Waar u ook woont in ${CITY}, wij komen bij u thuis.`
+  },
+  {
+    question: 'Wat als het probleem niet opgelost kan worden?',
+    answer: `Wij zijn altijd eerlijk over wat wel en niet mogelijk is. Mocht het probleem niet direct oplosbaar zijn, dan geven wij u een helder advies over de volgende stappen. U betaalt alleen voor de tijd die besteed is aan diagnose en advies.`
   }
 ]
 
-export default function StudentAanHuisCityPage() {
+export default function StudentAanHuisSoestPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
 
   const breadcrumbStructuredData = {
@@ -69,8 +69,8 @@ export default function StudentAanHuisCityPage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: `ICT Student aan Huis ${CITY}`,
-        item: 'https://hulpmetit.nl/student-aan-huis-soest'
+        name: `Student aan huis ${CITY}`,
+        item: `https://hulpmetit.nl/student-aan-huis-${SLUG}`
       }
     ]
   }
@@ -91,7 +91,7 @@ export default function StudentAanHuisCityPage() {
   const serviceStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: `ICT Student aan Huis ${CITY}`,
+    name: `Student aan huis ${CITY}`,
     description: `Betaalbare computerhulp door ervaren IT-studenten aan huis in ${CITY}`,
     provider: {
       '@type': 'LocalBusiness',
@@ -110,6 +110,25 @@ export default function StudentAanHuisCityPage() {
     }
   }
 
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: `Hulp met IT - Student aan Huis ${CITY}`,
+    description: `Betaalbare computerhulp aan huis in ${CITY} door HBO-opgeleide ICT-studenten`,
+    url: `https://hulpmetit.nl/student-aan-huis-${SLUG}`,
+    telephone: '+31642827860',
+    email: 'info@hulpmetit.nl',
+    areaServed: {
+      '@type': 'City',
+      name: CITY,
+      addressRegion: REGION,
+      addressCountry: 'NL'
+    },
+    serviceType: `Student aan huis ${CITY}`,
+    priceRange: '\u20ac53,50 - \u20ac100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
   return (
     <>
       <script
@@ -124,12 +143,16 @@ export default function StudentAanHuisCityPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }}
+      />
 
-      {/* Hero - matching homepage */}
+      {/* Hero */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
         <Image
           src="/student-aan-huis.webp"
-          alt="Student aan huis in Soest"
+          alt={`IT-student helpt met computer aan huis in ${CITY}`}
           fill
           priority
           className="object-cover"
@@ -148,7 +171,7 @@ export default function StudentAanHuisCityPage() {
               </h1>
 
               <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
-                Een HBO-opgeleide student komt bij u thuis in {CITY}, lost het probleem op en legt alles uit in gewone taal. Zo kunt u er weer tegenaan.
+                Een HBO-opgeleide student komt bij u thuis in {CITY}. Onze IT-studenten lossen alles snel en vakkundig op — bij u thuis.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
@@ -195,17 +218,11 @@ export default function StudentAanHuisCityPage() {
 
       <CompactServicesSection />
 
-      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
-
-      <CityAboutSection citySlug="soest" pageType="student" />
-
-      <SectionDivider variant="soft-curve" topColor="#ffffff" bottomColor="#ffffff" />
-
-      <HowItWorks />
-
-      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+      <SectionDivider variant="wave" topColor="#fafaf9" bottomColor="#fafaf9" />
 
       <PricingSection />
+
+      <TestimonialsSection />
 
       <SectionDivider
         variant="layered-wave"
@@ -218,47 +235,75 @@ export default function StudentAanHuisCityPage() {
       <SectionDivider
         variant="swoosh"
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
-        bottomColor="#fafaf9"
+        bottomColor="#ffffff"
       />
 
-      {/* Areas - city-specific */}
-      {areas.length > 0 && (
-        <section className="py-20 lg:py-28 bg-secondary-50">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ScrollReveal>
-              <div className="text-center mb-14">
-                <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Werkgebied</p>
-                <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-                </h2>
-              </div>
-            </ScrollReveal>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
-              {areas.map((area, index) => (
-                <ScrollReveal key={index} delay={index * 50}>
-                  <div className="flex items-center gap-3 bg-white rounded-xl p-3.5 lg:p-4 shadow-card hover:shadow-card-hover transition-all duration-300">
-                    <MapPin className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                    <span className="font-medium text-secondary-900 text-sm">{area}</span>
-                  </div>
-                </ScrollReveal>
-              ))}
+      {/* Student aan huis Soest */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div>
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+                Student aan huis {CITY}
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+                Waarom kiezen voor een student aan huis in {CITY}?
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                Zoekt u een betaalbare en betrouwbare student aan huis in {CITY}? Bij Hulp Met IT staan onze geduldige HBO-studenten voor u klaar om al uw digitale uitdagingen op te lossen. Wij begrijpen dat technologie soms overweldigend kan zijn. Daarom leggen wij alles rustig uit in gewone taal, zodat u het de volgende keer zelf kunt.
+              </p>
+              <p className="text-secondary-600 leading-relaxed mb-4">
+                Onze studenten zijn actief in heel {CITY} en omgeving. Of u nu woont in Soest Centrum, Soest Noord of Soest Oost; wij zijn snel ter plaatse om u te helpen met uw <a href="/diensten/computerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">laptop</a>, <a href="/diensten/printerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">printer</a>, <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">WiFi</a> of <a href="/diensten/email-problemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">e-mail</a>. Naast hulp aan huis bieden wij ook hulp op afstand voor kleine vragen.
+              </p>
+              <p className="text-secondary-600 leading-relaxed">
+                Onze studenten zijn gespecialiseerd in <a href="/computerhulp-senioren" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">computerhulp voor ouderen</a> en minder ervaren gebruikers. Wij nemen de tijd, werken rustig en zorgen ervoor dat u weer zorgeloos met uw apparaten kunt werken.
+              </p>
             </div>
-          </div>
-        </section>
-      )}
+          </ScrollReveal>
+        </div>
+      </section>
 
-      <NearbyCities currentCitySlug="soest" pageType="student" />
+      {/* Hoe werkt het */}
+      <section className="py-20 lg:py-28 bg-secondary-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Hoe werkt het</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+                Student aan huis in {CITY} — in 3 stappen
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-3 gap-4 sm:gap-8">
+            {[
+              { icon: PhoneCall, step: '1', title: 'Bel of plan online', desc: `Neem contact op via telefoon of plan online een afspraak voor een student aan huis in ${CITY}. Vertel kort wat het probleem is.` },
+              { icon: UserCheck, step: '2', title: 'Student komt langs', desc: `Een HBO-opgeleide IT-student komt op de afgesproken tijd bij u thuis in ${CITY}. Geen gedoe met wegbrengen.` },
+              { icon: CheckCircle, step: '3', title: 'Probleem opgelost', desc: `Uw probleem wordt ter plekke opgelost. U krijgt uitleg in gewone taal en betaalt achteraf.` },
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-600" />
+                </div>
+                <span className="text-primary-500 font-bold text-xs sm:text-sm">Stap {item.step}</span>
+                <h3 className="font-bold text-secondary-900 text-sm sm:text-lg mt-1 mb-1 sm:mb-2">{item.title}</h3>
+                <p className="text-secondary-600 leading-relaxed hidden sm:block">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
 
-      {/* FAQ - city-specific */}
+      {/* FAQ */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
             <div className="text-center mb-14">
               <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">FAQ</p>
               <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
-                Vragen over ICT student aan huis in {CITY}
+                Vragen over student aan huis in {CITY}
               </h2>
             </div>
           </ScrollReveal>
@@ -295,7 +340,7 @@ export default function StudentAanHuisCityPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-secondary-600">
             Heeft u een complex probleem? Onze{' '}
-            <a href="/computerhulp-aan-huis-soest" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+            <a href={`/computerhulp-aan-huis-${SLUG}`} className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
               HBO-opgeleide studenten staan klaar
             </a>
             .

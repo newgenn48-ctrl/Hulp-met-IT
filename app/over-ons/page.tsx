@@ -1,4 +1,5 @@
 import { CompactServicesSection } from '@/components/home/CompactServicesSection'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
 import Image from 'next/image'
 import {
@@ -254,6 +255,9 @@ export default function OverOnsPage() {
           </div>
         </div>
       </section>
+
+      {/* Reviews */}
+      <TestimonialsSection />
 
       {/* CTA */}
       <section className="relative overflow-hidden">

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Amsterdam | Hulp Met IT',
-  description: 'Computerhulp aan huis in Amsterdam voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Amsterdam | Hulp met IT',
+  description: 'Computerhulp aan huis in Amsterdam door HBO-opgeleide ICT-studenten. Hulp in Amsterdam Centrum, Amsterdam Noord, Amsterdam Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis amsterdam',
     'computer reparatie amsterdam',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'amsterdam computerhulp avond',
     'amsterdam IT hulp weekend',
     'computerhulp amsterdam spoed',
-    'betaalbare IT hulp amsterdam'
+    'betaalbare IT hulp amsterdam',
+    'wifi problemen amsterdam',
+    'internet hulp amsterdam',
+    'printer installatie amsterdam',
+    'virus verwijderen amsterdam',
+    'computerhulp amsterdam centrum',
+    'ict hulp amsterdam noord',
+    'computer reparatie amsterdam oost',
+    'laptop hulp amsterdam west',
+    'pc hulp amsterdam zuid',
+    'it hulp amsterdam zuidoost',
+    'computerhulp amsterdam',
+    'it service amsterdam',
+    'computer problemen amsterdam'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Amsterdam | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Amsterdam | Hulp met IT',
     description: 'Computerhulp aan huis in Amsterdam door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-amsterdam',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Amsterdam - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Amsterdam | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Amsterdam. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Amsterdam | Hulp met IT',
+    description: 'Computerhulp aan huis in Amsterdam. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-amsterdam'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-amsterdam',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisAmsterdamLayout({

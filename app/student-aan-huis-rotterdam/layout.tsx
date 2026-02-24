@@ -1,39 +1,33 @@
 import { Metadata } from 'next'
 
-const CITY = 'Rotterdam'
-
 export const metadata: Metadata = {
   title: 'Student aan huis Rotterdam | Hulp met IT',
-  description: `ICT Student aan huis in ${CITY} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Rotterdam Centrum, Kralingen, Hillegersberg, Feijenoord en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!`,
+  description: 'ICT Student aan huis in Rotterdam voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Rotterdam Centrum, Rotterdam Noord, Rotterdam Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
-    `student aan huis ${CITY.toLowerCase()}`,
-    `computerhulp ${CITY.toLowerCase()}`,
-    `ict hulp ${CITY.toLowerCase()}`,
-    `computer reparatie ${CITY.toLowerCase()}`,
-    `laptop hulp ${CITY.toLowerCase()}`,
-    `it student ${CITY.toLowerCase()}`,
-    `betaalbare computerhulp ${CITY.toLowerCase()}`,
-    `computer problemen ${CITY.toLowerCase()}`,
-    `wifi problemen ${CITY.toLowerCase()}`,
-    `internet hulp ${CITY.toLowerCase()}`,
+    'student aan huis rotterdam',
+    'computerhulp rotterdam',
+    'ict hulp rotterdam',
+    'computer reparatie rotterdam',
+    'laptop hulp rotterdam',
+    'it student rotterdam',
+    'betaalbare computerhulp rotterdam',
+    'computer problemen rotterdam',
+    'wifi problemen rotterdam',
+    'internet hulp rotterdam',
     'computerhulp rotterdam centrum',
-    'ict hulp kralingen',
-    'computer reparatie hillegersberg',
-    'laptop hulp feijenoord',
-    'it student rotterdam zuid',
-    'computerhulp delfshaven',
-    'wifi problemen overschie',
-    'computer hulp capelle aan den ijssel',
-    'ict hulp schiedam',
-    'computerhulp vlaardingen',
-    'laptop reparatie barendrecht',
-    'erasmus universiteit student computerhulp',
-    'hogeschool rotterdam it student'
+    'ict hulp rotterdam noord',
+    'computer reparatie rotterdam oost',
+    'laptop hulp rotterdam west',
+    'student computerhulp rotterdam zuid',
+    'it hulp kralingen-crooswijk',
+    'it service rotterdam',
+    'laptop reparatie rotterdam',
+    'it hulp aan huis rotterdam'
   ],
   openGraph: {
     title: 'Student aan huis Rotterdam | Hulp met IT',
-    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis in Rotterdam en omgeving. €14,50 per kwartier.`,
-    url: `https://hulpmetit.nl/student-aan-huis-${CITY.toLowerCase()}`,
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Rotterdam. Wij komen bij u thuis in Rotterdam en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-rotterdam',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',
     type: 'website',
@@ -42,18 +36,18 @@ export const metadata: Metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 630,
-        alt: `ICT Student aan huis ${CITY} - Hulp met IT`
+        alt: 'ICT Student aan huis Rotterdam - Hulp met IT'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Rotterdam | Hulp met IT',
-    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis.`,
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Rotterdam. Wij komen bij u thuis.',
     images: ['/og-image.webp']
   },
   alternates: {
-    canonical: `/student-aan-huis-${CITY.toLowerCase()}`
+    canonical: '/student-aan-huis-rotterdam'
   },
   robots: {
     index: true,
@@ -62,7 +56,7 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       'max-video-preview': -1,
-      'max-image-preview': 'large',
+      'max-image-preview': 'large' as const,
       'max-snippet': -1
     }
   }

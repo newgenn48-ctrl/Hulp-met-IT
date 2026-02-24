@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Waalwijk | Hulp Met IT',
-  description: 'Computerhulp aan huis in Waalwijk voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+  title: 'Computerhulp aan huis Waalwijk | Hulp met IT',
+  description: 'Computerhulp aan huis in Waalwijk door HBO-opgeleide ICT-studenten. Hulp in Waalwijk Centrum, Waalwijk Noord, Waalwijk Zuid en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis waalwijk',
     'computer reparatie waalwijk',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'waalwijk computerhulp avond',
     'waalwijk IT hulp weekend',
     'computerhulp waalwijk spoed',
-    'betaalbare IT hulp waalwijk'
+    'betaalbare IT hulp waalwijk',
+    'wifi problemen waalwijk',
+    'internet hulp waalwijk',
+    'printer installatie waalwijk',
+    'virus verwijderen waalwijk',
+    'computerhulp waalwijk centrum',
+    'ict hulp waalwijk noord',
+    'computer reparatie waalwijk zuid',
+    'laptop hulp baardwijk',
+    'pc hulp waspik',
+    'it hulp sprang-capelle',
+    'computerhulp waalwijk',
+    'it service waalwijk',
+    'computer problemen waalwijk'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Waalwijk | ICT Student aan Huis | Hulp Met IT',
-    description: 'Computerhulp aan huis in Waalwijk door HBO-opgeleide ICT-studenten. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    title: 'Computerhulp aan huis Waalwijk | Hulp met IT',
+    description: 'Computerhulp aan huis in Waalwijk door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-waalwijk',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Waalwijk - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Waalwijk | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Waalwijk. Student komt bij u. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+    title: 'Computerhulp aan huis Waalwijk | Hulp met IT',
+    description: 'Computerhulp aan huis in Waalwijk. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-waalwijk'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-waalwijk',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisWaalwijkLayout({

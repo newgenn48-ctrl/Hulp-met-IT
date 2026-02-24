@@ -2,44 +2,63 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Eindhoven | Hulp met IT',
-  description: 'ICT Student aan huis in Eindhoven voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
+  description: 'ICT Student aan huis in Eindhoven voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Eindhoven Centrum, Woensel Noord, Woensel Zuid en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis eindhoven',
-    'ict student aan huis eindhoven',
     'computerhulp eindhoven',
-    'computer hulp eindhoven',
-    'laptop reparatie eindhoven',
-    'IT hulp eindhoven',
-    'pc hulp eindhoven',
-    'thuishulp computer eindhoven',
-    'computerhulp aan huis eindhoven',
+    'ict hulp eindhoven',
+    'computer reparatie eindhoven',
+    'laptop hulp eindhoven',
+    'it student eindhoven',
     'betaalbare computerhulp eindhoven',
-    'student computerhulp eindhoven',
-    'TU eindhoven student hulp',
-    'fontys student computerhulp',
-    'eindhoven it ondersteuning',
-    'computer problemen eindhoven'
+    'computer problemen eindhoven',
+    'wifi problemen eindhoven',
+    'internet hulp eindhoven',
+    'computerhulp eindhoven centrum',
+    'ict hulp woensel noord',
+    'computer reparatie woensel zuid',
+    'laptop hulp stratum',
+    'student computerhulp gestel',
+    'it hulp strijp',
+    'it service eindhoven',
+    'laptop reparatie eindhoven',
+    'it hulp aan huis eindhoven'
   ],
   openGraph: {
     title: 'Student aan huis Eindhoven | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten van TU Eindhoven en Fontys. Snel bij u thuis in Eindhoven en omgeving. €14,50 per kwartier.',
-    images: ['/og-image.webp'],
-    type: 'website',
-    locale: 'nl_NL',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Eindhoven. Wij komen bij u thuis in Eindhoven en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-eindhoven',
     siteName: 'Hulp met IT',
-    url: 'https://hulpmetit.nl/student-aan-huis-eindhoven'
+    locale: 'nl_NL',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ICT Student aan huis Eindhoven - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Eindhoven | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten van TU Eindhoven en Fontys. Snel bij u thuis in Eindhoven en omgeving.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Eindhoven. Wij komen bij u thuis.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/student-aan-huis-eindhoven'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-eindhoven'
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
   }
 }
 

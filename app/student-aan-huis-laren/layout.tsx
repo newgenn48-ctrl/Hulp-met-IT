@@ -2,41 +2,64 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Laren | Hulp met IT',
-  description: 'ICT Student aan huis in Laren voor computerhulp. Betaalbare IT-studenten komen naar je toe. €14,50 per kwartier + €10 voorrijkosten. Snel en vakkundig!',
+  description: 'ICT Student aan huis in Laren voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Laren Centrum, Laren Noord, Laren Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis laren',
-    'student computerhulp laren',
+    'computerhulp laren',
+    'ict hulp laren',
+    'computer reparatie laren',
+    'laptop hulp laren',
+    'it student laren',
     'betaalbare computerhulp laren',
-    'IT student laren',
-    'computer reparatie laren student',
-    'betaalbare computer hulp laren',
-    'studenten computer service laren',
-    'laren student IT hulp',
-    'laren computerhulp avond',
-    'laren IT hulp weekend',
-    'computerhulp gooi',
-    'student aan huis gooi'
+    'computer problemen laren',
+    'wifi problemen laren',
+    'internet hulp laren',
+    'computerhulp laren centrum',
+    'ict hulp laren noord',
+    'computer reparatie laren oost',
+    'laptop hulp laren west',
+    'student computerhulp laren zuid',
+    'it hulp blaricum',
+    'it service laren',
+    'laptop reparatie laren',
+    'it hulp aan huis laren'
   ],
   openGraph: {
     title: 'Student aan huis Laren | Hulp met IT',
-    description: 'Student aan huis Laren: betaalbare computerhulp door IT-studenten. Bel ons!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Laren. Wij komen bij u thuis in Laren en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-laren',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ICT Student aan huis Laren - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Laren | Hulp met IT',
-    description: 'Student aan huis Laren: betaalbare computerhulp door IT-studenten. Bel ons!',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Laren. Wij komen bij u thuis.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/student-aan-huis-laren'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-laren',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function StudentAanHuisLarenLayout({

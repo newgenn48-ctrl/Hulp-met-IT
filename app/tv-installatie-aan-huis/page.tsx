@@ -14,6 +14,7 @@ import {
 import { PricingSection } from '@/components/home/PricingSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
 import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { CTASection } from '@/components/home/CTASection'
 import { SectionDivider } from '@/components/ui/SectionDivider'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
@@ -106,10 +107,11 @@ export default function TvInstallatieAanHuisPage() {
       <HowItWorks />
       <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
       <PricingSection />
+
+      <TestimonialsSection />
       <SectionDivider variant="layered-wave" topColor="#fafaf9" bottomColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust' }} />
       <TrustAndPricing />
       <SectionDivider variant="swoosh" topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }} bottomColor="#fafaf9" />
-
       <section className="py-20 lg:py-28 bg-secondary-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>

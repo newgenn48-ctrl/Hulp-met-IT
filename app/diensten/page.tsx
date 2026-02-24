@@ -13,6 +13,7 @@ import {
 } from 'lucide-react'
 import { Metadata } from 'next'
 import services from '@/lib/data/services.json'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'IT Diensten aan Huis | Overzicht | Hulp met IT',
@@ -149,6 +150,9 @@ export default function DienstenPage() {
           </div>
         </div>
       </section>
+
+      {/* Reviews */}
+      <TestimonialsSection />
 
       {/* CTA Section */}
       <section className="relative overflow-hidden">

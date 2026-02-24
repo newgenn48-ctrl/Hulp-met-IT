@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Roosendaal | Hulp Met IT',
-  description: 'Computerhulp aan huis in Roosendaal voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+  title: 'Computerhulp aan huis Roosendaal | Hulp met IT',
+  description: 'Computerhulp aan huis in Roosendaal door HBO-opgeleide ICT-studenten. Hulp in Roosendaal Centrum, Roosendaal Noord, Roosendaal Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis roosendaal',
     'computer reparatie roosendaal',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'roosendaal computerhulp avond',
     'roosendaal IT hulp weekend',
     'computerhulp roosendaal spoed',
-    'betaalbare IT hulp roosendaal'
+    'betaalbare IT hulp roosendaal',
+    'wifi problemen roosendaal',
+    'internet hulp roosendaal',
+    'printer installatie roosendaal',
+    'virus verwijderen roosendaal',
+    'computerhulp roosendaal centrum',
+    'ict hulp roosendaal noord',
+    'computer reparatie roosendaal oost',
+    'laptop hulp tolberg',
+    'pc hulp kroeven',
+    'it hulp langdonk',
+    'computerhulp roosendaal',
+    'it service roosendaal',
+    'computer problemen roosendaal'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Roosendaal | ICT Student aan Huis | Hulp Met IT',
-    description: 'Computerhulp aan huis in Roosendaal door HBO-opgeleide ICT-studenten. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    title: 'Computerhulp aan huis Roosendaal | Hulp met IT',
+    description: 'Computerhulp aan huis in Roosendaal door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-roosendaal',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Roosendaal - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Roosendaal | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Roosendaal. Student komt bij u. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+    title: 'Computerhulp aan huis Roosendaal | Hulp met IT',
+    description: 'Computerhulp aan huis in Roosendaal. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-roosendaal'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-roosendaal',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisRoosendaalLayout({

@@ -44,7 +44,6 @@ const serviceTypeLabels: Record<string, string> = {
   'printerhulp': 'Printerhulp - Printer installatie & reparatie',
   'internet-wifi': 'Internet & WiFi - Netwerk problemen',
   'tablet-smartphone': 'Tablet & Smartphone hulp',
-  'uitleg-les': 'Uitleg & Les - Computer training',
   'email-problemen': 'E-mail problemen oplossen',
   'student-aan-huis': 'Student Aan Huis - Algemene IT hulp',
   'anders': 'Anders - Zie beschrijving'

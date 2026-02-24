@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan Huis - Snel Geholpen | Hulp met IT',
-  description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. Vanaf €14,50 per kwartier + €10 voorrijkosten. 7 dagen per week. Vandaag nog beschikbaar!',
+  title: 'Computerhulp aan huis | HBO ICT-student bij u thuis | Hulp met IT',
+  description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten in heel Nederland. Hulp met uw laptop, printer, WiFi, e-mail en meer. €14,50 per kwartier + €10 voorrijkosten. 7 dagen per week beschikbaar!',
   keywords: [
     'computerhulp aan huis',
     'computer reparatie aan huis',
@@ -16,29 +16,51 @@ export const metadata: Metadata = {
     'IT ondersteuning thuis',
     'pc reparatie thuis',
     'laptop hulp aan huis',
-    'thuishulp computer'
+    'thuishulp computer',
+    'betaalbare computerhulp',
+    'computerhulp aan huis nederland',
+    'computerhulp senioren',
+    'computer hulp ouderen',
+    'wifi problemen hulp',
+    'printer installatie thuis',
+    'virus verwijderen aan huis'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis | HBO ICT-student bij u thuis | Hulp met IT',
     description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     url: 'https://hulpmetit.nl/computerhulp-aan-huis',
-    type: 'website',
-    locale: 'nl_NL',
     siteName: 'Hulp met IT',
-    images: ['/og-image.webp'],
+    locale: 'nl_NL',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis - ICT Student aan Huis',
-    description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis | Hulp met IT',
+    description: 'Computerhulp aan huis door HBO ICT-studenten. €14,50/kwartier + €10 voorrijkosten. 7 dagen per week!',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisLayout({

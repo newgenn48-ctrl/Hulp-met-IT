@@ -60,7 +60,6 @@ export const appointmentSchema = z.object({
       'printerhulp',
       'internet-wifi',
       'tablet-smartphone',
-      'uitleg-les',
       'email-problemen',
       'student-aan-huis',
       'anders'

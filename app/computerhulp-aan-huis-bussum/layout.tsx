@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Bussum | Hulp Met IT',
-  description: 'Computerhulp aan huis in Bussum voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Bussum | Hulp met IT',
+  description: 'Computerhulp aan huis in Bussum door HBO-opgeleide ICT-studenten. Hulp in Bussum Centrum, Bussum Noord, Bussum Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis bussum',
     'computer reparatie bussum',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'bussum computerhulp avond',
     'bussum IT hulp weekend',
     'computerhulp bussum spoed',
-    'betaalbare IT hulp bussum'
+    'betaalbare IT hulp bussum',
+    'wifi problemen bussum',
+    'internet hulp bussum',
+    'printer installatie bussum',
+    'virus verwijderen bussum',
+    'computerhulp bussum centrum',
+    'ict hulp bussum noord',
+    'computer reparatie bussum oost',
+    'laptop hulp bussum west',
+    'pc hulp bussum zuid',
+    'it hulp brink',
+    'computerhulp bussum',
+    'it service bussum',
+    'computer problemen bussum'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Bussum | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Bussum | Hulp met IT',
     description: 'Computerhulp aan huis in Bussum door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-bussum',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Bussum - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Bussum | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Bussum. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Bussum | Hulp met IT',
+    description: 'Computerhulp aan huis in Bussum. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-bussum'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-bussum',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisBussumLayout({

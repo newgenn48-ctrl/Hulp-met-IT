@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Capelle aan den IJssel | Hulp Met IT',
-  description: 'Computerhulp aan huis in Capelle aan den IJssel voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Capelle aan den IJssel | Hulp met IT',
+  description: 'Computerhulp aan huis in Capelle aan den IJssel door HBO-opgeleide ICT-studenten. Hulp in Capelle Centrum, Capelle Noord, Capelle Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis capelle aan den ijssel',
     'computer reparatie capelle aan den ijssel',
@@ -13,31 +13,60 @@ export const metadata: Metadata = {
     'capelle aan den ijssel computerhulp avond',
     'capelle aan den ijssel IT hulp weekend',
     'computerhulp capelle aan den ijssel spoed',
-    'betaalbare IT hulp capelle aan den ijssel'
+    'betaalbare IT hulp capelle aan den ijssel',
+    'wifi problemen capelle aan den ijssel',
+    'internet hulp capelle aan den ijssel',
+    'printer installatie capelle aan den ijssel',
+    'virus verwijderen capelle aan den ijssel',
+    'computerhulp capelle centrum',
+    'ict hulp capelle noord',
+    'computer reparatie capelle oost',
+    'laptop hulp capelle west',
+    'pc hulp capelle zuid',
+    'it hulp capelsebrug',
+    'computerhulp capelle aan den ijssel',
+    'it service capelle',
+    'laptop reparatie capelle'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Capelle aan den IJssel | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Capelle aan den IJssel | Hulp met IT',
     description: 'Computerhulp aan huis in Capelle aan den IJssel door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-capelle-aan-den-ijssel',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Capelle aan den IJssel - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Capelle aan den IJssel | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Capelle aan den IJssel. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Capelle aan den IJssel | Hulp met IT',
+    description: 'Computerhulp aan huis in Capelle aan den IJssel. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-capelle-aan-den-ijssel'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-capelle-aan-den-ijssel',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
-export default function ComputerhulpAanHuisCapelleaandenIJsselLayout({
+export default function ComputerhulpAanHuisCapelleAanDenIjsselLayout({
   children,
 }: {
   children: React.ReactNode

@@ -7,20 +7,22 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
-      {/* Background image */}
-      <Image
-        src="/student-aan-huis.webp"
-        alt="ICT-student helpt klant met computer aan huis"
-        fill
-        priority
-        className="object-cover"
-        sizes="100vw"
-      />
-
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-secondary-900/75 to-secondary-900/50" />
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-secondary-900/30" />
+    <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden bg-secondary-900">
+      {/* Background image - visible on right side, fades to dark on left */}
+      <div className="absolute inset-0">
+        <Image
+          src="/hero-home.webp"
+          alt="IT-student geeft computerhulp aan huis aan senior"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        {/* Gradient overlay: solid dark left (text area) → transparent right (image visible) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary-900 via-secondary-900/85 to-secondary-900/30 lg:via-secondary-900/70 lg:to-secondary-900/20" />
+        {/* Subtle top/bottom vignette */}
+        <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/50 via-transparent to-secondary-900/40" />
+      </div>
 
       <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
         <div className="max-w-2xl">

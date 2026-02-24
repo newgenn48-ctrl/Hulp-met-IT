@@ -102,11 +102,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/uitleg-les" className="text-secondary-400 hover:text-accent-400 transition-colors text-sm py-1.5 inline-block">
-                  Uitleg & Les
-                </Link>
-              </li>
-              <li>
                 <Link href="/diensten" className="text-accent-400 hover:text-accent-300 transition-colors text-sm font-medium py-1.5 inline-block">
                   Alle diensten &rarr;
                 </Link>

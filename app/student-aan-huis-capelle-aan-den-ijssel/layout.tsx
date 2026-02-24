@@ -1,40 +1,33 @@
 import { Metadata } from 'next'
 
-const CITY = 'Capelle aan den IJssel'
-
 export const metadata: Metadata = {
   title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
-  description: `ICT Student aan huis in ${CITY} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Capelle Centrum, Schollevaar, Oostgaarde, Schenkel en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!`,
+  description: 'ICT Student aan huis in Capelle aan den IJssel voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Capelle Centrum, Capelle Noord, Capelle Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
-    `student aan huis capelle aan den ijssel`,
-    `computerhulp capelle aan den ijssel`,
-    `ict hulp capelle aan den ijssel`,
-    `computer reparatie capelle aan den ijssel`,
-    `laptop hulp capelle aan den ijssel`,
-    `it student capelle aan den ijssel`,
-    `betaalbare computerhulp capelle aan den ijssel`,
-    `computer problemen capelle aan den ijssel`,
-    `wifi problemen capelle aan den ijssel`,
-    `internet hulp capelle aan den ijssel`,
+    'student aan huis capelle aan den ijssel',
+    'computerhulp capelle aan den ijssel',
+    'ict hulp capelle aan den ijssel',
+    'computer reparatie capelle aan den ijssel',
+    'laptop hulp capelle aan den ijssel',
+    'it student capelle aan den ijssel',
+    'betaalbare computerhulp capelle aan den ijssel',
+    'computer problemen capelle aan den ijssel',
+    'wifi problemen capelle aan den ijssel',
+    'internet hulp capelle aan den ijssel',
     'computerhulp capelle centrum',
-    'ict hulp schollevaar',
-    'computer reparatie oostgaarde',
-    'laptop hulp schenkel',
-    'it student fascinatio',
-    'computerhulp rotterdam',
-    'wifi problemen krimpen aan den ijssel',
-    'computer hulp nieuwerkerk aan den ijssel',
-    'ict hulp kralingen',
-    'computerhulp prins alexander',
-    'laptop reparatie gouda',
-    'computerhulp bergschenhoek',
-    'hogeschool rotterdam student computerhulp',
-    'erasmus universiteit it student'
+    'ict hulp capelle noord',
+    'computer reparatie capelle oost',
+    'laptop hulp capelle west',
+    'student computerhulp capelle zuid',
+    'it hulp capelsebrug',
+    'it service capelle',
+    'laptop reparatie capelle',
+    'computer problemen capelle'
   ],
   openGraph: {
     title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
-    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis in Capelle aan den IJssel en omgeving. €14,50 per kwartier.`,
-    url: `https://hulpmetit.nl/student-aan-huis-capelle-aan-den-ijssel`,
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Capelle aan den IJssel. Wij komen bij u thuis in Capelle aan den IJssel en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-capelle-aan-den-ijssel',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',
     type: 'website',
@@ -43,18 +36,18 @@ export const metadata: Metadata = {
         url: '/og-image.webp',
         width: 1200,
         height: 630,
-        alt: `ICT Student aan huis ${CITY} - Hulp met IT`
+        alt: 'ICT Student aan huis Capelle aan den IJssel - Hulp met IT'
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
-    description: `Betaalbare computerhulp door ervaren IT-studenten in ${CITY}. Wij komen bij u thuis.`,
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Capelle aan den IJssel. Wij komen bij u thuis.',
     images: ['/og-image.webp']
   },
   alternates: {
-    canonical: `/student-aan-huis-capelle-aan-den-ijssel`
+    canonical: '/student-aan-huis-capelle-aan-den-ijssel'
   },
   robots: {
     index: true,
@@ -63,13 +56,13 @@ export const metadata: Metadata = {
       index: true,
       follow: true,
       'max-video-preview': -1,
-      'max-image-preview': 'large',
+      'max-image-preview': 'large' as const,
       'max-snippet': -1
     }
   }
 }
 
-export default function StudentAanHuisCapelleAanDenIJsselLayout({
+export default function StudentAanHuisCapelleAanDenIjsselLayout({
   children,
 }: {
   children: React.ReactNode

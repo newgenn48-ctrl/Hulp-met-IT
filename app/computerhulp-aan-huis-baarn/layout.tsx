@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Baarn | Hulp Met IT',
-  description: 'Computerhulp aan huis in Baarn voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Baarn | Hulp met IT',
+  description: 'Computerhulp aan huis in Baarn door HBO-opgeleide ICT-studenten. Hulp in Baarn Centrum, Baarn Noord, Baarn Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis baarn',
     'computer reparatie baarn',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'baarn computerhulp avond',
     'baarn IT hulp weekend',
     'computerhulp baarn spoed',
-    'betaalbare IT hulp baarn'
+    'betaalbare IT hulp baarn',
+    'wifi problemen baarn',
+    'internet hulp baarn',
+    'printer installatie baarn',
+    'virus verwijderen baarn',
+    'computerhulp baarn centrum',
+    'ict hulp baarn noord',
+    'computer reparatie baarn oost',
+    'laptop hulp baarn west',
+    'pc hulp baarn zuid',
+    'it hulp soestdijk',
+    'computerhulp baarn',
+    'it service baarn',
+    'computer problemen baarn'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Baarn | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Baarn | Hulp met IT',
     description: 'Computerhulp aan huis in Baarn door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-baarn',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Baarn - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Baarn | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Baarn. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Baarn | Hulp met IT',
+    description: 'Computerhulp aan huis in Baarn. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-baarn'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-baarn',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisBaarnLayout({

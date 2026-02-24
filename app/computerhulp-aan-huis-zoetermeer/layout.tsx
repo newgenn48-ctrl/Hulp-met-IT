@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Zoetermeer | Hulp Met IT',
-  description: 'Computerhulp aan huis in Zoetermeer voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Zoetermeer | Hulp met IT',
+  description: 'Computerhulp aan huis in Zoetermeer door HBO-opgeleide ICT-studenten. Hulp in Zoetermeer Centrum, Zoetermeer Noord, Zoetermeer Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis zoetermeer',
     'computer reparatie zoetermeer',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'zoetermeer computerhulp avond',
     'zoetermeer IT hulp weekend',
     'computerhulp zoetermeer spoed',
-    'betaalbare IT hulp zoetermeer'
+    'betaalbare IT hulp zoetermeer',
+    'wifi problemen zoetermeer',
+    'internet hulp zoetermeer',
+    'printer installatie zoetermeer',
+    'virus verwijderen zoetermeer',
+    'computerhulp zoetermeer centrum',
+    'ict hulp zoetermeer noord',
+    'computer reparatie zoetermeer oost',
+    'laptop hulp zoetermeer west',
+    'pc hulp zoetermeer zuid',
+    'it hulp oosterheem',
+    'computerhulp zoetermeer',
+    'it service zoetermeer',
+    'computer problemen zoetermeer'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Zoetermeer | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Zoetermeer | Hulp met IT',
     description: 'Computerhulp aan huis in Zoetermeer door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-zoetermeer',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Zoetermeer - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Zoetermeer | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Zoetermeer. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Zoetermeer | Hulp met IT',
+    description: 'Computerhulp aan huis in Zoetermeer. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-zoetermeer'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-zoetermeer',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisZoetermeerLayout({

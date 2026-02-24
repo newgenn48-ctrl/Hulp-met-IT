@@ -3,10 +3,9 @@ import cities from '@/lib/data/cities.json'
 
 interface StructuredDataProps {
   breadcrumbs?: Array<{ name: string; url: string }>
-  serviceName?: string
 }
 
-export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: StructuredDataProps = {}) {
+export function StructuredData({ breadcrumbs = [] }: StructuredDataProps = {}) {
   const localBusinessData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -94,7 +93,14 @@ export function StructuredData({ breadcrumbs = [], serviceName: _serviceName }: 
     "paymentAccepted": "Cash, Credit Card, Bank Transfer",
     "openingHours": SERVICE_HOURS.OPENING_HOURS,
     "foundingDate": BUSINESS_INFO.FOUNDED_YEAR,
-    "slogan": "Computerhulp aan huis - Snel, vakkundig en bij u thuis"
+    "slogan": "Computerhulp aan huis - Snel, vakkundig en bij u thuis",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "bestRating": "5",
+      "ratingCount": "8",
+      "reviewCount": "8"
+    }
   }
 
   // Organization schema for better brand recognition

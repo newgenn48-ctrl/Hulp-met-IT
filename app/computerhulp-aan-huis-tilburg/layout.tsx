@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Tilburg | Hulp Met IT',
-  description: 'Computerhulp aan huis in Tilburg voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Tilburg | Hulp met IT',
+  description: 'Computerhulp aan huis in Tilburg door HBO-opgeleide ICT-studenten. Hulp in Tilburg Centrum, Tilburg Noord, Tilburg Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis tilburg',
     'computer reparatie tilburg',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'tilburg computerhulp avond',
     'tilburg IT hulp weekend',
     'computerhulp tilburg spoed',
-    'betaalbare IT hulp tilburg'
+    'betaalbare IT hulp tilburg',
+    'wifi problemen tilburg',
+    'internet hulp tilburg',
+    'printer installatie tilburg',
+    'virus verwijderen tilburg',
+    'computerhulp tilburg centrum',
+    'ict hulp tilburg noord',
+    'computer reparatie tilburg oost',
+    'laptop hulp tilburg west',
+    'pc hulp tilburg zuid',
+    'it hulp reeshof',
+    'computerhulp tilburg',
+    'it service tilburg',
+    'computer problemen tilburg'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Tilburg | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Tilburg | Hulp met IT',
     description: 'Computerhulp aan huis in Tilburg door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-tilburg',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Tilburg - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Tilburg | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Tilburg. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Tilburg | Hulp met IT',
+    description: 'Computerhulp aan huis in Tilburg. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-tilburg'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-tilburg',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisTilburgLayout({

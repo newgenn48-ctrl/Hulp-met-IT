@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Katwijk | Hulp Met IT',
-  description: 'Computerhulp aan huis in Katwijk voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Katwijk | Hulp met IT',
+  description: 'Computerhulp aan huis in Katwijk door HBO-opgeleide ICT-studenten. Hulp in Katwijk aan Zee, Katwijk aan den Rijn, Katwijk Centrum en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis katwijk',
     'computer reparatie katwijk',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'katwijk computerhulp avond',
     'katwijk IT hulp weekend',
     'computerhulp katwijk spoed',
-    'betaalbare IT hulp katwijk'
+    'betaalbare IT hulp katwijk',
+    'wifi problemen katwijk',
+    'internet hulp katwijk',
+    'printer installatie katwijk',
+    'virus verwijderen katwijk',
+    'computerhulp katwijk aan zee',
+    'ict hulp katwijk aan den rijn',
+    'computer reparatie katwijk centrum',
+    'laptop hulp katwijk noord',
+    'pc hulp katwijk zuid',
+    'it hulp rijnsburg',
+    'computerhulp katwijk',
+    'it service katwijk',
+    'computer problemen katwijk'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Katwijk | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Katwijk | Hulp met IT',
     description: 'Computerhulp aan huis in Katwijk door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-katwijk',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Katwijk - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Katwijk | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Katwijk. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Katwijk | Hulp met IT',
+    description: 'Computerhulp aan huis in Katwijk. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-katwijk'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-katwijk',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisKatwijkLayout({

@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Delft | Hulp Met IT',
-  description: 'Computerhulp aan huis in Delft voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Delft | Hulp met IT',
+  description: 'Computerhulp aan huis in Delft door HBO-opgeleide ICT-studenten. Hulp in Delft Centrum, Delft Noord, Delft Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis delft',
     'computer reparatie delft',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'delft computerhulp avond',
     'delft IT hulp weekend',
     'computerhulp delft spoed',
-    'betaalbare IT hulp delft'
+    'betaalbare IT hulp delft',
+    'wifi problemen delft',
+    'internet hulp delft',
+    'printer installatie delft',
+    'virus verwijderen delft',
+    'computerhulp delft centrum',
+    'ict hulp delft noord',
+    'computer reparatie delft oost',
+    'laptop hulp delft west',
+    'pc hulp delft zuid',
+    'it hulp tanthof',
+    'computerhulp delft',
+    'it service delft',
+    'computer problemen delft'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Delft | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Delft | Hulp met IT',
     description: 'Computerhulp aan huis in Delft door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-delft',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Delft - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Delft | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Delft. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Delft | Hulp met IT',
+    description: 'Computerhulp aan huis in Delft. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-delft'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-delft',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisDelftLayout({

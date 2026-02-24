@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Amersfoort | Hulp Met IT',
-  description: 'Computerhulp aan huis in Amersfoort voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Amersfoort | Hulp met IT',
+  description: 'Computerhulp aan huis in Amersfoort door HBO-opgeleide ICT-studenten. Hulp in Amersfoort Centrum, Amersfoort Noord, Amersfoort Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis amersfoort',
     'computer reparatie amersfoort',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'amersfoort computerhulp avond',
     'amersfoort IT hulp weekend',
     'computerhulp amersfoort spoed',
-    'betaalbare IT hulp amersfoort'
+    'betaalbare IT hulp amersfoort',
+    'wifi problemen amersfoort',
+    'internet hulp amersfoort',
+    'printer installatie amersfoort',
+    'virus verwijderen amersfoort',
+    'computerhulp amersfoort centrum',
+    'ict hulp amersfoort noord',
+    'computer reparatie amersfoort oost',
+    'laptop hulp amersfoort west',
+    'pc hulp amersfoort zuid',
+    'it hulp vathorst',
+    'computerhulp amersfoort',
+    'it service amersfoort',
+    'computer problemen amersfoort'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Amersfoort | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Amersfoort | Hulp met IT',
     description: 'Computerhulp aan huis in Amersfoort door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-amersfoort',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Amersfoort - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Amersfoort | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Amersfoort. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Amersfoort | Hulp met IT',
+    description: 'Computerhulp aan huis in Amersfoort. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-amersfoort'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-amersfoort',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisAmersfoortLayout({

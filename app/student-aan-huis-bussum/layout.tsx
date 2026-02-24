@@ -2,41 +2,64 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Bussum | Hulp met IT',
-  description: 'ICT Student aan huis in Bussum voor computerhulp. Betaalbare IT-studenten komen naar je toe. €14,50 per kwartier + €10 voorrijkosten. Snel en vakkundig!',
+  description: 'ICT Student aan huis in Bussum voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Bussum Centrum, Bussum Noord, Bussum Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis bussum',
-    'student computerhulp bussum',
+    'computerhulp bussum',
+    'ict hulp bussum',
+    'computer reparatie bussum',
+    'laptop hulp bussum',
+    'it student bussum',
     'betaalbare computerhulp bussum',
-    'IT student bussum',
-    'computer reparatie bussum student',
-    'betaalbare computer hulp bussum',
-    'studenten computer service bussum',
-    'bussum student IT hulp',
-    'bussum computerhulp avond',
-    'bussum IT hulp weekend',
-    'computerhulp gooi',
-    'student aan huis gooi'
+    'computer problemen bussum',
+    'wifi problemen bussum',
+    'internet hulp bussum',
+    'computerhulp bussum centrum',
+    'ict hulp bussum noord',
+    'computer reparatie bussum oost',
+    'laptop hulp bussum west',
+    'student computerhulp bussum zuid',
+    'it hulp brink',
+    'it service bussum',
+    'laptop reparatie bussum',
+    'it hulp aan huis bussum'
   ],
   openGraph: {
     title: 'Student aan huis Bussum | Hulp met IT',
-    description: 'Student aan huis Bussum: betaalbare computerhulp door IT-studenten. Bel ons!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Bussum. Wij komen bij u thuis in Bussum en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-bussum',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ICT Student aan huis Bussum - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Bussum | Hulp met IT',
-    description: 'Student aan huis Bussum: betaalbare computerhulp door IT-studenten. Bel ons!',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Bussum. Wij komen bij u thuis.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/student-aan-huis-bussum'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-bussum',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function StudentAanHuisBussumLayout({

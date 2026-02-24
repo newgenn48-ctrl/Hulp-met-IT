@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Oosterhout | Hulp Met IT',
-  description: 'Computerhulp aan huis in Oosterhout voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+  title: 'Computerhulp aan huis Oosterhout | Hulp met IT',
+  description: 'Computerhulp aan huis in Oosterhout door HBO-opgeleide ICT-studenten. Hulp in Oosterhout Centrum, Oosterhout Noord, Oosterhout Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis oosterhout',
     'computer reparatie oosterhout',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'oosterhout computerhulp avond',
     'oosterhout IT hulp weekend',
     'computerhulp oosterhout spoed',
-    'betaalbare IT hulp oosterhout'
+    'betaalbare IT hulp oosterhout',
+    'wifi problemen oosterhout',
+    'internet hulp oosterhout',
+    'printer installatie oosterhout',
+    'virus verwijderen oosterhout',
+    'computerhulp oosterhout centrum',
+    'ict hulp oosterhout noord',
+    'computer reparatie oosterhout oost',
+    'laptop hulp slotjes',
+    'pc hulp vrachelen',
+    'it hulp dommelbergen',
+    'computerhulp oosterhout',
+    'it service oosterhout',
+    'computer problemen oosterhout'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Oosterhout | ICT Student aan Huis | Hulp Met IT',
-    description: 'Computerhulp aan huis in Oosterhout door HBO-opgeleide ICT-studenten. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    title: 'Computerhulp aan huis Oosterhout | Hulp met IT',
+    description: 'Computerhulp aan huis in Oosterhout door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-oosterhout',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Oosterhout - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Oosterhout | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Oosterhout. Student komt bij u. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+    title: 'Computerhulp aan huis Oosterhout | Hulp met IT',
+    description: 'Computerhulp aan huis in Oosterhout. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-oosterhout'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-oosterhout',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisOosterhoutLayout({

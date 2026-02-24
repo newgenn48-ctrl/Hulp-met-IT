@@ -2,46 +2,64 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Middelburg | Hulp met IT',
-  description: 'ICT Student aan huis in Middelburg voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
+  description: 'ICT Student aan huis in Middelburg voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Middelburg Centrum, Middelburg Noord, Middelburg Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis middelburg',
-    'student computerhulp middelburg',
+    'computerhulp middelburg',
+    'ict hulp middelburg',
+    'computer reparatie middelburg',
+    'laptop hulp middelburg',
+    'it student middelburg',
     'betaalbare computerhulp middelburg',
-    'IT student middelburg',
-    'computer reparatie middelburg student',
-    'betaalbare computer hulp middelburg',
-    'studenten computer service middelburg',
-    'middelburg student IT hulp',
-    'middelburg computerhulp avond',
-    'middelburg IT hulp weekend',
-    'computerhulp vlissingen',
-    'computerhulp zeeland',
-    'computerhulp goes',
-    'computerhulp veere',
-    'computerhulp domburg',
-    'HZ University student computerhulp'
+    'computer problemen middelburg',
+    'wifi problemen middelburg',
+    'internet hulp middelburg',
+    'computerhulp middelburg centrum',
+    'ict hulp middelburg noord',
+    'computer reparatie middelburg oost',
+    'laptop hulp middelburg west',
+    'student computerhulp middelburg zuid',
+    'it hulp vlissingen',
+    'it service middelburg',
+    'laptop reparatie middelburg',
+    'it hulp aan huis middelburg'
   ],
   openGraph: {
     title: 'Student aan huis Middelburg | Hulp met IT',
-    description: 'Betaalbare computerhulp door IT-studenten in Middelburg en heel Zeeland. Studenten van HZ University of Applied Sciences. €14,50 per kwartier.',
-    images: ['/og-image.webp'],
-    type: 'website',
-    locale: 'nl_NL',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Middelburg. Wij komen bij u thuis in Middelburg en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-middelburg',
     siteName: 'Hulp met IT',
-    url: 'https://hulpmetit.nl/student-aan-huis-middelburg'
+    locale: 'nl_NL',
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ICT Student aan huis Middelburg - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Middelburg | Hulp met IT',
-    description: 'Betaalbare computerhulp door IT-studenten in Middelburg en heel Zeeland. Studenten van HZ University of Applied Sciences. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Middelburg. Wij komen bij u thuis.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/student-aan-huis-middelburg'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-middelburg',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function StudentAanHuisMiddelburgLayout({

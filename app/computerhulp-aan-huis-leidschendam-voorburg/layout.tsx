@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Leidschendam-Voorburg | Hulp Met IT',
-  description: 'Computerhulp aan huis in Leidschendam-Voorburg voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Leidschendam-Voorburg | Hulp met IT',
+  description: 'Computerhulp aan huis in Leidschendam-Voorburg door HBO-opgeleide ICT-studenten. Hulp in Leidschendam Centrum, Voorburg Centrum, Leidschendam Noord en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis leidschendam-voorburg',
     'computer reparatie leidschendam-voorburg',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'leidschendam-voorburg computerhulp avond',
     'leidschendam-voorburg IT hulp weekend',
     'computerhulp leidschendam-voorburg spoed',
-    'betaalbare IT hulp leidschendam-voorburg'
+    'betaalbare IT hulp leidschendam-voorburg',
+    'wifi problemen leidschendam-voorburg',
+    'internet hulp leidschendam-voorburg',
+    'printer installatie leidschendam-voorburg',
+    'virus verwijderen leidschendam-voorburg',
+    'computerhulp leidschendam centrum',
+    'ict hulp voorburg centrum',
+    'computer reparatie leidschendam noord',
+    'laptop hulp leidschendam zuid',
+    'pc hulp voorburg noord',
+    'it hulp voorburg zuid',
+    'computerhulp leidschendam',
+    'computerhulp voorburg',
+    'it service leidschendam'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Leidschendam-Voorburg | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Leidschendam-Voorburg | Hulp met IT',
     description: 'Computerhulp aan huis in Leidschendam-Voorburg door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-leidschendam-voorburg',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Leidschendam-Voorburg - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Leidschendam-Voorburg | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Leidschendam-Voorburg. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Leidschendam-Voorburg | Hulp met IT',
+    description: 'Computerhulp aan huis in Leidschendam-Voorburg. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-leidschendam-voorburg'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-leidschendam-voorburg',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisLeidschendamVoorburgLayout({

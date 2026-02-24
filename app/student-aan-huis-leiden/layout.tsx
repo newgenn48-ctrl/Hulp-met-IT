@@ -2,42 +2,64 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Leiden | Hulp met IT',
-  description: 'ICT Student aan huis in Leiden voor computerhulp. HBO-opgeleide IT-studenten bij u thuis. Vanaf €14,50 per kwartier + €10 voorrijkosten.',
+  description: 'ICT Student aan huis in Leiden voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Leiden Centrum, Leiden Noord, Leiden Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis leiden',
-    'student computerhulp leiden',
+    'computerhulp leiden',
+    'ict hulp leiden',
+    'computer reparatie leiden',
+    'laptop hulp leiden',
+    'it student leiden',
     'betaalbare computerhulp leiden',
-    'IT student leiden',
-    'computer reparatie leiden student',
-    'betaalbare computer hulp leiden',
-    'studenten computer service leiden',
-    'leiden student IT hulp',
-    'leiden computerhulp avond',
-    'leiden IT hulp weekend',
-    'computerhulp oegstgeest',
-    'computerhulp voorschoten',
-    'computerhulp leiderdorp'
+    'computer problemen leiden',
+    'wifi problemen leiden',
+    'internet hulp leiden',
+    'computerhulp leiden centrum',
+    'ict hulp leiden noord',
+    'computer reparatie leiden oost',
+    'laptop hulp leiden west',
+    'student computerhulp leiden zuid',
+    'it hulp leidse hout',
+    'it service leiden',
+    'laptop reparatie leiden',
+    'it hulp aan huis leiden'
   ],
   openGraph: {
     title: 'Student aan huis Leiden | Hulp met IT',
-    description: 'Student aan huis Leiden: betaalbare computerhulp door IT-studenten van Universiteit Leiden en Hogeschool Leiden. Bel ons!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Leiden. Wij komen bij u thuis in Leiden en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-leiden',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ICT Student aan huis Leiden - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Leiden | Hulp met IT',
-    description: 'Student aan huis Leiden: betaalbare computerhulp door IT-studenten van Universiteit Leiden en Hogeschool Leiden. Bel ons!',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Leiden. Wij komen bij u thuis.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/student-aan-huis-leiden'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-leiden',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function StudentAanHuisLeidenLayout({

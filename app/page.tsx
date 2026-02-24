@@ -3,6 +3,7 @@ import { CompactServicesSection } from '@/components/home/CompactServicesSection
 import { HowItWorks } from '@/components/home/HowItWorks'
 import { PricingSection } from '@/components/home/PricingSection'
 import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { RegionsPreview } from '@/components/home/RegionsPreview'
 import { CTASection } from '@/components/home/CTASection'
 import { SectionDivider } from '@/components/ui/SectionDivider'
@@ -54,6 +55,8 @@ export default function HomePage() {
       {/* 4. Tarieven - Wat kost het */}
       <PricingSection />
 
+      <TestimonialsSection />
+
       {/* Tarieven → Vertrouwen (donker) */}
       <SectionDivider
         variant="layered-wave"
@@ -70,7 +73,6 @@ export default function HomePage() {
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
         bottomColor="#fafaf9"
       />
-
       {/* 6. Regio's - Waar zijn wij actief */}
       <RegionsPreview />
 

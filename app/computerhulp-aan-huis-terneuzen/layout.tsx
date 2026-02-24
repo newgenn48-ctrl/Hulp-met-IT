@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Terneuzen | Hulp Met IT',
-  description: 'Computerhulp aan huis in Terneuzen voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+  title: 'Computerhulp aan huis Terneuzen | Hulp met IT',
+  description: 'Computerhulp aan huis in Terneuzen door HBO-opgeleide ICT-studenten. Hulp in Terneuzen Centrum, Terneuzen Noord, Terneuzen Zuid en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis terneuzen',
     'computer reparatie terneuzen',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'terneuzen computerhulp avond',
     'terneuzen IT hulp weekend',
     'computerhulp terneuzen spoed',
-    'betaalbare IT hulp terneuzen'
+    'betaalbare IT hulp terneuzen',
+    'wifi problemen terneuzen',
+    'internet hulp terneuzen',
+    'printer installatie terneuzen',
+    'virus verwijderen terneuzen',
+    'computerhulp terneuzen centrum',
+    'ict hulp terneuzen noord',
+    'computer reparatie terneuzen zuid',
+    'laptop hulp sluiskil',
+    'pc hulp biervliet',
+    'it hulp hoek',
+    'computerhulp terneuzen',
+    'it service terneuzen',
+    'computer problemen terneuzen'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Terneuzen | ICT Student aan Huis | Hulp Met IT',
-    description: 'Computerhulp aan huis in Terneuzen door HBO-opgeleide ICT-studenten. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    title: 'Computerhulp aan huis Terneuzen | Hulp met IT',
+    description: 'Computerhulp aan huis in Terneuzen door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-terneuzen',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Terneuzen - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Terneuzen | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Terneuzen. Student komt bij u. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten.',
+    title: 'Computerhulp aan huis Terneuzen | Hulp met IT',
+    description: 'Computerhulp aan huis in Terneuzen. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-terneuzen'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-terneuzen',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisTerneuzenLayout({

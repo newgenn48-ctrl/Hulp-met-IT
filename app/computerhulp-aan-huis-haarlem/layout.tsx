@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Haarlem | Hulp Met IT',
-  description: 'Computerhulp aan huis in Haarlem voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Haarlem | Hulp met IT',
+  description: 'Computerhulp aan huis in Haarlem door HBO-opgeleide ICT-studenten. Hulp in Haarlem Centrum, Haarlem Noord, Haarlem Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis haarlem',
     'computer reparatie haarlem',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'haarlem computerhulp avond',
     'haarlem IT hulp weekend',
     'computerhulp haarlem spoed',
-    'betaalbare IT hulp haarlem'
+    'betaalbare IT hulp haarlem',
+    'wifi problemen haarlem',
+    'internet hulp haarlem',
+    'printer installatie haarlem',
+    'virus verwijderen haarlem',
+    'computerhulp haarlem centrum',
+    'ict hulp haarlem noord',
+    'computer reparatie haarlem oost',
+    'laptop hulp haarlem zuid',
+    'pc hulp schalkwijk',
+    'it hulp botermarkt',
+    'computerhulp haarlem',
+    'it service haarlem',
+    'computer problemen haarlem'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Haarlem | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Haarlem | Hulp met IT',
     description: 'Computerhulp aan huis in Haarlem door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-haarlem',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Haarlem - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Haarlem | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Haarlem. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Haarlem | Hulp met IT',
+    description: 'Computerhulp aan huis in Haarlem. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-haarlem'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-haarlem',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisHaarlemLayout({

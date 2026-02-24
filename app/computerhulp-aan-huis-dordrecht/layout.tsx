@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan huis Dordrecht | Hulp Met IT',
-  description: 'Computerhulp aan huis in Dordrecht voor alle computerproblemen. HBO-opgeleide ICT-studenten bij u thuis. €14,50 per kwartier + €10 voorrijkosten.',
+  title: 'Computerhulp aan huis Dordrecht | Hulp met IT',
+  description: 'Computerhulp aan huis in Dordrecht door HBO-opgeleide ICT-studenten. Hulp in Dordrecht Centrum, Dordrecht Noord, Dordrecht Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis dordrecht',
     'computer reparatie dordrecht',
@@ -13,28 +13,57 @@ export const metadata: Metadata = {
     'dordrecht computerhulp avond',
     'dordrecht IT hulp weekend',
     'computerhulp dordrecht spoed',
-    'betaalbare IT hulp dordrecht'
+    'betaalbare IT hulp dordrecht',
+    'wifi problemen dordrecht',
+    'internet hulp dordrecht',
+    'printer installatie dordrecht',
+    'virus verwijderen dordrecht',
+    'computerhulp dordrecht centrum',
+    'ict hulp dordrecht noord',
+    'computer reparatie dordrecht oost',
+    'laptop hulp dordrecht west',
+    'pc hulp dordrecht zuid',
+    'it hulp wielwijk',
+    'computerhulp dordrecht',
+    'it service dordrecht',
+    'computer problemen dordrecht'
   ],
   openGraph: {
-    title: 'Computerhulp aan huis Dordrecht | ICT Student aan Huis | Hulp Met IT',
+    title: 'Computerhulp aan huis Dordrecht | Hulp met IT',
     description: 'Computerhulp aan huis in Dordrecht door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    url: 'https://hulpmetit.nl/computerhulp-aan-huis-dordrecht',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp aan huis Dordrecht - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp aan huis Dordrecht | ICT Student aan Huis',
-    description: 'Computerhulp aan huis Dordrecht. Student komt bij u. €14,50 per kwartier + €10 voorrijkosten.',
+    title: 'Computerhulp aan huis Dordrecht | Hulp met IT',
+    description: 'Computerhulp aan huis in Dordrecht. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/computerhulp-aan-huis-dordrecht'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/computerhulp-aan-huis-dordrecht',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function ComputerhulpAanHuisDordrechtLayout({

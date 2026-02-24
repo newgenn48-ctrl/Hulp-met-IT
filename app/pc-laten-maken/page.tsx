@@ -14,6 +14,7 @@ import {
 import { PricingSection } from '@/components/home/PricingSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
 import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { CTASection } from '@/components/home/CTASection'
 import { SectionDivider } from '@/components/ui/SectionDivider'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
@@ -167,6 +168,8 @@ export default function PcLatenMakenPage() {
 
       <PricingSection />
 
+      <TestimonialsSection />
+
       <SectionDivider
         variant="layered-wave"
         topColor="#fafaf9"
@@ -180,7 +183,6 @@ export default function PcLatenMakenPage() {
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
         bottomColor="#fafaf9"
       />
-
       <CompactServicesSection />
 
       <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />

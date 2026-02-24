@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, use } from 'react'
 import {
   ArrowRight,
@@ -8,9 +9,25 @@ import {
   Phone,
   ChevronDown,
   MapPin,
+  Star,
 } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import services from '@/lib/data/services.json'
+import { PricingSection } from '@/components/home/PricingSection'
+import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { HowItWorks } from '@/components/home/HowItWorks'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
+
+const imageMap: Record<string, string> = {
+  'computerhulp': '/images/diensten/computerhulp.webp',
+  'printerhulp': '/images/diensten/printerhulp.webp',
+  'email-problemen': '/images/diensten/email-problemen.webp',
+  'internet-wifi': '/images/diensten/internet-wifi.webp',
+  'tablet-smartphone': '/images/diensten/tablet-smartphone.webp',
+  'smart-tv': '/images/diensten/smart-tv.webp',
+  'smart-home': '/images/diensten/smart-home.webp',
+  'computerles': '/images/diensten/computerles.webp',
+}
 
 const popularCities = [
   { name: 'Amsterdam', slug: 'amsterdam' },
@@ -113,37 +130,52 @@ export default function ServicePage({ params }: ServicePageProps) {
       {/* Hero Section */}
       <section className="bg-white py-20 lg:py-28">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">{service.name}</p>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-900 leading-tight mb-6">
-              {h1Text}
-            </h1>
-            {subtitleText && (
-              <p className="text-lg text-secondary-600 leading-relaxed mb-4">
-                {subtitleText}
-              </p>
-            )}
-            {longDescription && (
-              <p className="text-secondary-500 leading-relaxed mb-8">
-                {longDescription}
-              </p>
-            )}
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/afspraak"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl shadow-accent transition-all duration-200 hover:-translate-y-0.5"
-              >
-                Afspraak maken
-                <ArrowRight className="w-5 h-5" />
-              </Link>
-              <a
-                href="tel:+31642827860"
-                className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-xl transition-colors"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
-              </a>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-12">
+            <div className="max-w-2xl lg:flex-1">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">{service.name}</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-secondary-900 leading-tight mb-6">
+                {h1Text}
+              </h1>
+              {subtitleText && (
+                <p className="text-lg text-secondary-600 leading-relaxed mb-4">
+                  {subtitleText}
+                </p>
+              )}
+              {longDescription && (
+                <p className="text-secondary-500 leading-relaxed mb-8">
+                  {longDescription}
+                </p>
+              )}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/afspraak"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-base font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl shadow-accent transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  Afspraak maken
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a
+                  href="tel:+31642827860"
+                  className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-xl transition-colors"
+                >
+                  <Phone className="w-4 h-4 mr-2" />
+                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                </a>
+              </div>
             </div>
+            {imageMap[slug] && (
+              <div className="mt-10 lg:mt-0 lg:flex-shrink-0">
+                <div className="relative w-full aspect-[4/3] sm:aspect-square lg:w-72 lg:h-72 rounded-2xl overflow-hidden shadow-card">
+                  <Image
+                    src={imageMap[slug]}
+                    alt={service.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 288px"
+                  />
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -193,40 +225,34 @@ export default function ServicePage({ params }: ServicePageProps) {
               </li>
             ))}
           </ul>
+
+          {/* Benefits */}
+          {service.benefits && service.benefits.length > 0 && (
+            <div className="mt-14">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-6">Uw voordelen</p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {service.benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3 bg-primary-50 rounded-xl px-5 py-4">
+                    <Star className="w-5 h-5 text-accent-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-secondary-700 font-medium">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </section>
+
+      {/* Pricing */}
+      <PricingSection />
+
+      <TestimonialsSection />
 
       {/* How it works */}
-      <section className="relative bg-secondary-50 py-20 lg:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-dots opacity-15" />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Zo werkt het</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              Hoe het werkt
-            </h2>
-          </div>
+      <HowItWorks />
 
-          <ol className="space-y-8 max-w-2xl mx-auto">
-            {service.process.map((step, index) => (
-              <li key={index} className="flex gap-5">
-                <div className="w-10 h-10 bg-primary-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-lg font-bold text-white">{index + 1}</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-secondary-900 mb-1">
-                    {step.title}
-                  </h3>
-                  <p className="text-secondary-500">
-                    {step.description}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
+      {/* Trust & social proof */}
+      <TrustAndPricing />
       {/* FAQ Section */}
       {faqs.length > 0 && (
         <section className="bg-white py-20 lg:py-28">

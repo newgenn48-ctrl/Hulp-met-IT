@@ -2,39 +2,64 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Roosendaal | Hulp met IT',
-  description: 'ICT Student aan huis in Roosendaal voor computerhulp. Betaalbare IT-studenten komen naar u toe. \u20AC14,50 per kwartier + \u20AC10 voorrijkosten. Snel en vakkundig!',
+  description: 'ICT Student aan huis in Roosendaal voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Roosendaal Centrum, Roosendaal Noord, Roosendaal Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis roosendaal',
-    'student computerhulp roosendaal',
+    'computerhulp roosendaal',
+    'ict hulp roosendaal',
+    'computer reparatie roosendaal',
+    'laptop hulp roosendaal',
+    'it student roosendaal',
     'betaalbare computerhulp roosendaal',
-    'IT student roosendaal',
-    'computer reparatie roosendaal student',
-    'betaalbare computer hulp roosendaal',
-    'studenten computer service roosendaal',
-    'roosendaal student IT hulp',
-    'roosendaal computerhulp avond',
-    'roosendaal IT hulp weekend'
+    'computer problemen roosendaal',
+    'wifi problemen roosendaal',
+    'internet hulp roosendaal',
+    'computerhulp roosendaal centrum',
+    'ict hulp roosendaal noord',
+    'computer reparatie roosendaal oost',
+    'laptop hulp tolberg',
+    'student computerhulp kroeven',
+    'it hulp langdonk',
+    'it service roosendaal',
+    'laptop reparatie roosendaal',
+    'it hulp aan huis roosendaal'
   ],
   openGraph: {
     title: 'Student aan huis Roosendaal | Hulp met IT',
-    description: 'Student aan huis Roosendaal: betaalbare computerhulp door IT-studenten. Bel ons!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Roosendaal. Wij komen bij u thuis in Roosendaal en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-roosendaal',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ICT Student aan huis Roosendaal - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Roosendaal | Hulp met IT',
-    description: 'Student aan huis Roosendaal: betaalbare computerhulp door IT-studenten. Bel ons!',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Roosendaal. Wij komen bij u thuis.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/student-aan-huis-roosendaal'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-roosendaal',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function StudentAanHuisRoosendaalLayout({

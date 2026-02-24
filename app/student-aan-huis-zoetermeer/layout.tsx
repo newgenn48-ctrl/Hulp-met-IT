@@ -2,43 +2,64 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Zoetermeer | Hulp met IT',
-  description: 'ICT Student aan huis in Zoetermeer voor computerhulp. Betaalbare IT-studenten komen naar je toe. €14,50 per kwartier + €10 voorrijkosten. Snel en vakkundig!',
+  description: 'ICT Student aan huis in Zoetermeer voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Zoetermeer Centrum, Zoetermeer Noord, Zoetermeer Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis zoetermeer',
-    'student computerhulp zoetermeer',
+    'computerhulp zoetermeer',
+    'ict hulp zoetermeer',
+    'computer reparatie zoetermeer',
+    'laptop hulp zoetermeer',
+    'it student zoetermeer',
     'betaalbare computerhulp zoetermeer',
-    'IT student zoetermeer',
-    'computer reparatie zoetermeer student',
-    'betaalbare computer hulp zoetermeer',
-    'studenten computer service zoetermeer',
-    'zoetermeer student IT hulp',
-    'zoetermeer computerhulp avond',
-    'zoetermeer IT hulp weekend',
-    'computerhulp rokkeveen',
-    'computerhulp meerzicht',
-    'computerhulp pijnacker',
-    'computerhulp nootdorp'
+    'computer problemen zoetermeer',
+    'wifi problemen zoetermeer',
+    'internet hulp zoetermeer',
+    'computerhulp zoetermeer centrum',
+    'ict hulp zoetermeer noord',
+    'computer reparatie zoetermeer oost',
+    'laptop hulp zoetermeer west',
+    'student computerhulp zoetermeer zuid',
+    'it hulp oosterheem',
+    'it service zoetermeer',
+    'laptop reparatie zoetermeer',
+    'it hulp aan huis zoetermeer'
   ],
   openGraph: {
     title: 'Student aan huis Zoetermeer | Hulp met IT',
-    description: 'Student aan huis Zoetermeer: betaalbare computerhulp door IT-studenten. Bel ons!',
-    images: ['/og-image.webp'],
-    type: 'website',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Zoetermeer. Wij komen bij u thuis in Zoetermeer en omgeving. €14,50 per kwartier.',
+    url: 'https://hulpmetit.nl/student-aan-huis-zoetermeer',
+    siteName: 'Hulp met IT',
     locale: 'nl_NL',
-    siteName: 'Hulp met IT'
+    type: 'website',
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'ICT Student aan huis Zoetermeer - Hulp met IT'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Student aan huis Zoetermeer | Hulp met IT',
-    description: 'Student aan huis Zoetermeer: betaalbare computerhulp door IT-studenten. Bel ons!',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Zoetermeer. Wij komen bij u thuis.',
+    images: ['/og-image.webp']
+  },
+  alternates: {
+    canonical: '/student-aan-huis-zoetermeer'
   },
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: '/student-aan-huis-zoetermeer',
-  },
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  }
 }
 
 export default function StudentAanHuisZoetermeerLayout({
