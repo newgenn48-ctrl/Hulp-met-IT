@@ -9,7 +9,7 @@
     "serviceAreas": [
       "Amsterdam Centrum",
       "Amsterdam Noord",
-      "Amsterdam Oost", 
+      "Amsterdam Oost",
       "Amsterdam West",
       "Amsterdam Zuid",
       "Amsterdam Zuidoost",
@@ -20,7 +20,7 @@
     ],
     "keywords": [
       "computerhulp Amsterdam",
-      "IT service Amsterdam", 
+      "IT service Amsterdam",
       "laptop reparatie Amsterdam",
       "computer problemen Amsterdam",
       "IT hulp aan huis Amsterdam",
@@ -76,7 +76,7 @@
       "Rotterdam Centrum",
       "Rotterdam Noord",
       "Rotterdam Oost",
-      "Rotterdam West", 
+      "Rotterdam West",
       "Rotterdam Zuid",
       "Kralingen-Crooswijk",
       "Hillegersberg-Schiebroek",
@@ -87,7 +87,7 @@
     "keywords": [
       "computerhulp Rotterdam",
       "IT service Rotterdam",
-      "laptop reparatie Rotterdam", 
+      "laptop reparatie Rotterdam",
       "computer problemen Rotterdam",
       "IT hulp aan huis Rotterdam",
       "technische ondersteuning Rotterdam",
@@ -101,14 +101,14 @@
   {
     "name": "Den Haag",
     "slug": "den-haag",
-    "population": "545.000", 
+    "population": "545.000",
     "region": "Zuid-Holland",
     "description": "De hofstad waar bestuur en technologie samenkomen",
     "longDescription": "In Den Haag, de zetel van de regering, zorgen wij voor betrouwbare IT-ondersteuning. Van Scheveningen tot Leidschenveen, van het centrum tot Ypenburg - onze ICT-studenten staan klaar om alle computerproblemen op te lossen met de discretie en professionaliteit die past bij de hofstad.",
     "serviceAreas": [
       "Den Haag Centrum",
       "Scheveningen",
-      "Benoordenhout", 
+      "Benoordenhout",
       "Haagse Bos",
       "Laak",
       "Escamp",
@@ -121,7 +121,7 @@
       "computerhulp Den Haag",
       "IT service Den Haag",
       "laptop reparatie Den Haag",
-      "computer problemen Den Haag", 
+      "computer problemen Den Haag",
       "IT hulp aan huis Den Haag",
       "technische ondersteuning Den Haag",
       "computer student Den Haag"
@@ -161,7 +161,7 @@
     ],
     "coordinates": {
       "lat": 52.1601,
-      "lng": 4.4970
+      "lng": 4.497
     }
   },
   {
@@ -425,7 +425,7 @@
     ],
     "coordinates": {
       "lat": 51.9289,
-      "lng": 4.5780
+      "lng": 4.578
     }
   },
   {
@@ -458,7 +458,7 @@
     ],
     "coordinates": {
       "lat": 52.0814,
-      "lng": 4.3890
+      "lng": 4.389
     }
   },
   {
@@ -498,12 +498,12 @@
     "name": "Utrecht",
     "slug": "utrecht",
     "population": "360.000",
-    "region": "Utrecht", 
+    "region": "Utrecht",
     "description": "Het kloppend hart van Nederland met uitstekende IT-service",
     "longDescription": "Utrecht, centraal gelegen en goed bereikbaar, is een perfecte uitvalsbasis voor onze IT-diensten. Van de historische binnenstad tot Leidsche Rijn, van Overvecht tot Hoograven - wij kennen Utrecht als onze broekzak en bieden topkwaliteit computerhulp aan alle Utrechters.",
     "serviceAreas": [
       "Utrecht Centrum",
-      "Utrecht Noord", 
+      "Utrecht Noord",
       "Utrecht Oost",
       "Utrecht West",
       "Utrecht Zuid",
@@ -518,7 +518,7 @@
       "IT service Utrecht",
       "laptop reparatie Utrecht",
       "computer problemen Utrecht",
-      "IT hulp aan huis Utrecht", 
+      "IT hulp aan huis Utrecht",
       "technische ondersteuning Utrecht",
       "computer student Utrecht"
     ],
@@ -537,7 +537,7 @@
     "serviceAreas": [
       "Amersfoort Centrum",
       "Amersfoort Noord",
-      "Amersfoort Oost", 
+      "Amersfoort Oost",
       "Amersfoort West",
       "Amersfoort Zuid",
       "Vathorst",
@@ -552,7 +552,7 @@
       "laptop reparatie Amersfoort",
       "computer problemen Amersfoort",
       "IT hulp aan huis Amersfoort",
-      "technische ondersteuning Amersfoort", 
+      "technische ondersteuning Amersfoort",
       "computer student Amersfoort"
     ],
     "coordinates": {
@@ -598,13 +598,13 @@
     "slug": "eindhoven",
     "population": "235.000",
     "region": "Noord-Brabant",
-    "description": "De technologiestad van Nederland met innovatieve IT-oplossingen", 
+    "description": "De technologiestad van Nederland met innovatieve IT-oplossingen",
     "longDescription": "Eindhoven, de technologiehoofdstad van Nederland, verdient geavanceerde IT-ondersteuning. Onze studenten begrijpen de hoge tech-standaarden van de Lichtstad. Van het centrum tot Veldhoven, van Woensel tot Stratum - wij bieden geavanceerde computerhulp die past bij Eindhoven's innovatieve geest.",
     "serviceAreas": [
       "Eindhoven Centrum",
       "Woensel Noord",
       "Woensel Zuid",
-      "Stratum", 
+      "Stratum",
       "Gestel",
       "Strijp",
       "Tongelre",
@@ -618,7 +618,7 @@
       "laptop reparatie Eindhoven",
       "computer problemen Eindhoven",
       "IT hulp aan huis Eindhoven",
-      "technische ondersteuning Eindhoven", 
+      "technische ondersteuning Eindhoven",
       "computer student Eindhoven"
     ],
     "coordinates": {
@@ -635,7 +635,7 @@
     "longDescription": "In Tilburg combineren wij Brabantse warmte met professionele IT-service. Onze studenten kennen de stad goed en bieden persoonlijke aandacht. Van het centrum tot Reeshof, van Noord tot Berkel-Enschot - wij staan klaar met vriendelijke en vakkundige computerhulp.",
     "serviceAreas": [
       "Tilburg Centrum",
-      "Tilburg Noord", 
+      "Tilburg Noord",
       "Tilburg Oost",
       "Tilburg West",
       "Tilburg Zuid",
@@ -649,7 +649,7 @@
       "computerhulp Tilburg",
       "IT service Tilburg",
       "laptop reparatie Tilburg",
-      "computer problemen Tilburg", 
+      "computer problemen Tilburg",
       "IT hulp aan huis Tilburg",
       "technische ondersteuning Tilburg",
       "computer student Tilburg"
@@ -663,13 +663,13 @@
     "name": "Breda",
     "slug": "breda",
     "population": "185.000",
-    "region": "Noord-Brabant", 
+    "region": "Noord-Brabant",
     "description": "De parel van Brabant met eersteklas IT-service",
     "longDescription": "Breda, een prachtige stad met rijke geschiedenis, verdient IT-service van topkwaliteit. Onze experts combineren traditionele Brabantse gastvrijheid met moderne technische kennis. Van de binnenstad tot Oosterhout, van Prinsenbeek tot Teteringen - wij zorgen voor uitstekende computerhulp.",
     "serviceAreas": [
       "Breda Centrum",
       "Breda Noord",
-      "Breda Oost", 
+      "Breda Oost",
       "Breda West",
       "Breda Zuid",
       "Prinsenbeek",
@@ -683,7 +683,7 @@
       "IT service Breda",
       "laptop reparatie Breda",
       "computer problemen Breda",
-      "IT hulp aan huis Breda", 
+      "IT hulp aan huis Breda",
       "technische ondersteuning Breda",
       "computer student Breda"
     ],
@@ -729,12 +729,12 @@
     "name": "Nijmegen",
     "slug": "nijmegen",
     "population": "180.000",
-    "region": "Gelderland", 
+    "region": "Gelderland",
     "description": "De oudste stad van Nederland met de nieuwste IT-technologie",
     "longDescription": "Nijmegen, de oudste stad van Nederland, combineren wij met de nieuwste IT-technologieën. Onze studenten waarderen de rijke geschiedenis en levendige cultuur van deze Gelderse stad. Van de binnenstad tot Waalsprong, van Dukenburg tot Lindenholt - wij bieden hoogwaardige computerhulp.",
     "serviceAreas": [
       "Nijmegen Centrum",
-      "Nijmegen Noord", 
+      "Nijmegen Noord",
       "Nijmegen Oost",
       "Nijmegen West",
       "Nijmegen Zuid",
@@ -748,7 +748,7 @@
       "computerhulp Nijmegen",
       "IT service Nijmegen",
       "laptop reparatie Nijmegen",
-      "computer problemen Nijmegen", 
+      "computer problemen Nijmegen",
       "IT hulp aan huis Nijmegen",
       "technische ondersteuning Nijmegen",
       "computer student Nijmegen"
@@ -854,7 +854,7 @@
     ],
     "coordinates": {
       "lat": 52.5168,
-      "lng": 6.0830
+      "lng": 6.083
     }
   },
   {
@@ -954,7 +954,7 @@
       "computer student Bussum"
     ],
     "coordinates": {
-      "lat": 52.2760,
+      "lat": 52.276,
       "lng": 5.1609
     }
   },
@@ -987,7 +987,7 @@
       "computer student Naarden"
     ],
     "coordinates": {
-      "lat": 52.2950,
+      "lat": 52.295,
       "lng": 5.1619
     }
   },
@@ -1250,7 +1250,7 @@
     ],
     "coordinates": {
       "lat": 51.4427,
-      "lng": 3.5710
+      "lng": 3.571
     }
   },
   {
@@ -1280,8 +1280,8 @@
       "computer student Goes"
     ],
     "coordinates": {
-      "lat": 51.5040,
-      "lng": 3.8890
+      "lat": 51.504,
+      "lng": 3.889
     }
   },
   {
@@ -1311,8 +1311,8 @@
       "computer student Terneuzen"
     ],
     "coordinates": {
-      "lat": 51.3360,
-      "lng": 3.8270
+      "lat": 51.336,
+      "lng": 3.827
     }
   },
   {
@@ -1375,8 +1375,8 @@
       "computer student Oss"
     ],
     "coordinates": {
-      "lat": 51.7650,
-      "lng": 5.5190
+      "lat": 51.765,
+      "lng": 5.519
     }
   },
   {
@@ -1406,8 +1406,8 @@
       "computer student Roosendaal"
     ],
     "coordinates": {
-      "lat": 51.5300,
-      "lng": 4.4570
+      "lat": 51.53,
+      "lng": 4.457
     }
   },
   {
@@ -1437,8 +1437,8 @@
       "computer student Bergen op Zoom"
     ],
     "coordinates": {
-      "lat": 51.4950,
-      "lng": 4.2920
+      "lat": 51.495,
+      "lng": 4.292
     }
   },
   {
@@ -1468,8 +1468,8 @@
       "computer student Oosterhout"
     ],
     "coordinates": {
-      "lat": 51.6430,
-      "lng": 4.8600
+      "lat": 51.643,
+      "lng": 4.86
     }
   },
   {
@@ -1499,8 +1499,8 @@
       "computer student Waalwijk"
     ],
     "coordinates": {
-      "lat": 51.6830,
-      "lng": 5.0700
+      "lat": 51.683,
+      "lng": 5.07
     }
   },
   {
@@ -1530,8 +1530,3439 @@
       "computer student Uden"
     ],
     "coordinates": {
-      "lat": 51.6600,
-      "lng": 5.6200
+      "lat": 51.66,
+      "lng": 5.62
+    }
+  },
+  {
+    "name": "Nieuwegein",
+    "slug": "nieuwegein",
+    "population": "63.000",
+    "region": "Utrecht",
+    "description": "De jonge stad aan de Lek met snelle en persoonlijke IT-hulp aan huis",
+    "longDescription": "Nieuwegein, de moderne stad tussen Utrecht en de Lek, verdient IT-service die past bij haar dynamische karakter. Onze studenten komen graag bij u langs. Van Batau tot Galecop, van Vreeswijk tot Jutphaas - wij bieden betrouwbare computerhulp in heel Nieuwegein en omgeving.",
+    "serviceAreas": [
+      "Nieuwegein Centrum",
+      "Batau",
+      "Galecop",
+      "Vreeswijk",
+      "Jutphaas",
+      "Doorslag",
+      "Fokkesteeg",
+      "IJsselstein",
+      "Vianen",
+      "Houten"
+    ],
+    "keywords": [
+      "computerhulp Nieuwegein",
+      "IT service Nieuwegein",
+      "laptop reparatie Nieuwegein",
+      "computer problemen Nieuwegein",
+      "IT hulp aan huis Nieuwegein",
+      "technische ondersteuning Nieuwegein",
+      "computer student Nieuwegein"
+    ],
+    "coordinates": {
+      "lat": 52.0286,
+      "lng": 5.0828
+    }
+  },
+  {
+    "name": "Veenendaal",
+    "slug": "veenendaal",
+    "population": "67.000",
+    "region": "Utrecht",
+    "description": "De groene grensstad op de Utrechtse Heuvelrug met betaalbare IT-service",
+    "longDescription": "Veenendaal, gelegen op de grens van Utrecht en Gelderland, is een ondernemende stad die goede IT-ondersteuning verdient. Onze studenten helpen u graag thuis met al uw computervragen. Van het centrum tot Dragonder, van De Engelenburg tot French Lick - wij staan voor u klaar.",
+    "serviceAreas": [
+      "Veenendaal Centrum",
+      "Veenendaal Noord",
+      "Veenendaal Oost",
+      "Veenendaal West",
+      "Dragonder",
+      "De Engelenburg",
+      "French Lick",
+      "Rhenen",
+      "Renswoude",
+      "Ede"
+    ],
+    "keywords": [
+      "computerhulp Veenendaal",
+      "IT service Veenendaal",
+      "laptop reparatie Veenendaal",
+      "computer problemen Veenendaal",
+      "IT hulp aan huis Veenendaal",
+      "technische ondersteuning Veenendaal",
+      "computer student Veenendaal"
+    ],
+    "coordinates": {
+      "lat": 52.0244,
+      "lng": 5.5581
+    }
+  },
+  {
+    "name": "Zeist",
+    "slug": "zeist",
+    "population": "64.000",
+    "region": "Utrecht",
+    "description": "Het groene hart van de Utrechtse Heuvelrug met persoonlijke computerhulp",
+    "longDescription": "Zeist, de sfeervolle gemeente aan de Utrechtse Heuvelrug, staat bekend om haar bossen en landgoederen. Onze IT-studenten bieden hier warme, persoonlijke service. Van het centrum tot Austerlitz, van Den Dolder tot Bosch en Duin - wij helpen u graag met al uw technische problemen.",
+    "serviceAreas": [
+      "Zeist Centrum",
+      "Zeist Noord",
+      "Zeist Zuid",
+      "Austerlitz",
+      "Den Dolder",
+      "Bosch en Duin",
+      "Huis ter Heide",
+      "Driebergen-Rijsenburg",
+      "Bilthoven"
+    ],
+    "keywords": [
+      "computerhulp Zeist",
+      "IT service Zeist",
+      "laptop reparatie Zeist",
+      "computer problemen Zeist",
+      "IT hulp aan huis Zeist",
+      "technische ondersteuning Zeist",
+      "computer student Zeist"
+    ],
+    "coordinates": {
+      "lat": 52.0907,
+      "lng": 5.2323
+    }
+  },
+  {
+    "name": "Houten",
+    "slug": "houten",
+    "population": "50.000",
+    "region": "Utrecht",
+    "description": "De fietsvriendelijke groeigemeente met snelle IT-hulp aan huis",
+    "longDescription": "Houten, bekend als een van de meest fietsvriendelijke steden ter wereld, groeit snel en verdient IT-service die daarbij past. Onze studenten komen snel bij u thuis, of u nu in het Oude Dorp woont, in Houten-Zuid of in de nieuwe wijken. Ook Schalkwijk en 't Goy vallen binnen ons servicegebied.",
+    "serviceAreas": [
+      "Houten Centrum",
+      "Houten Noord",
+      "Houten Zuid",
+      "Het Oude Dorp",
+      "Castellum",
+      "Schalkwijk",
+      "'t Goy",
+      "Bunnik",
+      "Nieuwegein"
+    ],
+    "keywords": [
+      "computerhulp Houten",
+      "IT service Houten",
+      "laptop reparatie Houten",
+      "computer problemen Houten",
+      "IT hulp aan huis Houten",
+      "technische ondersteuning Houten",
+      "computer student Houten"
+    ],
+    "coordinates": {
+      "lat": 52.0286,
+      "lng": 5.1686
+    }
+  },
+  {
+    "name": "Woerden",
+    "slug": "woerden",
+    "population": "53.000",
+    "region": "Utrecht",
+    "description": "De historische kaasstad in het Groene Hart met betrouwbare IT-ondersteuning",
+    "longDescription": "Woerden, de gezellige kaasstad in het Groene Hart, combineert historie met moderne woonwijken. Onze IT-studenten kennen de stad goed en helpen u graag. Van de binnenstad tot Snel en Polanen, van Molenvliet tot Harmelen - voor betaalbare computerhulp bent u bij ons aan het juiste adres.",
+    "serviceAreas": [
+      "Woerden Centrum",
+      "Snel en Polanen",
+      "Molenvliet",
+      "Staatsliedenkwartier",
+      "Harmelen",
+      "Kamerik",
+      "Zegveld",
+      "Montfoort",
+      "Oudewater"
+    ],
+    "keywords": [
+      "computerhulp Woerden",
+      "IT service Woerden",
+      "laptop reparatie Woerden",
+      "computer problemen Woerden",
+      "IT hulp aan huis Woerden",
+      "technische ondersteuning Woerden",
+      "computer student Woerden"
+    ],
+    "coordinates": {
+      "lat": 52.0854,
+      "lng": 4.8838
+    }
+  },
+  {
+    "name": "IJsselstein",
+    "slug": "ijsselstein",
+    "population": "34.000",
+    "region": "Utrecht",
+    "description": "Het gezellige stadje aan de Hollandsche IJssel met vriendelijke IT-hulp",
+    "longDescription": "IJsselstein, het charmante stadje aan de Hollandsche IJssel, heeft een rijk verleden en een levendige gemeenschap. Onze studenten bieden hier persoonlijke computerhulp aan huis. Van de historische binnenstad tot Zenderpark, van Achterveld tot Groenvliet - wij zijn snel bij u.",
+    "serviceAreas": [
+      "IJsselstein Centrum",
+      "IJsselstein Noord",
+      "IJsselstein Zuid",
+      "Zenderpark",
+      "Achterveld",
+      "Groenvliet",
+      "Nieuwegein",
+      "Lopik",
+      "Montfoort"
+    ],
+    "keywords": [
+      "computerhulp IJsselstein",
+      "IT service IJsselstein",
+      "laptop reparatie IJsselstein",
+      "computer problemen IJsselstein",
+      "IT hulp aan huis IJsselstein",
+      "technische ondersteuning IJsselstein",
+      "computer student IJsselstein"
+    ],
+    "coordinates": {
+      "lat": 52.023,
+      "lng": 5.044
+    }
+  },
+  {
+    "name": "De Bilt",
+    "slug": "de-bilt",
+    "population": "43.000",
+    "region": "Utrecht",
+    "description": "De groene gemeente bij Utrecht met deskundige IT-service aan huis",
+    "longDescription": "De Bilt, bekend van het KNMI en haar prachtige buitengebied, is een fijne woongemeente naast Utrecht. Onze IT-studenten helpen inwoners graag met computerproblemen. Van De Bilt zelf tot Bilthoven, van Groenekan tot Westbroek - overal in de gemeente kunt u op ons rekenen.",
+    "serviceAreas": [
+      "De Bilt Centrum",
+      "Bilthoven",
+      "Groenekan",
+      "Westbroek",
+      "Hollandsche Rading",
+      "Maartensdijk",
+      "Zeist",
+      "Utrecht"
+    ],
+    "keywords": [
+      "computerhulp De Bilt",
+      "IT service De Bilt",
+      "laptop reparatie De Bilt",
+      "computer problemen De Bilt",
+      "IT hulp aan huis De Bilt",
+      "technische ondersteuning De Bilt",
+      "computer student De Bilt"
+    ],
+    "coordinates": {
+      "lat": 52.11,
+      "lng": 5.18
+    }
+  },
+  {
+    "name": "Leusden",
+    "slug": "leusden",
+    "population": "31.000",
+    "region": "Utrecht",
+    "description": "De bosrijke gemeente bij Amersfoort met persoonlijke IT-ondersteuning",
+    "longDescription": "Leusden, de groene gemeente aan de rand van Amersfoort, biedt een heerlijke woonomgeving. Onze studenten komen graag naar u toe voor IT-hulp aan huis. Van Leusden-Centrum tot Achterveld, van Hamersveld tot Stoutenburg - wij zorgen voor snelle en vriendelijke computerhulp.",
+    "serviceAreas": [
+      "Leusden Centrum",
+      "Leusden-Zuid",
+      "Hamersveld",
+      "Achterveld",
+      "Stoutenburg",
+      "De Glind",
+      "Amersfoort",
+      "Woudenberg"
+    ],
+    "keywords": [
+      "computerhulp Leusden",
+      "IT service Leusden",
+      "laptop reparatie Leusden",
+      "computer problemen Leusden",
+      "IT hulp aan huis Leusden",
+      "technische ondersteuning Leusden",
+      "computer student Leusden"
+    ],
+    "coordinates": {
+      "lat": 52.13,
+      "lng": 5.43
+    }
+  },
+  {
+    "name": "Driebergen-Rijsenburg",
+    "slug": "driebergen-rijsenburg",
+    "population": "20.000",
+    "region": "Utrecht",
+    "description": "Het schilderachtige dorp op de Heuvelrug met betrouwbare computerhulp",
+    "longDescription": "Driebergen-Rijsenburg, gelegen op de prachtige Utrechtse Heuvelrug, is een dorp met karakter. Onze IT-studenten bieden hier persoonlijke service in een ontspannen sfeer. Van het centrum van Driebergen tot Rijsenburg, van de villawijk tot aan Doorn en Austerlitz - wij helpen u graag.",
+    "serviceAreas": [
+      "Driebergen Centrum",
+      "Rijsenburg",
+      "Driebergen-Zuid",
+      "Driebergen-Noord",
+      "Doorn",
+      "Austerlitz",
+      "Zeist",
+      "Maarn"
+    ],
+    "keywords": [
+      "computerhulp Driebergen-Rijsenburg",
+      "IT service Driebergen-Rijsenburg",
+      "laptop reparatie Driebergen-Rijsenburg",
+      "computer problemen Driebergen-Rijsenburg",
+      "IT hulp aan huis Driebergen-Rijsenburg",
+      "technische ondersteuning Driebergen-Rijsenburg",
+      "computer student Driebergen-Rijsenburg"
+    ],
+    "coordinates": {
+      "lat": 52.053,
+      "lng": 5.28
+    }
+  },
+  {
+    "name": "Wijk bij Duurstede",
+    "slug": "wijk-bij-duurstede",
+    "population": "24.000",
+    "region": "Utrecht",
+    "description": "Het historische vestingstadje aan de Rijn met warme IT-service",
+    "longDescription": "Wijk bij Duurstede, het sfeervolle vestingstadje waar de Kromme Rijn in de Lek stroomt, ademt geschiedenis. Onze studenten bieden hier betrouwbare IT-hulp aan huis. Van de historische binnenstad tot Langbroek, van Cothen tot Doorn - in het hele Kromme Rijngebied staan wij voor u klaar.",
+    "serviceAreas": [
+      "Wijk bij Duurstede Centrum",
+      "De Horden",
+      "De Geer",
+      "Langbroek",
+      "Cothen",
+      "Leersum",
+      "Doorn",
+      "Amerongen"
+    ],
+    "keywords": [
+      "computerhulp Wijk bij Duurstede",
+      "IT service Wijk bij Duurstede",
+      "laptop reparatie Wijk bij Duurstede",
+      "computer problemen Wijk bij Duurstede",
+      "IT hulp aan huis Wijk bij Duurstede",
+      "technische ondersteuning Wijk bij Duurstede",
+      "computer student Wijk bij Duurstede"
+    ],
+    "coordinates": {
+      "lat": 51.974,
+      "lng": 5.337
+    }
+  },
+  {
+    "name": "Zaandam",
+    "slug": "zaandam",
+    "population": "157.000",
+    "region": "Noord-Holland",
+    "description": "De industriestad aan de Zaan met moderne en betaalbare IT-hulp",
+    "longDescription": "Zaandam, het bruisende hart van de Zaanstreek, is een stad vol historie en vernieuwing. Onze IT-studenten helpen inwoners van de hele Zaanstreek. Van het vernieuwde centrum tot Zaandam-Zuid, van Wormerveer tot Krommenie, van Assendelft tot Westzaan - overal bieden wij snelle computerhulp.",
+    "serviceAreas": [
+      "Zaandam Centrum",
+      "Zaandam Zuid",
+      "Zaandam Noord",
+      "Wormerveer",
+      "Krommenie",
+      "Assendelft",
+      "Westzaan",
+      "Koog aan de Zaan",
+      "Zaandijk",
+      "Oostzaan"
+    ],
+    "keywords": [
+      "computerhulp Zaandam",
+      "IT service Zaandam",
+      "laptop reparatie Zaandam",
+      "computer problemen Zaandam",
+      "IT hulp aan huis Zaandam",
+      "technische ondersteuning Zaandam",
+      "computer student Zaandam"
+    ],
+    "coordinates": {
+      "lat": 52.4384,
+      "lng": 4.8264
+    }
+  },
+  {
+    "name": "Hoofddorp",
+    "slug": "hoofddorp",
+    "population": "159.000",
+    "region": "Noord-Holland",
+    "description": "De snelgroeiende Haarlemmermeer-stad met professionele IT-service",
+    "longDescription": "Hoofddorp, de grootste kern van de gemeente Haarlemmermeer, is een moderne en snelgroeiende stad. Onze IT-studenten kennen de regio goed en helpen u graag thuis. Van het centrum tot Floriande, van Toolenburg tot Bornholm - en ook in Nieuw-Vennep, Badhoevedorp en Aalsmeer staan wij voor u klaar.",
+    "serviceAreas": [
+      "Hoofddorp Centrum",
+      "Floriande",
+      "Toolenburg",
+      "Bornholm",
+      "Pax",
+      "Nieuw-Vennep",
+      "Badhoevedorp",
+      "Aalsmeer",
+      "Rijsenhout",
+      "Cruquius"
+    ],
+    "keywords": [
+      "computerhulp Hoofddorp",
+      "IT service Hoofddorp",
+      "laptop reparatie Hoofddorp",
+      "computer problemen Hoofddorp",
+      "IT hulp aan huis Hoofddorp",
+      "technische ondersteuning Hoofddorp",
+      "computer student Hoofddorp"
+    ],
+    "coordinates": {
+      "lat": 52.3025,
+      "lng": 4.689
+    }
+  },
+  {
+    "name": "Alkmaar",
+    "slug": "alkmaar",
+    "population": "110.000",
+    "region": "Noord-Holland",
+    "description": "De beroemde kaasstad met deskundige en betaalbare computerhulp",
+    "longDescription": "Alkmaar, wereldberoemd om haar kaasmarkt, is een levendige stad in het hart van Noord-Holland. Onze IT-studenten bieden hier persoonlijke service. Van de historische binnenstad tot Overdie, van De Mare tot Koedijk - en ook in Heerhugowaard, Bergen en Heiloo kunt u op ons rekenen.",
+    "serviceAreas": [
+      "Alkmaar Centrum",
+      "Alkmaar Noord",
+      "Alkmaar Oost",
+      "Overdie",
+      "De Mare",
+      "Koedijk",
+      "Heerhugowaard",
+      "Bergen",
+      "Heiloo",
+      "Castricum"
+    ],
+    "keywords": [
+      "computerhulp Alkmaar",
+      "IT service Alkmaar",
+      "laptop reparatie Alkmaar",
+      "computer problemen Alkmaar",
+      "IT hulp aan huis Alkmaar",
+      "technische ondersteuning Alkmaar",
+      "computer student Alkmaar"
+    ],
+    "coordinates": {
+      "lat": 52.6324,
+      "lng": 4.7534
+    }
+  },
+  {
+    "name": "Amstelveen",
+    "slug": "amstelveen",
+    "population": "91.000",
+    "region": "Noord-Holland",
+    "description": "De groene stad aan de Amstel met snelle IT-hulp bij u thuis",
+    "longDescription": "Amstelveen, de groene en internationale gemeente naast Amsterdam, biedt een hoge kwaliteit van leven. Onze IT-studenten passen hier perfect bij en helpen u graag met al uw computervragen. Van Amstelveen-Centrum tot Westwijk, van Bovenkerk tot Nes aan de Amstel - wij zijn er voor u.",
+    "serviceAreas": [
+      "Amstelveen Centrum",
+      "Amstelveen Noord",
+      "Amstelveen Zuid",
+      "Westwijk",
+      "Bovenkerk",
+      "Nes aan de Amstel",
+      "Bankras-Kostverloren",
+      "Waardhuizen",
+      "Ouderkerk aan de Amstel",
+      "Uithoorn"
+    ],
+    "keywords": [
+      "computerhulp Amstelveen",
+      "IT service Amstelveen",
+      "laptop reparatie Amstelveen",
+      "computer problemen Amstelveen",
+      "IT hulp aan huis Amstelveen",
+      "technische ondersteuning Amstelveen",
+      "computer student Amstelveen"
+    ],
+    "coordinates": {
+      "lat": 52.3012,
+      "lng": 4.8637
+    }
+  },
+  {
+    "name": "Purmerend",
+    "slug": "purmerend",
+    "population": "81.000",
+    "region": "Noord-Holland",
+    "description": "De gezellige Waterlandstad met warme en persoonlijke IT-service",
+    "longDescription": "Purmerend, het hart van Waterland, is een gezellige en snelgroeiende stad boven Amsterdam. Onze studenten komen graag bij u langs voor computerhulp aan huis. Van het centrum tot Weidevenne, van Overwhere tot Wheermolen - en ook in Edam, Volendam en Monnickendam zijn wij actief.",
+    "serviceAreas": [
+      "Purmerend Centrum",
+      "Purmerend Noord",
+      "Purmerend Zuid",
+      "Weidevenne",
+      "Overwhere",
+      "Wheermolen",
+      "Edam-Volendam",
+      "Monnickendam",
+      "Ilpendam",
+      "Beemster"
+    ],
+    "keywords": [
+      "computerhulp Purmerend",
+      "IT service Purmerend",
+      "laptop reparatie Purmerend",
+      "computer problemen Purmerend",
+      "IT hulp aan huis Purmerend",
+      "technische ondersteuning Purmerend",
+      "computer student Purmerend"
+    ],
+    "coordinates": {
+      "lat": 52.5054,
+      "lng": 4.9597
+    }
+  },
+  {
+    "name": "Hoorn",
+    "slug": "hoorn",
+    "population": "74.000",
+    "region": "Noord-Holland",
+    "description": "De historische VOC-stad aan het Markermeer met betrouwbare IT-hulp",
+    "longDescription": "Hoorn, de prachtige VOC-stad aan het Markermeer, combineert rijke historie met een levendige gemeenschap. Onze IT-studenten helpen u graag met computerproblemen. Van de historische binnenstad tot Kersenboogerd, van Risdam tot Blokker - in heel West-Friesland staan wij voor u klaar.",
+    "serviceAreas": [
+      "Hoorn Centrum",
+      "Hoorn Noord",
+      "Kersenboogerd",
+      "Risdam",
+      "Grote Waal",
+      "Blokker",
+      "Zwaag",
+      "Enkhuizen",
+      "Medemblik"
+    ],
+    "keywords": [
+      "computerhulp Hoorn",
+      "IT service Hoorn",
+      "laptop reparatie Hoorn",
+      "computer problemen Hoorn",
+      "IT hulp aan huis Hoorn",
+      "technische ondersteuning Hoorn",
+      "computer student Hoorn"
+    ],
+    "coordinates": {
+      "lat": 52.6424,
+      "lng": 5.0597
+    }
+  },
+  {
+    "name": "Den Helder",
+    "slug": "den-helder",
+    "population": "55.000",
+    "region": "Noord-Holland",
+    "description": "De marinestad aan de Noordzee met vriendelijke IT-service aan huis",
+    "longDescription": "Den Helder, de thuishaven van de Koninklijke Marine aan de punt van Noord-Holland, verdient goede IT-ondersteuning. Onze studenten bieden persoonlijke computerhulp. Van het centrum tot Nieuw-Den Helder, van De Schooten tot Julianadorp - en ook op Texel helpen wij u graag.",
+    "serviceAreas": [
+      "Den Helder Centrum",
+      "Nieuw-Den Helder",
+      "De Schooten",
+      "Julianadorp",
+      "Huisduinen",
+      "Van Foreestbuurt",
+      "Texel",
+      "Schagen",
+      "Anna Paulowna"
+    ],
+    "keywords": [
+      "computerhulp Den Helder",
+      "IT service Den Helder",
+      "laptop reparatie Den Helder",
+      "computer problemen Den Helder",
+      "IT hulp aan huis Den Helder",
+      "technische ondersteuning Den Helder",
+      "computer student Den Helder"
+    ],
+    "coordinates": {
+      "lat": 52.9534,
+      "lng": 4.76
+    }
+  },
+  {
+    "name": "Spijkenisse",
+    "slug": "spijkenisse",
+    "population": "75.000",
+    "region": "Zuid-Holland",
+    "description": "Het hart van Voorne-Putten met snelle en betaalbare IT-hulp",
+    "longDescription": "Spijkenisse, de grootste stad op het eiland Voorne-Putten, is een levendige gemeente ten zuiden van Rotterdam. Onze IT-studenten komen graag bij u langs. Van het centrum tot De Akkers, van Waterland tot Groenewoud - en ook in Hellevoetsluis, Brielle en Geervliet bieden wij computerhulp.",
+    "serviceAreas": [
+      "Spijkenisse Centrum",
+      "De Akkers",
+      "Waterland",
+      "Groenewoud",
+      "Maaswijk",
+      "Vogelenzang",
+      "Hellevoetsluis",
+      "Brielle",
+      "Geervliet",
+      "Hekelingen"
+    ],
+    "keywords": [
+      "computerhulp Spijkenisse",
+      "IT service Spijkenisse",
+      "laptop reparatie Spijkenisse",
+      "computer problemen Spijkenisse",
+      "IT hulp aan huis Spijkenisse",
+      "technische ondersteuning Spijkenisse",
+      "computer student Spijkenisse"
+    ],
+    "coordinates": {
+      "lat": 51.845,
+      "lng": 4.3294
+    }
+  },
+  {
+    "name": "Rijswijk",
+    "slug": "rijswijk",
+    "population": "54.000",
+    "region": "Zuid-Holland",
+    "description": "De compacte stad tussen Den Haag en Delft met vlotte IT-ondersteuning",
+    "longDescription": "Rijswijk, centraal gelegen tussen Den Haag en Delft, is een compacte maar veelzijdige stad. Onze studenten kennen de stad goed en helpen u snel thuis. Van Rijswijk-Centrum tot Ypenburg, van het Plaspoelpolder-gebied tot Bomenbuurt - voor al uw computervragen kunt u bij ons terecht.",
+    "serviceAreas": [
+      "Rijswijk Centrum",
+      "Rijswijk-Zuid",
+      "Ypenburg",
+      "Plaspoelpolder",
+      "Bomenbuurt",
+      "Stervoorde",
+      "Te Werve",
+      "Delft",
+      "Wateringen"
+    ],
+    "keywords": [
+      "computerhulp Rijswijk",
+      "IT service Rijswijk",
+      "laptop reparatie Rijswijk",
+      "computer problemen Rijswijk",
+      "IT hulp aan huis Rijswijk",
+      "technische ondersteuning Rijswijk",
+      "computer student Rijswijk"
+    ],
+    "coordinates": {
+      "lat": 52.0362,
+      "lng": 4.3266
+    }
+  },
+  {
+    "name": "Gorinchem",
+    "slug": "gorinchem",
+    "population": "37.000",
+    "region": "Zuid-Holland",
+    "description": "De vestingstad aan Merwede en Linge met betrouwbare computerhulp",
+    "longDescription": "Gorinchem, de sfeervolle vestingstad waar de Linge in de Merwede stroomt, is het hart van de regio Rivierenland. Onze IT-studenten bieden hier warme, persoonlijke service. Van de historische binnenstad tot Haarwijk, van Stalkaarsen tot Dalem - in heel Gorinchem en omstreken helpen wij u graag.",
+    "serviceAreas": [
+      "Gorinchem Centrum",
+      "Gorinchem Oost",
+      "Gorinchem West",
+      "Haarwijk",
+      "Stalkaarsen",
+      "Dalem",
+      "Leerdam",
+      "Hardinxveld-Giessendam",
+      "Sliedrecht"
+    ],
+    "keywords": [
+      "computerhulp Gorinchem",
+      "IT service Gorinchem",
+      "laptop reparatie Gorinchem",
+      "computer problemen Gorinchem",
+      "IT hulp aan huis Gorinchem",
+      "technische ondersteuning Gorinchem",
+      "computer student Gorinchem"
+    ],
+    "coordinates": {
+      "lat": 51.8342,
+      "lng": 4.9733
+    }
+  },
+  {
+    "name": "Papendrecht",
+    "slug": "papendrecht",
+    "population": "32.000",
+    "region": "Zuid-Holland",
+    "description": "Het vriendelijke dorp aan de Merwede met persoonlijke IT-hulp",
+    "longDescription": "Papendrecht, het gezellige dorp aan de Merwede in de Drechtsteden, biedt een dorps karakter met stedelijke voorzieningen. Onze studenten komen graag bij u thuis voor computerhulp. Van het centrum tot Westpolder, van Kraaihoek tot Molenvliet - en ook in Dordrecht en Sliedrecht zijn wij actief.",
+    "serviceAreas": [
+      "Papendrecht Centrum",
+      "Papendrecht Noord",
+      "Papendrecht West",
+      "Westpolder",
+      "Kraaihoek",
+      "Molenvliet",
+      "Dordrecht",
+      "Sliedrecht",
+      "Alblasserdam"
+    ],
+    "keywords": [
+      "computerhulp Papendrecht",
+      "IT service Papendrecht",
+      "laptop reparatie Papendrecht",
+      "computer problemen Papendrecht",
+      "IT hulp aan huis Papendrecht",
+      "technische ondersteuning Papendrecht",
+      "computer student Papendrecht"
+    ],
+    "coordinates": {
+      "lat": 51.8313,
+      "lng": 4.6861
+    }
+  },
+  {
+    "name": "Maassluis",
+    "slug": "maassluis",
+    "population": "33.000",
+    "region": "Zuid-Holland",
+    "description": "De historische havenstad aan de Waterweg met snelle IT-service",
+    "longDescription": "Maassluis, het pittoreske stadje aan de Nieuwe Waterweg, staat bekend om haar sleepvaarthistorie en gezellige karakter. Onze IT-studenten helpen u graag met computerproblemen. Van het historische centrum tot Koningshoek, van Sluispolder tot Het Balkon - wij zijn snel bij u aan huis.",
+    "serviceAreas": [
+      "Maassluis Centrum",
+      "Koningshoek",
+      "Sluispolder",
+      "Het Balkon",
+      "Wipperspark",
+      "Kapelpolder",
+      "Vlaardingen",
+      "Hoek van Holland",
+      "Schiedam"
+    ],
+    "keywords": [
+      "computerhulp Maassluis",
+      "IT service Maassluis",
+      "laptop reparatie Maassluis",
+      "computer problemen Maassluis",
+      "IT hulp aan huis Maassluis",
+      "technische ondersteuning Maassluis",
+      "computer student Maassluis"
+    ],
+    "coordinates": {
+      "lat": 51.9237,
+      "lng": 4.251
+    }
+  },
+  {
+    "name": "Wassenaar",
+    "slug": "wassenaar",
+    "population": "26.000",
+    "region": "Zuid-Holland",
+    "description": "Het groene en voorname dorp bij Den Haag met discrete IT-ondersteuning",
+    "longDescription": "Wassenaar, het groene en voorname dorp tussen Den Haag en Leiden, is een gemeente met karakter. Onze IT-studenten bieden hier persoonlijke en discrete computerhulp aan huis. Van het Dorp tot Duindigt, van De Kieviet tot Oud-Wassenaar - wij helpen u graag met al uw technische vragen.",
+    "serviceAreas": [
+      "Wassenaar Centrum",
+      "Wassenaar Dorp",
+      "Duindigt",
+      "De Kieviet",
+      "Oud-Wassenaar",
+      "Kasteel De Wittenburg",
+      "Voorschoten",
+      "Leidschendam",
+      "Katwijk"
+    ],
+    "keywords": [
+      "computerhulp Wassenaar",
+      "IT service Wassenaar",
+      "laptop reparatie Wassenaar",
+      "computer problemen Wassenaar",
+      "IT hulp aan huis Wassenaar",
+      "technische ondersteuning Wassenaar",
+      "computer student Wassenaar"
+    ],
+    "coordinates": {
+      "lat": 52.1456,
+      "lng": 4.4014
+    }
+  },
+  {
+    "name": "Voorschoten",
+    "slug": "voorschoten",
+    "population": "26.000",
+    "region": "Zuid-Holland",
+    "description": "Het dorpse karakter tussen Leiden en Den Haag met warme IT-service",
+    "longDescription": "Voorschoten, het gezellige dorp tussen Leiden en Den Haag, combineert landelijke rust met stedelijk gemak. Onze studenten bieden hier vriendelijke computerhulp aan huis. Van het centrum tot de Componistenbuurt, van Krimwijk tot Leidschendam - overal in de omgeving staan wij voor u klaar.",
+    "serviceAreas": [
+      "Voorschoten Centrum",
+      "Voorschoten Noord",
+      "Voorschoten Zuid",
+      "Componistenbuurt",
+      "Krimwijk",
+      "Vlietwijk",
+      "Leidschendam",
+      "Wassenaar",
+      "Leiden"
+    ],
+    "keywords": [
+      "computerhulp Voorschoten",
+      "IT service Voorschoten",
+      "laptop reparatie Voorschoten",
+      "computer problemen Voorschoten",
+      "IT hulp aan huis Voorschoten",
+      "technische ondersteuning Voorschoten",
+      "computer student Voorschoten"
+    ],
+    "coordinates": {
+      "lat": 52.1265,
+      "lng": 4.4499
+    }
+  },
+  {
+    "name": "Veghel",
+    "slug": "veghel",
+    "population": "82.000",
+    "region": "Noord-Brabant",
+    "description": "Het ondernemende hart van de Meierij met betaalbare IT-hulp aan huis",
+    "longDescription": "Veghel, de grootste kern van gemeente Meierijstad en bekend als food-innovatiehoofdstad, bruist van ondernemerschap. Onze IT-studenten helpen u graag thuis met al uw computervragen. Van Veghel-Centrum tot Eerde, van Sint-Oedenrode tot Schijndel - in de hele Meierij bent u bij ons aan het juiste adres.",
+    "serviceAreas": [
+      "Veghel Centrum",
+      "Veghel Noord",
+      "Veghel Zuid",
+      "Eerde",
+      "Zijtaart",
+      "Sint-Oedenrode",
+      "Schijndel",
+      "Erp",
+      "Uden"
+    ],
+    "keywords": [
+      "computerhulp Veghel",
+      "IT service Veghel",
+      "laptop reparatie Veghel",
+      "computer problemen Veghel",
+      "IT hulp aan huis Veghel",
+      "technische ondersteuning Veghel",
+      "computer student Veghel"
+    ],
+    "coordinates": {
+      "lat": 51.6157,
+      "lng": 5.5427
+    }
+  },
+  {
+    "name": "Veldhoven",
+    "slug": "veldhoven",
+    "population": "45.000",
+    "region": "Noord-Brabant",
+    "description": "De technologiegemeente bij Eindhoven met deskundige IT-ondersteuning",
+    "longDescription": "Veldhoven, de groene gemeente naast Eindhoven en thuisbasis van ASML, is een plek waar technologie centraal staat. Onze IT-studenten passen hier perfect bij en helpen u graag thuis. Van het centrum tot Meerveldhoven, van d'Ekker tot Zilverackers - voor snelle computerhulp bent u bij ons aan het juiste adres.",
+    "serviceAreas": [
+      "Veldhoven Centrum",
+      "Veldhoven Noord",
+      "Veldhoven Zuid",
+      "Meerveldhoven",
+      "d'Ekker",
+      "Zilverackers",
+      "Zeelst",
+      "Eindhoven",
+      "Waalre"
+    ],
+    "keywords": [
+      "computerhulp Veldhoven",
+      "IT service Veldhoven",
+      "laptop reparatie Veldhoven",
+      "computer problemen Veldhoven",
+      "IT hulp aan huis Veldhoven",
+      "technische ondersteuning Veldhoven",
+      "computer student Veldhoven"
+    ],
+    "coordinates": {
+      "lat": 51.42,
+      "lng": 5.404
+    }
+  },
+  {
+    "name": "Geldrop-Mierlo",
+    "slug": "geldrop-mierlo",
+    "population": "39.000",
+    "region": "Noord-Brabant",
+    "description": "De groene tweeling bij Eindhoven met persoonlijke computerhulp",
+    "longDescription": "Geldrop-Mierlo, de groene gemeente ten oosten van Eindhoven, combineert dorps wonen met stedelijk gemak. Onze IT-studenten komen graag bij u langs. Van Geldrop-Centrum tot Mierlo, van Braakhuizen tot Zesgehuchten - wij bieden persoonlijke en betaalbare computerhulp in de hele gemeente.",
+    "serviceAreas": [
+      "Geldrop Centrum",
+      "Mierlo Centrum",
+      "Braakhuizen",
+      "Zesgehuchten",
+      "Skandia",
+      "Coevering",
+      "Nuenen",
+      "Heeze",
+      "Eindhoven"
+    ],
+    "keywords": [
+      "computerhulp Geldrop-Mierlo",
+      "IT service Geldrop-Mierlo",
+      "laptop reparatie Geldrop-Mierlo",
+      "computer problemen Geldrop-Mierlo",
+      "IT hulp aan huis Geldrop-Mierlo",
+      "technische ondersteuning Geldrop-Mierlo",
+      "computer student Geldrop-Mierlo"
+    ],
+    "coordinates": {
+      "lat": 51.422,
+      "lng": 5.559
+    }
+  },
+  {
+    "name": "Boxtel",
+    "slug": "boxtel",
+    "population": "32.000",
+    "region": "Noord-Brabant",
+    "description": "Het groene knooppunt in Brabant met vriendelijke IT-service",
+    "longDescription": "Boxtel, het groene knooppunt in het hart van Brabant, is een gezellige gemeente met een rijke natuur. Onze studenten bieden hier warme IT-hulp aan huis. Van het centrum tot Liempde, van Lennisheuvel tot Esch - wij helpen u graag met al uw computerproblemen in een ontspannen sfeer.",
+    "serviceAreas": [
+      "Boxtel Centrum",
+      "Boxtel Noord",
+      "Boxtel Zuid",
+      "Liempde",
+      "Lennisheuvel",
+      "Esch",
+      "Sint-Michielsgestel",
+      "Schijndel",
+      "Best"
+    ],
+    "keywords": [
+      "computerhulp Boxtel",
+      "IT service Boxtel",
+      "laptop reparatie Boxtel",
+      "computer problemen Boxtel",
+      "IT hulp aan huis Boxtel",
+      "technische ondersteuning Boxtel",
+      "computer student Boxtel"
+    ],
+    "coordinates": {
+      "lat": 51.5901,
+      "lng": 5.3282
+    }
+  },
+  {
+    "name": "Best",
+    "slug": "best",
+    "population": "30.000",
+    "region": "Noord-Brabant",
+    "description": "De gezellige Brabantse gemeente bij Eindhoven met snelle IT-hulp",
+    "longDescription": "Best, de gastvrije gemeente tussen Eindhoven en 's-Hertogenbosch, is een fijne plek om te wonen en te werken. Onze IT-studenten helpen u graag thuis. Van het centrum tot Aarle, van Naastenbest tot De Vleut - voor betaalbare en snelle computerhulp in Best en omgeving kunt u op ons rekenen.",
+    "serviceAreas": [
+      "Best Centrum",
+      "Best Noord",
+      "Best Zuid",
+      "Aarle",
+      "Naastenbest",
+      "De Vleut",
+      "Batadorp",
+      "Oirschot",
+      "Son en Breugel"
+    ],
+    "keywords": [
+      "computerhulp Best",
+      "IT service Best",
+      "laptop reparatie Best",
+      "computer problemen Best",
+      "IT hulp aan huis Best",
+      "technische ondersteuning Best",
+      "computer student Best"
+    ],
+    "coordinates": {
+      "lat": 51.5095,
+      "lng": 5.3906
+    }
+  },
+  {
+    "name": "Dongen",
+    "slug": "dongen",
+    "population": "27.000",
+    "region": "Noord-Brabant",
+    "description": "Het Brabantse lederdorp met warme en betaalbare computerhulp",
+    "longDescription": "Dongen, het gezellige Brabantse dorp met een rijke industriegeschiedenis, is een hechte gemeenschap waar persoonlijke service wordt gewaardeerd. Onze studenten komen graag bij u thuis. Van het centrum tot 's Gravenmoer, van Vaart tot Klein-Dongen - wij bieden betrouwbare IT-hulp in heel Dongen.",
+    "serviceAreas": [
+      "Dongen Centrum",
+      "Dongen Noord",
+      "Dongen Zuid",
+      "'s Gravenmoer",
+      "Klein-Dongen",
+      "De Biezen",
+      "Loon op Zand",
+      "Oosterhout",
+      "Waalwijk"
+    ],
+    "keywords": [
+      "computerhulp Dongen",
+      "IT service Dongen",
+      "laptop reparatie Dongen",
+      "computer problemen Dongen",
+      "IT hulp aan huis Dongen",
+      "technische ondersteuning Dongen",
+      "computer student Dongen"
+    ],
+    "coordinates": {
+      "lat": 51.6267,
+      "lng": 4.9388
+    }
+  },
+  {
+    "name": "Cuijk",
+    "slug": "cuijk",
+    "population": "25.000",
+    "region": "Noord-Brabant",
+    "description": "Het gezellige Maasstadje in het Land van Cuijk met persoonlijke IT-service",
+    "longDescription": "Cuijk, het sfeervolle stadje aan de Maas in het noordoosten van Brabant, is het hart van het Land van Cuijk. Onze IT-studenten helpen u graag met computerproblemen aan huis. Van het centrum tot Beers, van Vianen tot Haps - in heel het Land van Cuijk bieden wij betaalbare en vriendelijke service.",
+    "serviceAreas": [
+      "Cuijk Centrum",
+      "Cuijk Noord",
+      "Cuijk Zuid",
+      "Beers",
+      "Vianen",
+      "Haps",
+      "Grave",
+      "Mill",
+      "Boxmeer"
+    ],
+    "keywords": [
+      "computerhulp Cuijk",
+      "IT service Cuijk",
+      "laptop reparatie Cuijk",
+      "computer problemen Cuijk",
+      "IT hulp aan huis Cuijk",
+      "technische ondersteuning Cuijk",
+      "computer student Cuijk"
+    ],
+    "coordinates": {
+      "lat": 51.73,
+      "lng": 5.88
+    }
+  },
+  {
+    "name": "Westland",
+    "slug": "westland",
+    "population": "118.000",
+    "region": "Zuid-Holland",
+    "description": "De glastuinbouwgemeente waar onze studenten u graag helpen met al uw IT-vragen",
+    "longDescription": "In het Westland, bekend om zijn eindeloze kassen en ondernemende geest, bieden onze IT-studenten persoonlijke computerhulp aan huis. Van Naaldwijk tot Monster, van 's-Gravenzande tot Wateringen - wij staan klaar voor alle inwoners van deze dynamische gemeente. Of u nu een ondernemer bent die hulp nodig heeft met de bedrijfscomputer of een thuisgebruiker met Wi-Fi-problemen, wij komen graag langs.",
+    "serviceAreas": [
+      "Naaldwijk",
+      "Monster",
+      "'s-Gravenzande",
+      "Wateringen",
+      "De Lier",
+      "Honselersdijk",
+      "Poeldijk",
+      "Kwintsheul",
+      "Ter Heijde",
+      "Maasdijk"
+    ],
+    "keywords": [
+      "computerhulp Westland",
+      "IT service Westland",
+      "laptop reparatie Westland",
+      "computer problemen Westland",
+      "IT hulp aan huis Westland",
+      "technische ondersteuning Westland",
+      "computer student Westland"
+    ],
+    "coordinates": {
+      "lat": 51.9967,
+      "lng": 4.2273
+    }
+  },
+  {
+    "name": "Hoeksche Waard",
+    "slug": "hoeksche-waard",
+    "population": "91.000",
+    "region": "Zuid-Holland",
+    "description": "Het eiland in de delta waar wij betrouwbare IT-hulp aan huis bieden",
+    "longDescription": "De Hoeksche Waard, een prachtig eiland omringd door rivieren, verdient IT-service die net zo betrouwbaar is als de dijken. Onze studenten komen graag naar Oud-Beijerland, Strijen, Numansdorp en alle andere kernen op het eiland. Of het nu gaat om een trage laptop of hulp bij het opzetten van uw thuisnetwerk, wij zijn er voor u.",
+    "serviceAreas": [
+      "Oud-Beijerland",
+      "Strijen",
+      "Numansdorp",
+      "Klaaswaal",
+      "'s-Gravendeel",
+      "Puttershoek",
+      "Piershil",
+      "Zuid-Beijerland",
+      "Maasdam",
+      "Westmaas"
+    ],
+    "keywords": [
+      "computerhulp Hoeksche Waard",
+      "IT service Hoeksche Waard",
+      "laptop reparatie Hoeksche Waard",
+      "computer problemen Hoeksche Waard",
+      "IT hulp aan huis Hoeksche Waard",
+      "technische ondersteuning Hoeksche Waard",
+      "computer student Hoeksche Waard"
+    ],
+    "coordinates": {
+      "lat": 51.7711,
+      "lng": 4.4604
+    }
+  },
+  {
+    "name": "Voorne aan Zee",
+    "slug": "voorne-aan-zee",
+    "population": "75.000",
+    "region": "Zuid-Holland",
+    "description": "De kustgemeente bij Hellevoetsluis en Brielle met persoonlijke IT-service aan huis",
+    "longDescription": "Voorne aan Zee, de gemeente die Hellevoetsluis, Brielle en Westvoorne verenigt, kan rekenen op onze vriendelijke IT-studenten. Van de historische vesting Brielle tot de boulevard van Hellevoetsluis en de stranden van Rockanje - overal komen wij langs voor computerhulp. Wij helpen u graag met al uw digitale uitdagingen in deze mooie kustgemeente.",
+    "serviceAreas": [
+      "Hellevoetsluis",
+      "Brielle",
+      "Rockanje",
+      "Oostvoorne",
+      "Vierpolders",
+      "Zwartewaal",
+      "Nieuwenhoorn",
+      "Tinte"
+    ],
+    "keywords": [
+      "computerhulp Voorne aan Zee",
+      "IT service Voorne aan Zee",
+      "laptop reparatie Voorne aan Zee",
+      "computer problemen Voorne aan Zee",
+      "IT hulp aan huis Voorne aan Zee",
+      "technische ondersteuning Voorne aan Zee",
+      "computer student Voorne aan Zee"
+    ],
+    "coordinates": {
+      "lat": 51.869,
+      "lng": 4.1637
+    }
+  },
+  {
+    "name": "Lansingerland",
+    "slug": "lansingerland",
+    "population": "66.000",
+    "region": "Zuid-Holland",
+    "description": "De groeiende gemeente tussen Rotterdam en Zoetermeer met snelle IT-hulp aan huis",
+    "longDescription": "Lansingerland, bestaande uit Berkel en Rodenrijs, Bergschenhoek en Bleiswijk, groeit snel en de behoefte aan goede IT-ondersteuning groeit mee. Onze studenten kennen de gemeente goed en helpen inwoners in alle drie de kernen met computerproblemen. Van Wi-Fi-installatie tot laptopherstel, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Berkel en Rodenrijs",
+      "Bergschenhoek",
+      "Bleiswijk",
+      "Noordeinde",
+      "Kruisweg",
+      "Rotte",
+      "Wilderszijde"
+    ],
+    "keywords": [
+      "computerhulp Lansingerland",
+      "IT service Lansingerland",
+      "laptop reparatie Lansingerland",
+      "computer problemen Lansingerland",
+      "IT hulp aan huis Lansingerland",
+      "technische ondersteuning Lansingerland",
+      "computer student Lansingerland"
+    ],
+    "coordinates": {
+      "lat": 51.9931,
+      "lng": 4.4787
+    }
+  },
+  {
+    "name": "Pijnacker-Nootdorp",
+    "slug": "pijnacker-nootdorp",
+    "population": "58.000",
+    "region": "Zuid-Holland",
+    "description": "De groene gemeente tussen Delft en Den Haag waar wij graag IT-hulp bieden",
+    "longDescription": "Pijnacker-Nootdorp ligt ideaal gelegen tussen Delft, Den Haag en Zoetermeer, en onze IT-studenten komen graag langs in deze prettige woongemeente. Of u nu in Pijnacker-Zuid woont, in Nootdorp of in de nieuwbouwwijk Ackerswoude - wij helpen u snel en vakkundig met al uw computervragen.",
+    "serviceAreas": [
+      "Pijnacker",
+      "Nootdorp",
+      "Delfgauw",
+      "Ackerswoude",
+      "Pijnacker-Zuid",
+      "Klapwijk",
+      "Emerald"
+    ],
+    "keywords": [
+      "computerhulp Pijnacker-Nootdorp",
+      "IT service Pijnacker-Nootdorp",
+      "laptop reparatie Pijnacker-Nootdorp",
+      "computer problemen Pijnacker-Nootdorp",
+      "IT hulp aan huis Pijnacker-Nootdorp",
+      "technische ondersteuning Pijnacker-Nootdorp",
+      "computer student Pijnacker-Nootdorp"
+    ],
+    "coordinates": {
+      "lat": 52.0317,
+      "lng": 4.415
+    }
+  },
+  {
+    "name": "Krimpenerwaard",
+    "slug": "krimpenerwaard",
+    "population": "57.000",
+    "region": "Zuid-Holland",
+    "description": "De poldergemeente met Schoonhoven waar onze studenten u persoonlijk helpen",
+    "longDescription": "De Krimpenerwaard, het groene hart van Zuid-Holland met de zilverstad Schoonhoven als bekendste kern, kan rekenen op onze IT-studenten. Van Bergambacht tot Lekkerkerk, van Haastrecht tot Stolwijk - in alle dorpen bieden wij vriendelijke computerhulp aan huis. Wij zorgen dat u weer zorgeloos kunt internetten en werken.",
+    "serviceAreas": [
+      "Schoonhoven",
+      "Bergambacht",
+      "Lekkerkerk",
+      "Haastrecht",
+      "Stolwijk",
+      "Vlist",
+      "Ammerstol",
+      "Berkenwoude",
+      "Gouderak"
+    ],
+    "keywords": [
+      "computerhulp Krimpenerwaard",
+      "IT service Krimpenerwaard",
+      "laptop reparatie Krimpenerwaard",
+      "computer problemen Krimpenerwaard",
+      "IT hulp aan huis Krimpenerwaard",
+      "technische ondersteuning Krimpenerwaard",
+      "computer student Krimpenerwaard"
+    ],
+    "coordinates": {
+      "lat": 51.9524,
+      "lng": 4.7372
+    }
+  },
+  {
+    "name": "Goeree-Overflakkee",
+    "slug": "goeree-overflakkee",
+    "population": "52.000",
+    "region": "Zuid-Holland",
+    "description": "Het Zuid-Hollandse eiland waar wij betrouwbare IT-hulp aan huis verzorgen",
+    "longDescription": "Goeree-Overflakkee, het mooie eiland in de Zuidwestelijke delta, heeft recht op dezelfde goede IT-service als de grote steden. Onze studenten reizen graag naar Middelharnis, Sommelsdijk, Ouddorp en Goedereede om u te helpen met computerproblemen. Van het opzetten van een nieuw apparaat tot het verhelpen van internetproblemen, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Middelharnis",
+      "Sommelsdijk",
+      "Ouddorp",
+      "Goedereede",
+      "Dirksland",
+      "Stellendam",
+      "Oude-Tonge",
+      "Nieuwe-Tonge",
+      "Stad aan 't Haringvliet",
+      "Ooltgensplaat"
+    ],
+    "keywords": [
+      "computerhulp Goeree-Overflakkee",
+      "IT service Goeree-Overflakkee",
+      "laptop reparatie Goeree-Overflakkee",
+      "computer problemen Goeree-Overflakkee",
+      "IT hulp aan huis Goeree-Overflakkee",
+      "technische ondersteuning Goeree-Overflakkee",
+      "computer student Goeree-Overflakkee"
+    ],
+    "coordinates": {
+      "lat": 51.75,
+      "lng": 4.12
+    }
+  },
+  {
+    "name": "Zuidplas",
+    "slug": "zuidplas",
+    "population": "49.000",
+    "region": "Zuid-Holland",
+    "description": "De gemeente bij Nieuwerkerk aan den IJssel met vlotte IT-hulp aan huis",
+    "longDescription": "Zuidplas, de gemeente in het Groene Hart met Nieuwerkerk aan den IJssel als grootste kern, groeit gestaag en wij groeien mee. Onze IT-studenten helpen inwoners in Moordrecht, Zevenhuizen en Moerkapelle net zo graag als in Nieuwerkerk. Snel, vriendelijk en vakkundig - zo kennen onze klanten ons.",
+    "serviceAreas": [
+      "Nieuwerkerk aan den IJssel",
+      "Moordrecht",
+      "Zevenhuizen",
+      "Moerkapelle",
+      "Oud Verlaat",
+      "Westergouwe"
+    ],
+    "keywords": [
+      "computerhulp Zuidplas",
+      "IT service Zuidplas",
+      "laptop reparatie Zuidplas",
+      "computer problemen Zuidplas",
+      "IT hulp aan huis Zuidplas",
+      "technische ondersteuning Zuidplas",
+      "computer student Zuidplas"
+    ],
+    "coordinates": {
+      "lat": 51.9643,
+      "lng": 4.6215
+    }
+  },
+  {
+    "name": "Barendrecht",
+    "slug": "barendrecht",
+    "population": "48.000",
+    "region": "Zuid-Holland",
+    "description": "De gezellige gemeente onder Rotterdam met snelle en persoonlijke IT-service",
+    "longDescription": "Barendrecht, gelegen net ten zuiden van Rotterdam, is een fijne gemeente waar onze studenten graag IT-hulp aan huis bieden. Van het centrum tot Carnisselande, van de Oranjewijk tot Vrouwenpolder - overal in Barendrecht komen wij langs. Wij helpen u met plezier bij computerproblemen, printerinstallatie of het beveiligen van uw netwerk.",
+    "serviceAreas": [
+      "Barendrecht Centrum",
+      "Carnisselande",
+      "Vrouwenpolder",
+      "Oranjewijk",
+      "Riederhoek",
+      "Buitenoord",
+      "Molenvliet"
+    ],
+    "keywords": [
+      "computerhulp Barendrecht",
+      "IT service Barendrecht",
+      "laptop reparatie Barendrecht",
+      "computer problemen Barendrecht",
+      "IT hulp aan huis Barendrecht",
+      "technische ondersteuning Barendrecht",
+      "computer student Barendrecht"
+    ],
+    "coordinates": {
+      "lat": 51.8567,
+      "lng": 4.5347
+    }
+  },
+  {
+    "name": "Ridderkerk",
+    "slug": "ridderkerk",
+    "population": "48.000",
+    "region": "Zuid-Holland",
+    "description": "De centraal gelegen gemeente op het eiland IJsselmonde met IT-hulp op maat",
+    "longDescription": "Ridderkerk, gelegen op het eiland IJsselmonde tussen Rotterdam en Dordrecht, is uitstekend bereikbaar en onze studenten zijn er dan ook snel. Van Drievliet tot Bolnes, van het centrum tot Slikkerveer - wij bieden overal in Ridderkerk persoonlijke computerhulp. Geen probleem is ons te groot of te klein.",
+    "serviceAreas": [
+      "Ridderkerk Centrum",
+      "Drievliet",
+      "Bolnes",
+      "Slikkerveer",
+      "Rijsoord",
+      "Donkersloot",
+      "Ridderkerk-West",
+      "Ridderkerk-Oost"
+    ],
+    "keywords": [
+      "computerhulp Ridderkerk",
+      "IT service Ridderkerk",
+      "laptop reparatie Ridderkerk",
+      "computer problemen Ridderkerk",
+      "IT hulp aan huis Ridderkerk",
+      "technische ondersteuning Ridderkerk",
+      "computer student Ridderkerk"
+    ],
+    "coordinates": {
+      "lat": 51.8667,
+      "lng": 4.6
+    }
+  },
+  {
+    "name": "Noordwijk",
+    "slug": "noordwijk",
+    "population": "46.000",
+    "region": "Zuid-Holland",
+    "description": "De badplaats in de Bollenstreek waar wij u graag helpen met IT aan huis",
+    "longDescription": "Noordwijk, geliefd om zijn strand en de prachtige bollenvelden, kan rekenen op onze IT-studenten voor alle computerhulp aan huis. Of u nu in Noordwijk aan Zee woont, in Noordwijk-Binnen of in het groene Noordwijkerhout - wij komen graag langs. Van hulp bij uw laptop tot het instellen van smart-home apparaten, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Noordwijk aan Zee",
+      "Noordwijk-Binnen",
+      "Noordwijkerhout",
+      "De Zilk",
+      "Langeveld",
+      "Offem",
+      "Boechorst"
+    ],
+    "keywords": [
+      "computerhulp Noordwijk",
+      "IT service Noordwijk",
+      "laptop reparatie Noordwijk",
+      "computer problemen Noordwijk",
+      "IT hulp aan huis Noordwijk",
+      "technische ondersteuning Noordwijk",
+      "computer student Noordwijk"
+    ],
+    "coordinates": {
+      "lat": 52.24,
+      "lng": 4.45
+    }
+  },
+  {
+    "name": "Molenlanden",
+    "slug": "molenlanden",
+    "population": "45.000",
+    "region": "Zuid-Holland",
+    "description": "De gemeente van Kinderdijk en de Alblasserwaard met warme IT-hulp aan huis",
+    "longDescription": "Molenlanden, thuisbasis van het wereldberoemde Kinderdijk, is een gemeente waar dorpsgevoel en gemeenschapszin centraal staan. Onze IT-studenten passen daar perfect bij en helpen inwoners in Groot-Ammers, Bleskensgraaf, Nieuw-Lekkerland en alle andere kernen. Wij bieden persoonlijke computerhulp waar u zich thuis bij voelt.",
+    "serviceAreas": [
+      "Groot-Ammers",
+      "Bleskensgraaf",
+      "Nieuw-Lekkerland",
+      "Kinderdijk",
+      "Oud-Alblas",
+      "Brandwijk",
+      "Molenaarsgraaf",
+      "Goudriaan",
+      "Streefkerk",
+      "Wijngaarden"
+    ],
+    "keywords": [
+      "computerhulp Molenlanden",
+      "IT service Molenlanden",
+      "laptop reparatie Molenlanden",
+      "computer problemen Molenlanden",
+      "IT hulp aan huis Molenlanden",
+      "technische ondersteuning Molenlanden",
+      "computer student Molenlanden"
+    ],
+    "coordinates": {
+      "lat": 51.87,
+      "lng": 4.86
+    }
+  },
+  {
+    "name": "Zwijndrecht",
+    "slug": "zwijndrecht",
+    "population": "44.000",
+    "region": "Zuid-Holland",
+    "description": "De Drechtstadgemeente aan de Oude Maas met persoonlijke IT-service",
+    "longDescription": "Zwijndrecht, onderdeel van de Drechtsteden en gelegen aan de Oude Maas, is een compacte gemeente waar onze studenten snel bij u zijn. Van Zwijndrecht Centrum tot Walburg, van Nederhoven tot Ontwikkeling - wij bieden in alle wijken betrouwbare computerhulp. Snel, betaalbaar en altijd met een glimlach.",
+    "serviceAreas": [
+      "Zwijndrecht Centrum",
+      "Walburg",
+      "Nederhoven",
+      "Ontwikkeling",
+      "Kort Ambacht",
+      "Heer Oudelands Ambacht",
+      "Groote Lindt"
+    ],
+    "keywords": [
+      "computerhulp Zwijndrecht",
+      "IT service Zwijndrecht",
+      "laptop reparatie Zwijndrecht",
+      "computer problemen Zwijndrecht",
+      "IT hulp aan huis Zwijndrecht",
+      "technische ondersteuning Zwijndrecht",
+      "computer student Zwijndrecht"
+    ],
+    "coordinates": {
+      "lat": 51.8175,
+      "lng": 4.6333
+    }
+  },
+  {
+    "name": "Teylingen",
+    "slug": "teylingen",
+    "population": "38.000",
+    "region": "Zuid-Holland",
+    "description": "De Bollenstreekgemeente met Sassenheim en Voorhout waar wij IT-hulp aan huis bieden",
+    "longDescription": "Teylingen, bestaande uit de gezellige kernen Sassenheim, Voorhout en Warmond, ligt middenin de kleurrijke Bollenstreek. Onze IT-studenten kennen de gemeente goed en helpen inwoners in alle drie de dorpen met plezier. Van een nieuwe laptop instellen tot het oplossen van e-mailproblemen, wij staan altijd voor u klaar.",
+    "serviceAreas": [
+      "Sassenheim",
+      "Voorhout",
+      "Warmond",
+      "Sassenheim-Noord",
+      "Sassenheim-Zuid",
+      "Voorhout-West",
+      "Voorhout-Oost"
+    ],
+    "keywords": [
+      "computerhulp Teylingen",
+      "IT service Teylingen",
+      "laptop reparatie Teylingen",
+      "computer problemen Teylingen",
+      "IT hulp aan huis Teylingen",
+      "technische ondersteuning Teylingen",
+      "computer student Teylingen"
+    ],
+    "coordinates": {
+      "lat": 52.225,
+      "lng": 4.5222
+    }
+  },
+  {
+    "name": "Bodegraven-Reeuwijk",
+    "slug": "bodegraven-reeuwijk",
+    "population": "37.000",
+    "region": "Zuid-Holland",
+    "description": "De Groene Hart-gemeente bij de Reeuwijkse Plassen met IT-hulp op maat",
+    "longDescription": "Bodegraven-Reeuwijk, prachtig gelegen in het Groene Hart bij de Reeuwijkse Plassen, is een heerlijke gemeente om te wonen en te werken. Onze IT-studenten helpen inwoners in Bodegraven, Reeuwijk-Dorp en Reeuwijk-Brug met alle computervragen. Of u nu moeite heeft met uw printer of hulp nodig heeft bij het beveiligen van uw online accounts, wij komen graag langs.",
+    "serviceAreas": [
+      "Bodegraven",
+      "Reeuwijk-Dorp",
+      "Reeuwijk-Brug",
+      "Nieuwerbrug",
+      "Driebruggen",
+      "Waarder",
+      "Tempel"
+    ],
+    "keywords": [
+      "computerhulp Bodegraven-Reeuwijk",
+      "IT service Bodegraven-Reeuwijk",
+      "laptop reparatie Bodegraven-Reeuwijk",
+      "computer problemen Bodegraven-Reeuwijk",
+      "IT hulp aan huis Bodegraven-Reeuwijk",
+      "technische ondersteuning Bodegraven-Reeuwijk",
+      "computer student Bodegraven-Reeuwijk"
+    ],
+    "coordinates": {
+      "lat": 52.0654,
+      "lng": 4.7663
+    }
+  },
+  {
+    "name": "Waddinxveen",
+    "slug": "waddinxveen",
+    "population": "35.000",
+    "region": "Zuid-Holland",
+    "description": "De gezellige gemeente aan de Gouwe met snelle en vriendelijke IT-hulp",
+    "longDescription": "Waddinxveen, gelegen aan de rivier de Gouwe tussen Gouda en Boskoop, is een fijne gemeente waar onze IT-studenten u graag helpen. Van het centrum tot de nieuwbouwwijken, van de Vondelwijk tot het Zuidpunt - overal in Waddinxveen bieden wij persoonlijke computerhulp. Wij lossen uw IT-problemen snel en vakkundig op.",
+    "serviceAreas": [
+      "Waddinxveen Centrum",
+      "Vondelwijk",
+      "Zuidpunt",
+      "Groenswaard",
+      "Triangel",
+      "Bomenwijk",
+      "Noordkade"
+    ],
+    "keywords": [
+      "computerhulp Waddinxveen",
+      "IT service Waddinxveen",
+      "laptop reparatie Waddinxveen",
+      "computer problemen Waddinxveen",
+      "IT hulp aan huis Waddinxveen",
+      "technische ondersteuning Waddinxveen",
+      "computer student Waddinxveen"
+    ],
+    "coordinates": {
+      "lat": 52.0316,
+      "lng": 4.6546
+    }
+  },
+  {
+    "name": "Hendrik-Ido-Ambacht",
+    "slug": "hendrik-ido-ambacht",
+    "population": "33.000",
+    "region": "Zuid-Holland",
+    "description": "De compacte Drechtstadgemeente met persoonlijke en snelle IT-service",
+    "longDescription": "Hendrik-Ido-Ambacht, een van de gezellige Drechtsteden, is een compacte gemeente waar onze studenten snel bij u aan de deur staan. Van het oude dorp tot Volgerlanden, van Sandelingen tot De Volgerlanden-West - wij bieden in alle wijken vriendelijke IT-hulp aan huis. Klein genoeg om persoonlijk te zijn, groot genoeg voor professionele service.",
+    "serviceAreas": [
+      "Hendrik-Ido-Ambacht Centrum",
+      "Volgerlanden",
+      "Sandelingen-Ambacht",
+      "Boveneind",
+      "Oostendam",
+      "De Volgerlanden-West"
+    ],
+    "keywords": [
+      "computerhulp Hendrik-Ido-Ambacht",
+      "IT service Hendrik-Ido-Ambacht",
+      "laptop reparatie Hendrik-Ido-Ambacht",
+      "computer problemen Hendrik-Ido-Ambacht",
+      "IT hulp aan huis Hendrik-Ido-Ambacht",
+      "technische ondersteuning Hendrik-Ido-Ambacht",
+      "computer student Hendrik-Ido-Ambacht"
+    ],
+    "coordinates": {
+      "lat": 51.8442,
+      "lng": 4.6389
+    }
+  },
+  {
+    "name": "Krimpen aan den IJssel",
+    "slug": "krimpen-aan-den-ijssel",
+    "population": "29.000",
+    "region": "Zuid-Holland",
+    "description": "Het dorp aan de IJssel waar wij u graag helpen met al uw computervragen",
+    "longDescription": "Krimpen aan den IJssel, het gezellige dorp aan de monding van de Hollandsche IJssel, is een hechte gemeenschap waar persoonlijke service gewaardeerd wordt. Onze IT-studenten passen daar perfect bij en helpen u graag in alle wijken, van het Centrum tot Langeland en van de Oud Krimpen tot de Stormpolder. Wij lossen uw computerproblemen snel en met een glimlach op.",
+    "serviceAreas": [
+      "Krimpen Centrum",
+      "Langeland",
+      "Oud Krimpen",
+      "Stormpolder",
+      "Laning",
+      "Kortland"
+    ],
+    "keywords": [
+      "computerhulp Krimpen aan den IJssel",
+      "IT service Krimpen aan den IJssel",
+      "laptop reparatie Krimpen aan den IJssel",
+      "computer problemen Krimpen aan den IJssel",
+      "IT hulp aan huis Krimpen aan den IJssel",
+      "technische ondersteuning Krimpen aan den IJssel",
+      "computer student Krimpen aan den IJssel"
+    ],
+    "coordinates": {
+      "lat": 51.9167,
+      "lng": 4.6028
+    }
+  },
+  {
+    "name": "Nieuwkoop",
+    "slug": "nieuwkoop",
+    "population": "29.000",
+    "region": "Zuid-Holland",
+    "description": "De Groene Hart-gemeente bij de Nieuwkoopse Plassen met IT-hulp aan huis",
+    "longDescription": "Nieuwkoop, gelegen bij de prachtige Nieuwkoopse Plassen in het Groene Hart, is een rustige en groene gemeente waar onze studenten graag langskomen. Van Nieuwkoop tot Ter Aar, van Noorden tot Zevenhoven - wij bieden in alle kernen persoonlijke computerhulp. Of u nu hulp nodig heeft met uw tablet, laptop of smart-tv, wij zijn er voor u.",
+    "serviceAreas": [
+      "Nieuwkoop",
+      "Ter Aar",
+      "Noorden",
+      "Zevenhoven",
+      "Nieuwveen",
+      "Langeraar",
+      "Woerdense Verlaat",
+      "Papenveer"
+    ],
+    "keywords": [
+      "computerhulp Nieuwkoop",
+      "IT service Nieuwkoop",
+      "laptop reparatie Nieuwkoop",
+      "computer problemen Nieuwkoop",
+      "IT hulp aan huis Nieuwkoop",
+      "technische ondersteuning Nieuwkoop",
+      "computer student Nieuwkoop"
+    ],
+    "coordinates": {
+      "lat": 52.15,
+      "lng": 4.77
+    }
+  },
+  {
+    "name": "Kaag en Braassem",
+    "slug": "kaag-en-braassem",
+    "population": "29.000",
+    "region": "Zuid-Holland",
+    "description": "De waterrijke gemeente bij het Kagerplassengebied met vriendelijke IT-service",
+    "longDescription": "Kaag en Braassem, de waterrijke gemeente rondom de Kagerplassen en het Braassemermeer, biedt een prachtige woonomgeving. Onze IT-studenten komen graag naar Roelofarendsveen, Oude Wetering, Leimuiden en de andere dorpen om u te helpen met computerproblemen. Persoonlijke service in een persoonlijke gemeente - dat past bij ons.",
+    "serviceAreas": [
+      "Roelofarendsveen",
+      "Oude Wetering",
+      "Leimuiden",
+      "Rijnsaterwoude",
+      "Kaag",
+      "Bilderdam",
+      "Hoogmade",
+      "Woubrugge"
+    ],
+    "keywords": [
+      "computerhulp Kaag en Braassem",
+      "IT service Kaag en Braassem",
+      "laptop reparatie Kaag en Braassem",
+      "computer problemen Kaag en Braassem",
+      "IT hulp aan huis Kaag en Braassem",
+      "technische ondersteuning Kaag en Braassem",
+      "computer student Kaag en Braassem"
+    ],
+    "coordinates": {
+      "lat": 52.19,
+      "lng": 4.65
+    }
+  },
+  {
+    "name": "Leiderdorp",
+    "slug": "leiderdorp",
+    "population": "27.000",
+    "region": "Zuid-Holland",
+    "description": "De gemeente naast Leiden waar onze studenten snel en persoonlijk IT-hulp bieden",
+    "longDescription": "Leiderdorp, direct naast Leiden gelegen, is een fijne woongemeente waar onze IT-studenten binnen een mum van tijd bij u zijn. Van de Bloemerd tot Buitenhof, van De Houtkamp tot de Munnikkensteeg - in elke wijk bieden wij vriendelijke computerhulp aan huis. Profiteer van onze nabijheid tot de universiteitsstad en onze betaalbare IT-service.",
+    "serviceAreas": [
+      "Leiderdorp Centrum",
+      "Bloemerd",
+      "Buitenhof",
+      "De Houtkamp",
+      "Elisabethhof",
+      "Ouderzorg",
+      "Voorhof"
+    ],
+    "keywords": [
+      "computerhulp Leiderdorp",
+      "IT service Leiderdorp",
+      "laptop reparatie Leiderdorp",
+      "computer problemen Leiderdorp",
+      "IT hulp aan huis Leiderdorp",
+      "technische ondersteuning Leiderdorp",
+      "computer student Leiderdorp"
+    ],
+    "coordinates": {
+      "lat": 52.1583,
+      "lng": 4.5292
+    }
+  },
+  {
+    "name": "Albrandswaard",
+    "slug": "albrandswaard",
+    "population": "26.000",
+    "region": "Zuid-Holland",
+    "description": "De groene gemeente onder Rotterdam met warme IT-hulp aan huis",
+    "longDescription": "Albrandswaard, gelegen ten zuiden van Rotterdam met Poortugaal en Rhoon als belangrijkste kernen, is een fijne groene gemeente. Onze IT-studenten helpen inwoners graag met al hun computervragen, of u nu in Portland woont, in het oude hart van Rhoon of in Poortugaal. Betaalbaar, betrouwbaar en altijd persoonlijk.",
+    "serviceAreas": [
+      "Poortugaal",
+      "Rhoon",
+      "Portland",
+      "Rhoon Centrum",
+      "Poortugaal Centrum",
+      "Albrandswaard-West"
+    ],
+    "keywords": [
+      "computerhulp Albrandswaard",
+      "IT service Albrandswaard",
+      "laptop reparatie Albrandswaard",
+      "computer problemen Albrandswaard",
+      "IT hulp aan huis Albrandswaard",
+      "technische ondersteuning Albrandswaard",
+      "computer student Albrandswaard"
+    ],
+    "coordinates": {
+      "lat": 51.86,
+      "lng": 4.41
+    }
+  },
+  {
+    "name": "Sliedrecht",
+    "slug": "sliedrecht",
+    "population": "26.000",
+    "region": "Zuid-Holland",
+    "description": "Het baggerdorp aan de Merwede met betrouwbare IT-hulp aan huis",
+    "longDescription": "Sliedrecht, wereldberoemd als baggerhoofdstad en gelegen langs de Beneden-Merwede, is een gemeente met een sterk gemeenschapsgevoel. Onze IT-studenten voelen zich daar thuis en helpen inwoners in alle wijken graag. Van Sliedrecht-Oost tot het Centrum, van de Baanhoek tot Sliedrecht-West - wij komen langs voor al uw computerproblemen.",
+    "serviceAreas": [
+      "Sliedrecht Centrum",
+      "Sliedrecht-Oost",
+      "Sliedrecht-West",
+      "Baanhoek",
+      "De Lock",
+      "Merwestein"
+    ],
+    "keywords": [
+      "computerhulp Sliedrecht",
+      "IT service Sliedrecht",
+      "laptop reparatie Sliedrecht",
+      "computer problemen Sliedrecht",
+      "IT hulp aan huis Sliedrecht",
+      "technische ondersteuning Sliedrecht",
+      "computer student Sliedrecht"
+    ],
+    "coordinates": {
+      "lat": 51.8249,
+      "lng": 4.7732
+    }
+  },
+  {
+    "name": "Oegstgeest",
+    "slug": "oegstgeest",
+    "population": "26.000",
+    "region": "Zuid-Holland",
+    "description": "Het groene dorp naast Leiden met persoonlijke en vakkundige IT-service",
+    "longDescription": "Oegstgeest, het groene en rustige dorp direct naast Leiden, staat bekend om zijn prettige woonomgeving. Onze IT-studenten helpen de inwoners van Oegstgeest graag met alle digitale uitdagingen. Van de Haaswijk tot Poelgeest, van het Wilhelminapark tot Nieuw-Rhijngeest - wij bieden snelle en vriendelijke computerhulp aan huis.",
+    "serviceAreas": [
+      "Oegstgeest Centrum",
+      "Haaswijk",
+      "Poelgeest",
+      "Wilhelminapark",
+      "Nieuw-Rhijngeest",
+      "Morsebel",
+      "Oudenhof"
+    ],
+    "keywords": [
+      "computerhulp Oegstgeest",
+      "IT service Oegstgeest",
+      "laptop reparatie Oegstgeest",
+      "computer problemen Oegstgeest",
+      "IT hulp aan huis Oegstgeest",
+      "technische ondersteuning Oegstgeest",
+      "computer student Oegstgeest"
+    ],
+    "coordinates": {
+      "lat": 52.18,
+      "lng": 4.4694
+    }
+  },
+  {
+    "name": "Lisse",
+    "slug": "lisse",
+    "population": "23.000",
+    "region": "Zuid-Holland",
+    "description": "De Keukenhofgemeente in de Bollenstreek met warme IT-hulp aan huis",
+    "longDescription": "Lisse, de thuisbasis van de wereldberoemde Keukenhof en het hart van de Bollenstreek, is een bloeiende gemeente. Onze IT-studenten helpen inwoners in het centrum, de Poelpolder en alle andere wijken met plezier. Van het instellen van een nieuwe laptop tot het oplossen van Wi-Fi-problemen tussen de bollenvelden - wij staan voor u klaar.",
+    "serviceAreas": [
+      "Lisse Centrum",
+      "Poelpolder",
+      "Meer en Dorp",
+      "Keukenhof-omgeving",
+      "Lisserbroek",
+      "Heereweg-gebied"
+    ],
+    "keywords": [
+      "computerhulp Lisse",
+      "IT service Lisse",
+      "laptop reparatie Lisse",
+      "computer problemen Lisse",
+      "IT hulp aan huis Lisse",
+      "technische ondersteuning Lisse",
+      "computer student Lisse"
+    ],
+    "coordinates": {
+      "lat": 52.26,
+      "lng": 4.5567
+    }
+  },
+  {
+    "name": "Hillegom",
+    "slug": "hillegom",
+    "population": "23.000",
+    "region": "Zuid-Holland",
+    "description": "Het Bollenstreekdorp waar onze studenten u helpen met alle IT-problemen",
+    "longDescription": "Hillegom, gelegen in het noordelijke deel van de Bollenstreek, is een gezellig dorp met een eigen karakter. Onze IT-studenten komen graag naar Hillegom voor computerhulp aan huis. Of u nu in het centrum woont, in de Elsbroek of bij de Ringvaart - wij helpen u snel en vakkundig met al uw digitale vragen.",
+    "serviceAreas": [
+      "Hillegom Centrum",
+      "Elsbroek",
+      "Hillegom-Noord",
+      "Hillegom-Zuid",
+      "Pastoorslaan-gebied",
+      "Ringvaart-omgeving"
+    ],
+    "keywords": [
+      "computerhulp Hillegom",
+      "IT service Hillegom",
+      "laptop reparatie Hillegom",
+      "computer problemen Hillegom",
+      "IT hulp aan huis Hillegom",
+      "technische ondersteuning Hillegom",
+      "computer student Hillegom"
+    ],
+    "coordinates": {
+      "lat": 52.2908,
+      "lng": 4.5833
+    }
+  },
+  {
+    "name": "Alblasserdam",
+    "slug": "alblasserdam",
+    "population": "20.000",
+    "region": "Zuid-Holland",
+    "description": "Het scheepvaartdorp aan de Noord met snelle en vriendelijke IT-service",
+    "longDescription": "Alblasserdam, gelegen aan de rivier de Noord met een rijke scheepsbouwtraditie, is een hecht dorp waar persoonlijke service gewaardeerd wordt. Onze IT-studenten komen graag langs in alle wijken, van het centrum tot de Kinderdijkbuurt en van Souburgh tot Babylonienburg. Wij helpen u met elk computerprobleem, groot of klein.",
+    "serviceAreas": [
+      "Alblasserdam Centrum",
+      "Souburgh",
+      "Babylonienburg",
+      "Kinderdijk-omgeving",
+      "Blokweer",
+      "Alblasserdam-West"
+    ],
+    "keywords": [
+      "computerhulp Alblasserdam",
+      "IT service Alblasserdam",
+      "laptop reparatie Alblasserdam",
+      "computer problemen Alblasserdam",
+      "IT hulp aan huis Alblasserdam",
+      "technische ondersteuning Alblasserdam",
+      "computer student Alblasserdam"
+    ],
+    "coordinates": {
+      "lat": 51.8658,
+      "lng": 4.6611
+    }
+  },
+  {
+    "name": "Hellevoetsluis",
+    "slug": "hellevoetsluis",
+    "population": "40.000",
+    "region": "Zuid-Holland",
+    "description": "De historische vestingstad aan het Haringvliet met betrouwbare IT-hulp",
+    "longDescription": "Hellevoetsluis, de voormalige marinehaven met zijn prachtige vesting en boulevard langs het Haringvliet, is een stad met karakter. Onze IT-studenten helpen inwoners in alle wijken graag met computerproblemen aan huis. Van de Vesting tot Nieuw-Helvoet, van Kickersbloem tot De Ravense Hoek - wij bieden persoonlijke en betaalbare IT-service in heel Hellevoetsluis.",
+    "serviceAreas": [
+      "Hellevoetsluis Centrum",
+      "De Vesting",
+      "Nieuw-Helvoet",
+      "Kickersbloem",
+      "De Ravense Hoek",
+      "Oudenhoorn",
+      "Nieuwenhoorn",
+      "Struytse Hoek"
+    ],
+    "keywords": [
+      "computerhulp Hellevoetsluis",
+      "IT service Hellevoetsluis",
+      "laptop reparatie Hellevoetsluis",
+      "computer problemen Hellevoetsluis",
+      "IT hulp aan huis Hellevoetsluis",
+      "technische ondersteuning Hellevoetsluis",
+      "computer student Hellevoetsluis"
+    ],
+    "coordinates": {
+      "lat": 51.8322,
+      "lng": 4.1327
+    }
+  },
+  {
+    "name": "Altena",
+    "slug": "altena",
+    "population": "58.000",
+    "region": "Noord-Brabant",
+    "description": "Betrouwbare computerhulp aan huis in de gemeente Altena, van Woudrichem tot Werkendam.",
+    "longDescription": "De gemeente Altena, gelegen in het prachtige rivierengebied, omvat kernen als Woudrichem, Werkendam en Almkerk. Onze IT-specialisten helpen bewoners in het hele Land van Heusden en Altena met computer- en laptopproblemen. Of u nu in de vesting Woudrichem woont of in een van de andere dorpen, wij staan klaar met persoonlijke technische ondersteuning aan huis.",
+    "serviceAreas": [
+      "Woudrichem",
+      "Werkendam",
+      "Almkerk",
+      "Sleeuwijk",
+      "Dussen",
+      "Hank",
+      "Wijk en Aalburg",
+      "Veen",
+      "Andel"
+    ],
+    "keywords": [
+      "computerhulp Altena",
+      "IT service Altena",
+      "laptop reparatie Altena",
+      "computer problemen Altena",
+      "IT hulp aan huis Altena",
+      "technische ondersteuning Altena",
+      "computer student Altena"
+    ],
+    "coordinates": {
+      "lat": 51.7697,
+      "lng": 4.8961
+    }
+  },
+  {
+    "name": "Heusden",
+    "slug": "heusden",
+    "population": "46.000",
+    "region": "Noord-Brabant",
+    "description": "Persoonlijke IT-hulp aan huis in de gemeente Heusden, inclusief Vlijmen en Drunen.",
+    "longDescription": "In de gemeente Heusden, met de gezellige kernen Vlijmen, Drunen en de historische vestingstad Heusden, bieden wij betrouwbare computerhulp aan huis. Of het nu gaat om een trage laptop in Vlijmen of een printerstoring in Drunen, onze IT-specialisten komen graag bij u langs. Ook inwoners van Elshout en Haarsteeg kunnen rekenen op snelle, persoonlijke hulp.",
+    "serviceAreas": [
+      "Vlijmen",
+      "Drunen",
+      "Heusden Vesting",
+      "Elshout",
+      "Haarsteeg",
+      "Nieuwkuijk",
+      "Oudheusden",
+      "Hedikhuizen"
+    ],
+    "keywords": [
+      "computerhulp Heusden",
+      "IT service Heusden",
+      "laptop reparatie Heusden",
+      "computer problemen Heusden",
+      "IT hulp aan huis Heusden",
+      "technische ondersteuning Heusden",
+      "computer student Heusden"
+    ],
+    "coordinates": {
+      "lat": 51.7342,
+      "lng": 5.1389
+    }
+  },
+  {
+    "name": "Etten-Leur",
+    "slug": "etten-leur",
+    "population": "46.000",
+    "region": "Noord-Brabant",
+    "description": "Vakkundige computerhulp aan huis in Etten-Leur, snel en betaalbaar.",
+    "longDescription": "Etten-Leur is een levendige gemeente in West-Brabant waar wij graag onze IT-diensten aanbieden. Van de wijk De Keen tot het centrum en Attelaken, onze technici staan klaar voor al uw computervragen. Of u nu hulp nodig heeft met uw laptop, wifi-problemen ervaart of een nieuwe computer wilt laten installeren, wij komen bij u thuis.",
+    "serviceAreas": [
+      "Etten-Leur Centrum",
+      "De Keen",
+      "Attelaken",
+      "Grauwe Polder",
+      "Bankenhoef",
+      "Schoenmakershoek",
+      "Etten-Leur Zuid",
+      "Etten-Leur Noord"
+    ],
+    "keywords": [
+      "computerhulp Etten-Leur",
+      "IT service Etten-Leur",
+      "laptop reparatie Etten-Leur",
+      "computer problemen Etten-Leur",
+      "IT hulp aan huis Etten-Leur",
+      "technische ondersteuning Etten-Leur",
+      "computer student Etten-Leur"
+    ],
+    "coordinates": {
+      "lat": 51.5771,
+      "lng": 4.6425
+    }
+  },
+  {
+    "name": "Moerdijk",
+    "slug": "moerdijk",
+    "population": "38.000",
+    "region": "Noord-Brabant",
+    "description": "Computerhulp aan huis in de gemeente Moerdijk, van Zevenbergen tot Klundert.",
+    "longDescription": "De gemeente Moerdijk, met Zevenbergen als grootste kern, is een veelzijdige gemeente in West-Brabant. Onze IT-specialisten bedienen inwoners van Zevenbergen, Klundert, Fijnaart en Willemstad met persoonlijke computerhulp aan huis. Of u nu in het centrum van Zevenbergen woont of in een van de kleinere dorpen, wij helpen u graag met al uw technische vragen.",
+    "serviceAreas": [
+      "Zevenbergen",
+      "Klundert",
+      "Fijnaart",
+      "Willemstad",
+      "Standdaarbuiten",
+      "Moerdijk dorp",
+      "Langeweg",
+      "Zevenbergschen Hoek"
+    ],
+    "keywords": [
+      "computerhulp Moerdijk",
+      "IT service Moerdijk",
+      "laptop reparatie Moerdijk",
+      "computer problemen Moerdijk",
+      "IT hulp aan huis Moerdijk",
+      "technische ondersteuning Moerdijk",
+      "computer student Moerdijk"
+    ],
+    "coordinates": {
+      "lat": 51.7017,
+      "lng": 4.6264
+    }
+  },
+  {
+    "name": "Deurne",
+    "slug": "deurne",
+    "population": "33.000",
+    "region": "Noord-Brabant",
+    "description": "Persoonlijke computerhulp aan huis in Deurne, hartje de Peel.",
+    "longDescription": "Deurne, gelegen in het mooie Peelgebied van Oost-Brabant, is een gemeente waar wij graag onze IT-diensten verlenen. Van het centrum van Deurne tot de dorpen Liessel, Vlierden en Neerkant, onze technici komen bij u thuis voor alle computerproblemen. Of het nu gaat om een virusinfectie, een trage PC of hulp met uw smartphone, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Deurne Centrum",
+      "Liessel",
+      "Vlierden",
+      "Neerkant",
+      "Walsberg",
+      "Zeilberg",
+      "Deurne Noord",
+      "Deurne Zuid"
+    ],
+    "keywords": [
+      "computerhulp Deurne",
+      "IT service Deurne",
+      "laptop reparatie Deurne",
+      "computer problemen Deurne",
+      "IT hulp aan huis Deurne",
+      "technische ondersteuning Deurne",
+      "computer student Deurne"
+    ],
+    "coordinates": {
+      "lat": 51.4614,
+      "lng": 5.7908
+    }
+  },
+  {
+    "name": "Oisterwijk",
+    "slug": "oisterwijk",
+    "population": "33.000",
+    "region": "Noord-Brabant",
+    "description": "IT-hulp aan huis in het groene Oisterwijk, vakkundig en persoonlijk.",
+    "longDescription": "Oisterwijk, bekend om zijn prachtige vennen en bossen, is een gemeente waar persoonlijke service centraal staat. Onze IT-specialisten helpen inwoners in Oisterwijk, Moergestel en Heukelom met al hun computervragen. Van wifi-problemen in het centrum tot een laptop die niet meer opstart in Moergestel, wij komen snel bij u langs voor betrouwbare technische hulp.",
+    "serviceAreas": [
+      "Oisterwijk Centrum",
+      "Moergestel",
+      "Heukelom",
+      "Oisterwijk Noord",
+      "Oisterwijk Zuid",
+      "Kerkhoven",
+      "Bedrijvenpark"
+    ],
+    "keywords": [
+      "computerhulp Oisterwijk",
+      "IT service Oisterwijk",
+      "laptop reparatie Oisterwijk",
+      "computer problemen Oisterwijk",
+      "IT hulp aan huis Oisterwijk",
+      "technische ondersteuning Oisterwijk",
+      "computer student Oisterwijk"
+    ],
+    "coordinates": {
+      "lat": 51.5757,
+      "lng": 5.1779
+    }
+  },
+  {
+    "name": "Vught",
+    "slug": "vught",
+    "population": "33.000",
+    "region": "Noord-Brabant",
+    "description": "Betrouwbare computerhulp aan huis in Vught, vlakbij Den Bosch.",
+    "longDescription": "Vught, de groene gemeente aan de rand van 's-Hertogenbosch, staat bekend om zijn mooie villawijken en dorpse karakter. Onze IT-specialisten helpen inwoners in Vught, Cromvoirt en Helvoirt met persoonlijke computerhulp aan huis. Of u nu in het Villapark woont of in het centrum van Helvoirt, wij lossen uw computerproblemen snel en vakkundig op.",
+    "serviceAreas": [
+      "Vught Centrum",
+      "Cromvoirt",
+      "Helvoirt",
+      "Villapark",
+      "Vught Noord",
+      "Vught Zuid",
+      "Taalstraat",
+      "Loyola"
+    ],
+    "keywords": [
+      "computerhulp Vught",
+      "IT service Vught",
+      "laptop reparatie Vught",
+      "computer problemen Vught",
+      "IT hulp aan huis Vught",
+      "technische ondersteuning Vught",
+      "computer student Vught"
+    ],
+    "coordinates": {
+      "lat": 51.6533,
+      "lng": 5.2875
+    }
+  },
+  {
+    "name": "Bernheze",
+    "slug": "bernheze",
+    "population": "32.000",
+    "region": "Noord-Brabant",
+    "description": "IT-service aan huis in Bernheze, van Heesch tot Nistelrode.",
+    "longDescription": "De gemeente Bernheze omvat de gezellige kernen Heesch, Nistelrode, Loosbroek en Vorstenbosch. Onze IT-technici komen graag bij u thuis voor computerhulp in het hele gebied. Of u nu in Heesch een nieuwe printer wilt installeren of in Nistelrode hulp nodig heeft met uw e-mail, wij bieden persoonlijke en betaalbare technische ondersteuning.",
+    "serviceAreas": [
+      "Heesch",
+      "Nistelrode",
+      "Loosbroek",
+      "Vorstenbosch",
+      "Heeswijk-Dinther",
+      "Middelrode"
+    ],
+    "keywords": [
+      "computerhulp Bernheze",
+      "IT service Bernheze",
+      "laptop reparatie Bernheze",
+      "computer problemen Bernheze",
+      "IT hulp aan huis Bernheze",
+      "technische ondersteuning Bernheze",
+      "computer student Bernheze"
+    ],
+    "coordinates": {
+      "lat": 51.65,
+      "lng": 5.5
+    }
+  },
+  {
+    "name": "Valkenswaard",
+    "slug": "valkenswaard",
+    "population": "31.000",
+    "region": "Noord-Brabant",
+    "description": "Computerhulp aan huis in Valkenswaard, snel en persoonlijk.",
+    "longDescription": "Valkenswaard, gelegen in de Kempenregio ten zuiden van Eindhoven, is een prettige gemeente waar wij graag onze IT-diensten aanbieden. Van het gezellige centrum tot de wijken Dommelen en Borkel en Schaft, onze technici staan klaar voor alle computervragen. Of het nu gaat om een trage computer, een virus of hulp met uw tablet, wij komen bij u aan huis.",
+    "serviceAreas": [
+      "Valkenswaard Centrum",
+      "Dommelen",
+      "Borkel en Schaft",
+      "Geenhoven",
+      "Lage Heide",
+      "De Belleman",
+      "Het Gegraaf"
+    ],
+    "keywords": [
+      "computerhulp Valkenswaard",
+      "IT service Valkenswaard",
+      "laptop reparatie Valkenswaard",
+      "computer problemen Valkenswaard",
+      "IT hulp aan huis Valkenswaard",
+      "technische ondersteuning Valkenswaard",
+      "computer student Valkenswaard"
+    ],
+    "coordinates": {
+      "lat": 51.3555,
+      "lng": 5.4533
+    }
+  },
+  {
+    "name": "Gemert-Bakel",
+    "slug": "gemert-bakel",
+    "population": "31.000",
+    "region": "Noord-Brabant",
+    "description": "Vakkundige IT-hulp aan huis in de gemeente Gemert-Bakel.",
+    "longDescription": "Gemert-Bakel is een dynamische gemeente in Oost-Brabant met de kernen Gemert, Bakel, De Mortel, Elsendorp, De Rips en Handel. Onze IT-specialisten bedienen alle dorpen met persoonlijke computerhulp aan huis. Van een laptopscherm dat kapot is in Gemert tot wifi-problemen in Bakel, wij komen snel bij u langs voor betrouwbare technische ondersteuning.",
+    "serviceAreas": [
+      "Gemert",
+      "Bakel",
+      "De Mortel",
+      "Elsendorp",
+      "De Rips",
+      "Handel",
+      "Milheeze"
+    ],
+    "keywords": [
+      "computerhulp Gemert-Bakel",
+      "IT service Gemert-Bakel",
+      "laptop reparatie Gemert-Bakel",
+      "computer problemen Gemert-Bakel",
+      "IT hulp aan huis Gemert-Bakel",
+      "technische ondersteuning Gemert-Bakel",
+      "computer student Gemert-Bakel"
+    ],
+    "coordinates": {
+      "lat": 51.5255,
+      "lng": 5.728
+    }
+  },
+  {
+    "name": "Halderberge",
+    "slug": "halderberge",
+    "population": "31.000",
+    "region": "Noord-Brabant",
+    "description": "Persoonlijke computerhulp aan huis in Halderberge, van Oudenbosch tot Hoeven.",
+    "longDescription": "De gemeente Halderberge, met de bekende kernen Oudenbosch, Hoeven en Oud Gastel, ligt in het hart van West-Brabant. Onze IT-technici helpen inwoners in alle dorpen met computerproblemen, van virusverwijdering tot het installeren van een nieuwe computer. Of u nu in het centrum van Oudenbosch woont of in Bosschenhoofd, wij staan klaar met hulp aan huis.",
+    "serviceAreas": [
+      "Oudenbosch",
+      "Hoeven",
+      "Oud Gastel",
+      "Bosschenhoofd",
+      "Stampersgat",
+      "Oudenbosch Centrum"
+    ],
+    "keywords": [
+      "computerhulp Halderberge",
+      "IT service Halderberge",
+      "laptop reparatie Halderberge",
+      "computer problemen Halderberge",
+      "IT hulp aan huis Halderberge",
+      "technische ondersteuning Halderberge",
+      "computer student Halderberge"
+    ],
+    "coordinates": {
+      "lat": 51.5833,
+      "lng": 4.5833
+    }
+  },
+  {
+    "name": "Sint-Michielsgestel",
+    "slug": "sint-michielsgestel",
+    "population": "30.000",
+    "region": "Noord-Brabant",
+    "description": "Betrouwbare IT-hulp aan huis in Sint-Michielsgestel en omgeving.",
+    "longDescription": "Sint-Michielsgestel is een groene gemeente tussen Den Bosch en Boxtel, met de dorpen Sint-Michielsgestel, Berlicum, Den Dungen en Gemonde. Onze IT-specialisten bieden persoonlijke computerhulp in alle kernen. Of u nu in Berlicum een printer wilt aansluiten of in Den Dungen hulp nodig heeft met uw e-mailprogramma, wij komen graag bij u langs.",
+    "serviceAreas": [
+      "Sint-Michielsgestel",
+      "Berlicum",
+      "Den Dungen",
+      "Gemonde",
+      "Middelrode",
+      "Sint-Michielsgestel Centrum"
+    ],
+    "keywords": [
+      "computerhulp Sint-Michielsgestel",
+      "IT service Sint-Michielsgestel",
+      "laptop reparatie Sint-Michielsgestel",
+      "computer problemen Sint-Michielsgestel",
+      "IT hulp aan huis Sint-Michielsgestel",
+      "technische ondersteuning Sint-Michielsgestel",
+      "computer student Sint-Michielsgestel"
+    ],
+    "coordinates": {
+      "lat": 51.64,
+      "lng": 5.35
+    }
+  },
+  {
+    "name": "Drimmelen",
+    "slug": "drimmelen",
+    "population": "28.000",
+    "region": "Noord-Brabant",
+    "description": "Computerhulp aan huis in Drimmelen, inclusief Made en Terheijden.",
+    "longDescription": "De gemeente Drimmelen, aan de rand van de Biesbosch, omvat de kernen Made, Terheijden, Lage Zwaluwe, Hooge Zwaluwe, Wagenberg en Drimmelen. Onze IT-technici helpen inwoners in het hele gebied met computerproblemen en technische vragen. Van wifi-installatie in Made tot laptophulp in Terheijden, wij bieden persoonlijke service aan huis.",
+    "serviceAreas": [
+      "Made",
+      "Terheijden",
+      "Lage Zwaluwe",
+      "Hooge Zwaluwe",
+      "Wagenberg",
+      "Drimmelen dorp"
+    ],
+    "keywords": [
+      "computerhulp Drimmelen",
+      "IT service Drimmelen",
+      "laptop reparatie Drimmelen",
+      "computer problemen Drimmelen",
+      "IT hulp aan huis Drimmelen",
+      "technische ondersteuning Drimmelen",
+      "computer student Drimmelen"
+    ],
+    "coordinates": {
+      "lat": 51.69,
+      "lng": 4.79
+    }
+  },
+  {
+    "name": "Gilze en Rijen",
+    "slug": "gilze-en-rijen",
+    "population": "28.000",
+    "region": "Noord-Brabant",
+    "description": "IT-hulp aan huis in Gilze en Rijen, persoonlijk en betaalbaar.",
+    "longDescription": "De gemeente Gilze en Rijen, centraal gelegen in Brabant tussen Tilburg en Breda, bestaat uit de kernen Rijen, Gilze en Molenschot. Onze IT-specialisten komen graag bij u thuis voor computerhulp. Of u nu in Rijen een nieuw apparaat wilt laten installeren of in Gilze hulp nodig heeft met uw internetverbinding, wij staan snel voor u klaar.",
+    "serviceAreas": [
+      "Rijen",
+      "Gilze",
+      "Molenschot",
+      "Rijen Centrum",
+      "Gilze Centrum",
+      "Hulten"
+    ],
+    "keywords": [
+      "computerhulp Gilze en Rijen",
+      "IT service Gilze en Rijen",
+      "laptop reparatie Gilze en Rijen",
+      "computer problemen Gilze en Rijen",
+      "IT hulp aan huis Gilze en Rijen",
+      "technische ondersteuning Gilze en Rijen",
+      "computer student Gilze en Rijen"
+    ],
+    "coordinates": {
+      "lat": 51.567,
+      "lng": 4.9257
+    }
+  },
+  {
+    "name": "Goirle",
+    "slug": "goirle",
+    "population": "24.000",
+    "region": "Noord-Brabant",
+    "description": "Persoonlijke computerhulp aan huis in Goirle, vlakbij Tilburg.",
+    "longDescription": "Goirle, de gezellige gemeente ten zuiden van Tilburg, biedt een dorpse sfeer met alle voorzieningen. Onze IT-specialisten helpen inwoners in Goirle en Riel met persoonlijke computerhulp aan huis. Of u nu in het centrum woont of in een van de buitenwijken, wij lossen uw computerproblemen snel en vakkundig op tegen een eerlijke prijs.",
+    "serviceAreas": [
+      "Goirle Centrum",
+      "Riel",
+      "Goirle Noord",
+      "Goirle Zuid",
+      "Boerdonk",
+      "Abcoven"
+    ],
+    "keywords": [
+      "computerhulp Goirle",
+      "IT service Goirle",
+      "laptop reparatie Goirle",
+      "computer problemen Goirle",
+      "IT hulp aan huis Goirle",
+      "technische ondersteuning Goirle",
+      "computer student Goirle"
+    ],
+    "coordinates": {
+      "lat": 51.52,
+      "lng": 5.0667
+    }
+  },
+  {
+    "name": "Steenbergen",
+    "slug": "steenbergen",
+    "population": "24.000",
+    "region": "Noord-Brabant",
+    "description": "Betrouwbare computerhulp aan huis in de gemeente Steenbergen.",
+    "longDescription": "De gemeente Steenbergen, in het noordwesten van Noord-Brabant, omvat de kernen Steenbergen, Dinteloord, Kruisland en Nieuw-Vossemeer. Onze IT-technici bieden persoonlijke computerhulp in alle dorpen. Van een trage computer in Steenbergen tot een printerstoring in Dinteloord, wij komen snel bij u thuis voor vakkundige technische ondersteuning.",
+    "serviceAreas": [
+      "Steenbergen Centrum",
+      "Dinteloord",
+      "Kruisland",
+      "Nieuw-Vossemeer",
+      "De Heen",
+      "Welberg"
+    ],
+    "keywords": [
+      "computerhulp Steenbergen",
+      "IT service Steenbergen",
+      "laptop reparatie Steenbergen",
+      "computer problemen Steenbergen",
+      "IT hulp aan huis Steenbergen",
+      "technische ondersteuning Steenbergen",
+      "computer student Steenbergen"
+    ],
+    "coordinates": {
+      "lat": 51.5833,
+      "lng": 4.3167
+    }
+  },
+  {
+    "name": "Nuenen",
+    "slug": "nuenen",
+    "population": "24.000",
+    "region": "Noord-Brabant",
+    "description": "IT-hulp aan huis in Nuenen, het Van Gogh-dorp nabij Eindhoven.",
+    "longDescription": "Nuenen, Gerwen en Nederwetten vormen samen een schilderachtige gemeente aan de rand van Eindhoven, beroemd als woonplaats van Vincent van Gogh. Onze IT-specialisten helpen inwoners met alle computervragen, van laptopproblemen tot het instellen van een thuisnetwerk. Of u nu in het centrum van Nuenen woont of in Gerwen, wij bieden persoonlijke hulp aan huis.",
+    "serviceAreas": [
+      "Nuenen Centrum",
+      "Gerwen",
+      "Nederwetten",
+      "Nuenen Zuid",
+      "Nuenen West",
+      "Eeneind",
+      "Opwetten"
+    ],
+    "keywords": [
+      "computerhulp Nuenen",
+      "IT service Nuenen",
+      "laptop reparatie Nuenen",
+      "computer problemen Nuenen",
+      "IT hulp aan huis Nuenen",
+      "technische ondersteuning Nuenen",
+      "computer student Nuenen"
+    ],
+    "coordinates": {
+      "lat": 51.47,
+      "lng": 5.55
+    }
+  },
+  {
+    "name": "Loon op Zand",
+    "slug": "loon-op-zand",
+    "population": "24.000",
+    "region": "Noord-Brabant",
+    "description": "Computerhulp aan huis in Loon op Zand, inclusief Kaatsheuvel en De Moer.",
+    "longDescription": "De gemeente Loon op Zand, met Kaatsheuvel als grootste kern en thuisbasis van de Efteling, is een levendige gemeente in Midden-Brabant. Onze IT-technici helpen inwoners in Kaatsheuvel, Loon op Zand en De Moer met persoonlijke computerhulp aan huis. Van een virusinfectie tot het instellen van een smart-TV, wij komen graag bij u langs.",
+    "serviceAreas": [
+      "Kaatsheuvel",
+      "Loon op Zand dorp",
+      "De Moer",
+      "Kaatsheuvel Centrum",
+      "Kaatsheuvel Zuid",
+      "Kaatsheuvel Noord",
+      "Loon op Zand Centrum"
+    ],
+    "keywords": [
+      "computerhulp Loon op Zand",
+      "IT service Loon op Zand",
+      "laptop reparatie Loon op Zand",
+      "computer problemen Loon op Zand",
+      "IT hulp aan huis Loon op Zand",
+      "technische ondersteuning Loon op Zand",
+      "computer student Loon op Zand"
+    ],
+    "coordinates": {
+      "lat": 51.63,
+      "lng": 5.07
+    }
+  },
+  {
+    "name": "Rucphen",
+    "slug": "rucphen",
+    "population": "24.000",
+    "region": "Noord-Brabant",
+    "description": "Persoonlijke IT-hulp aan huis in de gemeente Rucphen.",
+    "longDescription": "De gemeente Rucphen, gelegen in West-Brabant, omvat de kernen Rucphen, Sprundel, Sint Willebrord en Schijf. Onze IT-specialisten bieden in alle dorpen persoonlijke computerhulp aan huis. Of u nu in Sprundel een nieuwe laptop wilt laten instellen of in Sint Willebrord hulp nodig heeft met uw internetverbinding, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Rucphen",
+      "Sprundel",
+      "Sint Willebrord",
+      "Schijf",
+      "Rucphen Centrum",
+      "Vorenseinde"
+    ],
+    "keywords": [
+      "computerhulp Rucphen",
+      "IT service Rucphen",
+      "laptop reparatie Rucphen",
+      "computer problemen Rucphen",
+      "IT hulp aan huis Rucphen",
+      "technische ondersteuning Rucphen",
+      "computer student Rucphen"
+    ],
+    "coordinates": {
+      "lat": 51.5333,
+      "lng": 4.55
+    }
+  },
+  {
+    "name": "Laarbeek",
+    "slug": "laarbeek",
+    "population": "23.000",
+    "region": "Noord-Brabant",
+    "description": "Computerhulp aan huis in Laarbeek, van Beek en Donk tot Lieshout.",
+    "longDescription": "De gemeente Laarbeek in Oost-Brabant bestaat uit de vier kernen Beek en Donk, Aarle-Rixtel, Lieshout en Mariahout. Onze IT-technici komen graag bij u thuis voor persoonlijke computerhulp. Of u nu in Beek en Donk een probleem heeft met uw e-mail of in Lieshout hulp nodig heeft met uw tablet, wij bieden snelle en betaalbare technische ondersteuning.",
+    "serviceAreas": [
+      "Beek en Donk",
+      "Aarle-Rixtel",
+      "Lieshout",
+      "Mariahout",
+      "Beek en Donk Centrum",
+      "Aarle-Rixtel Centrum"
+    ],
+    "keywords": [
+      "computerhulp Laarbeek",
+      "IT service Laarbeek",
+      "laptop reparatie Laarbeek",
+      "computer problemen Laarbeek",
+      "IT hulp aan huis Laarbeek",
+      "technische ondersteuning Laarbeek",
+      "computer student Laarbeek"
+    ],
+    "coordinates": {
+      "lat": 51.52,
+      "lng": 5.62
+    }
+  },
+  {
+    "name": "Zundert",
+    "slug": "zundert",
+    "population": "23.000",
+    "region": "Noord-Brabant",
+    "description": "IT-hulp aan huis in Zundert, de geboorteplaats van Vincent van Gogh.",
+    "longDescription": "Zundert, bekend als geboorteplaats van Vincent van Gogh en om het beroemde bloemencorso, is een groene gemeente aan de Belgische grens. Onze IT-specialisten helpen inwoners in Zundert, Rijsbergen, Achtmaal en Klein Zundert met persoonlijke computerhulp. Van laptopproblemen tot het instellen van uw thuisnetwerk, wij komen bij u aan huis.",
+    "serviceAreas": [
+      "Zundert Centrum",
+      "Rijsbergen",
+      "Achtmaal",
+      "Klein Zundert",
+      "Wernhout",
+      "Zundert Noord"
+    ],
+    "keywords": [
+      "computerhulp Zundert",
+      "IT service Zundert",
+      "laptop reparatie Zundert",
+      "computer problemen Zundert",
+      "IT hulp aan huis Zundert",
+      "technische ondersteuning Zundert",
+      "computer student Zundert"
+    ],
+    "coordinates": {
+      "lat": 51.47,
+      "lng": 4.66
+    }
+  },
+  {
+    "name": "Woensdrecht",
+    "slug": "woensdrecht",
+    "population": "22.000",
+    "region": "Noord-Brabant",
+    "description": "Betrouwbare computerhulp aan huis in de gemeente Woensdrecht.",
+    "longDescription": "De gemeente Woensdrecht, met Hoogerheide als grootste kern, ligt in het uiterste westen van Noord-Brabant. Onze IT-technici bedienen inwoners in Hoogerheide, Huijbergen, Putte en Ossendrecht met persoonlijke computerhulp aan huis. Of u nu een nieuwe computer wilt laten installeren of hulp nodig heeft met een traag apparaat, wij staan snel voor u klaar.",
+    "serviceAreas": [
+      "Hoogerheide",
+      "Huijbergen",
+      "Putte",
+      "Ossendrecht",
+      "Woensdrecht dorp",
+      "Calfven",
+      "Hoogerheide Centrum"
+    ],
+    "keywords": [
+      "computerhulp Woensdrecht",
+      "IT service Woensdrecht",
+      "laptop reparatie Woensdrecht",
+      "computer problemen Woensdrecht",
+      "IT hulp aan huis Woensdrecht",
+      "technische ondersteuning Woensdrecht",
+      "computer student Woensdrecht"
+    ],
+    "coordinates": {
+      "lat": 51.43,
+      "lng": 4.3
+    }
+  },
+  {
+    "name": "Geertruidenberg",
+    "slug": "geertruidenberg",
+    "population": "21.000",
+    "region": "Noord-Brabant",
+    "description": "Persoonlijke IT-hulp aan huis in Geertruidenberg en Raamsdonksveer.",
+    "longDescription": "Geertruidenberg, een van de oudste steden van Nederland, en Raamsdonksveer vormen samen een compacte maar levendige gemeente. Onze IT-specialisten helpen inwoners in beide kernen en in Raamsdonk met computerproblemen aan huis. Of u nu in de historische binnenstad van Geertruidenberg woont of in Raamsdonksveer, wij bieden snelle en betrouwbare technische hulp.",
+    "serviceAreas": [
+      "Geertruidenberg Centrum",
+      "Raamsdonksveer",
+      "Raamsdonk",
+      "Raamsdonksveer Centrum",
+      "Geertruidenberg Zuid",
+      "Raamsdonksveer Noord"
+    ],
+    "keywords": [
+      "computerhulp Geertruidenberg",
+      "IT service Geertruidenberg",
+      "laptop reparatie Geertruidenberg",
+      "computer problemen Geertruidenberg",
+      "IT hulp aan huis Geertruidenberg",
+      "technische ondersteuning Geertruidenberg",
+      "computer student Geertruidenberg"
+    ],
+    "coordinates": {
+      "lat": 51.7017,
+      "lng": 4.8583
+    }
+  },
+  {
+    "name": "Bladel",
+    "slug": "bladel",
+    "population": "21.000",
+    "region": "Noord-Brabant",
+    "description": "Computerhulp aan huis in Bladel, in het hart van de Kempen.",
+    "longDescription": "Bladel, gelegen in de prachtige Kempenregio, omvat de kernen Bladel, Hapert, Hoogeloon, Netersel en Casteren. Onze IT-technici bieden persoonlijke computerhulp aan huis in de hele gemeente. Van een laptop die niet meer opstart in Bladel tot wifi-problemen in Hapert, wij komen snel bij u langs voor betaalbare technische ondersteuning.",
+    "serviceAreas": [
+      "Bladel Centrum",
+      "Hapert",
+      "Hoogeloon",
+      "Netersel",
+      "Casteren",
+      "Bladel Noord"
+    ],
+    "keywords": [
+      "computerhulp Bladel",
+      "IT service Bladel",
+      "laptop reparatie Bladel",
+      "computer problemen Bladel",
+      "IT hulp aan huis Bladel",
+      "technische ondersteuning Bladel",
+      "computer student Bladel"
+    ],
+    "coordinates": {
+      "lat": 51.37,
+      "lng": 5.22
+    }
+  },
+  {
+    "name": "Cranendonck",
+    "slug": "cranendonck",
+    "population": "21.000",
+    "region": "Noord-Brabant",
+    "description": "IT-hulp aan huis in Cranendonck, van Budel tot Maarheeze.",
+    "longDescription": "De gemeente Cranendonck, gelegen in de zuidoosthoek van Noord-Brabant, bestaat uit de kernen Budel, Maarheeze, Budel-Schoot, Budel-Dorplein, Gastel en Soerendonk. Onze IT-specialisten komen bij u thuis voor persoonlijke computerhulp. Of u nu in Budel een printer wilt aansluiten of in Maarheeze hulp nodig heeft met uw laptop, wij staan graag voor u klaar.",
+    "serviceAreas": [
+      "Budel",
+      "Maarheeze",
+      "Budel-Schoot",
+      "Budel-Dorplein",
+      "Gastel",
+      "Soerendonk",
+      "Budel Centrum"
+    ],
+    "keywords": [
+      "computerhulp Cranendonck",
+      "IT service Cranendonck",
+      "laptop reparatie Cranendonck",
+      "computer problemen Cranendonck",
+      "IT hulp aan huis Cranendonck",
+      "technische ondersteuning Cranendonck",
+      "computer student Cranendonck"
+    ],
+    "coordinates": {
+      "lat": 51.298,
+      "lng": 5.575
+    }
+  },
+  {
+    "name": "Eersel",
+    "slug": "eersel",
+    "population": "20.000",
+    "region": "Noord-Brabant",
+    "description": "Persoonlijke computerhulp aan huis in Eersel, hartje de Kempen.",
+    "longDescription": "Eersel, een sfeervol dorp in de Kempenregio, vormt samen met Duizel, Steensel, Knegsel, Wintelre en Vessem een groene gemeente met een sterk gemeenschapsgevoel. Onze IT-technici helpen inwoners in alle kernen met computerproblemen aan huis. Of het nu gaat om een virusinfectie in Eersel of een trage laptop in Vessem, wij bieden snelle en persoonlijke hulp.",
+    "serviceAreas": [
+      "Eersel Centrum",
+      "Duizel",
+      "Steensel",
+      "Knegsel",
+      "Wintelre",
+      "Vessem"
+    ],
+    "keywords": [
+      "computerhulp Eersel",
+      "IT service Eersel",
+      "laptop reparatie Eersel",
+      "computer problemen Eersel",
+      "IT hulp aan huis Eersel",
+      "technische ondersteuning Eersel",
+      "computer student Eersel"
+    ],
+    "coordinates": {
+      "lat": 51.35,
+      "lng": 5.3167
+    }
+  },
+  {
+    "name": "Someren",
+    "slug": "someren",
+    "population": "20.000",
+    "region": "Noord-Brabant",
+    "description": "Betrouwbare IT-hulp aan huis in Someren, in het Peelgebied.",
+    "longDescription": "Someren, gelegen in het mooie Peelgebied van Oost-Brabant, bestaat uit de kernen Someren, Someren-Eind, Someren-Heide en Lierop. Onze IT-specialisten bieden persoonlijke computerhulp aan huis in de hele gemeente. Van een computerprobleem in Someren-Eind tot hulp met uw smartphone in Lierop, wij komen snel bij u langs voor vakkundige technische ondersteuning.",
+    "serviceAreas": [
+      "Someren Centrum",
+      "Someren-Eind",
+      "Someren-Heide",
+      "Lierop",
+      "Someren Noord",
+      "Someren Zuid"
+    ],
+    "keywords": [
+      "computerhulp Someren",
+      "IT service Someren",
+      "laptop reparatie Someren",
+      "computer problemen Someren",
+      "IT hulp aan huis Someren",
+      "technische ondersteuning Someren",
+      "computer student Someren"
+    ],
+    "coordinates": {
+      "lat": 51.3833,
+      "lng": 5.7167
+    }
+  },
+  {
+    "name": "Dijk en Waard",
+    "slug": "dijk-en-waard",
+    "population": "91.000",
+    "region": "Noord-Holland",
+    "description": "Betrouwbare computerhulp aan huis in Dijk en Waard, van Heerhugowaard tot Langedijk.",
+    "longDescription": "Dijk en Waard is een jonge gemeente ontstaan uit de fusie van Heerhugowaard en Langedijk. Onze technici kennen de wijken van Heerhugowaard-Zuid tot De Noord en helpen u graag thuis met al uw computerproblemen. Of u nu in het centrum van Heerhugowaard woont of in Sint Pancras, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Heerhugowaard",
+      "Langedijk",
+      "Sint Pancras",
+      "Noord-Scharwoude",
+      "Zuid-Scharwoude",
+      "Broek op Langedijk",
+      "Heerhugowaard-Zuid",
+      "Heerhugowaard-Noord",
+      "De Noord"
+    ],
+    "keywords": [
+      "computerhulp Dijk en Waard",
+      "IT service Dijk en Waard",
+      "laptop reparatie Dijk en Waard",
+      "computer problemen Dijk en Waard",
+      "IT hulp aan huis Dijk en Waard",
+      "technische ondersteuning Dijk en Waard",
+      "computer student Dijk en Waard"
+    ],
+    "coordinates": {
+      "lat": 52.6627,
+      "lng": 4.8325
+    }
+  },
+  {
+    "name": "Velsen",
+    "slug": "velsen",
+    "population": "70.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis in Velsen, van IJmuiden tot Velserbroek en Santpoort.",
+    "longDescription": "De gemeente Velsen ligt aan het Noordzeekanaal en omvat levendige kernen als IJmuiden, Velserbroek en Santpoort. Onze IT-specialisten komen bij u thuis, of u nu in IJmuiden-Oost woont, in het groene Velserbroek of in het sfeervolle Santpoort-Zuid. Wij helpen u snel en vakkundig met elk computerprobleem.",
+    "serviceAreas": [
+      "IJmuiden",
+      "Velserbroek",
+      "Santpoort-Noord",
+      "Santpoort-Zuid",
+      "Velsen-Noord",
+      "Velsen-Zuid",
+      "Driehuis",
+      "IJmuiden-Oost"
+    ],
+    "keywords": [
+      "computerhulp Velsen",
+      "IT service Velsen",
+      "laptop reparatie Velsen",
+      "computer problemen Velsen",
+      "IT hulp aan huis Velsen",
+      "technische ondersteuning Velsen",
+      "computer student Velsen"
+    ],
+    "coordinates": {
+      "lat": 52.4626,
+      "lng": 4.6249
+    }
+  },
+  {
+    "name": "Hollands Kroon",
+    "slug": "hollands-kroon",
+    "population": "50.000",
+    "region": "Noord-Holland",
+    "description": "Persoonlijke IT-hulp aan huis in Hollands Kroon, van Anna Paulowna tot Wieringerwerf.",
+    "longDescription": "Hollands Kroon is een uitgestrekte gemeente in de kop van Noord-Holland, met dorpen als Anna Paulowna, Wieringerwerf en Hippolytushoef. Onze technici rijden graag naar u toe, waar u ook woont in deze prachtige polder. Van wifi-problemen in Breezand tot laptophulp in Nieuwe Niedorp, wij zijn er voor u.",
+    "serviceAreas": [
+      "Anna Paulowna",
+      "Wieringerwerf",
+      "Hippolytushoef",
+      "Breezand",
+      "Nieuwe Niedorp",
+      "Wieringen",
+      "Slootdorp",
+      "Kolhorn",
+      "Barsingerhorn"
+    ],
+    "keywords": [
+      "computerhulp Hollands Kroon",
+      "IT service Hollands Kroon",
+      "laptop reparatie Hollands Kroon",
+      "computer problemen Hollands Kroon",
+      "IT hulp aan huis Hollands Kroon",
+      "technische ondersteuning Hollands Kroon",
+      "computer student Hollands Kroon"
+    ],
+    "coordinates": {
+      "lat": 52.8616,
+      "lng": 4.8238
+    }
+  },
+  {
+    "name": "Schagen",
+    "slug": "schagen",
+    "population": "48.000",
+    "region": "Noord-Holland",
+    "description": "Vlotte computerhulp aan huis in Schagen en omliggende dorpen in de kop van Noord-Holland.",
+    "longDescription": "Schagen is het gezellige hart van de kop van Noord-Holland, met een bruisend centrum en mooie omliggende dorpen. Onze IT-hulp komt bij u thuis, of u nu in het centrum van Schagen woont, in Tuitjenhorn of in Warmenhuizen. Wij lossen uw computerproblemen snel en vriendelijk op.",
+    "serviceAreas": [
+      "Schagen",
+      "Tuitjenhorn",
+      "Warmenhuizen",
+      "Dirkshorn",
+      "Callantsoog",
+      "Sint Maartensbrug",
+      "Petten",
+      "Schagerbrug"
+    ],
+    "keywords": [
+      "computerhulp Schagen",
+      "IT service Schagen",
+      "laptop reparatie Schagen",
+      "computer problemen Schagen",
+      "IT hulp aan huis Schagen",
+      "technische ondersteuning Schagen",
+      "computer student Schagen"
+    ],
+    "coordinates": {
+      "lat": 52.7875,
+      "lng": 4.7986
+    }
+  },
+  {
+    "name": "Medemblik",
+    "slug": "medemblik",
+    "population": "46.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis in de historische gemeente Medemblik en omgeving.",
+    "longDescription": "De gemeente Medemblik combineert een rijk Zuiderzee-verleden met een moderne samenleving. Onze technici helpen inwoners van Medemblik, Wognum en Nibbixwoud met al hun IT-vragen. Of u in het historische centrum woont of in Opperdoes, wij komen graag bij u langs voor persoonlijke computerhulp.",
+    "serviceAreas": [
+      "Medemblik",
+      "Wognum",
+      "Nibbixwoud",
+      "Opperdoes",
+      "Abbekerk",
+      "Benningbroek",
+      "Midwoud",
+      "Onderdijk"
+    ],
+    "keywords": [
+      "computerhulp Medemblik",
+      "IT service Medemblik",
+      "laptop reparatie Medemblik",
+      "computer problemen Medemblik",
+      "IT hulp aan huis Medemblik",
+      "technische ondersteuning Medemblik",
+      "computer student Medemblik"
+    ],
+    "coordinates": {
+      "lat": 52.7717,
+      "lng": 5.1056
+    }
+  },
+  {
+    "name": "Beverwijk",
+    "slug": "beverwijk",
+    "population": "43.000",
+    "region": "Noord-Holland",
+    "description": "Snelle en betrouwbare computerhulp aan huis in Beverwijk en directe omgeving.",
+    "longDescription": "Beverwijk is een levendige stad in de IJmond, bekend om de Bazaar en de gezellige winkelstraten. Onze IT-specialisten komen bij u thuis in alle wijken van Beverwijk, van Wijk aan Zee tot Westerhout. Snel, persoonlijk en zonder gedoe helpen wij u met uw computer- of laptopproblemen.",
+    "serviceAreas": [
+      "Beverwijk",
+      "Wijk aan Zee",
+      "Westerhout",
+      "Beverwijk-Zuid",
+      "Beverwijk-Oost",
+      "Meerestein"
+    ],
+    "keywords": [
+      "computerhulp Beverwijk",
+      "IT service Beverwijk",
+      "laptop reparatie Beverwijk",
+      "computer problemen Beverwijk",
+      "IT hulp aan huis Beverwijk",
+      "technische ondersteuning Beverwijk",
+      "computer student Beverwijk"
+    ],
+    "coordinates": {
+      "lat": 52.4833,
+      "lng": 4.6569
+    }
+  },
+  {
+    "name": "Heemskerk",
+    "slug": "heemskerk",
+    "population": "39.000",
+    "region": "Noord-Holland",
+    "description": "Vriendelijke computerhulp aan huis in Heemskerk, snel en betaalbaar.",
+    "longDescription": "Heemskerk ligt tussen de duinen en de IJmond en is een fijne woonplaats met diverse wijken. Onze technici kennen Heemskerk goed, van Assumburg tot De Maer en het centrum. Wij helpen u thuis met elk IT-probleem, of het nu gaat om een trage laptop, wifi-storing of hulp bij uw nieuwe apparaat.",
+    "serviceAreas": [
+      "Heemskerk",
+      "Assumburg",
+      "De Maer",
+      "Waterakkers",
+      "Heemskerk-West",
+      "Heemskerk-Oost"
+    ],
+    "keywords": [
+      "computerhulp Heemskerk",
+      "IT service Heemskerk",
+      "laptop reparatie Heemskerk",
+      "computer problemen Heemskerk",
+      "IT hulp aan huis Heemskerk",
+      "technische ondersteuning Heemskerk",
+      "computer student Heemskerk"
+    ],
+    "coordinates": {
+      "lat": 52.5111,
+      "lng": 4.6717
+    }
+  },
+  {
+    "name": "Edam-Volendam",
+    "slug": "edam-volendam",
+    "population": "37.000",
+    "region": "Noord-Holland",
+    "description": "Persoonlijke computerhulp aan huis in Edam, Volendam en omliggende dorpen.",
+    "longDescription": "De gemeente Edam-Volendam staat bekend om haar rijke traditie en hechte gemeenschappen. Onze IT-specialisten komen graag bij u langs, of u in het pittoreske Edam woont, in het bruisende Volendam of in het rustige Zeevang. Wij bieden vriendelijke en geduldige hulp bij al uw computervragen.",
+    "serviceAreas": [
+      "Edam",
+      "Volendam",
+      "Zeevang",
+      "Kwadijk",
+      "Oosthuizen",
+      "Warder",
+      "Hobrede"
+    ],
+    "keywords": [
+      "computerhulp Edam-Volendam",
+      "IT service Edam-Volendam",
+      "laptop reparatie Edam-Volendam",
+      "computer problemen Edam-Volendam",
+      "IT hulp aan huis Edam-Volendam",
+      "technische ondersteuning Edam-Volendam",
+      "computer student Edam-Volendam"
+    ],
+    "coordinates": {
+      "lat": 52.495,
+      "lng": 5.0708
+    }
+  },
+  {
+    "name": "Castricum",
+    "slug": "castricum",
+    "population": "37.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis in Castricum, Limmen, Akersloot en omgeving.",
+    "longDescription": "Castricum is een aantrekkelijke gemeente tussen de duinen en de polders, met kernen als Castricum, Limmen en Akersloot. Onze technici komen bij u thuis voor hulp met uw computer, laptop of tablet. Of u nu in het centrum van Castricum woont of in het landelijke De Woude, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Castricum",
+      "Limmen",
+      "Akersloot",
+      "Bakkum",
+      "De Woude",
+      "Castricum-Oost"
+    ],
+    "keywords": [
+      "computerhulp Castricum",
+      "IT service Castricum",
+      "laptop reparatie Castricum",
+      "computer problemen Castricum",
+      "IT hulp aan huis Castricum",
+      "technische ondersteuning Castricum",
+      "computer student Castricum"
+    ],
+    "coordinates": {
+      "lat": 52.5483,
+      "lng": 4.6694
+    }
+  },
+  {
+    "name": "Aalsmeer",
+    "slug": "aalsmeer",
+    "population": "33.000",
+    "region": "Noord-Holland",
+    "description": "Betrouwbare computerhulp aan huis in Aalsmeer en Kudelstaart.",
+    "longDescription": "Aalsmeer, wereldberoemd door de bloemenveiling, is een gezellige gemeente aan de Westeinderplassen. Onze IT-hulp komt bij u thuis, of u in het centrum van Aalsmeer woont, in Kudelstaart of aan de Oosteinderweg. Wij helpen u persoonlijk en geduldig met al uw computer- en internetproblemen.",
+    "serviceAreas": [
+      "Aalsmeer",
+      "Kudelstaart",
+      "Aalsmeer-Oost",
+      "Aalsmeer-West",
+      "Hornmeer",
+      "Stommeer"
+    ],
+    "keywords": [
+      "computerhulp Aalsmeer",
+      "IT service Aalsmeer",
+      "laptop reparatie Aalsmeer",
+      "computer problemen Aalsmeer",
+      "IT hulp aan huis Aalsmeer",
+      "technische ondersteuning Aalsmeer",
+      "computer student Aalsmeer"
+    ],
+    "coordinates": {
+      "lat": 52.2622,
+      "lng": 4.7619
+    }
+  },
+  {
+    "name": "Diemen",
+    "slug": "diemen",
+    "population": "33.000",
+    "region": "Noord-Holland",
+    "description": "Snelle computerhulp aan huis in Diemen, vlakbij Amsterdam.",
+    "longDescription": "Diemen grenst direct aan Amsterdam en is een dynamische gemeente met diverse wijken. Onze technici komen snel bij u thuis, of u nu in Diemen-Noord, Diemen-Zuid of bij Holland Park woont. Van laptopproblemen tot wifi-installatie, wij bieden persoonlijke IT-hulp op een locatie die u uitkomt.",
+    "serviceAreas": [
+      "Diemen-Noord",
+      "Diemen-Zuid",
+      "Diemen-Centrum",
+      "Holland Park",
+      "Plantage de Sniep",
+      "Buitenlust",
+      "Stammerdijk"
+    ],
+    "keywords": [
+      "computerhulp Diemen",
+      "IT service Diemen",
+      "laptop reparatie Diemen",
+      "computer problemen Diemen",
+      "IT hulp aan huis Diemen",
+      "technische ondersteuning Diemen",
+      "computer student Diemen"
+    ],
+    "coordinates": {
+      "lat": 52.339,
+      "lng": 4.9592
+    }
+  },
+  {
+    "name": "Uithoorn",
+    "slug": "uithoorn",
+    "population": "32.000",
+    "region": "Noord-Holland",
+    "description": "Persoonlijke computerhulp aan huis in Uithoorn en De Kwakel.",
+    "longDescription": "Uithoorn is een prettige woongemeente aan de Amstel, met een gezellig centrum en het landelijke De Kwakel. Onze IT-specialisten helpen u thuis met elk computerprobleem, van trage laptops tot printerproblemen. Of u nu in Thamerdal, Legmeer of het centrum woont, wij komen graag langs.",
+    "serviceAreas": [
+      "Uithoorn",
+      "De Kwakel",
+      "Thamerdal",
+      "Legmeer",
+      "Uithoorn-Centrum",
+      "Zijdelwaard"
+    ],
+    "keywords": [
+      "computerhulp Uithoorn",
+      "IT service Uithoorn",
+      "laptop reparatie Uithoorn",
+      "computer problemen Uithoorn",
+      "IT hulp aan huis Uithoorn",
+      "technische ondersteuning Uithoorn",
+      "computer student Uithoorn"
+    ],
+    "coordinates": {
+      "lat": 52.2411,
+      "lng": 4.8251
+    }
+  },
+  {
+    "name": "Heiloo",
+    "slug": "heiloo",
+    "population": "24.000",
+    "region": "Noord-Holland",
+    "description": "Vriendelijke computerhulp aan huis in Heiloo, snel en persoonlijk.",
+    "longDescription": "Heiloo is een groen en kindvriendelijk dorp tussen Alkmaar en de kust. Onze technici komen bij u thuis voor hulp met uw computer, laptop of tablet. Of u in het centrum woont, bij het Heilooër Bos of in de wijk Ypestein, wij lossen uw IT-problemen vakkundig en met een glimlach op.",
+    "serviceAreas": [
+      "Heiloo",
+      "Ypestein",
+      "Zuiderloo",
+      "Heiloo-Centrum",
+      "Heiloo-Oost",
+      "Heiloo-West"
+    ],
+    "keywords": [
+      "computerhulp Heiloo",
+      "IT service Heiloo",
+      "laptop reparatie Heiloo",
+      "computer problemen Heiloo",
+      "IT hulp aan huis Heiloo",
+      "technische ondersteuning Heiloo",
+      "computer student Heiloo"
+    ],
+    "coordinates": {
+      "lat": 52.6,
+      "lng": 4.7
+    }
+  },
+  {
+    "name": "Wijdemeren",
+    "slug": "wijdemeren",
+    "population": "24.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis in Wijdemeren, van Loosdrecht tot Nederhorst den Berg.",
+    "longDescription": "De gemeente Wijdemeren omvat de prachtige Loosdrechtse Plassen en dorpen als Loosdrecht, Nederhorst den Berg en Kortenhoef. Onze IT-specialisten komen graag naar u toe voor persoonlijke computerhulp. Of u aan het water woont of in het dorp, wij helpen u met elk technisch probleem.",
+    "serviceAreas": [
+      "Loosdrecht",
+      "Nederhorst den Berg",
+      "Kortenhoef",
+      "Ankeveen",
+      "Breukeleveen",
+      "Nieuw-Loosdrecht",
+      "Oud-Loosdrecht"
+    ],
+    "keywords": [
+      "computerhulp Wijdemeren",
+      "IT service Wijdemeren",
+      "laptop reparatie Wijdemeren",
+      "computer problemen Wijdemeren",
+      "IT hulp aan huis Wijdemeren",
+      "technische ondersteuning Wijdemeren",
+      "computer student Wijdemeren"
+    ],
+    "coordinates": {
+      "lat": 52.23,
+      "lng": 5.08
+    }
+  },
+  {
+    "name": "Koggenland",
+    "slug": "koggenland",
+    "population": "24.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis in Koggenland, van Obdam tot De Goorn en Berkhout.",
+    "longDescription": "Koggenland is een landelijke gemeente in West-Friesland met dorpen als Obdam, De Goorn en Berkhout. Onze technici komen bij u thuis, waar u ook in de gemeente woont. Van hulp bij een nieuwe laptop in Ursem tot wifi-problemen in Spierdijk, wij staan persoonlijk voor u klaar.",
+    "serviceAreas": [
+      "Obdam",
+      "De Goorn",
+      "Berkhout",
+      "Ursem",
+      "Spierdijk",
+      "Hensbroek",
+      "Avenhorn",
+      "Zuidermeer"
+    ],
+    "keywords": [
+      "computerhulp Koggenland",
+      "IT service Koggenland",
+      "laptop reparatie Koggenland",
+      "computer problemen Koggenland",
+      "IT hulp aan huis Koggenland",
+      "technische ondersteuning Koggenland",
+      "computer student Koggenland"
+    ],
+    "coordinates": {
+      "lat": 52.66,
+      "lng": 4.95
+    }
+  },
+  {
+    "name": "Stede Broec",
+    "slug": "stede-broec",
+    "population": "22.000",
+    "region": "Noord-Holland",
+    "description": "Betrouwbare computerhulp aan huis in Stede Broec en omgeving.",
+    "longDescription": "Stede Broec ligt in het hart van West-Friesland en omvat Bovenkarspel, Grootebroek en Lutjebroek. Onze IT-specialisten helpen u graag thuis met uw computerproblemen. Of u in het winkelcentrum-gebied van Grootebroek woont of in het rustige Lutjebroek, wij komen snel bij u langs.",
+    "serviceAreas": [
+      "Bovenkarspel",
+      "Grootebroek",
+      "Lutjebroek",
+      "Stede Broec-Centrum"
+    ],
+    "keywords": [
+      "computerhulp Stede Broec",
+      "IT service Stede Broec",
+      "laptop reparatie Stede Broec",
+      "computer problemen Stede Broec",
+      "IT hulp aan huis Stede Broec",
+      "technische ondersteuning Stede Broec",
+      "computer student Stede Broec"
+    ],
+    "coordinates": {
+      "lat": 52.69,
+      "lng": 5.22
+    }
+  },
+  {
+    "name": "Drechterland",
+    "slug": "drechterland",
+    "population": "20.000",
+    "region": "Noord-Holland",
+    "description": "Persoonlijke computerhulp aan huis in Drechterland, van Hoogkarspel tot Venhuizen.",
+    "longDescription": "Drechterland is een schilderachtige West-Friese gemeente met dorpen als Hoogkarspel, Venhuizen en Hem. Onze technici komen bij u aan huis voor alle IT-hulp die u nodig heeft. Van een trage computer in Wijdenes tot printerproblemen in Oosterblokker, wij helpen u graag.",
+    "serviceAreas": [
+      "Hoogkarspel",
+      "Venhuizen",
+      "Hem",
+      "Oosterblokker",
+      "Wijdenes",
+      "Westwoud",
+      "Schellinkhout"
+    ],
+    "keywords": [
+      "computerhulp Drechterland",
+      "IT service Drechterland",
+      "laptop reparatie Drechterland",
+      "computer problemen Drechterland",
+      "IT hulp aan huis Drechterland",
+      "technische ondersteuning Drechterland",
+      "computer student Drechterland"
+    ],
+    "coordinates": {
+      "lat": 52.66,
+      "lng": 5.18
+    }
+  },
+  {
+    "name": "Enkhuizen",
+    "slug": "enkhuizen",
+    "population": "19.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis in het historische Enkhuizen aan het IJsselmeer.",
+    "longDescription": "Enkhuizen is een prachtige historische havenstad aan het IJsselmeer, bekend om het Zuiderzeemuseum. Onze IT-specialisten helpen inwoners van Enkhuizen graag thuis met hun computerproblemen. Of u in de binnenstad woont, in de Gommerwijk of bij de Fruittuinen, wij komen persoonlijk bij u langs.",
+    "serviceAreas": [
+      "Enkhuizen-Centrum",
+      "Gommerwijk",
+      "Fruittuinen",
+      "Kadijken",
+      "Westerstrand",
+      "Enkhuizen-Zuid"
+    ],
+    "keywords": [
+      "computerhulp Enkhuizen",
+      "IT service Enkhuizen",
+      "laptop reparatie Enkhuizen",
+      "computer problemen Enkhuizen",
+      "IT hulp aan huis Enkhuizen",
+      "technische ondersteuning Enkhuizen",
+      "computer student Enkhuizen"
+    ],
+    "coordinates": {
+      "lat": 52.7058,
+      "lng": 5.2917
+    }
+  },
+  {
+    "name": "Bergen",
+    "slug": "bergen-nh",
+    "population": "30.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis in Bergen, Bergen aan Zee, Egmond en Schoorl.",
+    "longDescription": "De gemeente Bergen is een kunstzinnige en groene gemeente aan de Noord-Hollandse kust. Onze technici helpen u thuis in Bergen, Bergen aan Zee, Egmond aan Zee, Egmond aan den Hoef en Schoorl. Van laptophulp in het kunstenaarsdorp tot wifi-installatie aan de kust, wij staan voor u klaar.",
+    "serviceAreas": [
+      "Bergen",
+      "Bergen aan Zee",
+      "Egmond aan Zee",
+      "Egmond aan den Hoef",
+      "Egmond-Binnen",
+      "Schoorl",
+      "Groet",
+      "Camperduin"
+    ],
+    "keywords": [
+      "computerhulp Bergen",
+      "IT service Bergen",
+      "laptop reparatie Bergen",
+      "computer problemen Bergen",
+      "IT hulp aan huis Bergen",
+      "technische ondersteuning Bergen",
+      "computer student Bergen"
+    ],
+    "coordinates": {
+      "lat": 52.67,
+      "lng": 4.71
+    }
+  },
+  {
+    "name": "Texel",
+    "slug": "texel",
+    "population": "14.000",
+    "region": "Noord-Holland",
+    "description": "Computerhulp aan huis op Texel, het grootste Waddeneiland van Nederland.",
+    "longDescription": "Texel is het grootste en meest veelzijdige Waddeneiland van Nederland, met dorpen als Den Burg, De Koog en Oudeschild. Onze IT-specialisten komen ook op Texel bij u thuis voor persoonlijke computerhulp. Of u in Den Burg woont, in het toeristische De Koog of in het landelijke Den Hoorn, wij helpen u graag.",
+    "serviceAreas": [
+      "Den Burg",
+      "De Koog",
+      "Oudeschild",
+      "Den Hoorn",
+      "De Cocksdorp",
+      "Oosterend",
+      "De Waal"
+    ],
+    "keywords": [
+      "computerhulp Texel",
+      "IT service Texel",
+      "laptop reparatie Texel",
+      "computer problemen Texel",
+      "IT hulp aan huis Texel",
+      "technische ondersteuning Texel",
+      "computer student Texel"
+    ],
+    "coordinates": {
+      "lat": 53.08,
+      "lng": 4.8
+    }
+  },
+  {
+    "name": "Stichtse Vecht",
+    "slug": "stichtse-vecht",
+    "population": "66.000",
+    "region": "Utrecht",
+    "description": "Betrouwbare computerhulp aan huis in Stichtse Vecht, van Maarssen tot Breukelen en Loenen aan de Vecht.",
+    "longDescription": "Of u nu in het centrum van Maarssen woont, in het historische Breukelen of in het rustige Loenen aan de Vecht — onze IT-specialisten staan voor u klaar. We helpen bewoners in alle kernen van Stichtse Vecht met computerproblemen, laptop reparaties en het inrichten van uw thuisnetwerk. Van Oud-Zuilen tot Nigtevecht, persoonlijke hulp is altijd dichtbij.",
+    "serviceAreas": [
+      "Maarssen",
+      "Breukelen",
+      "Loenen aan de Vecht",
+      "Nieuwersluis",
+      "Nigtevecht",
+      "Oud-Zuilen",
+      "Tienhoven",
+      "Vreeland"
+    ],
+    "keywords": [
+      "computerhulp Stichtse Vecht",
+      "IT service Stichtse Vecht",
+      "laptop reparatie Stichtse Vecht",
+      "computer problemen Stichtse Vecht",
+      "IT hulp aan huis Stichtse Vecht",
+      "technische ondersteuning Stichtse Vecht",
+      "computer student Stichtse Vecht"
+    ],
+    "coordinates": {
+      "lat": 52.1392,
+      "lng": 5.0417
+    }
+  },
+  {
+    "name": "Vijfheerenlanden",
+    "slug": "vijfheerenlanden",
+    "population": "63.000",
+    "region": "Utrecht",
+    "description": "Persoonlijke IT-hulp aan huis in Vijfheerenlanden, voor inwoners van Vianen, Leerdam en omstreken.",
+    "longDescription": "In de gemeente Vijfheerenlanden bieden we computerhulp aan huis in Vianen, Leerdam, Meerkerk en alle omliggende dorpen. Of het nu gaat om een trage laptop in Lexmond, wifi-problemen in Hagestein of hulp bij uw tablet in Ameide — wij komen graag langs. Onze ervaren technici kennen de regio en zorgen voor snelle, persoonlijke service.",
+    "serviceAreas": [
+      "Vianen",
+      "Leerdam",
+      "Meerkerk",
+      "Lexmond",
+      "Hagestein",
+      "Everdingen",
+      "Ameide",
+      "Nieuwland",
+      "Ossenwaard"
+    ],
+    "keywords": [
+      "computerhulp Vijfheerenlanden",
+      "IT service Vijfheerenlanden",
+      "laptop reparatie Vijfheerenlanden",
+      "computer problemen Vijfheerenlanden",
+      "IT hulp aan huis Vijfheerenlanden",
+      "technische ondersteuning Vijfheerenlanden",
+      "computer student Vijfheerenlanden"
+    ],
+    "coordinates": {
+      "lat": 51.8937,
+      "lng": 5.0924
+    }
+  },
+  {
+    "name": "Utrechtse Heuvelrug",
+    "slug": "utrechtse-heuvelrug",
+    "population": "51.000",
+    "region": "Utrecht",
+    "description": "Vakkundige computerhulp aan huis op de Utrechtse Heuvelrug, van Doorn tot Amerongen en Maarn.",
+    "longDescription": "Wonen op de prachtige Utrechtse Heuvelrug en hulp nodig met uw computer of laptop? Onze IT-specialisten komen bij u thuis in Doorn, Driebergen-Rijsenburg, Amerongen, Maarn en Leersum. We helpen u graag met alles van printerproblemen tot het veilig instellen van uw e-mail. Persoonlijk, geduldig en altijd in begrijpelijke taal.",
+    "serviceAreas": [
+      "Doorn",
+      "Driebergen-Rijsenburg",
+      "Amerongen",
+      "Maarn",
+      "Leersum",
+      "Overberg",
+      "Woudenberg",
+      "Maarsbergen"
+    ],
+    "keywords": [
+      "computerhulp Utrechtse Heuvelrug",
+      "IT service Utrechtse Heuvelrug",
+      "laptop reparatie Utrechtse Heuvelrug",
+      "computer problemen Utrechtse Heuvelrug",
+      "IT hulp aan huis Utrechtse Heuvelrug",
+      "technische ondersteuning Utrechtse Heuvelrug",
+      "computer student Utrechtse Heuvelrug"
+    ],
+    "coordinates": {
+      "lat": 52.0347,
+      "lng": 5.3575
+    }
+  },
+  {
+    "name": "De Ronde Venen",
+    "slug": "de-ronde-venen",
+    "population": "45.000",
+    "region": "Utrecht",
+    "description": "Vriendelijke computerhulp aan huis in De Ronde Venen, voor Mijdrecht, Vinkeveen en alle kernen.",
+    "longDescription": "In De Ronde Venen helpen we inwoners van Mijdrecht, Vinkeveen, Wilnis en de andere dorpen met al hun computervragen. Of u nu in De Hoef last heeft van een virus, in Abcoude uw nieuwe printer wilt aansluiten of in Waverveen hulp zoekt bij uw tablet — onze technici komen snel bij u langs. Warme service in een groene omgeving.",
+    "serviceAreas": [
+      "Mijdrecht",
+      "Vinkeveen",
+      "Wilnis",
+      "Abcoude",
+      "De Hoef",
+      "Waverveen",
+      "Baambrugge"
+    ],
+    "keywords": [
+      "computerhulp De Ronde Venen",
+      "IT service De Ronde Venen",
+      "laptop reparatie De Ronde Venen",
+      "computer problemen De Ronde Venen",
+      "IT hulp aan huis De Ronde Venen",
+      "technische ondersteuning De Ronde Venen",
+      "computer student De Ronde Venen"
+    ],
+    "coordinates": {
+      "lat": 52.205,
+      "lng": 4.8809
+    }
+  },
+  {
+    "name": "Bunschoten",
+    "slug": "bunschoten",
+    "population": "22.000",
+    "region": "Utrecht",
+    "description": "Persoonlijke IT-hulp aan huis in Bunschoten en Spakenburg, dichtbij en betrouwbaar.",
+    "longDescription": "In de hechte gemeenschap van Bunschoten-Spakenburg bieden we persoonlijke computerhulp waar u op kunt vertrouwen. Of u nu in het centrum van Bunschoten woont, bij de haven van Spakenburg of in Eemdijk — wij helpen u graag met laptopproblemen, wifi-instellingen of het beveiligen van uw computer. Geen ingewikkeld jargon, gewoon duidelijke hulp aan uw keukentafel.",
+    "serviceAreas": [
+      "Bunschoten",
+      "Spakenburg",
+      "Eemdijk",
+      "Zevenhuizen",
+      "Hoogland",
+      "Vathorst"
+    ],
+    "keywords": [
+      "computerhulp Bunschoten",
+      "IT service Bunschoten",
+      "laptop reparatie Bunschoten",
+      "computer problemen Bunschoten",
+      "IT hulp aan huis Bunschoten",
+      "technische ondersteuning Bunschoten",
+      "computer student Bunschoten"
+    ],
+    "coordinates": {
+      "lat": 52.243,
+      "lng": 5.3788
+    }
+  },
+  {
+    "name": "Rhenen",
+    "slug": "rhenen",
+    "population": "20.000",
+    "region": "Utrecht",
+    "description": "Computerhulp aan huis in Rhenen en omgeving, aan de rand van de Utrechtse Heuvelrug.",
+    "longDescription": "Aan de oostkant van de Utrechtse Heuvelrug ligt Rhenen, waar onze IT-specialisten graag bij u langskomen voor computerhulp. Van het centrum van Rhenen tot Elst en Achterberg — we helpen u met laptop reparaties, trage computers en alles wat met techniek te maken heeft. Of u nu uitzicht heeft op de Grebbeberg of aan de Rijn woont, persoonlijke hulp is snel ter plaatse.",
+    "serviceAreas": [
+      "Rhenen",
+      "Elst",
+      "Achterberg",
+      "Remmerden",
+      "De Nude",
+      "Grebbeberg"
+    ],
+    "keywords": [
+      "computerhulp Rhenen",
+      "IT service Rhenen",
+      "laptop reparatie Rhenen",
+      "computer problemen Rhenen",
+      "IT hulp aan huis Rhenen",
+      "technische ondersteuning Rhenen",
+      "computer student Rhenen"
+    ],
+    "coordinates": {
+      "lat": 51.9592,
+      "lng": 5.5681
     }
   }
 ]

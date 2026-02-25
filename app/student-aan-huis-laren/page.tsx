@@ -171,7 +171,7 @@ export default function StudentAanHuisLarenPage() {
               </h1>
 
               <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
-                Een HBO-opgeleide student komt bij u thuis in {CITY}. Onze IT-studenten lossen alles snel en vakkundig op — bij u thuis.
+                Betaalbare computerhulp door een student aan huis in {CITY}. Jong, vakkundig en geduldig — onze HBO-studenten helpen u graag.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
