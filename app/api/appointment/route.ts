@@ -790,19 +790,6 @@ export async function POST(request: NextRequest) {
     const data = validationResult.data
 
 
-    // Additional business logic validation
-    if (data.urgency !== 'urgent' && data.urgency !== 'critical') {
-      if (!data.preferredDate || !data.preferredTime || data.preferredTime === '') {
-        return NextResponse.json(
-          { message: 'Datum en tijd zijn verplicht voor niet-urgente afspraken' },
-          {
-            status: 400,
-            headers: securityHeaders
-          }
-        )
-      }
-    }
-
     // Sanitize all text inputs
     const sanitizedData = {
       ...data,
@@ -860,76 +847,45 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-      // Send emails individually to handle failures gracefully
-      let customerError: Error | null = null
-      let adminError: Error | null = null
+      // Send both emails in parallel for faster response
+      const [customerResult, adminResult] = await Promise.all([
+        sendEmail(
+          data.email,
+          `Bevestiging: Uw afspraak bij Hulp met IT (${reference})`,
+          getCustomerEmailTemplate(sanitizedData, reference),
+          reference,
+          false
+        ),
+        sendEmail(
+          EMAIL_CONFIG.FROM_ADDRESS,
+          `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
+          getAdminEmailTemplate(sanitizedData, reference, { ip, userAgent }),
+          reference,
+          true
+        )
+      ])
 
-      // Send customer confirmation email
-      const customerResult = await sendEmail(
-        data.email,
-        `Bevestiging: Uw afspraak bij Hulp met IT (${reference})`,
-        getCustomerEmailTemplate(sanitizedData, reference),
-        reference,
-        false
-      )
+      customerEmailSent = customerResult.success
+      adminEmailSent = adminResult.success
 
-      if (customerResult.success) {
-        if (process.env.NODE_ENV === 'development') {
-          console.log('✅ Customer email sent:', customerResult.messageId)
-        }
-        customerEmailSent = true
-      } else {
-        customerError = customerResult.error as Error
-        if (process.env.NODE_ENV === 'development') {
-          console.log('DEBUG: Customer email failed:', customerResult.error)
-        }
+      if (!customerResult.success) {
         logSecurityEvent('CUSTOMER_EMAIL_FAILED', {
           error: customerResult.error instanceof Error ? customerResult.error.message : 'Unknown error',
-          customerEmail: data.email,
-          reference
+          customerEmail: data.email, reference
         }, ip)
       }
-
-      // Send admin notification email
-      const adminResult = await sendEmail(
-        EMAIL_CONFIG.FROM_ADDRESS,
-        `🚨 NIEUWE AFSPRAAK - ${urgencyLabels[data.urgency]?.priority || 'NORMAAL'} - ${reference}`,
-        getAdminEmailTemplate(sanitizedData, reference, { ip, userAgent }),
-        reference,
-        true
-      )
-
-      if (adminResult.success) {
-        if (process.env.NODE_ENV === 'development') {
-          console.log('✅ Admin email sent:', adminResult.messageId)
-        }
-        adminEmailSent = true
-      } else {
-        adminError = adminResult.error as Error
-        if (process.env.NODE_ENV === 'development') {
-          console.log('DEBUG: Admin email failed:', adminResult.error)
-        }
+      if (!adminResult.success) {
         logSecurityEvent('ADMIN_EMAIL_FAILED', {
           error: adminResult.error instanceof Error ? adminResult.error.message : 'Unknown error',
           reference
         }, ip)
       }
 
-      // Log appointment creation with email status
       logSecurityEvent('APPOINTMENT_CREATED', {
-        reference,
-        customerEmail: data.email,
-        urgency: data.urgency,
-        serviceType: data.serviceType,
-        customerEmailSent,
-        adminEmailSent,
-        emailErrors: {
-          customer: customerError ? (customerError instanceof Error ? customerError.message : 'Unknown error') : null,
-          admin: adminError ? (adminError instanceof Error ? adminError.message : 'Unknown error') : null
-        }
+        reference, customerEmail: data.email, urgency: data.urgency,
+        serviceType: data.serviceType, customerEmailSent, adminEmailSent
       }, ip)
 
-      // Only throw error if BOTH emails failed
       if (!customerEmailSent && !adminEmailSent) {
         throw new Error('Beide emails konden niet worden verzonden')
       }
@@ -939,9 +895,6 @@ export async function POST(request: NextRequest) {
         error: error instanceof Error ? error.message : 'Unknown error',
         reference
       }, ip)
-      if (process.env.NODE_ENV === 'development') {
-        console.log('DEBUG: Critical email sending error:', error)
-      }
       throw error
     }
 
