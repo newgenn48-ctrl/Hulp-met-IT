@@ -59,11 +59,24 @@ const faqData = [
   {
     question: 'Wat als de reparatie niet lukt?',
     answer: 'We zijn eerlijk over wat wel en niet mogelijk is. U betaalt alleen voor de bestede tijd. We adviseren u dan over de beste vervolgstappen.'
+  },
+  {
+    question: 'Repareren jullie ook Apple Mac computers?',
+    answer: 'Ja, onze studenten hebben ervaring met zowel Windows als Apple/Mac systemen. Wij helpen met software-problemen, instellingen, updates en meer op alle gangbare besturingssystemen.'
   }
 ]
 
 export default function ComputerReparatiePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hulpmetit.nl' },
+      { '@type': 'ListItem', position: 2, name: 'Computer Reparatie', item: 'https://hulpmetit.nl/computer-reparatie' }
+    ]
+  }
 
   const faqStructuredData = {
     '@context': 'https://schema.org',
@@ -87,7 +100,7 @@ export default function ComputerReparatiePage() {
     provider: {
       '@type': 'LocalBusiness',
       name: 'Hulp met IT',
-      telephone: '+31642827860',
+      telephone: '+31858005006',
       url: 'https://hulpmetit.nl'
     },
     areaServed: {
@@ -101,8 +114,26 @@ export default function ComputerReparatiePage() {
     }
   }
 
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hulp met IT - Computer Reparatie aan Huis',
+    description: 'Professionele computer reparatie aan huis door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl/computer-reparatie',
+    telephone: '+31858005006',
+    email: 'info@hulpmetit.nl',
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    serviceType: 'Computer reparatie aan huis',
+    priceRange: '€53,50 - €100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
@@ -111,12 +142,16 @@ export default function ComputerReparatiePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }}
+      />
 
       {/* Hero */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
         <Image
           src="/hulp-met-it.webp"
-          alt="Computer reparatie aan huis door ICT-student"
+          alt="ICT-student repareert computer bij klant aan huis"
           fill
           priority
           className="object-cover"
@@ -146,11 +181,11 @@ export default function ComputerReparatiePage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                  Bel 085-8005006
                 </a>
               </div>
 
@@ -229,8 +264,36 @@ export default function ComputerReparatiePage() {
       <SectionDivider
         variant="swoosh"
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
-        bottomColor="#fafaf9"
+        bottomColor="#ffffff"
       />
+
+      {/* Over computer reparatie */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div>
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+                Computer reparatie
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+                Vakkundige computer reparatie bij u thuis
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                Een kapotte computer is vervelend, maar u hoeft er niet mee naar een winkel. Bij Hulp Met IT komen onze HBO-opgeleide ICT-studenten bij u aan huis om uw computer te repareren. Van trage systemen en virusinfecties tot hardware-problemen en opstartfouten — wij lossen het ter plekke op.
+              </p>
+              <p className="text-secondary-600 leading-relaxed mb-4">
+                Onze reparatieservice omvat onder andere het verwijderen van virussen, het upgraden van <a href="/diensten/computerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">harde schijven en geheugen</a>, het oplossen van <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">internet- en wifi-problemen</a>, en het herstellen van <a href="/diensten/email-problemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">e-mailinstellingen</a>. Ook helpen wij met <a href="/diensten/printerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">printers</a> die niet meer werken na een update.
+              </p>
+              <p className="text-secondary-600 leading-relaxed">
+                Heeft u specifiek een laptop die gerepareerd moet worden? Bekijk dan ook onze <a href="/laptop-reparatie" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">laptop reparatie</a> pagina. Of wilt u uw <a href="/pc-laten-maken" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">PC laten maken</a>? Wij staan voor u klaar.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+
       {/* Cities */}
       <section className="py-20 lg:py-28 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -316,6 +379,27 @@ export default function ComputerReparatiePage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Bekijk ook onze{' '}
+            <a href="/laptop-reparatie" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              laptop reparatie
+            </a>
+            ,{' '}
+            <a href="/pc-laten-maken" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              PC laten maken
+            </a>
+            {' '}en{' '}
+            <a href="/computerproblemen" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computerproblemen
+            </a>
+            {' '}pagina&apos;s.
+          </p>
         </div>
       </section>
 

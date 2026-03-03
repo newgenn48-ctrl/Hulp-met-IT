@@ -71,9 +71,9 @@ export function StickyContactButtons() {
           </Link>
 
           <a
-            href="tel:+31642827860"
+            href="tel:+31858005006"
             className="group relative bg-primary-600 hover:bg-primary-700 text-white p-3.5 rounded-xl shadow-primary transition-all duration-300 hover:scale-110"
-            aria-label="Bel ons: 06-42827860"
+            aria-label="Bel ons: 085-8005006"
           >
             <Phone className="w-5 h-5" />
             <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-primary-700 text-white px-3 py-2 rounded-lg text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap shadow-lg">
@@ -127,13 +127,13 @@ export function StickyContactButtons() {
             </Link>
 
             <a
-              href="tel:+31642827860"
+              href="tel:+31858005006"
               className="flex flex-col items-center justify-center bg-primary-600 hover:bg-primary-700 text-white p-3 rounded-xl shadow-primary transition-all duration-200 active:scale-95"
               aria-label="Bel ons nu"
               style={{ minHeight: '60px' }}
             >
               <Phone className="w-5 h-5 mb-1" />
-              <span className="text-xs font-semibold">Bellen</span>
+              <span className="text-xs font-semibold">085-8005006</span>
             </a>
           </div>
         </div>
@@ -146,7 +146,7 @@ export function StickyContactButtons() {
           : 'opacity-0 scale-75 pointer-events-none'
       }`}>
         <a
-          href="tel:+31642827860"
+          href="tel:+31858005006"
           className="flex items-center justify-center bg-primary-600 hover:bg-primary-700 text-white w-14 h-14 rounded-full shadow-primary transition-all duration-300 hover:scale-110 active:scale-95"
           aria-label="Bel nu"
         >

@@ -34,7 +34,7 @@ export default function AlgemeneVoorwaardenPage() {
                 <p><strong>Handelsnaam:</strong> Hulp met IT</p>
                 <p><strong>KvK nummer:</strong> 91310318</p>
                 <p><strong>BTW nummer:</strong> NL865613461B01</p>
-                <p><strong>Telefoonnummer:</strong> +31 (0)6 42827860</p>
+                <p><strong>Telefoonnummer:</strong> +31 (0)85 8005006</p>
                 <p><strong>E-mailadres:</strong> info@hulpmetit.nl</p>
                 <p><strong>Website:</strong> https://hulpmetit.nl</p>
               </div>
@@ -177,7 +177,7 @@ export default function AlgemeneVoorwaardenPage() {
               <div className="space-y-3">
                 <p><strong>Klachtenprocedure:</strong></p>
                 <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>Klachten kunt u indienen via e-mail: info@hulpmetit.nl of telefonisch: 06-42827860</li>
+                  <li>Klachten kunt u indienen via e-mail: info@hulpmetit.nl of telefonisch: 085-8005006</li>
                   <li>Hulp met IT reageert binnen 5 werkdagen op uw klacht</li>
                   <li>Hulp met IT streeft ernaar klachten binnen 14 dagen op te lossen</li>
                   <li>Als de klacht gegrond is, zal Hulp met IT een passende oplossing bieden</li>
@@ -248,7 +248,7 @@ export default function AlgemeneVoorwaardenPage() {
               <h2 className="text-2xl font-bold text-secondary-800 mb-4">Contact</h2>
               <div className="space-y-2">
                 <p><strong>Voor vragen over deze algemene voorwaarden kunt u contact opnemen:</strong></p>
-                <p>📞 Telefoon: <a href="tel:+31642827860" className="text-primary-600 hover:underline">06-42827860</a></p>
+                <p>📞 Telefoon: <a href="tel:+31858005006" className="text-primary-600 hover:underline">085-8005006</a></p>
                 <p>📧 E-mail: <a href="mailto:info@hulpmetit.nl" className="text-primary-600 hover:underline">info@hulpmetit.nl</a></p>
                 <p>🌐 Website: <a href="https://hulpmetit.nl" className="text-primary-600 hover:underline">https://hulpmetit.nl</a></p>
               </div>

@@ -27,9 +27,9 @@ export function Footer() {
             </p>
 
             <div className="space-y-3 text-sm">
-              <a href="tel:+31642827860" className="flex items-center text-secondary-300 hover:text-accent-400 transition-colors py-1.5">
+              <a href="tel:+31858005006" className="flex items-center text-secondary-300 hover:text-accent-400 transition-colors py-1.5">
                 <Phone className="w-4 h-4 mr-3 text-primary-400" />
-                06-42827860
+                085-8005006
               </a>
               <a href="mailto:info@hulpmetit.nl" className="flex items-center text-secondary-300 hover:text-accent-400 transition-colors py-1.5">
                 <Mail className="w-4 h-4 mr-3 text-primary-400" />
@@ -188,11 +188,11 @@ export function Footer() {
             <div className="mt-6 p-4 bg-secondary-800 rounded-xl border border-secondary-700">
               <p className="text-sm font-medium text-white mb-2">Hulp nodig?</p>
               <a
-                href="tel:+31642827860"
+                href="tel:+31858005006"
                 className="inline-flex items-center text-sm font-semibold text-accent-400 hover:text-accent-300"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Bel direct
+                Bel 085-8005006
               </a>
             </div>
           </div>

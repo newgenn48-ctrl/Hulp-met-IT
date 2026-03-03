@@ -46,11 +46,11 @@ export default function BevestigingPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="tel:+31642827860"
+                href="tel:+31858005006"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 text-base font-semibold text-primary-700 bg-primary-50 hover:bg-primary-100 border border-primary-200 rounded-xl transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                Bel ons
+                Bel 085-8005006
               </a>
             </div>
           </div>

@@ -13,13 +13,26 @@ export const metadata: Metadata = {
     'computerhulp door studenten',
     'student aan huis computer',
     'HBO student computerhulp',
-    'studenten computerhulp aan huis'
+    'studenten computerhulp aan huis',
+    'goedkope computerhulp student',
+    'ict student aan huis',
+    'student pc hulp',
+    'betaalbare IT hulp student',
+    'student laptop reparatie',
+    'computerhulp jong en vakkundig'
   ],
   alternates: { canonical: '/student-computerhulp' },
   openGraph: {
     title: 'Student Computerhulp - Betaalbare IT Hulp aan Huis',
     description: 'HBO-opgeleide ICT-studenten helpen met al uw computerproblemen aan huis.',
-    images: ['/og-image.webp'],
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Student computerhulp aan huis - Hulp met IT'
+      }
+    ],
     url: 'https://hulpmetit.nl/student-computerhulp',
     type: 'website',
     locale: 'nl_NL',
@@ -29,8 +42,19 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Student Computerhulp aan Huis',
     description: 'Betaalbare computerhulp door HBO-opgeleide ICT-studenten.',
+    images: ['/og-image.webp']
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

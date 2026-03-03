@@ -14,6 +14,7 @@ import {
 import { PricingSection } from '@/components/home/PricingSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
 import { TrustAndPricing } from '@/components/home/TrustAndPricing'
+import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { CTASection } from '@/components/home/CTASection'
 import { SectionDivider } from '@/components/ui/SectionDivider'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
@@ -39,6 +40,10 @@ const faqData = [
   {
     question: 'Helpen jullie ook met Apple/Mac problemen?',
     answer: 'Ja, wij helpen met alle merken: Windows, Apple/Mac, Chromebook, en alle gangbare laptops en desktops.'
+  },
+  {
+    question: 'Lossen jullie ook problemen op afstand op?',
+    answer: 'Ja, voor bepaalde computerproblemen bieden wij ook hulp op afstand. Via een veilige verbinding kunnen onze studenten meekijken op uw scherm en het probleem direct oplossen. Dit is ideaal voor snelle software-vragen.'
   }
 ]
 
@@ -58,18 +63,69 @@ export default function ComputerProblemenPage() {
     }))
   }
 
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hulpmetit.nl' },
+      { '@type': 'ListItem', position: 2, name: 'Computerproblemen', item: 'https://hulpmetit.nl/computerproblemen' }
+    ]
+  }
+
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Computerproblemen Oplossen aan Huis',
+    alternateName: ['Computer problemen hulp', 'PC problemen oplossen', 'Computer storing verhelpen'],
+    description: 'Professionele hulp bij computerproblemen aan huis door HBO-opgeleide ICT-studenten',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Hulp met IT',
+      telephone: '+31858005006',
+      url: 'https://hulpmetit.nl'
+    },
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' }
+  }
+
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hulp met IT - Computerproblemen Oplossen',
+    description: 'Professionele hulp bij computerproblemen aan huis door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl/computerproblemen',
+    telephone: '+31858005006',
+    email: 'info@hulpmetit.nl',
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    serviceType: 'Computerproblemen oplossen aan huis',
+    priceRange: '€53,50 - €100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }}
       />
 
       {/* Hero */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
         <Image
           src="/hulp-met-it.webp"
-          alt="Computerproblemen oplossen aan huis"
+          alt="ICT-student helpt klant met computerproblemen aan huis"
           fill
           priority
           className="object-cover"
@@ -99,11 +155,11 @@ export default function ComputerProblemenPage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Bel 06-42827860
+                  Bel 085-8005006
                 </a>
               </div>
 
@@ -167,6 +223,8 @@ export default function ComputerProblemenPage() {
 
       <PricingSection />
 
+      <TestimonialsSection />
+
       <SectionDivider
         variant="layered-wave"
         topColor="#fafaf9"
@@ -180,8 +238,32 @@ export default function ComputerProblemenPage() {
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
         bottomColor="#fafaf9"
       />
-
       <CompactServicesSection />
+
+      {/* Over computerproblemen */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div>
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+                Computerproblemen oplossen
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+                Professionele hulp bij elk computerprobleem
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                Of het nu gaat om een trage computer, een virus, internetproblemen of een vastgelopen systeem — bij Hulp Met IT bent u aan het juiste adres. Onze HBO-opgeleide ICT-studenten komen bij u thuis en lossen elk probleem geduldig en vakkundig op. Wij werken met alle merken en systemen.
+              </p>
+              <p className="text-secondary-600 leading-relaxed mb-4">
+                Naast het oplossen van uw huidige probleem, helpen wij ook met het voorkomen van toekomstige problemen. Denk aan het installeren van goede <a href="/diensten/computerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">beveiligingssoftware</a>, het opschonen van uw systeem, en het instellen van automatische <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">internet- en wifi-verbindingen</a>. Ook helpen wij met <a href="/diensten/email-problemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">e-mailproblemen</a> en <a href="/diensten/printerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">printerproblemen</a>.
+              </p>
+              <p className="text-secondary-600 leading-relaxed">
+                Heeft u een nieuw apparaat nodig? Wij helpen ook met het <a href="/computer-installeren-aan-huis" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">installeren van een nieuwe computer</a>. En voor specifieke laptop-issues kunt u terecht bij onze <a href="/laptop-reparatie" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">laptop reparatie</a> service.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
 
@@ -221,6 +303,27 @@ export default function ComputerProblemenPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Bekijk ook onze{' '}
+            <a href="/computer-reparatie" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computer reparatie
+            </a>
+            ,{' '}
+            <a href="/laptop-reparatie" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              laptop reparatie
+            </a>
+            {' '}en{' '}
+            <a href="/pc-hulp-aan-huis" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              PC hulp aan huis
+            </a>
+            {' '}pagina&apos;s.
+          </p>
         </div>
       </section>
 

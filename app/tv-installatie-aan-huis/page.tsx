@@ -24,11 +24,21 @@ const faqData = [
   { question: 'Welke TV merken installeren jullie?', answer: 'Wij installeren alle merken: Samsung, LG, Sony, Philips, TCL, Hisense en meer. Ook oudere modellen en Android TV / Google TV / Tizen / webOS.' },
   { question: 'Kunnen jullie ook mijn TV aan de muur hangen?', answer: 'Ja, wij monteren de muurbeugel en hangen uw TV veilig op. Zorg dat u een muurbeugel heeft die past bij uw TV en muur. Wij adviseren u graag welke u nodig heeft.' },
   { question: 'Helpen jullie ook met Chromecast of Apple TV?', answer: 'Ja! Wij installeren en configureren ook streaming apparaten zoals Chromecast, Apple TV, Fire TV Stick en andere media players.' },
-  { question: 'Kunnen jullie mijn TV met surround sound instellen?', answer: 'Ja, wij helpen met het aansluiten en instellen van soundbars, surround sound systemen en draadloze speakers met uw TV.' }
+  { question: 'Kunnen jullie mijn TV met surround sound instellen?', answer: 'Ja, wij helpen met het aansluiten en instellen van soundbars, surround sound systemen en draadloze speakers met uw TV.' },
+  { question: 'Kunnen jullie ook een mediaspeler zoals Apple TV of Chromecast installeren?', answer: 'Ja, wij installeren en configureren alle gangbare mediaspelers: Apple TV, Chromecast, Amazon Fire TV Stick en meer. Wij koppelen ze aan uw wifi, installeren de gewenste apps en leggen uit hoe u ze gebruikt.' }
 ]
 
 export default function TvInstallatieAanHuisPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hulpmetit.nl' },
+      { '@type': 'ListItem', position: 2, name: 'TV Installatie aan Huis', item: 'https://hulpmetit.nl/tv-installatie-aan-huis' }
+    ]
+  }
 
   const faqStructuredData = {
     '@context': 'https://schema.org',
@@ -40,12 +50,45 @@ export default function TvInstallatieAanHuisPage() {
     }))
   }
 
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'TV Installatie aan Huis',
+    alternateName: ['Smart TV instellen', 'TV aansluiten', 'TV installatie service'],
+    description: 'TV installatie en smart TV instellen aan huis door HBO-opgeleide ICT-studenten',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Hulp met IT',
+      telephone: '+31858005006',
+      url: 'https://hulpmetit.nl'
+    },
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' }
+  }
+
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hulp met IT - TV Installatie aan Huis',
+    description: 'TV installatie en smart TV instellen aan huis door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl/tv-installatie-aan-huis',
+    telephone: '+31858005006',
+    email: 'info@hulpmetit.nl',
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    serviceType: 'TV installatie aan huis',
+    priceRange: '€53,50 - €100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }} />
 
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
-        <Image src="/hulp-met-it.webp" alt="TV installatie aan huis door ICT-student" fill priority className="object-cover" sizes="100vw" />
+        <Image src="/hulp-met-it.webp" alt="ICT-student installeert smart TV bij klant aan huis" fill priority className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-r from-secondary-900/90 via-secondary-900/75 to-secondary-900/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/60 via-transparent to-secondary-900/30" />
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20">
@@ -61,8 +104,8 @@ export default function TvInstallatieAanHuisPage() {
                 <Link href="/afspraak" className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-accent">
                   TV laten instellen <ArrowRight className="w-5 h-5" />
                 </Link>
-                <a href="tel:+31642827860" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors">
-                  <Phone className="w-4 h-4" /> Bel 06-42827860
+                <a href="tel:+31858005006" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors">
+                  <Phone className="w-4 h-4" /> Bel 085-8005006
                 </a>
               </div>
               <p className="text-accent-400 text-sm font-medium mb-8">Meestal binnen 24 uur geholpen</p>
@@ -111,7 +154,35 @@ export default function TvInstallatieAanHuisPage() {
       <TestimonialsSection />
       <SectionDivider variant="layered-wave" topColor="#fafaf9" bottomColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust' }} />
       <TrustAndPricing />
-      <SectionDivider variant="swoosh" topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }} bottomColor="#fafaf9" />
+      <SectionDivider variant="swoosh" topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }} bottomColor="#ffffff" />
+
+      {/* Over TV installatie - about section met interne links */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div>
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+                TV installatie
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+                Smart TV instellen en aansluiten bij u thuis
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                Een nieuwe smart TV biedt eindeloze mogelijkheden, maar het instellen kan lastig zijn. Bij Hulp Met IT komen onze HBO-opgeleide studenten bij u thuis om uw TV te installeren, zenders in te stellen, apps te installeren en alles aan te sluiten op uw <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">wifi-netwerk</a>.
+              </p>
+              <p className="text-secondary-600 leading-relaxed mb-4">
+                Wij helpen met alle merken smart TV&apos;s: Samsung, LG, Sony, Philips en meer. Ook het aansluiten van een soundbar, het instellen van streaming diensten zoals Netflix en Disney+, en het configureren van een mediaspeler behoort tot onze service. Heeft u problemen met uw <a href="/diensten/computerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">computer</a> of <a href="/diensten/tablet-smartphone" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">tablet</a>? Daar helpen wij ook mee.
+              </p>
+              <p className="text-secondary-600 leading-relaxed">
+                Onze studenten leggen alles geduldig uit, zodat u zelf ook met uw TV overweg kunt. Ideaal ook voor <a href="/computerhulp-senioren" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">senioren</a> die hulp willen bij hun smart TV.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <SectionDivider variant="tilt" topColor="#ffffff" bottomColor="#fafaf9" />
+
       <section className="py-20 lg:py-28 bg-secondary-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
@@ -140,6 +211,27 @@ export default function TvInstallatieAanHuisPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Bekijk ook onze{' '}
+            <a href="/computerproblemen" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computerproblemen
+            </a>
+            ,{' '}
+            <a href="/computerhulp-senioren" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computerhulp voor senioren
+            </a>
+            {' '}en{' '}
+            <a href="/student-computerhulp" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              student computerhulp
+            </a>
+            {' '}pagina&apos;s.
+          </p>
         </div>
       </section>
 

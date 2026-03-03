@@ -40,11 +40,24 @@ const faqData = [
   {
     question: 'Repareren jullie ook laptops?',
     answer: 'Ja, wij repareren zowel desktops als laptops. Windows, Apple, Chromebook — alle merken en types.'
+  },
+  {
+    question: 'Hoe lang duurt een gemiddelde PC reparatie?',
+    answer: 'De meeste problemen lossen we binnen 45 tot 90 minuten op. Bij complexere reparaties zoals een Windows herinstallatie of data-overzetting kan het langer duren. Onze student geeft u altijd vooraf een eerlijke inschatting.'
   }
 ]
 
 export default function PcLatenMakenPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hulpmetit.nl' },
+      { '@type': 'ListItem', position: 2, name: 'PC Laten Maken', item: 'https://hulpmetit.nl/pc-laten-maken' }
+    ]
+  }
 
   const faqStructuredData = {
     '@context': 'https://schema.org',
@@ -59,18 +72,60 @@ export default function PcLatenMakenPage() {
     }))
   }
 
+  const serviceStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'PC Laten Maken aan Huis',
+    alternateName: ['PC reparatie aan huis', 'Computer laten repareren', 'PC laten repareren'],
+    description: 'PC laten maken aan huis door HBO-opgeleide ICT-studenten. Snelle diagnose en reparatie.',
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Hulp met IT',
+      telephone: '+31858005006',
+      url: 'https://hulpmetit.nl'
+    },
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' }
+  }
+
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hulp met IT - PC Laten Maken',
+    description: 'PC laten maken aan huis door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl/pc-laten-maken',
+    telephone: '+31858005006',
+    email: 'info@hulpmetit.nl',
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    serviceType: 'PC laten maken aan huis',
+    priceRange: '€53,50 - €100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }}
       />
 
       {/* Hero */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
         <Image
           src="/hulp-met-it.webp"
-          alt="PC laten maken door ICT-student aan huis"
+          alt="ICT-student maakt PC bij klant aan huis"
           fill
           priority
           className="object-cover"
@@ -100,11 +155,11 @@ export default function PcLatenMakenPage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Bel 06-42827860
+                  Bel 085-8005006
                 </a>
               </div>
 
@@ -187,6 +242,33 @@ export default function PcLatenMakenPage() {
 
       <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
 
+      {/* Over PC laten maken */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div>
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+                PC laten maken
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+                PC kapot? Wij maken hem bij u thuis
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                Wanneer uw PC het laat afweten, wilt u snel weer aan de slag. Bij Hulp Met IT hoeft u uw computer niet naar een winkel te brengen. Onze HBO-opgeleide ICT-studenten komen bij u thuis, stellen een diagnose en repareren uw PC ter plekke. Van trage systemen tot defecte hardware — wij lossen het op.
+              </p>
+              <p className="text-secondary-600 leading-relaxed mb-4">
+                Wij helpen met allerlei PC problemen: virusverwijdering, <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">internet- en wifi-herstel</a>, <a href="/diensten/email-problemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">e-mail configuratie</a>, Windows updates en harde schijf upgrades. Ook het aansluiten van een <a href="/diensten/printerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">printer</a> of het instellen van <a href="/diensten/computerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">beveiligingssoftware</a> behoort tot onze service.
+              </p>
+              <p className="text-secondary-600 leading-relaxed">
+                Heeft u specifiek een laptop probleem? Bekijk dan onze <a href="/laptop-reparatie" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">laptop reparatie</a> pagina. Of heeft u een geheel nieuwe computer? Wij helpen ook met <a href="/computer-installeren-aan-huis" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">installatie aan huis</a>.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <SectionDivider variant="tilt" topColor="#ffffff" bottomColor="#ffffff" />
+
       {/* FAQ */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -223,6 +305,27 @@ export default function PcLatenMakenPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Bekijk ook onze{' '}
+            <a href="/computer-reparatie" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computer reparatie
+            </a>
+            ,{' '}
+            <a href="/pc-hulp-aan-huis" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              PC hulp aan huis
+            </a>
+            {' '}en{' '}
+            <a href="/computerproblemen" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computerproblemen
+            </a>
+            {' '}pagina&apos;s.
+          </p>
         </div>
       </section>
 

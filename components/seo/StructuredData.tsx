@@ -112,7 +112,7 @@ export function StructuredData({ breadcrumbs = [] }: StructuredDataProps = {}) {
     "logo": "https://hulpmetit.nl/og-image.webp",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+31-6-42827860",
+      "telephone": "+31-85-8005006",
       "contactType": "customer service",
       "availableLanguage": "Dutch"
     },

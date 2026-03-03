@@ -4,9 +4,9 @@
  */
 
 export const CONTACT_INFO = {
-  PHONE: '+31642827860',
-  PHONE_DISPLAY: '06-42827860',
-  PHONE_NUMBER: '642827860',
+  PHONE: '+31858005006',
+  PHONE_DISPLAY: '085-8005006',
+  PHONE_NUMBER: '858005006',
   EMAIL: 'info@hulpmetit.nl',
   EMAIL_DISPLAY: 'info@hulpmetit.nl'
 } as const

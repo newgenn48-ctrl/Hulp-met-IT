@@ -29,11 +29,11 @@ export function CTASection() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:+31642827860"
+              href="tel:+31858005006"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-all duration-200"
             >
               <Phone className="w-5 h-5" />
-              Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+              Bel 085-8005006
             </a>
           </div>
 

@@ -116,7 +116,7 @@ export default function ${FUNC}() {
     provider: {
       '@type': 'LocalBusiness',
       name: 'Hulp met IT',
-      telephone: '+31642827860',
+      telephone: '+31858005006',
       url: 'https://hulpmetit.nl'
     },
     areaServed: {
@@ -136,7 +136,7 @@ export default function ${FUNC}() {
     name: \`Hulp met IT - Computerhulp aan Huis \${CITY}\`,
     description: \`Professionele computerhulp aan huis in \${CITY} door HBO-opgeleide ICT-studenten\`,
     url: \`https://hulpmetit.nl/computerhulp-aan-huis-\${SLUG}\`,
-    telephone: '+31642827860',
+    telephone: '+31858005006',
     email: 'info@hulpmetit.nl',
     areaServed: {
       '@type': 'City',
@@ -203,11 +203,11 @@ export default function ${FUNC}() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                  Bel 085-8005006
                 </a>
               </div>
 
@@ -494,7 +494,7 @@ export default function ${FUNC}() {
     provider: {
       '@type': 'LocalBusiness',
       name: 'Hulp met IT',
-      telephone: '+31642827860',
+      telephone: '+31858005006',
       url: 'https://hulpmetit.nl'
     },
     areaServed: {
@@ -514,7 +514,7 @@ export default function ${FUNC}() {
     name: \`Hulp met IT - Student aan Huis \${CITY}\`,
     description: \`Betaalbare computerhulp aan huis in \${CITY} door HBO-opgeleide ICT-studenten\`,
     url: \`https://hulpmetit.nl/student-aan-huis-\${SLUG}\`,
-    telephone: '+31642827860',
+    telephone: '+31858005006',
     email: 'info@hulpmetit.nl',
     areaServed: {
       '@type': 'City',
@@ -581,11 +581,11 @@ export default function ${FUNC}() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                  Bel 085-8005006
                 </a>
               </div>
 

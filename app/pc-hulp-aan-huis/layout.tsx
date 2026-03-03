@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'PC Hulp aan Huis - Computer Hulp bij U Thuis | Hulp met IT',
-  description: 'PC hulp aan huis nodig? HBO-opgeleide ICT-studenten komen bij u thuis voor alle computerproblemen. Vanaf €14,50/kwartier. 7 dagen per week. Bel 06-42827860!',
+  description: 'PC hulp aan huis nodig? HBO-opgeleide ICT-studenten komen bij u thuis voor alle computerproblemen. Vanaf €14,50/kwartier. 7 dagen per week. Bel 085-8005006!',
   keywords: [
     'pc hulp aan huis',
     'computer hulp aan huis',
@@ -13,13 +13,26 @@ export const metadata: Metadata = {
     'pc service aan huis',
     'computer service thuis',
     'pc hulp nodig',
-    'hulp bij pc problemen'
+    'hulp bij pc problemen',
+    'pc reparatie aan huis',
+    'betaalbare pc hulp',
+    'pc problemen oplossen thuis',
+    'computer ondersteuning',
+    'pc hulp in de buurt',
+    'thuishulp computer'
   ],
   alternates: { canonical: '/pc-hulp-aan-huis' },
   openGraph: {
     title: 'PC Hulp aan Huis - Computer Hulp bij U Thuis',
     description: 'HBO-opgeleide studenten lossen uw PC problemen op bij u thuis. Snel, betaalbaar.',
-    images: ['/og-image.webp'],
+    images: [
+      {
+        url: '/og-image.webp',
+        width: 1200,
+        height: 630,
+        alt: 'PC hulp aan huis - Hulp met IT'
+      }
+    ],
     url: 'https://hulpmetit.nl/pc-hulp-aan-huis',
     type: 'website',
     locale: 'nl_NL',
@@ -29,8 +42,19 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PC Hulp aan Huis',
     description: 'Computer hulp bij u thuis. Snel, betaalbaar, 7 dagen per week.',
+    images: ['/og-image.webp']
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large' as const,
+      'max-snippet': -1
+    }
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

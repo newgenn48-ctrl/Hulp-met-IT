@@ -41,11 +41,11 @@ export function CityHeroSection({ cityName }: CityHeroSectionProps) {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <a
-                href="tel:+31642827860"
+                href="tel:+31858005006"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-xl transition-colors"
               >
                 <Phone className="w-4 h-4" />
-                Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                Bel 085-8005006
               </a>
             </div>
 

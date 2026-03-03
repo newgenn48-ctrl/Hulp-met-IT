@@ -59,11 +59,24 @@ const faqData = [
   {
     question: 'Hoe lang duurt een volledige installatie?',
     answer: 'Een basis installatie duurt ongeveer 1 uur. Met data overzetten en extra programma\'s kan het 1,5 tot 2 uur duren.'
+  },
+  {
+    question: 'Kunnen jullie ook mijn oude bestanden en foto\'s overzetten?',
+    answer: 'Ja, wij zetten al uw bestanden, foto\'s, documenten en favorieten over van uw oude naar uw nieuwe computer. Ook e-mailaccounts en wachtwoorden worden zorgvuldig overgezet zodat u direct verder kunt werken.'
   }
 ]
 
 export default function ComputerInstallerenPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hulpmetit.nl' },
+      { '@type': 'ListItem', position: 2, name: 'Computer Installeren aan Huis', item: 'https://hulpmetit.nl/computer-installeren-aan-huis' }
+    ]
+  }
 
   const faqStructuredData = {
     '@context': 'https://schema.org',
@@ -82,12 +95,12 @@ export default function ComputerInstallerenPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Computer Installeren aan Huis',
-    alternateName: ['PC installatie', 'Nieuwe computer instellen', 'Computer opzetten'],
-    description: 'Nieuwe computer installeren en instellen aan huis door HBO-opgeleide ICT-studenten',
+    alternateName: ['Nieuwe computer instellen', 'PC installatie aan huis', 'Laptop installeren'],
+    description: 'Nieuwe computer of laptop installeren en instellen aan huis door HBO-opgeleide ICT-studenten',
     provider: {
       '@type': 'LocalBusiness',
       name: 'Hulp met IT',
-      telephone: '+31642827860',
+      telephone: '+31858005006',
       url: 'https://hulpmetit.nl'
     },
     areaServed: {
@@ -101,8 +114,26 @@ export default function ComputerInstallerenPage() {
     }
   }
 
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hulp met IT - Computer Installeren aan Huis',
+    description: 'Nieuwe computer of laptop installeren en instellen aan huis door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl/computer-installeren-aan-huis',
+    telephone: '+31858005006',
+    email: 'info@hulpmetit.nl',
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    serviceType: 'Computer installatie aan huis',
+    priceRange: '€53,50 - €100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
@@ -111,12 +142,16 @@ export default function ComputerInstallerenPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }}
+      />
 
       {/* Hero */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
         <Image
           src="/hulp-met-it.webp"
-          alt="Computer installeren aan huis door ICT-student"
+          alt="ICT-student installeert nieuwe computer bij klant aan huis"
           fill
           priority
           className="object-cover"
@@ -146,11 +181,11 @@ export default function ComputerInstallerenPage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                  Bel 085-8005006
                 </a>
               </div>
 
@@ -229,8 +264,36 @@ export default function ComputerInstallerenPage() {
       <SectionDivider
         variant="swoosh"
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
-        bottomColor="#fafaf9"
+        bottomColor="#ffffff"
       />
+
+      {/* Over computer installeren */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div>
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+                Computer installeren
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+                Nieuwe computer? Wij stellen alles voor u in
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                Een nieuwe computer kopen is leuk, maar het instellen kan een uitdaging zijn. Bij Hulp Met IT komen onze HBO-opgeleide ICT-studenten bij u thuis om uw nieuwe PC of laptop helemaal in te richten. Van Windows-instellingen tot het overzetten van al uw bestanden — wij regelen het.
+              </p>
+              <p className="text-secondary-600 leading-relaxed mb-4">
+                Wij installeren en configureren uw <a href="/diensten/email-problemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">e-mailaccounts</a>, sluiten uw <a href="/diensten/printerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">printer</a> aan, zorgen voor een veilige <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">internetverbinding</a> en installeren alle programma&apos;s die u nodig heeft. Alles wordt uitgelegd zodat u direct aan de slag kunt.
+              </p>
+              <p className="text-secondary-600 leading-relaxed">
+                Mocht u later <a href="/computerproblemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">computerproblemen</a> ervaren of hulp nodig hebben met uw <a href="/diensten/tablet-smartphone" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">tablet of smartphone</a>, dan staan wij opnieuw voor u klaar.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+
       {/* Cities */}
       <section className="py-20 lg:py-28 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -316,6 +379,27 @@ export default function ComputerInstallerenPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Bekijk ook onze{' '}
+            <a href="/computerproblemen" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computerproblemen
+            </a>
+            ,{' '}
+            <a href="/computer-reparatie" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computer reparatie
+            </a>
+            {' '}en{' '}
+            <a href="/computerhulp-senioren" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computerhulp voor senioren
+            </a>
+            {' '}pagina&apos;s.
+          </p>
         </div>
       </section>
 

@@ -95,8 +95,8 @@ function DefaultErrorFallback({ error, reset }: { error: Error | null; reset: ()
 
         <p className="text-sm text-secondary-500 mt-6">
           Blijft het probleem bestaan? Bel ons op{' '}
-          <a href="tel:+31642827860" className="text-primary-600 hover:underline">
-            06-42827860
+          <a href="tel:+31858005006" className="text-primary-600 hover:underline">
+            085-8005006
           </a>
         </p>
       </div>

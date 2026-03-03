@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import { CompactServicesSection } from '@/components/home/CompactServicesSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import Link from 'next/link'
@@ -11,36 +14,9 @@ import {
   Target,
   CheckCircle,
   Phone,
-  ArrowRight
+  ArrowRight,
+  ChevronDown
 } from 'lucide-react'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Over Hulp met IT - HBO-opgeleide ICT-studenten bij u thuis',
-  description: 'Leer meer over Hulp met IT: wie we zijn, onze missie en waarom mensen ons vertrouwen. Persoonlijke computerhulp door HBO-opgeleide ICT-studenten aan huis.',
-  keywords: [
-    'over hulp met IT',
-    'ICT studenten',
-    'bedrijfsinfo',
-    'wie zijn wij',
-    'missie',
-    'visie',
-    'team',
-    'student aan huis'
-  ],
-  alternates: {
-    canonical: '/over-ons',
-  },
-  openGraph: {
-    title: 'Over Ons - Hulp met IT',
-    description: 'Persoonlijke IT-service door HBO-opgeleide ICT-studenten bij u aan huis',
-    images: ['/og-image.webp'],
-    url: 'https://hulpmetit.nl/over-ons',
-    type: 'website',
-    locale: 'nl_NL',
-    siteName: 'Hulp met IT',
-  },
-}
 
 const stats = [
   { number: 'HBO', label: 'Opgeleide studenten', icon: Users },
@@ -71,7 +47,63 @@ const values = [
   },
 ]
 
+const faqData = [
+  {
+    question: 'Wie zijn de studenten van Hulp met IT?',
+    answer: 'Onze studenten zijn HBO-opgeleide ICT-studenten die zijn geselecteerd op zowel technische kennis als communicatieve vaardigheden. Zij zijn gescreend, verzekerd en klaar om u thuis te helpen.'
+  },
+  {
+    question: 'In welke regio\'s zijn jullie actief?',
+    answer: 'Wij zijn actief in meer dan 40 steden door heel Nederland, waaronder Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven, Groningen en vele andere plaatsen.'
+  },
+  {
+    question: 'Wat kost hulp van Hulp met IT?',
+    answer: 'Wij rekenen \u20ac14,50 per kwartier, met een minimum van 3 kwartier (\u20ac43,50). Voorrijkosten zijn \u20ac10 eenmalig. U betaalt achteraf per pin of Tikkie.'
+  },
+  {
+    question: 'Zijn jullie ook in het weekend beschikbaar?',
+    answer: 'Ja, onze studenten zijn 7 dagen per week beschikbaar, van maandag tot en met zondag, van 08:00 tot 21:00 uur \u2014 ook in de avonduren.'
+  },
+  {
+    question: 'Waarmee kunnen jullie helpen?',
+    answer: 'Wij helpen met vrijwel alles: computerproblemen, laptop reparatie, internet en wifi, e-mail, printers, tablets, smartphones, TV installatie en meer. Bekijk onze diensten-pagina voor een compleet overzicht.'
+  },
+  {
+    question: 'Hoe maak ik een afspraak?',
+    answer: 'U kunt een afspraak maken via onze website op de afspraak-pagina, of bel ons direct op 085-8005006. Wij proberen u zo snel mogelijk te helpen, vaak nog dezelfde dag.'
+  }
+]
+
 export default function OverOnsPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const faqStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  }
+
+  const organizationStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Hulp met IT',
+    description: 'Persoonlijke computerhulp aan huis door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl',
+    telephone: '+31858005006',
+    email: 'info@hulpmetit.nl',
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    foundingDate: '2024',
+    numberOfEmployees: { '@type': 'QuantitativeValue', value: '50+' },
+    slogan: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten'
+  }
+
   return (
     <>
       <script
@@ -84,6 +116,14 @@ export default function OverOnsPage() {
             { '@type': 'ListItem', position: 2, name: 'Over Ons', item: 'https://hulpmetit.nl/over-ons' }
           ]
         }) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationStructuredData) }}
       />
 
       {/* Hero Section */}
@@ -113,11 +153,11 @@ export default function OverOnsPage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center bg-secondary-100 hover:bg-secondary-200 text-secondary-700 font-semibold px-6 py-3.5 rounded-xl transition-colors"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                  Bel 085-8005006
                 </a>
               </div>
             </div>
@@ -125,7 +165,7 @@ export default function OverOnsPage() {
             <div className="rounded-2xl overflow-hidden shadow-card">
               <Image
                 src="/hulp-met-it.webp"
-                alt="ICT-student helpt klant met computer"
+                alt="Het Hulp met IT team - HBO-opgeleide ICT-studenten aan huis"
                 width={600}
                 height={400}
                 className="w-full h-auto object-cover"
@@ -256,8 +296,66 @@ export default function OverOnsPage() {
         </div>
       </section>
 
+      {/* Onze diensten */}
+      <section className="bg-white py-20 lg:py-28">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div>
+            <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+              Onze diensten
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+              Waar wij u mee helpen
+            </h2>
+            <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+              Bij Hulp Met IT bieden wij een breed scala aan IT-diensten aan huis. Of u nu hulp nodig heeft met uw <a href="/diensten/computerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">computer</a>, <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">internet en wifi</a>, <a href="/diensten/email-problemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">e-mail</a> of <a href="/diensten/printerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">printer</a> — onze studenten lossen het op.
+            </p>
+            <p className="text-secondary-600 leading-relaxed mb-4">
+              Wij zijn gespecialiseerd in <a href="/computerproblemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">het oplossen van computerproblemen</a>, <a href="/computer-reparatie" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">computer reparatie</a>, <a href="/laptop-reparatie" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">laptop reparatie</a> en het <a href="/computer-installeren-aan-huis" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">installeren van nieuwe computers</a>. Ook voor <a href="/tv-installatie-aan-huis" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">TV installatie</a> en <a href="/diensten/tablet-smartphone" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">tablet en smartphone hulp</a> kunt u bij ons terecht.
+            </p>
+            <p className="text-secondary-600 leading-relaxed">
+              Speciaal voor ouderen bieden wij <a href="/computerhulp-senioren" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">computerhulp voor senioren</a> met extra geduld en aandacht.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Reviews */}
       <TestimonialsSection />
+
+      {/* FAQ */}
+      <section className="py-20 lg:py-28 bg-secondary-50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">FAQ</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+              Veelgestelde vragen over Hulp met IT
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            {faqData.map((faq, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-card overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  aria-expanded={openFaq === index}
+                  aria-controls={`faq-answer-${index}`}
+                  className="w-full flex items-center justify-between p-5 text-left hover:bg-secondary-100 transition-colors"
+                >
+                  <span className="font-semibold text-secondary-900 pr-4">{faq.question}</span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-primary-700 flex-shrink-0 transition-transform ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                <div id={`faq-answer-${index}`} role="region" className={`px-5 pb-5 ${openFaq === index ? '' : 'hidden'}`}>
+                  <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="relative overflow-hidden">

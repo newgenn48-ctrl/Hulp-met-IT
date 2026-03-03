@@ -13,7 +13,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Contact Hulp met IT - Dagelijks Bereikbaar 08:00-21:00',
-  description: 'Neem contact op met Hulp met IT. Bel 06-42827860 of mail info@hulpmetit.nl. 7 dagen per week bereikbaar. Vrijblijvend advies over uw computerproblemen.',
+  description: 'Neem contact op met Hulp met IT. Bel 085-8005006 of mail info@hulpmetit.nl. 7 dagen per week bereikbaar. Vrijblijvend advies over uw computerproblemen.',
   keywords: [
     'contact hulp met IT',
     'IT hulp telefoon',
@@ -40,9 +40,9 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Telefonisch',
-    value: '06-42827860',
+    value: '085-8005006',
     description: 'Dagelijks bereikbaar van 8:00 - 21:00',
-    action: 'tel:+31642827860'
+    action: 'tel:+31858005006'
   },
   {
     icon: Mail,
@@ -54,7 +54,7 @@ const contactInfo = [
   {
     icon: MessageSquare,
     title: 'WhatsApp',
-    value: '06-42827860',
+    value: '085-8005006',
     description: 'Voor snelle vragen en updates',
     action: 'https://wa.me/31642827860'
   },
@@ -104,11 +104,11 @@ export default function ContactPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <a
-                href="tel:+31642827860"
+                href="tel:+31858005006"
                 className="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-semibold px-7 py-3.5 rounded-xl shadow-accent transition-all duration-200 hover:-translate-y-0.5"
               >
                 <Phone className="w-5 h-5" />
-                Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                Bel 085-8005006
               </a>
               <a
                 href="https://wa.me/31642827860"

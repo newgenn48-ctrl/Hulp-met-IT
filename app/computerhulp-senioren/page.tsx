@@ -58,11 +58,24 @@ const faqData = [
   {
     question: 'Komen jullie ook in verzorgingstehuizen?',
     answer: 'Ja, wij komen overal waar u woont — thuis, in een aanleunwoning of in een verzorgingstehuis.'
+  },
+  {
+    question: 'Hoe bereid ik me voor op het bezoek?',
+    answer: 'U hoeft niets speciaals te doen! Zorg dat uw apparaat opgeladen of aangesloten is en houd eventueel uw wachtwoorden bij de hand. Onze student neemt alle tijd om samen met u door uw vragen te gaan.'
   }
 ]
 
 export default function ComputerhulpSeniorenPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(0)
+
+  const breadcrumbStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://hulpmetit.nl' },
+      { '@type': 'ListItem', position: 2, name: 'Computerhulp Senioren', item: 'https://hulpmetit.nl/computerhulp-senioren' }
+    ]
+  }
 
   const faqStructuredData = {
     '@context': 'https://schema.org',
@@ -86,7 +99,7 @@ export default function ComputerhulpSeniorenPage() {
     provider: {
       '@type': 'LocalBusiness',
       name: 'Hulp met IT',
-      telephone: '+31642827860',
+      telephone: '+31858005006',
       url: 'https://hulpmetit.nl'
     },
     areaServed: {
@@ -100,8 +113,26 @@ export default function ComputerhulpSeniorenPage() {
     }
   }
 
+  const localBusinessStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Hulp met IT - Computerhulp voor Senioren',
+    description: 'Geduldige computerhulp aan huis speciaal voor senioren door HBO-opgeleide ICT-studenten',
+    url: 'https://hulpmetit.nl/computerhulp-senioren',
+    telephone: '+31858005006',
+    email: 'info@hulpmetit.nl',
+    areaServed: { '@type': 'Country', name: 'Nederland' },
+    serviceType: 'Computerhulp voor senioren aan huis',
+    priceRange: '€53,50 - €100',
+    openingHours: 'Mo-Su 08:00-21:00'
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
@@ -110,12 +141,16 @@ export default function ComputerhulpSeniorenPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceStructuredData) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessStructuredData) }}
+      />
 
       {/* Hero */}
       <section className="relative min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
         <Image
           src="/hulp-met-it.webp"
-          alt="Computerhulp voor senioren aan huis"
+          alt="Geduldige ICT-student helpt senior met computer aan huis"
           fill
           priority
           className="object-cover"
@@ -145,11 +180,11 @@ export default function ComputerhulpSeniorenPage() {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                  Bel 085-8005006
                 </a>
               </div>
 
@@ -230,6 +265,34 @@ export default function ComputerhulpSeniorenPage() {
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
         bottomColor="#fafaf9"
       />
+
+      {/* Over computerhulp senioren */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div>
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">
+                Computerhulp senioren
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-6">
+                Geduldige computerhulp speciaal voor senioren
+              </h2>
+              <p className="text-secondary-600 text-lg leading-relaxed mb-4">
+                Bij Hulp Met IT begrijpen we dat technologie soms overweldigend kan zijn. Daarom bieden wij computerhulp die speciaal is afgestemd op senioren. Onze studenten nemen de tijd, leggen alles uit in begrijpelijke taal en herhalen zo vaak als nodig. Of u nu hulp nodig heeft met uw laptop, tablet of smartphone — wij staan voor u klaar.
+              </p>
+              <p className="text-secondary-600 leading-relaxed mb-4">
+                Wij helpen onder andere met <a href="/diensten/email-problemen" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">e-mail instellen en gebruiken</a>, <a href="/diensten/internet-wifi" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">veilig internetten en wifi</a>, <a href="/diensten/tablet-smartphone" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">tablet en smartphone</a> leren gebruiken, en het beheren van foto&apos;s en bestanden. Ook kunt u bij ons terecht voor hulp met <a href="/diensten/computerhulp" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">algemene computerproblemen</a>.
+              </p>
+              <p className="text-secondary-600 leading-relaxed">
+                Heeft u een geheel nieuwe computer of laptop? Dan helpen wij graag met het <a href="/computer-installeren-aan-huis" className="text-primary-600 hover:text-primary-700 underline underline-offset-2">installeren en instellen</a>, zodat u direct aan de slag kunt.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+
       {/* Cities */}
       <section className="py-20 lg:py-28 bg-secondary-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -315,6 +378,27 @@ export default function ComputerhulpSeniorenPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Cross-links */}
+      <section className="py-6 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-secondary-600">
+            Onze{' '}
+            <a href="/student-computerhulp" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              studenten
+            </a>
+            {' '}helpen ook met{' '}
+            <a href="/computerproblemen" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              computerproblemen
+            </a>
+            {' '}en{' '}
+            <a href="/tv-installatie-aan-huis" className="text-primary-600 hover:text-primary-700 font-medium underline underline-offset-2">
+              TV installatie
+            </a>
+            .
+          </p>
         </div>
       </section>
 

@@ -140,7 +140,7 @@ export default function RegioPage({ params }: PageProps) {
     provider: {
       '@type': 'LocalBusiness',
       name: 'Hulp met IT',
-      telephone: '+31642827860',
+      telephone: '+31858005006',
       url: 'https://hulpmetit.nl',
       address: {
         '@type': 'PostalAddress',
@@ -214,11 +214,11 @@ export default function RegioPage({ params }: PageProps) {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
                 <a
-                  href="tel:+31642827860"
+                  href="tel:+31858005006"
                   className="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-secondary-700 bg-secondary-100 hover:bg-secondary-200 rounded-xl transition-colors"
                 >
                   <Phone className="w-5 h-5 mr-2" />
-                  Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+                  Bel 085-8005006
                 </a>
               </div>
             </div>
@@ -443,11 +443,11 @@ export default function RegioPage({ params }: PageProps) {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a
-              href="tel:+31642827860"
+              href="tel:+31858005006"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-all duration-200"
             >
               <Phone className="w-5 h-5" />
-              Bel ons<span className="hidden sm:inline"> - 06-42827860</span>
+              Bel 085-8005006
             </a>
           </div>
         </div>
