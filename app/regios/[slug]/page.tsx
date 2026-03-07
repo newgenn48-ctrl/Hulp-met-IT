@@ -74,7 +74,7 @@ export default function RegioPage({ params }: PageProps) {
   const faqData = [
     {
       question: `Wat kost computerhulp in ${city.name}?`,
-      answer: `Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf.`
+      answer: `Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier. Voorrijkosten zijn €10 eenmalig. U betaalt achteraf.`
     },
     {
       question: `Zijn jullie studenten wel gekwalificeerd in ${city.name}?`,
@@ -159,7 +159,7 @@ export default function RegioPage({ params }: PageProps) {
     })),
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR',
       unitText: 'per kwartier'
     }

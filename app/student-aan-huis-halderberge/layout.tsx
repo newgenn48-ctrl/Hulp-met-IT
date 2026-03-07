@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Halderberge | Hulp met IT',
-  description: 'ICT Student aan huis in Halderberge voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Oudenbosch, Hoeven, Oud Gastel en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Halderberge voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Oudenbosch, Hoeven, Oud Gastel en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis halderberge',
     'computerhulp halderberge',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Halderberge | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Halderberge. Wij komen bij u thuis in Halderberge en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Halderberge. Wij komen bij u thuis in Halderberge en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-halderberge',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

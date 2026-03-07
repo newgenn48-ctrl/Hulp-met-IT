@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'PC Hulp aan Huis - Computer Hulp bij U Thuis | Hulp met IT',
-  description: 'PC hulp aan huis nodig? HBO-opgeleide ICT-studenten komen bij u thuis voor alle computerproblemen. Vanaf €14,50/kwartier. 7 dagen per week. Bel 085-8005006!',
+  description: 'PC hulp aan huis nodig? HBO-opgeleide ICT-studenten komen bij u thuis voor alle computerproblemen. Vanaf €15,50/kwartier. 7 dagen per week. Bel 085-8005006!',
   keywords: [
     'pc hulp aan huis',
     'computer hulp aan huis',

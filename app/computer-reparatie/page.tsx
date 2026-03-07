@@ -42,7 +42,7 @@ const repairServices = [
 const faqData = [
   {
     question: 'Wat kost computer reparatie aan huis?',
-    answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn €10 eenmalig. Totaal vanaf €53,50.'
+    answer: 'Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn €10 eenmalig. Totaal vanaf €56,50.'
   },
   {
     question: 'Repareren jullie ook desktops en towers?',
@@ -109,7 +109,7 @@ export default function ComputerReparatiePage() {
     },
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR'
     }
   }
@@ -124,7 +124,7 @@ export default function ComputerReparatiePage() {
     email: 'info@hulpmetit.nl',
     areaServed: { '@type': 'Country', name: 'Nederland' },
     serviceType: 'Computer reparatie aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 

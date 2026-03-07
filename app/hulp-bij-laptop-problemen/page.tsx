@@ -21,7 +21,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { CompactServicesSection } from '@/components/home/CompactServicesSection'
 
 const faqData = [
-  { question: 'Wat kost hulp bij laptop problemen?', answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €53,50). De meeste laptop problemen lossen we binnen 1 bezoek op.' },
+  { question: 'Wat kost hulp bij laptop problemen?', answer: 'Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €56,50). De meeste laptop problemen lossen we binnen 1 bezoek op.' },
   { question: 'Kunnen jullie alle merken laptops helpen?', answer: 'Ja, wij helpen met alle merken: HP, Dell, Lenovo, Asus, Acer, Apple MacBook, Microsoft Surface en meer. Windows, macOS en Chromebook.' },
   { question: 'Mijn laptop start niet meer op, kunnen jullie helpen?', answer: 'Ja! Opstartproblemen zijn een van de meest voorkomende issues die wij oplossen. Van blauw scherm tot zwart scherm — wij diagnosticeren en repareren het.' },
   { question: 'Is het beter om mijn laptop te laten repareren of een nieuwe te kopen?', answer: 'Dat hangt af van het probleem en de leeftijd van uw laptop. Onze studenten geven eerlijk advies. Vaak is een SSD upgrade of schone installatie al voldoende.' },
@@ -64,7 +64,7 @@ export default function HulpBijLaptopProblemenPage() {
       url: 'https://hulpmetit.nl'
     },
     areaServed: { '@type': 'Country', name: 'Nederland' },
-    offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' }
+    offers: { '@type': 'Offer', price: '15.50', priceCurrency: 'EUR' }
   }
 
   const localBusinessStructuredData = {
@@ -77,7 +77,7 @@ export default function HulpBijLaptopProblemenPage() {
     email: 'info@hulpmetit.nl',
     areaServed: { '@type': 'Country', name: 'Nederland' },
     serviceType: 'Hulp bij laptop problemen aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 
@@ -112,7 +112,7 @@ export default function HulpBijLaptopProblemenPage() {
               <p className="text-accent-400 text-sm font-medium mb-8">Meestal binnen 24 uur geholpen</p>
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><GraduationCap className="w-3.5 h-3.5 text-primary-300" />HBO-opgeleide studenten</span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><Banknote className="w-3.5 h-3.5 text-primary-300" />Vanaf €14,50 per kwartier</span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><Banknote className="w-3.5 h-3.5 text-primary-300" />Vanaf €15,50 per kwartier</span>
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><CalendarDays className="w-3.5 h-3.5 text-primary-300" />7 dagen per week</span>
               </div>
             </ScrollReveal>

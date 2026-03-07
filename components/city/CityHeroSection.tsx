@@ -56,7 +56,7 @@ export function CityHeroSection({ cityName }: CityHeroSectionProps) {
               </span>
               <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 border border-primary-200 rounded-full px-3 py-1 font-medium">
                 <Shield className="w-3.5 h-3.5" />
-                &euro;14,50 per kwartier
+                &euro;15,50 per kwartier
               </span>
               <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 border border-primary-200 rounded-full px-3 py-1 font-medium">
                 <CreditCard className="w-3.5 h-3.5" />

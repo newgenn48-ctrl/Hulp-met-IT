@@ -21,13 +21,13 @@ export const BUSINESS_INFO = {
 } as const
 
 export const PRICING = {
-  RATE_PER_QUARTER: 14.50,
+  RATE_PER_QUARTER: 15.50,
   TRAVEL_COSTS: 10.00,
   MINIMUM_QUARTERS: 3,
-  MINIMUM_COST: 53.50, // 3x14.50 + 10
+  MINIMUM_COST: 56.50, // 3x15.50 + 10
   EMERGENCY_RATE: 18.50,
   EMERGENCY_MINIMUM: 65.50, // 3x18.50 + 10
-  PRICE_RANGE: '€14,50 per kwartier',
+  PRICE_RANGE: '€15,50 per kwartier',
   CURRENCY: 'EUR'
 } as const
 

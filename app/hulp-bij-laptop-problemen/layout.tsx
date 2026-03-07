@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Hulp bij Laptop Problemen - Reparatie aan Huis | Hulp met IT',
-  description: 'Hulp bij laptop problemen? Onze ICT-studenten komen bij u thuis. Trage laptop, wifi-problemen, scherm kapot, batterij leeg. Vanaf €14,50/kwartier. Bel 085-8005006!',
+  description: 'Hulp bij laptop problemen? Onze ICT-studenten komen bij u thuis. Trage laptop, wifi-problemen, scherm kapot, batterij leeg. Vanaf €15,50/kwartier. Bel 085-8005006!',
   keywords: [
     'hulp bij laptop problemen',
     'laptop problemen oplossen',

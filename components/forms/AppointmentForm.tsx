@@ -200,7 +200,7 @@ export function AppointmentForm() {
         if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
           (window as any).gtag('event', 'conversion', {
             'send_to': 'AW-16646363193/afspraak',
-            'value': 53.50,
+            'value': 56.50,
             'currency': 'EUR'
           })
         }

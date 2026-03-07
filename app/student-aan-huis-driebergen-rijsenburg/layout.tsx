@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Driebergen-Rijsenburg | Hulp met IT',
-  description: 'ICT Student aan huis in Driebergen-Rijsenburg voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Driebergen Centrum, Rijsenburg, Driebergen-Zuid en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Driebergen-Rijsenburg voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Driebergen Centrum, Rijsenburg, Driebergen-Zuid en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis driebergen-rijsenburg',
     'computerhulp driebergen-rijsenburg',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Driebergen-Rijsenburg | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Driebergen-Rijsenburg. Wij komen bij u thuis in Driebergen-Rijsenburg en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Driebergen-Rijsenburg. Wij komen bij u thuis in Driebergen-Rijsenburg en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-driebergen-rijsenburg',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

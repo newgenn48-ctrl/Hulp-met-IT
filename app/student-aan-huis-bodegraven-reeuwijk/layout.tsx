@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Bodegraven-Reeuwijk | Hulp met IT',
-  description: 'ICT Student aan huis in Bodegraven-Reeuwijk voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Bodegraven, Reeuwijk-Dorp, Reeuwijk-Brug en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Bodegraven-Reeuwijk voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Bodegraven, Reeuwijk-Dorp, Reeuwijk-Brug en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis bodegraven-reeuwijk',
     'computerhulp bodegraven-reeuwijk',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Bodegraven-Reeuwijk | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Bodegraven-Reeuwijk. Wij komen bij u thuis in Bodegraven-Reeuwijk en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Bodegraven-Reeuwijk. Wij komen bij u thuis in Bodegraven-Reeuwijk en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-bodegraven-reeuwijk',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

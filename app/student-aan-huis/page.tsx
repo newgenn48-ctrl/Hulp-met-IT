@@ -30,7 +30,7 @@ const displayCities = cities.slice(0, 12)
 const faqData = [
   {
     question: 'Wat kost een student aan huis?',
-    answer: 'Een student aan huis kost €14,50 per kwartier, met een minimum van 45 minuten (3 kwartier). De voorrijkosten bedragen eenmalig €10. Een standaard bezoek van 45 minuten kost dus €53,50. U betaalt achteraf per pin of Tikkie.'
+    answer: 'Een student aan huis kost €15,50 per kwartier, met een minimum van 45 minuten (3 kwartier). De voorrijkosten bedragen eenmalig €10. Een standaard bezoek van 45 minuten kost dus €56,50. U betaalt achteraf per pin of Tikkie.'
   },
   {
     question: 'Zijn de studenten wel gekwalificeerd?',
@@ -107,7 +107,7 @@ export default function StudentAanHuisPage() {
     },
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR'
     }
   }
@@ -125,7 +125,7 @@ export default function StudentAanHuisPage() {
       name: 'Nederland'
     },
     serviceType: 'Student aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 

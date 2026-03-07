@@ -71,7 +71,7 @@ export default function AlgemeneVoorwaardenPage() {
               <div className="space-y-3">
                 <p><strong>Standaard tarieven (geldig vanaf 28 oktober 2025):</strong></p>
                 <ul className="list-disc list-inside space-y-1 ml-4">
-                  <li>Uurtarief: €14,50 per kwartier (€58,00 per uur)</li>
+                  <li>Uurtarief: €15,50 per kwartier (€58,00 per uur)</li>
                   <li>Voorrijkosten: €10,00 (eenmalig per bezoek)</li>
                   <li>Minimum afname: 3 kwartier</li>
                   <li>Spoedhulp (binnen 24 uur): €18,50 per kwartier</li>

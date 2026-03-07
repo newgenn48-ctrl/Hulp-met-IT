@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis De Bilt | Hulp met IT',
-  description: 'ICT Student aan huis in De Bilt voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in De Bilt Centrum, Bilthoven, Groenekan en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in De Bilt voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in De Bilt Centrum, Bilthoven, Groenekan en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis de bilt',
     'computerhulp de bilt',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis De Bilt | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in De Bilt. Wij komen bij u thuis in De Bilt en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in De Bilt. Wij komen bij u thuis in De Bilt en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-de-bilt',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

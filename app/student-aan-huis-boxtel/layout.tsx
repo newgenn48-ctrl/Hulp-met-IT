@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Boxtel | Hulp met IT',
-  description: 'ICT Student aan huis in Boxtel voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Boxtel Centrum, Boxtel Noord, Boxtel Zuid en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Boxtel voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Boxtel Centrum, Boxtel Noord, Boxtel Zuid en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis boxtel',
     'computerhulp boxtel',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Boxtel | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Boxtel. Wij komen bij u thuis in Boxtel en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Boxtel. Wij komen bij u thuis in Boxtel en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-boxtel',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

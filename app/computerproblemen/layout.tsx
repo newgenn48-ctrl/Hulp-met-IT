@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerproblemen? Wij Lossen het Op aan Huis | Hulp met IT',
-  description: 'Last van computerproblemen? Onze HBO-opgeleide ICT-studenten komen bij u thuis en lossen elk probleem op. Vanaf €14,50 per kwartier. Bel 085-8005006!',
+  description: 'Last van computerproblemen? Onze HBO-opgeleide ICT-studenten komen bij u thuis en lossen elk probleem op. Vanaf €15,50 per kwartier. Bel 085-8005006!',
   keywords: [
     'computerproblemen',
     'computer problemen oplossen',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Computerproblemen? Wij Lossen het Op aan Huis',
-    description: 'HBO-opgeleide ICT-studenten lossen uw computerproblemen op bij u thuis. Vanaf €14,50/kwartier.',
+    description: 'HBO-opgeleide ICT-studenten lossen uw computerproblemen op bij u thuis. Vanaf €15,50/kwartier.',
     images: [
       {
         url: '/og-image.webp',

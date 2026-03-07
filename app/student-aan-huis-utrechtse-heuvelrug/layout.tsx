@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Utrechtse Heuvelrug | Hulp met IT',
-  description: 'ICT Student aan huis in Utrechtse Heuvelrug voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Doorn, Driebergen-Rijsenburg, Amerongen en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Utrechtse Heuvelrug voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Doorn, Driebergen-Rijsenburg, Amerongen en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis utrechtse heuvelrug',
     'computerhulp utrechtse heuvelrug',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Utrechtse Heuvelrug | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Utrechtse Heuvelrug. Wij komen bij u thuis in Utrechtse Heuvelrug en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Utrechtse Heuvelrug. Wij komen bij u thuis in Utrechtse Heuvelrug en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-utrechtse-heuvelrug',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Goirle | Hulp met IT',
-  description: 'ICT Student aan huis in Goirle voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Goirle Centrum, Riel, Goirle Noord en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Goirle voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Goirle Centrum, Riel, Goirle Noord en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis goirle',
     'computerhulp goirle',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Goirle | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Goirle. Wij komen bij u thuis in Goirle en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Goirle. Wij komen bij u thuis in Goirle en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-goirle',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

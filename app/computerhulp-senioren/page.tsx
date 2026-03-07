@@ -49,7 +49,7 @@ const faqData = [
   },
   {
     question: 'Wat kost computerhulp voor senioren?',
-    answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn €10 eenmalig. Totaal vanaf €53,50.'
+    answer: 'Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn €10 eenmalig. Totaal vanaf €56,50.'
   },
   {
     question: 'Kan ik vaker hulp krijgen?',
@@ -108,7 +108,7 @@ export default function ComputerhulpSeniorenPage() {
     },
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR'
     }
   }
@@ -123,7 +123,7 @@ export default function ComputerhulpSeniorenPage() {
     email: 'info@hulpmetit.nl',
     areaServed: { '@type': 'Country', name: 'Nederland' },
     serviceType: 'Computerhulp voor senioren aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 

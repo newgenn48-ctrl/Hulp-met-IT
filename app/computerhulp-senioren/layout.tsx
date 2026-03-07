@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp voor Senioren aan Huis - Geduldig & Duidelijk | Hulp met IT',
-  description: 'Computerhulp speciaal voor senioren. Geduldige uitleg in begrijpelijke taal, bij u thuis. Hulp met tablet, laptop, e-mail, internet en meer. Vanaf €14,50 per kwartier.',
+  description: 'Computerhulp speciaal voor senioren. Geduldige uitleg in begrijpelijke taal, bij u thuis. Hulp met tablet, laptop, e-mail, internet en meer. Vanaf €15,50 per kwartier.',
   keywords: [
     'computerhulp senioren',
     'computerhulp ouderen',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Computerhulp voor Senioren aan Huis | Hulp met IT',
-    description: 'Geduldige computerhulp voor senioren bij u thuis. Begrijpelijke uitleg, geen jargon. Vanaf €14,50 per kwartier.',
+    description: 'Geduldige computerhulp voor senioren bij u thuis. Begrijpelijke uitleg, geen jargon. Vanaf €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/computerhulp-senioren',
     type: 'website',
     locale: 'nl_NL',

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Zwolle | Hulp met IT',
-  description: 'ICT Student aan huis in Zwolle voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Zwolle Centrum, Zwolle Noord, Zwolle Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Zwolle voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Zwolle Centrum, Zwolle Noord, Zwolle Oost en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis zwolle',
     'computerhulp zwolle',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Zwolle | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Zwolle. Wij komen bij u thuis in Zwolle en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Zwolle. Wij komen bij u thuis in Zwolle en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-zwolle',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

@@ -42,7 +42,7 @@ const installServices = [
 const faqData = [
   {
     question: 'Wat kost het om een computer te laten installeren?',
-    answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn €10 eenmalig. Een volledige installatie duurt gemiddeld 1 tot 2 uur.'
+    answer: 'Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn €10 eenmalig. Een volledige installatie duurt gemiddeld 1 tot 2 uur.'
   },
   {
     question: 'Kunnen jullie mijn bestanden overzetten van mijn oude computer?',
@@ -109,7 +109,7 @@ export default function ComputerInstallerenPage() {
     },
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR'
     }
   }
@@ -124,7 +124,7 @@ export default function ComputerInstallerenPage() {
     email: 'info@hulpmetit.nl',
     areaServed: { '@type': 'Country', name: 'Nederland' },
     serviceType: 'Computer installatie aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 

@@ -11,7 +11,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis - Binnen 24u Geholpen | Hulp met IT',
-  description: 'Computerproblemen? Wij komen bij u thuis en lossen het op. Vanaf €14,50 per kwartier. Rustige, vriendelijke hulp. 7 dagen per week. Bel nu: 085-8005006!',
+  description: 'Computerproblemen? Wij komen bij u thuis en lossen het op. Vanaf €15,50 per kwartier. Rustige, vriendelijke hulp. 7 dagen per week. Bel nu: 085-8005006!',
   keywords: [
     'computerhulp aan huis',
     'computer hulp',

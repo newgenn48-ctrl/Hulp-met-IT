@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Koggenland | Hulp met IT',
-  description: 'ICT Student aan huis in Koggenland voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Obdam, De Goorn, Berkhout en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Koggenland voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Obdam, De Goorn, Berkhout en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis koggenland',
     'computerhulp koggenland',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Koggenland | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Koggenland. Wij komen bij u thuis in Koggenland en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Koggenland. Wij komen bij u thuis in Koggenland en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-koggenland',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Den Bosch | Hulp met IT',
-  description: 'Computerhulp aan huis in Den Bosch door HBO-opgeleide ICT-studenten. Hulp in Den Bosch Centrum, Den Bosch Noord, Den Bosch Oost en omgeving. €14,50/kwartier. 7 dagen per week!',
+  description: 'Computerhulp aan huis in Den Bosch door HBO-opgeleide ICT-studenten. Hulp in Den Bosch Centrum, Den Bosch Noord, Den Bosch Oost en omgeving. €15,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis den bosch',
     'computer reparatie den bosch',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Computerhulp aan huis Den Bosch | Hulp met IT',
-    description: 'Computerhulp aan huis in Den Bosch door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    description: 'Computerhulp aan huis in Den Bosch door HBO-opgeleide ICT-studenten. €15,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     url: 'https://hulpmetit.nl/computerhulp-aan-huis-den-bosch',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Computerhulp aan huis Den Bosch | Hulp met IT',
-    description: 'Computerhulp aan huis in Den Bosch. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    description: 'Computerhulp aan huis in Den Bosch. HBO ICT-student komt bij u thuis. €15,50/kwartier + €10 voorrijkosten.',
     images: ['/og-image.webp']
   },
   alternates: {

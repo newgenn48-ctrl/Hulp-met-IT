@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Bergen op Zoom | Hulp met IT',
-  description: 'ICT Student aan huis in Bergen op Zoom voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Bergen op Zoom Centrum, Bergen op Zoom Noord, Bergen op Zoom Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Bergen op Zoom voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Bergen op Zoom Centrum, Bergen op Zoom Noord, Bergen op Zoom Oost en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis bergen op zoom',
     'computerhulp bergen op zoom',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Bergen op Zoom | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Bergen op Zoom. Wij komen bij u thuis in Bergen op Zoom en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Bergen op Zoom. Wij komen bij u thuis in Bergen op Zoom en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-bergen-op-zoom',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

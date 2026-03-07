@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
-  description: 'ICT Student aan huis in Capelle aan den IJssel voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Capelle Centrum, Capelle Noord, Capelle Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Capelle aan den IJssel voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Capelle Centrum, Capelle Noord, Capelle Oost en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis capelle aan den ijssel',
     'computerhulp capelle aan den ijssel',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Capelle aan den IJssel | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Capelle aan den IJssel. Wij komen bij u thuis in Capelle aan den IJssel en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Capelle aan den IJssel. Wij komen bij u thuis in Capelle aan den IJssel en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-capelle-aan-den-ijssel',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

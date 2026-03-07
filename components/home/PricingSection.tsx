@@ -6,7 +6,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 const plan = {
   name: 'Standaardhulp',
-  price: '14,50',
+  price: '15,50',
   unit: '/ kwartier',
   features: [
     { label: 'Minimum', value: '45 minuten' },
@@ -30,7 +30,7 @@ export function PricingSection() {
               Duidelijke prijzen, geen verrassingen
             </h2>
             <p className="text-secondary-500 max-w-xl mx-auto text-lg">
-              U betaalt alleen voor de tijd die nodig is. Geen abonnement, geen kleine lettertjes.
+              De meeste problemen lossen we op voor slechts €56,50 all-in.
             </p>
           </div>
         </ScrollReveal>

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'TV Installatie aan Huis - Smart TV Hulp | Hulp met IT',
-  description: 'TV installatie aan huis door ICT-studenten. Smart TV instellen, zenders zoeken, apps installeren, soundbar aansluiten. Vanaf €14,50/kwartier. Bel 085-8005006!',
+  description: 'TV installatie aan huis door ICT-studenten. Smart TV instellen, zenders zoeken, apps installeren, soundbar aansluiten. Vanaf €15,50/kwartier. Bel 085-8005006!',
   keywords: [
     'tv installatie aan huis',
     'smart tv instellen',

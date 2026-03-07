@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Veldhoven | Hulp met IT',
-  description: 'ICT Student aan huis in Veldhoven voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Veldhoven Centrum, Veldhoven Noord, Veldhoven Zuid en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Veldhoven voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Veldhoven Centrum, Veldhoven Noord, Veldhoven Zuid en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis veldhoven',
     'computerhulp veldhoven',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Veldhoven | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Veldhoven. Wij komen bij u thuis in Veldhoven en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Veldhoven. Wij komen bij u thuis in Veldhoven en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-veldhoven',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

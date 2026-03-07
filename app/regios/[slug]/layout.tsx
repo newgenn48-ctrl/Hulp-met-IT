@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     }
   }
 
-  const title = `Computerhulp ${city.name} | IT Service €14,50 per kwartier | Hulp met IT`
-  const description = `Computerhulp in ${city.name} en omgeving. HBO-opgeleide ICT-studenten voor al uw computerproblemen. €14,50 per kwartier. Ook in ${city.serviceAreas.slice(0, 4).join(', ')}. Bel nu!`
+  const title = `Computerhulp ${city.name} | IT Service €15,50 per kwartier | Hulp met IT`
+  const description = `Computerhulp in ${city.name} en omgeving. HBO-opgeleide ICT-studenten voor al uw computerproblemen. €15,50 per kwartier. Ook in ${city.serviceAreas.slice(0, 4).join(', ')}. Bel nu!`
 
   return {
     title,
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     ],
     openGraph: {
       title: `Computerhulp ${city.name} | IT Service`,
-      description: `Persoonlijke computerhulp in ${city.name}. HBO-opgeleide ICT-studenten, flexibele tijden. €14,50 per kwartier.`,
+      description: `Persoonlijke computerhulp in ${city.name}. HBO-opgeleide ICT-studenten, flexibele tijden. €15,50 per kwartier.`,
       images: ['/og-image.webp'],
       type: 'website',
       locale: 'nl_NL',
@@ -67,7 +67,7 @@ export async function generateMetadata({ params }: LayoutProps): Promise<Metadat
     twitter: {
       card: 'summary_large_image',
       title: `Computerhulp ${city.name} | IT Service`,
-      description: `Professionele computerhulp in ${city.name}. €14,50 per kwartier.`,
+      description: `Professionele computerhulp in ${city.name}. €15,50 per kwartier.`,
     },
     robots: {
       index: true,

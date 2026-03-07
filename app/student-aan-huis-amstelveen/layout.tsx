@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Amstelveen | Hulp met IT',
-  description: 'ICT Student aan huis in Amstelveen voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Amstelveen Centrum, Amstelveen Noord, Amstelveen Zuid en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Amstelveen voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Amstelveen Centrum, Amstelveen Noord, Amstelveen Zuid en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis amstelveen',
     'computerhulp amstelveen',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Amstelveen | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Amstelveen. Wij komen bij u thuis in Amstelveen en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Amstelveen. Wij komen bij u thuis in Amstelveen en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-amstelveen',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

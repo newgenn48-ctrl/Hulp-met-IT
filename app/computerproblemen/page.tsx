@@ -31,7 +31,7 @@ const faqData = [
   },
   {
     question: 'Wat kost het om computerproblemen te laten oplossen?',
-    answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €53,50). U betaalt achteraf, alleen voor de bestede tijd.'
+    answer: 'Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €56,50). U betaalt achteraf, alleen voor de bestede tijd.'
   },
   {
     question: 'Moet ik mijn computer naar jullie toe brengen?',
@@ -85,7 +85,7 @@ export default function ComputerProblemenPage() {
       url: 'https://hulpmetit.nl'
     },
     areaServed: { '@type': 'Country', name: 'Nederland' },
-    offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' }
+    offers: { '@type': 'Offer', price: '15.50', priceCurrency: 'EUR' }
   }
 
   const localBusinessStructuredData = {
@@ -98,7 +98,7 @@ export default function ComputerProblemenPage() {
     email: 'info@hulpmetit.nl',
     areaServed: { '@type': 'Country', name: 'Nederland' },
     serviceType: 'Computerproblemen oplossen aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 
@@ -174,7 +174,7 @@ export default function ComputerProblemenPage() {
                 </span>
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
                   <Banknote className="w-3.5 h-3.5 text-primary-300" />
-                  Vanaf €14,50 per kwartier
+                  Vanaf €15,50 per kwartier
                 </span>
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
                   <CalendarDays className="w-3.5 h-3.5 text-primary-300" />

@@ -74,7 +74,7 @@ const faqs = [
   },
   {
     question: 'Wat zijn de kosten?',
-    answer: 'We rekenen \u20AC14,50 per kwartier, met een minimum van 3 kwartier (\u20AC43,50). Voorrijkosten zijn \u20AC10 eenmalig. U betaalt achteraf, dus u weet altijd waar u aan toe bent.'
+    answer: 'We rekenen \u20AC15,50 per kwartier, met een minimum van 3 kwartier (\u20AC43,50). Voorrijkosten zijn \u20AC10 eenmalig. U betaalt achteraf, dus u weet altijd waar u aan toe bent.'
   },
   {
     question: 'Welke betalingsmogelijkheden accepteren jullie?',

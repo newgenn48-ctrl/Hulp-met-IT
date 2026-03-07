@@ -40,7 +40,7 @@ export function CTASection() {
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-white/50 text-sm">
             <span>Ma-Zo: 08:00-21:00</span>
             <span className="hidden sm:inline-block w-px h-4 bg-white/20" aria-hidden="true" />
-            <span>Vanaf &euro;14,50 / kwartier</span>
+            <span>Vanaf &euro;15,50 / kwartier</span>
             <span className="hidden sm:inline-block w-px h-4 bg-white/20" aria-hidden="true" />
             <span>Betaling achteraf</span>
           </div>

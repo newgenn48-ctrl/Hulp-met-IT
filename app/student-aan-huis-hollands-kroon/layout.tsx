@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Hollands Kroon | Hulp met IT',
-  description: 'ICT Student aan huis in Hollands Kroon voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Anna Paulowna, Wieringerwerf, Hippolytushoef en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Hollands Kroon voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Anna Paulowna, Wieringerwerf, Hippolytushoef en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis hollands kroon',
     'computerhulp hollands kroon',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Hollands Kroon | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Hollands Kroon. Wij komen bij u thuis in Hollands Kroon en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Hollands Kroon. Wij komen bij u thuis in Hollands Kroon en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-hollands-kroon',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

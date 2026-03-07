@@ -58,7 +58,7 @@ const faqData = [
   },
   {
     question: 'Wat kost hulp van Hulp met IT?',
-    answer: 'Wij rekenen \u20ac14,50 per kwartier, met een minimum van 3 kwartier (\u20ac43,50). Voorrijkosten zijn \u20ac10 eenmalig. U betaalt achteraf per pin of Tikkie.'
+    answer: 'Wij rekenen \u20ac15,50 per kwartier, met een minimum van 3 kwartier (\u20ac43,50). Voorrijkosten zijn \u20ac10 eenmalig. U betaalt achteraf per pin of Tikkie.'
   },
   {
     question: 'Zijn jullie ook in het weekend beschikbaar?',

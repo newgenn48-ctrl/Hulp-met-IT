@@ -23,7 +23,7 @@ import { CompactServicesSection } from '@/components/home/CompactServicesSection
 const faqData = [
   { question: 'Waarom student computerhulp kiezen?', answer: 'Studenten combineren actuele IT-kennis met betaalbare tarieven. Ze zijn geduldig, spreken uw taal en leggen alles rustig en geduldig uit. Bovendien komen ze bij u thuis.' },
   { question: 'Zijn studenten wel goed genoeg voor mijn probleem?', answer: 'Ja! Onze studenten zijn HBO-opgeleid in IT en hebben praktijkervaring. Ze worden geselecteerd op zowel technische vaardigheden als communicatie. Ze lossen dagelijks dezelfde problemen op als dure IT-bedrijven.' },
-  { question: 'Wat kost student computerhulp?', answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €53,50). Veel goedkoper dan een commercieel IT-bedrijf.' },
+  { question: 'Wat kost student computerhulp?', answer: 'Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €56,50). Veel goedkoper dan een commercieel IT-bedrijf.' },
   { question: 'Waarmee helpen jullie studenten?', answer: 'Met alles rondom computers, laptops, tablets en telefoons: trage systemen, virusverwijdering, wifi-problemen, e-mail instellen, printers, software installatie, Windows updates, en meer.' },
   { question: 'Hoe snel kan een student langskomen?', answer: 'Vaak al binnen 24 uur. Studenten hebben flexibele roosters, waardoor we ook op korte termijn kunnen helpen. Bel voor de snelste beschikbaarheid.' },
   { question: 'In welke steden zijn jullie studenten actief?', answer: 'Onze HBO-opgeleide ICT-studenten zijn actief in meer dan 40 steden door heel Nederland, waaronder Amsterdam, Rotterdam, Utrecht, Den Haag, Eindhoven en vele andere plaatsen. Bekijk onze regio-pagina voor een compleet overzicht.' }
@@ -64,7 +64,7 @@ export default function StudentComputerhulpPage() {
       url: 'https://hulpmetit.nl'
     },
     areaServed: { '@type': 'Country', name: 'Nederland' },
-    offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' }
+    offers: { '@type': 'Offer', price: '15.50', priceCurrency: 'EUR' }
   }
 
   const localBusinessStructuredData = {
@@ -77,7 +77,7 @@ export default function StudentComputerhulpPage() {
     email: 'info@hulpmetit.nl',
     areaServed: { '@type': 'Country', name: 'Nederland' },
     serviceType: 'Student computerhulp aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 
@@ -112,7 +112,7 @@ export default function StudentComputerhulpPage() {
               <p className="text-accent-400 text-sm font-medium mb-8">Meestal binnen 24 uur geholpen</p>
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><GraduationCap className="w-3.5 h-3.5 text-primary-300" />HBO-opgeleide studenten</span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><Banknote className="w-3.5 h-3.5 text-primary-300" />Vanaf €14,50 per kwartier</span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><Banknote className="w-3.5 h-3.5 text-primary-300" />Vanaf €15,50 per kwartier</span>
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><CalendarDays className="w-3.5 h-3.5 text-primary-300" />7 dagen per week</span>
               </div>
             </ScrollReveal>
@@ -134,7 +134,7 @@ export default function StudentComputerhulpPage() {
           <ScrollReveal delay={100}>
             <div className="bg-white rounded-2xl shadow-card p-8 space-y-4">
               <p className="text-secondary-600 leading-relaxed">
-                Onze studenten volgen IT-opleidingen aan hogescholen en universiteiten, waardoor zij altijd beschikken over actuele kennis van de nieuwste technologieën. Ze combineren deze vakkennis met betaalbare tarieven — vanaf €14,50 per kwartier, zonder verborgen kosten.
+                Onze studenten volgen IT-opleidingen aan hogescholen en universiteiten, waardoor zij altijd beschikken over actuele kennis van de nieuwste technologieën. Ze combineren deze vakkennis met betaalbare tarieven — vanaf €15,50 per kwartier, zonder verborgen kosten.
               </p>
               <p className="text-secondary-600 leading-relaxed">
                 Wat onze studenten onderscheidt, is hun geduld en persoonlijke aanpak. Ze leggen alles rustig en geduldig uit in begrijpelijke taal, zonder jargon en zonder haast. Alle studenten zijn gescreend en verzekerd, zodat uw apparaten en gegevens altijd in veilige handen zijn.

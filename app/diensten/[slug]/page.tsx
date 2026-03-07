@@ -94,7 +94,7 @@ export default function ServicePage({ params }: ServicePageProps) {
     },
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR',
       unitText: 'per kwartier'
     }

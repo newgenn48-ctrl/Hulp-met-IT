@@ -29,7 +29,7 @@ const REGION = 'Noord-Brabant'
 const faqData = [
   {
     question: `Wat kost een student aan huis in ${CITY}?`,
-    answer: `Een student aan huis in ${CITY} kost \u20ac14,50 per kwartier, met een minimum van 45 minuten (3 kwartier). De voorrijkosten bedragen eenmalig \u20ac10. Een standaard bezoek van 45 minuten kost dus \u20ac53,50. U betaalt achteraf per pin of Tikkie.`
+    answer: `Een student aan huis in ${CITY} kost \u20ac15,50 per kwartier, met een minimum van 45 minuten (3 kwartier). De voorrijkosten bedragen eenmalig \u20ac10. Een standaard bezoek van 45 minuten kost dus \u20ac56,50. U betaalt achteraf per pin of Tikkie.`
   },
   {
     question: `Zijn de studenten gekwalificeerd in ${CITY}?`,
@@ -105,7 +105,7 @@ export default function StudentAanHuisBredaPage() {
     },
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR'
     }
   }
@@ -125,7 +125,7 @@ export default function StudentAanHuisBredaPage() {
       addressCountry: 'NL'
     },
     serviceType: `Student aan huis ${CITY}`,
-    priceRange: '\u20ac53,50 - \u20ac100',
+    priceRange: '\u20ac56,50 - \u20ac100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 

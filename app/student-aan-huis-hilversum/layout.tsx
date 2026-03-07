@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Hilversum | Hulp met IT',
-  description: 'ICT Student aan huis in Hilversum voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Hilversum Centrum, Hilversum Noord, Hilversum Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Hilversum voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Hilversum Centrum, Hilversum Noord, Hilversum Oost en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis hilversum',
     'computerhulp hilversum',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Hilversum | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Hilversum. Wij komen bij u thuis in Hilversum en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Hilversum. Wij komen bij u thuis in Hilversum en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-hilversum',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

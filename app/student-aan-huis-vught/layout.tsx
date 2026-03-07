@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Vught | Hulp met IT',
-  description: 'ICT Student aan huis in Vught voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Vught Centrum, Cromvoirt, Helvoirt en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Vught voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Vught Centrum, Cromvoirt, Helvoirt en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis vught',
     'computerhulp vught',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Vught | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Vught. Wij komen bij u thuis in Vught en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Vught. Wij komen bij u thuis in Vught en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-vught',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

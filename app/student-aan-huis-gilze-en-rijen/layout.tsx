@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Gilze en Rijen | Hulp met IT',
-  description: 'ICT Student aan huis in Gilze en Rijen voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Rijen, Gilze, Molenschot en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Gilze en Rijen voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Rijen, Gilze, Molenschot en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis gilze en rijen',
     'computerhulp gilze en rijen',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Gilze en Rijen | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Gilze en Rijen. Wij komen bij u thuis in Gilze en Rijen en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Gilze en Rijen. Wij komen bij u thuis in Gilze en Rijen en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-gilze-en-rijen',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Leidschendam-Voorburg | Hulp met IT',
-  description: 'ICT Student aan huis in Leidschendam-Voorburg voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Leidschendam Centrum, Voorburg Centrum, Leidschendam Noord en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Leidschendam-Voorburg voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Leidschendam Centrum, Voorburg Centrum, Leidschendam Noord en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis leidschendam-voorburg',
     'computerhulp leidschendam-voorburg',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Leidschendam-Voorburg | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Leidschendam-Voorburg. Wij komen bij u thuis in Leidschendam-Voorburg en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Leidschendam-Voorburg. Wij komen bij u thuis in Leidschendam-Voorburg en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-leidschendam-voorburg',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

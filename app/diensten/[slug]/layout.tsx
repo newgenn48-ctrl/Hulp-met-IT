@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const metaTitle = service.metaTitle || `${service.name} aan Huis | Hulp met IT`
-  const metaDescription = service.metaDescription || `${service.description} ✓ Transparante tarieven €14,50 per kwartier ✓ Binnen 48 uur geholpen ✓ HBO-opgeleide studenten`
+  const metaDescription = service.metaDescription || `${service.description} ✓ Transparante tarieven €15,50 per kwartier ✓ Binnen 48 uur geholpen ✓ HBO-opgeleide studenten`
 
   return {
     title: metaTitle,

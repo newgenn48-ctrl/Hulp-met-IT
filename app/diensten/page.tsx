@@ -17,7 +17,7 @@ import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'IT Diensten aan Huis | Overzicht | Hulp met IT',
-  description: 'Overzicht van onze IT-diensten aan huis: computerhulp, printerhulp, e-mailproblemen, WiFi, tablet & smartphone hulp en computerles. Vanaf €14,50 per kwartier.',
+  description: 'Overzicht van onze IT-diensten aan huis: computerhulp, printerhulp, e-mailproblemen, WiFi, tablet & smartphone hulp en computerles. Vanaf €15,50 per kwartier.',
   keywords: [
     'IT diensten aan huis',
     'computerhulp',

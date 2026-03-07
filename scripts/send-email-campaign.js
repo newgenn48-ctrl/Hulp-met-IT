@@ -17,10 +17,14 @@ envFile.split('\n').forEach(line => {
 })
 
 // === CONFIGURATIE ===
-const DELAY_BETWEEN_EMAILS_MS = 3000 // 3 seconden tussen elke mail
+const DELAY_BETWEEN_EMAILS_MS = 5000 // 5 seconden tussen elke mail
+const BATCH_SIZE = 50 // 50 mails per batch
+const BATCH_PAUSE_MS = 5 * 60 * 1000 // 5 minuten pauze tussen batches
 const FROM_NAME = 'Hulp met IT'
 const FROM_EMAIL = process.env.SMTP_USER
 const SUBJECT = 'Wist u dat wij ook helpen met online veiligheid?'
+const CSV_FILE = 'mailadressen_hulpmetit.csv'
+const LOG_FILE = 'email-campaign-log.json'
 
 // === TEST ADRESSEN ===
 const TEST_EMAILS = [
@@ -30,10 +34,35 @@ const TEST_EMAILS = [
   'computerhulpzh@gmail.com'
 ]
 
-// === PRODUCTIE ADRESSEN (vul later aan) ===
-const PRODUCTION_EMAILS = [
-  // Voeg hier de echte lijst toe
-]
+// === CSV INLEZEN ===
+function loadEmailsFromCSV() {
+  const csv = fs.readFileSync(CSV_FILE, 'utf8')
+  const lines = csv.split(/\r?\n/).slice(1) // skip header
+  const emails = lines
+    .map(line => line.trim().toLowerCase())
+    .filter(email => {
+      if (!email) return false
+      if (email.startsWith('-')) return false
+      if (!email.includes('@')) return false
+      if (!email.includes('.')) return false
+      return true
+    })
+  // Verwijder duplicaten
+  return [...new Set(emails)]
+}
+
+// === VOORTGANG OPSLAAN (hervat na crash) ===
+function loadProgress() {
+  try {
+    return JSON.parse(fs.readFileSync(LOG_FILE, 'utf8'))
+  } catch {
+    return { sent: [], failed: [], lastIndex: 0 }
+  }
+}
+
+function saveProgress(progress) {
+  fs.writeFileSync(LOG_FILE, JSON.stringify(progress, null, 2))
+}
 
 // === EMAIL TEMPLATE ===
 function getEmailHtml() {
@@ -195,29 +224,56 @@ async function sendCampaignEmail(to) {
     console.log(`  ✅ ${to} — verzonden (${result.messageId})`)
     return { success: true, email: to }
   } catch (error) {
+    const isQuotaError = error.message.includes('Exceeding quota') || error.message.includes('421 4.7.0')
     console.log(`  ❌ ${to} — FOUT: ${error.message}`)
-    return { success: false, email: to, error: error.message }
+    return { success: false, email: to, error: error.message, quota: isQuotaError }
   }
 }
 
 async function main() {
   const mode = process.argv[2]
 
-  if (!mode || (mode !== '--test' && mode !== '--send')) {
+  if (!mode || (mode !== '--test' && mode !== '--send' && mode !== '--resume')) {
     console.log('Gebruik:')
-    console.log('  node scripts/send-email-campaign.js --test   (4 test-adressen)')
-    console.log('  node scripts/send-email-campaign.js --send   (productie-lijst)')
+    console.log('  node scripts/send-email-campaign.js --test     (4 test-adressen)')
+    console.log('  node scripts/send-email-campaign.js --send     (start productie-verzending)')
+    console.log('  node scripts/send-email-campaign.js --resume   (hervat na onderbreking)')
     process.exit(1)
   }
 
-  const emails = mode === '--test' ? TEST_EMAILS : [...TEST_EMAILS, ...PRODUCTION_EMAILS]
+  let emails
+  let startIndex = 0
+
+  if (mode === '--test') {
+    emails = TEST_EMAILS
+  } else {
+    emails = loadEmailsFromCSV()
+    if (mode === '--resume') {
+      const progress = loadProgress()
+      const alreadySent = new Set(progress.sent)
+      // Alleen permanent mislukte overslaan (niet quota-fouten)
+      const permanentFailed = new Set(progress.failed
+        .filter(f => !f.error.includes('Exceeding quota') && !f.error.includes('421 4.7.0'))
+        .map(f => f.email))
+      // Verwijder quota-fouten uit de log zodat ze opnieuw geprobeerd worden
+      progress.failed = progress.failed.filter(f => !f.error.includes('Exceeding quota') && !f.error.includes('421 4.7.0'))
+      saveProgress(progress)
+      emails = emails.filter(e => !alreadySent.has(e) && !permanentFailed.has(e))
+      console.log(`\n🔄 Hervatting: ${progress.sent.length} al verzonden, ${progress.failed.length} permanent mislukt, ${emails.length} resterend`)
+    }
+  }
+
+  const totalBatches = Math.ceil(emails.length / BATCH_SIZE)
+  const estimatedMinutes = Math.round((emails.length * DELAY_BETWEEN_EMAILS_MS / 1000 / 60) + ((totalBatches - 1) * BATCH_PAUSE_MS / 1000 / 60))
 
   console.log(`\n📧 Email Campagne - Hulp met IT`)
   console.log(`   Modus: ${mode === '--test' ? 'TEST' : 'PRODUCTIE'}`)
   console.log(`   Aantal: ${emails.length} ontvangers`)
+  console.log(`   Batches: ${totalBatches} x ${BATCH_SIZE} mails`)
+  console.log(`   Delay: ${DELAY_BETWEEN_EMAILS_MS / 1000}s tussen mails, ${BATCH_PAUSE_MS / 1000 / 60}min tussen batches`)
+  console.log(`   Geschatte duur: ~${estimatedMinutes} minuten`)
   console.log(`   Onderwerp: ${SUBJECT}`)
-  console.log(`   Van: ${FROM_NAME} <${FROM_EMAIL}>`)
-  console.log(`   Throttle: ${DELAY_BETWEEN_EMAILS_MS / 1000}s tussen mails\n`)
+  console.log(`   Van: ${FROM_NAME} <${FROM_EMAIL}>\n`)
 
   // Verify SMTP
   try {
@@ -228,19 +284,51 @@ async function main() {
     process.exit(1)
   }
 
-  const results = { sent: 0, failed: 0, errors: [] }
+  const progress = mode === '--resume' ? loadProgress() : { sent: [], failed: [], lastIndex: 0 }
+  let batchCount = 0
 
   for (let i = 0; i < emails.length; i++) {
     const email = emails[i]
-    console.log(`[${i + 1}/${emails.length}] Verzenden naar ${email}...`)
+    const globalIndex = i + 1
+
+    // Batch pauze
+    if (i > 0 && i % BATCH_SIZE === 0) {
+      batchCount++
+      const pauseMin = BATCH_PAUSE_MS / 1000 / 60
+      console.log(`\n⏸️  Batch ${batchCount} klaar (${BATCH_SIZE} mails). Pauze van ${pauseMin} minuten...`)
+      console.log(`   Voortgang: ${progress.sent.length} verzonden, ${progress.failed.length} mislukt, ${emails.length - i} resterend`)
+      saveProgress(progress)
+      await sleep(BATCH_PAUSE_MS)
+      console.log(`▶️  Batch ${batchCount + 1} gestart\n`)
+      // Herconnect SMTP na pauze
+      try {
+        await transporter.verify()
+      } catch {
+        console.log('   ⚠️ SMTP herverbinden...')
+        await sleep(5000)
+        await transporter.verify()
+      }
+    }
+
+    console.log(`[${globalIndex}/${emails.length}] Verzenden naar ${email}...`)
 
     const result = await sendCampaignEmail(email)
     if (result.success) {
-      results.sent++
+      progress.sent.push(email)
+    } else if (result.quota) {
+      // Quota bereikt: sla op en stop
+      console.log(`\n⛔ SMTP quota bereikt (max 200 mails per 24 uur). Gestopt.`)
+      console.log(`   Verzonden: ${progress.sent.length}, Resterend: ${emails.length - i}`)
+      console.log(`   Hervat morgen met: node scripts/send-email-campaign.js --resume`)
+      saveProgress(progress)
+      process.exit(0)
     } else {
-      results.failed++
-      results.errors.push(result)
+      progress.failed.push({ email, error: result.error })
     }
+    progress.lastIndex = i
+
+    // Sla voortgang op elke 10 mails
+    if (i % 10 === 0) saveProgress(progress)
 
     // Throttle (niet na de laatste)
     if (i < emails.length - 1) {
@@ -248,13 +336,17 @@ async function main() {
     }
   }
 
-  console.log(`\n📊 Resultaat:`)
-  console.log(`   ✅ Verzonden: ${results.sent}`)
-  console.log(`   ❌ Mislukt: ${results.failed}`)
-  if (results.errors.length > 0) {
-    console.log(`   Fouten:`)
-    results.errors.forEach(e => console.log(`      - ${e.email}: ${e.error}`))
+  // Bewaar eindresultaat
+  saveProgress(progress)
+
+  console.log(`\n📊 Eindresultaat:`)
+  console.log(`   ✅ Verzonden: ${progress.sent.length}`)
+  console.log(`   ❌ Mislukt: ${progress.failed.length}`)
+  if (progress.failed.length > 0) {
+    console.log(`   Mislukte adressen:`)
+    progress.failed.forEach(e => console.log(`      - ${e.email}: ${e.error}`))
   }
+  console.log(`\n   Log opgeslagen in ${LOG_FILE}`)
   console.log()
 }
 

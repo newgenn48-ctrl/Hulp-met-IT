@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Dijk en Waard | Hulp met IT',
-  description: 'ICT Student aan huis in Dijk en Waard voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Heerhugowaard, Langedijk, Sint Pancras en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Dijk en Waard voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Heerhugowaard, Langedijk, Sint Pancras en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis dijk en waard',
     'computerhulp dijk en waard',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Dijk en Waard | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Dijk en Waard. Wij komen bij u thuis in Dijk en Waard en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Dijk en Waard. Wij komen bij u thuis in Dijk en Waard en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-dijk-en-waard',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

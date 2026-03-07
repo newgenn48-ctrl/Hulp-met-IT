@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Den Bosch | Hulp met IT',
-  description: 'ICT Student aan huis in Den Bosch voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Den Bosch Centrum, Den Bosch Noord, Den Bosch Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Den Bosch voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Den Bosch Centrum, Den Bosch Noord, Den Bosch Oost en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis den bosch',
     'computerhulp den bosch',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Den Bosch | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Den Bosch. Wij komen bij u thuis in Den Bosch en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Den Bosch. Wij komen bij u thuis in Den Bosch en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-den-bosch',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

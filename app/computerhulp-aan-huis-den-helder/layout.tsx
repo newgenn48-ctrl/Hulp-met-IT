@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis Den Helder | Hulp met IT',
-  description: 'Computerhulp aan huis in Den Helder door HBO-opgeleide ICT-studenten. Hulp in Den Helder Centrum, Nieuw-Den Helder, De Schooten en omgeving. €14,50/kwartier. 7 dagen per week!',
+  description: 'Computerhulp aan huis in Den Helder door HBO-opgeleide ICT-studenten. Hulp in Den Helder Centrum, Nieuw-Den Helder, De Schooten en omgeving. €15,50/kwartier. 7 dagen per week!',
   keywords: [
     'computerhulp aan huis den helder',
     'computer reparatie den helder',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Computerhulp aan huis Den Helder | Hulp met IT',
-    description: 'Computerhulp aan huis in Den Helder door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    description: 'Computerhulp aan huis in Den Helder door HBO-opgeleide ICT-studenten. €15,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     url: 'https://hulpmetit.nl/computerhulp-aan-huis-den-helder',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Computerhulp aan huis Den Helder | Hulp met IT',
-    description: 'Computerhulp aan huis in Den Helder. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.',
+    description: 'Computerhulp aan huis in Den Helder. HBO ICT-student komt bij u thuis. €15,50/kwartier + €10 voorrijkosten.',
     images: ['/og-image.webp']
   },
   alternates: {

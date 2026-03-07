@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'PC Laten Maken aan Huis - Vanaf €14,50 | Hulp met IT',
-  description: 'PC laten maken? Onze HBO-opgeleide ICT-studenten komen bij u thuis. Snelle reparatie, eerlijke prijs. Vanaf €14,50 per kwartier. Bel 085-8005006!',
+  title: 'PC Laten Maken aan Huis - Vanaf €15,50 | Hulp met IT',
+  description: 'PC laten maken? Onze HBO-opgeleide ICT-studenten komen bij u thuis. Snelle reparatie, eerlijke prijs. Vanaf €15,50 per kwartier. Bel 085-8005006!',
   keywords: [
     'pc laten maken',
     'pc reparatie aan huis',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: '/pc-laten-maken',
   },
   openGraph: {
-    title: 'PC Laten Maken aan Huis - Vanaf €14,50',
+    title: 'PC Laten Maken aan Huis - Vanaf €15,50',
     description: 'PC kapot? Onze studenten komen bij u thuis en repareren uw computer. Eerlijke prijs, snel geholpen.',
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PC Laten Maken aan Huis - Vanaf €14,50',
+    title: 'PC Laten Maken aan Huis - Vanaf €15,50',
     description: 'PC kapot? Onze studenten repareren uw computer bij u thuis.',
     images: ['/og-image.webp']
   },

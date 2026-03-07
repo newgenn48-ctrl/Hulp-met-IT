@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Sliedrecht | Hulp met IT',
-  description: 'ICT Student aan huis in Sliedrecht voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Sliedrecht Centrum, Sliedrecht-Oost, Sliedrecht-West en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Sliedrecht voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Sliedrecht Centrum, Sliedrecht-Oost, Sliedrecht-West en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis sliedrecht',
     'computerhulp sliedrecht',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Sliedrecht | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Sliedrecht. Wij komen bij u thuis in Sliedrecht en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Sliedrecht. Wij komen bij u thuis in Sliedrecht en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-sliedrecht',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

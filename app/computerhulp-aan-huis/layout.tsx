@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan huis | HBO ICT-student bij u thuis | Hulp met IT',
-  description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten in heel Nederland. Hulp met uw laptop, printer, WiFi, e-mail en meer. €14,50 per kwartier + €10 voorrijkosten. 7 dagen per week beschikbaar!',
+  description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten in heel Nederland. Hulp met uw laptop, printer, WiFi, e-mail en meer. €15,50 per kwartier + €10 voorrijkosten. 7 dagen per week beschikbaar!',
   keywords: [
     'computerhulp aan huis',
     'computer reparatie aan huis',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Computerhulp aan huis | HBO ICT-student bij u thuis | Hulp met IT',
-    description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
+    description: 'Computerhulp aan huis door HBO-opgeleide ICT-studenten. €15,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!',
     url: 'https://hulpmetit.nl/computerhulp-aan-huis',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Computerhulp aan huis | Hulp met IT',
-    description: 'Computerhulp aan huis door HBO ICT-studenten. €14,50/kwartier + €10 voorrijkosten. 7 dagen per week!',
+    description: 'Computerhulp aan huis door HBO ICT-studenten. €15,50/kwartier + €10 voorrijkosten. 7 dagen per week!',
     images: ['/og-image.webp']
   },
   alternates: {

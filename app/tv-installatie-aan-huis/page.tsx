@@ -20,7 +20,7 @@ import { SectionDivider } from '@/components/ui/SectionDivider'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 const faqData = [
-  { question: 'Wat kost TV installatie aan huis?', answer: 'Wij rekenen €14,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €53,50). De meeste TV installaties zijn binnen 45-60 minuten klaar.' },
+  { question: 'Wat kost TV installatie aan huis?', answer: 'Wij rekenen €15,50 per kwartier, met een minimum van 3 kwartier (€43,50 + €10 voorrijkosten = €56,50). De meeste TV installaties zijn binnen 45-60 minuten klaar.' },
   { question: 'Welke TV merken installeren jullie?', answer: 'Wij installeren alle merken: Samsung, LG, Sony, Philips, TCL, Hisense en meer. Ook oudere modellen en Android TV / Google TV / Tizen / webOS.' },
   { question: 'Kunnen jullie ook mijn TV aan de muur hangen?', answer: 'Ja, wij monteren de muurbeugel en hangen uw TV veilig op. Zorg dat u een muurbeugel heeft die past bij uw TV en muur. Wij adviseren u graag welke u nodig heeft.' },
   { question: 'Helpen jullie ook met Chromecast of Apple TV?', answer: 'Ja! Wij installeren en configureren ook streaming apparaten zoals Chromecast, Apple TV, Fire TV Stick en andere media players.' },
@@ -63,7 +63,7 @@ export default function TvInstallatieAanHuisPage() {
       url: 'https://hulpmetit.nl'
     },
     areaServed: { '@type': 'Country', name: 'Nederland' },
-    offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' }
+    offers: { '@type': 'Offer', price: '15.50', priceCurrency: 'EUR' }
   }
 
   const localBusinessStructuredData = {
@@ -76,7 +76,7 @@ export default function TvInstallatieAanHuisPage() {
     email: 'info@hulpmetit.nl',
     areaServed: { '@type': 'Country', name: 'Nederland' },
     serviceType: 'TV installatie aan huis',
-    priceRange: '€53,50 - €100',
+    priceRange: '€56,50 - €100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 
@@ -111,7 +111,7 @@ export default function TvInstallatieAanHuisPage() {
               <p className="text-accent-400 text-sm font-medium mb-8">Meestal binnen 24 uur geholpen</p>
               <div className="flex flex-wrap items-center gap-3 text-sm">
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><GraduationCap className="w-3.5 h-3.5 text-primary-300" />HBO-opgeleide studenten</span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><Banknote className="w-3.5 h-3.5 text-primary-300" />Vanaf €14,50 per kwartier</span>
+                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><Banknote className="w-3.5 h-3.5 text-primary-300" />Vanaf €15,50 per kwartier</span>
                 <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><CalendarDays className="w-3.5 h-3.5 text-primary-300" />7 dagen per week</span>
               </div>
             </ScrollReveal>

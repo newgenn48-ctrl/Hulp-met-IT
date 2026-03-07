@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Afspraak Maken - Computerhulp aan Huis | Hulp met IT',
-  description: 'Plan direct online een afspraak voor computerhulp aan huis. Binnen 24 uur geholpen. Vanaf €14,50 per kwartier. Bevestiging per e-mail.',
+  description: 'Plan direct online een afspraak voor computerhulp aan huis. Binnen 24 uur geholpen. Vanaf €15,50 per kwartier. Bevestiging per e-mail.',
   keywords: [
     'afspraak maken hulp met IT',
     'online afspraak computer',

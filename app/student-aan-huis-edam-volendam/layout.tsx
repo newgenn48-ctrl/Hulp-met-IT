@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Edam-Volendam | Hulp met IT',
-  description: 'ICT Student aan huis in Edam-Volendam voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Edam, Volendam, Zeevang en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Edam-Volendam voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Edam, Volendam, Zeevang en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis edam-volendam',
     'computerhulp edam-volendam',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Edam-Volendam | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Edam-Volendam. Wij komen bij u thuis in Edam-Volendam en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Edam-Volendam. Wij komen bij u thuis in Edam-Volendam en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-edam-volendam',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

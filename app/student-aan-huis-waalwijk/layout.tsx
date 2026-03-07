@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Waalwijk | Hulp met IT',
-  description: 'ICT Student aan huis in Waalwijk voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Waalwijk Centrum, Waalwijk Noord, Waalwijk Zuid en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Waalwijk voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Waalwijk Centrum, Waalwijk Noord, Waalwijk Zuid en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis waalwijk',
     'computerhulp waalwijk',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Waalwijk | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Waalwijk. Wij komen bij u thuis in Waalwijk en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Waalwijk. Wij komen bij u thuis in Waalwijk en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-waalwijk',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

@@ -29,7 +29,7 @@ const REGION = 'Noord-Holland'
 const faqData = [
   {
     question: `Wat kost computerhulp aan huis in ${CITY}?`,
-    answer: `Computerhulp aan huis in ${CITY} kost \u20ac14,50 per kwartier, met een minimum van 45 minuten (3 kwartier). De voorrijkosten bedragen eenmalig \u20ac10. Een standaard bezoek van 45 minuten kost dus \u20ac53,50 in ${CITY}. U betaalt achteraf per pin of Tikkie.`
+    answer: `Computerhulp aan huis in ${CITY} kost \u20ac15,50 per kwartier, met een minimum van 45 minuten (3 kwartier). De voorrijkosten bedragen eenmalig \u20ac10. Een standaard bezoek van 45 minuten kost dus \u20ac56,50 in ${CITY}. U betaalt achteraf per pin of Tikkie.`
   },
   {
     question: `Hoe snel kan een student bij mij komen in ${CITY}?`,
@@ -105,7 +105,7 @@ export default function ComputerhulpAanHuisDenHelder() {
     },
     offers: {
       '@type': 'Offer',
-      price: '14.50',
+      price: '15.50',
       priceCurrency: 'EUR'
     }
   }
@@ -125,7 +125,7 @@ export default function ComputerhulpAanHuisDenHelder() {
       addressCountry: 'NL'
     },
     serviceType: `Computerhulp aan huis ${CITY}`,
-    priceRange: '\u20ac53,50 - \u20ac100',
+    priceRange: '\u20ac56,50 - \u20ac100',
     openingHours: 'Mo-Su 08:00-21:00'
   }
 

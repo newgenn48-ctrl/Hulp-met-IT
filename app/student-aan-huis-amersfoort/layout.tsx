@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Amersfoort | Hulp met IT',
-  description: 'ICT Student aan huis in Amersfoort voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Amersfoort Centrum, Amersfoort Noord, Amersfoort Oost en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Amersfoort voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Amersfoort Centrum, Amersfoort Noord, Amersfoort Oost en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis amersfoort',
     'computerhulp amersfoort',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Amersfoort | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Amersfoort. Wij komen bij u thuis in Amersfoort en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Amersfoort. Wij komen bij u thuis in Amersfoort en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-amersfoort',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

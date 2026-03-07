@@ -25,9 +25,9 @@ function slugToPascalCase(slug) {
 function makeDescription(type, cityName, serviceAreas) {
   const areas = serviceAreas.slice(0, 3).join(', ');
   if (type === 'computerhulp') {
-    return `Computerhulp aan huis in ${cityName} door HBO-opgeleide ICT-studenten. Hulp in ${areas} en omgeving. €14,50/kwartier. 7 dagen per week!`;
+    return `Computerhulp aan huis in ${cityName} door HBO-opgeleide ICT-studenten. Hulp in ${areas} en omgeving. €15,50/kwartier. 7 dagen per week!`;
   }
-  return `ICT Student aan huis in ${cityName} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in ${areas} en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!`;
+  return `ICT Student aan huis in ${cityName} voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in ${areas} en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!`;
 }
 
 // Helper: genereer keywords voor computerhulp-aan-huis
@@ -134,15 +134,15 @@ function generateLayout(type, city) {
   const keywords = isComputerhulp ? computerhulpKeywords(city) : studentKeywords(city);
 
   const ogDescription = isComputerhulp
-    ? `Computerhulp aan huis in ${name} door HBO-opgeleide ICT-studenten. €14,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!`
-    : `Betaalbare computerhulp door ervaren IT-studenten in ${name}. Wij komen bij u thuis in ${name} en omgeving. €14,50 per kwartier.`;
+    ? `Computerhulp aan huis in ${name} door HBO-opgeleide ICT-studenten. €15,50 per kwartier + €10 voorrijkosten. Ook avond en weekend!`
+    : `Betaalbare computerhulp door ervaren IT-studenten in ${name}. Wij komen bij u thuis in ${name} en omgeving. €15,50 per kwartier.`;
 
   const ogAlt = isComputerhulp
     ? `Computerhulp aan huis ${name} - Hulp met IT`
     : `ICT Student aan huis ${name} - Hulp met IT`;
 
   const twitterDescription = isComputerhulp
-    ? `Computerhulp aan huis in ${name}. HBO ICT-student komt bij u thuis. €14,50/kwartier + €10 voorrijkosten.`
+    ? `Computerhulp aan huis in ${name}. HBO ICT-student komt bij u thuis. €15,50/kwartier + €10 voorrijkosten.`
     : `Betaalbare computerhulp door ervaren IT-studenten in ${name}. Wij komen bij u thuis.`;
 
   const funcName = isComputerhulp

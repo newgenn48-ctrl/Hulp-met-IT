@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Molenlanden | Hulp met IT',
-  description: 'ICT Student aan huis in Molenlanden voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Groot-Ammers, Bleskensgraaf, Nieuw-Lekkerland en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Molenlanden voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Groot-Ammers, Bleskensgraaf, Nieuw-Lekkerland en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis molenlanden',
     'computerhulp molenlanden',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Molenlanden | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Molenlanden. Wij komen bij u thuis in Molenlanden en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Molenlanden. Wij komen bij u thuis in Molenlanden en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-molenlanden',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',

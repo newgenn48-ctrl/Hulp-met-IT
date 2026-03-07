@@ -32,12 +32,12 @@ export function StructuredData({ breadcrumbs = [] }: StructuredDataProps = {}) {
           "itemOffered": {
             "@type": "Service",
             "name": "Standaard Computerhulp aan huis",
-            "description": "Professionele computerhulp aan huis - €14,50 per kwartier + €10 voorrijkosten",
+            "description": "Professionele computerhulp aan huis - €15,50 per kwartier + €10 voorrijkosten",
             "serviceType": "ComputerRepair"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "14.50",
+            "price": "15.50",
             "priceCurrency": "EUR",
             "unitText": "kwartier"
           }
@@ -62,12 +62,12 @@ export function StructuredData({ breadcrumbs = [] }: StructuredDataProps = {}) {
           "itemOffered": {
             "@type": "Service",
             "name": "WiFi en internet problemen oplossen",
-            "description": "WiFi en internetproblemen snel opgelost - €14,50 per kwartier",
+            "description": "WiFi en internetproblemen snel opgelost - €15,50 per kwartier",
             "serviceType": "NetworkSupport"
           },
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "14.50",
+            "price": "15.50",
             "priceCurrency": "EUR",
             "unitText": "kwartier"
           }

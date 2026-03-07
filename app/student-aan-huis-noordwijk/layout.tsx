@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Student aan huis Noordwijk | Hulp met IT',
-  description: 'ICT Student aan huis in Noordwijk voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Noordwijk aan Zee, Noordwijk-Binnen, Noordwijkerhout en omgeving. €14,50 per kwartier. Snel, vakkundig en vriendelijk!',
+  description: 'ICT Student aan huis in Noordwijk voor betaalbare computerhulp. Ervaren IT-studenten komen bij u thuis in Noordwijk aan Zee, Noordwijk-Binnen, Noordwijkerhout en omgeving. €15,50 per kwartier. Snel, vakkundig en vriendelijk!',
   keywords: [
     'student aan huis noordwijk',
     'computerhulp noordwijk',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'Student aan huis Noordwijk | Hulp met IT',
-    description: 'Betaalbare computerhulp door ervaren IT-studenten in Noordwijk. Wij komen bij u thuis in Noordwijk en omgeving. €14,50 per kwartier.',
+    description: 'Betaalbare computerhulp door ervaren IT-studenten in Noordwijk. Wij komen bij u thuis in Noordwijk en omgeving. €15,50 per kwartier.',
     url: 'https://hulpmetit.nl/student-aan-huis-noordwijk',
     siteName: 'Hulp met IT',
     locale: 'nl_NL',
