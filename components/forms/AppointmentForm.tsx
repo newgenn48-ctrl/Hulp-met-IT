@@ -5,8 +5,7 @@ import { useRouter } from 'next/navigation'
 import { LoadingButton } from '@/components/ui/LoadingSpinner'
 
 interface AppointmentFormData {
-  firstName: string
-  lastName: string
+  name: string
   email: string
   phone: string
   address: string
@@ -18,8 +17,7 @@ interface AppointmentFormData {
 }
 
 const initialFormData: AppointmentFormData = {
-  firstName: '',
-  lastName: '',
+  name: '',
   email: '',
   phone: '',
   address: '',
@@ -73,8 +71,7 @@ export function AppointmentForm() {
 
   const getFieldError = (field: string, value: string): string | null => {
     switch (field) {
-      case 'firstName': return !value.trim() ? 'Voornaam is verplicht' : null
-      case 'lastName': return !value.trim() ? 'Achternaam is verplicht' : null
+      case 'name': return !value.trim() ? 'Naam is verplicht' : null
       case 'email':
         if (!value.trim()) return 'E-mailadres is verplicht'
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Voer een geldig e-mailadres in'
@@ -116,8 +113,7 @@ export function AppointmentForm() {
 
   const isFormValid = (): boolean => {
     return !!(
-      formData.firstName.trim() &&
-      formData.lastName.trim() &&
+      formData.name.trim() &&
       formData.email.trim() &&
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
       formData.phone.trim() &&
@@ -134,8 +130,7 @@ export function AppointmentForm() {
   const validateForm = (): boolean => {
     const errors: {[key: string]: string} = {}
 
-    if (!formData.firstName.trim()) errors['firstName'] = 'Voornaam is verplicht'
-    if (!formData.lastName.trim()) errors['lastName'] = 'Achternaam is verplicht'
+    if (!formData.name.trim()) errors['name'] = 'Naam is verplicht'
     if (!formData.email.trim()) {
       errors['email'] = 'E-mailadres is verplicht'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -234,37 +229,20 @@ export function AppointmentForm() {
       <div className="space-y-6">
         <h3 className="text-2xl font-bold text-secondary-800 mb-6">Uw gegevens</h3>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="firstName" className="block text-sm font-medium text-secondary-800 mb-2">Voornaam *</label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              autoComplete="given-name"
-              value={formData.firstName}
-              onChange={(e) => handleInputChange('firstName', e.target.value)}
-              onBlur={() => handleBlur('firstName')}
-              className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldClass('firstName', !!formData.firstName.trim())}`}
-              placeholder="Uw voornaam"
-            />
-            {fieldErrors['firstName'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['firstName']}</p>}
-          </div>
-          <div>
-            <label htmlFor="lastName" className="block text-sm font-medium text-secondary-800 mb-2">Achternaam *</label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              autoComplete="family-name"
-              value={formData.lastName}
-              onChange={(e) => handleInputChange('lastName', e.target.value)}
-              onBlur={() => handleBlur('lastName')}
-              className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldClass('lastName', !!formData.lastName.trim())}`}
-              placeholder="Uw achternaam"
-            />
-            {fieldErrors['lastName'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['lastName']}</p>}
-          </div>
+        <div>
+          <label htmlFor="name" className="block text-sm font-medium text-secondary-800 mb-2">Uw naam *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autoComplete="name"
+            value={formData.name}
+            onChange={(e) => handleInputChange('name', e.target.value)}
+            onBlur={() => handleBlur('name')}
+            className={`w-full px-4 py-3 rounded-xl border transition-all duration-200 ${fieldClass('name', !!formData.name.trim())}`}
+            placeholder="Uw naam"
+          />
+          {fieldErrors['name'] && <p className="text-sm text-red-500 mt-1">{fieldErrors['name']}</p>}
         </div>
 
         <div>

@@ -9,17 +9,11 @@ const DUTCH_POSTCODE_REGEX = /^[1-9][0-9]{3} ?[A-Z]{2}$/i
 
 // Comprehensive appointment form validation schema
 export const appointmentSchema = z.object({
-  firstName: z
+  name: z
     .string()
-    .min(1, 'Voornaam is verplicht')
-    .max(50, 'Voornaam mag maximaal 50 karakters bevatten')
-    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/, 'Voornaam bevat ongeldige karakters'),
-
-  lastName: z
-    .string()
-    .min(1, 'Achternaam is verplicht')
-    .max(50, 'Achternaam mag maximaal 50 karakters bevatten')
-    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s'-]+$/, 'Achternaam bevat ongeldige karakters'),
+    .min(1, 'Naam is verplicht')
+    .max(100, 'Naam mag maximaal 100 karakters bevatten')
+    .regex(/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð\s.'-]+$/, 'Naam bevat ongeldige karakters'),
 
   email: z
     .string()

@@ -313,7 +313,7 @@ function getCustomerEmailTemplate(data: AppointmentFormData, reference: string):
     </div>
     
     <div class="content">
-      <div class="greeting">Beste ${data.firstName} ${data.lastName},</div>
+      <div class="greeting">Beste ${data.name},</div>
       
       <div class="intro">
         Hartelijk dank voor uw vertrouwen in Hulp met IT. Wij hebben uw afspraakaanvraag in goede orde ontvangen en zullen binnen 2 werkuren telefonisch contact met u opnemen om de afspraak definitief te bevestigen.
@@ -624,7 +624,7 @@ function getAdminEmailTemplate(data: AppointmentFormData, reference: string, sec
       <div class="info-grid">
         <div class="info-card customer">
           <h3>👤 Klantinformatie</h3>
-          <p><strong>Naam:</strong> ${data.firstName} ${data.lastName}</p>
+          <p><strong>Naam:</strong> ${data.name}</p>
           <p><strong>E-mail:</strong> <a href="mailto:${data.email}">${data.email}</a></p>
           <p><strong>Telefoon:</strong> <a href="tel:${formatPhoneForTel(data.phone)}">${data.phone}</a></p>
         </div>
@@ -793,8 +793,7 @@ export async function POST(request: NextRequest) {
     // Sanitize all text inputs
     const sanitizedData = {
       ...data,
-      firstName: sanitizeInput(data.firstName),
-      lastName: sanitizeInput(data.lastName),
+      name: sanitizeInput(data.name),
       address: sanitizeInput(data.address),
       city: sanitizeInput(data.city),
       problemDescription: escapeHtml(data.problemDescription),
@@ -815,7 +814,7 @@ export async function POST(request: NextRequest) {
         console.log('DEBUG: APPOINTMENT REQUEST:', {
           reference,
           timestamp: new Date().toISOString(),
-          customer: `${sanitizedData.firstName} ${sanitizedData.lastName}`,
+          customer: `${sanitizedData.name}`,
           email: data.email,
           phone: data.phone,
           address: `${sanitizedData.address}, ${data.postalCode} ${sanitizedData.city}`,

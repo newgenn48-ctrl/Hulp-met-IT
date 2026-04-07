@@ -1,5 +1,4 @@
 import { AppointmentFormWrapper } from '@/components/forms/AppointmentFormWrapper'
-import { Shield, Phone } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -44,24 +43,6 @@ export default function AfspraakPage() {
     />
     <div className="min-h-screen bg-secondary-50 pt-32 pb-12">
       <div className="max-w-2xl mx-auto px-6 sm:px-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-3">
-            Afspraak maken
-          </h1>
-          <p className="text-secondary-600 mb-6">
-            Vul het formulier in en wij nemen zo snel mogelijk contact met u op.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 border border-primary-200 rounded-full px-3 py-1 text-sm font-medium">
-              <Phone className="w-3.5 h-3.5" />
-              Gratis intakegesprek
-            </span>
-            <span className="inline-flex items-center gap-1.5 bg-primary-50 text-primary-700 border border-primary-200 rounded-full px-3 py-1 text-sm font-medium">
-              <Shield className="w-3.5 h-3.5" />
-              Geen verplichtingen
-            </span>
-          </div>
-        </div>
         <AppointmentFormWrapper />
       </div>
     </div>

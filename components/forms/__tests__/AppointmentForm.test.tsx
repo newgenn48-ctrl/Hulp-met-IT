@@ -15,8 +15,7 @@ describe('AppointmentForm', () => {
   
   // Helper functie om de eerste stap in te vullen
   const fillStepOne = async () => {
-    await userEvent.type(screen.getByPlaceholderText('Uw voornaam'), 'Jan')
-    await userEvent.type(screen.getByPlaceholderText('Uw achternaam'), 'Jansen')
+    await userEvent.type(screen.getByPlaceholderText('Uw naam'), 'Jan Jansen')
     await userEvent.type(screen.getByPlaceholderText('uw.email@example.com'), 'jan.jansen@test.nl')
     await userEvent.type(screen.getByPlaceholderText('06-12345678 of 020-1234567'), '0612345678')
     await userEvent.type(screen.getByPlaceholderText('Voorbeeldstraat 123'), 'Teststraat 10')
@@ -36,8 +35,7 @@ describe('AppointmentForm', () => {
     
     expect(nextButton).toBeDisabled()
 
-    await userEvent.type(screen.getByPlaceholderText('Uw voornaam'), 'Jan')
-    await userEvent.type(screen.getByPlaceholderText('Uw achternaam'), 'Jansen')
+    await userEvent.type(screen.getByPlaceholderText('Uw naam'), 'Jan Jansen')
     await userEvent.type(screen.getByPlaceholderText('uw.email@example.com'), 'jan.jansen@test.nl')
     
     // Nog steeds niet volledig, dus knop moet uitgeschakeld blijven
