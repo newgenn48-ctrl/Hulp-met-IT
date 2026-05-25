@@ -127,32 +127,6 @@ export default function PcHulpAanHuisPage() {
 
       <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafaf9" />
 
-      {/* Over PC hulp aan huis */}
-      <section className="py-20 lg:py-28 bg-secondary-50">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-10">
-              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">PC hulp</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">Waarmee wij u helpen</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal delay={100}>
-            <div className="bg-white rounded-2xl shadow-card p-8 space-y-4">
-              <p className="text-secondary-600 leading-relaxed">
-                Problemen met uw PC? Of het nu gaat om een trage computer, virusinfecties, internetproblemen of vastgelopen software — onze HBO-opgeleide studenten lossen het op bij u aan de keukentafel. Geen gedoe met inleveren bij een winkel of wekenlang wachten.
-              </p>
-              <p className="text-secondary-600 leading-relaxed">
-                Wij helpen met alles: printers die niet werken, e-mailproblemen, software-installatie, Windows updates, data backup en meer. Bij hardwareproblemen stellen wij een eerlijke diagnose. Onze studenten leggen alles rustig uit in begrijpelijke taal, zodat u ook weet wat er aan de hand was.
-              </p>
-              <p className="text-secondary-600 leading-relaxed">
-                Beschikbaar 7 dagen per week van 08:00 tot 21:00, ook in het weekend. In de meeste gevallen komen wij binnen 24 uur bij u langs. U betaalt vanaf €15,50 per kwartier, alleen voor de daadwerkelijk bestede tijd.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
       <CompactServicesSection />
       <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
       <HowItWorks />
