@@ -235,8 +235,41 @@ export default function StudentAanHuisLeusdenPage() {
       <SectionDivider
         variant="swoosh"
         topColor={{ colors: ['#1c1917', '#292524', '#1c1917'], id: 'grad-trust-bot' }}
-        bottomColor="#ffffff"
+        bottomColor="#fafaf9"
       />
+
+      {/* Hoe werkt het */}
+      <section className="py-16 lg:py-20 bg-secondary-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Hoe werkt het</p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+                Student aan huis in {CITY} — in 3 stappen
+              </h2>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-3 gap-4 sm:gap-8">
+            {[
+              { icon: PhoneCall, step: '1', title: 'Bel of plan online', desc: `Even bellen of online plannen. Vertel kort wat er speelt.` },
+              { icon: UserCheck, step: '2', title: 'Student komt langs', desc: `Een IT-student komt bij u thuis in ${CITY}. Geen gedoe.` },
+              { icon: CheckCircle, step: '3', title: 'Probleem opgelost', desc: `Ter plekke opgelost, mét uitleg. Betalen doet u achteraf.` },
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                  <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-600" />
+                </div>
+                <span className="text-primary-500 font-bold text-xs sm:text-sm">Stap {item.step}</span>
+                <h3 className="font-bold text-secondary-900 text-sm sm:text-lg mt-1 mb-1 sm:mb-2">{item.title}</h3>
+                <p className="text-secondary-600 leading-relaxed hidden sm:block">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
 
       {/* Student aan huis Leusden */}
       <section className="py-20 lg:py-28 bg-white">
@@ -262,39 +295,6 @@ export default function StudentAanHuisLeusdenPage() {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Hoe werkt het */}
-      <section className="py-20 lg:py-28 bg-secondary-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <div className="text-center mb-14">
-              <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Hoe werkt het</p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
-                Student aan huis in {CITY} — in 3 stappen
-              </h2>
-            </div>
-          </ScrollReveal>
-
-          <div className="grid grid-cols-3 gap-4 sm:gap-8">
-            {[
-              { icon: PhoneCall, step: '1', title: 'Bel of plan online', desc: `Neem contact op via telefoon of plan online een afspraak voor een student aan huis in ${CITY}. Vertel kort wat het probleem is.` },
-              { icon: UserCheck, step: '2', title: 'Student komt langs', desc: `Een HBO-opgeleide IT-student komt op de afgesproken tijd bij u thuis in ${CITY}. Geen gedoe met wegbrengen.` },
-              { icon: CheckCircle, step: '3', title: 'Probleem opgelost', desc: `Uw probleem wordt ter plekke opgelost. U krijgt uitleg in gewone taal en betaalt achteraf.` },
-            ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-primary-600" />
-                </div>
-                <span className="text-primary-500 font-bold text-xs sm:text-sm">Stap {item.step}</span>
-                <h3 className="font-bold text-secondary-900 text-sm sm:text-lg mt-1 mb-1 sm:mb-2">{item.title}</h3>
-                <p className="text-secondary-600 leading-relaxed hidden sm:block">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
 
       {/* FAQ */}
       <section className="py-20 lg:py-28 bg-white">
