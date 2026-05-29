@@ -191,10 +191,10 @@ export default function ${FUNC}() {
               </h1>
 
               <p className="text-lg text-white/80 leading-relaxed mb-4 max-w-lg">
-                Heeft u problemen met uw computer, tablet of telefoon? Geen zorgen — onze IT-studenten komen bij u thuis in {CITY} en helpen u stap voor stap, in begrijpelijke taal.
+                Heeft u problemen met uw laptop/desktop, tablet of telefoon? Geen zorgen — onze IT-studenten komen bij u thuis in {CITY} en helpen u stap voor stap, in begrijpelijke taal.
               </p>
               <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
-                Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat u snapt hoe het werkt.
+                Trage computer, een printer die niet wil, tv-instellingen of hulp bij e-mail? Wij lossen het op — én zorgen dat u snapt hoe het werkt.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
