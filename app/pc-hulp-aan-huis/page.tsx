@@ -114,7 +114,6 @@ export default function PcHulpAanHuisPage() {
                   <Phone className="w-4 h-4" /> Bel 085-8005006
                 </a>
               </div>
-              <p className="text-accent-400 text-sm font-medium mb-8">Meestal binnen 24 uur geholpen</p>
             </ScrollReveal>
           </div>
         </div>
