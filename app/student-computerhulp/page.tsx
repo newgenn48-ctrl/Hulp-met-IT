@@ -6,10 +6,7 @@ import { useState } from 'react'
 import {
   Phone,
   ArrowRight,
-  ChevronDown,
-  Banknote,
-  GraduationCap,
-  CalendarDays
+  ChevronDown
 } from 'lucide-react'
 import { PricingSection } from '@/components/home/PricingSection'
 import { HowItWorks } from '@/components/home/HowItWorks'
@@ -98,8 +95,11 @@ export default function StudentComputerhulpPage() {
               <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white leading-[1.1] mb-6">
                 Student{' '}<span className="text-accent-400">computerhulp</span>
               </h1>
+              <p className="text-lg text-white/80 leading-relaxed mb-4 max-w-lg">
+                Heeft u problemen met uw laptop/desktop, tablet of telefoon? Geen zorgen — onze IT-studenten komen bij u thuis in heel Nederland en helpen u stap voor stap, in begrijpelijke taal.
+              </p>
               <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
-                Betaalbare computerhulp door HBO-opgeleide IT-studenten. Ze komen bij u thuis, leggen alles rustig uit in gewone taal.
+                Trage computer, een printer die niet wil, tv-instellingen of hulp bij e-mail? Wij lossen het op — én zorgen dat u snapt hoe het werkt.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
                 <Link href="/afspraak" className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-accent">
@@ -109,18 +109,14 @@ export default function StudentComputerhulpPage() {
                   <Phone className="w-4 h-4" /> Bel 085-8005006
                 </a>
               </div>
-              <p className="text-accent-400 text-sm font-medium mb-8">Meestal binnen 24 uur geholpen</p>
-              <div className="flex flex-wrap items-center gap-3 text-sm">
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><GraduationCap className="w-3.5 h-3.5 text-primary-300" />HBO-opgeleide studenten</span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><Banknote className="w-3.5 h-3.5 text-primary-300" />Vanaf €15,50 per kwartier</span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium"><CalendarDays className="w-3.5 h-3.5 text-primary-300" />7 dagen per week</span>
-              </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafaf9" />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#ffffff" />
+      <HowItWorks />
+      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
 
       {/* Waarom student computerhulp */}
       <section className="py-20 lg:py-28 bg-secondary-50">
@@ -147,9 +143,7 @@ export default function StudentComputerhulpPage() {
         </div>
       </section>
 
-      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
-      <HowItWorks />
-      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+      <SectionDivider variant="wave" topColor="#fafaf9" bottomColor="#fafaf9" />
       <PricingSection />
 
       <TestimonialsSection />
