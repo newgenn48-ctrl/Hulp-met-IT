@@ -7,9 +7,6 @@ import {
   Phone,
   ArrowRight,
   ChevronDown,
-  Banknote,
-  GraduationCap,
-  CalendarDays,
   PhoneCall,
   UserCheck,
   CheckCircle
@@ -170,8 +167,11 @@ export default function StudentAanHuisZeistPage() {
                 <span className="text-accent-400">in {CITY}</span>
               </h1>
 
+              <p className="text-lg text-white/80 leading-relaxed mb-4 max-w-lg">
+                Heeft u problemen met uw laptop/desktop, tablet of telefoon? Geen zorgen — onze IT-studenten komen bij u thuis in {CITY} en helpen u stap voor stap, in begrijpelijke taal.
+              </p>
               <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
-                Betaalbare computerhulp door een student aan huis in {CITY}. Jong, vakkundig en geduldig — onze HBO-studenten helpen u graag.
+                Trage computer, een printer die niet wil, tv-instellingen of hulp bij e-mail? Wij lossen het op — én zorgen dat u snapt hoe het werkt.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
@@ -189,25 +189,6 @@ export default function StudentAanHuisZeistPage() {
                   <Phone className="w-4 h-4" />
                   Bel 085-8005006
                 </a>
-              </div>
-
-              <p className="text-accent-400 text-sm font-medium mb-8">
-                Meestal binnen 24 uur geholpen
-              </p>
-
-              <div className="flex flex-wrap items-center gap-3 text-sm">
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
-                  <GraduationCap className="w-3.5 h-3.5 text-primary-300" />
-                  HBO-opgeleide studenten
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
-                  <Banknote className="w-3.5 h-3.5 text-primary-300" />
-                  Betaalbare tarieven
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
-                  <CalendarDays className="w-3.5 h-3.5 text-primary-300" />
-                  7 dagen per week
-                </span>
               </div>
             </ScrollReveal>
           </div>
