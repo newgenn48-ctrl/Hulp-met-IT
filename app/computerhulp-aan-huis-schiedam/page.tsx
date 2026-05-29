@@ -170,8 +170,11 @@ export default function ComputerhulpAanHuisSchiedam() {
                 <span className="text-accent-400">aan huis in {CITY}</span>
               </h1>
 
+              <p className="text-lg text-white/80 leading-relaxed mb-4 max-w-lg">
+                Heeft u problemen met uw computer, tablet of telefoon? Geen zorgen — onze IT-studenten komen bij u thuis in {CITY} en helpen u stap voor stap, in begrijpelijke taal.
+              </p>
               <p className="text-lg text-white/80 leading-relaxed mb-8 max-w-lg">
-                Betrouwbare computerhulp aan huis in {CITY}. Onze IT-studenten lossen alles snel en vakkundig op — bij u thuis.
+                Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat u snapt hoe het werkt.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 mb-4">
