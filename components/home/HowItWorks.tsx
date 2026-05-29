@@ -6,40 +6,37 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 const steps = [
   {
     icon: Phone,
-    title: 'Neem contact op',
-    description: 'Bel ons of plan online een afspraak. Wij luisteren en denken mee.',
+    title: 'Bel of plan online',
+    description: 'Eén telefoontje en wij denken meteen mee.',
   },
   {
     icon: Calendar,
-    title: 'Afspraak inplannen',
-    description: 'Wij komen wanneer het u uitkomt. Vaak al dezelfde of volgende dag.',
+    title: 'Snel een afspraak',
+    description: 'Vaak nog dezelfde of volgende dag.',
   },
   {
     icon: Home,
     title: 'Hulp aan huis',
-    description: 'Onze student lost het probleem rustig bij u thuis op.',
+    description: 'Onze student lost het rustig bij u thuis op.',
   },
   {
     icon: CheckCircle,
     title: 'Opgelost',
-    description: 'U krijgt duidelijke uitleg. Bij vragen kunt u altijd terugbellen.',
+    description: 'Mét uitleg. Vragen? Bel gerust terug.',
   },
 ]
 
 export function HowItWorks() {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-16 lg:py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <ScrollReveal>
-          <div className="text-center mb-14">
+          <div className="text-center mb-12">
             <p className="text-primary-600 font-semibold text-sm tracking-wide uppercase mb-3">Zo werkt het</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900 mb-4">
-              In vier stappen geholpen
+            <h2 className="text-3xl sm:text-4xl font-bold text-secondary-900">
+              In 4 stappen geholpen
             </h2>
-            <p className="text-secondary-500 max-w-xl mx-auto text-lg">
-              Geen ingewikkeld gedoe. Gewoon even bellen, en wij regelen de rest.
-            </p>
           </div>
         </ScrollReveal>
 

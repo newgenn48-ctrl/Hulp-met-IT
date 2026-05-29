@@ -119,12 +119,12 @@ export default function PcHulpAanHuisPage() {
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafaf9" />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#ffffff" />
 
-      <CompactServicesSection />
-      <SectionDivider variant="tilt" topColor="#fafaf9" bottomColor="#ffffff" />
       <HowItWorks />
-      <SectionDivider variant="wave" topColor="#ffffff" bottomColor="#fafaf9" />
+      <SectionDivider variant="tilt" topColor="#ffffff" bottomColor="#fafaf9" />
+      <CompactServicesSection />
+      <SectionDivider variant="wave" topColor="#fafaf9" bottomColor="#fafaf9" />
       <PricingSection />
 
       <TestimonialsSection />
