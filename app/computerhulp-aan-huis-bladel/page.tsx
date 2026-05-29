@@ -7,9 +7,6 @@ import {
   Phone,
   ArrowRight,
   ChevronDown,
-  Banknote,
-  GraduationCap,
-  CalendarDays,
   PhoneCall,
   UserCheck,
   CheckCircle
@@ -197,21 +194,6 @@ export default function ComputerhulpAanHuisBladel() {
               <p className="text-accent-400 text-sm font-medium mb-8">
                 Meestal binnen 24 uur geholpen
               </p>
-
-              <div className="flex flex-wrap items-center gap-3 text-sm">
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
-                  <GraduationCap className="w-3.5 h-3.5 text-primary-300" />
-                  HBO-opgeleide studenten
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
-                  <Banknote className="w-3.5 h-3.5 text-primary-300" />
-                  Betaalbare tarieven
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 font-medium">
-                  <CalendarDays className="w-3.5 h-3.5 text-primary-300" />
-                  7 dagen per week
-                </span>
-              </div>
             </ScrollReveal>
           </div>
         </div>
